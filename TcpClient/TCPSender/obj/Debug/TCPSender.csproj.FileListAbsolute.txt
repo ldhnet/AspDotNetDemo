@@ -1,0 +1,9 @@
+C:\Free\TcpClient\TCPSender\bin\Debug\TCPSender.exe.config
+C:\Free\TcpClient\TCPSender\bin\Debug\TCPSender.exe
+C:\Free\TcpClient\TCPSender\bin\Debug\TCPSender.pdb
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.Form1.resources
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.Properties.Resources.resources
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.csproj.GenerateResource.cache
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.csproj.CoreCompileInputs.cache
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.exe
+C:\Free\TcpClient\TCPSender\obj\Debug\TCPSender.pdb

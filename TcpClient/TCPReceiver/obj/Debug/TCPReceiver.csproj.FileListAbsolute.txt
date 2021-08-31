@@ -1,0 +1,10 @@
+C:\Free\TcpClient\TCPReceiver\bin\Debug\TCPReceiver.exe.config
+C:\Free\TcpClient\TCPReceiver\bin\Debug\TCPReceiver.exe
+C:\Free\TcpClient\TCPReceiver\bin\Debug\TCPReceiver.pdb
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.csproj.AssemblyReference.cache
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.Form1.resources
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.Properties.Resources.resources
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.csproj.GenerateResource.cache
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.csproj.CoreCompileInputs.cache
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.exe
+C:\Free\TcpClient\TCPReceiver\obj\Debug\TCPReceiver.pdb
