@@ -1,8 +1,0 @@
-C:\Free\WindowsService\MyTestWindowsService\bin\Debug\MyTestWindowsService.exe.config
-C:\Free\WindowsService\MyTestWindowsService\bin\Debug\MyTestWindowsService.exe
-C:\Free\WindowsService\MyTestWindowsService\bin\Debug\MyTestWindowsService.pdb
-C:\Free\WindowsService\MyTestWindowsService\obj\Debug\MyTestWindowsService.csproj.CoreCompileInputs.cache
-C:\Free\WindowsService\MyTestWindowsService\obj\Debug\MyTestWindowsService.exe
-C:\Free\WindowsService\MyTestWindowsService\obj\Debug\MyTestWindowsService.pdb
-C:\Free\WindowsService\MyTestWindowsService\obj\Debug\MyTestWindowsService.ProjectInstaller.resources
-C:\Free\WindowsService\MyTestWindowsService\obj\Debug\MyTestWindowsService.csproj.GenerateResource.cache
