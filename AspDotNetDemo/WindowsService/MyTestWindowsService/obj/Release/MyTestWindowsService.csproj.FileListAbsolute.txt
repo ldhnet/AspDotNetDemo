@@ -1,0 +1,9 @@
+C:\Free\WindowsService\MyTestWindowsService\bin\Release\MyTestWindowsService.exe.config
+C:\Free\WindowsService\MyTestWindowsService\bin\Release\MyTestWindowsService.exe
+C:\Free\WindowsService\MyTestWindowsService\bin\Release\MyTestWindowsService.pdb
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.csproj.AssemblyReference.cache
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.ProjectInstaller.resources
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.csproj.GenerateResource.cache
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.csproj.CoreCompileInputs.cache
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.exe
+C:\Free\WindowsService\MyTestWindowsService\obj\Release\MyTestWindowsService.pdb
