@@ -1,0 +1,9 @@
+C:\GitRepy\AspDotNetDemo\ChinaArea\bin\Debug\ChinaArea.exe.config
+C:\GitRepy\AspDotNetDemo\ChinaArea\bin\Debug\ChinaArea.exe
+C:\GitRepy\AspDotNetDemo\ChinaArea\bin\Debug\ChinaArea.pdb
+C:\GitRepy\AspDotNetDemo\ChinaArea\bin\Debug\Newtonsoft.Json.dll
+C:\GitRepy\AspDotNetDemo\ChinaArea\obj\Debug\ChinaArea.csproj.AssemblyReference.cache
+C:\GitRepy\AspDotNetDemo\ChinaArea\obj\Debug\ChinaArea.csproj.CoreCompileInputs.cache
+C:\GitRepy\AspDotNetDemo\ChinaArea\obj\Debug\ChinaArea.csproj.CopyComplete
+C:\GitRepy\AspDotNetDemo\ChinaArea\obj\Debug\ChinaArea.exe
+C:\GitRepy\AspDotNetDemo\ChinaArea\obj\Debug\ChinaArea.pdb
