@@ -1,0 +1,15 @@
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.csproj.AssemblyReference.cache
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.AssemblyInfoInputs.cache
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.AssemblyInfo.cs
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.csproj.CoreCompileInputs.cache
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\SendEmailConsole.exe
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\SendEmailConsole.deps.json
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\SendEmailConsole.runtimeconfig.json
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\SendEmailConsole.dll
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\ref\SendEmailConsole.dll
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\bin\Debug\net6.0\SendEmailConsole.pdb
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.dll
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\ref\SendEmailConsole.dll
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.pdb
+C:\GitRepy\AspDotNetDemo\SendEmailConsole\obj\Debug\net6.0\SendEmailConsole.genruntimeconfig.cache
