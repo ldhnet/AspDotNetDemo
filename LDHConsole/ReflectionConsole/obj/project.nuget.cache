@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "vni81z694ut5OGDnn3M+HKEDevKPEvyKZg3tJCvakhoaBtF1BVBvnDtVmoB0qpYA7VIDwAZFwN/XMAUAssfCZA==",
+  "success": true,
+  "projectFilePath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\ReflectionConsole\\ReflectionConsole.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\baidu.ai\\3.6.14\\baidu.ai.3.6.14.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.7\\microsoft.netcore.app.host.win-x64.5.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

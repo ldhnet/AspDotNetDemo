@@ -1,0 +1,12 @@
+D:\BY\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.deps.json
+D:\BY\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.dll
+D:\BY\LDHConsole\DHLibrary\bin\Debug\net5.0\ref\DHLibrary.dll
+D:\BY\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.pdb
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.AssemblyInfoInputs.cache
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.AssemblyInfo.cs
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.csproj.CoreCompileInputs.cache
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.dll
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\ref\DHLibrary.dll
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.pdb
+D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.csproj.AssemblyReference.cache

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true, //false
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5"
+  },
+
+  "files": [
+    "./tsapp.ts"
+  ],
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}
+
+ 

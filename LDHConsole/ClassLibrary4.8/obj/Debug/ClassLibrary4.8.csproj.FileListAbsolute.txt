@@ -1,0 +1,5 @@
+D:\BY\LDHConsole\ClassLibrary4.8\bin\Debug\ClassLibrary4.8.dll
+D:\BY\LDHConsole\ClassLibrary4.8\bin\Debug\ClassLibrary4.8.pdb
+D:\BY\LDHConsole\ClassLibrary4.8\obj\Debug\ClassLibrary4.8.csproj.CoreCompileInputs.cache
+D:\BY\LDHConsole\ClassLibrary4.8\obj\Debug\ClassLibrary4.8.dll
+D:\BY\LDHConsole\ClassLibrary4.8\obj\Debug\ClassLibrary4.8.pdb
