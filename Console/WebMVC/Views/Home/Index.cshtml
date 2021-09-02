@@ -1,0 +1,59 @@
+﻿@model ContentViewModel 
+@{
+    ViewData["Title"] = "内容列表";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div> 
+
+<div class="panel panel-primary">
+    <div class="panel-heading">常用Demo</div>
+    <div class="panel-body">
+        <p>Welcome</p>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="/ExcelOpt/Index">Excel操作</a>
+        </li>
+        <li class="list-group-item">
+             <a href="/ExcelOpt/Index">Word操作</a>
+        </li>
+        <li class="list-group-item">
+               <a href="/ExcelOpt/Index">其他</a>
+        </li> 
+    </ul>
+</div>
+
+
+
+
+ 
+<div class="panel panel-primary todo-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td> <input type="checkbox" class="done-checkbox"></td>
+                <td>序号</td>
+                <td>标题</td>
+                <td>内容</td>
+                <td>添加时间</td>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.Contents)
+        {
+            <tr>
+                <td>
+                    <input type="checkbox" class="done-checkbox">
+                </td>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Detail</td>
+                <td>@item.Add_time</td>
+
+            </tr>
+        }
+    </table>
+</div>

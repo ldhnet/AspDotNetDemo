@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Publish\webapp</_PublishTargetUrl>
+    <History>True|2021-08-11T01:42:40.0364261Z;True|2021-08-11T09:30:42.9582830+08:00;</History>
+  </PropertyGroup>
+</Project>
