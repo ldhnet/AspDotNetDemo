@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = OptionsSample
+build_property.ProjectDir = C:\Free\AspNetCoreSample-master\src\Functional\Options\OptionsSample\

@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "W5faeKYTNrWv4hQD0QuuyXHZ+YryLpCXAdlNA55HYn6KT9XvIa/vm8KrJzViLWZWNt15rmD0Vp1D3k6BvP1SpA==",
+  "success": true,
+  "projectFilePath": "C:\\Free\\AspNetCoreSample-master\\src\\Functional\\Options\\OptionsSample\\OptionsSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration\\2.2.0\\microsoft.extensions.configuration.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.2.0\\microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\2.2.0\\microsoft.extensions.configuration.fileextensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration.json\\2.2.0\\microsoft.extensions.configuration.json.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\2.2.0\\microsoft.extensions.dependencyinjection.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.2.0\\microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\2.2.0\\microsoft.extensions.fileproviders.physical.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\2.2.0\\microsoft.extensions.filesystemglobbing.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options\\2.2.0\\microsoft.extensions.options.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\2.2.0\\microsoft.extensions.options.configurationextensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.app\\2.2.0\\microsoft.netcore.app.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.2.0\\microsoft.netcore.dotnetapphost.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.2.0\\microsoft.netcore.dotnethostpolicy.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.2.0\\microsoft.netcore.dotnethostresolver.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.platforms\\2.2.0\\microsoft.netcore.platforms.2.2.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.targets\\2.0.0\\microsoft.netcore.targets.2.0.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

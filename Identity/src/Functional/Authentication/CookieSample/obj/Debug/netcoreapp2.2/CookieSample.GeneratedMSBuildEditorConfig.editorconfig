@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = CookieSample
+build_property.ProjectDir = C:\Free\AspNetCoreSample-master\src\Functional\Authentication\CookieSample\
