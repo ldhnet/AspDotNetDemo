@@ -72,8 +72,9 @@ namespace WebMVC.Helper
                 return;
             }
             IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
-            hca?.HttpContext?.Session.Remove(key);
+            hca?.HttpContext?.Session.Remove(key); 
         }
+  
 
     }
 }

@@ -15,12 +15,12 @@ namespace WebMVC.Context
     {
         private readonly string _connectionString = GlobalContext.SystemConfig.DBConnectionString;
 
-        private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key; 
-        private readonly IEncryptionProvider _provider;
+        //private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key; 
+        //private readonly IEncryptionProvider _provider;
          
         public ApplicationDbContext()
         {
-            this._provider = new AesProvider(this._encryptionKey); 
+           // this._provider = new AesProvider(this._encryptionKey); 
         }
        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,11 +30,10 @@ namespace WebMVC.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeLogin> EmployeeLogins { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        { 
+            //modelBuilder.UseEncryption(this._provider);
             modelBuilder.Entity<Employee>().ToTable("Employee");
             modelBuilder.Entity<EmployeeLogin>().ToTable("EmployeeLogin");
-            modelBuilder.UseEncryption(this._provider);
-            
             base.OnModelCreating(modelBuilder);
         }
     }

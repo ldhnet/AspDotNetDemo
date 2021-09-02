@@ -33,8 +33,6 @@ namespace WebMVC.Model
         [Encrypted]
         public string Monery { get; set; }
         [MinLength(100)]
-        public string MoneryDisplay { get; set; }
-
-        public virtual EmployeeLogin LoginInfo { get; set; }
+        public string MoneryDisplay { get; set; } 
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitRepy\\AspDotNetDemo\\Console\\WebMVC\\WebMVC.csproj": {}
+    "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj": {}
   },
   "projects": {
-    "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\DHLibrary.csproj": {
+    "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\DHLibrary.csproj",
+        "projectUniqueName": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj",
         "projectName": "DHLibrary",
-        "projectPath": "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\DHLibrary.csproj",
+        "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\obj\\",
+        "outputPath": "C:\\GutReposite\\Console\\DHLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\GitRepy\\AspDotNetDemo\\Console\\WebMVC\\WebMVC.csproj": {
+    "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitRepy\\AspDotNetDemo\\Console\\WebMVC\\WebMVC.csproj",
+        "projectUniqueName": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj",
         "projectName": "WebMVC",
-        "projectPath": "C:\\GitRepy\\AspDotNetDemo\\Console\\WebMVC\\WebMVC.csproj",
+        "projectPath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\GitRepy\\AspDotNetDemo\\Console\\WebMVC\\obj\\",
+        "outputPath": "C:\\GutReposite\\Console\\WebMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -98,8 +98,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\DHLibrary.csproj": {
-                "projectPath": "C:\\GitRepy\\AspDotNetDemo\\Console\\DHLibrary\\DHLibrary.csproj"
+              "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
+                "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj"
               }
             }
           }

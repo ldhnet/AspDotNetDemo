@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        登录界面
+    </title>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+
+        .bg {
+            height: 50px;
+            /*background-image:url(/images/bg.jpg);*/
+            background-size: cover;
+        }
+
+        .form {
+            padding: 40px;
+            margin: 100px 20%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .footer {
+            height: 60px;
+            padding-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <h1>登录界面</h1>
+    </div>
+    <div class="form">
+        <div class="col-md-6">
+            <form asp-controller="Account" asp-action="Login" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="username" class="col-sm-4 control-label">用户名</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="account" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">密码</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-primary" id="submitBtn" style="width: 50%;">登录</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    @*    <div class="footer">
+            <p>©版权所有：XXXXX学院XX市XX大道XXX号</p>
+            <p>邮编：530001联系邮箱：xxxxxxx@163.com</p>
+        </div>*@
+    </div>
+    <script type="text/javascript">
+        $(function () { 
+             $("#submitBtn").click(function(){
+                loginForm();
+             });
+        });
+
+        function loginForm() {
+               var postData = {
+                    account: $("#account").val(),
+                    password: $("#password").val()
+                };
+                console.log(postData);
+                $.ajax({
+                    url: '@Url.Content("~/Account/Login")',
+                    type: "post",
+                    data: postData,
+                    success: function (obj) {
+                      console.log(obj);
+                    }
+                });
+        }
+
+        function redirectToIndex() {
+            location.href = '@Url.Content("~/Home/Index")';
+        }
+    </script>
+</body>
+</html> 

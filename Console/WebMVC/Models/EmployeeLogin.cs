@@ -10,9 +10,7 @@ namespace WebMVC.Model
     public class EmployeeLogin
     {
         public int Id { get; set; }
-        public DateTime CreateTime { get; set; }
-
-        public virtual  Employee Employee { get; set; }
+        public DateTime CreateTime { get; set; } 
 
     }
 }
