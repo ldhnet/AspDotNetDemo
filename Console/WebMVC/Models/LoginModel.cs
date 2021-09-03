@@ -35,8 +35,8 @@ namespace WebMVC.Models
 
     public class OptionResult
     {
-        public int ResultType { get; set; }
-        public string ResultMsg { get; set; } 
-        public object Data { get; set; }
+        public int resultType { get; set; }
+        public string resultMsg { get; set; } 
+        public object data { get; set; }
     }
 }

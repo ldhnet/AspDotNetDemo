@@ -14,7 +14,8 @@ using WebMVC.Model;
 namespace WebMVC.Controllers
 {
     public class ExcelOptController : BaseController
-    { 
+    {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();

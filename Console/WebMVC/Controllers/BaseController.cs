@@ -120,8 +120,7 @@ namespace WebMVC.Controllers
                     var result = userService.Find(_number);
                     if (result != null)
                     {
-                        _currentUser = LoadCurrentUser(result); 
-                        SessionHelper.SetSession("UserCacheModel", _currentUser); 
+                        _currentUser = LoadCurrentUser(result);  
                     }
                 }
                 return _currentUser;
@@ -144,6 +143,8 @@ namespace WebMVC.Controllers
                 LoginTime = DateTime.Now, 
                 PortraitFileName = "/images/headportrait.jpg", 
             };
+
+            SessionHelper.SetSession("UserCacheModel", currentUser);
             return currentUser;
         }
 

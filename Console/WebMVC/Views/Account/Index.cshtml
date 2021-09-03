@@ -101,10 +101,11 @@
                     type: "post",
                     data: postData,
                     dataType:"json",
-                    success: function (obj) { 
-                      console.log(obj);
+                    success: function (resData) { 
+                      console.log(resData);
+                       console.log(resData.resultType);
                       debugger;
-                      if(obj.ResultType==1)
+                      if(resData.resultType == 1)
                       {
                          location.href = '@Url.Content("~/Home/Index")';
                       }

@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMVC.Attributes;
 using WebMVC.Extension; 
 using WebMVC.Model;
 using WebMVC.Service;
@@ -48,8 +49,7 @@ namespace WebMVC
 
 
             //services.AddSingleton<IEmployeeLoginRepository, EmployeeLoginRepository>();
-             
-
+              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
 
 
@@ -82,6 +82,16 @@ namespace WebMVC
 
             app.UseHangfireServer();
             app.UseHangfireDashboard();
+
+            ////控制仪表盘的访问路径和授权配置
+            app.UseHangfireDashboard("/hangfire", new Hangfire.DashboardOptions
+            {
+                Authorization = new[] { new MyDashboardAuthorizationFilter() }
+            });
+
+
+
+
             app.UseStaticHostEnviroment();
 
             RecurringJob.AddOrUpdate("HangFireTestId", () => Console.WriteLine("hangfire Recurring!"), Cron.Minutely(), TimeZoneInfo.Local);
