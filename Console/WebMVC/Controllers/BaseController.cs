@@ -18,6 +18,7 @@ using WebMVC.Service;
 using static System.Collections.Specialized.BitVector32;
 using System.Security.Claims;
 using WebMVC.Extension;
+using Microsoft.AspNetCore.Http;
 
 namespace WebMVC.Controllers
 {
@@ -30,7 +31,7 @@ namespace WebMVC.Controllers
         /// <summary>
         /// 是否需要登入验证
         /// </summary>
-        protected bool IsNeedLogin = true; 
+        protected bool IsNeedLogin = true;
 
         /// <summary>
         /// 在Action执行前触发（如果继承该类的子类也重写了该方法，则先执行子类的方法，再执行父类的方法）
@@ -45,16 +46,16 @@ namespace WebMVC.Controllers
             var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
 
             #region 【权限验证】【登入验证】 
-             
+
             var IsExistArea = context.ActionDescriptor.RouteValues.TryGetValue("area", out string _areaName);
             if (IsExistArea)
             {
                 var areaName = context.ActionDescriptor.RouteValues["area"] ?? "";
                 areaName = (string)context.RouteData.Values["area"];
-            }  
-            var controllerName = context.ActionDescriptor.RouteValues["controller"];       
-            var actionName = context.ActionDescriptor.RouteValues["action"]; 
-            
+            }
+            var controllerName = context.ActionDescriptor.RouteValues["controller"];
+            var actionName = context.ActionDescriptor.RouteValues["action"];
+
             #region 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (controllerName == "Account") return;
@@ -66,10 +67,10 @@ namespace WebMVC.Controllers
                 context.Result = RedirectToAction("Index", "Account", new { area = "" });
                 return;
             }
-      
+
             //判断当前所请求的Action上是否有打上指定的特性标签
             if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false) || !IsNeedLogin)
-            { 
+            {
                 return;
             }
 
@@ -80,13 +81,13 @@ namespace WebMVC.Controllers
             if (CheckPermission(controllerName, actionName))
             {
                 return;
-            }  
+            }
             if (context.HttpContext.Request.IsAjax())
-                context.Result = Json(new {result = "No Permission" });
+                context.Result = Json(new { result = "No Permission" });
             else
                 context.Result = RedirectToAction("Error");
         }
-         
+
 
         /// <summary>
         /// 在Action执行后触发（如果继承该类的子类也重写了该方法，则先执行子类的方法，再执行父类的方法）
@@ -112,15 +113,15 @@ namespace WebMVC.Controllers
 
                 //var teet= HttpContext.User.Identity.Name.ToUpper();
 
-                var _number = HttpContext.User.Claims.FirstOrDefault(c=>c.Type == ClaimTypes.SerialNumber)?.Value;
+                var _number = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.SerialNumber)?.Value;
                 var _name = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
 
-                if ( (_currentUser == null && _number != null) || (_currentUser != null && _currentUser.EmployeeSerialNumber != _number))
+                if ((_currentUser == null && _number != null) || (_currentUser != null && _currentUser.EmployeeSerialNumber != _number))
                 {
                     var result = userService.Find(_number);
                     if (result != null)
                     {
-                        _currentUser = LoadCurrentUser(result);  
+                        _currentUser = LoadCurrentUser(result);
                     }
                 }
                 return _currentUser;
@@ -130,18 +131,18 @@ namespace WebMVC.Controllers
         {
             if (model == null)
                 return new UserCacheModel();
-             
+
             //var loginInfo = model.LoginInfo; 
 
             var currentUser = new UserCacheModel
-            {  
-                EmployeeId = model.Id,            
+            {
+                EmployeeId = model.Id,
                 EmployeeSerialNumber = model.EmployeeSerialNumber,
                 EmployeeName = model.EmployeeName,
                 EnglishName = model.EmployeeName,
-                OrgId = model.Department??0,
-                LoginTime = DateTime.Now, 
-                PortraitFileName = "/images/headportrait.jpg", 
+                OrgId = model.Department ?? 0,
+                LoginTime = DateTime.Now,
+                PortraitFileName = "/images/headportrait.jpg",
             };
 
             SessionHelper.SetSession("UserCacheModel", currentUser);
@@ -155,8 +156,48 @@ namespace WebMVC.Controllers
         /// <param name="action"></param>
         /// <returns></returns>
         protected bool CheckPermission(string controller, string action)
-        { 
+        {
             return true;
         }
+
+
+        #region 设置cookies
+
+        /// <summary>
+        /// 设置本地cookie
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="value">值</param>  
+        /// <param name="minutes">过期时长，单位：分钟</param>      
+        protected void SetCookies(string key, string value, int minutes = 30)
+        {
+            HttpContext.Response.Cookies.Append(key, value, new CookieOptions
+            {
+                Expires = DateTime.Now.AddMinutes(minutes)
+            });
+        }
+        /// <summary>
+        /// 删除指定的cookie
+        /// </summary>
+        /// <param name="key">键</param>
+        protected void DeleteCookies(string key)
+        {
+            HttpContext.Response.Cookies.Delete(key);
+        }
+
+        /// <summary>
+        /// 获取cookies
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <returns>返回对应的值</returns>
+        protected string GetCookies(string key)
+        {
+            HttpContext.Request.Cookies.TryGetValue(key, out string value);
+            if (string.IsNullOrEmpty(value))
+                value = string.Empty;
+            return value;
+        }
+
+        #endregion
     }
 }

@@ -46,10 +46,14 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-
+            services.Configure<CookiePolicyOptions>(options =>
+            { 
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
             //services.AddSingleton<IEmployeeLoginRepository, EmployeeLoginRepository>();
-              
+
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
 
 
@@ -80,8 +84,14 @@ namespace WebMVC
 
             app.UseSession();
 
-            app.UseHangfireServer();
-            app.UseHangfireDashboard();
+            var jobOptions = new BackgroundJobServerOptions
+            {
+                Queues = new[] { "back", "front", "default" },//队列名称，只能为小写
+                WorkerCount = Environment.ProcessorCount * 1, //并发任务数
+                ServerName = "conference hangfire1",//服务器名称
+            };
+            app.UseHangfireServer(jobOptions);
+            //app.UseHangfireDashboard();
 
             ////控制仪表盘的访问路径和授权配置
             app.UseHangfireDashboard("/hangfire", new Hangfire.DashboardOptions

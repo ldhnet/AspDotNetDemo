@@ -33,12 +33,14 @@ namespace WebMVC.Controllers
         } 
         [HttpGet]
         public IActionResult Index()
-        { 
+        {
+            SetCookies("cookieKay", "11111条数据的内容");
             var contents = new List<Content>();
             for (int i = 0; i < 10; i++)
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
+            var aa = GetCookies("cookieKay");
             return View(new ContentViewModel { Contents = contents }); 
         }
         [HttpGet]

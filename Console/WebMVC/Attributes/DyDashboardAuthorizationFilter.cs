@@ -51,7 +51,7 @@ namespace WebMVC.Attributes
                 return false;
             }
 
-            if (username == "user" && password == "paw")
+            if (username == "admin" && password == "pwd")
             {
                 return true;
             }
