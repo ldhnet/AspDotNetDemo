@@ -44,6 +44,9 @@ namespace WebMVC
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+
+
+
             //services.AddSingleton<IEmployeeLoginRepository, EmployeeLoginRepository>();
              
 
@@ -85,7 +88,7 @@ namespace WebMVC
 
             RecurringJob.AddOrUpdate("HangFireTestId2", () => Console.WriteLine("10µãÖÓÖ´ÐÐ hangfire Recurring!"), Cron.Daily(10), TimeZoneInfo.Local);
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

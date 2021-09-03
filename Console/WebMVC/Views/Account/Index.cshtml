@@ -10,11 +10,13 @@
     <title>
         登录界面
     </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <style>
 
         .bg {
@@ -44,7 +46,7 @@
     </div>
     <div class="form">
         <div class="col-md-6">
-            <form asp-controller="Account" asp-action="Login" enctype="multipart/form-data" method="post">
+            <form>
                 <div class="form-group">
                     <label for="username" class="col-sm-4 control-label">用户名</label>
                     <div class="col-sm-8">
@@ -69,7 +71,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" class="btn btn-primary" id="submitBtn" style="width: 50%;">登录</button>
+                       <a class="btn btn-default" id="submitBtn" >登录</a> 
                     </div>
                 </div>
             </form>
@@ -83,7 +85,7 @@
     </div>
     <script type="text/javascript">
         $(function () { 
-             $("#submitBtn").click(function(){
+             $("#submitBtn").click(function(){ 
                 loginForm();
              });
         });
@@ -92,14 +94,24 @@
                var postData = {
                     account: $("#account").val(),
                     password: $("#password").val()
-                };
-                console.log(postData);
+                }; 
+       
                 $.ajax({
                     url: '@Url.Content("~/Account/Login")',
                     type: "post",
                     data: postData,
-                    success: function (obj) {
+                    dataType:"json",
+                    success: function (obj) { 
                       console.log(obj);
+                      debugger;
+                      if(obj.ResultType==1)
+                      {
+                         location.href = '@Url.Content("~/Home/Index")';
+                      }
+                      else
+                      { 
+                         location.href = '@Url.Content("~/Account/Index")';
+                      }
                     }
                 });
         }

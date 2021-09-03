@@ -23,8 +23,7 @@ using WebMVC.Model;
 using WebMVC.Models;
 
 namespace WebMVC.Controllers
-{
-    [Authorize]
+{ 
     public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger; 
@@ -32,7 +31,7 @@ namespace WebMVC.Controllers
         {
             _logger = logger;
         } 
-        [AllowAnonymous]
+        [HttpGet]
         public IActionResult Index()
         { 
             var contents = new List<Content>();
@@ -42,6 +41,7 @@ namespace WebMVC.Controllers
             }
             return View(new ContentViewModel { Contents = contents }); 
         }
+        [HttpGet]
         [AllowAnonymous]
         public IActionResult Privacy()
         {

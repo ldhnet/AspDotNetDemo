@@ -16,6 +16,8 @@ using System.Globalization;
 using WebMVC.Model;
 using WebMVC.Service;
 using static System.Collections.Specialized.BitVector32;
+using System.Security.Claims;
+using WebMVC.Extension;
 
 namespace WebMVC.Controllers
 {
@@ -36,14 +38,14 @@ namespace WebMVC.Controllers
         /// <param name="context">Action执行前上下文对象</param>
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            base.OnActionExecuting(context); 
+            base.OnActionExecuting(context);
+            //context.Result = View("~/Views/Shared/Error.cshtml");
 
             //获取请求进来的控制器与Action
-            var controllerActionDescriptor =
-                context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
+            var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
 
             #region 【权限验证】【登入验证】 
-
+             
             var IsExistArea = context.ActionDescriptor.RouteValues.TryGetValue("area", out string _areaName);
             if (IsExistArea)
             {
@@ -78,7 +80,11 @@ namespace WebMVC.Controllers
             if (CheckPermission(controllerName, actionName))
             {
                 return;
-            }
+            }  
+            if (context.HttpContext.Request.IsAjax())
+                context.Result = Json(new {result = "No Permission" });
+            else
+                context.Result = RedirectToAction("Error");
         }
          
 
@@ -103,9 +109,15 @@ namespace WebMVC.Controllers
             {
                 if (_currentUser != null) return _currentUser;
                 _currentUser = SessionHelper.GetSession<UserCacheModel>("UserCacheModel");
-                if (_currentUser == null && User.Identity.IsAuthenticated || _currentUser != null && _currentUser.EmployeeSerialNumber != User.Identity.Name)
+
+                //var teet= HttpContext.User.Identity.Name.ToUpper();
+
+                var _number = HttpContext.User.Claims.FirstOrDefault(c=>c.Type == ClaimTypes.SerialNumber)?.Value;
+                var _name = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+
+                if ( (_currentUser == null && _number != null) || (_currentUser != null && _currentUser.EmployeeSerialNumber != _number))
                 {
-                    var result = userService.Find(User.Identity.Name);
+                    var result = userService.Find(_number);
                     if (result != null)
                     {
                         _currentUser = LoadCurrentUser(result); 
@@ -128,7 +140,7 @@ namespace WebMVC.Controllers
                 EmployeeSerialNumber = model.EmployeeSerialNumber,
                 EmployeeName = model.EmployeeName,
                 EnglishName = model.EmployeeName,
-                OrgId = model.Department,
+                OrgId = model.Department??0,
                 LoginTime = DateTime.Now, 
                 PortraitFileName = "/images/headportrait.jpg", 
             };

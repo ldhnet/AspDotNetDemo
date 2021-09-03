@@ -14,62 +14,63 @@ using Org.BouncyCastle.Asn1.Ocsp;
 using Microsoft.Extensions.Logging;
 using WebMVC.Service;
 using Microsoft.AspNetCore.Http;
+using WebMVC.Context;
 
 namespace WebMVC.Controllers
 {
     public class AccountController : BaseController
     {
         private readonly ILogger<AccountController> _logger;
-        private IUserService userService = new UserService();
-        public AccountController(ILogger<AccountController> logger)
+        private readonly IUserService _userService;
+        public AccountController(ILogger<AccountController> logger, IUserService userService)
         {
             _logger = logger;
+            _userService= userService;
         }
-        public object Index()
+        [HttpGet]
+        public IActionResult Index()
         {
             _logger.LogInformation("Index");
             return View();
         }
-
+   
+        [HttpPost]
         public IActionResult Login(LoginViewModel model)
-        {
-            var requestIP = Request.Host;
+        { 
+            var name = (model?.account??string.Empty).ToLower();
+            var pwd = model.password; 
+            var employee  = _userService.Find(name);
 
-            var name = model.account;
-            var pwd = model.password;
-    
-
-            var employee = userService.Find(name);
-            LoadCurrentUser(employee);
-
-
+            if (employee == null)
+            {
+                return Json(new OptionResult { ResultType = 2, ResultMsg = "登录失败", Data = "" });
+            } 
             var claims = new[] {
-                    new Claim(ClaimTypes.Email, employee.Department.ToString()),
+                    new Claim(ClaimTypes.Email, "574427343@qq.com"),
                     new Claim(ClaimTypes.SerialNumber,employee.EmployeeSerialNumber),
-                    new Claim(ClaimTypes.Name,employee.EmployeeName)
+                    new Claim(ClaimTypes.Name,employee.Name), 
                 };
 
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme); 
             ClaimsPrincipal user = new ClaimsPrincipal(claimsIdentity);
-            //登录用户，相当于ASP.NET中的FormsAuthentication.SetAuthCookie
-
-            //HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user).Wait();
-
-            //可以使用HttpContext.SignInAsync方法的重载来定义持久化cookie存储用户认证信息，例如下面的代码就定义了用户登录后60分钟内cookie都会保留在客户端计算机硬盘上，
-            //即便用户关闭了浏览器，60分钟内再次访问站点仍然是处于登录状态，除非调用Logout方法注销登录。
-
-            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user, new AuthenticationProperties() { IsPersistent = true, ExpiresUtc = DateTimeOffset.Now.AddMinutes(60) }).Wait();
-
-            return RedirectToAction("Index", "Home");
-        }
  
+            //HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user).Wait();
+            //可以使用HttpContext.SignInAsync方法的重载来定义持久化cookie存储用户认证信息，例如下面的代码就定义了用户登录后60分钟内cookie都会保留在客户端计算机硬盘上，
+            //即便用户关闭了浏览器，60分钟内再次访问站点仍然是处于登录状态，除非调用Logout方法注销登录。 
+            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user, new AuthenticationProperties() { IsPersistent = true,  ExpiresUtc = DateTimeOffset.Now.AddMinutes(60) }).Wait();
+
+            return Json(new OptionResult {ResultType=1, ResultMsg = "登录成功", Data = "" });
+        }
+
+
         /// <summary>
         /// 注销登录
-        /// </summary>
+        /// </summary> 
+        [HttpGet]
         public IActionResult Logout()
         {
             SessionHelper.RemoveSession("UserCacheModel");
-            HttpContext.SignOutAsync().Wait();
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme).Wait();
             return RedirectToAction("Index", "Account");
         }
     }

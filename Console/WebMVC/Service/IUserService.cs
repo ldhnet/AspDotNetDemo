@@ -10,5 +10,6 @@ namespace WebMVC.Service
     {
         IUserRepository User { get; }
         Employee Find(string employeeSerialNumber);
+        Employee FindEmployee(string employeeSerialNumber);
     }
 }

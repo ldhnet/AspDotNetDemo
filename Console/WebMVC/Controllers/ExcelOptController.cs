@@ -14,7 +14,7 @@ using WebMVC.Model;
 namespace WebMVC.Controllers
 {
     public class ExcelOptController : BaseController
-    {
+    { 
         public IActionResult Index()
         {
             return View();
@@ -23,8 +23,7 @@ namespace WebMVC.Controllers
         /// execl导入
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        [AllowAnonymous]
+        [HttpPost] 
         public ActionResult ExportExecl()
         {
             var file = Request.Form.Files;
@@ -78,8 +77,7 @@ namespace WebMVC.Controllers
         }
 
         private readonly string _saveFilePath = "C:\\LDHReport";
-        [HttpPost]
-        [AllowAnonymous]
+        [HttpPost] 
         public ActionResult ExportExeclReport()
         {
             Dictionary<string, Dictionary<string, string>> columnMerge = new Dictionary<string, Dictionary<string, string>>();

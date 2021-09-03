@@ -32,4 +32,11 @@ namespace WebMVC.Models
         [Display(Name = "View_Login_Password")]
         public string password { get; set; }
     }
+
+    public class OptionResult
+    {
+        public int ResultType { get; set; }
+        public string ResultMsg { get; set; } 
+        public object Data { get; set; }
+    }
 }

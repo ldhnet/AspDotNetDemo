@@ -17,12 +17,11 @@ namespace WebMVC.Context
 
         //private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key; 
         //private readonly IEncryptionProvider _provider;
-         
+
         public ApplicationDbContext()
         {
-           // this._provider = new AesProvider(this._encryptionKey); 
-        }
-       
+            // this._provider = new AesProvider(this._encryptionKey); 
+        } 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         { 
             optionsBuilder.UseSqlServer(_connectionString);
