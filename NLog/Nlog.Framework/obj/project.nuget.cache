@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8hbm04CHJ0FlFuo4m6sP3SQAiOrHYGreSFeiQJBh17kArxh3mdYCZPC0ugcfma8lOMyno7r84e+rA4+Ng+5AKw==",
+  "dgSpecHash": "BU9SEoJ0vZi8Fd8hruxj8yDOVmiWjUDuDHQaAZDUubfSqfzywzp1H51cFa0RGsVmfH6x6JsLQF08LhvCWZDaKA==",
   "success": true,
-  "projectFilePath": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj",
+  "projectFilePath": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

@@ -44,6 +44,8 @@ namespace WebMVC.Controllers
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
+
+            var bb = GetCookies("cookieKay");
             var aa = GetCookies("cookieKay");
             return View(new ContentViewModel { Contents = contents }); 
         }
@@ -51,16 +53,24 @@ namespace WebMVC.Controllers
         [AllowAnonymous]
         public IActionResult Privacy()
         {
+            throw new Exception("异常了");
             var dto = new UserViewModel();
             return View(dto);
         }
 
+        [HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(string message)
         {
+            ViewBag.Message = message;
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
+        [HttpGet]
+        public IActionResult NoPermission()
+        {
+            return View();
+        }
+         
     }
 }

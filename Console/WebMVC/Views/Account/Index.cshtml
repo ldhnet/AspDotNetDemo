@@ -78,10 +78,6 @@
 
         </div>
 
-    @*    <div class="footer">
-            <p>©版权所有：XXXXX学院XX市XX大道XXX号</p>
-            <p>邮编：530001联系邮箱：xxxxxxx@163.com</p>
-        </div>*@
     </div>
     <script type="text/javascript">
         $(function () { 
@@ -101,11 +97,8 @@
                     type: "post",
                     data: postData,
                     dataType:"json",
-                    success: function (resData) { 
-                      console.log(resData);
-                       console.log(resData.resultType);
-                      debugger;
-                      if(resData.resultType == 1)
+                    success: function (resData) {  
+                      if(resData.Tag == 1)
                       {
                          location.href = '@Url.Content("~/Home/Index")';
                       }

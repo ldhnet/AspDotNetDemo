@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P16BRRwcZvnxhPuzPERFZQsyjdP0dgu3XyFGKAOYt/W73xT0A7o7vCHhD1dfNsCf3SGmtMDEo7NcK0lN+sp7cA==",
+  "dgSpecHash": "lAF/PErvc7nqM+OmFQw9P/NKM0yp0XiyFIXjLzM6GBdXDEAEYePeOJ50qqjletuaGSCxgD2hiVCM+WjowJw40g==",
   "success": true,
-  "projectFilePath": "C:\\Free\\NLog-master\\NLogDemo\\NLogDemo.csproj",
+  "projectFilePath": "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
@@ -37,7 +37,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.3\\microsoft.visualstudio.web.codegenerators.mvc.3.1.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\nlog\\4.6.8\\nlog.4.6.8.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\nlog.extensions.logging\\1.6.2\\nlog.extensions.logging.1.6.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\nlog.web.aspnetcore\\4.9.2\\nlog.web.aspnetcore.4.9.2.nupkg.sha512",

@@ -180,3 +180,8 @@ C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.pdb
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.genruntimeconfig.cache
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\NLog.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\nlog.config

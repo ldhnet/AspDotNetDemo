@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Free\\NLog-master\\NLogDemo\\NLogDemo.csproj": {}
+    "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj": {}
   },
   "projects": {
-    "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj": {
+    "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj",
+        "projectUniqueName": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj",
         "projectName": "Nlog.Framework",
-        "projectPath": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj",
+        "projectPath": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\Free\\NLog-master\\Nlog.Framework\\obj\\",
+        "outputPath": "C:\\GutReposite\\NLog\\Nlog.Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Free\\NLog-master\\NLogDemo\\NLogDemo.csproj": {
+    "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Free\\NLog-master\\NLogDemo\\NLogDemo.csproj",
+        "projectUniqueName": "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj",
         "projectName": "NLogDemo",
-        "projectPath": "C:\\Free\\NLog-master\\NLogDemo\\NLogDemo.csproj",
+        "projectPath": "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\Free\\NLog-master\\NLogDemo\\obj\\",
+        "outputPath": "C:\\GutReposite\\NLog\\NLogDemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -102,8 +102,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj": {
-                "projectPath": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj"
+              "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj": {
+                "projectPath": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj"
               }
             }
           }

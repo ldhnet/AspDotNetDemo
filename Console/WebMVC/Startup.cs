@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,8 +57,17 @@ namespace WebMVC
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
              
             //注册Cookie认证服务
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();             
-            services.AddControllersWithViews(); 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
+            services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<GlobalExceptionFilter>();
+                options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
+            }).AddNewtonsoftJson(options =>
+            {
+                // 返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

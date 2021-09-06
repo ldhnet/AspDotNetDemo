@@ -216,11 +216,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj",
+      "projectUniqueName": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj",
       "projectName": "Nlog.Framework",
-      "projectPath": "C:\\Free\\NLog-master\\Nlog.Framework\\Nlog.Framework.csproj",
+      "projectPath": "C:\\GutReposite\\NLog\\Nlog.Framework\\Nlog.Framework.csproj",
       "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-      "outputPath": "C:\\Free\\NLog-master\\Nlog.Framework\\obj\\",
+      "outputPath": "C:\\GutReposite\\NLog\\Nlog.Framework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

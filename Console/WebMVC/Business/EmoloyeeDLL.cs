@@ -12,9 +12,12 @@ namespace WebMVC.Business
     {
         private UserService userService = new UserService();
 
-        public Employee Find(string employeeSerialNumber)
-        { 
-            return userService.Find(employeeSerialNumber);
+        public TData<Employee> Find(string employeeSerialNumber)
+        {
+            TData<Employee> obj = new TData<Employee>();
+            obj.Data = userService.Find(employeeSerialNumber);
+            obj.Tag = 1;
+            return obj;
         }
     }
 }
