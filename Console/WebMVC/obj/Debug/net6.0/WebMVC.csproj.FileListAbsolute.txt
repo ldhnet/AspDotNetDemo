@@ -185,3 +185,6 @@ C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Newtonso
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\NLog.dll
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\nlog.config
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\EPPlus.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll

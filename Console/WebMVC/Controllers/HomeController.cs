@@ -37,7 +37,14 @@ namespace WebMVC.Controllers
         [SkipLoginValidate]
         [ServiceFilter(typeof(MyFilter))]
         public IActionResult Index()
-        { 
+        {
+            var aa = Path.DirectorySeparatorChar;
+            var aa1 = Path.AltDirectorySeparatorChar;
+            var aa2 = GlobalContext.HostingEnvironment.ContentRootPath;
+            var aa3 = GlobalContext.HostingEnvironment.WebRootPath;
+            var aa4 = GlobalContext.HostingEnvironment.WebRootFileProvider;
+            var aa5 = GlobalContext.HostingEnvironment.ContentRootFileProvider;
+
             SetCookies("cookieKay", "11111条数据的内容");
             var contents = new List<Content>();
             for (int i = 0; i < 10; i++)
@@ -45,8 +52,7 @@ namespace WebMVC.Controllers
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
 
-            var bb = GetCookies("cookieKay");
-            var aa = GetCookies("cookieKay");
+            var bb = GetCookies("cookieKay"); 
             return View(new ContentViewModel { Contents = contents }); 
         }
         [HttpGet]

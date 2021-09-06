@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.Text.Json;
 using System.Web;
+using WebMVC.Model;
 
 namespace WebMVC.Helper
 {

@@ -21,5 +21,20 @@ namespace WebMVC.Models
             /// </summary>
             public const string ResetPasswordEmployeeId = "TempResetPasswordEmployeeId"; 
         }
+        /// <summary>
+        /// 文件夹键值
+        /// </summary>
+        public struct FolderName
+        {
+            /// <summary>
+            /// 模板生成信息
+            /// </summary> 
+            public const string ReportFolder = "~/Export";
+
+            public const string TempFolder = "~/Temp";
+            public const string Template = "~/Template";
+        }
     }
+
+   
 }

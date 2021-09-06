@@ -1,8 +1,11 @@
 ﻿using DHLibrary;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NPOI.OpenXml4Net.OPC.Internal;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -10,6 +13,8 @@ using System.Threading.Tasks;
 using WebMVC.Extension;
 using WebMVC.Helper;
 using WebMVC.Model;
+using WebMVC.Models;
+using WebMVC.Models.Report;
 
 namespace WebMVC.Controllers
 {
@@ -77,7 +82,7 @@ namespace WebMVC.Controllers
 
         }
 
-        private readonly string _saveFilePath = "C:\\LDHReport";
+        private readonly string _saveFilePath = GlobalContext.HostingEnvironment.WebRootPath + "Report";
         [HttpPost] 
         public ActionResult ExportExeclReport()
         {
@@ -144,5 +149,74 @@ namespace WebMVC.Controllers
             m.Close();
             file.Dispose();
         }
+
+
+        public Stream GererateWelfareLeaveReport(List<YearLeaveModel> list)
+        {
+            if (list.Count == 0) throw new Exception("数据为空");
+
+            var stream = new MemoryStream();
+            var newFileName = $"福利假期报表_{DateTime.Now.ToString("yyyyMMddHHmmss")}.xlsx";
+            var newFile = GenerateNewFileInfo(@"Template/Report", "福利假期报表模板.xlsx", newFileName);
+
+            var type = typeof(YearLeaveModel);
+            var properties = type.GetProperties().Where(p => p.GetCustomAttributes(typeof(ColumnExportFormatAttribute), true).Length > 0).ToList();
+
+            //起始行 = 5
+            int startRowNum = 5, rowNum = 5;
+            using (ExcelPackage package = new ExcelPackage(newFile))
+            {
+                var worksheet = package.Workbook.Worksheets[1];
+                worksheet.Cells["A2"].Value = $"操作日期:{DateTime.Now.ParseToString()}";
+
+                var columnNum = 0;
+                worksheet.InsertRow(startRowNum, list.Count);
+
+                foreach (var item in list)
+                {
+                    columnNum = 0;
+                    foreach (var property in properties)
+                    {
+                        var column = AlphabetHelper.GetExcelAlphabeticTag(columnNum);
+                        var cellAddress = $"{column}{rowNum}";
+
+                        var val = property.GetValue(item);
+
+                        worksheet.Cells[cellAddress].Value = val;
+
+                        if (property.PropertyType.FullName == "System.DateTime" || property.PropertyType.FullName.Contains("System.Nullable`1[[System.DateTime"))
+                        {
+                            worksheet.Cells[cellAddress].Style.Numberformat.Format = "yyyy-MM-dd";
+                        }
+
+                        if (item.No >5 && property.Name == "AnualIsSet")
+                        {
+                            worksheet.Cells[cellAddress].Style.Font.Color.SetColor(Color.Red);
+                        }
+
+                        columnNum++;
+                    }
+                    rowNum++;
+                }
+
+                package.Workbook.Calculate();
+                package.SaveAs(stream);
+            }
+            stream.Position = 0;
+            newFile.Delete();
+            return stream;
+        }
+
+        private FileInfo GenerateNewFileInfo(string path, string templateFileName, string newFileName)
+        {
+            var template =  FileToolHelper.GenerateFileInfo(path, templateFileName, false);
+
+            //FileHelper.BuildFullFilePath($"{WebConstant.FolderName.SocialInsuranceReport}{Path.AltDirectorySeparatorChar}");
+
+            var destFileName = $"{Environment.CurrentDirectory}{WebConstant.FolderName.Template.Substring(2)}" +  $"{Path.AltDirectorySeparatorChar}{newFileName}";
+
+            return template.CopyTo(destFileName, true);
+        }
+
     }
 }

@@ -25,9 +25,10 @@ namespace WebMVC
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            GlobalContext.HostingEnvironment = env;
         }
 
         public IConfiguration Configuration { get; }
