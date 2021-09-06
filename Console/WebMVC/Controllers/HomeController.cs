@@ -17,6 +17,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using WebMVC.Attributes;
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.Helper;
@@ -33,6 +34,7 @@ namespace WebMVC.Controllers
             _logger = logger;
         } 
         [HttpGet]
+        [SkipLoginValidate]
         [ServiceFilter(typeof(MyFilter))]
         public IActionResult Index()
         { 

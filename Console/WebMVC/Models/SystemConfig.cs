@@ -66,5 +66,8 @@
         public string CacheProvider { get; set; }
 
         public string RedisConnectionString { get; set; }
+
+        public string HangfireAccount { get; set; }
+        public string HangfirePwd { get; set; }
     }
 }

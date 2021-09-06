@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMVC.Model;
 
 namespace WebMVC.Attributes
 {
@@ -51,7 +52,7 @@ namespace WebMVC.Attributes
                 return false;
             }
 
-            if (username == "admin" && password == "pwd")
+            if (username == GlobalContext.SystemConfig.HangfireAccount && password == GlobalContext.SystemConfig.HangfirePwd)
             {
                 return true;
             }

@@ -46,9 +46,7 @@ namespace WebMVC.Controllers
             //获取前台语言并设置
             SetCulture("");
 
-            //获取请求进来的控制器与Action
-            var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
-
+   
             #region 【权限验证】【登入验证】 
 
             var IsExistArea = context.ActionDescriptor.RouteValues.TryGetValue("area", out string _areaName);
@@ -57,13 +55,28 @@ namespace WebMVC.Controllers
                 var areaName = context.ActionDescriptor.RouteValues["area"] ?? "";
                 areaName = (string)context.RouteData.Values["area"];
             }
-            var controllerName = context.ActionDescriptor.RouteValues["controller"];
-            var actionName = context.ActionDescriptor.RouteValues["action"];
+  
+            var controllerName = (string)context.RouteData.Values["controller"];
+            var actionName = (string)context.RouteData.Values["action"];
 
             #region 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (controllerName == "Account") return;
 
+            //获取请求进来的控制器与Action
+            var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
+
+            //判断当前所请求的Action上是否有打上指定的特性标签
+
+            var a1 = controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false);
+
+            var a2 = controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), true);
+
+            if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false))
+            {
+                return;
+            }
+             
             #endregion 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (CurrentUser == null)
@@ -72,11 +85,7 @@ namespace WebMVC.Controllers
                 return;
             }
 
-            //判断当前所请求的Action上是否有打上指定的特性标签
-            if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false) || !IsNeedLogin)
-            {
-                return;
-            }
+     
 
             #endregion 【权限验证】【登入验证】
 

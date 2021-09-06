@@ -16,17 +16,17 @@ using WebMVC.Service;
 using Microsoft.AspNetCore.Http;
 using WebMVC.Context;
 using System.Diagnostics.CodeAnalysis;
+using WebMVC.Business;
 
 namespace WebMVC.Controllers
 {
     public class AccountController : BaseController
     {
         private readonly ILogger<AccountController> _logger;
-        private readonly IUserService _userService;
-        public AccountController(ILogger<AccountController> logger, IUserService userService)
+        private EmoloyeeDLL _userdll = new EmoloyeeDLL(); 
+        public AccountController(ILogger<AccountController> logger)
         {
-            _logger = logger;
-            _userService= userService;
+            _logger = logger; 
         }
         [HttpGet]
         public IActionResult Index()
@@ -40,8 +40,7 @@ namespace WebMVC.Controllers
         { 
             var name = (model?.account??string.Empty).ToLower();
             var pwd = model.password; 
-            var employee  = _userService.Find(name);
-
+            var employee  = _userdll.Find(name); 
             if (employee == null)
             {
                 return Json(new OptionResult { resultType = 2, resultMsg = "登录失败", data = "" });

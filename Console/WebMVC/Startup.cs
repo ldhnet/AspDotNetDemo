@@ -37,10 +37,7 @@ namespace WebMVC
             GlobalContext.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
             services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig"));
-
-
-            services.AddSingleton<IUserService, UserService>();
-
+             
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -53,20 +50,14 @@ namespace WebMVC
                 options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            //services.AddSingleton<IEmployeeLoginRepository, EmployeeLoginRepository>();
-
-            services.AddSingleton<MyFilter>();
-
-
-            services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
-
-
-            //注册Cookie认证服务
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
              
-            services.AddControllersWithViews();
-
+            services.AddSingleton<MyFilter>();
+             
+            services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
+             
+            //注册Cookie认证服务
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();             
+            services.AddControllersWithViews(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -103,10 +94,8 @@ namespace WebMVC
             {
                 Authorization = new[] { new MyDashboardAuthorizationFilter() }
             });
-
-
-
-
+             
+             
             app.UseStaticHostEnviroment();
 
             RecurringJob.AddOrUpdate("HangFireTestId", () => Console.WriteLine("hangfire Recurring!"), Cron.Minutely(), TimeZoneInfo.Local);
