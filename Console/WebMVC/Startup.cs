@@ -14,7 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMVC.Attributes;
-using WebMVC.Extension; 
+using WebMVC.Extension;
+using WebMVC.Filter;
+using WebMVC.Middleware;
 using WebMVC.Model;
 using WebMVC.Service;
 
@@ -53,6 +55,9 @@ namespace WebMVC
             });
 
             //services.AddSingleton<IEmployeeLoginRepository, EmployeeLoginRepository>();
+
+            services.AddSingleton<MyFilter>();
+
 
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
 
@@ -110,6 +115,8 @@ namespace WebMVC
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseMiddleware(typeof(ResponseHeaderMiddleware));
 
             app.UseEndpoints(endpoints =>
             {

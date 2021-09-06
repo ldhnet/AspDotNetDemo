@@ -18,6 +18,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using WebMVC.Extension;
+using WebMVC.Filter;
 using WebMVC.Helper;
 using WebMVC.Model;
 using WebMVC.Models;
@@ -32,8 +33,9 @@ namespace WebMVC.Controllers
             _logger = logger;
         } 
         [HttpGet]
+        [ServiceFilter(typeof(MyFilter))]
         public IActionResult Index()
-        {
+        { 
             SetCookies("cookieKay", "11111条数据的内容");
             var contents = new List<Content>();
             for (int i = 0; i < 10; i++)

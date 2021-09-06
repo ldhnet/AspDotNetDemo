@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using WebMVC.Helper
+@using WebMVC.Models
+@{ 
+    var currentUser = new UserCacheModel();
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+    if (SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel) != null)
+    {
+        currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
+    }
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,13 +29,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home @culture</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                           <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">退出</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">
+                                <span>@currentUser.EmployeeName + @currentUser.EmployeeSerialNumber</span> 
+                                退出
+                           </a>
                         </li>
                     </ul>
                 </div>
@@ -40,7 +53,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - WebMVC - 版本号：@ViewBag.Version - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>

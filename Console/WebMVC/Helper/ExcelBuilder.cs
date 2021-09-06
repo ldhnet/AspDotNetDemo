@@ -123,7 +123,7 @@ namespace WebMVC.Helper
 
             HSSFFont headerFont = (HSSFFont)excelWorkbook.CreateFont();
             headerFont.FontHeight = 20 * 20;
-            //headerFont.Boldweight = (short)FontBoldWeight.Normal;
+            headerFont.Boldweight = 700;
             headerCellStyle.SetFont(headerFont);
 
             //create new sheet
@@ -168,7 +168,7 @@ namespace WebMVC.Helper
 
             HSSFFont headerFont = (HSSFFont)excelWorkbook.CreateFont();
             //headerFont.Boldweight = HSSFFont.BOLDWEIGHT_BOLD;
-            headerFont.FontHeight = 20 * 20;
+            headerFont.Boldweight = 700;
             headerCellStyle.SetFont(headerFont);
 
             //create new sheet
@@ -409,6 +409,7 @@ namespace WebMVC.Helper
 
             HSSFFont contentFont = (HSSFFont)m_xlApp.CreateFont();
             contentFont.FontHeightInPoints = 10;
+            contentFont.Boldweight = 700;
             contentCellStyle.SetFont(contentFont);
             #endregion
 
@@ -452,7 +453,8 @@ namespace WebMVC.Helper
                 handCellStyle.BorderLeft = NPOI.SS.UserModel.BorderStyle.Thin;
                 handCellStyle.BorderRight = NPOI.SS.UserModel.BorderStyle.Thin;
                 HSSFFont handFont = (HSSFFont)m_xlApp.CreateFont();
-              
+                handFont.FontHeightInPoints = 10;
+                handFont.Boldweight = 700;
                 //handFont.Boldweight = HSSFFont.BOLDWEIGHT_BOLD;
                 handFont.FontHeightInPoints = 10;
                 handCellStyle.SetFont(handFont);

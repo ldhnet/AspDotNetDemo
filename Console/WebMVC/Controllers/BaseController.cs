@@ -19,6 +19,7 @@ using static System.Collections.Specialized.BitVector32;
 using System.Security.Claims;
 using WebMVC.Extension;
 using Microsoft.AspNetCore.Http;
+using System.Reflection;
 
 namespace WebMVC.Controllers
 {
@@ -41,6 +42,9 @@ namespace WebMVC.Controllers
         {
             base.OnActionExecuting(context);
             //context.Result = View("~/Views/Shared/Error.cshtml");
+            var cultureArr = context.HttpContext.Request.Headers["accept-language"].ToString().Split(",");
+            //获取前台语言并设置
+            SetCulture("");
 
             //获取请求进来的控制器与Action
             var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
@@ -88,7 +92,7 @@ namespace WebMVC.Controllers
                 context.Result = RedirectToAction("Error");
         }
 
-
+     
         /// <summary>
         /// 在Action执行后触发（如果继承该类的子类也重写了该方法，则先执行子类的方法，再执行父类的方法）
         /// </summary>
@@ -96,8 +100,19 @@ namespace WebMVC.Controllers
         public override void OnActionExecuted(ActionExecutedContext context)
         {
             base.OnActionExecuted(context);
-        }
+            if (!(context.Result is ViewResult)) return;
 
+            var controllerName = context.ActionDescriptor.RouteValues["controller"];
+            var actionName = context.ActionDescriptor.RouteValues["action"];
+
+            //获取当前程序集版本号
+            ViewBag.Version = Assembly.GetExecutingAssembly().GetName().Version.ToString(); 
+
+            ViewBag.UserCacheModel = SessionHelper.GetSession("UserCacheModel");
+
+            if (controllerName == "Home" || controllerName == "CusError") return; 
+        }
+ 
         /// <summary>
         /// 登录用户信息
         /// </summary>
@@ -109,7 +124,7 @@ namespace WebMVC.Controllers
             get
             {
                 if (_currentUser != null) return _currentUser;
-                _currentUser = SessionHelper.GetSession<UserCacheModel>("UserCacheModel");
+                _currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
 
                 //var teet= HttpContext.User.Identity.Name.ToUpper();
 
@@ -145,8 +160,27 @@ namespace WebMVC.Controllers
                 PortraitFileName = "/images/headportrait.jpg",
             };
 
-            SessionHelper.SetSession("UserCacheModel", currentUser);
+            SessionHelper.SetSession(WebConstant.SessionKey.UserCacheModel, currentUser);
             return currentUser;
+        }
+        /// <summary>
+        /// 设置全局语言区域
+        /// </summary>
+        /// <param name="lang"></param>
+        protected virtual void SetCulture(string lang)
+        {
+            CultureInfo culture;
+            try
+            {
+                culture = new CultureInfo(lang);
+            }
+            catch
+            {
+                culture = new CultureInfo("zh-CN");
+            }
+            ViewBag.Culture = culture.Name;
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         /// <summary>
