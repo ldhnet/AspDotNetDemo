@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\HelperConsole\\HelperConsole.csproj": {}
+    "C:\\GutReposite\\LDHConsole\\HelperConsole\\HelperConsole.csproj": {}
   },
   "projects": {
-    "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\HelperConsole\\HelperConsole.csproj": {
+    "C:\\GutReposite\\LDHConsole\\HelperConsole\\HelperConsole.csproj": {
       "version": "3.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\HelperConsole\\HelperConsole.csproj",
+        "projectUniqueName": "C:\\GutReposite\\LDHConsole\\HelperConsole\\HelperConsole.csproj",
         "projectName": "HelperConsole",
-        "projectPath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\HelperConsole\\HelperConsole.csproj",
+        "projectPath": "C:\\GutReposite\\LDHConsole\\HelperConsole\\HelperConsole.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\HelperConsole\\obj\\",
+        "outputPath": "C:\\GutReposite\\LDHConsole\\HelperConsole\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

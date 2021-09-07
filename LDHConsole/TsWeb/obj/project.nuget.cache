@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BNf4TJ5yQFjK2EIy3WKvBXOgezjc/FnzjZUSs6qg+QRw6ZGQXGzjdF+aTMtLqI1jwPctJkHxe3u7c+P2fF8V6w==",
+  "dgSpecHash": "1RODE8tZvLmBQar9p3gy0GTUqriqpCaWn418nsiPix/Tg8w5nv8z3ULoRNZbhxggEVYGyz43CtIjx9Bs2sE4Pg==",
   "success": true,
-  "projectFilePath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\TsWeb\\TsWeb.csproj",
+  "projectFilePath": "C:\\GutReposite\\LDHConsole\\TsWeb\\TsWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\dotnetcommon.filelog\\1.1.0\\dotnetcommon.filelog.1.1.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

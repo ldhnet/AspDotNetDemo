@@ -13,38 +13,45 @@ namespace ConsoleApp
 
     class Program
     {
+        public static void DoSomething2(Content test)
+        {
+          
+            Console.WriteLine(test.ToString());
+        }
+
         static void Main(string[] args)
         {
-            List<int> nums = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-            Parallel.ForEach(nums, (item) =>
-            {
-                Console.WriteLine("针对集合元素{0}的一些工作代码……ThreadId={1}", item, Thread.CurrentThread.ManagedThreadId);
-            });
-
-
-            Console.ReadKey();
+           
             var contents = new List<Content>();
             for (int i = 0; i < 10; i++)
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
-            var all = new[] { 0, 1, 2, 3, 4, 5, 6 };
+ 
+            Parallel.ForEach(contents, (i) => {
+                try
+                {
+                    DoSomething2(i);
+                }
+                catch (Exception ex)
+                {
 
-            Parallel.For(0, contents.Count(), (i) => {
-                Console.Write(contents[i].ToString());
+                    throw;
+                }
+         
             });
-             
-
-            //
 
 
-            Parallel.For(0, 1000, (i) => {
-                Console.Write($"{i} ");
+            ParallelLoopResult result = Parallel.For(0, 10, i =>
+            {
+                Console.WriteLine("迭代次数：{0},任务ID:{1},线程ID:{2}", i, Task.CurrentId, Thread.CurrentThread.ManagedThreadId);
+                Thread.Sleep(10);
             });
-            Console.WriteLine();
+
+            Console.WriteLine("是否完成:{0}", result.IsCompleted);
+            Console.WriteLine("最低迭代:{0}", result.LowestBreakIteration);
 
 
-        
 
             //Console.WriteLine("Hello World!");
 
@@ -70,6 +77,9 @@ namespace ConsoleApp
             //douDiZhuHelper.DouDiZhu();
 
         }
+
+    
+
 
         public void DoSomething(int _)
         {

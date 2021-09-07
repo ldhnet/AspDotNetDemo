@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Permissions;
-using System.Text; 
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using HelperConsole.Interface;
 using HelperConsole.Log;
 
@@ -44,11 +46,24 @@ namespace HelperConsole
             Console.WriteLine("Assembly Full Name:");
             Console.WriteLine(assem.FullName);
 
+            int[] nums = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            Parallel.For(0, nums.Length, (i) =>
+            {
+                Console.WriteLine($"索引：{i},数组元素：{nums[i]},线程ID：{Thread.CurrentThread.ManagedThreadId}");
+            });
+            //Console.ReadKey();
 
-            SendMailUsingQueue();
+            List<int> nums2 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            Parallel.ForEach(nums2, (item) =>
+            {
+                Console.WriteLine($"输出元素：{item}、线程ID：{Thread.CurrentThread.ManagedThreadId}");
+            });
+            Console.ReadKey();
+
+            //SendMailUsingQueue();
 
 
-        var emailhelper = new EmailHelper();
+            //var emailhelper = new EmailHelper();
 
 
             //var smtp = new SMTP("574427343@qq.com");
@@ -67,9 +82,9 @@ namespace HelperConsole
             //{
             //    mailInfo.AddMailToQueue();
             //}
-         
 
-             
+
+
 
             ////emailhelper.SentMailHXD("574427343@qq.com", "内容", "标题", "抄送", "附件（附件方法我移除了）", "你的姓名"); 
 
@@ -107,7 +122,7 @@ namespace HelperConsole
             //Console.WriteLine("\nName: {0}", assemName.Name);
             //Console.WriteLine("Version: {0}.{1}", assemName.Version.Major, assemName.Version.Minor);
 
-      
+
             //List<int> wlist = new List<int>() {10,6, 2, 4, 8, 12 };
 
 

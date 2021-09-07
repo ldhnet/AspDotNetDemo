@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\DHLibrary\\DHLibrary.csproj",
+      "projectUniqueName": "C:\\GutReposite\\LDHConsole\\DHLibrary\\DHLibrary.csproj",
       "projectName": "DHLibrary",
-      "projectPath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\DHLibrary\\DHLibrary.csproj",
+      "projectPath": "C:\\GutReposite\\LDHConsole\\DHLibrary\\DHLibrary.csproj",
       "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-      "outputPath": "C:\\GitRepy\\AspDotNetDemo\\LDHConsole\\DHLibrary\\obj\\",
+      "outputPath": "C:\\GutReposite\\LDHConsole\\DHLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
