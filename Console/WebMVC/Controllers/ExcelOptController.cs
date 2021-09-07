@@ -150,14 +150,40 @@ namespace WebMVC.Controllers
             file.Dispose();
         }
 
+        [HttpPost]
+        public ActionResult ExportExeclReport2()
+        {
+            List<YearLeaveModel> ExportList = new List<YearLeaveModel>() {
+                 new YearLeaveModel{EmployeeName="张3",EmployeeSerialNumber="00001",No=1 },
+                 new YearLeaveModel{EmployeeName="张4",EmployeeSerialNumber="00002",No=2 },
+                 new YearLeaveModel{EmployeeName="张5",EmployeeSerialNumber="00003",No=3 },
+                 new YearLeaveModel{EmployeeName="张6",EmployeeSerialNumber="00004",No=4 },
+                 new YearLeaveModel{EmployeeName="张7",EmployeeSerialNumber="00005",No=5 },
+                 new YearLeaveModel{EmployeeName="张8",EmployeeSerialNumber="00006",No=6 },
+            };
 
-        public Stream GererateWelfareLeaveReport(List<YearLeaveModel> list)
+           var mm=  GererateWelfareLeaveReport(ExportList);
+
+            //var folderPath = Path.Combine(GlobalContext.HostingEnvironment.ContentRootPath, "DownLoad");
+            //if (!Directory.Exists(folderPath))
+            //    Directory.CreateDirectory(folderPath);
+
+
+
+            //FileStream file = new FileStream(folderPath, FileMode.OpenOrCreate);
+            //mm.WriteTo(file);
+            //mm.Close();
+            //file.Dispose();
+
+            return View("Index");
+        }
+        public MemoryStream GererateWelfareLeaveReport(List<YearLeaveModel> list)
         {
             if (list.Count == 0) throw new Exception("数据为空");
 
             var stream = new MemoryStream();
-            var newFileName = $"福利假期报表_{DateTime.Now.ToString("yyyyMMddHHmmss")}.xlsx";
-            var newFile = GenerateNewFileInfo(@"Template/Report", "福利假期报表模板.xlsx", newFileName);
+            var newFileName = $"人员信息报表_{DateTime.Now.ToString("yyyyMMddHHmmss")}.xlsx";
+            var newFile = GenerateNewFileInfo(Path.Combine(GlobalContext.HostingEnvironment.WebRootPath, "Temp"), "人员信息报表.xlsx", newFileName);
 
             var type = typeof(YearLeaveModel);
             var properties = type.GetProperties().Where(p => p.GetCustomAttributes(typeof(ColumnExportFormatAttribute), true).Length > 0).ToList();
@@ -209,11 +235,12 @@ namespace WebMVC.Controllers
 
         private FileInfo GenerateNewFileInfo(string path, string templateFileName, string newFileName)
         {
-            var template =  FileToolHelper.GenerateFileInfo(path, templateFileName, false);
+            var folderPath = Path.Combine(GlobalContext.HostingEnvironment.WebRootPath, "DownLoad");
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
 
-            //FileHelper.BuildFullFilePath($"{WebConstant.FolderName.SocialInsuranceReport}{Path.AltDirectorySeparatorChar}");
-
-            var destFileName = $"{Environment.CurrentDirectory}{WebConstant.FolderName.Template.Substring(2)}" +  $"{Path.AltDirectorySeparatorChar}{newFileName}";
+            var template =  FileToolHelper.GenerateFileInfo(path, templateFileName, false); 
+            var destFileName = folderPath +  $"{Path.AltDirectorySeparatorChar}{newFileName}";
 
             return template.CopyTo(destFileName, true);
         }

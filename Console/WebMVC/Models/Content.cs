@@ -36,5 +36,11 @@ namespace WebMVC.Models
         /// 修改时间
         /// </summary>
         public DateTime Modify_time { get; set; }
+
+
+        public override string ToString()
+        {
+            return Id.ToString() + "_" + Title + "_" + Detail;
+        }
     }
 }
