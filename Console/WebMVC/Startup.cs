@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using WebMVC.Attributes;
 using WebMVC.Extension;
 using WebMVC.Filter;
+using WebMVC.HangFire;
 using WebMVC.Middleware;
 using WebMVC.Model;
 using WebMVC.Service;
@@ -109,9 +110,7 @@ namespace WebMVC
              
             app.UseStaticHostEnviroment();
 
-            RecurringJob.AddOrUpdate("HangFireTestId", () => Console.WriteLine("hangfire Recurring!"), Cron.Minutely(), TimeZoneInfo.Local);
-
-            RecurringJob.AddOrUpdate("HangFireTestId2", () => Console.WriteLine("10µ„÷”÷¥–– hangfire Recurring!"), Cron.Daily(10), TimeZoneInfo.Local);
+            HangFireJob.AddOrUpdate();
 
             app.UseAuthentication();
             app.UseAuthorization();
