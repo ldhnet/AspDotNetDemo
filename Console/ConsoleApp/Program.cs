@@ -50,11 +50,9 @@ namespace ConsoleApp
             {
                 string name = string.Format($"btnAsync_Click_{i}");
                 //action.Invoke(name); //异步（开启一个子线程去完成）
-                 
             }
 
-            Console.WriteLine($"****************btnAsync_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} " +
-                $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}***************");
+            Console.WriteLine($"****************btnAsync_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} ***************");
 
 
 

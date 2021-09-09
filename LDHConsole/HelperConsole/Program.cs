@@ -39,6 +39,32 @@ namespace HelperConsole
             worker.RunWorkerAsync();
         }
 
+        public static  DateTime LastDay(DateTime currentProcessMonth)
+        {
+            return currentProcessMonth.AddDays(1 - currentProcessMonth.Day).AddMonths(1).AddDays(-1).Date;//当月最后一天 
+        }
+        public static List<int> GetDiffAmountInvoiceList2(List<int> list, decimal _DiffAmount)
+        {
+            List<int> invoiceList=new List<int>();
+
+           return GetDiffAmountInvoiceList(list, invoiceList, _DiffAmount);
+        }
+
+        public static List<int> GetDiffAmountInvoiceList(List<int> list, List<int> invoiceList, decimal _DiffAmount)
+        {
+             if (list.First() >= _DiffAmount)
+            {
+                invoiceList.Add(list.First());
+            }
+            else
+            {
+                invoiceList.Add(list.First());
+                _DiffAmount = _DiffAmount - list.First();
+                list.Remove(list.First());
+                return GetDiffAmountInvoiceList(list, invoiceList, _DiffAmount);
+            }
+            return invoiceList;
+        }
 
         static void Main(string[] args)
         {
@@ -46,7 +72,54 @@ namespace HelperConsole
             Console.WriteLine("Assembly Full Name:");
             Console.WriteLine(assem.FullName);
 
+            var d3 = DateTime.Now.AddMonths(2);
+            var d4 = LastDay(d3);
+
+            var d1= DateTime.Now.AddDays(1 - DateTime.Now.Day);
+
+            var d2 = DateTime.Now.AddDays(1 - DateTime.Now.Day).AddMonths(1).AddDays(-1);
+
+
+
             int[] nums = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+
+            var carn = 100000*0.3m;
+           var numList = new List<int> { 100000, 2000, 3000, 40000, 50000, 6000, 7000, 8000, 9000, 11000 };
+
+            var diffCar= numList.Sum() - carn;
+
+            var aa=   GetDiffAmountInvoiceList2(numList, carn);
+
+
+            var aa222 = GetDiffAmountInvoiceList2(numList, 130000);
+
+            var aa6 = numList.Except(aa);
+
+            var numList1 = new List<int> { 100000, 2000, 3000, 40000, 50000, 6000, 7000, 8000, 9000, 11000 };
+
+            var diffCar2 = numList1.Sum() - 100000 * 1.2m;
+            var aa2 = GetDiffAmountInvoiceList2(numList1, diffCar2);
+
+
+            var oldInvoiceList = numList1.Except(aa2).ToList();
+
+
+
+
+            var numList2 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var aa3 = string.Join(",", GetDiffAmountInvoiceList2(numList2, 0));
+
+            var numList3 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var aa4 = string.Join(",", GetDiffAmountInvoiceList2(numList3, 8));
+
+            var numList4 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var aa1 = string.Join(",", GetDiffAmountInvoiceList2(numList4, 9));
+
+            Console.WriteLine(aa2);
+            Console.WriteLine(aa3);
+            Console.WriteLine(aa4);
+            Console.WriteLine(aa1);
+
             Parallel.For(0, nums.Length, (i) =>
             {
                 Console.WriteLine($"索引：{i},数组元素：{nums[i]},线程ID：{Thread.CurrentThread.ManagedThreadId}");
