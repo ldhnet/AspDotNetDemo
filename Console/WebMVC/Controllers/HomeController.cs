@@ -51,6 +51,10 @@ namespace WebMVC.Controllers
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
+            SessionHelper.SetSession("sessionKey", "内容22222222222222");
+
+
+            var cc=  SessionHelper.GetSession("sessionKey");
 
             var bb = GetCookies("cookieKay"); 
             return View(new ContentViewModel { Contents = contents }); 
