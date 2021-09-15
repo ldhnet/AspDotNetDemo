@@ -45,7 +45,9 @@ namespace WebMVC.Controllers
             var aa4 = GlobalContext.HostingEnvironment.WebRootFileProvider;
             var aa5 = GlobalContext.HostingEnvironment.ContentRootFileProvider;
 
-            SetCookies("cookieKay", "11111条数据的内容");
+            SetCookies("cookieKay111", "11111条数据的内容");
+
+
             var contents = new List<Content>();
             for (int i = 0; i < 10; i++)
             {
@@ -56,7 +58,7 @@ namespace WebMVC.Controllers
 
             var cc=  SessionHelper.GetSession("sessionKey");
 
-            var bb = GetCookies("cookieKay"); 
+            var bb = GetCookies("cookieKay111"); 
             return View(new ContentViewModel { Contents = contents }); 
         }
         [HttpGet]
