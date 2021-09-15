@@ -45,6 +45,10 @@ namespace WebMVC.Controllers
             var aa4 = GlobalContext.HostingEnvironment.WebRootFileProvider;
             var aa5 = GlobalContext.HostingEnvironment.ContentRootFileProvider;
 
+            var aa6 = Environment.CurrentDirectory;
+
+            var aa7 = Environment.CurrentManagedThreadId;
+
             SetCookies("cookieKay111", "11111条数据的内容");
 
 
