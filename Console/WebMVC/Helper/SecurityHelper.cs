@@ -72,7 +72,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return null;
         }
@@ -133,7 +133,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return string.Empty;
         }
@@ -181,7 +181,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return null;
         }
@@ -236,7 +236,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return null;
         }
@@ -273,7 +273,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return string.Empty;
         }
@@ -288,7 +288,7 @@ namespace WebMVC.Helper
             }
             catch (Exception ex)
             {
-                LogHelper.Error(ex);
+                NLogHelper.Error(ex);
             }
             return string.Empty;
         }
