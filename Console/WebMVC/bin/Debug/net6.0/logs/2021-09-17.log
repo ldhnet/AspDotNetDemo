@@ -1,0 +1,14 @@
+2021-09-17 15:38:15.5205||ERROR||异常了
+   at WebMVC.Controllers.HomeController.Privacy() in C:\GutReposite\Console\WebMVC\Controllers\HomeController.cs:line 72
+   at lambda_method75(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000fb9+0x0
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009af+0x0
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ac+0x33a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ad+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b1+0x15
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009ac+0x39a
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync() in Microsoft.AspNetCore.Mvc.Core.dll:token 0x60009b0+0xa
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted) in Microsoft.AspNetCore.Mvc.Core.dll:token 0x6000a91+0x6a
+ |url: |action: 
