@@ -113,10 +113,11 @@ namespace WebMVC.Controllers
                 new Employee{EmployeeName="张5",EnglishName="zhangsan",EmployeeSerialNumber="00002",Phone="15222222222" },
                 new Employee{EmployeeName="张6",EnglishName="zhangsan",EmployeeSerialNumber="00003",Phone="15333333333" },
                 new Employee{EmployeeName="张7",EnglishName="zhangsan",EmployeeSerialNumber="00004",Phone="15444444444" },
-                new Employee{EmployeeName="张9",EnglishName="zhangsan",EmployeeSerialNumber="00005",Phone="15555555555" }
+                new Employee{EmployeeName="张9",EnglishName="zhangsan",EmployeeSerialNumber="00005",Phone="15555555555" },
+                new Employee{EmployeeName="张10",EnglishName="zhangsan",EmployeeSerialNumber="00005",Phone="1666666666666" }
             };
             Dictionary<string, List<Employee>> contestdic = new Dictionary<string, List<Employee>>();
-            contestdic.Add("人员信息报表", ExportList);
+            contestdic.Add("人员信息报表1", ExportList);
 
             ExcelBuilder excelBuilder = new ExcelBuilder();
             excelBuilder.CreateExcel(contestdic, columnMerge, contestColumnMergeStyles);

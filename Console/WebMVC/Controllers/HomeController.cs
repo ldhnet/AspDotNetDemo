@@ -53,9 +53,9 @@ namespace WebMVC.Controllers
 
 
             var contents = new List<Content>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 50; i++)
             {
-                contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
+                contents.Add(new Content { Id = i, Title = $"第{i}条数据标题测试", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
             SessionHelper.SetSession("sessionKey", "内容22222222222222");
 
