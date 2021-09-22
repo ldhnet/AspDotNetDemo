@@ -102,7 +102,7 @@ namespace WebMVC
             //app.UseHangfireDashboard();
 
             ////控制仪表盘的访问路径和授权配置
-            app.UseHangfireDashboard("/hangfire", new Hangfire.DashboardOptions
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
                 Authorization = new[] { new MyDashboardAuthorizationFilter() }
             });
