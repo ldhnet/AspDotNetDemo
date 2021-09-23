@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ZedVk1RBQ/491Xw4Ued9SgvP4MrOWb1sIppCcMx1sfpE0cGpM0HeMKjNTxiUp1JSRHGkLOtZ/ha9hsGRN+syQ==",
+  "dgSpecHash": "5RmcNLgmN/I3+lqnKHqypQP4Zmmdd47Ibnl9rX/hXK62njkxxvv2a2S+FmSpAebWSNmm0ph7JDdvGY/xOfREWw==",
   "success": true,
-  "projectFilePath": "C:\\Free\\Yuan.IdentityServer4.Demo-main\\DiffAuthMode\\AuthorizationCode\\Yuan.IdentityServer4\\Yuan.IdentityServer4.csproj",
+  "projectFilePath": "C:\\GutReposite\\IdentityServer4\\AuthorizationCode\\Yuan.IdentityServer4\\Yuan.IdentityServer4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\identityserver4\\4.1.1\\identityserver4.4.1.1.nupkg.sha512",

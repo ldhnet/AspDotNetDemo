@@ -56,6 +56,7 @@ namespace WebMVC.Controllers
                 areaName = (string)context.RouteData.Values["area"];
             }
   
+            
             var controllerName = (string)context.RouteData.Values["controller"];
             var actionName = (string)context.RouteData.Values["action"];
 
@@ -67,26 +68,18 @@ namespace WebMVC.Controllers
             var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
 
             //判断当前所请求的Action上是否有打上指定的特性标签
-
-            var a1 = controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false);
-
-            var a2 = controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), true);
-
+              
             if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false))
             {
                 return;
-            }
-             
+            } 
             #endregion 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (CurrentUser == null)
             {
                 context.Result = RedirectToAction("Index", "Account", new { area = "" });
                 return;
-            }
-
-     
-
+            } 
             #endregion 【权限验证】【登入验证】
 
             //【权限验证】【登入验证】逻辑 

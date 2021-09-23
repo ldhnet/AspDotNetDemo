@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8zyC5c15n2svBXLyGMimI0NKNODi/WpSVleyDQYcvPtUmu+0UGgKCKWG6OpXdHJQs7SbUMchDpLQygPKDDSIcg==",
+  "dgSpecHash": "kPuTWeXSrDPGfene6XQ6S2y7CjyNFtrrVaXoJQccTq8fwBsYHjt61+9CfdueSAXVaYKNlGU9ajb2yq1LODwStg==",
   "success": true,
-  "projectFilePath": "C:\\Free\\Yuan.IdentityServer4.Demo-main\\DiffAuthMode\\AuthorizationCode\\Yuan.MVC.Demo\\Yuan.MVC.Demo.csproj",
+  "projectFilePath": "C:\\GutReposite\\IdentityServer4\\AuthorizationCode\\Yuan.MVC.Demo\\Yuan.MVC.Demo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
