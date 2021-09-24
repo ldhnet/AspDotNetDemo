@@ -10,5 +10,6 @@ namespace WebMVC.Attributes
     /// </summary>
     public class SkipLoginValidateAttribute : Attribute
     {
+
     }
 }
