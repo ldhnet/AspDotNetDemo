@@ -72,6 +72,19 @@ namespace HelperConsole
             Console.WriteLine("Assembly Full Name:");
             Console.WriteLine(assem.FullName);
 
+
+
+            int[] arr = { 1, 4, 8, 2, 3, 1 };
+
+
+
+            foreach (var item in arr.Reverse())
+            {
+                Console.WriteLine(item);
+            }
+
+
+
             var d3 = DateTime.Now.AddMonths(2);
             var d4 = LastDay(d3);
 

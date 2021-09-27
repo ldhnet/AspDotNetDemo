@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,11 +19,21 @@ namespace HelperConsole
             list.Add("Bower5");
             list.Add(1);
             list.Add(DateTime.Now);
+
+
             var query = list.OfType<string>().Where(p => p.StartsWith("P")).ToList(); //输出   Power 
 
             var query2 = list.OfType<string>().ToList(); //输出   Power 
 
             int[] arr = { 1, 4, 8, 2, 3, 1 };
+
+
+
+            foreach (var item in arr.Reverse())
+{
+                Console.WriteLine(item);
+            }
+
 
             var query3 = arr.TakeWhile(x => x <= 5); //输出 1 4
             var query4 = arr.SkipWhile(x => x <= 5);//输出   8 2 3 1
