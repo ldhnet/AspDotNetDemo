@@ -38,6 +38,7 @@ namespace WebApi.Middleware
                 var badIp = true;
                 foreach (var address in ip)
                 {
+                    if (string.IsNullOrEmpty(address)) continue;
                     var testIp = IPAddress.Parse(address);
                     if (testIp.GetAddressBytes().SequenceEqual(bytes))
                     {
