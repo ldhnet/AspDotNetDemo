@@ -27,7 +27,7 @@ namespace WebApi.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Method != HttpMethod.Get.Method)
+            if (context.Request.Method == HttpMethod.Get.Method)
             {
                 var remoteIp = context.Connection.RemoteIpAddress;
                 _logger.LogDebug("Request from Remote IP address: {RemoteIp}", remoteIp);
