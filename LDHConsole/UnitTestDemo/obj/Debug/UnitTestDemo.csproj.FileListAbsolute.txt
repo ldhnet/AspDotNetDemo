@@ -56,3 +56,7 @@ D:\BY\LDHConsole\UnitTestDemo\bin\Debug\Aspose.Words.dll
 D:\BY\LDHConsole\UnitTestDemo\bin\Debug\office.dll
 D:\BY\LDHConsole\UnitTestDemo\bin\Debug\stdole.dll
 D:\BY\LDHConsole\UnitTestDemo\bin\Debug\Enyim.Caching.xml
+C:\GutReposite\LDHConsole\UnitTestDemo\obj\Debug\UnitTestDemo.csproj.AssemblyReference.cache
+C:\GutReposite\LDHConsole\UnitTestDemo\obj\Debug\UnitTestDemo.csproj.CoreCompileInputs.cache
+C:\GutReposite\LDHConsole\UnitTestDemo\obj\Debug\UnitTestDemo.dll
+C:\GutReposite\LDHConsole\UnitTestDemo\obj\Debug\UnitTestDemo.pdb

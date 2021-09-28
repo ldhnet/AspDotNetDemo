@@ -10,3 +10,15 @@ D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.dll
 D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\ref\DHLibrary.dll
 D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.pdb
 D:\BY\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.csproj.AssemblyReference.cache
+C:\GutReposite\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.deps.json
+C:\GutReposite\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.dll
+C:\GutReposite\LDHConsole\DHLibrary\bin\Debug\net5.0\ref\DHLibrary.dll
+C:\GutReposite\LDHConsole\DHLibrary\bin\Debug\net5.0\DHLibrary.pdb
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.csproj.AssemblyReference.cache
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.AssemblyInfoInputs.cache
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.AssemblyInfo.cs
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.csproj.CoreCompileInputs.cache
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.dll
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\ref\DHLibrary.dll
+C:\GutReposite\LDHConsole\DHLibrary\obj\Debug\net5.0\DHLibrary.pdb

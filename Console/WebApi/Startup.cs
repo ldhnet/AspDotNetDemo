@@ -75,6 +75,7 @@ namespace WebApi
 
             app.UseRouting();
 
+            app.UseMiddleware<AdminSafeListMiddleware>("127.0.0.1;192.168.1.5;::1");
 
             app.UseAuthentication();
             app.UseAuthorization();

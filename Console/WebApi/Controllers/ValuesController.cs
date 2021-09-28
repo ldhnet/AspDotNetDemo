@@ -43,7 +43,7 @@ namespace WebApi.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        [Authorize(Roles = "test2")]
+        [Authorize(Roles = "test")]
         public string Get(int id)
         {
 
