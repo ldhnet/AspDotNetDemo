@@ -7,26 +7,44 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using WebMVC.Attributes;
+using Microsoft.AspNetCore.Authorization;
+using WebMVC.Extension;
 
 namespace WebMVC.Filter
 {
 
     public class ClientIpCheckActionFilter : ActionFilterAttribute
     {
-        private readonly ILogger _logger;
-        private readonly string _safelist;
+        private readonly ILogger _logger; 
 
-        public ClientIpCheckActionFilter(string safelist, ILogger logger)
-        {
-            _safelist = safelist;
+        public ClientIpCheckActionFilter(ILogger logger)
+        { 
             _logger = logger;
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
+            var controllerActionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
+
+            if (controllerActionDescriptor != null)
+            {
+                if (controllerActionDescriptor.ControllerTypeInfo.CustomAttributes.IsContainAttribute(typeof(AllowAnonymousAttribute))) return;
+                if (controllerActionDescriptor.MethodInfo.CustomAttributes.IsContainAttribute(typeof(AllowAnonymousAttribute))) return; 
+            }
+
+
+            if (context.Filters.Any(item => item is IAllowAnonymousFilter))
+            { 
+                return;
+            } 
             var remoteIp = context.HttpContext.Connection.RemoteIpAddress;
             _logger.LogDebug("Remote IpAddress: {RemoteIp}", remoteIp);
-            var ip = _safelist.Split(';');
+
+            string _safeString = "127.0.0.1;192.168.1.5;::1";
+            var ip = _safeString.Split(';');
             var badIp = true;
 
             if (remoteIp.IsIPv4MappedToIPv6)
@@ -54,5 +72,8 @@ namespace WebMVC.Filter
 
             base.OnActionExecuting(context);
         }
+
+
+
     }
 }

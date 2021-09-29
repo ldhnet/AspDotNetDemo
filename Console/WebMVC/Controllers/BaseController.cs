@@ -68,11 +68,15 @@ namespace WebMVC.Controllers
             var controllerActionDescriptor = context.ActionDescriptor as Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor;
 
             //判断当前所请求的Action上是否有打上指定的特性标签
-              
+            if (controllerActionDescriptor.ControllerTypeInfo.IsDefined(typeof(SkipLoginValidateAttribute), false))
+            {
+                return;
+            }
             if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false))
             {
                 return;
-            } 
+            }
+     
             #endregion 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (CurrentUser == null)

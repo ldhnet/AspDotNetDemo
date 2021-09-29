@@ -36,6 +36,8 @@ namespace WebMVC.Controllers
         [HttpGet]
         [SkipLoginValidate]
         [ServiceFilter(typeof(MyFilter))]
+        [AllowAnonymous]
+        [ServiceFilter(typeof(ClientIpCheckActionFilter))]
         public IActionResult Index()
         {
             var aa = Path.DirectorySeparatorChar;

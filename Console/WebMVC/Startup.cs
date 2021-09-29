@@ -48,8 +48,7 @@ namespace WebMVC
                 var loggerFactory = container.GetRequiredService<ILoggerFactory>();
                 var logger = loggerFactory.CreateLogger<ClientIpCheckActionFilter>();
 
-                return new ClientIpCheckActionFilter(
-                    "127.0.0.1;192.168.1.5;::1", logger);
+                return new ClientIpCheckActionFilter(logger);
             });
 
 
