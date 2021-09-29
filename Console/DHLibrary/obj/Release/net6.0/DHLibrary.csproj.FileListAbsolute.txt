@@ -1,0 +1,12 @@
+C:\GutReposite\Console\DHLibrary\bin\Release\net6.0\DHLibrary.deps.json
+C:\GutReposite\Console\DHLibrary\bin\Release\net6.0\DHLibrary.dll
+C:\GutReposite\Console\DHLibrary\bin\Release\net6.0\ref\DHLibrary.dll
+C:\GutReposite\Console\DHLibrary\bin\Release\net6.0\DHLibrary.pdb
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.csproj.AssemblyReference.cache
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.AssemblyInfoInputs.cache
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.AssemblyInfo.cs
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.csproj.CoreCompileInputs.cache
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.dll
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\ref\DHLibrary.dll
+C:\GutReposite\Console\DHLibrary\obj\Release\net6.0\DHLibrary.pdb

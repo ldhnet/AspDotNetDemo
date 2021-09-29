@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Http;
 using WebMVC.Context;
 using System.Diagnostics.CodeAnalysis;
 using WebMVC.Business;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebMVC.Controllers
 {
@@ -28,13 +29,17 @@ namespace WebMVC.Controllers
         {
             _logger = logger; 
         }
-        [HttpGet]
+        [HttpGet] 
         public IActionResult Index()
         {
             _logger.LogInformation("Index");
             return View();
         }
-   
+        [HttpGet]
+        public IActionResult Login()
+        { 
+            return Redirect("~/Account/Index");
+        }
         [HttpPost]
         public IActionResult Login([NotNull] LoginViewModel model)
         {

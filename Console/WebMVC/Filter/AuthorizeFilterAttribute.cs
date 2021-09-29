@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,11 @@ namespace WebMVC.Filter
 
             bool hasPermission = false;
 
+            var aaaa = context.HttpContext.User.Identity.IsAuthenticated;
+
+            var bbb = context.Filters.Any(item => item is IAllowAnonymousFilter);
 
 
-             
             if (1 == 0)
             {
                 // 防止用户选择记住我，页面一直在首页刷新

@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,18 @@ namespace WebMVC
             GlobalContext.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
             services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig"));
-             
+
+
+            services.AddScoped<ClientIpCheckActionFilter>(container =>
+            {
+                var loggerFactory = container.GetRequiredService<ILoggerFactory>();
+                var logger = loggerFactory.CreateLogger<ClientIpCheckActionFilter>();
+
+                return new ClientIpCheckActionFilter(
+                    "127.0.0.1;192.168.1.5;::1", logger);
+            });
+
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -64,6 +76,7 @@ namespace WebMVC
             services.AddControllersWithViews(options =>
             {
                 options.Filters.Add<GlobalExceptionFilter>();
+                //options.Filters.Add<MyAuthorizeFilter>();
                 options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
             }).AddNewtonsoftJson(options =>
             {

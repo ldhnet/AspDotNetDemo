@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net;
 using System.Threading.Tasks;
 using WebApi.OAuth;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace WebApi.Middleware
 {
@@ -21,15 +22,13 @@ namespace WebApi.Middleware
             //以下代码都不是必须的，只是展示一些使用方法，你可以选择使用
 
             //设置httpcontext的一些key和value，用于在整个http请求过程中分享数据
-            context.Items.Add("aaa", "bbb"); 
-            
-           
-
-
+            context.Items.Add("aaa", "bbb");
+             
             //判断当前http请求的url是否处理
             if (context.Request.Path.StartsWithSegments("/api"))
             {
                 //dosomething
+
             }
 
 

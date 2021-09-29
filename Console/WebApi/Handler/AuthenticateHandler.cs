@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,10 @@ namespace WebApi.Handler
         public Task<AuthenticateResult> AuthenticateAsync()
         {
             var req = _context.Request.Query;
+
+
+      
+             
             var isLogin = req["isLogin"].FirstOrDefault();
 
             if (isLogin != "true")

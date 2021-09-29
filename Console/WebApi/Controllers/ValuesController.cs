@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using WebApi.Handler;
 using WebApi.Code;
+using System.ComponentModel;
+using Newtonsoft.Json.Linq;
 
 namespace WebApi.Controllers
 {
@@ -23,6 +25,7 @@ namespace WebApi.Controllers
             _logger = logger; 
         }
         // GET api/values
+        [Description("测试get")]
         [HttpGet]
         [Authorize(AuthenticationSchemes = AuthenticateHandler.SchemeName, Roles = "test")]//AuthenticateHandler.SchemeName ，包括Cookies, JwtBearer, OAuth, OpenIdConnect等。
         public IEnumerable<string> Get()
@@ -37,11 +40,18 @@ namespace WebApi.Controllers
             var list = context.Employees.ToList();
 
             _logger.LogWarning("1234567890");
+
+            foreach (var item in list)
+            {
+                _logger.LogInformation($"{item.Id}{item.Name}{item.BankCard}");
+            }
+       
             _logger.LogInformation("1234567890");
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
+        [Description("测试getbyId")]
         [HttpGet("{id}")]
         [Authorize(Roles = "test")]
         public string Get(int id)
@@ -50,22 +60,30 @@ namespace WebApi.Controllers
             return "value";
         }
 
-        // POST api/values
+        // POST api/values+
+        /// <summary>
+        /// 测试post
+        /// </summary>
+        /// <param name="value"></param>
+        [Description("测试post")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            _logger.LogWarning("测试post=" + value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+            _logger.LogWarning("测试Put:id = " +id + " value="  + value);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
-        {
+{
+            _logger.LogWarning("测试Delete=" + id);
         }
     }
 }

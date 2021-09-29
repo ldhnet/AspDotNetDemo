@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -45,8 +46,7 @@ namespace WebApi
                 options.AddScheme<AuthenticateHandler>(AuthenticateHandler.SchemeName, "default scheme");
                 options.DefaultAuthenticateScheme = AuthenticateHandler.SchemeName;
                 options.DefaultChallengeScheme = AuthenticateHandler.SchemeName;
-            });
-    
+            }); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

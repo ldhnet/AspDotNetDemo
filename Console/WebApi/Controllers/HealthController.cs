@@ -7,10 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using WebApi.Attributes;
 
 namespace WebApi.Controllers
-{ 
-    public class HealthController : ControllerBase
+{
+    [AllowAnonymous]
+    public class HealthController : BaseController
     {
         private readonly ILogger<HealthController> _logger;
         private readonly HealthCheckService _healthCheckService;
@@ -20,8 +22,8 @@ namespace WebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        [AllowAnonymous]
+        [HttpGet] 
+        [SkipValidate]
         public async Task<IActionResult> Get()
         {
             var report = await _healthCheckService.CheckHealthAsync();

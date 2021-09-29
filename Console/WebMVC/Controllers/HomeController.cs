@@ -69,9 +69,9 @@ namespace WebMVC.Controllers
         [AllowAnonymous]
         public IActionResult Privacy()
         {
-            throw new Exception("异常了");
-            var dto = new UserViewModel();
-            return View(dto);
+            //throw new Exception("异常了");
+            //var dto = new UserViewModel();
+            return View();
         }
 
         [HttpGet]
