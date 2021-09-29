@@ -33,18 +33,7 @@ namespace WebApi
             //services.AddHealthChecks();
             services.AddHealthChecks().AddDbContextCheck<ApiDbContext>()
                     .AddCheck<ApiHealthCheck>("ApiHealth");
-            services.AddControllers(options =>
-            {
-                //options.FormatterMappings.SetMediaTypeMappingForFormat("json2", MediaTypeHeaderValue.Parse("application/json"));
-                //for (int i = 0; i < options.OutputFormatters.Count; i++)
-                //{
-                //    if (options.OutputFormatters[i] is Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter jsonOutputFormatter)
-                //    {
-                //        options.OutputFormatters[i] = new CustomJsonOutputFormatter(jsonOutputFormatter.SerializerOptions);
-                //        break;
-                //    }
-                //}
-            });
+            services.AddControllers(options => { });
 
             services.AddSwaggerGen(c =>
             {
@@ -79,9 +68,7 @@ namespace WebApi
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-
-       
+             
             app.UseMiddleware(typeof(AuthorizeMiddleware));
             app.UseMiddleware(typeof(OtherMiddleware));
 
