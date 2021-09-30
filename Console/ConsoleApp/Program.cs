@@ -21,6 +21,7 @@ namespace ConsoleApp
                 Console.WriteLine(test.ToString() + $"任务ID:{Task.CurrentId},线程ID:{Thread.CurrentThread.ManagedThreadId}");
             }
 
+   
 
             //var list = new List<int>();
             //list.EnsureCapacity(5);
@@ -34,6 +35,45 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+
+            int[] dataArr = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            ShuffleCopyHelper shuffle=new ShuffleCopyHelper();
+
+            var resultArr =new List<int>();
+
+            var r = new Random();
+
+            
+
+            for (var times = 0; times < 1000; ++times)
+            {
+                var winner = shuffle.ShuffleCopy(dataArr, r).First();
+                resultArr.Add(winner);
+            }
+
+
+            var resultGr = resultArr.GroupBy(g => g).Select(x=> new { value =x.Key ,count=x.Count() }).OrderBy(o=>o.value);
+
+            var resultGrs = resultGr.Select(x => new { resKay = x.value + "-->" + x.count }).Select(c=>c.resKay).ToArray();
+
+            var resultStr = string.Join(",", resultGrs);
+
+            Console.WriteLine(resultStr);
+
+
+            var resultList = shuffle.Measure(10, 50).Select((v, i) => new { X = i, Y = v });
+
+            var str = string.Join(",", resultList);
+
+            Console.WriteLine(str);
+
+
+
+
+            var aaa = Math.Ceiling(49 / 0.75 / 4);
+
+
             Task task1 = new Task(() =>  Console.WriteLine($"hello, task 1的线程ID{Thread.CurrentThread.ManagedThreadId}")); 
             task1.Start();
 
