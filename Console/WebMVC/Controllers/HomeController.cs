@@ -51,7 +51,7 @@ namespace WebMVC.Controllers
 
             var aa7 = Environment.CurrentManagedThreadId;
 
-            SetCookies("cookieKay111222", "11111条数据的内容1111");
+            SetCookies("cookieKay", "11111条数据的内容1111");
 
 
             var contents = new List<Content>();
@@ -64,7 +64,7 @@ namespace WebMVC.Controllers
 
             var cc=  SessionHelper.GetSession("sessionKey");
 
-            var bb = GetCookies("cookieKay111222"); 
+            var bb = GetCookies("cookieKay"); 
             return View(new ContentViewModel { Contents = contents }); 
         }
         [HttpGet]

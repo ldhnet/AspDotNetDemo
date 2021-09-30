@@ -20,7 +20,16 @@ namespace ConsoleApp
             {
                 Console.WriteLine(test.ToString() + $"任务ID:{Task.CurrentId},线程ID:{Thread.CurrentThread.ManagedThreadId}");
             }
-       
+
+
+            //var list = new List<int>();
+            //list.EnsureCapacity(5);
+            //for (var i = 0; i < 5; i++)
+            //{
+            //    list.Add(i);
+            //    Console.WriteLine(list[i]);
+            //} 
+            //Console.WriteLine(list[5]);
         }
 
         static void Main(string[] args)

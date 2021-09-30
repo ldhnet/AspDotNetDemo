@@ -18,6 +18,7 @@ namespace WebMVC.Context
             dbContext = _dbContext;
         }
         #endregion
+
         #region 属性
         /// <summary>
         /// 获取 当前使用的数据访问上下文对象
