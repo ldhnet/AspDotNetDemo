@@ -43,16 +43,14 @@ namespace ConsoleApp
             var resultArr =new List<int>();
 
             var r = new Random();
-
-            
+             
 
             for (var times = 0; times < 1000; ++times)
             {
                 var winner = shuffle.ShuffleCopy(dataArr, r).First();
                 resultArr.Add(winner);
             }
-
-
+             
             var resultGr = resultArr.GroupBy(g => g).Select(x=> new { value =x.Key ,count=x.Count() }).OrderBy(o=>o.value);
 
             var resultGrs = resultGr.Select(x => new { resKay = x.value + "-->" + x.count }).Select(c=>c.resKay).ToArray();
@@ -68,9 +66,7 @@ namespace ConsoleApp
 
             Console.WriteLine(str);
 
-
-
-
+             
             var aaa = Math.Ceiling(49 / 0.75 / 4);
 
 
