@@ -14,6 +14,7 @@ namespace ConsoleApp
 
     class Program
     {
+        public static Func<int, int, int> fc = (int x, int y) => x * y;
         public static void DoSomething2(Content test)
         {
             if (test.Id < 100)
@@ -34,7 +35,8 @@ namespace ConsoleApp
         }
 
         static void Main(string[] args)
-        {
+        { 
+            var _fcR = fc(5,2);
 
             int[] dataArr = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
@@ -43,7 +45,17 @@ namespace ConsoleApp
             var resultArr =new List<int>();
 
             var r = new Random();
-             
+
+
+            var _array = new[] {11,10,50,100, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+           
+            Array.Sort(_array);
+
+            Array.Reverse(_array);
+
+            var aaaaAry = _array;
+
 
             for (var times = 0; times < 1000; ++times)
             {
