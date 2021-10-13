@@ -181,10 +181,13 @@ C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.AssemblyInfoInputs.cache
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.AssemblyInfo.cs
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CoreCompileInputs.cache
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.MvcApplicationPartsAssemblyInfo.cache
-C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets\WebMVC.StaticWebAssets.Manifest.cache
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\scopedcss\bundle\WebMVC.styles.css
-C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CopyComplete
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.dll
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\ref\WebMVC.dll
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.pdb
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.genruntimeconfig.cache
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\WebMVC.staticwebassets.runtime.json
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cache
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cs
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.build.json
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.development.json

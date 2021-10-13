@@ -9,9 +9,10 @@ namespace WebMVC.HangFire
 {
     public class HangFireJob
     {
+        private static HangFireJobService hangFireJobService=new HangFireJobService();
         public static void AddOrUpdate()
         {
-            RecurringJob.AddOrUpdate("HangFireTestId", () => Console.WriteLine("每分钟执行hangfire Recurring!"), Cron.Minutely(), TimeZoneInfo.Local);
+            RecurringJob.AddOrUpdate("HangFireTestId", () => hangFireJobService.PrintWriteLine(), Cron.Minutely(), TimeZoneInfo.Local);
 
             RecurringJob.AddOrUpdate("HangFireTestId2", () => Console.WriteLine("10点钟执行 hangfire Recurring!"), Cron.Daily(10), TimeZoneInfo.Local);
 
