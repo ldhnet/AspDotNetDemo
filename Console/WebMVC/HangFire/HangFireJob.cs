@@ -22,6 +22,10 @@ namespace WebMVC.HangFire
 
 
             RecurringJob.AddOrUpdate("HangFireTestId4", () => Console.WriteLine("2点钟执行 hangfire Recurring!"), Cron.Daily(2), TimeZoneInfo.Local);
+
+
+
+            BackgroundJob.Enqueue(() => Console.WriteLine("2点钟执行 hangfire Recurring!"));
         }
     }
 }

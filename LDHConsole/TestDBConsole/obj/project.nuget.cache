@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zdcC0Y9HIHp8v8zjCtMHyAl1/wl+m1LlOYXL1tshKhz43j+6SYN/ONUPYilCEwyZ/W2lGKIrVfoLViiGpqqCKg==",
+  "dgSpecHash": "nihxamt6X8iJ2Yh6v2dgjQz3Z1HC4P/k8yGhVxbwO4ztt3RRJ2ZxKZYPY8svUuGeGvCeKqI2B8D9ZygE2Wg9zA==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\LDHConsole\\TestDBConsole\\TestDBConsole.csproj",
   "expectedPackageFiles": [
@@ -14,8 +14,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\57442\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.7\\microsoft.netcore.app.host.win-x64.5.0.7.nupkg.sha512"
+    "C:\\Users\\57442\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": [
     {

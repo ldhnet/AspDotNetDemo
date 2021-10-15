@@ -192,7 +192,6 @@ C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.CoreCompileInputs.cache
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
-C:\GutReposite\Console\WebApi\obj\Debug\net6.0\staticwebassets\WebApi.StaticWebAssets.Manifest.cache
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\scopedcss\bundle\WebApi.styles.css
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.CopyComplete
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.dll
@@ -200,3 +199,5 @@ C:\GutReposite\Console\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
+C:\GutReposite\Console\WebApi\obj\Debug\net6.0\staticwebassets.build.json
+C:\GutReposite\Console\WebApi\obj\Debug\net6.0\staticwebassets.development.json
