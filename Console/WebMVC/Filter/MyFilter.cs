@@ -18,6 +18,13 @@ namespace WebMVC.Filter
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             _logger.LogInformation("do2222 something.....");
+            #region
+
+            //业务逻辑
+
+            #endregion
+
+
             base.OnActionExecuting(context);
         }
     }
