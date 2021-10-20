@@ -64,9 +64,15 @@ namespace WebMVC.Controllers
 
             var cc=  SessionHelper.GetSession("sessionKey");
 
-            var bb = GetCookies("cookieKay"); 
+            var bb = GetCookies("cookieKay");
+
+
+            Common.RetryPolicyHelper.Retry(() => _logger.LogError("测试内容22222222222222"));
+
+
             return View(new ContentViewModel { Contents = contents }); 
         }
+ 
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Privacy()

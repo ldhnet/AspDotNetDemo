@@ -31,9 +31,16 @@ namespace ConsoleApp
             //} 
             //Console.WriteLine(list[5]);
         }
+        public void GetSendMailList()
+        {
+            WebMVC.Common.CommonTools.Retry(() => Console.WriteLine("测试"));
+        }
 
         static void Main(string[] args)
         {
+
+            WebMVC.Common.CommonTools.Retry(() => Console.WriteLine("测试"));
+
             var idList=new List<long>();
             IdWorker idworker = new IdWorker(1);
             for (int i = 0; i < 1000; i++)
