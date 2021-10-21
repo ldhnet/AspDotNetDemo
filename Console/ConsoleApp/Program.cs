@@ -33,13 +33,22 @@ namespace ConsoleApp
         }
         public void GetSendMailList()
         {
-            WebMVC.Common.CommonTools.Retry(() => Console.WriteLine("测试"));
+            int k = 0;
+            while (true)
+            {
+                Console.WriteLine(k);
+                if (k == 10)
+                {
+                    //如果i等于10，就跳出循环
+                    break;
+                }
+                k++;
+            }
         }
 
         static void Main(string[] args)
         {
-
-            WebMVC.Common.CommonTools.Retry(() => Console.WriteLine("测试"));
+           
 
             var idList=new List<long>();
             IdWorker idworker = new IdWorker(1);
@@ -122,11 +131,11 @@ namespace ConsoleApp
             //委托自身需要的参数+2个异步参数
             //action.BeginInvoke("btnAsync_Click_1", null, null);
 
-            for (int i = 0; i < 5; i++)
-            {
-                string name = string.Format($"btnAsync_Click_{i}");
-                //action.Invoke(name); //异步（开启一个子线程去完成）
-            }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    string name = string.Format($"btnAsync_Click_{i}");
+            //    //action.Invoke(name); //异步（开启一个子线程去完成）
+            //}
 
             Console.WriteLine($"****************btnAsync_Click End   {Thread.CurrentThread.ManagedThreadId.ToString("00")} ***************");
 
