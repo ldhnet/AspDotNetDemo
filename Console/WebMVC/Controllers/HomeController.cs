@@ -95,6 +95,18 @@ namespace WebMVC.Controllers
         {
             return View();
         }
-         
+
+
+        [HttpPost]
+        [PreventDoublePost]
+        public IActionResult Edit(Employee model)
+        {
+            if (!ModelState.IsValid)
+            {
+                //PreventDoublePost Attribute makes ModelState invalid
+            }
+            throw new NotImplementedException();
+        }
+
     }
 }

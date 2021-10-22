@@ -51,6 +51,11 @@ namespace WebMVC
                 return new ClientIpCheckActionFilter(logger);
             });
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
             services.AddSession(options =>
             {
@@ -59,12 +64,7 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-            services.Configure<CookiePolicyOptions>(options =>
-            { 
-                options.CheckConsentNeeded = context => false;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-             
+         
             services.AddSingleton<MyFilter>();
              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
