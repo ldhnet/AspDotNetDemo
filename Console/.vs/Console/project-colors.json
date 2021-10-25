@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c43f4935-5735-493e-a870-2d945c55b31b": {
+      "ProjectGuid": "c43f4935-5735-493e-a870-2d945c55b31b",
+      "DisplayName": "ConsoleApp",
+      "ColorIndex": 0
+    },
+    "7783c6f3-f39e-4436-9042-ef044199d571": {
+      "ProjectGuid": "7783c6f3-f39e-4436-9042-ef044199d571",
+      "DisplayName": "WebMVC",
+      "ColorIndex": 1
+    },
+    "51ceb7dd-bdfc-4232-bba1-80dcb818b68d": {
+      "ProjectGuid": "51ceb7dd-bdfc-4232-bba1-80dcb818b68d",
+      "DisplayName": "ConsoleDBTest",
+      "ColorIndex": 2
+    },
+    "67f270b6-5a0e-4df4-b5d1-5481e6cc3830": {
+      "ProjectGuid": "67f270b6-5a0e-4df4-b5d1-5481e6cc3830",
+      "DisplayName": "WebApi",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}
