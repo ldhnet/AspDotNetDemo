@@ -17,13 +17,8 @@ namespace AesSample
             //var options = new DbContextOptionsBuilder<DatabaseContext>().UseSqlServer(connstring).Options;
 
             Debug.Assert(options is  null,"123456789");
-
-
-            // AES key randomly generated at each run.
-            byte[] encryptionKey = AesProvider.GenerateKey(AesKeySize.AES256Bits).Key;
-            var encryptionProvider = new AesProvider(encryptionKey);
-
-            using var context = new DatabaseContext(options, encryptionProvider);
+             
+            using var context = new DatabaseContext(options);
 
               
             var list1 = context.Users.ToList();
