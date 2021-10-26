@@ -87,16 +87,16 @@ namespace WebMVC.Controllers
              
             var employee = _userdll.Find("admin")?.Data;
 
-            //var dto = new EmployeeDto()
-            //{
-            //    Id=employee.Id, 
-            //    Name=employee.Name,
-            //    BankCardDisplay=employee.BankCardDisplay,
-            //    MoneryDisplay=employee.MoneryDisplay,
-            //    other=employee.MoneryDisplay
-            //};
+            var dto = new EmployeeDto()
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                BankCardDisplay = employee.BankCardDisplay,
+                MoneryDisplay = employee.MoneryDisplay,
+                other = employee.MoneryDisplay
+            };
 
-            var dto = new EmployeeDto { Id = 12345, Name = "用户12345" };
+            //var dto = new EmployeeDto { Id = 12345, Name = "用户12345" };
 
             return View(dto);
         }
