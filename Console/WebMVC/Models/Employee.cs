@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using WebMVC.Common;
 
 namespace WebMVC.Model
 {
@@ -28,7 +30,8 @@ namespace WebMVC.Model
         public string Phone { get; set; }
 
         //[Encrypted]
-        public string BankCard { get; set; }
+
+        public string BankCard { get; set; } 
         public string BankCardDisplay { get; set; }
 
         //[Encrypted]

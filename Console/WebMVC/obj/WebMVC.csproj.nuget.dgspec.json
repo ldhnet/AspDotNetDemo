@@ -126,6 +126,10 @@
               "target": "Package",
               "version": "[1.7.24, )"
             },
+            "Hashids.net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"

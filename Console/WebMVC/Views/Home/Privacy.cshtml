@@ -1,4 +1,4 @@
-﻿@model UserViewModel
+﻿@model WebMVC.Dto.EmployeeDto
 @{
     ViewData["Title"] = "Privacy Policy";
 }
@@ -6,4 +6,9 @@
 
 <p>Use this page to detail your site's privacy policy.</p>
 <div class="text-center">
+   ID: @Model.Id;
+   姓名: @Model.Name;
+   BankCardDisplay:@Model.BankCardDisplay;
+   MoneryDisplay:@Model.MoneryDisplay;
+   other:@Model.other;
 </div> 

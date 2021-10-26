@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MCBv54KzJgPoNGyHqhi2pOeYdhhL2rpf+hMWjS13xd1ZuCC0g/glHPSkmFZrQ7PH5GW6f2upiwPaxyFbCKo+Ew==",
+  "dgSpecHash": "5WYtIj3p7QhBvpagBeWSyLayYBk+mnjkf/T7M8QL9ztDl4O3xbtExIwpsyHvZ2u7vzcPxNIIA43JOyt56NGSpg==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\hangfire.aspnetcore\\1.7.24\\hangfire.aspnetcore.1.7.24.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\hangfire.core\\1.7.24\\hangfire.core.1.7.24.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\hangfire.sqlserver\\1.7.24\\hangfire.sqlserver.1.7.24.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\hashids.net\\1.4.1\\hashids.net.1.4.1.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
@@ -97,7 +98,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\sharpziplib\\1.3.1\\sharpziplib.1.3.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

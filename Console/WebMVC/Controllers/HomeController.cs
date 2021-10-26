@@ -18,6 +18,9 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using WebMVC.Attributes;
+using WebMVC.Business;
+using WebMVC.Common;
+using WebMVC.Dto;
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.Helper;
@@ -28,7 +31,8 @@ namespace WebMVC.Controllers
 { 
     public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger; 
+        private readonly ILogger<HomeController> _logger;
+        private EmoloyeeDLL _userdll = new EmoloyeeDLL();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -79,7 +83,29 @@ namespace WebMVC.Controllers
         {
             //throw new Exception("异常了");
             //var dto = new UserViewModel();
-            return View();
+
+             
+            var employee = _userdll.Find("admin")?.Data;
+
+            //var dto = new EmployeeDto()
+            //{
+            //    Id=employee.Id, 
+            //    Name=employee.Name,
+            //    BankCardDisplay=employee.BankCardDisplay,
+            //    MoneryDisplay=employee.MoneryDisplay,
+            //    other=employee.MoneryDisplay
+            //};
+
+            var dto = new EmployeeDto { Id = 12345, Name = "用户12345" };
+
+            return View(dto);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public EmployeeDto Get([ModelBinder(typeof(HashIdModelBinder))] EmployeeDto dto)
+        {
+            return new EmployeeDto { Id = dto.Id, Name = "用户" + dto.Id };
         }
 
         [HttpGet]

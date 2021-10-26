@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMVC.Attributes;
+using WebMVC.Common;
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.HangFire;
@@ -64,7 +65,12 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-         
+            services.AddSingleton(typeof(HashIdJsonConverter), typeof(HashIdJsonConverter));
+
+            //services.AddSingleton<HashIdJsonConverter>();
+            //services.AddSingleton<HashStrJsonConverter>();
+            //services.AddSingleton<HashIdModelBinder>();
+
             services.AddSingleton<MyFilter>();
              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));

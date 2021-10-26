@@ -191,3 +191,4 @@ C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cache
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.RazorAssemblyInfo.cs
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.build.json
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.development.json
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Hashids.net.dll
