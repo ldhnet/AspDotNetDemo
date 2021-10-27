@@ -41,8 +41,13 @@ namespace WebMVC.Controllers
         { 
             return Redirect("~/Account/Index");
         }
+        [HttpGet]
+        public IActionResult LoginTest(int id)
+        {
+            return Json(new {id=id });
+        }
         [HttpPost]
-        public IActionResult Login([NotNull] LoginViewModel model)
+        public JsonResult Login(LoginViewModel model)//[NotNull] 
         {
             Throw.ArgumentNull.WhenNull(model, nameof(model));
 

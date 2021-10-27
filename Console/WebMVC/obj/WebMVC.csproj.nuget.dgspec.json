@@ -130,6 +130,10 @@
               "target": "Package",
               "version": "[1.4.1, )"
             },
+            "Microsoft.AspNetCore.ConcurrencyLimiter": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"

@@ -193,3 +193,5 @@ C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.build.json
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\staticwebassets.development.json
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Hashids.net.dll
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Pitcher.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.ConcurrencyLimiter.dll
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CopyComplete

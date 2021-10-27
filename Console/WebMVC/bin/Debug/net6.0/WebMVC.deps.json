@@ -13,6 +13,7 @@
           "EntityFrameworkCore.DataEncryption": "3.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
+          "Microsoft.AspNetCore.ConcurrencyLimiter": "5.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.8",
           "Microsoft.EntityFrameworkCore": "5.0.8",
@@ -183,6 +184,18 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Authorization": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.ConcurrencyLimiter/5.0.11": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.ConcurrencyLimiter.dll": {
+            "assemblyVersion": "5.0.11.0",
+            "fileVersion": "5.0.1121.47605"
+          }
         }
       },
       "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
@@ -1810,6 +1823,13 @@
       "sha512": "sha512-aJCo6niDRKuNg2uS2WMEmhJTooQUGARhV2ENQ2tO5443zVHUo19MSgrgGo9FIrfD+4yKPF8Q+FF33WkWfPbyKw==",
       "path": "microsoft.aspnetcore.authorization.policy/2.2.0",
       "hashPath": "microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.ConcurrencyLimiter/5.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yc06JBH1VPoeiuCZwus/W2X9CuPzgL33jQHIRQ3KcI3gF0XHcxLLUOkt4gVvF6HnszXA37AMNkOwtVnVDks0kw==",
+      "path": "microsoft.aspnetcore.concurrencylimiter/5.0.11",
+      "hashPath": "microsoft.aspnetcore.concurrencylimiter.5.0.11.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
       "type": "package",

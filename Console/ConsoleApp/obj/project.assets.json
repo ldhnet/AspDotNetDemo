@@ -199,6 +199,22 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.Policy.dll": {}
         }
       },
+      "Microsoft.AspNetCore.ConcurrencyLimiter/5.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.ConcurrencyLimiter.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.ConcurrencyLimiter.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2706,6 +2722,7 @@
           "EntityFrameworkCore.DataEncryption": "3.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
+          "Microsoft.AspNetCore.ConcurrencyLimiter": "5.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.8",
           "Microsoft.EntityFrameworkCore": "5.0.8",
@@ -2989,6 +3006,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.Policy.xml",
         "microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.authorization.policy.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.ConcurrencyLimiter/5.0.11": {
+      "sha512": "yc06JBH1VPoeiuCZwus/W2X9CuPzgL33jQHIRQ3KcI3gF0XHcxLLUOkt4gVvF6HnszXA37AMNkOwtVnVDks0kw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.concurrencylimiter/5.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.ConcurrencyLimiter.dll",
+        "lib/net5.0/Microsoft.AspNetCore.ConcurrencyLimiter.xml",
+        "microsoft.aspnetcore.concurrencylimiter.5.0.11.nupkg.sha512",
+        "microsoft.aspnetcore.concurrencylimiter.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {

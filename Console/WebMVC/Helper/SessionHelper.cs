@@ -8,13 +8,13 @@ using WebMVC.Model;
 namespace WebMVC.Helper
 {
     public class SessionHelper
-    {    
+    { 
         /// <summary>
-         /// 写Session
-         /// </summary>
-         /// <typeparam name="T">Session键值的类型</typeparam>
-         /// <param name="key">Session的键名</param>
-         /// <param name="value">Session的键值</param>
+        /// 写Session
+        /// </summary>
+        /// <typeparam name="T">Session键值的类型</typeparam>
+        /// <param name="key">Session的键名</param>
+        /// <param name="value">Session的键值</param>
         public static void SetSession<T>(string key, T value)
         {
             if (string.IsNullOrEmpty(key))

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
@@ -56,8 +57,7 @@ namespace WebMVC.Controllers
             var aa7 = Environment.CurrentManagedThreadId;
 
             SetCookies("cookieKay", "11111条数据的内容1111");
-
-
+             
             var contents = new List<Content>();
             for (int i = 0; i < 50; i++)
             {
@@ -69,9 +69,14 @@ namespace WebMVC.Controllers
             var cc=  SessionHelper.GetSession("sessionKey");
 
             var bb = GetCookies("cookieKay");
+              
+            var UserCacheModel = HttpContext.Session.GetObjectFromJson<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
 
+            HttpContext.Session.SetString("param", "测试测试sessionKey");
+            var value = HttpContext.Session.GetString("param");
 
-            Common.RetryPolicyHelper.Retry(() => _logger.LogError("测试内容22222222222222"));
+             
+            RetryPolicyHelper.Retry(() => _logger.LogError("测试内容22222222222222"));
 
 
             return View(new ContentViewModel { Contents = contents }); 

@@ -1,12 +1,8 @@
 ﻿@using WebMVC.Helper
 @using WebMVC.Models
-@{ 
-    var currentUser = new UserCacheModel();
-    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
-    if (SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel) != null)
-    {
-        currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
-    }
+@{  
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name; 
+    var currentUser = ViewBag.UserCacheModel as UserCacheModel;
 }
 <!DOCTYPE html>
 <html lang="en">

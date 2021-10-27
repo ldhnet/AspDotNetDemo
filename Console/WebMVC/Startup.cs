@@ -38,11 +38,11 @@ namespace WebMVC
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            GlobalContext.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+        { 
 
-            services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig"));
-
+            services.AddOptions();
+            services.AddCors(); 
+            services.AddMemoryCache(); 
 
             services.AddScoped<ClientIpCheckActionFilter>(container =>
             {
@@ -84,6 +84,39 @@ namespace WebMVC
             });
 
             services.AddMiddlewares();
+
+            #region 最大请求数
+            //使用队列策略模式
+            services.AddQueuePolicy(options =>
+            {
+
+                //最大并发请求数,超过之后,进行排队
+                options.MaxConcurrentRequests = 100;
+
+                //最大请求数,超过之后,返回503
+                options.RequestQueueLimit = 100;
+
+            });
+
+            //使用栈策略模式
+            services.AddStackPolicy(options =>
+            {
+                //最大并发请求数,超过之后,进行排队
+                options.MaxConcurrentRequests = 3;
+
+                //最大请求数,超过之后,返回503
+                options.RequestQueueLimit = 100;
+
+            });
+            //如果这两个策略同时使用,后面的策略模式会覆盖上边的策略模式
+
+            #endregion
+
+            GlobalContext.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+
+            services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig")); 
+            GlobalContext.Services = services;
+            GlobalContext.Configuration = Configuration;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -104,6 +137,9 @@ namespace WebMVC
             app.UseStaticHostEnviroment();
             app.UseRouting();
             app.UseSession();
+
+            //启用并发限制数中间件
+            app.UseConcurrencyLimiter();
 
             var jobOptions = new BackgroundJobServerOptions
             {
@@ -133,6 +169,10 @@ namespace WebMVC
                     name: "default",
                     pattern: "{controller=Account}/{action=Index}/{id?}");
             });
+
+            
+            GlobalContext.ServiceProvider = app.ApplicationServices;
+
         }
     }
 }

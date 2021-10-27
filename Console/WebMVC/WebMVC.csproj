@@ -9,6 +9,7 @@
     <PackageReference Include="EPPlus" Version="5.7.4" />
     <PackageReference Include="Hangfire" Version="1.7.24" />
     <PackageReference Include="Hashids.net" Version="1.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.ConcurrencyLimiter" Version="5.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />

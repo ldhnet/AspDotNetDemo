@@ -112,9 +112,9 @@ namespace WebMVC.Controllers
             var actionName = context.ActionDescriptor.RouteValues["action"];
 
             //获取当前程序集版本号
-            ViewBag.Version = Assembly.GetExecutingAssembly().GetName().Version.ToString(); 
-
-            ViewBag.UserCacheModel = SessionHelper.GetSession("UserCacheModel");
+            ViewBag.Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+             
+            ViewBag.UserCacheModel = JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebConstant.SessionKey.UserCacheModel));
 
             if (controllerName == "Home" || controllerName == "CusError") return; 
         }
@@ -159,14 +159,17 @@ namespace WebMVC.Controllers
             {
                 EmployeeId = model.Id,
                 EmployeeSerialNumber = model.EmployeeSerialNumber,
-                EmployeeName = model.EmployeeName,
-                EnglishName = model.EmployeeName,
+                EmployeeName = model.Name,
+                EnglishName = model.Name,
                 OrgId = model.Department ?? 0,
                 LoginTime = DateTime.Now,
                 PortraitFileName = "/images/headportrait.jpg",
             };
 
-            SessionHelper.SetSession(WebConstant.SessionKey.UserCacheModel, currentUser);
+            //SessionHelper.SetSession(WebConstant.SessionKey.UserCacheModel, currentUser);
+             
+            HttpContext.Session.SetObjectAsJson(WebConstant.SessionKey.UserCacheModel, currentUser);
+             
             return currentUser;
         }
         /// <summary>
