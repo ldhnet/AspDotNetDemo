@@ -1045,6 +1045,15 @@
           "lib/netstandard2.1/NPOI.dll": {}
         }
       },
+      "Pitcher/2.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Pitcher.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pitcher.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.6": {
         "type": "package",
         "compile": {
@@ -4194,6 +4203,20 @@
         "logo/60_60.jpg",
         "npoi.2.5.4.nupkg.sha512",
         "npoi.nuspec"
+      ]
+    },
+    "Pitcher/2.1.1": {
+      "sha512": "2ruQttZveTNjDq3ZhwERFKd/CEwHNS3y+6EOzDY1XN2g2RukXbsEMovCgb10YarJxw/SNPtDugjCIRcOuxw7sg==",
+      "type": "package",
+      "path": "pitcher/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Pitcher.dll",
+        "lib/netstandard2.0/Pitcher.pdb",
+        "lib/netstandard2.0/Pitcher.xml",
+        "pitcher.2.1.1.nupkg.sha512",
+        "pitcher.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.8.6": {
@@ -8727,7 +8750,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
       "NLog >= 4.7.11",
-      "NPOI >= 2.5.4"
+      "NPOI >= 2.5.4",
+      "Pitcher >= 2.1.1"
     ]
   },
   "packageFolders": {
@@ -8829,6 +8853,10 @@
           "NPOI": {
             "target": "Package",
             "version": "[2.5.4, )"
+          },
+          "Pitcher": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           }
         },
         "imports": [

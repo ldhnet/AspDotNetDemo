@@ -249,6 +249,10 @@
             "NPOI": {
               "target": "Package",
               "version": "[2.5.4, )"
+            },
+            "Pitcher": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             }
           },
           "imports": [

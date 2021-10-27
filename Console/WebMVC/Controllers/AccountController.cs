@@ -18,6 +18,7 @@ using WebMVC.Context;
 using System.Diagnostics.CodeAnalysis;
 using WebMVC.Business;
 using Microsoft.AspNetCore.Authorization;
+using Pitcher;
 
 namespace WebMVC.Controllers
 {
@@ -43,6 +44,15 @@ namespace WebMVC.Controllers
         [HttpPost]
         public IActionResult Login([NotNull] LoginViewModel model)
         {
+            Throw.ArgumentNull.WhenNull(model, nameof(model));
+
+            Throw.When(string.IsNullOrWhiteSpace(model.account), new ArgumentNullException(nameof(model.account)));
+            //Throw.When(-1 <= 0, new ArgumentOutOfRangeException(nameof(model)));
+
+            Throw.ArgumentNull.WhenNullOrWhiteSpace(model.account, nameof(model.account));
+
+
+
             TData obj = new TData();
             var name = (model?.account??string.Empty).ToLower();
             var pwd = model.password; 

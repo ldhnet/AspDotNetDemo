@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UTuGrDZ/8/zauCNL+krnpa13Ohfi0DP9YWaVCp2rklqvg2QQ1uhowIdtEKprlViCoSTZPq9hJZynPJhxP/IQbQ==",
+  "dgSpecHash": "S6vL1hzyRWHep+2kUp4bjUToKwsPoLOLAjqZ6Ge47V5/umyg/TbuTLyHnXc88dlFkIyUFZp+VZ2d6+rMRzQqAQ==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
@@ -76,6 +76,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\npoi\\2.5.4\\npoi.2.5.4.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\pitcher\\2.1.1\\pitcher.2.1.1.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

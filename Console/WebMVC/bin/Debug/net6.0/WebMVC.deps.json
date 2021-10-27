@@ -20,7 +20,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.8",
           "NLog": "4.7.11",
-          "NPOI": "2.5.4"
+          "NPOI": "2.5.4",
+          "Pitcher": "2.1.1"
         },
         "runtime": {
           "WebMVC.dll": {}
@@ -746,6 +747,14 @@
           "lib/netstandard2.1/NPOI.dll": {
             "assemblyVersion": "2.5.4.0",
             "fileVersion": "2.5.4.0"
+          }
+        }
+      },
+      "Pitcher/2.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Pitcher.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
           }
         }
       },
@@ -2221,6 +2230,13 @@
       "sha512": "sha512-RvkPglpis+1P7pmygJBk08XSZGFSBTdAlqpxbh8jQBIZnkXEfKJay0BrhSjXn/Nn+vFcTNyLYVdBPBMalSX32g==",
       "path": "npoi/2.5.4",
       "hashPath": "npoi.2.5.4.nupkg.sha512"
+    },
+    "Pitcher/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2ruQttZveTNjDq3ZhwERFKd/CEwHNS3y+6EOzDY1XN2g2RukXbsEMovCgb10YarJxw/SNPtDugjCIRcOuxw7sg==",
+      "path": "pitcher/2.1.1",
+      "hashPath": "pitcher.2.1.1.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.6": {
       "type": "package",

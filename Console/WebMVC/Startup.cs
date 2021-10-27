@@ -65,12 +65,6 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-            services.AddSingleton(typeof(HashIdJsonConverter), typeof(HashIdJsonConverter));
-
-            //services.AddSingleton<HashIdJsonConverter>();
-            //services.AddSingleton<HashStrJsonConverter>();
-            //services.AddSingleton<HashIdModelBinder>();
-
             services.AddSingleton<MyFilter>();
              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
@@ -88,6 +82,8 @@ namespace WebMVC
                 // 返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
+
+            services.AddMiddlewares();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -104,10 +100,9 @@ namespace WebMVC
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
+            app.UseStaticFiles(); 
+            app.UseStaticHostEnviroment();
             app.UseRouting();
-
             app.UseSession();
 
             var jobOptions = new BackgroundJobServerOptions
@@ -123,17 +118,14 @@ namespace WebMVC
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
                 Authorization = new[] { new MyDashboardAuthorizationFilter() }
-            });
-             
-             
-            app.UseStaticHostEnviroment();
-
+            }); 
             HangFireJob.AddOrUpdate();
 
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseMiddleware(typeof(ResponseHeaderMiddleware));
+            //app.UseMiddleware(typeof(ResponseHeaderMiddleware)); 
+            app.UseMiddlewares();
 
             app.UseEndpoints(endpoints =>
             {
