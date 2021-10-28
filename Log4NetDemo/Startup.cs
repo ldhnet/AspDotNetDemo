@@ -51,7 +51,7 @@ namespace Log4NetDemo
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Log4NetDemo v1"));
             }
             var log = LogManager.GetLogger(LogRepository.Name, typeof(Startup));
-            log.Info("test");
+            log.Info("test" + DateTime.Now.ToString());
 
             app.UseHttpsRedirection();
 

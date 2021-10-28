@@ -26,10 +26,9 @@ namespace Log4NetDemo.Controllers
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
-        {
-            log.Info("index view");
-            log.Error("Controller Error");
-
+        { 
+            log.Info("啊啊啊啊啊啊index view");
+            log.Error("啊啊啊啊啊啊Controller Error");  
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
