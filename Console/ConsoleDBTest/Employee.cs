@@ -18,7 +18,10 @@ namespace ConsoleDBTest
         [Encrypted]
         public string Monery { get; set; }
 
-        public string MoneryDisplay { get; set; }
+        public string MoneryDisplay { get; set; } 
+        public virtual EmployeeExtend EmployeeExtend { get; set; }
+
+        public virtual ICollection<EmployeeLogin> EmployeeLogins { get; set; }
 
     }
 }

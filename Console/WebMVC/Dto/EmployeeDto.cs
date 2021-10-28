@@ -8,13 +8,18 @@ namespace WebMVC.Dto
 
         [JsonConverter(typeof(HashIdJsonConverter))]
         public int Id { get; set; }
-
+        [JsonConverter(typeof(HashStrJsonConverter))]
         public string Name { get; set; }
-
+        [JsonConverter(typeof(HashStrJsonConverter))]
         public string BankCardDisplay { get; set; }
 
         public string MoneryDisplay { get; set; }
 
         public string other { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}-{Name}-{BankCardDisplay}-{MoneryDisplay}-{other}";
+        }
     }
 }

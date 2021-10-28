@@ -1,4 +1,5 @@
 ﻿using DHLibrary;
+using HashidsNet;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Hosting.Server;
@@ -19,6 +20,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
 using WebMVC.Attributes;
 using WebMVC.Business;
 using WebMVC.Common;
@@ -53,6 +55,13 @@ namespace WebMVC.Controllers
             _logger.LogTrace("Index 44444");
             _logger.LogWarning("Index 55555");
 
+            var aaa =  HttpUtility.UrlEncode("https://www.cnblogs.com/dongh/p/15470938.html");
+
+            var bbb = HttpUtility.UrlDecode("https://www.cnblogs.com/dongh/p/15470938.html");
+
+            _logger.LogInformation(aaa);
+            _logger.LogInformation(bbb);
+
             var aa = Path.DirectorySeparatorChar;
             var aa1 = Path.AltDirectorySeparatorChar;
             var aa2 = GlobalContext.HostingEnvironment.ContentRootPath;
@@ -75,6 +84,8 @@ namespace WebMVC.Controllers
 
 
             var cc=  SessionHelper.GetSession("sessionKey");
+
+            //var currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
 
             var bb = GetCookies("cookieKay");
               
@@ -113,12 +124,31 @@ namespace WebMVC.Controllers
 
             return View(dto);
         }
-
-        [HttpGet]
+        /// <summary>
+        /// [ModelBinder(typeof(HashIdModelBinder))]
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        [HttpPost]
         [AllowAnonymous]
-        public EmployeeDto Get([ModelBinder(typeof(HashIdModelBinder))] EmployeeDto dto)
+        public EmployeeDto PostImfo(EmployeeDto dto)
         {
-            return new EmployeeDto { Id = dto.Id, Name = "用户" + dto.Id };
+            var EmpInfo = new EmployeeDto()
+            {
+                Id = 123,
+                Name = "Name",
+                BankCardDisplay = "BankCardDisplay",
+                MoneryDisplay = "MoneryDisplay",
+                other = "MoneryDisplay"
+            };
+
+            Hashids hashids = new Hashids("key",6);//加盐
+
+            var aa = hashids.Encode(123);
+
+            var bb = hashids.Decode(aa).FirstOrDefault();
+
+            return new EmployeeDto {  Name = $"原值：{bb}，加密值：{aa}",BankCardDisplay= EmpInfo.ToString() };
         }
 
         [HttpGet]

@@ -30,8 +30,8 @@ namespace ConsoleDBTest
             //this._provider = new AesProvider(this._encryptionKey);
             this._provider = new AesProvider(this._encryptionKey, this._encryptionIV);
         }
-        public DbSet<Employee> Employees { get; set; } 
-
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeExtend> EmployeeExtends { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connstring);
@@ -39,8 +39,23 @@ namespace ConsoleDBTest
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseEncryption(this._provider);
-            modelBuilder.Entity<Employee>().ToTable("Employee");
-             
+            modelBuilder.Entity<Employee>().ToTable("Employee").HasKey(c => c.Id);
+              
+            modelBuilder.Entity<EmployeeExtend>(entity =>
+            {
+                entity.ToTable("EmployeeExtend");
+                entity.HasKey(e => e.Id); 
+                entity.Property(e => e.Id).HasColumnName("Id"); 
+                entity.HasOne(p => p.Employee).WithOne(c=>c.EmployeeExtend).HasForeignKey<EmployeeExtend>(p => p.EmployeeId).IsRequired().OnDelete(deleteBehavior: DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<EmployeeLogin>(entity =>
+            {
+                entity.ToTable("EmployeeLogin");
+                entity.HasKey(e => e.Id);
+                entity.HasOne(c => c.Employee).WithMany(p => p.EmployeeLogins).HasForeignKey(p => p.EmployeeId).IsRequired().OnDelete(deleteBehavior: DeleteBehavior.Cascade);
+            });
+
             base.OnModelCreating(modelBuilder);
         }
     }  

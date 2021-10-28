@@ -30,6 +30,9 @@ namespace WebApi.Middleware
         {
             stopwatch = new Stopwatch();
             stopwatch.Start();//在下一个中间价处理前，启动计时器
+
+            _logger.LogInformation("访问者 Ip:" + context.Connection.RemoteIpAddress.ToString());
+
             await _next.Invoke(context);
 
             stopwatch.Stop();//所有的中间件处理完后，停止秒表。

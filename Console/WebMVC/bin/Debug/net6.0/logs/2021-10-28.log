@@ -41,3 +41,378 @@
 2021-10-28 09:44:18.4255||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
 2021-10-28 09:44:19.3737||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
 2021-10-28 09:49:11.6942||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:10:52.0835||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:10:53.1133||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:10:53.1695||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:10:53.1695||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:10:53.1761||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:10:53.6099||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17608:ee26cb73 successfully announced in 293.7675 ms |url: |action: 
+2021-10-28 10:10:53.6201||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17608:ee26cb73 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:10:53.6664||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:10:53.7454||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17608:ee26cb73 all the dispatchers started |url: |action: 
+2021-10-28 10:10:55.8712||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:10:55.8795||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:10:55.8795||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:10:55.8990||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:10:56.0570||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:12:16.0350||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:12:16.0350||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:12:16.0350||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:12:16.0507||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:13:33.1417||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:13:33.4237||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:13:33.4513||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:13:33.4513||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:13:33.4631||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:13:33.6250||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:29916:ca876198 successfully announced in 112.756 ms |url: |action: 
+2021-10-28 10:13:33.6319||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:29916:ca876198 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:13:33.7224||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:29916:ca876198 all the dispatchers started |url: |action: 
+2021-10-28 10:13:34.9374||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:34.9467||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:13:34.9672||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:34.9764||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:35.1031||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:13:39.1433||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:13:39.1433||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:13:39.1433||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:13:39.1433||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:13:43.3960||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:43.3960||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:13:43.3960||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:43.4163||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:13:43.4239||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:14:47.8056||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:14:48.2511||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:14:48.2688||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:14:48.2688||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:14:48.2688||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:14:48.4454||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33524:a1fe46b4 successfully announced in 134.8582 ms |url: |action: 
+2021-10-28 10:14:48.4569||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33524:a1fe46b4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:14:48.5556||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33524:a1fe46b4 all the dispatchers started |url: |action: 
+2021-10-28 10:14:49.9643||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:14:49.9744||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:14:49.9744||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:14:49.9899||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:14:50.1236||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:14:54.6229||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:14:54.6278||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:14:54.6278||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:14:54.6278||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:12.2195||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:12.2234||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:12.2234||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:12.2234||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:41.2787||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:41.2787||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:41.2853||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:15:41.2853||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Get|action: Get
+2021-10-28 10:16:24.2401||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:16:24.5229||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:16:24.5408||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:16:24.5408||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:16:24.5408||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:16:24.6720||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:25864:60225630 successfully announced in 102.1512 ms |url: |action: 
+2021-10-28 10:16:24.6797||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:25864:60225630 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:16:24.7427||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:25864:60225630 all the dispatchers started |url: |action: 
+2021-10-28 10:16:25.9369||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:16:25.9432||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:16:25.9432||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:16:25.9610||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:16:26.1035||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:16:27.2246||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:27.2246||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:27.2366||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:27.2366||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:33.7170||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:33.7210||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:33.7210||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:16:33.7210||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:17:44.8715||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:17:45.1144||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:17:45.1144||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:17:45.1295||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:17:45.1295||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:17:45.2685||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:484:1be9ee92 successfully announced in 109.218 ms |url: |action: 
+2021-10-28 10:17:45.2685||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:484:1be9ee92 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:17:45.3085||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:17:45.3564||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:484:1be9ee92 all the dispatchers started |url: |action: 
+2021-10-28 10:17:46.6194||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:17:46.6268||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:17:46.6268||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:17:46.6268||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:17:46.7625||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:17:51.4311||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:17:51.4311||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:17:51.4311||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:17:51.4406||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:17:52.4538||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:52.4574||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:52.4574||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:52.4574||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:52.4574||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:55.5523||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:55.5523||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:55.5523||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:55.5803||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:17:59.3032||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:17:59.3032||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:17:59.3032||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:17:59.3032||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:18:38.2516||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:18:38.4632||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:18:38.4753||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:18:38.4753||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:18:38.4753||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:18:38.6450||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:31208:7dff9f48 successfully announced in 127.6057 ms |url: |action: 
+2021-10-28 10:18:38.6450||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:31208:7dff9f48 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:18:38.6758||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:18:38.7596||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:31208:7dff9f48 all the dispatchers started |url: |action: 
+2021-10-28 10:18:39.9209||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:18:39.9357||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:18:39.9400||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:18:39.9400||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:18:40.0774||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:18:41.4288||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:18:41.4288||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:18:41.4288||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:18:41.4288||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:18:42.3255||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3255||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3344||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3344||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3344||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3491||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3491||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3491||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:42.3726||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:18:45.1306||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:18:45.1306||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:18:45.1441||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:18:45.1441||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:21:40.4352||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.4396||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5103||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5103||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5198||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5198||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5198||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5364||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:21:40.5364||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:22:00.2129||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:22:00.5785||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:22:00.5921||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:22:00.5921||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:22:00.5969||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:22:00.7384||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:24652:b634ff19 successfully announced in 113.8701 ms |url: |action: 
+2021-10-28 10:22:00.7384||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:24652:b634ff19 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:22:00.7735||INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout |url: |action: 
+2021-10-28 10:22:00.8176||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:24652:b634ff19 all the dispatchers started |url: |action: 
+2021-10-28 10:22:02.2101||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:22:02.2101||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:22:02.2252||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:22:02.2446||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:22:02.4023||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:22:08.8943||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:22:08.8943||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:22:08.8943||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:22:08.8943||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:24:13.5294||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:24:13.7380||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:24:13.7380||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:24:13.7558||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:24:13.7558||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:24:13.8855||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:11568:cfe82f54 successfully announced in 101.2439 ms |url: |action: 
+2021-10-28 10:24:13.9029||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:11568:cfe82f54 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:24:13.9395||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:24:13.9750||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:11568:cfe82f54 all the dispatchers started |url: |action: 
+2021-10-28 10:24:15.1920||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:24:15.1920||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:24:15.2061||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:24:15.2061||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:24:15.3342||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:24:26.5000||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:24:26.5035||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:24:26.5035||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:24:26.5035||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:29:13.9570||INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout |url: |action: 
+2021-10-28 10:29:54.8692||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:29:54.8692||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:29:54.8791||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:29:54.8791||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:29:54.8791||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:29:59.6479||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:29:59.6479||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:29:59.6479||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:29:59.6608||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/PostImfo|action: PostImfo
+2021-10-28 10:43:04.1365||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:43:04.5676||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:43:04.5817||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:43:04.5817||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:43:04.5817||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:43:04.7718||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:10724:b47016f0 successfully announced in 159.6869 ms |url: |action: 
+2021-10-28 10:43:04.7830||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:10724:b47016f0 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:43:04.8168||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:43:04.9546||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:10724:b47016f0 all the dispatchers started |url: |action: 
+2021-10-28 10:43:06.6488||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:43:06.6488||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:43:06.6614||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:43:06.6614||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:43:06.8190||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:44:17.5946||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:44:17.5986||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:44:17.5986||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:44:17.5986||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:44:19.2472||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:19.2570||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:19.2718||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:19.2718||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:19.2898||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:36.8926||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:37.1158||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:44:38.2511||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:45:18.7173||INFO|WebMVC.Controllers.HomeController|https%3a%2f%2fwww.cnblogs.com%2fdongh%2fp%2f15470938.html |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:45:18.7427||INFO|WebMVC.Controllers.HomeController|https://www.cnblogs.com/dongh/p/15470938.html |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:45:18.7617||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:09.3280||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:50:09.6237||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:50:09.6388||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:50:09.6388||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:50:09.6440||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:50:09.8196||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:32232:7ce12f19 successfully announced in 136.2917 ms |url: |action: 
+2021-10-28 10:50:09.8196||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:32232:7ce12f19 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:50:09.9209||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:32232:7ce12f19 all the dispatchers started |url: |action: 
+2021-10-28 10:50:11.6704||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:50:11.6794||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:50:11.6931||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:50:11.7069||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:50:11.8622||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:50:20.7843||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:50:20.7843||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:50:20.7843||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:50:20.7986||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:50:21.8603||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:21.8710||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:21.8787||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:21.8787||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:21.8962||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1225||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1225||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1315||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1315||INFO|WebMVC.Controllers.HomeController|https%3a%2f%2fwww.cnblogs.com%2fdongh%2fp%2f15470938.html |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1315||INFO|WebMVC.Controllers.HomeController|https://www.cnblogs.com/dongh/p/15470938.html |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.1569||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:50:24.4204|1|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request. System.InvalidCastException: Unable to cast object of type 'System.String' to type 'WebMVC.Models.UserCacheModel'.
+   at WebMVC.Helper.SessionHelper.GetSession[T](String key) in C:\GutReposite\Console\WebMVC\Helper\SessionHelper.cs:line 61
+   at AspNetCoreGeneratedDocument.Views_Shared__Layout.ExecuteAsync() in c:\GutReposite\Console\WebMVC\Views\Shared\_Layout.cshtml:line 7
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at WebMVC.Middleware.ThreeMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\GutReposite\Console\WebMVC\Middleware\ThreeMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebMVC.Middleware.TwoMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\GutReposite\Console\WebMVC\Middleware\TwoMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebMVC.Middleware.ResponseHeaderMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\GutReposite\Console\WebMVC\Middleware\ResponseHeaderMiddleware.cs:line 28
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebMVC.Middleware.OneMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\GutReposite\Console\WebMVC\Middleware\OneMiddleware.cs:line 21
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ConcurrencyLimiter.ConcurrencyLimiterMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)|url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:26.7355||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 10:52:27.0703||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 10:52:27.1040||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 10:52:27.1040||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 10:52:27.1127||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 10:52:27.3128||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:3020:b3cd6628 successfully announced in 151.5791 ms |url: |action: 
+2021-10-28 10:52:27.3242||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:3020:b3cd6628 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 10:52:27.3550||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 10:52:27.3892||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:3020:b3cd6628 all the dispatchers started |url: |action: 
+2021-10-28 10:52:28.9415||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 10:52:28.9415||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 10:52:28.9579||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 10:52:28.9579||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 10:52:29.1250||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 10:52:30.5984||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:52:30.5984||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:52:30.5984||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:52:30.5984||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 10:52:31.6771||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.6771||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.6949||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7053||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7053||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7466||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7466||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7561||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7561||INFO|WebMVC.Controllers.HomeController|https%3a%2f%2fwww.cnblogs.com%2fdongh%2fp%2f15470938.html |url: https://localhost/Home/Index|action: Index
+2021-10-28 10:52:31.7561||INFO|WebMVC.Controllers.HomeController|https://www.cnblogs.com/dongh/p/15470938.html |url: https://localhost/Home/Index|action: Index

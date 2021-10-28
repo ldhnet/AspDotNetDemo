@@ -20,6 +20,7 @@ using System.Security.Claims;
 using WebMVC.Extension;
 using Microsoft.AspNetCore.Http;
 using System.Reflection;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebMVC.Controllers
 {
@@ -72,7 +73,7 @@ namespace WebMVC.Controllers
             {
                 return;
             }
-            if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(SkipLoginValidateAttribute), false))
+            if (controllerActionDescriptor.MethodInfo.IsDefined(typeof(AllowAnonymousAttribute), false))
             {
                 return;
             }
