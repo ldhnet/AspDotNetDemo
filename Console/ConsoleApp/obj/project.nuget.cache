@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ab4lLNJj0P+kotBb1Jv+aXShI5/8rrxtGIr2xYp5pPfcRcwpNNns0RAJShM1/GrWTLWivcof3sempfiKGKwh5A==",
+  "dgSpecHash": "7Ql8/Xle1GLJM9Ykrlxtcm15mVR+hqiVtjSKb6pz1rJZshPEy12k/+xosG3B33UUh1IO+pfAvcVArANdaMrfBg==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
@@ -76,6 +76,8 @@
     "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\npoi\\2.5.4\\npoi.2.5.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\pitcher\\2.1.1\\pitcher.2.1.1.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",

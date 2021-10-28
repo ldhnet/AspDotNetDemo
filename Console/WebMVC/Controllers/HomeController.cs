@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using NLog;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System;
@@ -34,6 +35,7 @@ namespace WebMVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private EmoloyeeDLL _userdll = new EmoloyeeDLL();
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -44,7 +46,13 @@ namespace WebMVC.Controllers
         [AllowAnonymous]
         [ServiceFilter(typeof(ClientIpCheckActionFilter))]
         public IActionResult Index()
-        {
+        {  
+            _logger.LogError("Index 11111");
+            _logger.LogInformation("Index 22222");
+            _logger.LogDebug("Index 33333");
+            _logger.LogTrace("Index 44444");
+            _logger.LogWarning("Index 55555");
+
             var aa = Path.DirectorySeparatorChar;
             var aa1 = Path.AltDirectorySeparatorChar;
             var aa2 = GlobalContext.HostingEnvironment.ContentRootPath;

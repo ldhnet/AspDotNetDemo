@@ -38,11 +38,11 @@ namespace WebMVC
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        { 
-
+        {  
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddHttpContextAccessor();
             services.AddOptions();
-            services.AddCors(); 
-            services.AddMemoryCache(); 
 
             services.AddScoped<ClientIpCheckActionFilter>(container =>
             {
@@ -86,17 +86,6 @@ namespace WebMVC
             services.AddMiddlewares();
 
             #region 最大请求数
-            //使用队列策略模式
-            services.AddQueuePolicy(options =>
-            {
-
-                //最大并发请求数,超过之后,进行排队
-                options.MaxConcurrentRequests = 100;
-
-                //最大请求数,超过之后,返回503
-                options.RequestQueueLimit = 100;
-
-            });
 
             //使用栈策略模式
             services.AddStackPolicy(options =>
@@ -106,8 +95,18 @@ namespace WebMVC
 
                 //最大请求数,超过之后,返回503
                 options.RequestQueueLimit = 100;
+            });
+
+            //使用队列策略模式
+            services.AddQueuePolicy(options =>
+            {
+                //最大并发请求数,超过之后,进行排队
+                options.MaxConcurrentRequests = 100;
+                //最大请求数,超过之后,返回503
+                options.RequestQueueLimit = 100;
 
             });
+
             //如果这两个策略同时使用,后面的策略模式会覆盖上边的策略模式
 
             #endregion

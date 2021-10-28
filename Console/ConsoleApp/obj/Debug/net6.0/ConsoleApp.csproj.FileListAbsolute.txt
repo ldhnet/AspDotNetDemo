@@ -234,3 +234,7 @@ C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\WebMVC.dll
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\WebMVC.pdb
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\WebMVC.staticwebassets.runtime.json
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Hashids.net.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.ConcurrencyLimiter.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Pitcher.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

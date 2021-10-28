@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.NLog;
 
 namespace WebApi.Middleware
 {
@@ -12,6 +14,7 @@ namespace WebApi.Middleware
     /// </summary>
     public class ExceptionMiddleWare
     {
+        private readonly INLogHelper _logHelper;
         /// <summary>
         /// 处理HTTP请求的函数。
         /// </summary>
@@ -20,8 +23,9 @@ namespace WebApi.Middleware
         /// 构造函数
         /// </summary>
         /// <param name="next"></param>
-        public ExceptionMiddleWare(RequestDelegate next)
+        public ExceptionMiddleWare(INLogHelper logHelper, RequestDelegate next)
         {
+            _logHelper = logHelper;
             _next = next;
         }
 
@@ -46,6 +50,7 @@ namespace WebApi.Middleware
         {
             if (exception != null)
             {
+                _logHelper.LogError(exception);
                 var response = context.Response;
                 var message = exception.InnerException == null ? exception.Message : exception.InnerException.Message;
                 response.ContentType = "application/json";
@@ -54,6 +59,7 @@ namespace WebApi.Middleware
             else
             {
                 var code = context.Response.StatusCode;
+                _logHelper.LogInformation("Response.StatusCode=" + code);
                 switch (code)
                 {
                     case 200:

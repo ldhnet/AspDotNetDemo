@@ -207,3 +207,4 @@ C:\GutReposite\Console\ConsoleDBTest\obj\Debug\net6.0\ConsoleDBTest.dll
 C:\GutReposite\Console\ConsoleDBTest\obj\Debug\net6.0\ref\ConsoleDBTest.dll
 C:\GutReposite\Console\ConsoleDBTest\obj\Debug\net6.0\ConsoleDBTest.pdb
 C:\GutReposite\Console\ConsoleDBTest\obj\Debug\net6.0\ConsoleDBTest.genruntimeconfig.cache
+C:\GutReposite\Console\ConsoleDBTest\obj\Debug\net6.0\ConsoleDBTest.csproj.CopyComplete

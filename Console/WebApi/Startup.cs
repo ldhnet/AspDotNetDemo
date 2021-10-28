@@ -1,21 +1,18 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Code;
+using WebApi.Extension;
 using WebApi.Handler;
-using WebApi.Middleware; 
+using WebApi.Middleware;
+using WebApi.NLog;
 
 namespace WebApi
 {
@@ -40,7 +37,9 @@ namespace WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
-
+            services.AddHttpContextAccessor();
+            services.AddSingleton<INLogHelper, NLogHelper>();
+   
             services.AddAuthentication(options =>
             {
                 options.AddScheme<AuthenticateHandler>(AuthenticateHandler.SchemeName, "default scheme");
@@ -71,6 +70,7 @@ namespace WebApi
              
             app.UseMiddleware(typeof(AuthorizeMiddleware));
             app.UseMiddleware(typeof(OtherMiddleware));
+            app.UseCalculateExecutionTime();//只需在此添加
 
             app.UseEndpoints(endpoints =>
             {

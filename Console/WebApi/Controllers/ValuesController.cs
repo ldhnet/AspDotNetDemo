@@ -39,14 +39,15 @@ namespace WebApi.Controllers
 
             var list = context.Employees.ToList();
 
-            _logger.LogWarning("1234567890");
+            _logger.LogWarning("/*********1*********/");
 
             foreach (var item in list)
             {
                 _logger.LogInformation($"{item.Id}{item.Name}{item.BankCard}");
-            }
-       
-            _logger.LogInformation("1234567890");
+            } 
+            _logger.LogWarning("/*********2*********/");
+             
+
             return new string[] { "value1", "value2" };
         }
 

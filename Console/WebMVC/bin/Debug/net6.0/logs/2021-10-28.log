@@ -1,0 +1,43 @@
+2021-10-28 09:23:05.7892||ERROR||Index 111 |url: |action: 
+2021-10-28 09:29:44.1907||ERROR||Index 111 |url: |action: 
+2021-10-28 09:29:44.4203||INFO||Index 2222 |url: |action: 
+2021-10-28 09:29:44.6641||DEBUG||Index 3333 |url: |action: 
+2021-10-28 09:29:44.9173||TRACE||Index 44444 |url: |action: 
+2021-10-28 09:29:45.2334||WARN||Index 44444 |url: |action: 
+2021-10-28 09:38:30.9836||ERROR|HomeController|Index 111 |url: |action: 
+2021-10-28 09:38:31.4645||INFO|HomeController|Index 2222 |url: |action: 
+2021-10-28 09:38:31.6979||DEBUG|HomeController|Index 3333 |url: |action: 
+2021-10-28 09:38:31.9469||TRACE|HomeController|Index 44444 |url: |action: 
+2021-10-28 09:38:32.4646||WARN|HomeController|Index 44444 |url: |action: 
+2021-10-28 09:44:10.8458||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-10-28 09:44:11.4880||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-10-28 09:44:11.4880||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-10-28 09:44:11.5030||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-10-28 09:44:11.5030||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-10-28 09:44:11.6446||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:28228:0e597b43 successfully announced in 114.4548 ms |url: |action: 
+2021-10-28 09:44:11.6446||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:28228:0e597b43 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-10-28 09:44:11.6795||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-10-28 09:44:11.7106||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:28228:0e597b43 all the dispatchers started |url: |action: 
+2021-10-28 09:44:13.0684||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-10-28 09:44:13.0684||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/|action: Index
+2021-10-28 09:44:13.0684||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-10-28 09:44:13.0844||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-10-28 09:44:13.2156||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-10-28 09:44:14.8092||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 09:44:14.8092||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Account/Login|action: Login
+2021-10-28 09:44:14.8151||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 09:44:14.8151||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-10-28 09:44:15.7669||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:15.7731||WARN|WebMVC.Middleware.ResponseHeaderMiddleware|response header Middleware 这个例子只是修改一下response的header |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:15.7731||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:15.7731||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:15.7845||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:17.6658||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:17.8691||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:18.4255||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:44:19.3737||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-10-28 09:49:11.6942||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
