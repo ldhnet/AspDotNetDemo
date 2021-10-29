@@ -4,8 +4,7 @@ using System.Threading.Tasks;
 using WebMVC.Attributes;
 
 namespace WebMVC.Middleware
-{ 
-    [MiddlewareRegister(Sort = 150)]
+{  
     public class ResponseHeaderMiddleware : IMiddleware
     {
         private readonly ILogger<ResponseHeaderMiddleware> logger;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,15 +18,14 @@ namespace WebApi.Handler
         public const string SchemeName = "MyAuth";
 
         AuthenticationScheme _scheme;
-        HttpContext _context;
-
+        HttpContext _context; 
         /// <summary>
         /// 初始化认证
         /// </summary>
         public Task InitializeAsync(AuthenticationScheme scheme, HttpContext context)
         {
             _scheme = scheme;
-            _context = context;
+            _context = context; 
             return Task.CompletedTask;
         }
 
@@ -34,11 +34,18 @@ namespace WebApi.Handler
         /// </summary>
         public Task<AuthenticateResult> AuthenticateAsync()
         {
-            var req = _context.Request.Query;
+            var req = _context.Request.Query; 
 
+            var guestTicket = GetAuthTicket("test", "test");
 
-      
-             
+            if (_context.Request.Headers.ContainsKey("NoAuth") && _context.Request.Headers["NoAuth"].ToString().ToLower() == "yes")
+            {
+                Console.WriteLine("WebApi:已跳过 MyAuth Authenticate验证");
+                return Task.FromResult(AuthenticateResult.Success(guestTicket));
+            }
+
+            Console.WriteLine("WebApi:MyAuth Authenticate验证");
+
             var isLogin = req["isLogin"].FirstOrDefault();
 
             if (isLogin != "true")

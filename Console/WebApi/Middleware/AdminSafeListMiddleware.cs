@@ -12,25 +12,28 @@ namespace WebApi.Middleware
     public class AdminSafeListMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly ILogger<AdminSafeListMiddleware> _logger;
+        private readonly ILogger<AdminSafeListMiddleware> logger;
         private readonly string _safelist;
 
         public AdminSafeListMiddleware(
             RequestDelegate next,
-            ILogger<AdminSafeListMiddleware> logger,
+            ILogger<AdminSafeListMiddleware> _logger,
             string safelist)
         {
             _safelist = safelist;
             _next = next;
-            _logger = logger;
+            logger = _logger;
+            ;
         }
 
         public async Task Invoke(HttpContext context)
         {
+            logger.LogInformation("WebApi:Ip 安全验证中间件");
+
             if (context.Request.Method == HttpMethod.Get.Method)
             {
                 var remoteIp = context.Connection.RemoteIpAddress;
-                _logger.LogDebug("Request from Remote IP address: {RemoteIp}", remoteIp);
+                logger.LogDebug("Request from Remote IP address: {RemoteIp}", remoteIp);
 
                 string[] ip = _safelist.Split(';');
 
@@ -49,8 +52,7 @@ namespace WebApi.Middleware
 
                 if (badIp)
                 {
-                    _logger.LogWarning(
-                        "Forbidden Request from Remote IP address: {RemoteIp}", remoteIp);
+                    logger.LogWarning("Forbidden Request from Remote IP address: {RemoteIp}", remoteIp);
                     context.Response.StatusCode = StatusCodes.Status403Forbidden;
                     return;
                 }

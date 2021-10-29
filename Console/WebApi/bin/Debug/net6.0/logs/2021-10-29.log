@@ -1,0 +1,103 @@
+WebApi:这个例子只是修改一下response的header
+访问者 Ip:::1
+接口/api/Values/5耗时4335ms
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+接口/api/Values/5耗时1769ms
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+接口/api/Values/5耗时3075ms
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpResponseFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpResponseBodyFeatureMicrosoft.WebTools.BrowserLink.Net.SendFilesWrapper
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpResponseFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpResponseBodyFeatureMicrosoft.WebTools.BrowserLink.Net.SendFilesWrapper
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IRouteValuesFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IEndpointFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IServiceProvidersFeatureMicrosoft.AspNetCore.Http.Features.RequestServicesFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpActivityFeatureMicrosoft.AspNetCore.Hosting.ActivityFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IItemsFeatureMicrosoft.AspNetCore.Http.Features.ItemsFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IQueryFeatureMicrosoft.AspNetCore.Http.Features.QueryFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IRequestBodyPipeFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.Authentication.IHttpAuthenticationFeatureMicrosoft.AspNetCore.Authentication.AuthenticationFeatures
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestIdentifierFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpConnectionFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestTrailersFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpUpgradeFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IBadRequestExceptionFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestLifetimeFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpMaxRequestBodySizeFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Server.Kestrel.Core.Features.IHttpMinRequestBodyDataRateFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Server.Kestrel.Core.Features.IHttpMinResponseDataRateFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpBodyControlFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Http.Features.IHttpRequestBodyDetectionFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Connections.Features.IPersistentStateFeatureMicrosoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection`1[Microsoft.AspNetCore.Hosting.HostingApplication+Context]
+WebApi:Authorize 身份验证中间件Microsoft.WebTools.BrowserLink.Net.PageExecutionListenerFeatureMicrosoft.WebTools.BrowserLink.Net.PageExecutionListenerFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Authentication.IAuthenticationFeatureMicrosoft.AspNetCore.Authentication.AuthenticationFeature
+WebApi:Authorize 身份验证中间件Microsoft.AspNetCore.Authentication.IAuthenticateResultFeatureMicrosoft.AspNetCore.Authentication.AuthenticationFeatures
+访问者 Ip:::1
+接口/api/Values/5耗时1280ms
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+接口/api/Values/5耗时2341ms
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+访问者 Ip:::1
+接口/api/Values/5耗时1649ms
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+接口/api/Values/5耗时1202ms
+WebApi:Authorize 身份验证中间件
+全局异常捕获：
+Response.StatusCode=200

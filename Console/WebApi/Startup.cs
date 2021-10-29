@@ -65,12 +65,14 @@ namespace WebApi
 
             app.UseMiddleware<AdminSafeListMiddleware>("127.0.0.1;192.168.1.5;::1");
 
+            app.UseMiddleware(typeof(OtherMiddleware));
+             
             app.UseAuthentication();
             app.UseAuthorization();
              
             app.UseMiddleware(typeof(AuthorizeMiddleware));
-            app.UseMiddleware(typeof(OtherMiddleware));
-            app.UseCalculateExecutionTime();//只需在此添加
+
+            app.UseCalculateExecutionTime();//计算接口执行时间 中间件
 
             app.UseEndpoints(endpoints =>
             {

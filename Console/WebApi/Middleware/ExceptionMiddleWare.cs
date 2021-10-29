@@ -14,7 +14,7 @@ namespace WebApi.Middleware
     /// </summary>
     public class ExceptionMiddleWare
     {
-        private readonly INLogHelper _logHelper;
+        private readonly ILogger<ExceptionMiddleWare> logger;
         /// <summary>
         /// 处理HTTP请求的函数。
         /// </summary>
@@ -23,9 +23,9 @@ namespace WebApi.Middleware
         /// 构造函数
         /// </summary>
         /// <param name="next"></param>
-        public ExceptionMiddleWare(INLogHelper logHelper, RequestDelegate next)
-        {
-            _logHelper = logHelper;
+        public ExceptionMiddleWare(ILogger<ExceptionMiddleWare> _logger, RequestDelegate next)
+        { 
+            this.logger = _logger;
             _next = next;
         }
 
@@ -50,7 +50,7 @@ namespace WebApi.Middleware
         {
             if (exception != null)
             {
-                _logHelper.LogError(exception);
+                logger.LogError("全局异常捕获：",exception);
                 var response = context.Response;
                 var message = exception.InnerException == null ? exception.Message : exception.InnerException.Message;
                 response.ContentType = "application/json";
@@ -59,7 +59,7 @@ namespace WebApi.Middleware
             else
             {
                 var code = context.Response.StatusCode;
-                _logHelper.LogInformation("Response.StatusCode=" + code);
+                logger.LogInformation("Response.StatusCode=" + code);
                 switch (code)
                 {
                     case 200:

@@ -12,7 +12,7 @@ using WebApi.Attributes;
 namespace WebApi.Controllers
 {
     [AllowAnonymous]
-    public class HealthController : BaseController
+    public class HealthController : ControllerBase
     {
         private readonly ILogger<HealthController> _logger;
         private readonly HealthCheckService _healthCheckService;

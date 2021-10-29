@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http; 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Net;
 using System.Threading.Tasks;
 using WebApi.OAuth;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace WebApi.Middleware
@@ -13,12 +12,23 @@ namespace WebApi.Middleware
     public class AuthorizeMiddleware
     {
         private readonly RequestDelegate next;
-        public AuthorizeMiddleware(RequestDelegate next)
+        private readonly ILogger<AuthorizeMiddleware> logger;
+        public AuthorizeMiddleware(RequestDelegate next, ILogger<AuthorizeMiddleware> _logger)
         {
             this.next = next;
+            this.logger = _logger;
         }
         public async Task Invoke(HttpContext context) /* other scoped dependencies */
         {
+  
+
+            //token类型是bearer类型
+            if (context.Request.Headers.ContainsKey("NoAuth") && context.Request.Headers["NoAuth"].ToString().ToLower() == "yes")
+            {
+                logger.LogInformation("WebApi:已跳过 Authorize 身份验证中间件");
+                await next(context);
+            }
+            logger.LogInformation("WebApi:Authorize 身份验证中间件");
             //以下代码都不是必须的，只是展示一些使用方法，你可以选择使用
 
             //设置httpcontext的一些key和value，用于在整个http请求过程中分享数据
@@ -30,8 +40,7 @@ namespace WebApi.Middleware
                 //dosomething
 
             }
-
-
+             
             //token类型是bearer类型
             if (context.Request.Headers.ContainsKey("Authorization"))
             {

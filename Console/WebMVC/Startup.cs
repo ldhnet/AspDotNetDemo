@@ -156,10 +156,12 @@ namespace WebMVC
             }); 
             HangFireJob.AddOrUpdate();
 
+            //app.UseMiddleware(typeof(ResponseHeaderMiddleware)); 
+
             app.UseAuthentication();
             app.UseAuthorization();
 
-            //app.UseMiddleware(typeof(ResponseHeaderMiddleware)); 
+           
             app.UseMiddlewares();
 
             app.UseEndpoints(endpoints =>

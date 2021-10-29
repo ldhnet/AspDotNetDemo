@@ -19,10 +19,10 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class ValuesController : ControllerBase
     {
-        private readonly ILogger<ValuesController> _logger; 
+        private readonly ILogger<ValuesController> _logger;
         public ValuesController(ILogger<ValuesController> logger)
         {
-            _logger = logger; 
+            _logger = logger;
         }
         // GET api/values
         [Description("测试get")]
@@ -54,7 +54,8 @@ namespace WebApi.Controllers
         // GET api/values/5
         [Description("测试getbyId")]
         [HttpGet("{id}")]
-        [Authorize(Roles = "test")]
+        [AllowAnonymous]
+        //[Authorize(Roles = "test")]
         public string Get(int id)
         {
 
