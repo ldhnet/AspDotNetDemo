@@ -1,0 +1,17 @@
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\PressureTest.exe
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\PressureTest.deps.json
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\PressureTest.runtimeconfig.json
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\PressureTest.dll
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\ref\PressureTest.dll
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\PressureTest.pdb
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.GlobalUsings.g.cs
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.AssemblyInfoInputs.cache
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.AssemblyInfo.cs
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.csproj.CoreCompileInputs.cache
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.dll
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\ref\PressureTest.dll
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.pdb
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.genruntimeconfig.cache
+C:\Free\PressureTest\PressureTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Free\PressureTest\PressureTest\obj\Debug\net6.0\PressureTest.csproj.CopyComplete
