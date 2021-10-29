@@ -9,11 +9,10 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebMVC
 build_property.RootNamespace = WebMVC
 build_property.ProjectDir = C:\GutReposite\Console\WebMVC\
-build_property.RazorLangVersion = 5.0
+build_property.RazorLangVersion = 6.0
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\GutReposite\Console\WebMVC
 build_property._RazorSourceGeneratorDebug = 
-build_property._RazorSourceGeneratorHeapDumps = 
 
 [c:/GutReposite/Console/WebMVC/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
@@ -53,4 +52,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [c:/GutReposite/Console/WebMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope =
+build_metadata.AdditionalFiles.CssScope = 

@@ -87,27 +87,27 @@ namespace WebMVC
 
             #region 最大请求数
 
-            //使用栈策略模式
-            services.AddStackPolicy(options =>
-            {
-                //最大并发请求数,超过之后,进行排队
-                options.MaxConcurrentRequests = 3;
+            ////使用栈策略模式
+            //services.AddStackPolicy(options =>
+            //{
+            //    //最大并发请求数,超过之后,进行排队
+            //    options.MaxConcurrentRequests = 3;
 
-                //最大请求数,超过之后,返回503
-                options.RequestQueueLimit = 100;
-            });
+            //    //最大请求数,超过之后,返回503
+            //    options.RequestQueueLimit = 100;
+            //});
 
-            //使用队列策略模式
-            services.AddQueuePolicy(options =>
-            {
-                //最大并发请求数,超过之后,进行排队
-                options.MaxConcurrentRequests = 100;
-                //最大请求数,超过之后,返回503
-                options.RequestQueueLimit = 100;
+            ////使用队列策略模式
+            //services.AddQueuePolicy(options =>
+            //{
+            //    //最大并发请求数,超过之后,进行排队
+            //    options.MaxConcurrentRequests = 100;
+            //    //最大请求数,超过之后,返回503
+            //    options.RequestQueueLimit = 100;
 
-            });
+            //});
 
-            //如果这两个策略同时使用,后面的策略模式会覆盖上边的策略模式
+            ////如果这两个策略同时使用,后面的策略模式会覆盖上边的策略模式
 
             #endregion
 
@@ -138,7 +138,7 @@ namespace WebMVC
             app.UseSession();
 
             //启用并发限制数中间件
-            app.UseConcurrencyLimiter();
+            //app.UseConcurrencyLimiter();
 
             var jobOptions = new BackgroundJobServerOptions
             {

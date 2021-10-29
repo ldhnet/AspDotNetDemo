@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d9cca0ac-bc50-4bc6-8d58-d984f0e4f34e": {
+      "ProjectGuid": "d9cca0ac-bc50-4bc6-8d58-d984f0e4f34e",
+      "DisplayName": "EFCore",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
