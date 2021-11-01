@@ -112,6 +112,10 @@ namespace WebMVC.Controllers
             //throw new Exception("异常了");
             //var dto = new UserViewModel();
 
+            var info = _userdll.Find("admin777")?.Data;
+
+            Check.NotNull(info, nameof(info));
+
 
 
             string timestamp = _memoryCache.Set("timestamp", DateTime.Now.ToString());

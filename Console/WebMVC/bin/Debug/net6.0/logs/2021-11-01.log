@@ -358,3 +358,72 @@
 2021-11-01 12:16:29.1954||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Privacy|action: Privacy
 2021-11-01 12:16:29.1954||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Privacy|action: Privacy
 2021-11-01 12:16:29.1954||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Privacy|action: Privacy
+2021-11-01 15:27:28.2049||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-11-01 15:27:28.7510||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-11-01 15:27:28.7510||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-11-01 15:27:28.7510||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-11-01 15:27:28.7671||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-11-01 15:27:28.9272||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17000:f104ddb6 successfully announced in 133.3493 ms |url: |action: 
+2021-11-01 15:27:28.9272||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17000:f104ddb6 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-11-01 15:27:28.9574||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-11-01 15:27:28.9893||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:17000:f104ddb6 all the dispatchers started |url: |action: 
+2021-11-01 15:27:30.8893||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-11-01 15:27:30.8961||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-11-01 15:27:30.8961||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-11-01 15:27:31.1339||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-11-01 16:53:27.4645||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-11-01 16:53:28.4497||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-11-01 16:53:28.4747||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-11-01 16:53:28.4747||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-11-01 16:53:28.4747||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-11-01 16:53:28.7183||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33396:6ca66d37 successfully announced in 182.1889 ms |url: |action: 
+2021-11-01 16:53:28.7359||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33396:6ca66d37 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-11-01 16:53:28.7611||INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout |url: |action: 
+2021-11-01 16:53:28.8613||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:33396:6ca66d37 all the dispatchers started |url: |action: 
+2021-11-01 16:53:30.8848||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-11-01 16:53:30.8964||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-11-01 16:53:30.8964||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-11-01 16:53:31.0432||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-11-01 16:53:33.2772||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-01 16:53:33.2772||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-01 16:53:33.2834||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-01 16:53:35.5411||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5473||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5473||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5652||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5887||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5968||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.5968||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.6139||INFO|WebMVC.Controllers.HomeController|https%3a%2f%2fwww.cnblogs.com%2fdongh%2fp%2f15470938.html |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.6139||INFO|WebMVC.Controllers.HomeController|https://www.cnblogs.com/dongh/p/15470938.html |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:35.6428||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-11-01 16:53:36.9849||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Privacy|action: Privacy
+2021-11-01 16:53:37.0249||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Privacy|action: Privacy
+2021-11-01 16:53:37.0249||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Privacy|action: Privacy
+2021-11-01 16:53:47.0334||ERROR||Value cannot be null. (Parameter '参数“info”不能为空引用。')
+   at WebMVC.Common.Check.Required[TException](Boolean assertion, String message) in C:\GutReposite\Console\WebMVC\Common\Check.cs:line 36
+   at WebMVC.Common.Check.NotNull[T](T value, String paramName) in C:\GutReposite\Console\WebMVC\Common\Check.cs:line 79
+   at WebMVC.Controllers.HomeController.Privacy() in C:\GutReposite\Console\WebMVC\Controllers\HomeController.cs:line 117
+   at lambda_method100(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+ |url: https://localhost/Home/Privacy|action: Privacy
+2021-11-01 16:53:47.0491||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Error|action: Error
+2021-11-01 16:53:47.0491||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Error|action: Error
+2021-11-01 16:53:47.0491||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Error|action: Error
