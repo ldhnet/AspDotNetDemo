@@ -11,7 +11,8 @@ using WebApi.Attributes;
 
 namespace WebApi.Controllers
 {
-    [AllowAnonymous]
+    [Route("api/[controller]")]
+    [ApiController]
     public class HealthController : ControllerBase
     {
         private readonly ILogger<HealthController> _logger;
@@ -22,8 +23,7 @@ namespace WebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet] 
-        [SkipValidate]
+        [HttpGet]  
         public async Task<IActionResult> Get()
         {
             var report = await _healthCheckService.CheckHealthAsync();

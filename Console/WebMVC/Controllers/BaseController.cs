@@ -102,6 +102,7 @@ namespace WebMVC.Controllers
      
         /// <summary>
         /// 在Action执行后触发（如果继承该类的子类也重写了该方法，则先执行子类的方法，再执行父类的方法）
+        /// 
         /// </summary>
         /// <param name="context">Action执行后上下文对象</param>
         public override void OnActionExecuted(ActionExecutedContext context)

@@ -101,3 +101,85 @@ WebApi:已跳过 Authorize 身份验证中间件
 WebApi:Authorize 身份验证中间件
 全局异常捕获：
 Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=401
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=401
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+Healthy
+接口/api/Health耗时1760ms
+WebApi:Authorize 身份验证中间件
+全局异常捕获：
+Response.StatusCode=200
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=401
+Response.StatusCode=200
+Response.StatusCode=200
+Response.StatusCode=200
+Response.StatusCode=200
+Response.StatusCode=200
+Response.StatusCode=200
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:Authorize 身份验证中间件
+Response.StatusCode=401
+Response.StatusCode=200
+WebApi:Ip 安全验证中间件
+WebApi:这个例子只是修改一下response的header
+WebApi:已跳过 Authorize 身份验证中间件
+访问者 Ip:::1
+全局异常捕获：
+Response.StatusCode=200

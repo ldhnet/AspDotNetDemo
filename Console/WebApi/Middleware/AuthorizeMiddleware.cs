@@ -4,8 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using WebApi.OAuth;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.Logging; 
 
 namespace WebApi.Middleware
 {
@@ -19,9 +18,7 @@ namespace WebApi.Middleware
             this.logger = _logger;
         }
         public async Task Invoke(HttpContext context) /* other scoped dependencies */
-        {
-  
-
+        { 
             //token类型是bearer类型
             if (context.Request.Headers.ContainsKey("NoAuth") && context.Request.Headers["NoAuth"].ToString().ToLower() == "yes")
             {

@@ -11,22 +11,25 @@ using System.Threading.Tasks;
 namespace WebApi.Code
 {
     public class ApiDbContext : DbContext
-    {  
-        public ApiDbContext()  : this(GetOptions())
+    {
+        public ApiDbContext() : this(GetOptions())
         { }
-         
+
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
-        { 
-        
+        {
+
         }
         private static DbContextOptions<ApiDbContext> GetOptions()
-        { 
+        {
             return new DbContextOptionsBuilder<ApiDbContext>().UseInMemoryDatabase(databaseName: "MyInMemoryDatabase").Options;
         }
 
+
+        //private static string connstring = "Data Source=.;Initial Catalog=DHDatabase;user id=sa;password=2021@ldh";
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        { 
-            //optionsBuilder.UseSqlServer(_connectionString);
+        {
+            //optionsBuilder.UseSqlServer(connstring);
         }
         public DbSet<Employee> Employees { get; set; } 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
