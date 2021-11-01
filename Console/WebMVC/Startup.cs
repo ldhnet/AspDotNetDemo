@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity; 
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,7 @@ using WebMVC.Common;
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.HangFire;
+using WebMVC.Helper;
 using WebMVC.Middleware;
 using WebMVC.Model;
 using WebMVC.Service;
@@ -65,6 +67,8 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
+            ProviderManage.MemoryCacheProvider = new MemoryCacheProvider();
+
             services.AddSingleton<MyFilter>();
              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
@@ -77,6 +81,17 @@ namespace WebMVC
                 options.Filters.Add<GlobalExceptionFilter>();
                 //options.Filters.Add<MyAuthorizeFilter>();
                 options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
+
+                //options.CacheProfiles.Add("test1", new CacheProfile()
+                //{
+                //    Duration = 5
+                //});
+                //options.CacheProfiles.Add("test2", new CacheProfile()
+                //{
+                //    Location = ResponseCacheLocation.None,
+                //    NoStore = true
+                //});
+
             }).AddNewtonsoftJson(options =>
             {
                 // 返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写

@@ -27,7 +27,7 @@ namespace WebMVC.Helper
                     _cache.Set(key, cacheEntry);
                 }
                 return cacheEntry;
-            }
+            } 
         }
 
         /// <summary>

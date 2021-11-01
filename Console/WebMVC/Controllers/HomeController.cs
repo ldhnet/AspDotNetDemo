@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
@@ -30,17 +31,19 @@ using WebMVC.Filter;
 using WebMVC.Helper;
 using WebMVC.Model;
 using WebMVC.Models;
+using static WebMVC.Helper.MemoryCacheHelper;
 
 namespace WebMVC.Controllers
 { 
     public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;      
+        private readonly IMemoryCache _memoryCache;
         private EmoloyeeDLL _userdll = new EmoloyeeDLL();
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMemoryCache memoryCache)
         {
             _logger = logger;
+            _memoryCache = memoryCache;
         } 
         [HttpGet]
         [SkipLoginValidate]
@@ -103,12 +106,80 @@ namespace WebMVC.Controllers
  
         [HttpGet]
         [AllowAnonymous]
+        [ResponseCache(Duration = 5)]
         public IActionResult Privacy()
         {
             //throw new Exception("异常了");
             //var dto = new UserViewModel();
 
+
+
+            string timestamp = _memoryCache.Set("timestamp", DateTime.Now.ToString());
              
+            string timestampGet = _memoryCache.Get<string>("timestamp");
+
+
+
+            string timestamp3 = _memoryCache.GetOrCreate("timestamp3", entry => { return DateTime.Now.ToString(); });
+
+
+            string timestampGet3 = _memoryCache.Get<string>("timestamp3");
+
+
+
+            var employee1 = _memoryCache.GetOrCreate("timestamp2", entry => { return _userdll.Find("admin")?.Data; });
+
+
+            var employee2 = _memoryCache.Get<Employee>("timestamp2");
+
+
+            var _avatarCache = new SimpleMemoryCache<Employee>();
+
+            var myAvatar = _avatarCache.GetOrCreate("UserModel", () => _userdll.Find("admin")?.Data);
+
+            var myAvatarGet = _avatarCache.GetOrCreate("UserModel",()=> new Employee());
+
+            var contents = new List<Content>();
+            for (int i = 0; i < 5; i++)
+            {
+                contents.Add(new Content { Id = i, Title = $"第{i}条数据标题测试", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
+            }
+
+
+            var _avatarCache3 = new SimpleMemoryCache<List<Content>>();
+
+            var myAvatar3 = _avatarCache3.GetOrCreate("ContentModel", () => contents);
+
+
+            var myAvatar4 = _avatarCache3.GetOrCreate("ContentModel", () => new List<Content>());
+
+
+            var pp111 = ProviderManage.MemoryCacheProvider.MemoryCache.GetOrCreate("pp1111", entry => { return _userdll.Find("admin")?.Data; });
+
+
+            var pp1 =  ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp1", _userdll.Find("admin")?.Data);
+
+           var pp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp2","pp2p22222222");
+
+            var pp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp3", contents);
+
+             
+
+            var ppp1 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp1");
+
+            var ppp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp2");
+
+            var ppp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp3");
+
+
+
+
+            var ppp4 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp4");
+
+
+
+
+
             var employee = _userdll.Find("admin")?.Data;
 
             var dto = new EmployeeDto()
