@@ -88,6 +88,15 @@ namespace WebMVC.Properties {
         }
         
         /// <summary>
+        ///   查找类似 参数“{0}”不能为空。 的本地化字符串。
+        /// </summary>
+        internal static string CheckNotNull {
+            get {
+                return ResourceManager.GetString("CheckNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 标识为“{0}”的项重复定义 的本地化字符串。
         /// </summary>
         internal static string ConfigFile_ItemKeyDefineRepeated {

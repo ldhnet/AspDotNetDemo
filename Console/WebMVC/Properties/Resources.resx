@@ -126,6 +126,9 @@
   <data name="Caching_CacheNotInitialized" xml:space="preserve">
     <value>缓存功能尚未初始化，未找到可用的 ICacheProvider 实现。</value>
   </data>
+  <data name="CheckNotNull" xml:space="preserve">
+    <value>参数“{0}”不能为空。</value>
+  </data>
   <data name="ConfigFile_ItemKeyDefineRepeated" xml:space="preserve">
     <value>标识为“{0}”的项重复定义</value>
   </data>
