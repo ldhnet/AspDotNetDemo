@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMVC.Attributes;
@@ -46,6 +48,8 @@ namespace WebMVC
             services.AddHttpContextAccessor();
             services.AddOptions();
 
+            services.AddLocalization();
+             
             services.AddScoped<ClientIpCheckActionFilter>(container =>
             {
                 var loggerFactory = container.GetRequiredService<ILoggerFactory>();
@@ -68,6 +72,9 @@ namespace WebMVC
             });
 
             ProviderManage.MemoryCacheProvider = new MemoryCacheProvider();
+
+            services.AddSingleton<ITestInterface, TestInterface>();
+            services.AddSingleton<ITestInterface, TestInterface2>();
 
             services.AddSingleton<MyFilter>();
              
@@ -152,6 +159,18 @@ namespace WebMVC
             app.UseRouting();
             app.UseSession();
 
+            var supportedCultures = new[] {
+                new CultureInfo("en-US"),
+                new CultureInfo("zh-CN")
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("zh-CN"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures,
+            });
+             
             //启用并发限制数中间件
             //app.UseConcurrencyLimiter();
 

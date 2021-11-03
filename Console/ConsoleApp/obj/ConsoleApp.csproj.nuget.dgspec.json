@@ -246,6 +246,10 @@
               "target": "Package",
               "version": "[5.0.8, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21511.1, )"
+            },
             "NLog": {
               "target": "Package",
               "version": "[4.7.11, )"

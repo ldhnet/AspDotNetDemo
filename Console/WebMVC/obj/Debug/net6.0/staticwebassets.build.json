@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mV0KAqTyZucF+NWoBUtdkmlk70W9LmtwttPtFPl+OU4=",
+  "Hash": "F92uQSqb9QWWtZFO8kZnMceBRKmq8RPLysqGIIk1/mI=",
   "Source": "WebMVC",
   "BasePath": "_content/WebMVC",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GutReposite\\Console\\WebMVC\\wwwroot\\js\\dh.tool.js",
+      "SourceId": "WebMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GutReposite\\Console\\WebMVC\\wwwroot\\",
+      "BasePath": "_content/WebMVC",
+      "RelativePath": "js/dh.tool.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dh.tool.js"
     },
     {
       "Identity": "C:\\GutReposite\\Console\\WebMVC\\wwwroot\\js\\site.js",

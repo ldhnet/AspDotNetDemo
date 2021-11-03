@@ -132,7 +132,7 @@ namespace WebMVC.Controllers
             get
             {
                 if (_currentUser != null) return _currentUser;
-                _currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
+                _currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel) ?? JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebConstant.SessionKey.UserCacheModel));
 
                 //var teet= HttpContext.User.Identity.Name.ToUpper();
 

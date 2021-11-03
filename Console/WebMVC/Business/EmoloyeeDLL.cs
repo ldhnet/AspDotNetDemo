@@ -10,8 +10,7 @@ namespace WebMVC.Business
 {
     public class EmoloyeeDLL
     {
-        private UserService userService = new UserService();
-
+        private UserService userService = new UserService(); 
         public TData<Employee> Find(string employeeSerialNumber)
         {
             TData<Employee> obj = new TData<Employee>();

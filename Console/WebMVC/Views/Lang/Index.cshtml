@@ -1,0 +1,86 @@
+﻿
+@{
+   Layout = null;
+} 
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="~/js/dh.tool.js"></script>
+<h1>Index</h1>
+<style>
+    body {
+        font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    } 
+    #languages {
+        position: absolute;
+        right: 0px;
+        height: 29px;
+        float: right;
+        margin: -7% auto;
+    }
+
+        #languages > ul > li {
+            list-style: none;
+            float: left;
+            padding-right: 10px;
+        }
+
+        #languages > ul {
+            margin-top: 10px;
+        }
+
+            #languages > ul > li > a {
+                /*color: wheat;*/
+            }
+</style>
+
+<div class="dropdown" id="languages">
+    <ul>
+        <li><a data-value="en" href="#"><i class="whitespace"></i> English</a></li>
+        <li><a data-value="zh-CN" href="#"><i class="whitespace"></i> 中文简体</a></li>
+    </ul>
+</div><h3>@ViewBag.Culture</h3>
+<h3>@ViewBag.UICulture</h3>
+<h3>@ViewBag.Lang</h3>
+
+
+<div>
+     <h2> 语言环境 </h2>
+    <h3 id="title"> </h3>
+</div>
+@section scripts
+{
+  <script>
+   $(function () {
+       
+            // website language
+            var cookielang = $.dh.cookies.get("lang");
+            var currentLang = cookielang ? cookielang : $.vxi.i18n.default;
+
+            console.log(currentLang);
+            //if (currentLang == 'en')
+            //    document.title = "User Login";
+                  $('title').html(currentLang);
+             
+            $('#languages a').click(function (e) {
+                e.preventDefault();
+                currentLang = $(this).attr('data-value');
+                if (currentLang == cookielang) return;
+                $.dh.cookies.set("lang", currentLang, 30);
+                       $('title').html(currentLang);
+                location.reload();
+                //$('#languages i').removeClass('fa fa-language whitespace').addClass('whitespace');
+                //$('#languages a[data-value=' + currentLang + ']').find('i').removeClass('whitespace').addClass('fa fa-language');
+            });
+
+      
+
+            //setTimeout(function () {
+            //    $(".view-alert").slideUp("slow");
+            //}, 5000);
+        });
+   </script>
+ }

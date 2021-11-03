@@ -151,6 +151,15 @@ namespace WebMVC.Properties {
         }
         
         /// <summary>
+        ///   查找类似 你好，世界。 的本地化字符串。
+        /// </summary>
+        internal static string Hello {
+            get {
+                return ResourceManager.GetString("Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 返回数据处理错误，请重试操作。 的本地化字符串。
         /// </summary>
         internal static string Http_Seciruty_Client_DecryptResponse_Failt {
@@ -426,6 +435,15 @@ namespace WebMVC.Properties {
         internal static string QueryCacheExtensions_TypeNotEntityType {
             get {
                 return ResourceManager.GetString("QueryCacheExtensions_TypeNotEntityType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 标题 的本地化字符串。
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

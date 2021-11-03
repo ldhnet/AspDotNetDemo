@@ -30,7 +30,12 @@
       "ProjectGuid": "dba1ab6f-efa5-4164-a50d-a4e1429a19b9",
       "DisplayName": "DHLibrary",
       "ColorIndex": 4
+    },
+    "247d1383-da3a-4566-b6e1-9451af5b6d3a": {
+      "ProjectGuid": "247d1383-da3a-4566-b6e1-9451af5b6d3a",
+      "DisplayName": "UnitTest",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

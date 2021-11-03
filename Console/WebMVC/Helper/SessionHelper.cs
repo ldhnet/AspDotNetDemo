@@ -57,8 +57,8 @@ namespace WebMVC.Helper
                 return default(T);
             }
             IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
-            object retval = hca?.HttpContext?.Session.GetString(key) as string;
-            return (T)retval; 
+            string retval = hca?.HttpContext?.Session.GetString(key) as string;
+            return JsonHelper.FromJson<T>(retval); 
         }
 
 
