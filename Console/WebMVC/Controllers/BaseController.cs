@@ -42,12 +42,12 @@ namespace WebMVC.Controllers
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             base.OnActionExecuting(context);
-            //context.Result = View("~/Views/Shared/Error.cshtml");
-            var cultureArr = context.HttpContext.Request.Headers["accept-language"].ToString().Split(",");
-            //获取前台语言并设置
-            SetCulture("");
 
-   
+            Request.Cookies.TryGetValue("lang", out string lang);
+
+            //获取前台语言并设置
+            SetCulture(lang); 
+
             #region 【权限验证】【登入验证】 
 
             var IsExistArea = context.ActionDescriptor.RouteValues.TryGetValue("area", out string _areaName);

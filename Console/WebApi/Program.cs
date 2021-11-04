@@ -22,10 +22,6 @@ namespace WebApi
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-               //.ConfigureLogging((hostingContext, logging) =>
-               //{
-               //    logging.AddEventLog();
-               //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

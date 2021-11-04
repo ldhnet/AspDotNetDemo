@@ -160,7 +160,7 @@ namespace WebMVC
             app.UseSession();
 
             var supportedCultures = new[] {
-                new CultureInfo("en-US"),
+                new CultureInfo("en"),
                 new CultureInfo("zh-CN")
             };
 
