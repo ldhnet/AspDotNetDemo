@@ -1,4 +1,5 @@
-﻿using Hangfire.Dashboard;
+﻿using DHLibrary.Config;
+using Hangfire.Dashboard;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,7 @@ namespace WebMVC.Attributes
                 return false;
             }
 
-            if (username == GlobalContext.SystemConfig.HangfireAccount && password == GlobalContext.SystemConfig.HangfirePwd)
+            if (username == GlobalConfig.SystemConfig.HangfireAccount && password == GlobalConfig.SystemConfig.HangfirePwd)
             {
                 return true;
             }

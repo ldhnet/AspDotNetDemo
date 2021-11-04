@@ -1,3 +1,4 @@
+using DHLibrary.Config;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -78,7 +79,7 @@ namespace WebMVC
 
             services.AddSingleton<MyFilter>();
              
-            services.AddHangfire(r => r.UseSqlServerStorage(GlobalContext.SystemConfig.DBConnectionString));
+            services.AddHangfire(r => r.UseSqlServerStorage(GlobalConfig.SystemConfig.DBConnectionString));
              
             //注册Cookie认证服务
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
@@ -133,7 +134,7 @@ namespace WebMVC
 
             #endregion
 
-            GlobalContext.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+            GlobalConfig.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
             services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig")); 
             GlobalContext.Services = services;

@@ -32,7 +32,7 @@ namespace WebMVC.Controllers
             ViewBag.UICulture = currentUICulture;
              
 
-            ViewBag.Lang = Resources.Title;
+            ViewBag.Lang = Resources.Title + "---" + Resources.Hello;
 
 
             return View();

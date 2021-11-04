@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DHLibrary.Config;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace WebMVC.Context
         {
             IDatabase database = null;
             ApplicationDbContext dbContext=new ApplicationDbContext();
-            string dbType = GlobalContext.SystemConfig.DBProvider; 
+            string dbType = GlobalConfig.SystemConfig.DBProvider; 
             switch (dbType)
             {
                 case "SqlServer": 

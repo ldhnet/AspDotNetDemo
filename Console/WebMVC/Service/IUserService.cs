@@ -6,7 +6,7 @@ using WebMVC.Model;
 
 namespace WebMVC.Service
 {
-    public interface IUserService
+    public interface IUserService: IDependency
     {
         IUserRepository User { get; }
         Employee Find(string employeeSerialNumber);

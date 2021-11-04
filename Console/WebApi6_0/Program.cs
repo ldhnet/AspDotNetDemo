@@ -1,18 +1,48 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DHLibrary.Config;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
+using WebApi6_0;
+using WebMVC.Model;
+using WebMVC.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Look for static files in webroot
+builder.WebHost.UseWebRoot("webroot");
+
+// Wait 30 seconds for graceful shutdown.
+builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
+ 
+GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+ 
 // Add services to the container.
+
+#region  Autofac
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+// Register services directly with Autofac here. Don't
+// call builder.Populate(), that happens in AutofacServiceProviderFactory.
+
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
+
+//builder.Host.ConfigureContainer<ContainerBuilder>(builder => { 
+//    Type baseType = typeof(IDependency);
+//    Assembly[] assemblies = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "WebMVC.dll").Select(m => Assembly.LoadFrom(m)).ToArray();
+//    builder.RegisterAssemblyTypes(assemblies).Where(type => baseType.IsAssignableFrom(type)).AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope(); 
+//});
+
+
+#endregion Autofac
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "WebApi6_0", Version = "v1" });
 });
-
-
-
-
+   
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+   
 app.UseAuthorization();
 
 app.MapControllers(); 

@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.Extensions.Hosting; 
+using Microsoft.Extensions.Hosting;
+using DHLibrary.Config;
 
 namespace WebMVC.Model
 {
@@ -24,9 +25,7 @@ namespace WebMVC.Model
         public static IConfiguration Configuration { get; set; }
 
         public static IWebHostEnvironment HostingEnvironment { get; set; }
-
-        public static SystemConfig SystemConfig { get; set; }
-
+         
         public static string GetVersion()
         {
             Version version = Assembly.GetEntryAssembly().GetName().Version;

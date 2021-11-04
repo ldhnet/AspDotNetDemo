@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DHLibrary.Config;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.DataEncryption;
 using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
 using Microsoft.Extensions.Options;
@@ -13,7 +14,9 @@ namespace WebMVC.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        private readonly string _connectionString = GlobalContext.SystemConfig.DBConnectionString;
+        private readonly string _connectionString = GlobalConfig.SystemConfig.DBConnectionString;
+
+        //private readonly string _connectionString = "Server=localhost;Database=Test;User Id=sa;Password=2021@ldh;";
 
         //private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key; 
         //private readonly IEncryptionProvider _provider;

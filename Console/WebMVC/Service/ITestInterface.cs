@@ -1,6 +1,6 @@
 ﻿namespace WebMVC.Service
 {
-    public interface ITestInterface
+    public interface ITestInterface: IDependency
     {
         string TestFun();
     }
