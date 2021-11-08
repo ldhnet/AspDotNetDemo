@@ -128,7 +128,6 @@ namespace WebMVC.Controllers
 
         protected UserCacheModel CurrentUser
         {
-
             get
             {
                 if (_currentUser != null) return _currentUser;
@@ -207,6 +206,9 @@ namespace WebMVC.Controllers
 
 
         #region 设置cookies
+
+        //SetCookies("cookieKay", "11111条数据的内容1111");
+        //var bb = GetCookies("cookieKay");
 
         /// <summary>
         /// 设置本地cookie

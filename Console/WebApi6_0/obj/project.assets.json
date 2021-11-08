@@ -4311,6 +4311,16 @@
           "bin/placeholder/DHLibrary.dll": {}
         }
       },
+      "LangResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LangResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LangResources.dll": {}
+        }
+      },
       "WebMVC/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4320,6 +4330,7 @@
           "EntityFrameworkCore.DataEncryption": "3.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
+          "LangResources": "1.0.0",
           "Microsoft.AspNetCore.ConcurrencyLimiter": "5.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.8",
@@ -12855,6 +12866,11 @@
       "type": "project",
       "path": "../DHLibrary/DHLibrary.csproj",
       "msbuildProject": "../DHLibrary/DHLibrary.csproj"
+    },
+    "LangResources/1.0.0": {
+      "type": "project",
+      "path": "../LangResources/LangResources.csproj",
+      "msbuildProject": "../LangResources/LangResources.csproj"
     },
     "WebMVC/1.0.0": {
       "type": "project",

@@ -35,10 +35,8 @@ namespace WebMVC
     public class Startup
     { 
         public IConfiguration Configuration { get; set; }
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
-        {
-            Configuration = configuration;
-          
+        public Startup(IWebHostEnvironment env)
+        { 
             GlobalContext.HostingEnvironment = env;
         } 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -49,8 +47,34 @@ namespace WebMVC
             services.AddHttpContextAccessor();
             services.AddOptions();
 
-            services.AddLocalization();
-             
+           // services.AddLocalization();
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            #region config
+            if (Configuration == null)
+            {
+                IConfigurationBuilder configurationBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory());
+
+                var aaaaa = GlobalContext.HostingEnvironment.EnvironmentName;
+
+                if (GlobalContext.HostingEnvironment.IsEnvironment("Development"))
+                {
+                    configurationBuilder.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+                }
+                else
+                {
+                    configurationBuilder.AddJsonFile("appsettings.Qa.json", optional: true, reloadOnChange: true);
+                }
+                Configuration = configurationBuilder.Build();
+                services.AddSingleton(Configuration);
+            }
+            GlobalConfig.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+            services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig"));
+            GlobalContext.Services = services;
+            GlobalContext.Configuration = Configuration;
+            #endregion
+
             services.AddScoped<ClientIpCheckActionFilter>(container =>
             {
                 var loggerFactory = container.GetRequiredService<ILoggerFactory>();
@@ -134,25 +158,7 @@ namespace WebMVC
 
             #endregion
 
-            if (Configuration == null)
-            {
-                IConfigurationBuilder configurationBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory());
-                 
-                if (GlobalContext.HostingEnvironment.IsEnvironment("Development"))
-                {
-                    configurationBuilder.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
-                }
-                else 
-                {
-                    configurationBuilder.AddJsonFile("appsettings.Qa.json", optional: true, reloadOnChange: true);
-                }
-                Configuration = configurationBuilder.Build();
-                services.AddSingleton(Configuration);
-            }  
-            GlobalConfig.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
-            services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig")); 
-            GlobalContext.Services = services;
-            GlobalContext.Configuration = Configuration;
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -175,7 +181,7 @@ namespace WebMVC
             app.UseSession();
 
             var supportedCultures = new[] {
-                new CultureInfo("en"),
+                new CultureInfo("en-US"),
                 new CultureInfo("zh-CN")
             };
 
@@ -184,8 +190,8 @@ namespace WebMVC
                 DefaultRequestCulture = new RequestCulture("zh-CN"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures,
-            });
-             
+            }); 
+
             //启用并发限制数中间件
             //app.UseConcurrencyLimiter();
 

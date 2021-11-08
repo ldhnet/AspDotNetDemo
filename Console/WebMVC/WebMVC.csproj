@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DHLibrary\DHLibrary.csproj" />
+    <ProjectReference Include="..\LangResources\LangResources.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,9 +17,9 @@
 
 			#languages {
 				position: absolute;
-				right: 300px;
+				right: 70%;
 				height: 29px;
-				float: right;
+				float: left;
 				margin: 3% auto;
 			}
 
@@ -40,20 +40,21 @@
 	</head>
 	<body>
 		<h1>Index</h1>
-		<div class="dropdown" id="languages">
+		<div  id="languages">
 			<ul>
-				<li><a data-value="en" href="#"><i class="whitespace"></i> English</a></li>
+				<li><a data-value="en-US" href="#"><i class="whitespace"></i> English</a></li>
 				<li><a data-value="zh-CN" href="#"><i class="whitespace"></i> 中文简体</a></li>
 			</ul>
+		</div>
+		<div>
+			<h2> 语言环境 </h2>
+			<h3 id="title"> </h3>
 		</div>
 		<h3>@ViewBag.Culture</h3>
 		<h3>@ViewBag.UICulture</h3>
 		<h3>@ViewBag.Lang</h3>
 		 
-		<div>
-			<h2> 语言环境 </h2>
-			<h3 id="title"> </h3>
-		</div>
+		
 	</body>
 	 
 <script>

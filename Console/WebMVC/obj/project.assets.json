@@ -4240,6 +4240,16 @@
         "runtime": {
           "bin/placeholder/DHLibrary.dll": {}
         }
+      },
+      "LangResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LangResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LangResources.dll": {}
+        }
       }
     }
   },
@@ -12645,6 +12655,11 @@
       "type": "project",
       "path": "../DHLibrary/DHLibrary.csproj",
       "msbuildProject": "../DHLibrary/DHLibrary.csproj"
+    },
+    "LangResources/1.0.0": {
+      "type": "project",
+      "path": "../LangResources/LangResources.csproj",
+      "msbuildProject": "../LangResources/LangResources.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12654,6 +12669,7 @@
       "EntityFrameworkCore.DataEncryption >= 3.0.0",
       "Hangfire >= 1.7.24",
       "Hashids.net >= 1.4.1",
+      "LangResources >= 1.0.0",
       "Microsoft.AspNetCore.ConcurrencyLimiter >= 5.0.11",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.8",
@@ -12704,6 +12720,9 @@
           "projectReferences": {
             "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj"
+            },
+            "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj": {
+              "projectPath": "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj"
             }
           }
         }

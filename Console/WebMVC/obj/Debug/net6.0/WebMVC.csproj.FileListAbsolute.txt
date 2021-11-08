@@ -412,3 +412,8 @@ C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\en\WebMVC.resources.dll
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.Properties.Resources.en.resources
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\en\WebMVC.resources.dll
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\appsettings.Qa.json
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\LangResources.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\LangResources.pdb
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\en-US\LangResources.resources.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\zh-CN\LangResources.resources.dll
+C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CopyComplete

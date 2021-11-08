@@ -3140,6 +3140,19 @@
           "DHLibrary.dll": {}
         }
       },
+      "LangResources/1.0.0": {
+        "runtime": {
+          "LangResources.dll": {}
+        },
+        "resources": {
+          "en-US/LangResources.resources.dll": {
+            "locale": "en-US"
+          },
+          "zh-CN/LangResources.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
       "WebMVC/1.0.0": {
         "dependencies": {
           "DHLibrary": "1.0.0",
@@ -3147,6 +3160,7 @@
           "EntityFrameworkCore.DataEncryption": "3.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
+          "LangResources": "1.0.0",
           "Microsoft.AspNetCore.ConcurrencyLimiter": "5.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.8",
@@ -4948,6 +4962,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "DHLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LangResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

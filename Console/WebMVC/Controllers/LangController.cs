@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LangResources;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System.Globalization;
 using System.Threading;
@@ -8,32 +9,36 @@ namespace WebMVC.Controllers
 {
     public class LangController : BaseController
     { 
-        private readonly IStringLocalizer<Resources> _localizer;
+        private readonly IStringLocalizer<LangResource> localizer;
 
-        public LangController(IStringLocalizer<Resources> localizer)
+        public LangController(IStringLocalizer<LangResource> _localizer)
         {
-            _localizer= localizer;
+            localizer= _localizer;
         }
         public IActionResult Index()
         {
 
-            var langRequest = Request.Headers["accept-language"].ToString();
+            var aaaa = localizer.GetString(LangResource.Hello);
+            var bbb = localizer.GetString(LangResource.Title);
 
-            Request.Cookies.TryGetValue("lang", out string lang); 
+            //var langRequest = Request.Headers["accept-language"].ToString();
 
-            CultureInfo cinfo = new CultureInfo(lang ?? "zh-CN");
-            Thread.CurrentThread.CurrentCulture = cinfo;
-            Thread.CurrentThread.CurrentUICulture = cinfo;
-             
-            var currentUICulture = CultureInfo.CurrentUICulture.Name;
-            var currentCulture = CultureInfo.CurrentCulture.Name;
+            //Request.Cookies.TryGetValue("lang", out string lang); 
 
-            ViewBag.Culture = currentCulture;
-            ViewBag.UICulture = currentUICulture;
-             
+            //CultureInfo cinfo = new CultureInfo(lang ?? "zh-CN");
+            //Thread.CurrentThread.CurrentCulture = cinfo;
+            //Thread.CurrentThread.CurrentUICulture = cinfo;
 
-            ViewBag.Lang = Resources.Title + "---" + Resources.Hello;
+            //var currentUICulture = CultureInfo.CurrentUICulture.Name;
+            //var currentCulture = CultureInfo.CurrentCulture.Name;
 
+            //ViewBag.Culture = currentCulture;
+            //ViewBag.UICulture = currentUICulture;
+
+
+            //ViewBag.Lang = Resources.Title + "---" + Resources.Hello + "====" + aaaa + bbb;
+
+            ViewBag.Lang =  aaaa + "====" + bbb;
 
             return View();
         }

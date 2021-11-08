@@ -21,7 +21,7 @@ namespace WebMVC.Controllers
         private readonly TestInterface _testFace2 = new TestInterface();
 
         private readonly TestInterface2 _testFace3 = new TestInterface2(); 
-
+        //接口多实现，依赖注入
         public TestController(IEnumerable<ITestInterface> testFaceList, ITestInterface testFace)
         {
             _testFace = testFace;

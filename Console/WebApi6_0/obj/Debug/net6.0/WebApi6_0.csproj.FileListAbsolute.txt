@@ -328,4 +328,9 @@ C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\WebMVC.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\WebMVC.pdb
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\DHLibrary.pdb
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\en\WebMVC.resources.dll
+C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\appsettings.Qa.json
+C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\LangResources.dll
+C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\LangResources.pdb
+C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\en-US\LangResources.resources.dll
+C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\zh-CN\LangResources.resources.dll
 C:\GutReposite\Console\WebApi6_0\obj\Debug\net6.0\WebApi6_0.csproj.CopyComplete

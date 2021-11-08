@@ -65,30 +65,24 @@ namespace WebMVC.Controllers
 
             var aa7 = Environment.CurrentManagedThreadId;
 
-            SetCookies("cookieKay", "11111条数据的内容1111");
-             
+
             var contents = new List<Content>();
             for (int i = 0; i < 50; i++)
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题测试", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
             }
-            SessionHelper.SetSession("sessionKey", "内容22222222222222");
 
 
-            var cc=  SessionHelper.GetSession("sessionKey");
+            //SessionHelper.SetSession("sessionKey", "内容22222222222222");             
+            //var cc=  SessionHelper.GetSession("sessionKey");
+            ////var currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel); 
+            //var UserCacheModel = HttpContext.Session.GetObjectFromJson<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
 
-            //var currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
-
-            var bb = GetCookies("cookieKay");
-              
-            var UserCacheModel = HttpContext.Session.GetObjectFromJson<UserCacheModel>(WebConstant.SessionKey.UserCacheModel);
-
-            HttpContext.Session.SetString("param", "测试测试sessionKey");
-            var value = HttpContext.Session.GetString("param");
+            //HttpContext.Session.SetString("param", "测试测试sessionKey");
+            //var value = HttpContext.Session.GetString("param");
 
              
-            RetryPolicyHelper.Retry(() => _logger.LogError("测试内容22222222222222"));
-
+            RetryPolicyHelper.Retry(() => _logger.LogError("测试内容22222222222222")); 
 
             return View(new ContentViewModel { Contents = contents }); 
         }
@@ -104,23 +98,15 @@ namespace WebMVC.Controllers
             var info = _userdll.Find("admin777")?.Data;
 
             Check.NotNull(info, nameof(info));
-
-            
-
-
+              
             string timestamp = _memoryCache.Set("timestamp", DateTime.Now.ToString());
              
             string timestampGet = _memoryCache.Get<string>("timestamp");
-
-
-
+             
             string timestamp3 = _memoryCache.GetOrCreate("timestamp3", entry => { return DateTime.Now.ToString(); });
-
-
+             
             string timestampGet3 = _memoryCache.Get<string>("timestamp3");
-
-
-
+             
             var employee1 = _memoryCache.GetOrCreate("timestamp2", entry => { return _userdll.Find("admin")?.Data; });
 
 
@@ -137,8 +123,7 @@ namespace WebMVC.Controllers
             for (int i = 0; i < 5; i++)
             {
                 contents.Add(new Content { Id = i, Title = $"第{i}条数据标题测试", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now.AddDays(-i) });
-            }
-
+            } 
 
             var _avatarCache3 = new SimpleMemoryCache<List<Content>>();
 
@@ -164,16 +149,9 @@ namespace WebMVC.Controllers
             var ppp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp2");
 
             var ppp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp3");
-
-
-
-
+             
             var ppp4 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp4");
-
-
-
-
-
+              
             var employee = _userdll.Find("admin")?.Data;
 
             var dto = new EmployeeDto()

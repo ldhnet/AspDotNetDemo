@@ -1,0 +1,31 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "LangResources/1.0.0": {
+        "runtime": {
+          "LangResources.dll": {}
+        },
+        "resources": {
+          "en-US/LangResources.resources.dll": {
+            "locale": "en-US"
+          },
+          "zh-CN/LangResources.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LangResources/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
