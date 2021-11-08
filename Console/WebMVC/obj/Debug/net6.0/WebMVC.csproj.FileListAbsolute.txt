@@ -411,4 +411,4 @@ C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\runtimes\win-arm64\lib\net6.0\dot
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\en\WebMVC.resources.dll
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.Properties.Resources.en.resources
 C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\en\WebMVC.resources.dll
-C:\GutReposite\Console\WebMVC\obj\Debug\net6.0\WebMVC.csproj.CopyComplete
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\appsettings.Qa.json

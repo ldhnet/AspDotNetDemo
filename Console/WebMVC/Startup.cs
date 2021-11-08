@@ -17,6 +17,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMVC.Attributes;
@@ -32,15 +33,14 @@ using WebMVC.Service;
 namespace WebMVC
 {
     public class Startup
-    {
+    { 
+        public IConfiguration Configuration { get; set; }
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+          
             GlobalContext.HostingEnvironment = env;
-        }
-
-        public IConfiguration Configuration { get; }
-
+        } 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {  
@@ -134,8 +134,22 @@ namespace WebMVC
 
             #endregion
 
-            GlobalConfig.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
-
+            if (Configuration == null)
+            {
+                IConfigurationBuilder configurationBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory());
+                 
+                if (GlobalContext.HostingEnvironment.IsEnvironment("Development"))
+                {
+                    configurationBuilder.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+                }
+                else 
+                {
+                    configurationBuilder.AddJsonFile("appsettings.Qa.json", optional: true, reloadOnChange: true);
+                }
+                Configuration = configurationBuilder.Build();
+                services.AddSingleton(Configuration);
+            }  
+            GlobalConfig.SystemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
             services.Configure<SystemConfig>(Configuration.GetSection("SystemConfig")); 
             GlobalContext.Services = services;
             GlobalContext.Configuration = Configuration;

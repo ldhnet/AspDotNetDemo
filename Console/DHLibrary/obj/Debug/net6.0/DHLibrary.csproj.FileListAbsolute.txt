@@ -32,4 +32,3 @@ C:\GutReposite\Console\DHLibrary\obj\Debug\net6.0\DHLibrary.csproj.CoreCompileIn
 C:\GutReposite\Console\DHLibrary\obj\Debug\net6.0\DHLibrary.dll
 C:\GutReposite\Console\DHLibrary\obj\Debug\net6.0\ref\DHLibrary.dll
 C:\GutReposite\Console\DHLibrary\obj\Debug\net6.0\DHLibrary.pdb
-C:\GutReposite\Console\DHLibrary\obj\Debug\net6.0\DHLibrary.csproj.AssemblyReference.cache
