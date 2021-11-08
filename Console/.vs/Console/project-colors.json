@@ -35,7 +35,12 @@
       "ProjectGuid": "247d1383-da3a-4566-b6e1-9451af5b6d3a",
       "DisplayName": "UnitTest",
       "ColorIndex": 5
+    },
+    "8efb720b-face-4e08-8ace-9a6ce36f4c67": {
+      "ProjectGuid": "8efb720b-face-4e08-8ace-9a6ce36f4c67",
+      "DisplayName": "WebApi6_0",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }

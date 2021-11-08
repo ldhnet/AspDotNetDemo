@@ -1,4 +1,5 @@
 ﻿using DHLibrary.Config;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebMVC.Model;
@@ -20,7 +21,7 @@ namespace WebApi6_0.Controllers
             _UserInterface = userIfc;
         }
 
-        [HttpGet]
+        [HttpGet] 
         public string Get()
         {
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
