@@ -10,6 +10,7 @@ build_property.RootNamespace = WebApi6_0
 build_property.RootNamespace = WebApi6_0
 build_property.ProjectDir = C:\GutReposite\Console\WebApi6_0\
 build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\GutReposite\Console\WebApi6_0
 build_property._RazorSourceGeneratorDebug = 

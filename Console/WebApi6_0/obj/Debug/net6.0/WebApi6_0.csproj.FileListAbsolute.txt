@@ -10,7 +10,6 @@ C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\GutReposite\Console\WebApi6_0\obj\Debug\net6.0\WebApi6_0.GlobalUsings.g.cs
 C:\GutReposite\Console\WebApi6_0\obj\Debug\net6.0\WebApi6_0.csproj.AssemblyReference.cache
 C:\GutReposite\Console\WebApi6_0\obj\Debug\net6.0\WebApi6_0.GeneratedMSBuildEditorConfig.editorconfig
 C:\GutReposite\Console\WebApi6_0\obj\Debug\net6.0\WebApi6_0.AssemblyInfoInputs.cache
@@ -74,8 +73,6 @@ C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
@@ -115,7 +112,6 @@ C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\Pitcher.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.CodeDom.dll
-C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Collections.Immutable.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Composition.Convention.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Composition.Hosting.dll
@@ -127,7 +123,6 @@ C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Resources.Extensions.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Runtime.Caching.dll
-C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\GutReposite\Console\WebApi6_0\bin\Debug\net6.0\System.Windows.Extensions.dll

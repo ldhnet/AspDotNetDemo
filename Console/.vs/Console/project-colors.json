@@ -40,7 +40,17 @@
       "ProjectGuid": "8efb720b-face-4e08-8ace-9a6ce36f4c67",
       "DisplayName": "WebApi6_0",
       "ColorIndex": 6
+    },
+    "ee027640-fb32-4919-96ec-643be376591c": {
+      "ProjectGuid": "ee027640-fb32-4919-96ec-643be376591c",
+      "DisplayName": "LangResources",
+      "ColorIndex": 7
+    },
+    "b9c2a9be-0d92-4191-854d-cf98f1acc835": {
+      "ProjectGuid": "b9c2a9be-0d92-4191-854d-cf98f1acc835",
+      "DisplayName": "WebApi6_0LTS",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 9
 }

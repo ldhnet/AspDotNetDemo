@@ -1104,3 +1104,63 @@
 2021-11-08 15:57:27.9143||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
 2021-11-08 15:57:27.9208||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
 2021-11-08 15:57:27.9208||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:46.3947||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects... |url: |action: 
+2021-11-08 16:03:46.8074||INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed. |url: |action: 
+2021-11-08 16:03:46.8229||INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: localhost@Test' |url: |action: 
+2021-11-08 16:03:46.8229||INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15. |url: |action: 
+2021-11-08 16:03:46.8267||INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 12
+    Listening queues: 'back', 'front', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 |url: |action: 
+2021-11-08 16:03:47.0032||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:2272:0fee892f successfully announced in 145.3726 ms |url: |action: 
+2021-11-08 16:03:47.0032||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:2272:0fee892f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... |url: |action: 
+2021-11-08 16:03:47.0605||INFO|Hangfire.Server.ServerWatchdog|3 servers were removed due to timeout |url: |action: 
+2021-11-08 16:03:47.0799||INFO|Hangfire.Server.BackgroundServerProcess|Server conference hangfire1:2272:0fee892f all the dispatchers started |url: |action: 
+2021-11-08 16:03:48.4615||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/|action: Index
+2021-11-08 16:03:48.4783||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/|action: Index
+2021-11-08 16:03:48.4936||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/|action: Index
+2021-11-08 16:03:48.6810||INFO|WebMVC.Controllers.AccountController|Index |url: https://localhost/|action: Index
+2021-11-08 16:03:52.5506||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:52.5506||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:52.5506||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:52.8948||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:52.8948||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:52.9050||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.4585||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.4585||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.4658||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.9051||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.9051||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.9051||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Account/Login|action: Login
+2021-11-08 16:03:53.9398||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9398||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9398||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9540||INFO|WebMVC.Filter.MyFilter|do2222 something..... |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9760||ERROR|WebMVC.Controllers.HomeController|Index 11111 |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9760||INFO|WebMVC.Controllers.HomeController|Index 22222 |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9884||WARN|WebMVC.Controllers.HomeController|Index 55555 |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:53.9884||INFO|WebMVC.Controllers.HomeController|https%3a%2f%2fwww.cnblogs.com%2fdongh%2fp%2f15470938.html |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:54.0046||INFO|WebMVC.Controllers.HomeController|https://www.cnblogs.com/dongh/p/15470938.html |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:54.0046||ERROR|WebMVC.Controllers.HomeController|测试内容22222222222222 |url: https://localhost/Home/Index|action: Index
+2021-11-08 16:03:55.4713||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:55.4713||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:55.4713||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:57.2583||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:57.2627||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:57.2627||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.1340||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.1340||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.1416||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.7838||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.7838||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:58.7838||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.2823||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.2985||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.2985||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.7534||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.7534||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:03:59.7665||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:04:00.0244||WARN|WebMVC.Middleware.OneMiddleware|One Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:04:00.0315||WARN|WebMVC.Middleware.TwoMiddleware|Two Middleware |url: https://localhost/Lang/Index|action: Index
+2021-11-08 16:04:00.0315||WARN|WebMVC.Middleware.ThreeMiddleware|Three Middleware |url: https://localhost/Lang/Index|action: Index
