@@ -1,4 +1,4 @@
-namespace WebApi6_0LTS
+namespace WebApi6_0
 {
     public class WeatherForecast
     {
