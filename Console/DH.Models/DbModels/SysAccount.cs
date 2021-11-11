@@ -10,6 +10,6 @@ namespace DH.Models.DbModels
         public string AccountNo { get; set; }    
         public string AccountName { get; set; }  
         public string CreateBy { get; set; }
-        public long? CreateTime { get; set; } 
+        public DateTime CreateTime { get; set; } 
     }
 }

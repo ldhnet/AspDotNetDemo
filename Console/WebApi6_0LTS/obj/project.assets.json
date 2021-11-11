@@ -4364,6 +4364,20 @@
           "bin/placeholder/DH.Models.dll": {}
         }
       },
+      "DirectService.Admin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DH.Models": "1.0.0",
+          "Framework.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DirectService.Admin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DirectService.Admin.dll": {}
+        }
+      },
       "Framework.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -13045,6 +13059,11 @@
       "path": "../DH.Models/DH.Models.csproj",
       "msbuildProject": "../DH.Models/DH.Models.csproj"
     },
+    "DirectService.Admin/1.0.0": {
+      "type": "project",
+      "path": "../DirectService.Admin/DirectService.Admin.csproj",
+      "msbuildProject": "../DirectService.Admin/DirectService.Admin.csproj"
+    },
     "Framework.Core/1.0.0": {
       "type": "project",
       "path": "../Framework.Core/Framework.Core.csproj",
@@ -13070,6 +13089,7 @@
     "net6.0": [
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "DH.Models >= 1.0.0",
+      "DirectService.Admin >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "WebMVC >= 1.0.0"
     ]
@@ -13110,6 +13130,9 @@
           "projectReferences": {
             "C:\\GutReposite\\Console\\DH.Models\\DH.Models.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\DH.Models\\DH.Models.csproj"
+            },
+            "C:\\GutReposite\\Console\\DirectService.Admin\\DirectService.Admin.csproj": {
+              "projectPath": "C:\\GutReposite\\Console\\DirectService.Admin\\DirectService.Admin.csproj"
             },
             "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj"

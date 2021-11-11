@@ -23,8 +23,8 @@ namespace DH.Models.DbModels
             return builder.Options;
         }
 
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<EmployeeLogin> EmployeeLogins { get; set; }
+        public DbSet<SysAccount> SysAccount{ get; set; }
+        public DbSet<SysAccountTrans> SysAccountTrans { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,7 +53,7 @@ namespace DH.Models.DbModels
 
                 entity.Property(e => e.CreateBy).HasColumnType("varchar(50)");
 
-                entity.Property(e => e.CreateTime).HasColumnType("bigint(20)");  
+                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime");  
 
             });
 
@@ -68,7 +68,7 @@ namespace DH.Models.DbModels
 
                 entity.Property(e => e.CreateBy).HasColumnType("varchar(50)");
 
-                entity.Property(e => e.CreateTime).HasColumnType("bigint(20)"); 
+                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime"); 
 
             });
              

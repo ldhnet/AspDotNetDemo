@@ -1,4 +1,5 @@
-﻿using Framework.Utility.Config; 
+﻿using DH.Models.DbModels;
+using Framework.Utility.Config; 
 using Microsoft.AspNetCore.Mvc; 
 using WebMVC.Service;
 
@@ -20,7 +21,8 @@ namespace WebApi6_0.Controllers
 
         [HttpGet] 
         public string Get()
-        {
+        { 
+
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
 
 

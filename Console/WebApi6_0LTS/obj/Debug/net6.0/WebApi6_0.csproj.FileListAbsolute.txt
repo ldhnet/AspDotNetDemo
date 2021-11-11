@@ -329,3 +329,11 @@ C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\AutoMapper.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Utility.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Utility.pdb
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPartsAssemblyInfo.cs
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\MySqlConnector.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DH.Models.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Core.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DH.Models.pdb
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Core.pdb
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Admin.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Admin.pdb

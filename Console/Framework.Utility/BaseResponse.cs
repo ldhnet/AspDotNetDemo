@@ -54,10 +54,10 @@ namespace Framework.Utility
         /// <summary>
         /// 初始化一个<see cref="BaseResponse{T}"/>类型的新实例
         /// </summary>
-        public BaseResponse(successCode resultType, string message, T data)
+        public BaseResponse(successCode resultType, string? message, T data)
         {
             this.success = resultType;
-            this.msg = message;
+            this.msg = message??string.Empty;
             this.data = data;
         }
 
