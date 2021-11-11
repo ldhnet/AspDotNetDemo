@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DHLibrary\DHLibrary.csproj" />
     <ProjectReference Include="..\WebMVC\WebMVC.csproj" />
   </ItemGroup>
 

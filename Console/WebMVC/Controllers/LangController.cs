@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System.Globalization;
-using System.Threading;
-using WebMVC.Properties;
+using System.Threading; 
 
 namespace WebMVC.Controllers
 {

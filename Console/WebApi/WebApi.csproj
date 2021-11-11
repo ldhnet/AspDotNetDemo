@@ -25,8 +25,4 @@
     <Folder Include="OAuth\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DHLibrary\DHLibrary.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -17,16 +17,16 @@ namespace WebMVC.Helper
         private static readonly string AESKey = "12345dontusethis"; // 16位或者32位
         private static readonly string AESIv = "youshouldchange!"; // 16位或者32位
 
-        public static byte[] MD5(string input)
+        public static byte[] MD5Set(string input)
         {
-            MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
+            MD5 md5CryptoServiceProvider = MD5.Create();
             byte[] byteArr = md5CryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(input));
             return byteArr;
         }
 
         public static string MD5ToHex(string input, int bit = 32)
         {
-            byte[] byteArr = MD5(input);
+            byte[] byteArr = MD5.HashData(Encoding.UTF8.GetBytes(input));
             string result = EncodingHelper.ByteArrToHexDefault(byteArr);
             if (bit == 16)
             {
@@ -162,8 +162,8 @@ namespace WebMVC.Helper
             }
             try
             {
-                var encoding = new ASCIIEncoding();
-                using (DESCryptoServiceProvider desCryptoServiceProvider = new DESCryptoServiceProvider())
+                var encoding = new ASCIIEncoding(); 
+                using (var desCryptoServiceProvider = TripleDES.Create()) 
                 {
                     byte[] inputArr = Encoding.UTF8.GetBytes(input);
                     desCryptoServiceProvider.Key = encoding.GetBytes(key);
@@ -219,7 +219,7 @@ namespace WebMVC.Helper
             try
             {
                 var encoding = new ASCIIEncoding();
-                using (DESCryptoServiceProvider desCryptoServiceProvider = new DESCryptoServiceProvider())
+                using (var desCryptoServiceProvider = TripleDES.Create())
                 {
                     desCryptoServiceProvider.Key = encoding.GetBytes(key);
                     desCryptoServiceProvider.IV = encoding.GetBytes(iv);

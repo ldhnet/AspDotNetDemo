@@ -33,9 +33,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
-                "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj"
-              },
               "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj": {
                 "projectPath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj"
               }
@@ -90,14 +87,14 @@
         }
       }
     },
-    "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
+    "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj",
-        "projectName": "DHLibrary",
-        "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj",
+        "projectUniqueName": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj",
+        "projectName": "Framework.Utility",
+        "projectPath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj",
         "packagesPath": "C:\\Users\\57442\\.nuget\\packages\\",
-        "outputPath": "C:\\GutReposite\\Console\\DHLibrary\\obj\\",
+        "outputPath": "C:\\GutReposite\\Console\\Framework.Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -118,7 +115,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj": {
+                "projectPath": "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -131,6 +132,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "NPOI": {
               "target": "Package",
               "version": "[2.5.4, )"
@@ -243,8 +248,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
-                "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj"
+              "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj": {
+                "projectPath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj"
               },
               "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj": {
                 "projectPath": "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj"

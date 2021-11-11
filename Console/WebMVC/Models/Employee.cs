@@ -1,4 +1,4 @@
-﻿using DHLibrary;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using WebMVC.Common;
+using Framework.Utility;
+using Framework.Utility.Attributes;
 
 namespace WebMVC.Model
 {

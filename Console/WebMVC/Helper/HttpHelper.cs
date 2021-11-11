@@ -38,8 +38,8 @@ namespace WebMVC.Helper
         /// <param name="postDataStr">The post data string.</param>
         /// <returns>System.String.</returns>
         public static string HttpGet(string url, int timeout = 10 * 1000)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+        { 
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest; 
             request.Method = "GET";
             request.ContentType = "text/html;charset=UTF-8";
             request.Timeout = timeout;

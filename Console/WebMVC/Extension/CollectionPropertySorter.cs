@@ -6,14 +6,14 @@
 //  <last-date>2015-03-20 12:10</last-date>
 // -----------------------------------------------------------------------
 
+using LangResources;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection;
-using WebMVC.Properties;
+using System.Reflection; 
 
 namespace WebMVC.Extension
 {
@@ -106,7 +106,7 @@ namespace WebMVC.Extension
                 PropertyInfo property = type.GetProperty(propertyName);
                 if (property == null)
                 {
-                    throw new Exception(string.Format(Resources.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
+                    throw new Exception(string.Format(LangResource.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
                 }
                 type = property.PropertyType;
                 propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);

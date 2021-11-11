@@ -19,6 +19,18 @@
           "UnitTest.dll": {}
         }
       },
+      "AutoMapper/8.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        }
+      },
       "coverlet.collector/3.0.2": {},
       "DiffEngine/6.4.9": {
         "dependencies": {
@@ -3891,12 +3903,14 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
-      "DHLibrary/1.0.0": {
+      "Framework.Utility/1.0.0": {
         "dependencies": {
+          "AutoMapper": "8.0.0",
+          "LangResources": "1.0.0",
           "NPOI": "2.5.4"
         },
         "runtime": {
-          "DHLibrary.dll": {}
+          "Framework.Utility.dll": {}
         }
       },
       "LangResources/1.0.0": {
@@ -3914,9 +3928,9 @@
       },
       "WebMVC/1.0.0": {
         "dependencies": {
-          "DHLibrary": "1.0.0",
           "EPPlus": "5.7.4",
           "EntityFrameworkCore.DataEncryption": "3.0.0",
+          "Framework.Utility": "1.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
           "LangResources": "1.0.0",
@@ -3934,11 +3948,6 @@
         },
         "runtime": {
           "WebMVC.dll": {}
-        },
-        "resources": {
-          "en/WebMVC.resources.dll": {
-            "locale": "en"
-          }
         }
       }
     }
@@ -3948,6 +3957,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
     },
     "coverlet.collector/3.0.2": {
       "type": "package",
@@ -6007,7 +6023,7 @@
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
-    "DHLibrary/1.0.0": {
+    "Framework.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

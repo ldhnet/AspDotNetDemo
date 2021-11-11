@@ -1,4 +1,4 @@
-using DHLibrary.Config;
+
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -20,13 +20,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using WebMVC.Attributes;
-using WebMVC.Common;
+using WebMVC.Attributes; 
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.HangFire;
 using WebMVC.Helper;
-using WebMVC.Middleware;
+using Framework.Utility.Config;
 using WebMVC.Model;
 using WebMVC.Service;
 

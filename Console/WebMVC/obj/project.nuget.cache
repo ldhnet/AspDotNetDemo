@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "16sWc7P5ncutSUcnhZMTV5FrRsAqknwczrDY7BPGpGeqF0AwqQEU3jjLo7r6QGB98sAcHchjt/neIRCZJuUDUg==",
+  "dgSpecHash": "ZP/16UYHOfuEgDTRLV0ZZZENIpuCsvSGXDaX+PnWwPxTI1e2M5nd/MzMOqrcWaj6jRII1BudaqdfQrTPQR6oxw==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\entityframeworkcore.dataencryption\\3.0.0\\entityframeworkcore.dataencryption.3.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\epplus\\5.7.4\\epplus.5.7.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\hangfire\\1.7.24\\hangfire.1.7.24.nupkg.sha512",

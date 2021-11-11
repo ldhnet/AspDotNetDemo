@@ -1,8 +1,5 @@
-﻿using DHLibrary.Config;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using WebMVC.Model;
+﻿using Framework.Utility.Config; 
+using Microsoft.AspNetCore.Mvc; 
 using WebMVC.Service;
 
 namespace WebApi6_0.Controllers

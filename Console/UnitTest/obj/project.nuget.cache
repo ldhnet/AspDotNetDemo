@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IW33pYg1LLtNFsrySS0faEWJOUdlBPGCDPwGJrhIyqc9DC9RaHE/slNPJuPWldacV0oaTK5R9CEmD20Xs6jytA==",
+  "dgSpecHash": "11OQspPjiCCXJwmfkCkfEGotlWVsbqmTxKgVjzVv7rT9ERkj51cr2eUN7gUkGs/U5UaThT1DiazKqfDMwrxK6Q==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\UnitTest\\UnitTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\diffengine\\6.4.9\\diffengine.6.4.9.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\emptyfiles\\2.3.3\\emptyfiles.2.3.3.nupkg.sha512",

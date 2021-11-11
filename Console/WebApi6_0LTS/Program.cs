@@ -1,6 +1,8 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using DHLibrary.Config;
+using DH.Models.DbModels;
+using Framework.Utility.Config;
+using Microsoft.EntityFrameworkCore;
 using WebApi6_0.AutofacConfig;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,14 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowCredentials());
 });
+
+
+builder.Services.AddDbContextPool<MyDBContext>(options =>
+{
+    var strConnection = GlobalConfig.SystemConfig.DBConnectionString;
+    options.UseSqlServer(strConnection);
+}, 64);
+
 
 
 #region  Autofac

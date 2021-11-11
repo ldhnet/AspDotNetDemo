@@ -1,4 +1,4 @@
-﻿using DHLibrary.Config;
+﻿using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.DataEncryption;
 using Microsoft.EntityFrameworkCore.DataEncryption.Providers;

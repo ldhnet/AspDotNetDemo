@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "coverlet.collector/3.0.2": {
         "type": "package",
         "build": {
@@ -5148,17 +5161,19 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "DHLibrary/1.0.0": {
+      "Framework.Utility/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "8.0.0",
+          "LangResources": "1.0.0",
           "NPOI": "2.5.4"
         },
         "compile": {
-          "bin/placeholder/DHLibrary.dll": {}
+          "bin/placeholder/Framework.Utility.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DHLibrary.dll": {}
+          "bin/placeholder/Framework.Utility.dll": {}
         }
       },
       "LangResources/1.0.0": {
@@ -5175,9 +5190,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "DHLibrary": "1.0.0",
           "EPPlus": "5.7.4",
           "EntityFrameworkCore.DataEncryption": "3.0.0",
+          "Framework.Utility": "1.0.0",
           "Hangfire": "1.7.24",
           "Hashids.net": "1.4.1",
           "LangResources": "1.0.0",
@@ -5206,6 +5221,23 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.0.0": {
+      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "coverlet.collector/3.0.2": {
       "sha512": "iBvPAIDaI7j/iMx/DzCGCJ3rdiOmel9VINEfaTiBv/NKIGHOP4X3hqc6Q1wgMtArEshlhXexQknP17SK4vXb1w==",
       "type": "package",
@@ -15448,10 +15480,10 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "DHLibrary/1.0.0": {
+    "Framework.Utility/1.0.0": {
       "type": "project",
-      "path": "../DHLibrary/DHLibrary.csproj",
-      "msbuildProject": "../DHLibrary/DHLibrary.csproj"
+      "path": "../Framework.Utility/Framework.Utility.csproj",
+      "msbuildProject": "../Framework.Utility/Framework.Utility.csproj"
     },
     "LangResources/1.0.0": {
       "type": "project",

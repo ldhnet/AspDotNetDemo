@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
       "EntityFrameworkCore.DataEncryption/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -4228,17 +4241,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "DHLibrary/1.0.0": {
+      "Framework.Utility/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AutoMapper": "8.0.0",
+          "LangResources": "1.0.0",
           "NPOI": "2.5.4"
         },
         "compile": {
-          "bin/placeholder/DHLibrary.dll": {}
+          "bin/placeholder/Framework.Utility.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DHLibrary.dll": {}
+          "bin/placeholder/Framework.Utility.dll": {}
         }
       },
       "LangResources/1.0.0": {
@@ -4254,6 +4269,23 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.0.0": {
+      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "type": "package",
+      "path": "automapper/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "EntityFrameworkCore.DataEncryption/3.0.0": {
       "sha512": "/PLTq8OmlHNYF+X4hofJRCQsNQkCic7NoG5T5JrTYwG9LRG5wxr3EwpxJkgclWmKCAOGUQuB780uAuDg9JU3FQ==",
       "type": "package",
@@ -12651,10 +12683,10 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "DHLibrary/1.0.0": {
+    "Framework.Utility/1.0.0": {
       "type": "project",
-      "path": "../DHLibrary/DHLibrary.csproj",
-      "msbuildProject": "../DHLibrary/DHLibrary.csproj"
+      "path": "../Framework.Utility/Framework.Utility.csproj",
+      "msbuildProject": "../Framework.Utility/Framework.Utility.csproj"
     },
     "LangResources/1.0.0": {
       "type": "project",
@@ -12664,9 +12696,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "DHLibrary >= 1.0.0",
       "EPPlus >= 5.7.4",
       "EntityFrameworkCore.DataEncryption >= 3.0.0",
+      "Framework.Utility >= 1.0.0",
       "Hangfire >= 1.7.24",
       "Hashids.net >= 1.4.1",
       "LangResources >= 1.0.0",
@@ -12718,8 +12750,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj": {
-              "projectPath": "C:\\GutReposite\\Console\\DHLibrary\\DHLibrary.csproj"
+            "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj": {
+              "projectPath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj"
             },
             "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\LangResources\\LangResources.csproj"

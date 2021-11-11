@@ -10,12 +10,12 @@ namespace WebApi.NLog
         /// <summary>
         /// IP
         /// </summary>
-        public string? IpAddress { get; set; }
+        public string IpAddress { get; set; }
 
         /// <summary>
         /// 操作人
         /// </summary>
-        public string? OperationName { get; set; }
+        public string OperationName { get; set; }
 
         /// <summary>
         /// 操作时间
@@ -25,12 +25,12 @@ namespace WebApi.NLog
         /// <summary>
         /// 日志信息
         /// </summary>
-        public string? LogInfo { get; set; }
+        public string LogInfo { get; set; }
 
         /// <summary>
         /// 跟踪信息
         /// </summary>
-        public string? StackTrace { get; set; }
+        public string StackTrace { get; set; }
 
     }
 }

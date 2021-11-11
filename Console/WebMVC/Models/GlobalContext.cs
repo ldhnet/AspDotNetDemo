@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Hosting;
-using DHLibrary.Config;
+using Framework.Utility.Config;
 
 namespace WebMVC.Model
 {
