@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Yga37CNPlUpWpvX1nFugnXwAAOycYcZjc3ylx44FG361bOBFas7UXuVt372J9s70BYE7c3cJBMavKm0d0oum5w==",
+  "dgSpecHash": "mVxDxhV42vf6ORs+zgY0M+oN4kilJXklN4zr9hQPaJyyBgnpok4lLQfLtJzrA84WsYrAwc5GhQpaEU6qrSxWxw==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\Framework.Core\\Framework.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\hashids.net\\1.4.1\\hashids.net.1.4.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",
@@ -24,6 +25,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\npoi\\2.5.4\\npoi.2.5.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\sharpziplib\\1.3.1\\sharpziplib.1.3.1.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

@@ -5,28 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFrameworkCore.DataEncryption" Version="3.0.0" />
-    <PackageReference Include="EPPlus" Version="5.7.4" />
+    <PackageReference Include="EPPlus" Version="5.8.2" />
     <PackageReference Include="Hangfire" Version="1.7.24" />
-    <PackageReference Include="Hashids.net" Version="1.4.1" />
-    <PackageReference Include="Microsoft.AspNetCore.ConcurrencyLimiter" Version="5.0.11" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0-rc.2.21511.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.7.11" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
-    <PackageReference Include="NPOI" Version="2.5.4" />
-    <PackageReference Include="Pitcher" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DH.Models\DH.Models.csproj" />
+    <ProjectReference Include="..\DirectService.Admin\DirectService.Admin.csproj" />
+    <ProjectReference Include="..\DirectService.Test\DirectService.Test.csproj" />
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
     <ProjectReference Include="..\LangResources\LangResources.csproj" />
   </ItemGroup>

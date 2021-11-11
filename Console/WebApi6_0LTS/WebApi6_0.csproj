@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DH.Models\DH.Models.csproj" />
     <ProjectReference Include="..\DirectService.Admin\DirectService.Admin.csproj" />
+    <ProjectReference Include="..\DirectService.Test\DirectService.Test.csproj" />
     <ProjectReference Include="..\WebMVC\WebMVC.csproj" />
   </ItemGroup>
 

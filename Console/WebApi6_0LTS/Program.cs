@@ -47,7 +47,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集
             .Select(Assembly.Load)
-            .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase) || c.FullName.Contains("WebMVC",StringComparison.OrdinalIgnoreCase))
+            .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
             .ToArray(); 
     containerBuilder.RegisterAssemblyTypes(assemblies)
         .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3HzwtEp5uuduccVzegWm5BP4e8JiToDGPJIL5NEhwpuCG5xXrKGRxjST7jV7LG9yDWxA/dU2ZhsI5NH0Oyl56g==",
+  "dgSpecHash": "urlhhrdirFxwtY3enNVJJNS9WLv07q3PUkFyz4GKTyDcwEcL5OPhfc6e82ZOe5uQ27uy9OvaZpdV9Wsv7kQ8aw==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\DH.Models\\DH.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\hashids.net\\1.4.1\\hashids.net.1.4.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -38,6 +39,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\sharpziplib\\1.3.1\\sharpziplib.1.3.1.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

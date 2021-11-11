@@ -2,8 +2,7 @@
 using DH.Models.DbModels;
 using Framework.Core.Data;
 using Framework.Core.Dependency;
-using System.Reflection;
-using WebMVC.Service;
+using System.Reflection; 
 
 namespace WebApi6_0.AutofacConfig
 {

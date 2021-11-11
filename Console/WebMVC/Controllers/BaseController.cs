@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System; 
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Diagnostics;
-
+using System.Threading; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-
 using WebMVC.Attributes;
 using WebMVC.Models;
-using WebMVC.Helper;
-using System.Diagnostics.Contracts;
-using System.Globalization;
-using WebMVC.Model;
-using WebMVC.Service;
-using static System.Collections.Specialized.BitVector32;
-using System.Security.Claims;
-using WebMVC.Extension;
+using WebMVC.Helper; 
+using System.Globalization;  
+using System.Security.Claims; 
 using Microsoft.AspNetCore.Http;
 using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Framework.Utility.Extensions;
+using DH.Models.DbModels;
+using DirectService.Admin.Contracts;
+using DirectService.Admin.Impl;
+using Microsoft.Extensions.DependencyInjection;
+using Framework.Utility.Attributes;
 
 namespace WebMVC.Controllers
 {
@@ -29,8 +24,7 @@ namespace WebMVC.Controllers
     /// 自定义控制器的基类
     /// </summary>
     public class BaseController : Controller
-    {
-        private IUserService userService = new UserService();
+    { 
         /// <summary>
         /// 是否需要登入验证
         /// </summary>
@@ -141,6 +135,11 @@ namespace WebMVC.Controllers
 
                 if ((_currentUser == null && _number != null) || (_currentUser != null && _currentUser.EmployeeSerialNumber != _number))
                 {
+                    var services = new ServiceCollection();
+                    services.AddSingleton<IUserService, UserService>(); 
+                    var provider = services.BuildServiceProvider(); 
+                    var userService = provider.GetService<IUserService>();
+
                     var result = userService.Find(_number);
                     if (result != null)
                     {

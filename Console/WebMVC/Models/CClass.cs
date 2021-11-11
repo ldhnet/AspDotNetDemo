@@ -1,4 +1,5 @@
-﻿using WebMVC.Service;
+﻿
+using DirectService.Test.Contracts;
 
 namespace WebMVC.Models
 {

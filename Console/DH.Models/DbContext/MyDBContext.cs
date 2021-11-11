@@ -11,7 +11,9 @@ namespace DH.Models.DbModels
         public MyDBContext()
         {
 
-        } 
+        }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<EmployeeLogin> EmployeeLogin { get; set; } 
         public DbSet<SysAccount> SysAccount{ get; set; }
         public DbSet<SysAccountTrans> SysAccountTrans { get; set; }
 
@@ -20,13 +22,17 @@ namespace DH.Models.DbModels
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_connectionString);
+               
             }
-     
+            optionsBuilder.UseSqlServer(_connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Employee>().ToTable("Employee");
+            modelBuilder.Entity<EmployeeLogin>().ToTable("EmployeeLogin");
+
+
             modelBuilder.Entity<SysAccount>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PRIMARY");
@@ -61,7 +67,8 @@ namespace DH.Models.DbModels
                 entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime"); 
 
             });
-             
+
+            base.OnModelCreating(modelBuilder); 
         }
     }
 }

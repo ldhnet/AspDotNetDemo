@@ -15,6 +15,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "Hashids.net/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1"
+        },
+        "compile": {
+          "lib/net5.0/Hashids.net.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Hashids.net.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -462,6 +474,15 @@
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
         }
       },
+      "System.Buffers/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -822,7 +843,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "8.0.0",
+          "Hashids.net": "1.4.1",
           "LangResources": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "NPOI": "2.5.4",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -861,6 +884,23 @@
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.pdb",
         "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "Hashids.net/1.4.1": {
+      "sha512": "z1JMXvPJRD6r6roMTFbyS2LOHtFw4rUYRHWf39VKiKPYfffmmv9NpJeZczEcxS/ISDaMD+IzJ31S0mTYtp2NAQ==",
+      "type": "package",
+      "path": "hashids.net/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "hashids.net.1.4.1.nupkg.sha512",
+        "hashids.net.nuspec",
+        "lib/net461/Hashids.net.dll",
+        "lib/net461/Hashids.net.xml",
+        "lib/net5.0/Hashids.net.dll",
+        "lib/net5.0/Hashids.net.xml",
+        "lib/netstandard2.0/Hashids.net.dll",
+        "lib/netstandard2.0/Hashids.net.xml"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -1691,6 +1731,37 @@
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
         "sharpziplib.1.3.1.nupkg.sha512",
         "sharpziplib.nuspec"
+      ]
+    },
+    "System.Buffers/4.5.1": {
+      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "type": "package",
+      "path": "system.buffers/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Buffers.dll",
+        "lib/net461/System.Buffers.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "lib/uap10.0.16299/_._",
+        "ref/net45/System.Buffers.dll",
+        "ref/net45/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "ref/uap10.0.16299/_._",
+        "system.buffers.4.5.1.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Collections.Immutable/6.0.0": {

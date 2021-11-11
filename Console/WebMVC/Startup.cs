@@ -3,31 +3,23 @@ using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http; 
+using Microsoft.AspNetCore.Localization; 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
+using System; 
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO; 
 using WebMVC.Attributes; 
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.HangFire;
 using WebMVC.Helper;
 using Framework.Utility.Config;
-using WebMVC.Model;
-using WebMVC.Service;
+using WebMVC.Model; 
 
 namespace WebMVC
 {
@@ -95,10 +87,7 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-            ProviderManage.MemoryCacheProvider = new MemoryCacheProvider();
-
-            services.AddSingleton<ITestInterface, TestInterface>();
-            services.AddSingleton<ITestInterface, TestInterface2>();
+            ProviderManage.MemoryCacheProvider = new MemoryCacheProvider(); 
 
             services.AddSingleton<MyFilter>();
              
@@ -123,11 +112,12 @@ namespace WebMVC
                 //    NoStore = true
                 //});
 
-            }).AddNewtonsoftJson(options =>
-            {
-                // 返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
+            //    .AddNewtonsoftJson(options =>
+            //{
+            //    // 返回数据首字母不小写，CamelCasePropertyNamesContractResolver是小写
+            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            //});
 
             services.AddMiddlewares();
 

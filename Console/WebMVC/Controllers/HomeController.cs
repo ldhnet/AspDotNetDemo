@@ -1,4 +1,8 @@
-﻿using Framework.Utility;
+﻿using DH.Models.DbModels;
+using DirectService.Admin.Contracts;
+using Framework.Utility;
+using Framework.Utility.Attributes;
+using Framework.Utility.Helper;
 using HashidsNet;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,8 +16,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
-using WebMVC.Attributes;
-using WebMVC.Business;
+using WebMVC.Attributes; 
 using WebMVC.Common;
 using WebMVC.Dto;
 using WebMVC.Extension;
@@ -27,12 +30,13 @@ namespace WebMVC.Controllers
 { 
     public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;      
-        private readonly IMemoryCache _memoryCache;
-        private EmoloyeeDLL _userdll = new EmoloyeeDLL();
-        public HomeController(ILogger<HomeController> logger, IMemoryCache memoryCache)
+        private readonly ILogger<HomeController> _logger;
+        private readonly IUserService _userService;
+        private readonly IMemoryCache _memoryCache; 
+        public HomeController(ILogger<HomeController> logger, IUserService userService, IMemoryCache memoryCache)
         {
             _logger = logger;
+            _userService = userService;
             _memoryCache = memoryCache;
         } 
         [HttpGet]
@@ -96,7 +100,7 @@ namespace WebMVC.Controllers
             //throw new Exception("异常了");
             //var dto = new UserViewModel();
 
-            var info = _userdll.Find("admin777")?.Data;
+            var info = _userService.Find("admin777");
 
             Check.NotNull(info, nameof(info));
               
@@ -108,7 +112,7 @@ namespace WebMVC.Controllers
              
             string timestampGet3 = _memoryCache.Get<string>("timestamp3");
              
-            var employee1 = _memoryCache.GetOrCreate("timestamp2", entry => { return _userdll.Find("admin")?.Data; });
+            var employee1 = _memoryCache.GetOrCreate("timestamp2", entry => { return _userService.Find("admin"); });
 
 
             var employee2 = _memoryCache.Get<Employee>("timestamp2");
@@ -116,7 +120,7 @@ namespace WebMVC.Controllers
 
             var _avatarCache = new SimpleMemoryCache<Employee>();
 
-            var myAvatar = _avatarCache.GetOrCreate("UserModel", () => _userdll.Find("admin")?.Data);
+            var myAvatar = _avatarCache.GetOrCreate("UserModel", () => _userService.Find("admin"));
 
             var myAvatarGet = _avatarCache.GetOrCreate("UserModel",()=> new Employee());
 
@@ -134,10 +138,10 @@ namespace WebMVC.Controllers
             var myAvatar4 = _avatarCache3.GetOrCreate("ContentModel", () => new List<Content>());
 
 
-            var pp111 = ProviderManage.MemoryCacheProvider.MemoryCache.GetOrCreate("pp1111", entry => { return _userdll.Find("admin")?.Data; });
+            var pp111 = ProviderManage.MemoryCacheProvider.MemoryCache.GetOrCreate("pp1111", entry => { return _userService.Find("admin"); });
 
 
-            var pp1 =  ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp1", _userdll.Find("admin")?.Data);
+            var pp1 =  ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp1", _userService.Find("admin"));
 
            var pp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp2","pp2p22222222");
 
@@ -153,7 +157,7 @@ namespace WebMVC.Controllers
              
             var ppp4 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp4");
               
-            var employee = _userdll.Find("admin")?.Data;
+            var employee = _userService.Find("admin");
 
             var dto = new EmployeeDto()
             {

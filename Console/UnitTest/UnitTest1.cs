@@ -1,10 +1,9 @@
-using System;
-using WebMVC.Security;
+using System; 
 using Xunit;
-
 using Shouldly;
 using WebMVC.Extension;
 using Framework.Utility.Extensions;
+using Framework.Utility.Security;
 
 namespace UnitTest
 {

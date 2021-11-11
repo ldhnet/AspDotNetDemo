@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
-using WebMVC.Models;
+using System.Threading.Tasks; 
 
 namespace ConsoleApp
 {
@@ -14,24 +13,7 @@ namespace ConsoleApp
     class Program
     {
         public static Func<int, int, int> fc = (int x, int y) => x * y;
-        public static void DoSomething2(Content test)
-        {
-            if (test.Id < 100)
-            {
-                Console.WriteLine(test.ToString() + $"任务ID:{Task.CurrentId},线程ID:{Thread.CurrentThread.ManagedThreadId}");
-            }
-
-   
-
-            //var list = new List<int>();
-            //list.EnsureCapacity(5);
-            //for (var i = 0; i < 5; i++)
-            //{
-            //    list.Add(i);
-            //    Console.WriteLine(list[i]);
-            //} 
-            //Console.WriteLine(list[5]);
-        }
+        
         public void GetSendMailList()
         {
             int k = 0;

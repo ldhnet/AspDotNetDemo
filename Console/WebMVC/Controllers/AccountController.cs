@@ -10,25 +10,20 @@ using System.Threading.Tasks;
 using WebMVC.Model;
 using WebMVC.Models;
 using WebMVC.Helper;
-using Org.BouncyCastle.Asn1.Ocsp;
-using Microsoft.Extensions.Logging;
-using WebMVC.Service;
-using Microsoft.AspNetCore.Http;
-using WebMVC.Context;
-using System.Diagnostics.CodeAnalysis;
-using WebMVC.Business;
-using Microsoft.AspNetCore.Authorization;
-using Pitcher;
+using Microsoft.Extensions.Logging; 
+using Microsoft.AspNetCore.Http;  
+using DirectService.Admin.Contracts;
 
 namespace WebMVC.Controllers
 {
     public class AccountController : BaseController
     {
         private readonly ILogger<AccountController> _logger;
-        private EmoloyeeDLL _userdll = new EmoloyeeDLL(); 
-        public AccountController(ILogger<AccountController> logger)
+        private readonly IUserService _userService;
+        public AccountController(ILogger<AccountController> logger, IUserService userService)
         {
-            _logger = logger; 
+            _logger = logger;
+            _userService = userService;
         }
         [HttpGet] 
         public IActionResult Index()
@@ -48,21 +43,14 @@ namespace WebMVC.Controllers
         }
         [HttpPost]
         public JsonResult Login(LoginViewModel model)//[NotNull] 
-        {
-            Throw.ArgumentNull.WhenNull(model, nameof(model));
-
-            Throw.When(string.IsNullOrWhiteSpace(model.account), new ArgumentNullException(nameof(model.account)));
-            //Throw.When(-1 <= 0, new ArgumentOutOfRangeException(nameof(model)));
-
-            Throw.ArgumentNull.WhenNullOrWhiteSpace(model.account, nameof(model.account));
-
+        { 
 
 
             TData obj = new TData();
             var name = (model?.account??string.Empty).ToLower();
             var pwd = model.password; 
-            var employee  = _userdll.Find(name); 
-            if (employee.Data == null)
+            var employee  = _userService.FindEmployee(name); 
+            if (employee.data == null)
             {
 
                 obj.Tag = 2;
@@ -71,8 +59,8 @@ namespace WebMVC.Controllers
             } 
             var claims = new[] {
                     new Claim(ClaimTypes.Email, "574427343@qq.com"),
-                    new Claim(ClaimTypes.SerialNumber,employee.Data.EmployeeSerialNumber),
-                    new Claim(ClaimTypes.Name,employee.Data.Name), 
+                    new Claim(ClaimTypes.SerialNumber,employee.data.EmployeeSerialNumber),
+                    new Claim(ClaimTypes.Name,employee.data.Name), 
                 };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme); 
@@ -83,10 +71,10 @@ namespace WebMVC.Controllers
             //即便用户关闭了浏览器，60分钟内再次访问站点仍然是处于登录状态，除非调用Logout方法注销登录。 
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user, new AuthenticationProperties() { IsPersistent = true,  ExpiresUtc = DateTimeOffset.Now.AddMinutes(60) }).Wait();
 
-            LoadCurrentUser(employee.Data);
+            LoadCurrentUser(employee.data);
 
-            obj.Tag = employee.Tag;
-            obj.Message = employee.Message;
+            obj.Tag = 0;
+            obj.Message = employee.msg;
              
             return Json(obj);
         }

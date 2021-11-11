@@ -199,6 +199,14 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Hashids.net": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "NPOI": {
               "target": "Package",
               "version": "[2.5.4, )"
