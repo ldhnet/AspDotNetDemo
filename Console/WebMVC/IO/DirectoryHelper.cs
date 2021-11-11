@@ -6,6 +6,7 @@
 //  <last-date>2014-07-18 18:25</last-date>
 // -----------------------------------------------------------------------
 
+using Framework.Utility.Extensions;
 using System;
 using System.IO;
 

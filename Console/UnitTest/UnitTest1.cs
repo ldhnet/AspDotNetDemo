@@ -4,6 +4,7 @@ using Xunit;
 
 using Shouldly;
 using WebMVC.Extension;
+using Framework.Utility.Extensions;
 
 namespace UnitTest
 {

@@ -204,4 +204,3 @@ C:\GutReposite\Console\WebApi\bin\Debug\net6.0\NLog.Extensions.Logging.dll
 C:\GutReposite\Console\WebApi\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.CopyComplete
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache

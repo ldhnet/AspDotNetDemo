@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebMVC.Extension
+namespace Framework.Utility.Extensions
 {
     public static class AjaxRequestExtensions
     {

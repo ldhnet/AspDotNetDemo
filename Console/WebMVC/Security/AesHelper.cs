@@ -6,7 +6,8 @@
 //  <last-editor>郭明锋</last-editor>
 //  <last-date>2017-12-30 15:41</last-date>
 // -----------------------------------------------------------------------
- 
+
+using Framework.Utility.Extensions;
 using System;
 using System.IO;
 using System.Linq;
@@ -185,7 +186,7 @@ namespace WebMVC.Security
 
             byte[] encodeBytes = Convert.FromBase64String(source);
             byte[] decodeBytes = Decrypt(encodeBytes, key, needIV);
-            return decodeBytes.ToString2();
+            return decodeBytes.ToString();
         }
 
         /// <summary>

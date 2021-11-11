@@ -1,8 +1,11 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using DH.Models.DbModels;
+using Framework.Core.Data;
+using Framework.Core.Dependency;
 using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using WebApi6_0.AutofacConfig;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,15 +30,7 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowCredentials());
 });
-
-
-builder.Services.AddDbContextPool<MyDBContext>(options =>
-{
-    var strConnection = GlobalConfig.SystemConfig.DBConnectionString;
-    options.UseSqlServer(strConnection);
-}, 64);
-
-
+ 
 
 #region  Autofac
 
@@ -44,13 +39,26 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 // Register services directly with Autofac here. Don't
 // call builder.Populate(), that happens in AutofacServiceProviderFactory.
 
-builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
+//builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
 
-//builder.Host.ConfigureContainer<ContainerBuilder>(builder => { 
-//    Type baseType = typeof(IDependency);
-//    Assembly[] assemblies = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "WebMVC.dll").Select(m => Assembly.LoadFrom(m)).ToArray();
-//    builder.RegisterAssemblyTypes(assemblies).Where(type => baseType.IsAssignableFrom(type)).AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope(); 
-//});
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{  
+    Type baseType = typeof(IDependency); 
+    var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
+            .GetReferencedAssemblies()//获取所有引用程序集
+            .Select(Assembly.Load)
+            .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase) || c.FullName.Contains("WebMVC",StringComparison.OrdinalIgnoreCase))
+            .ToArray(); 
+    containerBuilder.RegisterAssemblyTypes(assemblies)
+        .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
+        .AsSelf()   //自身服务，用于没有接口的类
+        .AsImplementedInterfaces()  //接口服务
+        .PropertiesAutowired()  //属性注入
+        .InstancePerLifetimeScope();    //保证生命周期基于请求  
+
+    containerBuilder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>));
+    containerBuilder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();
+});
 
 
 #endregion Autofac

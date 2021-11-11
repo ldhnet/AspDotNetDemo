@@ -21,7 +21,10 @@ namespace WebApi6_0.Controllers
 
         [HttpGet] 
         public string Get()
-        { 
+        {
+            MyDBContext ct = new MyDBContext();
+
+            var aa = ct.SysAccount.FirstOrDefault();
 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
 
@@ -34,8 +37,8 @@ namespace WebApi6_0.Controllers
             _logger.LogError(aaa);
 
 
-           var bb=  _UserInterface.FindEmployee("admin").Name;
-            _logger.LogError(bb);
+           //var bb=  _UserInterface.FindEmployee("admin").Name;
+           // _logger.LogError(bb);
 
             return "123";
         }

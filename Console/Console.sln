@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationService", "Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectService.Admin", "DirectService.Admin\DirectService.Admin.csproj", "{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectService.Test", "DirectService.Test\DirectService.Test.csproj", "{D044A96C-858D-4462-8BB4-A4FEEC314ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,12 +79,17 @@ Global
 		{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0} = {C5EBB715-EF69-436B-BF42-D71915B6D0A7}
+		{D044A96C-858D-4462-8BB4-A4FEEC314ACE} = {C5EBB715-EF69-436B-BF42-D71915B6D0A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5EE3786-CE7B-45CE-984D-9DD332BA1030}

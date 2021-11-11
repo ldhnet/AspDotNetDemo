@@ -42,21 +42,23 @@ namespace WebApi6_0.Controllers
             SysAccount model2 = new SysAccount
             {
                 UserId = Guid.NewGuid().ToString(),
-                AccountName = "admin",
+                AccountName = "admin1",
                 AccountNo = "1001",
                 CreateBy = "admin1",
                 CreateTime = DateTime.Now
             };
 
 
-            var aaa3 = _SysAccountContract.CreateInfo(model);
+            //var aaa3 = _SysAccountContract.CreateInfo(model);
 
-            var aaa4 = _SysAccountContract.CreateInfo(model2);
+            //var aaa5 = _SysAccountContract.CreateInfo(model2);
 
-            var aaa= _SysAccountContract.GetSysAccountInfo("admin");
 
             var aaa2 = _SysAccountContract.GetSysAccount("admin1");
-             
+
+
+            var aaa = _SysAccountContract.GetSysAccountInfo("admin");
+            //return $"{aaa?.AccountName}{aaa?.AccountNo}";
 
             return $"{aaa?.AccountName}{aaa?.AccountNo},{aaa2.data.AccountName}{aaa2.data.AccountNo}";
         }

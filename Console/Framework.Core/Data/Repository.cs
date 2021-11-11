@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 using Framework.Core.Extensions;
 using System.Security.Claims;
 using System.Security.Principal;
-using Microsoft.EntityFrameworkCore;
-using WebMVC.Extension;
+using Microsoft.EntityFrameworkCore; 
 using Framework.Utility.Extensions;
 using Framework.Utility.Reflection;
 using Framework.Utility;
@@ -364,8 +363,8 @@ namespace Framework.Core.Data
         /// <param name="parameters">要应用于 SQL 查询字符串的参数。 如果使用输出参数，则它们的值在完全读取结果之前不可用。 这是由于 DbDataReader 的基础行为而导致的，有关详细信息，请参见 http://go.microsoft.com/fwlink/?LinkID=398589。</param>
         /// <returns></returns>
         public IEnumerable<TEntity> SqlQuery(string sql, bool trackEnabled = true, params object[] parameters)
-        { 
-            return trackEnabled  ? _dbSet.FromSqlRaw(sql, parameters) : _dbSet.FromSqlRaw(sql, parameters).AsNoTracking();
+        {
+            return null; //trackEnabled  ? _dbSet.FromSqlRaw(sql, parameters) : _dbSet.FromSqlRaw(sql, parameters).AsNoTracking();
         }
          
         /// <summary>
@@ -549,10 +548,10 @@ namespace Framework.Core.Data
         private void AssignCreateProperty(TEntity entity)
         {
             var createByProp = typeof(TEntity).GetProperty("CreateBy");
-            var createTimeProp = typeof(TEntity).GetProperty("CreateTime");
-
-            createByProp?.SetValue(entity, _principal?.Identity?.Name);
-            createTimeProp?.SetValue(entity, DateTime.UtcNow.ToJsTimestamp());
+            var createTimeProp = typeof(TEntity).GetProperty("CreateTime"); 
+            var createBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == createByProp?.Name)?.GetValue(entity)?.ToString();             
+            createByProp?.SetValue(entity, string.IsNullOrEmpty(createBy) ? _principal?.Identity?.Name : createBy); 
+            createTimeProp?.SetValue(entity, DateTime.Now);//DateTime.UtcNow.ToJsTimestamp()
         }
         /// <summary>
         /// 赋值ModifyBy和ModifyTime
@@ -562,9 +561,9 @@ namespace Framework.Core.Data
         {
             var modifyByProp = typeof(TEntity).GetProperty("ModifyBy");
             var modifyTimeProp = typeof(TEntity).GetProperty("ModifyTime");
-
-            modifyByProp?.SetValue(entity, _principal?.Identity?.Name);
-            modifyTimeProp?.SetValue(entity, DateTime.UtcNow.ToJsTimestamp());
+            var modifyBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == modifyByProp?.Name)?.GetValue(entity)?.ToString();
+            modifyByProp?.SetValue(entity, string.IsNullOrEmpty(modifyBy) ? _principal?.Identity?.Name : modifyBy);
+            modifyTimeProp?.SetValue(entity, DateTime.Now);//DateTime.UtcNow.ToJsTimestamp()
         }
         #endregion
     }

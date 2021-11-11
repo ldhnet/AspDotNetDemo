@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Dependency\**" />
+    <EmbeddedResource Remove="Dependency\**" />
+    <None Remove="Dependency\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
-    <ProjectReference Include="..\WebMVC\WebMVC.csproj" />
   </ItemGroup>
 
 </Project>

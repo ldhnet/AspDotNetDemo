@@ -139,6 +139,10 @@
             "NPOI": {
               "target": "Package",
               "version": "[2.5.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [

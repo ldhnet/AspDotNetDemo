@@ -4247,7 +4247,8 @@
         "dependencies": {
           "AutoMapper": "8.0.0",
           "LangResources": "1.0.0",
-          "NPOI": "2.5.4"
+          "NPOI": "2.5.4",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Framework.Utility.dll": {}

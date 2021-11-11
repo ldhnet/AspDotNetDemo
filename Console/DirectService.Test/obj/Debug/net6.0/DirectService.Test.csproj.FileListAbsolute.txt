@@ -1,0 +1,11 @@
+C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\DirectService.Test.deps.json
+C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\DirectService.Test.dll
+C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\ref\DirectService.Test.dll
+C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\DirectService.Test.pdb
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.AssemblyInfoInputs.cache
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.AssemblyInfo.cs
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.csproj.CoreCompileInputs.cache
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.dll
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\ref\DirectService.Test.dll
+C:\GutReposite\Console\DirectService.Test\obj\Debug\net6.0\DirectService.Test.pdb

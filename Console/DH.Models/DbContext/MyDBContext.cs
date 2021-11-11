@@ -1,38 +1,28 @@
 ﻿using System;
+using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using WebMVC.Model;
+using Microsoft.EntityFrameworkCore.Metadata; 
 
 namespace DH.Models.DbModels
 {
     public partial class MyDBContext : DbContext
-    {  
-        public MyDBContext(DbContextOptions<MyDBContext> options) : base(options: GetOptions(options))
+    {
+        private readonly string _connectionString = GlobalConfig.SystemConfig.DBConnectionString;
+        public MyDBContext()
         {
 
         } 
-        /// <summary>
-        /// 初始化数据库连接
-        /// </summary>
-        /// <param name="options"></param>
-        /// <param name="connectionStringProvider"></param>
-        /// <returns></returns>
-        private static DbContextOptions<MyDBContext> GetOptions(DbContextOptions<MyDBContext> options)
-        {
-            var builder = new DbContextOptionsBuilder<MyDBContext>(options);
-            return builder.Options;
-        }
-
         public DbSet<SysAccount> SysAccount{ get; set; }
         public DbSet<SysAccountTrans> SysAccountTrans { get; set; }
 
+   
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseMySql("server=172.28.15.110;userid=root;pwd=Esbu@2016;port=3306;database=pointapi;sslmode=none;TreatTinyAsBoolean=false;");
+                optionsBuilder.UseSqlServer(_connectionString);
             }
+     
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

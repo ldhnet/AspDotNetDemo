@@ -6,6 +6,7 @@
 //  <last-date>2014:07:05 15:18</last-date>
 // -----------------------------------------------------------------------
 
+using Framework.Utility.Extensions;
 using HashidsNet;
 using System.Security.Cryptography;
 using System.Text;

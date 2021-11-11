@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using WebMVC.Extension;
+using System.Text; 
 
 namespace Framework.Core.Extensions
 {

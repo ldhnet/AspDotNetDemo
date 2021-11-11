@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Framework.Utility.Extensions;
+using Microsoft.Extensions.Logging;
 using NLog;
 using System;
 using System.Collections.Generic;
