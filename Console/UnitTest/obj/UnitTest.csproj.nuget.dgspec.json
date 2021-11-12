@@ -332,9 +332,17 @@
               "target": "Package",
               "version": "[1.4.1, )"
             },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.12, )"
             },
             "NPOI": {
               "target": "Package",
@@ -583,7 +591,7 @@
             },
             "NLog": {
               "target": "Package",
-              "version": "[4.7.11, )"
+              "version": "[4.7.12, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

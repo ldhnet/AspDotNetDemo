@@ -1,6 +1,7 @@
 ﻿using DH.Models.DbModels;
 using Framework.Utility;
 using Framework.Utility.Attributes;
+using Framework.Utility.Extensions;
 using Framework.Utility.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -243,10 +244,10 @@ namespace WebMVC.Controllers
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
 
-            var template =  FileToolHelper.GenerateFileInfo(path, templateFileName, false); 
+            var template = "";//FileToolHelper.GenerateFileInfo(path, templateFileName, false); 
             var destFileName = folderPath +  $"{Path.AltDirectorySeparatorChar}{newFileName}";
 
-            return template.CopyTo(destFileName, true);
+            return new FileInfo(template);// template.CopyTo(destFileName, true);
         }
 
     }

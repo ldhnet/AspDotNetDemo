@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9aBfWtOMUjQoWp4O0OHNPqEi4JEvVtgFszPzbBGKnS6Tqshi5TVbEbOy6bkpXOszYM1SdPNY3XZBP0eDnvxevg==",
+  "dgSpecHash": "zuZf7t9UqdOFh21H5SEdfcE1GoJdDsXorxS/vICECc/UaFjM0lshofqajg3Bzsvc44G5bKCuVmCwcPHTI8dGOA==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\DirectService.Admin\\DirectService.Admin.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\mysqlconnector\\2.0.0\\mysqlconnector.2.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\nlog\\4.7.12\\nlog.4.7.12.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\npoi\\2.5.4\\npoi.2.5.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",

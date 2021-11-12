@@ -84,9 +84,9 @@ namespace Framework.Utility.Data
             if (!dateArray.Any())
                 return new Tuple<long?, long?>(null, null);
 
-            long? startDate = dateArray.First().ToLong(), endDate = null;
+            long? startDate = dateArray.First().ParseToLong(), endDate = null;
             if (dateArray.Length > 1)
-                endDate = dateArray.Skip(1).First().ToLong();
+                endDate = dateArray.Skip(1).First().ParseToLong();
 
             if (endDate.HasValue && endDate != 0)
                 endDate = endDate + FrameConstant.OneDayToMillisecond;

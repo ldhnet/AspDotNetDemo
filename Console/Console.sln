@@ -17,17 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LangResources", "LangResour
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi6_0", "WebApi6_0LTS\WebApi6_0.csproj", "{B9C2A9BE-0D92-4191-854D-CF98F1ACC835}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{81CF7CDB-054C-4215-B9A0-3BA661109BD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{81CF7CDB-054C-4215-B9A0-3BA661109BD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Utility", "Framework.Utility\Framework.Utility.csproj", "{D67668D7-F890-4F21-B262-5CC0E2286E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Utility", "Framework.Utility\Framework.Utility.csproj", "{D67668D7-F890-4F21-B262-5CC0E2286E41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DH.Models", "DH.Models\DH.Models.csproj", "{263F896F-8046-41F6-9BA9-96FA71B267A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DH.Models", "DH.Models\DH.Models.csproj", "{263F896F-8046-41F6-9BA9-96FA71B267A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationService", "ApplicationService", "{C5EBB715-EF69-436B-BF42-D71915B6D0A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectService.Admin", "DirectService.Admin\DirectService.Admin.csproj", "{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectService.Admin", "DirectService.Admin\DirectService.Admin.csproj", "{464EA8C6-7F3D-4E86-83D7-BF10F9B7BDA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectService.Test", "DirectService.Test\DirectService.Test.csproj", "{D044A96C-858D-4462-8BB4-A4FEEC314ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectService.Test", "DirectService.Test\DirectService.Test.csproj", "{D044A96C-858D-4462-8BB4-A4FEEC314ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC6_0", "WebMVC6_0\WebMVC6_0.csproj", "{0E04B73B-9362-4956-8E13-C435B77A2331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D044A96C-858D-4462-8BB4-A4FEEC314ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E04B73B-9362-4956-8E13-C435B77A2331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E04B73B-9362-4956-8E13-C435B77A2331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E04B73B-9362-4956-8E13-C435B77A2331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E04B73B-9362-4956-8E13-C435B77A2331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

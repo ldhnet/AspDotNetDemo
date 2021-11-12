@@ -50,7 +50,32 @@
       "ProjectGuid": "b9c2a9be-0d92-4191-854d-cf98f1acc835",
       "DisplayName": "WebApi6_0",
       "ColorIndex": 8
+    },
+    "81cf7cdb-054c-4215-b9a0-3ba661109bd7": {
+      "ProjectGuid": "81cf7cdb-054c-4215-b9a0-3ba661109bd7",
+      "DisplayName": "Framework.Core",
+      "ColorIndex": 9
+    },
+    "263f896f-8046-41f6-9ba9-96fa71b267a8": {
+      "ProjectGuid": "263f896f-8046-41f6-9ba9-96fa71b267a8",
+      "DisplayName": "DH.Models",
+      "ColorIndex": 10
+    },
+    "464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0": {
+      "ProjectGuid": "464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0",
+      "DisplayName": "DirectService.Admin",
+      "ColorIndex": 11
+    },
+    "d67668d7-f890-4f21-b262-5cc0e2286e41": {
+      "ProjectGuid": "d67668d7-f890-4f21-b262-5cc0e2286e41",
+      "DisplayName": "Framework.Utility",
+      "ColorIndex": 12
+    },
+    "0e04b73b-9362-4956-8e13-c435b77a2331": {
+      "ProjectGuid": "0e04b73b-9362-4956-8e13-c435b77a2331",
+      "DisplayName": "WebMVC6_0",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 14
 }

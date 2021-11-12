@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "urlhhrdirFxwtY3enNVJJNS9WLv07q3PUkFyz4GKTyDcwEcL5OPhfc6e82ZOe5uQ27uy9OvaZpdV9Wsv7kQ8aw==",
+  "dgSpecHash": "qrz4kL4iXGS8ey1rnTwDcWd31QMLYaIR+vZcpfS/ciV7h3PCdOguavh6QlPbudEk96iNGDoMBRofNEcTZajB4Q==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\DH.Models\\DH.Models.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\mysqlconnector\\2.0.0\\mysqlconnector.2.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\nlog\\4.7.12\\nlog.4.7.12.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\npoi\\2.5.4\\npoi.2.5.4.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.0\\pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",

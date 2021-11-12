@@ -878,11 +878,11 @@
           }
         }
       },
-      "NLog/4.7.11": {
+      "NLog/4.7.12": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.7.11.13229"
+            "fileVersion": "4.7.12.301"
           }
         }
       },
@@ -2412,7 +2412,9 @@
           "AutoMapper": "8.0.0",
           "Hashids.net": "1.4.1",
           "LangResources": "1.0.0",
+          "Microsoft.Extensions.Caching.Memory": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "NLog": "4.7.12",
           "NPOI": "2.5.4",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -2443,7 +2445,7 @@
           "Framework.Utility": "1.0.0",
           "Hangfire": "1.7.24",
           "LangResources": "1.0.0",
-          "NLog": "4.7.11",
+          "NLog": "4.7.12",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -2850,12 +2852,12 @@
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
-    "NLog/4.7.11": {
+    "NLog/4.7.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A7EpoOjWesV5BPx1cOiBndazZq1VGdagIs6oK8ttcRDl5adCMtHiTqnsD5yYaOrMxOQeCjHBf/w3nKzCmhGbgw==",
-      "path": "nlog/4.7.11",
-      "hashPath": "nlog.4.7.11.nupkg.sha512"
+      "sha512": "sha512-cFe+YQVxghBt4hoB8IH+XVW/vyS6rWJPfWmm0rmgS/iaI3lzzFsGRzjw3VhByovLugw7Zp3kY7nVUWADCu6n2g==",
+      "path": "nlog/4.7.12",
+      "hashPath": "nlog.4.7.12.nupkg.sha512"
     },
     "NPOI/2.5.4": {
       "type": "package",

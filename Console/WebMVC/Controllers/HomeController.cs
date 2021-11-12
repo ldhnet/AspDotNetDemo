@@ -24,7 +24,7 @@ using WebMVC.Filter;
 using WebMVC.Helper;
 using WebMVC.Model;
 using WebMVC.Models;
-using static WebMVC.Helper.MemoryCacheHelper;
+using static Framework.Utility.Helper.MemoryCacheHelper;
 
 namespace WebMVC.Controllers
 { 
