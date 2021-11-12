@@ -111,13 +111,13 @@ namespace WebMVC.Controllers
             paymentColumnMergeStyles.Add("LIST3", ExcelCellColor.ORANGE);
 
             List<Employee> ExportList = new List<Employee>() {
-                new Employee{EmployeeName="张三",EnglishName="zhangsan",EmployeeSerialNumber="00001",Phone="15000000000" },
-                new Employee{EmployeeName="张4",EnglishName="zhangsan",EmployeeSerialNumber="00006",Phone="15111111111" },
-                new Employee{EmployeeName="张5",EnglishName="zhangsan",EmployeeSerialNumber="00002",Phone="15222222222" },
-                new Employee{EmployeeName="张6",EnglishName="zhangsan",EmployeeSerialNumber="00003",Phone="15333333333" },
-                new Employee{EmployeeName="张7",EnglishName="zhangsan",EmployeeSerialNumber="00004",Phone="15444444444" },
-                new Employee{EmployeeName="张9",EnglishName="zhangsan",EmployeeSerialNumber="00005",Phone="15555555555" },
-                new Employee{EmployeeName="张10",EnglishName="zhangsan",EmployeeSerialNumber="00005",Phone="1666666666666" }
+                new Employee{EmployeeName="张三",BankCard="zhangsan",EmployeeSerialNumber="00001",Phone="15000000000" },
+                new Employee{EmployeeName="张4",BankCard="zhangsan",EmployeeSerialNumber="00006",Phone="15111111111" },
+                new Employee{EmployeeName="张5",BankCard="zhangsan",EmployeeSerialNumber="00002",Phone="15222222222" },
+                new Employee{EmployeeName="张6",BankCard="zhangsan",EmployeeSerialNumber="00003",Phone="15333333333" },
+                new Employee{EmployeeName="张7",BankCard="zhangsan",EmployeeSerialNumber="00004",Phone="15444444444" },
+                new Employee{EmployeeName="张9",BankCard="zhangsan",EmployeeSerialNumber="00005",Phone="15555555555" },
+                new Employee{EmployeeName="张10",BankCard="zhangsan",EmployeeSerialNumber="00005",Phone="1666666666666" }
             };
             Dictionary<string, List<Employee>> contestdic = new Dictionary<string, List<Employee>>();
             contestdic.Add("人员信息报表1", ExportList);

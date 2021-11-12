@@ -1387,6 +1387,7 @@
       },
       "WebMVC/1.0.0": {
         "dependencies": {
+          "Autofac.Extensions.DependencyInjection": "7.1.0",
           "DH.Models": "1.0.0",
           "DirectService.Admin": "1.0.0",
           "DirectService.Test": "1.0.0",

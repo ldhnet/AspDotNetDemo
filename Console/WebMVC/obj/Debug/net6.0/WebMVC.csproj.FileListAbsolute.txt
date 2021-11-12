@@ -196,3 +196,5 @@ C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\DH.Models.pdb
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\DirectService.Admin.pdb
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\DirectService.Test.pdb
 C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Framework.Core.pdb
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Autofac.dll
+C:\GutReposite\Console\WebMVC\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll

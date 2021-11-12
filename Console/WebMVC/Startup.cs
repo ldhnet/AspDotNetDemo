@@ -1,4 +1,3 @@
-
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -8,8 +7,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Serialization;
+using Microsoft.Extensions.Logging; 
 using System; 
 using System.Globalization;
 using System.IO; 
@@ -19,7 +17,12 @@ using WebMVC.Filter;
 using WebMVC.HangFire;
 using WebMVC.Helper;
 using Framework.Utility.Config;
-using WebMVC.Model; 
+using WebMVC.Model;  
+using Framework.Core.Data; 
+using System.Linq;
+using DH.Models.DbModels;
+using DirectService.Admin.Contracts;
+using DirectService.Admin.Impl; 
 
 namespace WebMVC
 {
@@ -110,8 +113,7 @@ namespace WebMVC
                 //{
                 //    Location = ResponseCacheLocation.None,
                 //    NoStore = true
-                //});
-
+                //}); 
             });
             //    .AddNewtonsoftJson(options =>
             //{
@@ -121,6 +123,13 @@ namespace WebMVC
 
             services.AddMiddlewares();
 
+            services.AddSingleton<IRepository<EmployeeLogin, int>, Repository<EmployeeLogin, int>>();
+            services.AddSingleton<IRepository<Employee, int>, Repository<Employee, int>>();
+            services.AddSingleton<IRepository<SysAccount, int>, Repository<SysAccount, int>>();
+            services.AddSingleton<IUnitOfWork, MyDBContext>();
+
+            services.AddSingleton<IUserService, UserService>();
+        
             #region 最大请求数
 
             ////使用栈策略模式
@@ -147,7 +156,36 @@ namespace WebMVC
 
             #endregion
 
-         
+            #region  Autofac
+
+            //services.AddAutofac(containerBuilder => { 
+            //    containerBuilder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>));
+
+            //    var baseType = typeof(IDependency);
+            //    var serviceAssembly =
+            //        Assembly
+            //            .GetEntryAssembly()//获取默认程序集
+            //            .GetReferencedAssemblies()//获取所有引用程序集
+            //            .Select(Assembly.Load)
+            //            .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
+            //            .ToArray();
+
+            //    containerBuilder.RegisterAssemblyTypes(serviceAssembly)
+            //        .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
+            //        .AsSelf()   //自身服务，用于没有接口的类
+            //        .AsImplementedInterfaces()  //接口服务
+            //        .PropertiesAutowired()  //属性注入
+            //        .SingleInstance();    //保证生命周期基于请求
+
+            //    containerBuilder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();
+
+            //    //将services中的服务填充到Autofac中.
+            //    containerBuilder.Populate(services);
+            //    //创建容器.
+            //    containerBuilder.Build(); 
+            //}); 
+            #endregion Autofac
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

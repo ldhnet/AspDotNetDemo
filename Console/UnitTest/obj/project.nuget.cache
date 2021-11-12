@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DD9NU5li1ALYg6YxDOUwJgt9kC7VHFmly364wJYs+n4HgTzyxRWl4I94xA641OQBDK2X3WXD8b4EYFD4maTNGg==",
+  "dgSpecHash": "U7DjnWTlKa+u5CH0fxEjO1MMWcv7K13MGQimDd3ePPIH0SOvdTrQY6avOObt3++KcksAuosJJVqiP7weysMsvA==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\UnitTest\\UnitTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\diffengine\\6.4.9\\diffengine.6.4.9.nupkg.sha512",

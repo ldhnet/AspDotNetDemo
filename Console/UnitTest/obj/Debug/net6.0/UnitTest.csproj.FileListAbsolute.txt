@@ -276,3 +276,5 @@ C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\DirectService.Admin.pdb
 C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\Framework.Core.pdb
 C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\DirectService.Test.dll
 C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\DirectService.Test.pdb
+C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\Autofac.dll
+C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll

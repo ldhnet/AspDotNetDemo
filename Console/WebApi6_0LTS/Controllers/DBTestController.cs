@@ -10,11 +10,13 @@ namespace WebApi6_0.Controllers
     public class DBTestController : ControllerBase
     { 
         private readonly ILogger<DBTestController> _logger;
-        private readonly ISysAccountContract _SysAccountContract; 
-        public DBTestController(ILogger<DBTestController> logger, ISysAccountContract sysAccountContract)
+        private readonly ISysAccountContract _SysAccountContract;
+        private readonly IUserService _userService;
+        public DBTestController(ILogger<DBTestController> logger, IUserService userService, ISysAccountContract sysAccountContract)
         {
             _logger = logger;
-            _SysAccountContract = sysAccountContract; 
+            _SysAccountContract = sysAccountContract;
+            _userService = userService;
         }
 
         [HttpGet] 
@@ -53,7 +55,11 @@ namespace WebApi6_0.Controllers
             //var aaa5 = _SysAccountContract.CreateInfo(model2);
 
 
+
             var aaa2 = _SysAccountContract.GetSysAccount("admin1");
+
+
+            var aaa5 = _userService.Find("admin1");
 
 
             var aaa = _SysAccountContract.GetSysAccountInfo("admin");

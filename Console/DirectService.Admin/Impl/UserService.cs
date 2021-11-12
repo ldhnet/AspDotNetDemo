@@ -12,11 +12,10 @@ namespace DirectService.Admin.Impl
 {
     public class UserService : IUserService
     { 
-        private IRepository<Employee, int> _userService;
-
+        private IRepository<Employee, int> _userService; 
         public UserService(IRepository<Employee, int> userService)
         {
-            this._userService = userService;
+            this._userService = userService; 
         }
 
         public Employee Find(string employeeSerialNumber)
@@ -27,9 +26,9 @@ namespace DirectService.Admin.Impl
 
         public BaseResponse<Employee> FindEmployee(string employeeSerialNumber)
         {
-            employeeSerialNumber = employeeSerialNumber.Trim();
-            var employee = _userService.EntitiesAsNoTracking.FirstOrDefault(c => c.EmployeeSerialNumber == employeeSerialNumber) ?? new Employee(); 
-            return new BaseResponse<Employee>(successCode.Success, "", employee);
+            employeeSerialNumber = employeeSerialNumber.Trim(); 
+            var employee = _userService.EntitiesAsNoTracking.FirstOrDefault(c=>c.EmployeeSerialNumber == employeeSerialNumber); 
+            return new BaseResponse<Employee>(successCode.Success, "", employee??new Employee());
         }
 
     }

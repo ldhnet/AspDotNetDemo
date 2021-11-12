@@ -97,7 +97,8 @@
                     data: postData,
                     dataType:"json",
                     success: function (resData) {  
-                      if(resData.Tag == 1)
+                   
+                      if(resData.tag == 1)
                       {
                          location.href = '@Url.Content("~/Home/Index")';
                       }

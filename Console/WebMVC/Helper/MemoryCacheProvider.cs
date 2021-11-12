@@ -80,7 +80,7 @@ namespace WebMVC.Helper
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                  .SetSize(1)//Size amount
                             //Priority on removing when reaching size limit (memory pressure)
-                    .SetPriority(CacheItemPriority.High)
+                    .SetPriority(CacheItemPriority.Normal)
                     // Keep in cache for this time, reset time if accessed.
                     .SetSlidingExpiration(TimeSpan.FromSeconds(2))
                     // Remove from cache after this time, regardless of sliding expiration

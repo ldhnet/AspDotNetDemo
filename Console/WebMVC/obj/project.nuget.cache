@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/u4nT2hY8wEi+2sE2CVJdYXBkRZ3n6gI76BPohw4iZ2ZOQX8b+CAqIEd5jPGeUWPmUx///bY1wyfXXA2UPXV3Q==",
+  "dgSpecHash": "Ui2P14yF4xMIg65civ3ePvKtZXu+hLJMQr2tCiCdi+BjqjD5EbClskfeAS+DnN2LAC5YJgtWcJ+Qq51lo6sLbw==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\WebMVC\\WebMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\57442\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\epplus\\5.8.2\\epplus.5.8.2.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\hangfire\\1.7.24\\hangfire.1.7.24.nupkg.sha512",

@@ -44,8 +44,6 @@ namespace WebMVC.Controllers
         [HttpPost]
         public JsonResult Login(LoginViewModel model)//[NotNull] 
         { 
-
-
             TData obj = new TData();
             var name = (model?.account??string.Empty).ToLower();
             var pwd = model.password; 
@@ -73,7 +71,7 @@ namespace WebMVC.Controllers
 
             LoadCurrentUser(employee.data);
 
-            obj.Tag = 0;
+            obj.Tag = 1;
             obj.Message = employee.msg;
              
             return Json(obj);

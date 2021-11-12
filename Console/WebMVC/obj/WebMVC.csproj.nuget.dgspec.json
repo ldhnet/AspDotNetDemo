@@ -480,6 +480,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
             "EPPlus": {
               "target": "Package",
               "version": "[5.8.2, )"

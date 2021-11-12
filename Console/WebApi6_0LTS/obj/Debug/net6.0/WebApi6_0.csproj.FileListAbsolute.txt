@@ -116,3 +116,4 @@ C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Admin.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Admin.pdb
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Test.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\DirectService.Test.pdb
+C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPartsAssemblyInfo.cs

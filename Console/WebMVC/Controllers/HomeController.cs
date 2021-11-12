@@ -138,34 +138,29 @@ namespace WebMVC.Controllers
             var myAvatar4 = _avatarCache3.GetOrCreate("ContentModel", () => new List<Content>());
 
 
-            var pp111 = ProviderManage.MemoryCacheProvider.MemoryCache.GetOrCreate("pp1111", entry => { return _userService.Find("admin"); });
+           // var pp111 = ProviderManage.MemoryCacheProvider.MemoryCache.GetOrCreate("pp1111", entry => { return _userService.Find("admin"); });
 
 
-            var pp1 =  ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp1", _userService.Find("admin"));
+           // var pp1 =  ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp1", _userService.Find("admin"));
 
-           var pp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp2","pp2p22222222");
+           //var pp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp2","pp2p22222222");
 
-            var pp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp3", contents);
+           // var pp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Set("pp3", contents);
+            
+           // var ppp1 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp1");
 
+           // var ppp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp2");
+
+           // var ppp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp3");
              
-
-            var ppp1 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp1");
-
-            var ppp2 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp2");
-
-            var ppp3 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp3");
-             
-            var ppp4 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp4");
+           // var ppp4 = ProviderManage.MemoryCacheProvider.MemoryCache.Get("pp4");
               
             var employee = _userService.Find("admin");
 
             var dto = new EmployeeDto()
             {
                 Id = employee.Id,
-                Name = employee.Name,
-                BankCardDisplay = employee.BankCardDisplay,
-                MoneryDisplay = employee.MoneryDisplay,
-                other = employee.MoneryDisplay
+                Name = employee.Name, 
             };
 
             //var dto = new EmployeeDto { Id = 12345, Name = "用户12345" };
