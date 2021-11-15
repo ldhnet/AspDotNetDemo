@@ -18,6 +18,7 @@ using DirectService.Admin.Impl;
 using Microsoft.Extensions.DependencyInjection;
 using Framework.Utility.Attributes;
 using Framework.Utility.Helper;
+using Framework.Utility.Config;
 
 namespace WebMVC.Controllers
 {
@@ -136,11 +137,11 @@ namespace WebMVC.Controllers
 
                 if ((_currentUser == null && _number != null) || (_currentUser != null && _currentUser.EmployeeSerialNumber != _number))
                 {
-                    var services = new ServiceCollection();
-                    services.AddSingleton<IUserService, UserService>(); 
-                    var provider = services.BuildServiceProvider(); 
-                    var userService = provider.GetService<IUserService>();
-
+                    //var services = new ServiceCollection();
+                    //services.AddSingleton<IUserService, UserService>(); 
+                    //var provider = services.BuildServiceProvider(); 
+                    //var userService = provider.GetService<IUserService>();
+                    var userService =GlobalConfig.ServiceProvider.GetService<IUserService>();
                     var result = userService.Find(_number);
                     if (result != null)
                     {

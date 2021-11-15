@@ -1,6 +1,4 @@
-﻿ 
-using LangResources;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,7 +97,7 @@ namespace Framework.Utility.Extensions
                 PropertyInfo property = type.GetProperty(propertyName);
                 if (property == null)
                 {
-                    throw new Exception(string.Format(LangResource.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
+                    throw new Exception(string.Format(ShardResource.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
                 }
                 type = property.PropertyType;
                 propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);

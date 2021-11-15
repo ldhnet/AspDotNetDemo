@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using System.Text.Json;
-using System.Web;
-using WebMVC.Model;
+using Newtonsoft.Json; 
 using Framework.Utility.Helper;
+using Framework.Utility.Config;
 
 namespace WebMVC.Helper
 {
@@ -22,7 +20,7 @@ namespace WebMVC.Helper
             {
                 return;
             }
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             hca?.HttpContext?.Session.SetString(key, JsonConvert.SerializeObject(value));
         }
 
@@ -46,7 +44,7 @@ namespace WebMVC.Helper
             {
                 return string.Empty;
             }
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             return hca?.HttpContext?.Session.GetString(key) as string;
         }
 
@@ -57,7 +55,7 @@ namespace WebMVC.Helper
             {
                 return default(T);
             }
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             string retval = hca?.HttpContext?.Session.GetString(key) as string;
             return JsonHelper.FromJson<T>(retval); 
         }
@@ -73,7 +71,7 @@ namespace WebMVC.Helper
             {
                 return;
             }
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             hca?.HttpContext?.Session.Remove(key); 
         }
   

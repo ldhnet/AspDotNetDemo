@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Web;
 using System;
 using WebMVC.Model;
+using Framework.Utility.Config;
 
 namespace WebMVC.Helper
 {
@@ -19,7 +20,7 @@ namespace WebMVC.Helper
         /// <param name="httpOnly">true代表浏览器的js不能获取到的cookie</param>
         public void WriteCookie(string sName, string sValue, bool httpOnly = true)
         {
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             CookieOptions option = new CookieOptions();
             option.Expires = DateTime.Now.AddDays(30);
             option.HttpOnly = httpOnly;
@@ -35,7 +36,7 @@ namespace WebMVC.Helper
         /// <param name="httpOnly">true代表浏览器的js不能获取到的cookie</param>
         public void WriteCookie(string sName, string sValue, int expires, bool httpOnly = true)
         {
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             CookieOptions option = new CookieOptions();
             option.Expires = DateTime.Now.AddMinutes(expires);
             option.HttpOnly = httpOnly;
@@ -49,7 +50,7 @@ namespace WebMVC.Helper
         /// <returns>cookie值</returns>
         public string GetCookie(string sName)
         {
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             return hca?.HttpContext?.Request.Cookies[sName];
         }
 
@@ -59,7 +60,7 @@ namespace WebMVC.Helper
         /// <param name="sName">Cookie对象名称</param>
         public void RemoveCookie(string sName)
         {
-            IHttpContextAccessor hca = GlobalContext.ServiceProvider?.GetService<IHttpContextAccessor>();
+            IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             hca?.HttpContext?.Response.Cookies.Delete(sName);
         }
     }

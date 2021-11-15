@@ -202,3 +202,4 @@ C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Logging.
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\NLog.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.Extensions.Localization.Abstractions.dll

@@ -16,16 +16,9 @@ namespace WebMVC.Model
         /// All registered service and class instance container. Which are used for dependency injection.
         /// </summary>
         public static IServiceCollection Services { get; set; }
-
-        /// <summary>
-        /// Configured service provider.
-        /// </summary>
-        public static IServiceProvider ServiceProvider { get; set; }
-
         public static IConfiguration Configuration { get; set; }
-
         public static IWebHostEnvironment HostingEnvironment { get; set; }
-         
+
         public static string GetVersion()
         {
             Version version = Assembly.GetEntryAssembly().GetName().Version;

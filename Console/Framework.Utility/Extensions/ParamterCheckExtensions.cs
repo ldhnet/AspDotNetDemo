@@ -1,5 +1,4 @@
-﻿using LangResources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -71,7 +70,7 @@ namespace Framework.Utility.Extensions
         /// <exception cref="ArgumentNullException"></exception>
         public static void CheckNotNull<T>(this T value, string paramName) where T : class
         {
-            Require<ArgumentNullException>(value != null, string.Format(LangResource.ParameterCheck_NotNull, paramName));
+            Require<ArgumentNullException>(value != null, string.Format(ShardResource.ParameterCheck_NotNull, paramName));
         }
 
         /// <summary>
@@ -84,7 +83,7 @@ namespace Framework.Utility.Extensions
         public static void CheckNotNullOrEmpty(this string value, string paramName)
         {
             value.CheckNotNull(paramName);
-            Require<ArgumentException>(value.Length > 0, string.Format(LangResource.ParameterCheck_NotNullOrEmpty_String, paramName));
+            Require<ArgumentException>(value.Length > 0, string.Format(ShardResource.ParameterCheck_NotNullOrEmpty_String, paramName));
         }
 
         /// <summary>
@@ -95,7 +94,7 @@ namespace Framework.Utility.Extensions
         /// <exception cref="ArgumentException"></exception>
         public static void CheckNotEmpty(this Guid value, string paramName)
         {
-            Require<ArgumentException>(value != Guid.Empty, string.Format(LangResource.ParameterCheck_NotEmpty_Guid, paramName));
+            Require<ArgumentException>(value != Guid.Empty, string.Format(ShardResource.ParameterCheck_NotEmpty_Guid, paramName));
         }
 
         /// <summary>
@@ -109,7 +108,7 @@ namespace Framework.Utility.Extensions
         public static void CheckNotNullOrEmpty<T>(this IEnumerable<T> collection, string paramName)
         {
             collection.CheckNotNull(paramName);
-            Require<ArgumentException>(collection.Any(), string.Format(LangResource.ParameterCheck_NotNullOrEmpty_Collection, paramName));
+            Require<ArgumentException>(collection.Any(), string.Format(ShardResource.ParameterCheck_NotNullOrEmpty_Collection, paramName));
         }
 
         /// <summary>
@@ -124,7 +123,7 @@ namespace Framework.Utility.Extensions
         public static void CheckLessThan<T>(this T value, string paramName, T target, bool canEqual = false) where T : IComparable<T>
         {
             bool flag = canEqual ? value.CompareTo(target) <= 0 : value.CompareTo(target) < 0;
-            string format = canEqual ? LangResource.ParameterCheck_NotLessThanOrEqual : LangResource.ParameterCheck_NotLessThan;
+            string format = canEqual ? ShardResource.ParameterCheck_NotLessThanOrEqual : ShardResource.ParameterCheck_NotLessThan;
             Require<ArgumentOutOfRangeException>(flag, string.Format(format, paramName, target));
         }
 
@@ -140,7 +139,7 @@ namespace Framework.Utility.Extensions
         public static void CheckGreaterThan<T>(this T value, string paramName, T target, bool canEqual = false) where T : IComparable<T>
         {
             bool flag = canEqual ? value.CompareTo(target) >= 0 : value.CompareTo(target) > 0;
-            string format = canEqual ? LangResource.ParameterCheck_NotGreaterThanOrEqual : LangResource.ParameterCheck_NotGreaterThan;
+            string format = canEqual ? ShardResource.ParameterCheck_NotGreaterThanOrEqual : ShardResource.ParameterCheck_NotGreaterThan;
             Require<ArgumentOutOfRangeException>(flag, string.Format(format, paramName, target));
         }
 
@@ -160,14 +159,14 @@ namespace Framework.Utility.Extensions
         {
             bool flag = startEqual ? value.CompareTo(start) >= 0 : value.CompareTo(start) > 0;
             string message = startEqual
-                ? string.Format(LangResource.ParameterCheck_Between, paramName, start, end)
-                : string.Format(LangResource.ParameterCheck_BetweenNotEqual, paramName, start, end, start);
+                ? string.Format(ShardResource.ParameterCheck_Between, paramName, start, end)
+                : string.Format(ShardResource.ParameterCheck_BetweenNotEqual, paramName, start, end, start);
             Require<ArgumentOutOfRangeException>(flag, message);
 
             flag = endEqual ? value.CompareTo(end) <= 0 : value.CompareTo(end) < 0;
             message = endEqual
-                ? string.Format(LangResource.ParameterCheck_Between, paramName, start, end)
-                : string.Format(LangResource.ParameterCheck_BetweenNotEqual, paramName, start, end, end);
+                ? string.Format(ShardResource.ParameterCheck_Between, paramName, start, end)
+                : string.Format(ShardResource.ParameterCheck_BetweenNotEqual, paramName, start, end, end);
             Require<ArgumentOutOfRangeException>(flag, message);
         }
 
@@ -181,7 +180,7 @@ namespace Framework.Utility.Extensions
         public static void CheckDirectoryExists(this string directory, string paramName = null)
         {
             CheckNotNull(directory, paramName);
-            Require<DirectoryNotFoundException>(Directory.Exists(directory), string.Format(LangResource.ParameterCheck_DirectoryNotExists, directory));
+            Require<DirectoryNotFoundException>(Directory.Exists(directory), string.Format(ShardResource.ParameterCheck_DirectoryNotExists, directory));
         }
 
         /// <summary>
@@ -194,7 +193,7 @@ namespace Framework.Utility.Extensions
         public static void CheckFileExists(this string filename, string paramName = null)
         {
             CheckNotNull(filename, paramName);
-            Require<FileNotFoundException>(File.Exists(filename), string.Format(LangResource.ParameterCheck_FileNotExists, filename));
+            Require<FileNotFoundException>(File.Exists(filename), string.Format(ShardResource.ParameterCheck_FileNotExists, filename));
         }
     }
 }

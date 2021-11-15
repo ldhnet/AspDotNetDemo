@@ -22,8 +22,9 @@ using Framework.Core.Data;
 using System.Linq;
 using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl;
-using LangResources;
+using DirectService.Admin.Impl; 
+using DirectService.Test.Impl;
+using DirectService.Test.Contracts;
 
 namespace WebMVC
 {
@@ -94,10 +95,7 @@ namespace WebMVC
             ProviderManage.MemoryCacheProvider = new MemoryCacheProvider(); 
 
             services.AddSingleton<MyFilter>();
-
-            services.AddSingleton<LangResource>();
-
-
+              
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalConfig.SystemConfig.DBConnectionString));
              
             //注册Cookie认证服务
@@ -132,8 +130,8 @@ namespace WebMVC
             services.AddSingleton<IRepository<SysAccount, int>, Repository<SysAccount, int>>();
             services.AddSingleton<IUnitOfWork, MyDBContext>();
 
-            services.AddSingleton<IUserService, UserService>();
-        
+            services.AddSingleton<IUserService, UserService>(); 
+
             #region 最大请求数
 
             ////使用栈策略模式
@@ -258,7 +256,7 @@ namespace WebMVC
             });
 
             
-            GlobalContext.ServiceProvider = app.ApplicationServices;
+            GlobalConfig.ServiceProvider = app.ApplicationServices;
 
         }
     }
