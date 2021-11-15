@@ -1,4 +1,5 @@
-﻿using Framework.Utility.Extensions;
+﻿using Framework.Utility;
+using Framework.Utility.Extensions;
 using Framework.Utility.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -39,14 +40,25 @@ namespace Framework.Core.Extensions
                         entry.State = EntityState.Modified;
                     }
                 }
-                catch (InvalidOperationException)
+                catch (InvalidOperationException ex)
                 {
                     //TEntity oldEntity = dbSet.Find(entity.Id);
                     //dbContext.Entry(oldEntity).CurrentValues.SetValues(entity);
                 }
             }
+        } 
+        /// <summary>
+        /// 清除数据上下文的更改
+        /// </summary>
+        public static void CleanChanges(this DbContext context)
+        {
+            IEnumerable<EntityEntry> entries = context.ChangeTracker.Entries();
+            foreach (var entry in entries)
+            {
+                entry.State = EntityState.Detached;
+            }
         }
-         
+
         /// <summary>
         /// 拼接删除SQL语句
         /// </summary>

@@ -1,4 +1,6 @@
-﻿using LangResources;
+﻿using DH.Models.DbModels;
+using Framework.Utility;
+using LangResources;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System.Globalization;
@@ -8,18 +10,36 @@ namespace WebMVC.Controllers
 {
     public class LangController : BaseController
     { 
-        private readonly IStringLocalizer<LangResource> localizer;
-
-        public LangController(IStringLocalizer<LangResource> _localizer)
+        private readonly IStringLocalizer<LangResource> _localizer;
+   
+        public LangController(IStringLocalizer<LangResource> localizer)
         {
-            localizer= _localizer;
+            _localizer = localizer;
         }
         public IActionResult Index()
         {
+            var aaaa = _localizer.GetString(LangResource.Hello);
+            var bbb = _localizer.GetString(LangResource.Title);
+            var aaaa1 = _localizer.GetString(LangResource.AnyRadixConvert_CharacterIsNotValid);
 
-            var aaaa = localizer.GetString(LangResource.Hello);
-            var bbb = localizer.GetString(LangResource.Title);
+            var ccc = _localizer.GetString("CheckNotNull");
 
+
+            var ddd = string.Format(ccc,nameof(ccc));
+
+            var aa = new Employee();
+
+            var msg = "";
+            try
+            {
+                Check.NotNull(aa.BankCard, nameof(aa));
+            }
+            catch (System.Exception ex)
+            {
+
+                msg = ex.Message;
+            }
+          
             //var langRequest = Request.Headers["accept-language"].ToString();
 
             //Request.Cookies.TryGetValue("lang", out string lang); 
@@ -37,7 +57,7 @@ namespace WebMVC.Controllers
 
             //ViewBag.Lang = Resources.Title + "---" + Resources.Hello + "====" + aaaa + bbb;
 
-            ViewBag.Lang =  aaaa + "====" + bbb;
+            ViewBag.Lang =  aaaa + "=" + bbb + ddd + msg + aaaa1;
 
             return View();
         }

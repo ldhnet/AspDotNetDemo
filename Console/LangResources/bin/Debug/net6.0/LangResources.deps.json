@@ -7,6 +7,9 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "LangResources/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Localization.Abstractions": "6.0.0"
+        },
         "runtime": {
           "LangResources.dll": {}
         },
@@ -18,6 +21,14 @@
             "locale": "zh-CN"
           }
         }
+      },
+      "Microsoft.Extensions.Localization.Abstractions/6.0.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Localization.Abstractions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52608"
+          }
+        }
       }
     }
   },
@@ -26,6 +37,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.Extensions.Localization.Abstractions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UQJmE78r414kbguPmvbT6MIz0r8LPsBhjLNOlpXOP1VVjaSIuUMATfAve8Q+oivwNG3Mnv+5OLZHfaBkB4SuUg==",
+      "path": "microsoft.extensions.localization.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.localization.abstractions.6.0.0.nupkg.sha512"
     }
   }
 }

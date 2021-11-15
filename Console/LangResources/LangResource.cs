@@ -1,10 +1,13 @@
-﻿namespace LangResources
-{
+﻿using Microsoft.Extensions.Localization;
+
+namespace LangResources
+{ 
     public class LangResource
     {
+
         public static string Hello { get; } = "Hello";
-        public static string Title { get; } = "Title"; 
-        public static string AnyRadixConvert_CharacterIsNotValid { get; } = "AnyRadixConvert_CharacterIsNotValid";
+        public static string Title { get; } = "Title";
+        public static string AnyRadixConvert_CharacterIsNotValid = "AnyRadixConvert_CharacterIsNotValid";
         public static string AnyRadixConvert_Overflow { get; } = "AnyRadixConvert_Overflow";
         public static string Caching_CacheNotInitialized { get; } = "Caching_CacheNotInitialized";
         public static string CheckNotNull { get; } = "CheckNotNull";

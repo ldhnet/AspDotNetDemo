@@ -147,7 +147,7 @@
   <data name="Filter_RuleFieldInTypeNotFound" xml:space="preserve">
     <value>指定的属性“{0}”在类型“{1}”中不存在。</value>
   </data>
-  <data name="Hello1" xml:space="preserve">
+  <data name="Hello" xml:space="preserve">
     <value>你好，世界。</value>
   </data>
   <data name="Http_Seciruty_Client_DecryptResponse_Failt" xml:space="preserve">
@@ -242,5 +242,8 @@
   </data>
   <data name="QueryCacheExtensions_TypeNotEntityType" xml:space="preserve">
     <value>类型“{0}”不是实体类型</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
   </data>
 </root>

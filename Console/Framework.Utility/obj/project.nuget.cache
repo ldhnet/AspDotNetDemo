@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tG/sV9ecqWzwhxPWdpXoqErBvP4MMA32yO4Yaq5Q6TnzlmHd3tP0hEXwgy9s9KS6kChvcgTuZ4jLE7sVVWQfHQ==",
+  "dgSpecHash": "0Pdx4kVfTPsojNFIJxgxUUT1lZr5cF5ylrFCz/G7liYNFcBSe7XCPt7UXkknr4jE/YiEAmxBT+1vWyUqq3x95w==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.0\\microsoft.extensions.localization.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",

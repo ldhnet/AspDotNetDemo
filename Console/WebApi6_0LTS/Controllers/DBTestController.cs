@@ -1,5 +1,7 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
+using Framework.Core.Data;
+using Framework.Utility;
 using Framework.Utility.Config; 
 using Microsoft.AspNetCore.Mvc;  
 
@@ -12,11 +14,13 @@ namespace WebApi6_0.Controllers
         private readonly ILogger<DBTestController> _logger;
         private readonly ISysAccountContract _SysAccountContract;
         private readonly IUserService _userService;
-        public DBTestController(ILogger<DBTestController> logger, IUserService userService, ISysAccountContract sysAccountContract)
+        private readonly IUnitOfWork _unitOfWork;
+        public DBTestController(ILogger<DBTestController> logger, IUserService userService, IUnitOfWork unitOfWork, ISysAccountContract sysAccountContract)
         {
             _logger = logger;
             _SysAccountContract = sysAccountContract;
             _userService = userService;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpGet] 
@@ -30,6 +34,11 @@ namespace WebApi6_0.Controllers
             _logger.LogWarning("2222222222");
 
 
+
+
+            var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
+
+
             SysAccount model = new SysAccount
             {
                 UserId = Guid.NewGuid().ToString(),
@@ -40,26 +49,29 @@ namespace WebApi6_0.Controllers
             };
 
 
-            SysAccount model2 = new SysAccount
+            Employee model2 = new Employee
             {
-                UserId = Guid.NewGuid().ToString(),
-                AccountName = "admin1",
-                AccountNo = "1001",
-                CreateBy = "admin1",
-                CreateTime = DateTime.Now
+                Name = "admin1" + new Random().Next(1),
+                BankCard = "admin1",
+                EmployeeName = "1001",
+                Department = 1,
+                Phone = "15225074031",
+                EmployeeSerialNumber = "1001",
             };
 
 
             //var aaa3 = _SysAccountContract.CreateInfo(model);
 
-            //var aaa5 = _SysAccountContract.CreateInfo(model2);
+            //var aaa5 = _userService.CreateInfo(model2);
 
 
-
+          
             var aaa2 = _SysAccountContract.GetSysAccount("admin1");
 
 
-            var aaa5 = _userService.Find("admin1");
+            var aaa6 = _userService.GetAll().ToList();
+
+
 
 
             var aaa = _SysAccountContract.GetSysAccountInfo("admin");

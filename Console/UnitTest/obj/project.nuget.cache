@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GHhDWL2TlVa84kC+Y8oL3kCIl34wkZ24P6h2gNnIZlkl5AqUZ/iqnKdU9xVub+pZWjRc+JKwVaxiOpuCykK5rg==",
+  "dgSpecHash": "4/qtGpAW5aFWm2LEsVokV2DsVprppVsHvjtxs3mfuZA07QicrLvkEME6qTyb8ucUoERJ6oRFbA6k7AU66y6luQ==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\UnitTest\\UnitTest.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.0\\microsoft.extensions.localization.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

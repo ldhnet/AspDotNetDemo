@@ -9,5 +9,7 @@ namespace DirectService.Admin.Contracts
          BaseResponse CreateInfo(SysAccount model);
          SysAccount? GetSysAccountInfo(string userName);
          BaseResponse<SysAccount> GetSysAccount(string userName);
+
+        BaseResponse BeginTransactionTest();
     }
 }

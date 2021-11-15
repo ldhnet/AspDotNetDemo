@@ -18,6 +18,12 @@ namespace DirectService.Admin.Impl
             this._userService = userService; 
         }
 
+        public BaseResponse CreateInfo(Employee model)
+        {
+            var ret = _userService.Insert(model);
+            return ret > 0 ? new BaseResponse(successCode.Success) : new BaseResponse(successCode.NoChanged);
+        }
+
         public Employee Find(string employeeSerialNumber)
         {
             employeeSerialNumber = employeeSerialNumber.Trim();
@@ -30,6 +36,12 @@ namespace DirectService.Admin.Impl
             var employee = _userService.EntitiesAsNoTracking.FirstOrDefault(c=>c.EmployeeSerialNumber == employeeSerialNumber); 
             return new BaseResponse<Employee>(successCode.Success, "", employee??new Employee());
         }
+
+        public IQueryable<Employee> GetAll()
+        { 
+            return _userService.EntitiesAsNoTracking;
+        }
+
 
     }
 }

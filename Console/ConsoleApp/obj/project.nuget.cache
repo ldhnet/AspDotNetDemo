@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wrecZrubet25vIIoKyVY8zc8CchnB5NzjI86F05V8eKP4V4HnSvi/eYVUAYm7OmlUIV0X0pSM0tubko9xHIrdg==",
+  "dgSpecHash": "eTG++oe36wd/PA4iiXPpl05OTqAJ+nZi0w21dGDsFWkfz9u0fKOvNuvsUFuDvtWddB7Nnlx9Xd73fQNDce1RlQ==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\Console\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\6.0.0\\microsoft.extensions.localization.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

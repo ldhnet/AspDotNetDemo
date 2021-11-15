@@ -95,7 +95,7 @@ namespace Framework.Core.Data
         /// <param name="checkAction">删除前置检查委托</param>
         /// <param name="deleteFunc">删除委托，用于删除关联信息</param>
         /// <returns>业务操作结果</returns>
-        BaseResponse Delete(ICollection<TKey> ids, Action<TEntity> checkAction = null, Func<TEntity, TEntity> deleteFunc = null);
+        BaseResponse Delete(ICollection<TKey> ids, Action<TEntity>? checkAction = null, Func<TEntity, TEntity>? deleteFunc = null);
 
         /// <summary>
         /// 更新实体对象
@@ -113,10 +113,12 @@ namespace Framework.Core.Data
         /// <param name="updateFunc">由DTO到实体的转换委托</param>
         /// <returns>业务操作结果</returns>
         BaseResponse Update<TEditDto>(ICollection<TEditDto> dtos,
-            Action<TEditDto> checkAction = null,
-            Func<TEditDto, TEntity, TEntity> updateFunc = null)
+            Action<TEditDto>? checkAction = null,
+            Func<TEditDto, TEntity, TEntity>? updateFunc = null)
             where TEditDto : IEditDto<TKey>;
 
+
+        #region Query
         /// <summary>
         /// 检查实体是否存在
         /// </summary>
@@ -134,6 +136,40 @@ namespace Framework.Core.Data
         TEntity GetByKey(TKey key);
 
         /// <summary>
+        /// 查找第一个符合条件的数据
+        /// </summary>
+        /// <param name="predicate">数据查询谓语表达式</param>
+        /// <returns>符合条件的实体，不存在时返回null</returns>
+        TEntity GetFirst(Expression<Func<TEntity, bool>> predicate);
+
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>不跟踪数据更改（NoTracking）的查询数据源
+        /// </summary>
+        /// <param name="predicate">数据查询谓语表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        IQueryable<TEntity> QueryAsNoTracking(Expression<Func<TEntity, bool>> predicate);
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>不跟踪数据更改（NoTracking）的查询数据源，并可Include导航属性
+        /// </summary>
+        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        IQueryable<TEntity> QueryAsNoTracking(params Expression<Func<TEntity, object>>[] includePropertySelectors);
+
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源
+        /// </summary>
+        /// <param name="predicate">数据过滤表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> predicate);
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源，并可Include导航属性
+        /// </summary>
+        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors);
+
+
+        /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>
         /// <param name="path">属性表达式，表示要贪婪加载的导航属性</param>
@@ -145,17 +181,12 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="paths">要贪婪加载的导航属性名称数组</param>
         /// <returns>查询数据集</returns>
-        IQueryable<TEntity> GetIncludes(params string[] paths);
+        IQueryable<TEntity> GetIncludes(params string[] paths); 
 
-        /// <summary>
-        /// 创建一个原始 SQL 查询，该查询将返回此集中的实体。 
-        /// 默认情况下，上下文会跟踪返回的实体；可通过对返回的 DbRawSqlQuery 调用 AsNoTracking 来更改此设置。 请注意返回实体的类型始终是此集的类型，而不会是派生的类型。 如果查询的一个或多个表可能包含其他实体类型的数据，则必须编写适当的 SQL 查询以确保只返回适当类型的实体。 与接受 SQL 的任何 API 一样，对任何用户输入进行参数化以便避免 SQL 注入攻击是十分重要的。 您可以在 SQL 查询字符串中包含参数占位符，然后将参数值作为附加参数提供。 您提供的任何参数值都将自动转换为 DbParameter。 context.Set(typeof(Blog)).SqlQuery("SELECT * FROM dbo.Posts WHERE Author = @p0", userSuppliedAuthor); 或者，您还可以构造一个 DbParameter 并将它提供给 SqlQuery。 这允许您在 SQL 查询字符串中使用命名参数。 context.Set(typeof(Blog)).SqlQuery("SELECT * FROM dbo.Posts WHERE Author = @author", new SqlParameter("@author", userSuppliedAuthor));
-        /// </summary>
-        /// <param name="trackEnabled">是否跟踪返回实体</param>
-        /// <param name="sql">SQL 查询字符串。</param>
-        /// <param name="parameters">要应用于 SQL 查询字符串的参数。 如果使用输出参数，则它们的值在完全读取结果之前不可用。 这是由于 DbDataReader 的基础行为而导致的，有关详细信息，请参见 http://go.microsoft.com/fwlink/?LinkID=398589。</param>
-        /// <returns></returns>
-        IEnumerable<TEntity> SqlQuery(string sql, bool trackEnabled = true, params object[] parameters);
+        #endregion Query
+
+
+        #region Async
         /// <summary>
         /// 异步插入实体
         /// </summary>
@@ -227,6 +258,10 @@ namespace Framework.Core.Data
         /// <param name="key">实体主键</param>
         /// <returns>符合主键的实体，不存在时返回null</returns>
         Task<TEntity> GetByKeyAsync(TKey key);
+        #endregion Async
+
+      
+
 
         #endregion
     }

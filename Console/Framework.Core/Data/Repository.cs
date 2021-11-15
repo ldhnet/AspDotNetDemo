@@ -67,7 +67,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public int Insert(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             AssignCreateProperty(entity);
             _dbSet.Add(entity);
             return SaveChanges();
@@ -102,7 +102,7 @@ namespace Framework.Core.Data
             Func<TAddDto, TEntity, TEntity>? updateFunc = null)
             where TAddDto : IAddDto
         {
-            dtos.CheckNotNull("dtos");
+            Check.NotNull(dtos, nameof(dtos));
             List<string> names = new List<string>();
             foreach (TAddDto dto in dtos)
             {
@@ -146,7 +146,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public int Delete(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             _dbSet.Remove(entity);
             return SaveChanges();
         }
@@ -170,7 +170,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public int Delete(Expression<Func<TEntity, bool>> predicate)
         {
-            predicate.CheckNotNull("predicate");
+            Check.NotNull(predicate, nameof(predicate));
             TEntity[] entities = _dbSet.Where(predicate).ToArray();
             return entities.Length == 0 ? 0 : Delete(entities);
         }
@@ -194,13 +194,13 @@ namespace Framework.Core.Data
         /// <param name="checkAction">删除前置检查委托</param>
         /// <param name="deleteFunc">删除委托，用于删除关联信息</param>
         /// <returns>业务操作结果</returns>
-        public BaseResponse Delete(ICollection<TKey> ids, Action<TEntity> checkAction = null, Func<TEntity, TEntity> deleteFunc = null)
+        public BaseResponse Delete(ICollection<TKey> ids, Action<TEntity>? checkAction = null, Func<TEntity, TEntity>? deleteFunc = null)
         {
-            ids.CheckNotNull("ids");
+            Check.NotNull(ids, nameof(ids));
             List<string> names = new List<string>();
             foreach (TKey id in ids)
             {
-                TEntity entity = _dbSet.Find(id);
+                TEntity? entity = _dbSet.Find(id);
                 try
                 {
                     if (checkAction != null)
@@ -227,8 +227,8 @@ namespace Framework.Core.Data
             return count > 0
                 ? new BaseResponse(successCode.Success,
                     names.Count > 0
-                        ? $"{0} deleted successfully {names.ExpandAndToString()}"
-                        : $"{0} items deleted successfully {ids.Count}" )
+                        ? $"{names.ExpandAndToString()} deleted successfully "
+                        : $"{ids.Count} items deleted successfully" )
                 : new BaseResponse(successCode.NoChanged);
         }
 
@@ -239,7 +239,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public int Update(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             AssignModifyProperty(entity);
             ((DbContext)_unitOfWork).Update<TEntity, TKey>(entity);
             return SaveChanges();
@@ -258,7 +258,7 @@ namespace Framework.Core.Data
             Func<TEditDto, TEntity, TEntity> updateFunc = null)
             where TEditDto : IEditDto<TKey>
         {
-            dtos.CheckNotNull("dtos");
+            Check.NotNull(dtos, nameof(dtos));
             List<string> names = new List<string>();
             foreach (TEditDto dto in dtos)
             {
@@ -292,9 +292,12 @@ namespace Framework.Core.Data
                 }
             }
             int count = SaveChanges();
-            return count > 0 ? new BaseResponse(successCode.Success,  names.Count > 0 ? $"{0} edited successfully {names.ExpandAndToString()}"  : $"{0} items edited successfully {dtos.Count}")
+            return count > 0 ? new BaseResponse(successCode.Success,  names.Count > 0 ? $"{names.ExpandAndToString()} edited successfully"  : $"{dtos.Count} items edited successfully ")
                 : new BaseResponse(successCode.NoChanged);
         }
+
+
+        #region Query
 
         ///<summary>
         ///检查实体是否存在
@@ -303,16 +306,17 @@ namespace Framework.Core.Data
         ///<param name="id">编辑的实体标识</param>
         ///<param name="keyName">实体的主键名称</param>
         ///<returns>是否存在</returns>
-        public bool CheckExists(Expression<Func<TEntity, bool>> predicate, TKey id = default(TKey), string keyName = "Id")
+        public bool CheckExists(Expression<Func<TEntity, bool>> predicate, TKey? id = default(TKey), string keyName = "Id")
         {
-            predicate.CheckNotNull("predicate");
-            TKey defaultId = default(TKey);
+            Check.NotNull(predicate, nameof(predicate));
+            TKey? defaultId = default(TKey);
             var entity = _dbSet.Where(predicate).SingleOrDefault();
             bool exists = (!(typeof(TKey).IsValueType) && id.Equals(null)) || id.Equals(defaultId)
                 ? entity != null
                 : entity != null && !ReflectionHelper.GetObjectPropertyValue<TEntity>(entity, keyName).Equals(id.ToString());
             return exists;
         }
+
 
         /// <summary>
         /// 查找指定主键的实体
@@ -326,13 +330,83 @@ namespace Framework.Core.Data
         }
 
         /// <summary>
+        /// 查找第一个符合条件的数据
+        /// </summary>
+        /// <param name="predicate">数据查询谓语表达式</param>
+        /// <returns>符合条件的实体，不存在时返回null</returns>
+        public TEntity GetFirst(Expression<Func<TEntity, bool>> predicate)
+        {
+            Check.NotNull(predicate, nameof(predicate));
+            return Query(predicate).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>不跟踪数据更改（NoTracking）的查询数据源
+        /// </summary>
+        /// <param name="predicate">数据查询谓语表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        public virtual IQueryable<TEntity> QueryAsNoTracking(Expression<Func<TEntity, bool>> predicate)
+        {
+            IQueryable<TEntity> query = _dbSet.AsQueryable().AsNoTracking();
+            if (predicate == null)
+            {
+                return query;
+            }
+            return query.Where(predicate).AsNoTracking();
+        }
+
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>不跟踪数据更改（NoTracking）的查询数据源，并可Include导航属性
+        /// </summary>
+        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        public virtual IQueryable<TEntity> QueryAsNoTracking(params Expression<Func<TEntity, object>>[] includePropertySelectors)
+        {
+            return Query(includePropertySelectors).AsNoTracking();
+        }
+
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源
+        /// </summary>
+        /// <param name="predicate">数据过滤表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        public virtual IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> predicate)
+        {
+            IQueryable<TEntity> query = _dbSet.AsQueryable();
+            if (predicate == null)
+            {
+                return query;
+            }
+            return query.Where(predicate);
+        }
+        /// <summary>
+        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源，并可Include导航属性
+        /// </summary>
+        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
+        /// <returns>符合条件的数据集</returns>
+        public virtual IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors)
+        {
+            IQueryable<TEntity> query = _dbSet.AsQueryable();
+            if (includePropertySelectors == null || includePropertySelectors.Length == 0)
+            {
+                return query;
+            }
+
+            foreach (Expression<Func<TEntity, object>> selector in includePropertySelectors)
+            {
+                query = query.Include(selector);
+            }
+            return query;
+        }
+
+        /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>
         /// <param name="path">属性表达式，表示要贪婪加载的导航属性</param>
         /// <returns>查询数据集</returns>
         public IQueryable<TEntity> GetInclude<TProperty>(Expression<Func<TEntity, TProperty>> path)
         {
-            path.CheckNotNull("path");
+            Check.NotNull(path, nameof(path));
             return _dbSet.Include(path);
         }
 
@@ -343,30 +417,18 @@ namespace Framework.Core.Data
         /// <returns>查询数据集</returns>
         public IQueryable<TEntity> GetIncludes(params string[] paths)
         {
-            paths.CheckNotNull("paths");
+            Check.NotNull(paths, nameof(paths));
             IQueryable<TEntity> source = _dbSet;
             foreach (string path in paths)
             {
                 source = source.Include(path);
             }
             return source;
-        }
+        } 
+        #endregion Query 
 
-        /// <summary>
-        /// 创建一个原始 SQL 查询，该查询将返回此集中的实体。 
-        /// 默认情况下，上下文会跟踪返回的实体；可通过对返回的 DbRawSqlQuery 调用 AsNoTracking 来更改此设置。 请注意返回实体的类型始终是此集的类型，而不会是派生的类型。 如果查询的一个或多个表可能包含其他实体类型的数据，则必须编写适当的 SQL 查询以确保只返回适当类型的实体。 与接受 SQL 的任何 API 一样，对任何用户输入进行参数化以便避免 SQL 注入攻击是十分重要的。 
-        /// 您可以在 SQL 查询字符串中包含参数占位符，然后将参数值作为附加参数提供。 您提供的任何参数值都将自动转换为 DbParameter。 context.Set(typeof(Blog)).SqlQuery("SELECT * FROM dbo.Posts WHERE Author = @p0", userSuppliedAuthor); 
-        /// 或者，您还可以构造一个 DbParameter 并将它提供给 SqlQuery。 这允许您在 SQL 查询字符串中使用命名参数。 context.Set(typeof(Blog)).SqlQuery("SELECT * FROM dbo.Posts WHERE Author = @author", new SqlParameter("@author", userSuppliedAuthor));
-        /// </summary>
-        /// <param name="trackEnabled">是否跟踪返回实体</param>
-        /// <param name="sql">SQL 查询字符串。</param>
-        /// <param name="parameters">要应用于 SQL 查询字符串的参数。 如果使用输出参数，则它们的值在完全读取结果之前不可用。 这是由于 DbDataReader 的基础行为而导致的，有关详细信息，请参见 http://go.microsoft.com/fwlink/?LinkID=398589。</param>
-        /// <returns></returns>
-        public IEnumerable<TEntity> SqlQuery(string sql, bool trackEnabled = true, params object[] parameters)
-        {
-            return null; //trackEnabled  ? _dbSet.FromSqlRaw(sql, parameters) : _dbSet.FromSqlRaw(sql, parameters).AsNoTracking();
-        }
-         
+        #region Async
+
         /// <summary>
         /// 异步插入实体
         /// </summary>
@@ -374,7 +436,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public async Task<int> InsertAsync(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             AssignCreateProperty(entity);
             _dbSet.Add(entity);
             return await SaveChangesAsync();
@@ -405,7 +467,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public async Task<int> DeleteAsync(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             _dbSet.Remove(entity);
             return await SaveChangesAsync();
         }
@@ -429,7 +491,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            predicate.CheckNotNull("predicate");
+            Check.NotNull(predicate, nameof(predicate));
             TEntity[] entities = await _dbSet.Where(predicate).ToArrayAsync();
             return entities.Length == 0 ? 0 : await DeleteAsync(entities);
         }
@@ -453,7 +515,7 @@ namespace Framework.Core.Data
         /// <returns>操作影响的行数</returns>
         public async Task<int> UpdateAsync(TEntity entity)
         {
-            entity.CheckNotNull("entity");
+            Check.NotNull(entity, nameof(entity));
             AssignModifyProperty(entity);
             ((DbContext)_unitOfWork).Update<TEntity, TKey>(entity);
             return await SaveChangesAsync();
@@ -468,7 +530,7 @@ namespace Framework.Core.Data
         /// <returns>是否存在</returns>
         public async Task<bool> CheckExistsAsync(Expression<Func<TEntity, bool>> predicate, TKey id = default(TKey), string keyName = "Id")
         {
-            predicate.CheckNotNull("predicate");
+            Check.NotNull(predicate, nameof(predicate));
             TKey defaultId = default(TKey);
             var entity = await _dbSet.Where(predicate).SingleOrDefaultAsync();
             bool exists = (!(typeof(TKey).IsValueType) && id.Equals(null)) || id.Equals(defaultId)
@@ -479,7 +541,7 @@ namespace Framework.Core.Data
 
         public async Task<bool> CheckExistsAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            predicate.CheckNotNull("predicate");
+            Check.NotNull(predicate, nameof(predicate));
             var count = await _dbSet.Where(predicate).CountAsync();
             return count > 0;
         }
@@ -493,7 +555,7 @@ namespace Framework.Core.Data
             CheckEntityKey(key, "key");
             return await _dbSet.FindAsync(key);
         }
-
+        #endregion Async 
 
         #region 私有方法
 

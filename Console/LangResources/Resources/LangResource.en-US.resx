@@ -117,8 +117,131 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnyRadixConvert_CharacterIsNotValid" xml:space="preserve">
+    <value>The character \ '{0} \' in the parameter is not a valid character for {1} base The character \ '{0} \' in the parameter is not a valid character for {1} base numbers.</value>
+  </data>
+  <data name="AnyRadixConvert_Overflow" xml:space="preserve">
+    <value>Binary conversion overflow.</value>
+  </data>
+  <data name="Caching_CacheNotInitialized" xml:space="preserve">
+    <value>The caching function has not been initialized and no available icacheprovider implementation was found.</value>
+  </data>
+  <data name="CheckNotNull" xml:space="preserve">
+    <value>Parameter '{0}' cannot be empty.</value>
+  </data>
+  <data name="ConfigFile_ItemKeyDefineRepeated" xml:space="preserve">
+    <value>Duplicate definition of item with identity '{0}'</value>
+  </data>
+  <data name="ConfigFile_NameToTypeIsNull" xml:space="preserve">
+    <value>A type with the name '{0}' does not exist</value>
+  </data>
+  <data name="Context_BuildServicesFirst" xml:space="preserve">
+    <value>Please initialize the dependency injection service before using the context.iocregisterservices property</value>
+  </data>
+  <data name="DbContextInitializerConfig_InitializerNotExists" xml:space="preserve">
+    <value>The context initialization type '{0}' does not exist</value>
+  </data>
+  <data name="Filter_GroupOperateError" xml:space="preserve">
+    <value>The operation type in the query criteria group is wrong. It can only be and or.</value>
+  </data>
+  <data name="Filter_RuleFieldInTypeNotFound" xml:space="preserve">
+    <value>The specified property '{0}' does not exist in type '{1}'.</value>
+  </data>
   <data name="Hello" xml:space="preserve">
     <value>Hello</value>
+  </data>
+  <data name="Http_Seciruty_Client_DecryptResponse_Failt" xml:space="preserve">
+    <value>A data processing error was returned. Please try the operation again.</value>
+  </data>
+  <data name="Http_Security_Client_EncryptRequest_Failt" xml:space="preserve">
+    <value>An exception occurred when the client encrypts the sent data.</value>
+  </data>
+  <data name="Http_Security_Client_VerifyResponse_Failt" xml:space="preserve">
+    <value>The client failed to verify the signature of the returned data.</value>
+  </data>
+  <data name="Http_Security_Host_DecryptRequest_Failt" xml:space="preserve">
+    <value>An exception occurred when the server decrypted the requested data.</value>
+  </data>
+  <data name="Http_Security_Host_EncryptResponse_Failt" xml:space="preserve">
+    <value>An exception occurred when the server encrypted the returned data.</value>
+  </data>
+  <data name="IocInitializerBase_TypeNotIRepositoryType" xml:space="preserve">
+    <value>Type '{0}' is not a derived class of warehousing interface 'IRepository &lt;, &gt;'.</value>
+  </data>
+  <data name="IocInitializerBase_TypeNotIUnitOfWorkType" xml:space="preserve">
+    <value>Type '{0}' is not a derived class of unit of action 'IUnitOfWork'.</value>
+  </data>
+  <data name="Ioc_CannotResolveService" xml:space="preserve">
+    <value>Cannot resolve parameter of type '{1}' in constructor of type '{0}'</value>
+  </data>
+  <data name="Ioc_FrameworkNotInitialized" xml:space="preserve">
+    <value>The framework has not been initialized. Please initialize it first</value>
+  </data>
+  <data name="Ioc_ImplementationTypeNotFound" xml:space="preserve">
+    <value>The implementation type of type '{0}' cannot be found</value>
+  </data>
+  <data name="Ioc_NoConstructorMatch" xml:space="preserve">
+    <value>Cannot find constructor for appropriate parameter in type '{0}'</value>
+  </data>
+  <data name="Ioc_TryAddIndistinguishableTypeToEnumerable" xml:space="preserve">
+    <value>The implementation type cannot be '{0}' because it cannot be distinguished from other types registered as' {1} '</value>
+  </data>
+  <data name="Logging_CreateLogInstanceReturnNull" xml:space="preserve">
+    <value>'{1}' returned an empty instance when creating a log instance with name '{0}'.</value>
+  </data>
+  <data name="Map_MapperIsNull" xml:space="preserve">
+    <value>Mapperextensions.mapper cannot be empty. Please set the value first</value>
+  </data>
+  <data name="Mef_HttpContextItems_NotFoundRequestContainer" xml:space="preserve">
+    <value>There is no MEF part container with a valid range of request in the current HTTP context.</value>
+  </data>
+  <data name="ObjectExtensions_PropertyNameNotExistsInType" xml:space="preserve">
+    <value>The property named '{0}' does not exist in the specified object.</value>
+  </data>
+  <data name="ObjectExtensions_PropertyNameNotFixedType" xml:space="preserve">
+    <value>The property type with the specified name '{0}' is not '{1}'.</value>
+  </data>
+  <data name="ParameterCheck_Between" xml:space="preserve">
+    <value>The value of parameter '{0}' must be between '{1}' and '{2}'.</value>
+  </data>
+  <data name="ParameterCheck_BetweenNotEqual" xml:space="preserve">
+    <value>The value of parameter '{0}' must be between '{1}' and '{2}' and cannot be equal to '{3}'.</value>
+  </data>
+  <data name="ParameterCheck_DirectoryNotExists" xml:space="preserve">
+    <value>The specified directory path '{0}' does not exist.</value>
+  </data>
+  <data name="ParameterCheck_FileNotExists" xml:space="preserve">
+    <value>The specified file path '{0}' does not exist.</value>
+  </data>
+  <data name="ParameterCheck_NotContainsNull_Collection" xml:space="preserve">
+    <value>Collection '{0}' cannot contain null items</value>
+  </data>
+  <data name="ParameterCheck_NotEmpty_Guid" xml:space="preserve">
+    <value>The value of parameter '{0}' cannot be guid.empty</value>
+  </data>
+  <data name="ParameterCheck_NotGreaterThan" xml:space="preserve">
+    <value>The value of parameter '{0}' must be greater than '{1}'.</value>
+  </data>
+  <data name="ParameterCheck_NotGreaterThanOrEqual" xml:space="preserve">
+    <value>The value of parameter '{0}' must be less than or equal to '{1}'.</value>
+  </data>
+  <data name="ParameterCheck_NotLessThan" xml:space="preserve">
+    <value>The value of parameter '{0}' must be less than '{1}'.</value>
+  </data>
+  <data name="ParameterCheck_NotLessThanOrEqual" xml:space="preserve">
+    <value>The value of parameter '{0}' must be less than or equal to '{1}'.</value>
+  </data>
+  <data name="ParameterCheck_NotNull" xml:space="preserve">
+    <value>Parameter '{0}' cannot be an empty reference.</value>
+  </data>
+  <data name="ParameterCheck_NotNullOrEmpty_Collection" xml:space="preserve">
+    <value>Parameter '{0}' cannot be an empty reference or empty collection.</value>
+  </data>
+  <data name="ParameterCheck_NotNullOrEmpty_String" xml:space="preserve">
+    <value>The parameter '{0}' cannot be an empty reference or an empty string.</value>
+  </data>
+  <data name="QueryCacheExtensions_TypeNotEntityType" xml:space="preserve">
+    <value>Type '{0}' is not an entity type</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>

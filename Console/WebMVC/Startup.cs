@@ -22,7 +22,8 @@ using Framework.Core.Data;
 using System.Linq;
 using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl; 
+using DirectService.Admin.Impl;
+using LangResources;
 
 namespace WebMVC
 {
@@ -93,7 +94,10 @@ namespace WebMVC
             ProviderManage.MemoryCacheProvider = new MemoryCacheProvider(); 
 
             services.AddSingleton<MyFilter>();
-             
+
+            services.AddSingleton<LangResource>();
+
+
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalConfig.SystemConfig.DBConnectionString));
              
             //注册Cookie认证服务
