@@ -6,8 +6,8 @@ namespace Framework.Utility.Helper
 {
     public class SecurityHelper
     {
-        private static readonly string DESKey = "*change*"; // 8位或者16位
-        private static readonly string DESIv = "1change1"; // 8位或者16位
+        private static readonly string DESKey = "12345678123456781234567812345678"; // 8位或者16位
+        private static readonly string DESIv = "12345678123456781234567812345678"; // 8位或者16位
 
         private static readonly string AESKey = "12345dontusethis"; // 16位或者32位
         private static readonly string AESIv = "youshouldchange!"; // 16位或者32位

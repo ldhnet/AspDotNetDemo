@@ -30,7 +30,7 @@ namespace WebApi6_0.Controllers
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
-        [AuthorizeFilter]
+        //[AuthorizeFilter]
         [AllowAnonymous]
         public BaseResponse<Employee> Get()
         {
@@ -50,7 +50,7 @@ namespace WebApi6_0.Controllers
         /// Post测试Demo
         /// </summary>
         /// <returns></returns>  
-        [HttpPost]
+        [HttpPost] 
         public BaseResponse<dynamic> Post([FromBody]DemoDto demoDto)
         { 
             _logger.LogInformation("1111111");

@@ -22,25 +22,22 @@
             </summary>
             <returns></returns>  
         </member>
-        <member name="T:WebApi6_0.Filter.AuthorizeFilterAttribute">
+        <member name="T:WebApi6_0.Filter.TokenCheckFilter">
             <summary>
-            验证token
+            token验证
             </summary>
         </member>
-        <member name="M:WebApi6_0.Filter.AuthorizeFilterAttribute.#ctor(System.String)">
+        <member name="M:WebApi6_0.Filter.TokenCheckFilter.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="P:WebApi6_0.Filter.AuthorizeFilterAttribute.Authorize">
+        <member name="M:WebApi6_0.Filter.TokenCheckFilter.OnAuthorizationAsync(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
             <summary>
-            权限字符串，例如 organization:user:view
+            重写基类的验证方式，加入自定义的Ticket验证
             </summary>
-        </member>
-        <member name="M:WebApi6_0.Filter.AuthorizeFilterAttribute.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
-            <summary>
-            异步验证
-            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
         </member>
         <member name="P:WebApi6_0.Models.InputDto.DemoDto.Id">
             <summary>
