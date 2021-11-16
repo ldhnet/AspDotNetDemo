@@ -184,7 +184,7 @@ namespace Framework.Utility
         /// <param name="paramName">参数名称。</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="DirectoryNotFoundException"></exception>
-        public static void DirectoryExists(string directory, string paramName = null)
+        public static void DirectoryExists(string directory, string? paramName = null)
         {
             NotNull(directory, paramName);
             Required<DirectoryNotFoundException>(Directory.Exists(directory), string.Format(ShardResource.ParameterCheck_DirectoryNotExists, directory));
@@ -197,7 +197,7 @@ namespace Framework.Utility
         /// <param name="paramName">参数名称。</param>
         /// <exception cref="ArgumentNullException">当文件路径为null时</exception>
         /// <exception cref="FileNotFoundException">当文件路径不存在时</exception>
-        public static void FileExists(string filename, string paramName = null)
+        public static void FileExists(string filename, string? paramName = null)
         {
             NotNull(filename, paramName);
             Required<FileNotFoundException>(File.Exists(filename), string.Format(ShardResource.ParameterCheck_FileNotExists, filename));

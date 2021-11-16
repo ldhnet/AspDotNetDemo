@@ -13,7 +13,7 @@ namespace Framework.Utility.Extensions
         /// <param name="dict"></param>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static V Get<K, V>(this Dictionary<K, V> dict, K key)
+        public static V? Get<K, V>(this Dictionary<K, V> dict, K key)
         {
             if (dict.ContainsKey(key)) return dict[key];
             return default(V);
@@ -28,7 +28,7 @@ namespace Framework.Utility.Extensions
         /// <param name="key"></param>
         /// <param name="fullDict"></param>
         /// <returns></returns>
-        public static V Get<K, V>(this Dictionary<K, V> dict, K key, Dictionary<K, V> fullDict)
+        public static V? Get<K, V>(this Dictionary<K, V> dict, K key, Dictionary<K, V> fullDict)
         {
             if (dict.ContainsKey(key)) return dict[key];
             else if (fullDict.ContainsKey(key)) return fullDict[key];
@@ -52,7 +52,7 @@ namespace Framework.Utility.Extensions
             {
                 if (field.FieldType.IsEnum)
                 {
-                    sValue = ((int)enumType.InvokeMember(field.Name, BindingFlags.GetField, null, null, null));
+                    sValue = (int)enumType.InvokeMember(field.Name, BindingFlags.GetField, null, null, null);
                     object[] arr = field.GetCustomAttributes(typeDescription, true);
                     if (arr.Length > 0)
                     {

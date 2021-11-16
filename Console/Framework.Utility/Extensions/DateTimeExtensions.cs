@@ -35,7 +35,7 @@ namespace Framework.Utility.Extensions
         /// <param name="dateTime"></param>
         /// <param name="format"></param>
         /// <returns></returns>
-        public static string Formatted(this DateTime? dateTime, string format = null)
+        public static string Formatted(this DateTime? dateTime, string? format = null)
         {
             return format != null
                 ? (dateTime.HasValue ? dateTime.Value.ToString(format) : "")
@@ -48,7 +48,7 @@ namespace Framework.Utility.Extensions
         /// <param name="dateTime"></param>
         /// <param name="format"></param>
         /// <returns></returns>
-        public static string Formatted(this DateTime dateTime, string format = null)
+        public static string Formatted(this DateTime dateTime, string? format = null)
         {
             return dateTime.ToString(format ?? FrameConstant.StringFormat.Date);
         }

@@ -37,7 +37,7 @@ namespace Framework.Utility.Helper
         /// <returns>System.String.</returns>
         public static string HttpGet(string url, int timeout = 10 * 1000)
         {
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            HttpWebRequest? request = WebRequest.Create(url) as HttpWebRequest;
             request.Method = "GET";
             request.ContentType = "text/html;charset=UTF-8";
             request.Timeout = timeout;
@@ -62,11 +62,11 @@ namespace Framework.Utility.Helper
         /// <returns>System.String.</returns>
         public static string HttpPost(string posturl, string postData, string contentType = "application/x-www-form-urlencoded", int timeout = 10 * 1000)
         {
-            Stream outstream = null;
-            Stream instream = null;
-            StreamReader sr = null;
-            HttpWebResponse response = null;
-            HttpWebRequest request = null;
+            Stream? outstream = null;
+            Stream? instream = null;
+            StreamReader? sr = null;
+            HttpWebResponse? response = null;
+            HttpWebRequest? request = null;
             Encoding encoding = Encoding.GetEncoding("utf-8");
             byte[] data = encoding.GetBytes(postData);
             // 准备请求...
@@ -138,11 +138,11 @@ namespace Framework.Utility.Helper
 
         #region 预定义方法或者变更
         //默认的编码
-        private Encoding encoding = Encoding.Default;
+        private Encoding? encoding = Encoding.Default;
         //HttpWebRequest对象用来发起请求
-        private HttpWebRequest request = null;
+        private HttpWebRequest? request = null;
         //获取影响流的数据对象
-        private HttpWebResponse response = null;
+        private HttpWebResponse? response = null;
         /// <summary>
         /// 根据相传入的数据，得到相应页面数据
         /// </summary>
@@ -566,7 +566,7 @@ namespace Framework.Utility.Helper
             get { return _PostdataByte; }
             set { _PostdataByte = value; }
         }
-        CookieCollection cookiecollection = null;
+        CookieCollection? cookiecollection = null;
         /// <summary>
         /// Cookie对象集合
         /// </summary>
@@ -681,7 +681,7 @@ namespace Framework.Utility.Helper
             get { return _Cookie; }
             set { _Cookie = value; }
         }
-        CookieCollection cookiecollection = null;
+        CookieCollection? cookiecollection = null;
         /// <summary>
         /// Cookie对象集合
         /// </summary>
@@ -699,7 +699,7 @@ namespace Framework.Utility.Helper
             get { return html; }
             set { html = value; }
         }
-        private byte[] resultbyte = null;
+        private byte[]? resultbyte = null;
         /// <summary>
         /// 返回的Byte数组 只有ResultType.Byte时才返回数据，其它情况为空
         /// </summary>

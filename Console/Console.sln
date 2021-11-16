@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectService.Admin", "Dire
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectService.Test", "DirectService.Test\DirectService.Test.csproj", "{D044A96C-858D-4462-8BB4-A4FEEC314ACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC6_0", "WebMVC6_0\WebMVC6_0.csproj", "{0E04B73B-9362-4956-8E13-C435B77A2331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC6_0", "WebMVC6_0\WebMVC6_0.csproj", "{0E04B73B-9362-4956-8E13-C435B77A2331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
