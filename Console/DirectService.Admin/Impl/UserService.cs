@@ -1,5 +1,6 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
+using Framework.Core;
 using Framework.Core.Data;
 using Framework.Utility;
 
@@ -20,7 +21,7 @@ namespace DirectService.Admin.Impl
         }
 
         public Employee Find(string employeeSerialNumber)
-        {
+        { 
             employeeSerialNumber = employeeSerialNumber.Trim();
             return _userService.EntitiesAsNoTracking.FirstOrDefault(c => c.EmployeeSerialNumber == employeeSerialNumber) ?? new Employee();
         }
@@ -31,6 +32,13 @@ namespace DirectService.Admin.Impl
             var employee = _userService.EntitiesAsNoTracking.FirstOrDefault(c => c.EmployeeSerialNumber == employeeSerialNumber);
             return new BaseResponse<Employee>(successCode.Success, "", employee ?? new Employee());
         }
+
+        public Employee? GetUserByToken(string token)
+        {
+            token = token.Trim();
+            return _userService.EntitiesAsNoTracking.FirstOrDefault(c => c.ApiToken == token);
+        }
+        
 
         public IQueryable<Employee> GetAll()
         {

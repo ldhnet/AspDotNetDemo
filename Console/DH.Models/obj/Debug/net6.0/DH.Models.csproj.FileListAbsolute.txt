@@ -1,8 +1,3 @@
-C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.AssemblyReference.cache
-C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.AssemblyInfoInputs.cache
-C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.AssemblyInfo.cs
-C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.CoreCompileInputs.cache
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\DH.Models.deps.json
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\DH.Models.dll
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\ref\DH.Models.dll
@@ -15,6 +10,11 @@ C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\Framework.Utility.pdb
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\LangResources.pdb
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\en-US\LangResources.resources.dll
 C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\zh-CN\LangResources.resources.dll
+C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.AssemblyReference.cache
+C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.AssemblyInfoInputs.cache
+C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.AssemblyInfo.cs
+C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.CoreCompileInputs.cache
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.CopyComplete
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.dll
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\ref\DH.Models.dll

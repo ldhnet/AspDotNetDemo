@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi6_0</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi6_0.Controllers.DBTestController.Get">
+            <summary>
+            测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi6_0.Controllers.DemoController.Get">
+            <summary>
+            测试Demo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi6_0.Controllers.DemoController.Post(WebApi6_0.Models.InputDto.DemoDto)">
+            <summary>
+            Post测试Demo
+            </summary>
+            <returns></returns>  
+        </member>
+        <member name="T:WebApi6_0.Filter.AuthorizeFilterAttribute">
+            <summary>
+            验证token
+            </summary>
+        </member>
+        <member name="M:WebApi6_0.Filter.AuthorizeFilterAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:WebApi6_0.Filter.AuthorizeFilterAttribute.Authorize">
+            <summary>
+            权限字符串，例如 organization:user:view
+            </summary>
+        </member>
+        <member name="M:WebApi6_0.Filter.AuthorizeFilterAttribute.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            异步验证
+            </summary>
+        </member>
+        <member name="P:WebApi6_0.Models.InputDto.DemoDto.Id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:WebApi6_0.Models.InputDto.DemoDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+    </members>
+</doc>

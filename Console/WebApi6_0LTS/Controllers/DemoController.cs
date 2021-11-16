@@ -1,8 +1,14 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
 using DirectService.Test.Contracts;
+using Framework.Utility;
 using Framework.Utility.Config;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using WebApi6_0.Filter;
+using WebApi6_0.Models.InputDto;
+
 namespace WebApi6_0.Controllers
 {
     [Route("api/[controller]")]
@@ -18,17 +24,17 @@ namespace WebApi6_0.Controllers
             _TestInterface = testIfc;
             _UserInterface = userIfc;
         }
-
+        /// <summary>
+        /// 测试Demo
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public string Get()
+        [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
+        [AuthorizeFilter]
+        [AllowAnonymous]
+        public BaseResponse<Employee> Get()
         {
-            MyDBContext ct = new MyDBContext();
-
-            var aa = ct.SysAccount.FirstOrDefault();
-
-            _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
-
-
+            _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
@@ -36,11 +42,29 @@ namespace WebApi6_0.Controllers
 
             _logger.LogError(aaa);
 
+            var result = _UserInterface.Find("admin"); 
+            return new BaseResponse<Employee>(successCode.Success,"",result);
+        }
 
-            //var bb=  _UserInterface.FindEmployee("admin").Name;
-            // _logger.LogError(bb);
+        /// <summary>
+        /// Post测试Demo
+        /// </summary>
+        /// <returns></returns>  
+        [HttpPost]
+        public BaseResponse<dynamic> Post([FromBody]DemoDto demoDto)
+        { 
+            _logger.LogInformation("1111111");
+            _logger.LogWarning("2222222222"); 
 
-            return "123";
+            _logger.LogError("3333333");
+
+            var data = new
+            {
+                demoInfo = demoDto,
+                deomList = new List<DemoDto>() { demoDto, demoDto },
+                message = "测试"
+            }; 
+            return new BaseResponse<dynamic>(successCode.Success, string.Empty, data);
         }
     }
 }

@@ -5,6 +5,7 @@ using Framework.Core.Data;
 using Framework.Core.Dependency;
 using Framework.Utility.Config;
 using System.Reflection;
+using WebApi6_0.Filter;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -64,12 +65,16 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
-//builder.Services.AddSwaggerGen(c =>
-//{
-//    c.SwaggerDoc("v1", new() { Title = "WebApi6_0", Version = "v1" });
-//});
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "WebApi6_0_测试api", Version = "v1" });
+    // 配置从xml文档中获取描述信息
+    // 路径我们获取的项目路径+startup命名空间（也可以直接写生成的xml名称）
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, typeof(Program).Assembly.GetName().Name + ".xml");
+    c.IncludeXmlComments(filePath);
+});
 
 var app = builder.Build();
 

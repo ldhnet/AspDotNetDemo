@@ -9,7 +9,7 @@ namespace DirectService.Admin.Contracts
         BaseResponse CreateInfo(Employee model);
         Employee Find(string employeeSerialNumber);
         BaseResponse<Employee> FindEmployee(string employeeSerialNumber);
-
+        Employee? GetUserByToken(string token);
         IQueryable<Employee> GetAll();
     }
 }

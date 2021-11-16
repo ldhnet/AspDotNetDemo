@@ -1,8 +1,11 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
+using DirectService.Test;
 using Framework.Core.Data;
 using Framework.Utility.Config;
+using Framework.Utility.Helper;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace WebApi6_0.Controllers
 {
@@ -21,7 +24,10 @@ namespace WebApi6_0.Controllers
             _userService = userService;
             _unitOfWork = unitOfWork;
         }
-
+        /// <summary>
+        /// 测试
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public string Get()
         {
@@ -32,10 +38,25 @@ namespace WebApi6_0.Controllers
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
+            string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
+
+            var strSql = new StringBuilder();
+            strSql.Append(@"SELECT Id,
+                                  ,[Name]
+                                  ,[BankCard]
+                                  ,[EmployeeName]
+                                  ,[Department]
+                                  ,[Phone]
+                                  ,[EmployeeSerialNumber]
+                                  ,[WebToken]
+                                  ,[ApiToken]
+                            FROM    Employee 
+                            WHERE   WebToken = '" + ApiToken + "' or ApiToken = '"+ ApiToken + "'");
+
+            var emp = new SqlHelper(GlobalConfig.SystemConfig.DBConnectionString).GetEntites<Employee>(strSql.ToString());
 
 
-
-            var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
+          //  var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
 
 
             SysAccount model = new SysAccount

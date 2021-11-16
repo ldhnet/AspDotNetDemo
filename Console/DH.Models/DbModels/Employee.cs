@@ -9,5 +9,9 @@
         public string EmployeeSerialNumber { get; set; }
         public int? Department { get; set; }
         public string Phone { get; set; }
+ 
+        public string WebToken { get; set; }
+        public string ApiToken { get; set; }
+        public DateTime? ExpirationDateUtc { get; set; }
     }
 }

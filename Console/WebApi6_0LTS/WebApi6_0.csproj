@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>a01aa7c7-dd2f-450a-bbbb-2d952e641835</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DirectService.Admin\DirectService.Admin.csproj" />
     <ProjectReference Include="..\DirectService.Test\DirectService.Test.csproj" />
+    <ProjectReference Include="..\Framework.Auth\Framework.Auth.csproj" />
   </ItemGroup>
 
   <ItemGroup>

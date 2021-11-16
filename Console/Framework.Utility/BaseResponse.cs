@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Framework.Utility.Extensions;
+using System.ComponentModel;
 
 namespace Framework.Utility
 {
@@ -13,19 +14,40 @@ namespace Framework.Utility
         /// 初始化一个<see cref="BaseResponse"/>类型的新实例
         /// </summary>
         public BaseResponse(successCode resultType) : this(resultType, null, null)
-        { }
+        {
+            this.success = resultType;
+            this.msg = string.Empty;
+            this.data = null;
+        }
 
         /// <summary>
-        /// 初始化一个<see cref="OperationResult"/>类型的新实例
+        /// 初始化一个<see cref="BaseResponse"/>类型的新实例
         /// </summary>
         public BaseResponse(successCode resultType, string message) : this(resultType, message, null)
-        { }
+        {
+            this.success = resultType;
+            this.msg = message;
+            this.data = null;
+        }
+        /// <summary>
+        /// 初始化一个<see cref="BaseResponse"/>类型的新实例
+        /// </summary>
+        public BaseResponse(successCode resultType, object data) : this(resultType, null, data)
+        {
+            this.success = resultType;
+            this.msg = success.Description();
+            this.data = data;
+        }
 
         /// <summary>
         /// 初始化一个<see cref="BaseResponse"/>类型的新实例
         /// </summary>
         public BaseResponse(successCode resultType, string message, object data) : base(resultType, message, data)
-        { }
+        {
+            this.success = resultType;
+            this.msg = message ?? success.Description(); 
+            this.data = data;
+        }
 
         #endregion
     }
