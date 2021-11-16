@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-
-namespace Framework.Utility.Extensions
+﻿namespace Framework.Utility.Extensions
 {
     /// <summary>
     /// 随机数<see cref="Random"/>类型的扩展辅助操作类

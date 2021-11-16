@@ -1,15 +1,11 @@
 ﻿using Hangfire;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebMVC.HangFire
 {
     public class HangFireJob
     {
-        private static HangFireJobService hangFireJobService=new HangFireJobService();
+        private static HangFireJobService hangFireJobService = new HangFireJobService();
         public static void AddOrUpdate()
         {
             RecurringJob.AddOrUpdate("HangFireTestId", () => hangFireJobService.PrintWriteLine(), Cron.Minutely(), TimeZoneInfo.Local);

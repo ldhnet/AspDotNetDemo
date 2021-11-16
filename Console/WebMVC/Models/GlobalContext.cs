@@ -1,12 +1,11 @@
-﻿using System;
-using System.Reflection;
-using System.Text;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Hosting;
-using Framework.Utility.Config;
+using System;
+using System.Reflection;
+using System.Text;
 
 namespace WebMVC.Model
 {
@@ -35,7 +34,7 @@ namespace WebMVC.Model
             sb.Append("程序启动");
             sb.Append(" |ContentRootPath:" + env.ContentRootPath);
             sb.Append(" |WebRootPath:" + env.WebRootPath);
-            sb.Append(" |IsDevelopment:" + env.IsDevelopment()); 
+            sb.Append(" |IsDevelopment:" + env.IsDevelopment());
         }
 
         /// <summary>

@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic; 
-using System.Linq;
-using System.Web; 
 
 namespace WebApi.OAuth
 {
@@ -18,7 +14,7 @@ namespace WebApi.OAuth
         /// <summary>
         /// 使用连接名称或连接字符串 初始化一个<see cref="CodeFirstDbContext"/>类型的新实例
         /// </summary>
-        public OAuthDbContext(string nameOrConnectionString) 
+        public OAuthDbContext(string nameOrConnectionString)
         { }
 
         /// <summary>

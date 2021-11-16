@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WebApi.Middleware
+﻿namespace WebApi.Middleware
 {
     /// <summary>
     /// 响应实体类

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Framework.Utility.Data
+﻿namespace Framework.Utility.Data
 {
     /// <summary>
     /// 业务操作结果信息类，对操作结果进行封装
@@ -28,10 +24,10 @@ namespace Framework.Utility.Data
     public class BaseOutputDto<T>
     {
         public BaseOutputDto(T paramData)
-            : this(paramData!=null, null, new CommonItemOutputDto<T> { item = paramData })
+            : this(paramData != null, null, new CommonItemOutputDto<T> { item = paramData })
         {
         }
-        public BaseOutputDto(T paramData,string message)
+        public BaseOutputDto(T paramData, string message)
     : this(paramData != null, message, new CommonItemOutputDto<T> { item = paramData })
         {
         }

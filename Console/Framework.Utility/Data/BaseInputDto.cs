@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Framework.Utility.Data
+﻿namespace Framework.Utility.Data
 {
     /// <summary>
     /// 输入数据DTO基类

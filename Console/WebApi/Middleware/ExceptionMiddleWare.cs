@@ -2,10 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using WebApi.NLog;
 
 namespace WebApi.Middleware
 {
@@ -24,7 +21,7 @@ namespace WebApi.Middleware
         /// </summary>
         /// <param name="next"></param>
         public ExceptionMiddleWare(ILogger<ExceptionMiddleWare> _logger, RequestDelegate next)
-        { 
+        {
             this.logger = _logger;
             _next = next;
         }
@@ -50,7 +47,7 @@ namespace WebApi.Middleware
         {
             if (exception != null)
             {
-                logger.LogError("全局异常捕获：",exception);
+                logger.LogError("全局异常捕获：", exception);
                 var response = context.Response;
                 var message = exception.InnerException == null ? exception.Message : exception.InnerException.Message;
                 response.ContentType = "application/json";

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using NLog;
 using System;
 
 namespace WebApi.NLog
@@ -18,7 +17,7 @@ namespace WebApi.NLog
             _httpContextAccessor = httpContextAccessor;
             _logger = logger;
         }
-     
+
         public void LogError(Exception ex)
         {
             LogMessage logMessage = new LogMessage();

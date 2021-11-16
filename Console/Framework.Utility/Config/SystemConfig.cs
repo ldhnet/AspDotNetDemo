@@ -1,8 +1,8 @@
 ﻿namespace Framework.Utility.Config
 {
     public class SystemConfig
-    { 
-        public SystemConfig() 
+    {
+        public SystemConfig()
         {
             DBSlowSqlLogTime = 5;
         }

@@ -19,7 +19,7 @@ namespace VirtualMethodTest
     }
 
     class C : B // 注意C是从A类继承,所以B是父类,C是子类
-    { 
+    {
     }
 
     class D : A // 注意B是从A类继承,所以A是父类,D是子类

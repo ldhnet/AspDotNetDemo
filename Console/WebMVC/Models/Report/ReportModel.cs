@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks; 
-using Framework.Utility.Attributes;
+﻿using Framework.Utility.Attributes;
 
 namespace WebMVC.Models.Report
 {
@@ -19,8 +15,8 @@ namespace WebMVC.Models.Report
 
         [Order]
         [ColumnExportFormat("员工编号", ExcelCellFormat.LongNumStringFormat)]
-        public string EmployeeSerialNumber { get; set; } 
-         
+        public string EmployeeSerialNumber { get; set; }
+
     }
     #endregion
 }

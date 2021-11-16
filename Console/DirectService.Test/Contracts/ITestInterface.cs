@@ -2,7 +2,7 @@
 
 namespace DirectService.Test.Contracts
 {
-    public interface ITestInterface: IDependency
+    public interface ITestInterface : IDependency
     {
         string TestFun();
     }

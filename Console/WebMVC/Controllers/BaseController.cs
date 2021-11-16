@@ -1,24 +1,22 @@
-﻿using System; 
-using System.Linq;
-using System.Threading; 
+﻿using DH.Models.DbModels;
+using DirectService.Admin.Contracts;
+using Framework.Utility.Attributes;
+using Framework.Utility.Config;
+using Framework.Utility.Extensions;
+using Framework.Utility.Helper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using WebMVC.Attributes;
-using WebMVC.Models;
-using WebMVC.Helper; 
-using System.Globalization;  
-using System.Security.Claims; 
-using Microsoft.AspNetCore.Http;
-using System.Reflection;
-using Microsoft.AspNetCore.Authorization;
-using Framework.Utility.Extensions;
-using DH.Models.DbModels;
-using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl;
 using Microsoft.Extensions.DependencyInjection;
-using Framework.Utility.Attributes;
-using Framework.Utility.Helper;
-using Framework.Utility.Config;
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Reflection;
+using System.Security.Claims;
+using System.Threading;
+using WebMVC.Helper;
+using WebMVC.Models;
 
 namespace WebMVC.Controllers
 {
@@ -26,7 +24,7 @@ namespace WebMVC.Controllers
     /// 自定义控制器的基类
     /// </summary>
     public class BaseController : Controller
-    { 
+    {
         /// <summary>
         /// 是否需要登入验证
         /// </summary>
@@ -40,10 +38,13 @@ namespace WebMVC.Controllers
         {
             base.OnActionExecuting(context);
 
+            var cultureArr = context.HttpContext.Request.Headers["lang"].ToString();
+
+
             Request.Cookies.TryGetValue("lang", out string lang);
 
             //获取前台语言并设置
-            SetCulture(lang); 
+            SetCulture(lang);
 
             #region 【权限验证】【登入验证】 
 
@@ -53,8 +54,8 @@ namespace WebMVC.Controllers
                 var areaName = context.ActionDescriptor.RouteValues["area"] ?? "";
                 areaName = (string)context.RouteData.Values["area"];
             }
-  
-            
+
+
             var controllerName = (string)context.RouteData.Values["controller"];
             var actionName = (string)context.RouteData.Values["action"];
 
@@ -74,14 +75,14 @@ namespace WebMVC.Controllers
             {
                 return;
             }
-     
+
             #endregion 如果是HOME或者CusError控制器忽略，其他需要判断来源
 
             if (CurrentUser == null)
             {
                 context.Result = RedirectToAction("Index", "Account", new { area = "" });
                 return;
-            } 
+            }
             #endregion 【权限验证】【登入验证】
 
             //【权限验证】【登入验证】逻辑 
@@ -96,7 +97,7 @@ namespace WebMVC.Controllers
                 context.Result = RedirectToAction("Error");
         }
 
-     
+
         /// <summary>
         /// 在Action执行后触发（如果继承该类的子类也重写了该方法，则先执行子类的方法，再执行父类的方法）
         /// 
@@ -112,12 +113,12 @@ namespace WebMVC.Controllers
 
             //获取当前程序集版本号
             ViewBag.Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-             
+
             ViewBag.UserCacheModel = JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebConstant.SessionKey.UserCacheModel));
 
-            if (controllerName == "Home" || controllerName == "CusError") return; 
+            if (controllerName == "Home" || controllerName == "CusError") return;
         }
- 
+
         /// <summary>
         /// 登录用户信息
         /// </summary>
@@ -141,7 +142,7 @@ namespace WebMVC.Controllers
                     //services.AddSingleton<IUserService, UserService>(); 
                     //var provider = services.BuildServiceProvider(); 
                     //var userService = provider.GetService<IUserService>();
-                    var userService =GlobalConfig.ServiceProvider.GetService<IUserService>();
+                    var userService = GlobalConfig.ServiceProvider.GetService<IUserService>();
                     var result = userService.Find(_number);
                     if (result != null)
                     {
@@ -170,9 +171,9 @@ namespace WebMVC.Controllers
             };
 
             //SessionHelper.SetSession(WebConstant.SessionKey.UserCacheModel, currentUser);
-             
+
             HttpContext.Session.SetObjectAsJson(WebConstant.SessionKey.UserCacheModel, currentUser);
-             
+
             return currentUser;
         }
         /// <summary>

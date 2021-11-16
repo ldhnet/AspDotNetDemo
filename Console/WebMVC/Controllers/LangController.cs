@@ -1,21 +1,18 @@
-﻿using DH.Models.DbModels; 
+﻿using DH.Models.DbModels;
 using Framework.Utility;
-using LangResources;
-using Microsoft.AspNetCore.Mvc; 
-using System.Threading;
-using WebMVC.Helper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebMVC.Controllers
 {
     public class LangController : BaseController
-    {  
+    {
         public IActionResult Index()
         {
             var aaaa = ShardResource.Hello;
-            var bbb = ShardResource.Title; 
+            var bbb = ShardResource.Title;
             var ccc = ShardResource.CheckNotNull;
-             
-            var ddd = string.Format(ccc,nameof(ccc));
+
+            var ddd = string.Format(ccc, nameof(ccc));
 
             var aa = new Employee();
 
@@ -25,10 +22,10 @@ namespace WebMVC.Controllers
                 Check.NotNull(aa.BankCard, nameof(aa));
             }
             catch (System.ArgumentNullException ex)
-            { 
+            {
                 msg = ex.ParamName;
             }
-          
+
             //var langRequest = Request.Headers["accept-language"].ToString();
 
             //Request.Cookies.TryGetValue("lang", out string lang); 
@@ -46,7 +43,7 @@ namespace WebMVC.Controllers
 
             //ViewBag.Lang = Resources.Title + "---" + Resources.Hello + "====" + aaaa + bbb;
 
-            ViewBag.Lang =  aaaa + "=" + bbb + "=" + ddd + "=" + msg;
+            ViewBag.Lang = aaaa + "=" + bbb + "<br> \n" + ddd + "<br> \n" + msg;
 
             return View();
         }

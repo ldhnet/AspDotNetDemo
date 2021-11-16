@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Framework.Utility.Extensions;
+using Framework.Utility.Helper;
+using Framework.Utility.Reflection;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.SS.Util;
+using NPOI.XSSF.UserModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using NPOI.HSSF.UserModel;
-using NPOI.XSSF.UserModel;
-using NPOI.SS.UserModel;
-using NPOI.SS.Util;
 using WebMVC.Model;
-using WebMVC.Extension;
-using Framework.Utility.Reflection;
-using Framework.Utility.Extensions;
-using Framework.Utility.Helper;
 
 namespace WebMVC.Helper
 {
@@ -147,7 +146,7 @@ namespace WebMVC.Helper
                     newCell.CellStyle = contentStyle;
                     string drValue = properties[columnIndex].GetValue(list[rowIndex], null).ParseToString();
                     //根据单元格内容设定列宽
-                    int length = (System.Text.Encoding.UTF8.GetBytes(drValue).Length+1)*256;
+                    int length = (System.Text.Encoding.UTF8.GetBytes(drValue).Length + 1) * 256;
                     if (sheet.GetColumnWidth(columnIndex) < length && !string.IsNullOrEmpty(drValue))
                     {
                         sheet.SetColumnWidth(columnIndex, length);
@@ -310,7 +309,7 @@ namespace WebMVC.Helper
                                 case "System.Nullable`1[System.Double]":
                                     mapPropertyInfoDict[j].SetValue(entity, row.GetCell(j).ParseToString().ParseToDouble());
                                     break;
-                                
+
                                 case "System.Single":
                                 case "System.Nullable`1[System.Single]":
                                     mapPropertyInfoDict[j].SetValue(entity, row.GetCell(j).ParseToString().ParseToDouble());

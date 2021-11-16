@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
@@ -21,7 +17,7 @@ namespace ConsoleApp
                 lResult += i;
             }
             //Thread.Sleep(2000);
-            Console.WriteLine($"****************DoSomethingLong   End  {name}  {Thread.CurrentThread.ManagedThreadId.ToString("00")} " +   $"结果{lResult}***************");
+            Console.WriteLine($"****************DoSomethingLong   End  {name}  {Thread.CurrentThread.ManagedThreadId.ToString("00")} " + $"结果{lResult}***************");
         }
 
 

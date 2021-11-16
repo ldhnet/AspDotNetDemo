@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleDBTest
 {
@@ -18,7 +14,7 @@ namespace ConsoleDBTest
         [Encrypted]
         public string Monery { get; set; }
 
-        public string MoneryDisplay { get; set; } 
+        public string MoneryDisplay { get; set; }
         public virtual EmployeeExtend EmployeeExtend { get; set; }
 
         public virtual ICollection<EmployeeLogin> EmployeeLogins { get; set; }

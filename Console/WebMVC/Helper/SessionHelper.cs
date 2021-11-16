@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json; 
+﻿using Framework.Utility.Config;
 using Framework.Utility.Helper;
-using Framework.Utility.Config;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace WebMVC.Helper
 {
     public class SessionHelper
-    { 
+    {
         /// <summary>
         /// 写Session
         /// </summary>
@@ -57,7 +57,7 @@ namespace WebMVC.Helper
             }
             IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
             string retval = hca?.HttpContext?.Session.GetString(key) as string;
-            return JsonHelper.FromJson<T>(retval); 
+            return JsonHelper.FromJson<T>(retval);
         }
 
 
@@ -72,9 +72,9 @@ namespace WebMVC.Helper
                 return;
             }
             IHttpContextAccessor hca = GlobalConfig.ServiceProvider?.GetService<IHttpContextAccessor>();
-            hca?.HttpContext?.Session.Remove(key); 
+            hca?.HttpContext?.Session.Remove(key);
         }
-  
+
 
     }
 }

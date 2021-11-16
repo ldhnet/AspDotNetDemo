@@ -2,7 +2,7 @@
 using System;
 
 namespace WebMVC.Helper
-{ 
+{
     public class MemoryCacheProvider
     {    //外面可以直接调它
         public MemoryCache MemoryCache { get; set; }
@@ -14,12 +14,12 @@ namespace WebMVC.Helper
                 //缓存最大为1024份
                 //##注意netcore中的缓存是没有单位的，缓存项和缓存的相对关系
                 SizeLimit = 1024,
-               
+
                 //缓存满了时，压缩20%（即删除20份优先级低的缓存项）
                 CompactionPercentage = 0.2,
 
                 //10 * 60 秒钟查找一次过期项
-                ExpirationScanFrequency = TimeSpan.FromSeconds(10*60)
+                ExpirationScanFrequency = TimeSpan.FromSeconds(10 * 60)
             };
             MemoryCache = new MemoryCache(cacheOps);
         }
@@ -31,9 +31,9 @@ namespace WebMVC.Helper
         /// <param name="key"></param>
         /// <returns></returns>
         public T Get<T>(string key)
-        { 
+        {
             return (T)MemoryCache.Get(key);
-        } 
+        }
         /// <summary>
         /// 设置缓存
         /// </summary>
@@ -41,7 +41,7 @@ namespace WebMVC.Helper
         /// <param name="key"></param>
         /// <param name="createItem"></param>
         /// <returns></returns>
-        public T Set<T>(object key,T createItem)
+        public T Set<T>(object key, T createItem)
         {
             var options = new MemoryCacheEntryOptions()
             {
@@ -52,7 +52,7 @@ namespace WebMVC.Helper
                 //相对过期时间
                 SlidingExpiration = TimeSpan.FromSeconds(2),
                 //绝对过期时间1
-                AbsoluteExpirationRelativeToNow=TimeSpan.FromSeconds(10),
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(10),
 
                 //绝对过期时间2
                 //AbsoluteExpiration = new DateTimeOffset(DateTime.Now.AddSeconds(2)),  
@@ -64,8 +64,8 @@ namespace WebMVC.Helper
         /// 移除缓存
         /// </summary>
         /// <param name="key"></param>
-        public void RemoveCache(object key) 
-        { 
+        public void RemoveCache(object key)
+        {
             MemoryCache.Remove(key);
         }
 

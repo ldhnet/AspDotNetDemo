@@ -1,16 +1,16 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
 using DirectService.Test.Contracts;
-using Framework.Utility.Config; 
-using Microsoft.AspNetCore.Mvc;  
+using Framework.Utility.Config;
+using Microsoft.AspNetCore.Mvc;
 namespace WebApi6_0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class DemoController : ControllerBase
-    { 
+    {
         private readonly ILogger<DemoController> _logger;
-        private readonly ITestInterface  _TestInterface;
+        private readonly ITestInterface _TestInterface;
         private readonly IUserService _UserInterface;
         public DemoController(ILogger<DemoController> logger, ITestInterface testIfc, IUserService userIfc)
         {
@@ -19,7 +19,7 @@ namespace WebApi6_0.Controllers
             _UserInterface = userIfc;
         }
 
-        [HttpGet] 
+        [HttpGet]
         public string Get()
         {
             MyDBContext ct = new MyDBContext();
@@ -32,13 +32,13 @@ namespace WebApi6_0.Controllers
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
-            var aaa=  _TestInterface.TestFun();
-             
+            var aaa = _TestInterface.TestFun();
+
             _logger.LogError(aaa);
 
 
-           //var bb=  _UserInterface.FindEmployee("admin").Name;
-           // _logger.LogError(bb);
+            //var bb=  _UserInterface.FindEmployee("admin").Name;
+            // _logger.LogError(bb);
 
             return "123";
         }

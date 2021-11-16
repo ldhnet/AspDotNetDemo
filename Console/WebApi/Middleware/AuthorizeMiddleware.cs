@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Http; 
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using WebApi.OAuth;
-using Microsoft.Extensions.Logging; 
 
 namespace WebApi.Middleware
 {
@@ -18,7 +18,7 @@ namespace WebApi.Middleware
             this.logger = _logger;
         }
         public async Task Invoke(HttpContext context) /* other scoped dependencies */
-        { 
+        {
             //token类型是bearer类型
             if (context.Request.Headers.ContainsKey("NoAuth") && context.Request.Headers["NoAuth"].ToString().ToLower() == "yes")
             {
@@ -30,14 +30,14 @@ namespace WebApi.Middleware
 
             //设置httpcontext的一些key和value，用于在整个http请求过程中分享数据
             context.Items.Add("aaa", "bbb");
-             
+
             //判断当前http请求的url是否处理
             if (context.Request.Path.StartsWithSegments("/api"))
             {
                 //dosomething
 
             }
-             
+
             //token类型是bearer类型
             if (context.Request.Headers.ContainsKey("Authorization"))
             {
@@ -80,7 +80,8 @@ namespace WebApi.Middleware
             }
 
             //这个例子只是修改一下response的header
-            context.Response.OnStarting(state => {
+            context.Response.OnStarting(state =>
+            {
                 var httpContext = (HttpContext)state;
                 httpContext.Response.Headers.Add("test2", "testvalue2");
                 return Task.FromResult(0);

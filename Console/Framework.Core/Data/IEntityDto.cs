@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Framework.Core.Data
+﻿namespace Framework.Core.Data
 {
     /// <summary>
     /// 添加DTO

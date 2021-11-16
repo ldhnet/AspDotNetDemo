@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Web;
 
 namespace WebMVC.Filter
 {
@@ -18,7 +14,7 @@ namespace WebMVC.Filter
 
         public MyAuthorizeFilter() : base(_policy_) { }
 
-        public override async Task OnAuthorizationAsync(AuthorizationFilterContext context) 
+        public override async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
             await base.OnAuthorizationAsync(context);
 
@@ -31,9 +27,9 @@ namespace WebMVC.Filter
             {
                 //context.Result = new RedirectResult("~/Account/Index"); 
                 return;
-            } 
+            }
             //do something
-             
+
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebApi.Middleware
@@ -23,7 +20,8 @@ namespace WebApi.Middleware
 
 
             //这个例子只是修改一下response的header
-            context.Response.OnStarting(state => {
+            context.Response.OnStarting(state =>
+            {
                 var httpContext = (HttpContext)state;
                 httpContext.Response.Headers.Add("test1response", "responseheader");
                 return Task.FromResult(0);

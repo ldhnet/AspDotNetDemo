@@ -1,6 +1,4 @@
 ﻿using Framework.Utility.Extensions;
-using System;
-using System.IO; 
 
 namespace Framework.Utility.IO
 {

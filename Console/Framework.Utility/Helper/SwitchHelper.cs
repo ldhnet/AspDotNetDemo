@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Net;
-
-namespace Framework.Utility.Helper
+﻿namespace Framework.Utility.Helper
 {
     public class SwitchHelper
     {

@@ -1,9 +1,7 @@
-﻿using Microsoft.Extensions.Localization;
-
-namespace LangResources
-{ 
+﻿namespace LangResources
+{
     public class LangResource
-    { 
+    {
         public static string Hello { get; } = "Hello";
         public static string Title { get; } = "Title";
 
@@ -47,6 +45,6 @@ namespace LangResources
         public static string ParameterCheck_NotNull { get; } = "ParameterCheck_NotNull";
         public static string ParameterCheck_NotNullOrEmpty_Collection { get; } = "ParameterCheck_NotNullOrEmpty_Collection";
         public static string ParameterCheck_NotNullOrEmpty_String { get; } = "ParameterCheck_NotNullOrEmpty_String";
-        public static string QueryCacheExtensions_TypeNotEntityType { get; } = "QueryCacheExtensions_TypeNotEntityType"; 
+        public static string QueryCacheExtensions_TypeNotEntityType { get; } = "QueryCacheExtensions_TypeNotEntityType";
     }
 }

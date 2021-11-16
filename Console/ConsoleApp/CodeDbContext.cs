@@ -1,18 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
     public class CodeDbContext : DbContext
-    { 
+    {
         public CodeDbContext(DbContextOptions<CodeDbContext> options) : base(options)
-        { 
+        {
         }
         //public DbSet<Employee> Employee { get; set; }
         public DbSet<UserEntity> Users { get; set; }
@@ -28,10 +21,10 @@ namespace ConsoleApp
         }
     }
     public class UserEntity
-    { 
-        public string Id { get; set; } 
-        public string FirstName { get; set; } 
-        public string LastName { get; set; } 
+    {
+        public string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
 
         public string Password { get; set; }
@@ -39,7 +32,7 @@ namespace ConsoleApp
     public class Employee
     {
         public int Id { get; set; }
-        public string Name { get; set; } 
+        public string Name { get; set; }
         public string BankCard { get; set; }
     }
 }

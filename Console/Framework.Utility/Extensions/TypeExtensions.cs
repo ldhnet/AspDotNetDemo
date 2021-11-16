@@ -1,13 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
-using Framework.Utility;
 
 namespace Framework.Utility.Extensions
 {
@@ -219,7 +215,7 @@ namespace Framework.Utility.Extensions
 
             if (forArgType.IsGenericType)
             {
-                
+
             }
 
             throw new NotImplementedException();
@@ -312,7 +308,7 @@ namespace Framework.Utility.Extensions
         /// <summary>
         /// 获取类型的显示名称
         /// </summary>
-        public static string DisplayName([NotNull]this Type type, bool fullName = true)
+        public static string DisplayName([NotNull] this Type type, bool fullName = true)
         {
             StringBuilder sb = new StringBuilder();
             ProcessType(sb, type, fullName);

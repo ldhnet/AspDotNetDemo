@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
-using System;
 
 namespace Framework.Utility.Helper
 {
@@ -27,7 +26,7 @@ namespace Framework.Utility.Helper
                     _cache.Set(key, cacheEntry);
                 }
                 return cacheEntry;
-            } 
+            }
         }
 
         /// <summary>

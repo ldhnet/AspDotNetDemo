@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Framework.Utility.Extensions;
+﻿using Framework.Utility.Extensions;
 using NLog;
 
 namespace Framework.Utility.Helper

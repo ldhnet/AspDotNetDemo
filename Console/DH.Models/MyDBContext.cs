@@ -1,19 +1,13 @@
 ﻿using Framework.Core.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure.Internal;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DH.Models.DbModels
 {
     public partial class MyDBContext : IUnitOfWork
-    {  
+    {
         /// <summary>
         /// 获取 是否开启事务提交
         /// </summary>
@@ -112,7 +106,7 @@ namespace DH.Models.DbModels
                 throw;
             }
         }
-       
+
         /// <summary>
         /// 创建一个原始 SQL 查询
         /// </summary>

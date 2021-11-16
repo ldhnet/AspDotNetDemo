@@ -1,63 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
-using System.Reflection;
-using System.IO;
-using System.Collections;
-using NPOI.HSSF.UserModel;
-using NPOI.HSSF.Util;
+﻿using NPOI.HSSF.UserModel;
 //using Excel = Microsoft.Office.Interop.Excel;
-using System.Web;
 using NPOI.SS.UserModel;
-using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace WebMVC.Helper
 {
-    public enum ExcelCellColor { SKY_BLUE = 40, ORANGE = 53, LIGHT_GREEN = 42, PINK = 14}
+    public enum ExcelCellColor { SKY_BLUE = 40, ORANGE = 53, LIGHT_GREEN = 42, PINK = 14 }
 
     public class ExcelBuilder
     {
         public static void CreateExcel(DataTable DTDataSource, string fileName, string filePath)
         {
-			//Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.ApplicationClass();
+            //Microsoft.Office.Interop.Excel.Application xApp = new Microsoft.Office.Interop.Excel.ApplicationClass();
 
-			//Microsoft.Office.Interop.Excel.Workbook xBook = xApp.Workbooks.Add(Missing.Value);
+            //Microsoft.Office.Interop.Excel.Workbook xBook = xApp.Workbooks.Add(Missing.Value);
 
-			//xApp.DisplayAlerts = false;
-			//Microsoft.Office.Interop.Excel.Worksheet xSheet = (Microsoft.Office.Interop.Excel.Worksheet)xBook.Sheets[1];
-			//if (System.IO.Directory.Exists(filePath))
-			//{
-			//	throw new Exception("");
-			//}
+            //xApp.DisplayAlerts = false;
+            //Microsoft.Office.Interop.Excel.Worksheet xSheet = (Microsoft.Office.Interop.Excel.Worksheet)xBook.Sheets[1];
+            //if (System.IO.Directory.Exists(filePath))
+            //{
+            //	throw new Exception("");
+            //}
 
-			//string[,] data = new string[DTDataSource.Rows.Count, DTDataSource.Columns.Count];
+            //string[,] data = new string[DTDataSource.Rows.Count, DTDataSource.Columns.Count];
 
-			//for (int i = 0; i < DTDataSource.Rows.Count; i++)
-			//{
-			//	for (int j = 0; j < DTDataSource.Columns.Count; j++)
-			//	{
-			//		data[i, j] = DTDataSource.Rows[i][j].ToString();
-			//	}
-			//}
+            //for (int i = 0; i < DTDataSource.Rows.Count; i++)
+            //{
+            //	for (int j = 0; j < DTDataSource.Columns.Count; j++)
+            //	{
+            //		data[i, j] = DTDataSource.Rows[i][j].ToString();
+            //	}
+            //}
 
-			//Microsoft.Office.Interop.Excel.Range range = xSheet.get_Range(xSheet.Cells[1, 1], xSheet.Cells[DTDataSource.Rows.Count, DTDataSource.Columns.Count]);
-			//range.Value2 = data;
+            //Microsoft.Office.Interop.Excel.Range range = xSheet.get_Range(xSheet.Cells[1, 1], xSheet.Cells[DTDataSource.Rows.Count, DTDataSource.Columns.Count]);
+            //range.Value2 = data;
 
-			//xBook.SaveAs(Path.Combine(filePath, fileName), Missing.Value, Missing.Value, Missing.Value,
-			//	Missing.Value, Missing.Value, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange,
-			//	Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value);
-			//xBook.Close(Missing.Value, Missing.Value, Missing.Value);
+            //xBook.SaveAs(Path.Combine(filePath, fileName), Missing.Value, Missing.Value, Missing.Value,
+            //	Missing.Value, Missing.Value, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange,
+            //	Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value);
+            //xBook.Close(Missing.Value, Missing.Value, Missing.Value);
 
-			//xApp.Quit();
-			//System.Runtime.InteropServices.Marshal.ReleaseComObject(xApp);
-			//System.Runtime.InteropServices.Marshal.ReleaseComObject(xSheet);
-			//System.Runtime.InteropServices.Marshal.ReleaseComObject(xBook);
-			//xSheet = null;
-			//xBook = null;
-			//xApp = null;
-			//System.GC.Collect(0);
+            //xApp.Quit();
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(xApp);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(xSheet);
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(xBook);
+            //xSheet = null;
+            //xBook = null;
+            //xApp = null;
+            //System.GC.Collect(0);
         }
 
         public static byte[] ExportExcelBytes<T>(List<T> listSource, Dictionary<string, string> columnNameDic)
@@ -274,7 +269,7 @@ namespace WebMVC.Helper
                         HSSFCell newCell0 = (HSSFCell)newRow0.CreateCell(cellIndex);
                         newCell0.CellStyle = headCellStyleList[k];
                         newCell0.SetCellValue(col.Value);
-                        excelSheet.AddMergedRegion(new NPOI.SS.Util.CellRangeAddress(0, 1, cellIndex,  cellIndex));
+                        excelSheet.AddMergedRegion(new NPOI.SS.Util.CellRangeAddress(0, 1, cellIndex, cellIndex));
                         HSSFCell newCell1 = (HSSFCell)newRow1.CreateCell(cellIndex);
                         newCell1.CellStyle = headCellStyleList[k];
                         //set col width
@@ -286,7 +281,7 @@ namespace WebMVC.Helper
                 else
                 {
                     HSSFCell newCell0 = (HSSFCell)newRow0.CreateCell(cellIndex);
-                    excelSheet.AddMergedRegion(new NPOI.SS.Util.CellRangeAddress(0, 0, cellIndex,  cellIndex + customColNameList[k].Count - 1));
+                    excelSheet.AddMergedRegion(new NPOI.SS.Util.CellRangeAddress(0, 0, cellIndex, cellIndex + customColNameList[k].Count - 1));
                     newCell0.CellStyle = headCellStyleList[kv.Key];
                     newCell0.SetCellValue(k);
                     foreach (KeyValuePair<string, string> col in customColNameList[k])
@@ -395,7 +390,7 @@ namespace WebMVC.Helper
 
                 headCellStyleList.Add(key, tmpCellStyle);
             }
-           
+
             #endregion
 
             #region 设置内容样式

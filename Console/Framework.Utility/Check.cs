@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic; 
-using System.Diagnostics;
-using System.IO;
-using System.Linq; 
+﻿using System.Diagnostics;
 
 namespace Framework.Utility
 {
@@ -11,7 +7,7 @@ namespace Framework.Utility
     /// </summary>
     [DebuggerStepThrough]
     public static class Check
-    { 
+    {
         /// <summary>
         /// 验证指定值的断言<paramref name="assertion"/>是否为真，如果不为真，抛出指定消息<paramref name="message"/>的指定类型<typeparamref name="TException"/>异常
         /// </summary>
@@ -205,6 +201,6 @@ namespace Framework.Utility
         {
             NotNull(filename, paramName);
             Required<FileNotFoundException>(File.Exists(filename), string.Format(ShardResource.ParameterCheck_FileNotExists, filename));
-        } 
+        }
     }
 }

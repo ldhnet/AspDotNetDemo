@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
 
 namespace WebMVC.Controllers
 {
@@ -22,19 +22,19 @@ namespace WebMVC.Controllers
 
         private readonly TestInterface _testFace2 = new TestInterface();
 
-        private readonly TestInterface2 _testFace3 = new TestInterface2(); 
+        private readonly TestInterface2 _testFace3 = new TestInterface2();
         //接口多实现，依赖注入
         public TestController(IEnumerable<ITestInterface> testFaceList, ITestInterface testFace)
         {
             _testFace = testFace;
-            _testFaceA = testFaceList.FirstOrDefault(c=>c.GetType() == typeof(TestInterface));
+            _testFaceA = testFaceList.FirstOrDefault(c => c.GetType() == typeof(TestInterface));
             _testFaceB = testFaceList.FirstOrDefault(c => c.GetType() == typeof(TestInterface2));
-             
+
         }
 
         [SkipLoginValidate]
         public IActionResult Index()
-        { 
+        {
             var services = new ServiceCollection();
 
             services.AddSingleton<IUserService, UserService>();
@@ -44,7 +44,7 @@ namespace WebMVC.Controllers
             var singletone1 = provider.GetService<IUserService>();
 
             var rest6 = singletone1.Find("admin");
-             
+
 
             var rest = _testFace.TestFun();
 

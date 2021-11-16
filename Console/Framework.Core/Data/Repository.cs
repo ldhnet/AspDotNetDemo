@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Framework.Core.Extensions;
-using System.Security.Claims;
-using System.Security.Principal;
-using Microsoft.EntityFrameworkCore; 
+﻿using Framework.Core.Extensions;
+using Framework.Utility;
 using Framework.Utility.Extensions;
 using Framework.Utility.Reflection;
-using Framework.Utility;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using System.Security.Claims;
+using System.Security.Principal;
 
 namespace Framework.Core.Data
 {
@@ -36,8 +31,8 @@ namespace Framework.Core.Data
         public Repository(IUnitOfWork unitOfWork, IPrincipal principal)
         {
             _unitOfWork = unitOfWork;
-            _dbSet = ((DbContext)unitOfWork).Set<TEntity>(); 
-            _principal = principal as ClaimsPrincipal; 
+            _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
+            _principal = principal as ClaimsPrincipal;
         }
 
         /// <summary>
@@ -228,7 +223,7 @@ namespace Framework.Core.Data
                 ? new BaseResponse(successCode.Success,
                     names.Count > 0
                         ? $"{names.ExpandAndToString()} deleted successfully "
-                        : $"{ids.Count} items deleted successfully" )
+                        : $"{ids.Count} items deleted successfully")
                 : new BaseResponse(successCode.NoChanged);
         }
 
@@ -292,7 +287,7 @@ namespace Framework.Core.Data
                 }
             }
             int count = SaveChanges();
-            return count > 0 ? new BaseResponse(successCode.Success,  names.Count > 0 ? $"{names.ExpandAndToString()} edited successfully"  : $"{dtos.Count} items edited successfully ")
+            return count > 0 ? new BaseResponse(successCode.Success, names.Count > 0 ? $"{names.ExpandAndToString()} edited successfully" : $"{dtos.Count} items edited successfully ")
                 : new BaseResponse(successCode.NoChanged);
         }
 
@@ -424,7 +419,7 @@ namespace Framework.Core.Data
                 source = source.Include(path);
             }
             return source;
-        } 
+        }
         #endregion Query 
 
         #region Async
@@ -610,9 +605,9 @@ namespace Framework.Core.Data
         private void AssignCreateProperty(TEntity entity)
         {
             var createByProp = typeof(TEntity).GetProperty("CreateBy");
-            var createTimeProp = typeof(TEntity).GetProperty("CreateTime"); 
-            var createBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == createByProp?.Name)?.GetValue(entity)?.ToString();             
-            createByProp?.SetValue(entity, string.IsNullOrEmpty(createBy) ? _principal?.Identity?.Name : createBy); 
+            var createTimeProp = typeof(TEntity).GetProperty("CreateTime");
+            var createBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == createByProp?.Name)?.GetValue(entity)?.ToString();
+            createByProp?.SetValue(entity, string.IsNullOrEmpty(createBy) ? _principal?.Identity?.Name : createBy);
             createTimeProp?.SetValue(entity, DateTime.Now);//DateTime.UtcNow.ToJsTimestamp()
         }
         /// <summary>

@@ -3,11 +3,6 @@ using DirectService.Admin.Contracts;
 using Framework.Core.Data;
 using Framework.Utility;
 using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DirectService.Admin.Impl
 {
@@ -17,7 +12,7 @@ namespace DirectService.Admin.Impl
         private IRepository<Employee, int> _userRepository;
         public SysAccountService(IRepository<SysAccount, int> sysAccountRepository, IRepository<Employee, int> userRepository)
         {
-            this._sysAccountRepository = sysAccountRepository; 
+            this._sysAccountRepository = sysAccountRepository;
             this._userRepository = userRepository;
         }
 
@@ -36,13 +31,13 @@ namespace DirectService.Admin.Impl
                 new SqlParameter("@AccountName", "admin"),
             };
 
-            var aaa=   _sysAccountRepository.UnitOfWork.ExecuteSqlCommand(sql, parameters);
+            var aaa = _sysAccountRepository.UnitOfWork.ExecuteSqlCommand(sql, parameters);
 
             var aaa2 = _sysAccountRepository.UnitOfWork.SqlQuery<SysAccount>(sql, parameters);
-             
+
             var aaa3 = _sysAccountRepository.UnitOfWork.SqlQuery<SysAccount>(sql2, new SqlParameter[] { });
 
-            var people = _sysAccountRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.AccountName == userName); 
+            var people = _sysAccountRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.AccountName == userName);
             return people;
         }
         public BaseResponse<SysAccount> GetSysAccount(string userName)
@@ -86,7 +81,7 @@ namespace DirectService.Admin.Impl
             var aaa33 = _sysAccountRepository.Insert(model);
 
             var aaa55 = _userRepository.Insert(model2);
-             
+
             _sysAccountRepository.UnitOfWork.Rollback();
 
 
@@ -118,12 +113,12 @@ namespace DirectService.Admin.Impl
 
             var aaa333335 = _sysAccountRepository.Insert(model5);
 
-            var aaa3333666 = _sysAccountRepository.EntitiesAsNoTracking.FirstOrDefault(c=>c.Id == 1000);
+            var aaa3333666 = _sysAccountRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.Id == 1000);
             Check.NotNull(aaa3333666, nameof(aaa3333666));
 
             var aaa55553 = _userRepository.Insert(model6);
 
-           var ret =  _sysAccountRepository.UnitOfWork.Commit();
+            var ret = _sysAccountRepository.UnitOfWork.Commit();
 
 
             return ret > 0 ? new BaseResponse(successCode.Success) : new BaseResponse(successCode.NoChanged);

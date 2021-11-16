@@ -75,7 +75,12 @@
       "ProjectGuid": "0e04b73b-9362-4956-8e13-c435b77a2331",
       "DisplayName": "WebMVC6_0",
       "ColorIndex": 13
+    },
+    "d044a96c-858d-4462-8bb4-a4feec314ace": {
+      "ProjectGuid": "d044a96c-858d-4462-8bb4-a4feec314ace",
+      "DisplayName": "DirectService.Test",
+      "ColorIndex": 14
     }
   },
-  "NextColorIndex": 14
+  "NextColorIndex": 15
 }

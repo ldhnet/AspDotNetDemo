@@ -1,49 +1,46 @@
+using DH.Models.DbModels;
+using DirectService.Admin.Contracts;
+using DirectService.Admin.Impl;
+using Framework.Core.Data;
+using Framework.Utility.Config;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http; 
-using Microsoft.AspNetCore.Localization; 
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging; 
-using System; 
+using Microsoft.Extensions.Logging;
+using System;
 using System.Globalization;
-using System.IO; 
-using WebMVC.Attributes; 
+using System.IO;
+using WebMVC.Attributes;
 using WebMVC.Extension;
 using WebMVC.Filter;
 using WebMVC.HangFire;
 using WebMVC.Helper;
-using Framework.Utility.Config;
-using WebMVC.Model;  
-using Framework.Core.Data; 
-using System.Linq;
-using DH.Models.DbModels;
-using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl; 
-using DirectService.Test.Impl;
-using DirectService.Test.Contracts;
+using WebMVC.Model;
 
 namespace WebMVC
 {
     public class Startup
-    { 
+    {
         public IConfiguration Configuration { get; set; }
         public Startup(IWebHostEnvironment env)
-        { 
+        {
             GlobalContext.HostingEnvironment = env;
-        } 
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {  
+        {
             services.AddMemoryCache();
             services.AddSession();
             services.AddHttpContextAccessor();
             services.AddOptions();
 
-           // services.AddLocalization();
+            // services.AddLocalization();
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
@@ -92,12 +89,12 @@ namespace WebMVC
                 options.Cookie.IsEssential = true;
             });
 
-            ProviderManage.MemoryCacheProvider = new MemoryCacheProvider(); 
+            ProviderManage.MemoryCacheProvider = new MemoryCacheProvider();
 
             services.AddSingleton<MyFilter>();
-              
+
             services.AddHangfire(r => r.UseSqlServerStorage(GlobalConfig.SystemConfig.DBConnectionString));
-             
+
             //注册Cookie认证服务
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
@@ -130,7 +127,7 @@ namespace WebMVC
             services.AddSingleton<IRepository<SysAccount, int>, Repository<SysAccount, int>>();
             services.AddSingleton<IUnitOfWork, MyDBContext>();
 
-            services.AddSingleton<IUserService, UserService>(); 
+            services.AddSingleton<IUserService, UserService>();
 
             #region 最大请求数
 
@@ -204,7 +201,7 @@ namespace WebMVC
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles(); 
+            app.UseStaticFiles();
             app.UseStaticHostEnviroment();
             app.UseRouting();
             app.UseSession();
@@ -219,7 +216,7 @@ namespace WebMVC
                 DefaultRequestCulture = new RequestCulture("zh-CN"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures,
-            }); 
+            });
 
             //启用并发限制数中间件
             //app.UseConcurrencyLimiter();
@@ -237,7 +234,7 @@ namespace WebMVC
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
                 Authorization = new[] { new MyDashboardAuthorizationFilter() }
-            }); 
+            });
             HangFireJob.AddOrUpdate();
 
             //app.UseMiddleware(typeof(ResponseHeaderMiddleware)); 
@@ -245,7 +242,7 @@ namespace WebMVC
             app.UseAuthentication();
             app.UseAuthorization();
 
-           
+
             app.UseMiddlewares();
 
             app.UseEndpoints(endpoints =>
@@ -255,7 +252,7 @@ namespace WebMVC
                     pattern: "{controller=Account}/{action=Index}/{id?}");
             });
 
-            
+
             GlobalConfig.ServiceProvider = app.ApplicationServices;
 
         }

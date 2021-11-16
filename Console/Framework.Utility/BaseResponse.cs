@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text; 
-using Framework.Utility.Extensions;
+﻿using System.ComponentModel;
 
 namespace Framework.Utility
 {
@@ -22,7 +18,7 @@ namespace Framework.Utility
         /// <summary>
         /// 初始化一个<see cref="OperationResult"/>类型的新实例
         /// </summary>
-        public BaseResponse(successCode resultType, string message): this(resultType, message, null)
+        public BaseResponse(successCode resultType, string message) : this(resultType, message, null)
         { }
 
         /// <summary>
@@ -57,7 +53,7 @@ namespace Framework.Utility
         public BaseResponse(successCode resultType, string? message, T data)
         {
             this.success = resultType;
-            this.msg = message??string.Empty;
+            this.msg = message ?? string.Empty;
             this.data = data;
         }
 
@@ -144,6 +140,6 @@ namespace Framework.Utility
         /// </summary>
         [Description("操作没有引发任何变化，提交取消。")]
         NoChanged = 11,
-         
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Framework.Utility.Attributes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
 namespace WebMVC.Middleware
 {

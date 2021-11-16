@@ -4,20 +4,20 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 
 namespace Framework.Utility
-{ 
+{
     public class ShardResource
     {
         private static IStringLocalizer<LangResource> _localizer;
         static ShardResource()
         {
-            _localizer = GlobalConfig.ServiceProvider.GetService<IStringLocalizer<LangResource>>(); 
+            _localizer = GlobalConfig.ServiceProvider.GetService<IStringLocalizer<LangResource>>();
         }
         public static string Hello => _localizer.GetString(nameof(Hello));
         public static string Title => _localizer.GetString(nameof(Title));
         public static string CheckNotNull => _localizer.GetString(nameof(CheckNotNull));
         public static string AnyRadixConvert_CharacterIsNotValid => _localizer.GetString(nameof(AnyRadixConvert_CharacterIsNotValid));
         public static string AnyRadixConvert_Overflow => _localizer.GetString(nameof(AnyRadixConvert_Overflow));
-        public static string Caching_CacheNotInitialized => _localizer.GetString(nameof(Caching_CacheNotInitialized)); 
+        public static string Caching_CacheNotInitialized => _localizer.GetString(nameof(Caching_CacheNotInitialized));
         public static string ConfigFile_ItemKeyDefineRepeated => _localizer.GetString(nameof(ConfigFile_ItemKeyDefineRepeated));
         public static string ConfigFile_NameToTypeIsNull => _localizer.GetString(nameof(ConfigFile_NameToTypeIsNull));
         public static string Context_BuildServicesFirst => _localizer.GetString(nameof(Context_BuildServicesFirst));
@@ -29,7 +29,7 @@ namespace Framework.Utility
         public static string stringHttp_Security_Client_VerifyResponse_Failt => _localizer.GetString(nameof(stringHttp_Security_Client_VerifyResponse_Failt));
         public static string Http_Security_Host_DecryptRequest_Failt => _localizer.GetString(nameof(Http_Security_Host_DecryptRequest_Failt));
         public static string Http_Security_Host_EncryptResponse_Failt => _localizer.GetString(nameof(Http_Security_Host_EncryptResponse_Failt));
-        public static string Ioc_CannotResolveService  => _localizer.GetString(nameof(Ioc_CannotResolveService));
+        public static string Ioc_CannotResolveService => _localizer.GetString(nameof(Ioc_CannotResolveService));
         public static string Ioc_FrameworkNotInitialized => _localizer.GetString(nameof(Ioc_FrameworkNotInitialized));
         public static string Ioc_ImplementationTypeNotFound => _localizer.GetString(nameof(Ioc_ImplementationTypeNotFound));
         public static string Ioc_NoConstructorMatch => _localizer.GetString(nameof(Ioc_NoConstructorMatch));
@@ -53,6 +53,6 @@ namespace Framework.Utility
         public static string ParameterCheck_NotLessThanOrEqual => _localizer.GetString(nameof(ParameterCheck_NotLessThanOrEqual));
         public static string ParameterCheck_NotNull => _localizer.GetString(nameof(ParameterCheck_NotNull));
         public static string ParameterCheck_NotNullOrEmpty_Collection => _localizer.GetString(nameof(ParameterCheck_NotNullOrEmpty_Collection));
-        public static string ParameterCheck_NotNullOrEmpty_String => _localizer.GetString(nameof(ParameterCheck_NotNullOrEmpty_String)); 
+        public static string ParameterCheck_NotNullOrEmpty_String => _localizer.GetString(nameof(ParameterCheck_NotNullOrEmpty_String));
     }
 }

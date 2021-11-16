@@ -1,15 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection; 
+using System.Reflection;
 
 namespace Framework.Utility.Extensions
 {
     public static class DictionaryExtension
     {
-       
+
         /// <summary>
         /// fetch value from dict by specified key, otherwise return default value
         /// </summary>

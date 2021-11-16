@@ -1,12 +1,11 @@
-﻿using Framework.Utility;
-using Framework.Utility.Extensions;
+﻿using Framework.Utility.Extensions;
 using Framework.Utility.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Metadata; 
+using Microsoft.EntityFrameworkCore.Metadata;
 using System.Data.Common;
 using System.Reflection;
-using System.Text; 
+using System.Text;
 
 namespace Framework.Core.Extensions
 {
@@ -40,13 +39,13 @@ namespace Framework.Core.Extensions
                         entry.State = EntityState.Modified;
                     }
                 }
-                catch (InvalidOperationException ex)
+                catch (InvalidOperationException)
                 {
                     //TEntity oldEntity = dbSet.Find(entity.Id);
                     //dbContext.Entry(oldEntity).CurrentValues.SetValues(entity);
                 }
             }
-        } 
+        }
         /// <summary>
         /// 清除数据上下文的更改
         /// </summary>

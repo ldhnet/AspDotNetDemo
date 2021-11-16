@@ -1,11 +1,6 @@
-﻿using Framework.Utility;
-using Framework.Utility.Helper;
+﻿using Framework.Utility.Helper;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks; 
 
 namespace ConsoleApp
 {
@@ -13,7 +8,7 @@ namespace ConsoleApp
     class Program
     {
         public static Func<int, int, int> fc = (int x, int y) => x * y;
-        
+
         public void GetSendMailList()
         {
             int k = 0;
@@ -30,14 +25,14 @@ namespace ConsoleApp
         }
 
         static void Main(string[] args)
-        { 
+        {
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
 
             for (int i = 1; i < 5; i++)
             {
-                diDic.Add(i,new List<int>() { i+1 });
-                if (i==2)
+                diDic.Add(i, new List<int>() { i + 1 });
+                if (i == 2)
                 {
                     diDic[i].Add(i + 2);
                 }
@@ -77,7 +72,7 @@ namespace ConsoleApp
 
             //var _array = new[] {11,10,50,100, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-           
+
             //Array.Sort(_array);
 
             //Array.Reverse(_array);
@@ -90,7 +85,7 @@ namespace ConsoleApp
             //    var winner = shuffle.ShuffleCopy(dataArr, r).First();
             //    resultArr.Add(winner);
             //}
-             
+
             //var resultGr = resultArr.GroupBy(g => g).Select(x=> new { value =x.Key ,count=x.Count() }).OrderBy(o=>o.value);
 
             //var resultGrs = resultGr.Select(x => new { resKay = x.value + "-->" + x.count }).Select(c=>c.resKay).ToArray();
@@ -106,7 +101,7 @@ namespace ConsoleApp
 
             //Console.WriteLine(str);
 
-             
+
             //var aaa = Math.Ceiling(49 / 0.75 / 4);
 
 
@@ -123,7 +118,7 @@ namespace ConsoleApp
             //Func<string,string> funcT = new ActionHelper().DoSomethingString;
 
             //funcT.Invoke("测试Click");
-             
+
 
             ////action.Invoke("btnAsync_Click_1");
             ////action("btnAsync_Click_1");
@@ -146,7 +141,7 @@ namespace ConsoleApp
             //{
             //    contents.Add(new Content { Id = i, Title = $"第{i}条数据标题", Detail = $"第{i}条数据的内容", Status = 1, Add_time = DateTime.Now });
             //}  
-             
+
             //Stopwatch sw2 = new Stopwatch(); sw2.Start();
             //Parallel.ForEach(contents, (i) => {
             //    try
@@ -164,7 +159,7 @@ namespace ConsoleApp
             //    {
             //            Console.WriteLine($"任务ID:{Task.CurrentId},线程ID:{Thread.CurrentThread.ManagedThreadId}" + "异常：" + ex.Message);
             //    }
-         
+
             //});
             //sw2.Stop();
             //Console.WriteLine("多线程耗时：" + sw2.Elapsed.ToString());
@@ -206,10 +201,10 @@ namespace ConsoleApp
 
 
 
-  
+
         public void DoSomething(int _)
         {
-             _ = SwitchHelper.FromRainbow(Rainbow.brack);
+            _ = SwitchHelper.FromRainbow(Rainbow.brack);
         }
     }
 }

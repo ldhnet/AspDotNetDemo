@@ -1,9 +1,8 @@
-using System; 
-using Xunit;
-using Shouldly;
-using WebMVC.Extension;
 using Framework.Utility.Extensions;
 using Framework.Utility.Security;
+using Shouldly;
+using System;
+using Xunit;
 
 namespace UnitTest
 {
@@ -17,7 +16,7 @@ namespace UnitTest
         }
         [Fact]
         public void Encrypt_Decrypt_Test()
-        
+
         {
             AesHelper aes = new AesHelper();
             string source = "admin";

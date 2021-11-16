@@ -1,8 +1,6 @@
 ﻿using Framework.Utility.Data;
 using Framework.Utility.Extensions;
-using System.Collections.Generic;
-using System.Linq; 
-using System.Net; 
+using System.Net;
 
 namespace Framework.Core.Extensions
 {
@@ -14,8 +12,6 @@ namespace Framework.Core.Extensions
 
             return new BaseOutputDto<IEnumerable<TEntity>>(filterResult, total);
         }
-
-
 
         public static IEnumerable<TEntity> ToPageData<TEntity>(this IQueryable<TEntity> source, BasePaginationInputDto pageDto, out int total)
         {

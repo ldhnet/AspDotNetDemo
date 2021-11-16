@@ -1,16 +1,15 @@
 ﻿using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
 using Framework.Core.Data;
-using Framework.Utility;
-using Framework.Utility.Config; 
-using Microsoft.AspNetCore.Mvc;  
+using Framework.Utility.Config;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi6_0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class DBTestController : ControllerBase
-    { 
+    {
         private readonly ILogger<DBTestController> _logger;
         private readonly ISysAccountContract _SysAccountContract;
         private readonly IUserService _userService;
@@ -23,9 +22,9 @@ namespace WebApi6_0.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet] 
+        [HttpGet]
         public string Get()
-        { 
+        {
 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
 
@@ -44,7 +43,7 @@ namespace WebApi6_0.Controllers
                 UserId = Guid.NewGuid().ToString(),
                 AccountName = "admin",
                 AccountNo = "1001",
-                CreateBy = "admin", 
+                CreateBy = "admin",
                 CreateTime = DateTime.Now
             };
 
@@ -65,7 +64,7 @@ namespace WebApi6_0.Controllers
             //var aaa5 = _userService.CreateInfo(model2);
 
 
-          
+
             var aaa2 = _SysAccountContract.GetSysAccount("admin1");
 
 

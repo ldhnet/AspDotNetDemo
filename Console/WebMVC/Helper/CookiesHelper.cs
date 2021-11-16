@@ -1,16 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Framework.Utility.Config;
 using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using System.Text.Json;
-using System.Web;
+using Microsoft.Extensions.DependencyInjection;
 using System;
-using WebMVC.Model;
-using Framework.Utility.Config;
 
 namespace WebMVC.Helper
 {
-    public  class CookiesHelper
-    { 
+    public class CookiesHelper
+    {
 
         /// <summary>
         /// 写cookie值

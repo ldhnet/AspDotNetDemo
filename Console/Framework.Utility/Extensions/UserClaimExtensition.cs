@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Text;
+﻿using System.Security.Claims;
 
 namespace Framework.Utility.Extensions
 {
     public static class UserClaimExtensition
     {
-        public static string GetClaim(this IEnumerable<Claim> claims,string name)
+        public static string GetClaim(this IEnumerable<Claim> claims, string name)
         {
             foreach (var item in claims)
             {

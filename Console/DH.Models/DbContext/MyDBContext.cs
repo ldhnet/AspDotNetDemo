@@ -1,7 +1,5 @@
-﻿using System;
-using Framework.Utility.Config;
+﻿using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata; 
 
 namespace DH.Models.DbModels
 {
@@ -13,16 +11,16 @@ namespace DH.Models.DbModels
 
         }
         public DbSet<Employee> Employee { get; set; }
-        public DbSet<EmployeeLogin> EmployeeLogin { get; set; } 
-        public DbSet<SysAccount> SysAccount{ get; set; }
+        public DbSet<EmployeeLogin> EmployeeLogin { get; set; }
+        public DbSet<SysAccount> SysAccount { get; set; }
         public DbSet<SysAccountTrans> SysAccountTrans { get; set; }
 
-   
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-               
+
             }
             optionsBuilder.UseSqlServer(_connectionString);
         }
@@ -39,17 +37,17 @@ namespace DH.Models.DbModels
 
                 entity.ToTable("SysAccount");
 
-                entity.HasIndex(e => e.UserId).HasDatabaseName("UserId").IsUnique();  
+                entity.HasIndex(e => e.UserId).HasDatabaseName("UserId").IsUnique();
 
                 entity.Property(e => e.UserId).IsRequired().HasColumnType("varchar(32)");
 
                 entity.Property(e => e.AccountName).IsRequired().HasColumnType("varchar(100)");
 
-                entity.Property(e => e.AccountNo).IsRequired().HasColumnType("varchar(32)"); 
+                entity.Property(e => e.AccountNo).IsRequired().HasColumnType("varchar(32)");
 
                 entity.Property(e => e.CreateBy).HasColumnType("varchar(50)");
 
-                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime");  
+                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime");
 
             });
 
@@ -64,11 +62,11 @@ namespace DH.Models.DbModels
 
                 entity.Property(e => e.CreateBy).HasColumnType("varchar(50)");
 
-                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime"); 
+                entity.Property(e => e.CreateTime).IsRequired().HasColumnType("datetime");
 
             });
 
-            base.OnModelCreating(modelBuilder); 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

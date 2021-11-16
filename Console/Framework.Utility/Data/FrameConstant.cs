@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Framework.Utility.Models
+﻿namespace Framework.Utility.Models
 {
     public class FrameConstant
     {

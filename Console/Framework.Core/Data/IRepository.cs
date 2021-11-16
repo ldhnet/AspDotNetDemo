@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using Framework.Core.Dependency;
+﻿using Framework.Core.Dependency;
 using Framework.Utility;
+using System.Linq.Expressions;
 
 namespace Framework.Core.Data
 {
@@ -181,7 +178,7 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="paths">要贪婪加载的导航属性名称数组</param>
         /// <returns>查询数据集</returns>
-        IQueryable<TEntity> GetIncludes(params string[] paths); 
+        IQueryable<TEntity> GetIncludes(params string[] paths);
 
         #endregion Query
 
@@ -260,7 +257,7 @@ namespace Framework.Core.Data
         Task<TEntity> GetByKeyAsync(TKey key);
         #endregion Async
 
-      
+
 
 
         #endregion

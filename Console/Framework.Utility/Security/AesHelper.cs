@@ -1,8 +1,5 @@
 ﻿using Framework.Utility.Extensions;
-using System;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography; 
+using System.Security.Cryptography;
 namespace Framework.Utility.Security
 {
     /// <summary>

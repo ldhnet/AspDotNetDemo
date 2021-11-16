@@ -1,7 +1,6 @@
 ﻿using Framework.Utility.Extensions;
-using HashidsNet;
 using System.Security.Cryptography;
-using System.Text; 
+using System.Text;
 
 namespace Framework.Utility.Security
 {
@@ -30,8 +29,8 @@ namespace Framework.Utility.Security
         public static string GetMd5(byte[] bytes)
         {
             bytes.CheckNotNullOrEmpty("bytes");
-            StringBuilder sb = new StringBuilder(); 
-            MD5 hash = MD5.Create(); 
+            StringBuilder sb = new StringBuilder();
+            MD5 hash = MD5.Create();
             bytes = hash.ComputeHash(bytes);
             foreach (byte b in bytes)
             {
@@ -48,7 +47,7 @@ namespace Framework.Utility.Security
             value.CheckNotNullOrEmpty("value");
 
             StringBuilder sb = new StringBuilder();
-            SHA1 hash = SHA1.Create(); 
+            SHA1 hash = SHA1.Create();
             if (encoding == null)
             {
                 encoding = Encoding.UTF8;

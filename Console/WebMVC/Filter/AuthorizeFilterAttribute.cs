@@ -2,10 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using WebMVC.Helper;
 using WebMVC.Model;
 
@@ -39,7 +37,7 @@ namespace WebMVC.Filter
             {
                 // 防止用户选择记住我，页面一直在首页刷新
                 if (new CookiesHelper().GetCookie("RememberMe").ParseToInt() == 1)
-                { 
+                {
                 }
 
                 #region 没有登录
@@ -69,8 +67,8 @@ namespace WebMVC.Filter
                     // 权限判断
                     if (!string.IsNullOrEmpty(Authorize))
                     {
-                        string[] authorizeList = Authorize.Split(','); 
-                       
+                        string[] authorizeList = Authorize.Split(',');
+
                         if (!hasPermission)
                         {
                             if (context.HttpContext.Request.IsAjax())

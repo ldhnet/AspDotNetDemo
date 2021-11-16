@@ -1,13 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Net;
-using System.Web; 
 
 namespace WebApi.OAuth
 {
-    public class MappingAccessTokenAnalyzer 
-    {  
+    public class MappingAccessTokenAnalyzer
+    {
         public static OAuth_ClientAuthorization GetAccessToken(string accessToken)
         {
             var result = new OAuth_ClientAuthorization()
@@ -17,7 +13,7 @@ namespace WebApi.OAuth
                 Scope = "test",
                 UserId = "00001",
                 ExpirationDateUtc = DateTime.Now.AddYears(1),
-                CreatedOnUtc=DateTime.Now,
+                CreatedOnUtc = DateTime.Now,
             };
             return result;
             //using (var db = new OAuthDbContext())
@@ -47,7 +43,7 @@ namespace WebApi.OAuth
         }
     }
     public class OAuth_ClientAuthorization
-    { 
+    {
         public int AuthorizationId { get; set; }
 
         public string Token { get; set; }

@@ -3,14 +3,13 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using WebApi.NLog;
 
 namespace WebApi.Middleware
 {
     public class CalculateExecutionTimeMiddleware
     {
         private readonly RequestDelegate _next;//下一个中间件
-        private readonly ILogger _logger; 
+        private readonly ILogger _logger;
         Stopwatch stopwatch;
         public CalculateExecutionTimeMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
         {
@@ -22,7 +21,7 @@ namespace WebApi.Middleware
             {
                 throw new ArgumentNullException(nameof(loggerFactory));
             }
-            this._next = next; 
+            this._next = next;
             _logger = loggerFactory.CreateLogger<CalculateExecutionTimeMiddleware>();
         }
 
@@ -36,7 +35,7 @@ namespace WebApi.Middleware
             await _next.Invoke(context);
 
             stopwatch.Stop();//所有的中间件处理完后，停止秒表。
-            _logger.LogInformation($@"接口{context.Request.Path}耗时{stopwatch.ElapsedMilliseconds}ms"); 
+            _logger.LogInformation($@"接口{context.Request.Path}耗时{stopwatch.ElapsedMilliseconds}ms");
         }
     }
 }

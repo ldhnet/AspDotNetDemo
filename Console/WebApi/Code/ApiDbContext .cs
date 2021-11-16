@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore; 
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Threading.Tasks; 
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Code
 {
@@ -31,11 +23,11 @@ namespace WebApi.Code
         {
             //optionsBuilder.UseSqlServer(connstring);
         }
-        public DbSet<Employee> Employees { get; set; } 
+        public DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().ToTable("Employee");  
-            
+            modelBuilder.Entity<Employee>().ToTable("Employee");
+
             base.OnModelCreating(modelBuilder);
         }
     }

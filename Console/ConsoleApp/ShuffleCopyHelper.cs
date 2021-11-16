@@ -2,14 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
     public class ShuffleCopyHelper
     {
-       public  T[] ShuffleCopy<T>(IEnumerable<T> data, Random r)
+        public T[] ShuffleCopy<T>(IEnumerable<T> data, Random r)
         {
             var arr = data.ToArray();
 
@@ -20,15 +18,15 @@ namespace ConsoleApp
                 T temp = arr[i];
                 arr[i] = arr[randomIndex];
                 arr[randomIndex] = temp;
-            } 
+            }
             return arr;
         }
-        public void LuckDraw(IEnumerable<T> data, int maxTime,int tatal = 1)
-        { 
-            
+        public void LuckDraw(IEnumerable<T> data, int maxTime, int tatal = 1)
+        {
+
         }
-        
-       public int[] Measure(int n, int maxTime)
+
+        public int[] Measure(int n, int maxTime)
         {
             var data = Enumerable.Range(0, n);
             var sum = new int[n];
@@ -46,7 +44,7 @@ namespace ConsoleApp
         }
 
         public T[] ShuffleCopy2<T>(IEnumerable<T> data, Random r)
-        { 
+        {
             return data.OrderBy(v => r.NextDouble() < 0.5).ToArray();
         }
     }

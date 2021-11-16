@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebMVC.Models
 {
@@ -11,7 +9,7 @@ namespace WebMVC.Models
         public UserCacheModel()
         {
             ViewOrgIds = new Tuple<List<int>, long>(new List<int>(), 0);
-        } 
+        }
         /// <summary>
         /// 人事ID
         /// </summary>
@@ -30,13 +28,13 @@ namespace WebMVC.Models
         public List<int> ApprovalOrgIds { get; set; }
 
         public Tuple<List<int>, long> ViewOrgIds { get; set; }
-          
+
         //人员角色合集
         public List<int> ViewRoleIds { get; set; }
-          
-        public string PortraitFileName { get; set; } 
 
-        public bool IsDimission { get; set; } 
+        public string PortraitFileName { get; set; }
+
+        public bool IsDimission { get; set; }
 
         /// <summary>
         /// 必须强制密码更新

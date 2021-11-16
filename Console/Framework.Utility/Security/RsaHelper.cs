@@ -1,8 +1,7 @@
 ﻿using Framework.Utility.Extensions;
-using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Xml; 
+using System.Xml;
 
 namespace Framework.Utility.Security
 {
@@ -30,7 +29,7 @@ namespace Framework.Utility.Security
         /// 获取 私钥
         /// </summary>
         public string PrivateKey { get; }
-        
+
         #region 实例方法
 
         /// <summary>

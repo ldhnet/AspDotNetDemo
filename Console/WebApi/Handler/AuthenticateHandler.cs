@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security.Claims;
@@ -18,14 +14,14 @@ namespace WebApi.Handler
         public const string SchemeName = "MyAuth";
 
         AuthenticationScheme _scheme;
-        HttpContext _context; 
+        HttpContext _context;
         /// <summary>
         /// 初始化认证
         /// </summary>
         public Task InitializeAsync(AuthenticationScheme scheme, HttpContext context)
         {
             _scheme = scheme;
-            _context = context; 
+            _context = context;
             return Task.CompletedTask;
         }
 
@@ -34,7 +30,7 @@ namespace WebApi.Handler
         /// </summary>
         public Task<AuthenticateResult> AuthenticateAsync()
         {
-            var req = _context.Request.Query; 
+            var req = _context.Request.Query;
 
             var guestTicket = GetAuthTicket("test", "test");
 

@@ -1,20 +1,8 @@
-﻿  using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Utility.Helper
+﻿namespace Framework.Utility.Helper
 {
     public static class RetryPolicyHelper
-    { 
-        static int sleepMillisecondsTimeout = 100; 
+    {
+        static int sleepMillisecondsTimeout = 100;
         /// <summary>
         /// 若发生 Exception (资料库查询过时)，重复执行相同操作
         /// </summary>

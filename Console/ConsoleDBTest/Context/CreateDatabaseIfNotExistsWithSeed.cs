@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleDBTest.Context
+﻿namespace ConsoleDBTest.Context
 {
     /// <summary>
     /// 在数据库不存在时使用种子数据创建数据库

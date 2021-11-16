@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc;   
-using System.Linq;
+﻿using Framework.Utility.Extensions;
+using Framework.Utility.Helper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Threading.Tasks;
 using System.Web;
 using WebMVC.Model;
-using WebMVC.Extension;
-using WebMVC.Helper;
-using Framework.Utility.Extensions;
-using Framework.Utility.Helper;
 
 namespace WebMVC.Filter
 {

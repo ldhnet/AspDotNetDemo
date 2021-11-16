@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using WebApi.Handler;
-using WebApi.Code;
+using System.Collections.Generic;
 using System.ComponentModel;
-using Newtonsoft.Json.Linq;
+using System.Linq;
+using WebApi.Code;
+using WebApi.Handler;
 
 namespace WebApi.Controllers
 {
@@ -44,9 +37,9 @@ namespace WebApi.Controllers
             foreach (var item in list)
             {
                 _logger.LogInformation($"{item.Id}{item.Name}{item.BankCard}");
-            } 
+            }
             _logger.LogWarning("/*********2*********/");
-             
+
 
             return new string[] { "value1", "value2" };
         }
@@ -78,13 +71,13 @@ namespace WebApi.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
-            _logger.LogWarning("测试Put:id = " +id + " value="  + value);
+            _logger.LogWarning("测试Put:id = " + id + " value=" + value);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
-{
+        {
             _logger.LogWarning("测试Delete=" + id);
         }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 namespace WebMVC.Models
 {
     public class LoginModel
@@ -36,7 +30,7 @@ namespace WebMVC.Models
     public class OptionResult
     {
         public int resultType { get; set; }
-        public string resultMsg { get; set; } 
+        public string resultMsg { get; set; }
         public object data { get; set; }
     }
 }

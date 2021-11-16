@@ -1,6 +1,4 @@
-﻿using ConsoleDBTest.Context;
-using Microsoft.Extensions.Options;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace ConsoleDBTest
@@ -8,27 +6,28 @@ namespace ConsoleDBTest
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
             //AdoInsertTest adoInsertTest= new AdoInsertTest();
 
             //adoInsertTest.GetData();
 
             //int retsult= adoInsertTest.Add();
 
- 
+
             DefaultDbContext context = new DefaultDbContext();
 
-           
+
             var users = context.Employees.ToList();
 
 
-            Employee zhangsan = new Employee {
-                            Name = Guid.NewGuid().ToString(),
-                            BankCard = "123456789101112131415", 
-                            BankCardDisplay = "123456789101112131415", 
-                            Monery = "11.1", 
-                            MoneryDisplay = "11.1"
-                        };
+            Employee zhangsan = new Employee
+            {
+                Name = Guid.NewGuid().ToString(),
+                BankCard = "123456789101112131415",
+                BankCardDisplay = "123456789101112131415",
+                Monery = "11.1",
+                MoneryDisplay = "11.1"
+            };
             zhangsan.EmployeeExtend = new EmployeeExtend
             {
                 Phone = "15225074031",
@@ -52,6 +51,6 @@ namespace ConsoleDBTest
 
             //Console.WriteLine("Hello World!");
         }
-       
+
     }
 }

@@ -14,7 +14,7 @@ namespace UnitTest
         {
             string md51 = FileHelper.GetFileMd5(sourceFile);
             string md52 = FileHelper.GetFileMd5(targetFile);
-            Assert.Equal(md51,md52);
+            Assert.Equal(md51, md52);
         }
 
         /// <summary>

@@ -4,9 +4,7 @@ using DH.Models.DbModels;
 using Framework.Core.Data;
 using Framework.Core.Dependency;
 using Framework.Utility.Config;
-using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using WebApi6_0.AutofacConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -30,7 +28,7 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowCredentials());
 });
- 
+
 
 #region  Autofac
 
@@ -42,13 +40,13 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 //builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
-{  
-    Type baseType = typeof(IDependency); 
+{
+    Type baseType = typeof(IDependency);
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集
             .Select(Assembly.Load)
             .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
-            .ToArray(); 
+            .ToArray();
     containerBuilder.RegisterAssemblyTypes(assemblies)
         .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
         .AsSelf()   //自身服务，用于没有接口的类

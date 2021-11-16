@@ -1,11 +1,8 @@
 ﻿using DH.Models.DbModels;
-using Framework.Utility;
 using Framework.Utility.Attributes;
 using Framework.Utility.Extensions;
 using Framework.Utility.Helper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NPOI.OpenXml4Net.OPC.Internal;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -13,11 +10,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using WebMVC.Extension;
 using WebMVC.Helper;
 using WebMVC.Model;
-using WebMVC.Models;
 using WebMVC.Models.Report;
 
 namespace WebMVC.Controllers
@@ -33,7 +28,7 @@ namespace WebMVC.Controllers
         /// execl导入
         /// </summary>
         /// <returns></returns>
-        [HttpPost] 
+        [HttpPost]
         public ActionResult ExportExecl()
         {
             var file = Request.Form.Files;
@@ -87,7 +82,7 @@ namespace WebMVC.Controllers
         }
 
         private readonly string _saveFilePath = GlobalContext.HostingEnvironment.WebRootPath + "Report";
-        [HttpPost] 
+        [HttpPost]
         public ActionResult ExportExeclReport()
         {
             Dictionary<string, Dictionary<string, string>> columnMerge = new Dictionary<string, Dictionary<string, string>>();
@@ -167,7 +162,7 @@ namespace WebMVC.Controllers
                  new YearLeaveModel{EmployeeName="张8",EmployeeSerialNumber="00006",No=6 },
             };
 
-           var mm=  GererateWelfareLeaveReport(ExportList);
+            var mm = GererateWelfareLeaveReport(ExportList);
 
             //var folderPath = Path.Combine(GlobalContext.HostingEnvironment.ContentRootPath, "DownLoad");
             //if (!Directory.Exists(folderPath))
@@ -220,7 +215,7 @@ namespace WebMVC.Controllers
                             worksheet.Cells[cellAddress].Style.Numberformat.Format = "yyyy-MM-dd";
                         }
 
-                        if (item.No >5 && property.Name == "AnualIsSet")
+                        if (item.No > 5 && property.Name == "AnualIsSet")
                         {
                             worksheet.Cells[cellAddress].Style.Font.Color.SetColor(Color.Red);
                         }
@@ -245,7 +240,7 @@ namespace WebMVC.Controllers
                 Directory.CreateDirectory(folderPath);
 
             var template = "";//FileToolHelper.GenerateFileInfo(path, templateFileName, false); 
-            var destFileName = folderPath +  $"{Path.AltDirectorySeparatorChar}{newFileName}";
+            var destFileName = folderPath + $"{Path.AltDirectorySeparatorChar}{newFileName}";
 
             return new FileInfo(template);// template.CopyTo(destFileName, true);
         }

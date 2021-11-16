@@ -1,7 +1,4 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Text;
 
 
@@ -60,7 +57,7 @@ namespace Framework.Utility.Extensions
             if (second == null) throw new ArgumentNullException(nameof(second));
 
             comparer = comparer ?? EqualityComparer<T>.Default;
-            
+
             int? secondCount = second.TryGetCollectionCount();
             if (secondCount != null)
             {
@@ -84,7 +81,7 @@ namespace Framework.Utility.Extensions
                 }
             }
         }
-        
+
         /// <summary>
         /// 打乱一个集合的项顺序，将一个集合洗牌
         /// </summary>

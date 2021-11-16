@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ConsoleDBTest
 {
@@ -17,7 +13,7 @@ namespace ConsoleDBTest
         {
             try
             {
-          
+
                 //using 数据库链接后会自动释放（关闭）
                 using (SqlConnection conn = new SqlConnection(connstring))
                 {
@@ -26,12 +22,12 @@ namespace ConsoleDBTest
                     //SqlDataAdapter
                     SqlDataAdapter da = new SqlDataAdapter("select * from Employee", conn);
                     DataSet ds = new DataSet();
-                    da.Fill(ds, "Employee");                     
+                    da.Fill(ds, "Employee");
                     var dt = ds.Tables["Employee"];
                     var rest2 = ConvertDataTableToGenericList2<Employee>(dt);
 
                     var rest3 = dt.ConvertDataTableToList<Employee>();
-                     
+
                     var rest4 = rest3.ConvertToDataTable();
 
                     var rest5 = rest4.Rows.Count;
@@ -44,7 +40,7 @@ namespace ConsoleDBTest
 
                     return dt.Rows.Count;
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -53,9 +49,9 @@ namespace ConsoleDBTest
             }
 
         }
-     
 
-   
+
+
         /// <summary>
         /// DataTable 转成 IEnumerable
         /// </summary>
@@ -97,9 +93,9 @@ namespace ConsoleDBTest
                     Random _Index = new Random();
 
                     cmd.Parameters.AddWithValue("@Name", "李_" + _Index.Next());
-                    cmd.Parameters.AddWithValue("@BandCard", "6227_" + _Index.Next(1000000,9000000));
-                    num = cmd.ExecuteNonQuery(); 
-                } 
+                    cmd.Parameters.AddWithValue("@BandCard", "6227_" + _Index.Next(1000000, 9000000));
+                    num = cmd.ExecuteNonQuery();
+                }
                 return num;
 
                 //using (TransactionScope ts = new TransactionScope())
@@ -152,7 +148,7 @@ namespace ConsoleDBTest
         //    }
 
         //}
-         
+
 
     }
 }

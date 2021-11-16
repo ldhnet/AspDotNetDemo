@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Concurrent;
 
 namespace Framework.Utility.Helper
 {
@@ -33,8 +27,8 @@ namespace Framework.Utility.Helper
         //Console.WriteLine(a2a.Keys.ToArray()[i].ToString() + "是" + a2a.Values.ToArray()[i].ToString());
         //        Console.WriteLine("请输入任意建");
         //        Console.ReadKey();
-                
+
         //    }
 
-}
+    }
 }

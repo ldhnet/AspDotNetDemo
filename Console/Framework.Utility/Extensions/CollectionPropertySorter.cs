@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection; 
+using System.Reflection;
 
 namespace Framework.Utility.Extensions
 {
@@ -25,7 +22,7 @@ namespace Framework.Utility.Extensions
         /// <param name="sortDirection">排序方向</param>
         public static IOrderedEnumerable<T> OrderBy(IEnumerable<T> source, string propertyName, ListSortDirection sortDirection)
         {
-            propertyName.CheckNotNullOrEmpty("propertyName" );
+            propertyName.CheckNotNullOrEmpty("propertyName");
             dynamic expression = GetKeySelector(propertyName);
             dynamic keySelector = expression.Compile();
             return sortDirection == ListSortDirection.Ascending
@@ -41,7 +38,7 @@ namespace Framework.Utility.Extensions
         /// <param name="sortDirection">排序方向</param>
         public static IOrderedEnumerable<T> ThenBy(IOrderedEnumerable<T> source, string propertyName, ListSortDirection sortDirection)
         {
-            propertyName.CheckNotNullOrEmpty("propertyName" );
+            propertyName.CheckNotNullOrEmpty("propertyName");
             dynamic expression = GetKeySelector(propertyName);
             dynamic keySelector = expression.Compile();
             return sortDirection == ListSortDirection.Ascending
@@ -58,7 +55,7 @@ namespace Framework.Utility.Extensions
         /// <returns></returns>
         public static IOrderedQueryable<T> OrderBy(IQueryable<T> source, string propertyName, ListSortDirection sortDirection)
         {
-            propertyName.CheckNotNullOrEmpty("propertyName" );
+            propertyName.CheckNotNullOrEmpty("propertyName");
             dynamic keySelector = GetKeySelector(propertyName);
             return sortDirection == ListSortDirection.Ascending
                 ? Queryable.OrderBy(source, keySelector)
@@ -74,7 +71,7 @@ namespace Framework.Utility.Extensions
         /// <returns></returns>
         public static IOrderedQueryable<T> ThenBy(IOrderedQueryable<T> source, string propertyName, ListSortDirection sortDirection)
         {
-            propertyName.CheckNotNullOrEmpty("propertyName" );
+            propertyName.CheckNotNullOrEmpty("propertyName");
             dynamic keySelector = GetKeySelector(propertyName);
             return sortDirection == ListSortDirection.Ascending
                 ? Queryable.ThenBy(source, keySelector)

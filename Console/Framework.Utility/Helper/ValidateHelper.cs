@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Framework.Utility.Helper
 {
@@ -46,7 +45,7 @@ namespace Framework.Utility.Helper
         public static bool IsEmail(this string value)
         {
             const string pattern = @"^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$";
-            return Regex.IsMatch(value,pattern);
+            return Regex.IsMatch(value, pattern);
         }
         /// <summary>
         /// 是否为手机号

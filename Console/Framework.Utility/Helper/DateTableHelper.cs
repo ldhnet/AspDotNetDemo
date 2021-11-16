@@ -1,8 +1,8 @@
-﻿using Framework.Utility.Attributes; 
+﻿using Framework.Utility.Attributes;
 using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel; 
+using NPOI.XSSF.UserModel;
 using System.ComponentModel;
-using System.Data; 
+using System.Data;
 
 namespace Framework.Utility.Helper
 {
@@ -25,7 +25,7 @@ namespace Framework.Utility.Helper
             var properties = typeof(T).GetProperties();
             DataRow[] rows = dt.Select();
 
-    
+
 
             return rows.Select(row =>
             {
@@ -38,7 +38,7 @@ namespace Framework.Utility.Helper
 
                     var attribute = attributes[0] as ImportedColumnAttribute;
 
-                    if (columnNames.Contains(attribute?.Caption??string.Empty))
+                    if (columnNames.Contains(attribute?.Caption ?? string.Empty))
                         pro.SetValue(objT, row[attribute?.Caption ?? string.Empty]);
 
                     //if (columnNames.Contains(pro.Name))
@@ -65,7 +65,7 @@ namespace Framework.Utility.Helper
             {
                 var objT = Activator.CreateInstance<T>();
                 foreach (var pro in properties)
-                { 
+                {
                     if (columnNames.Contains(pro.Name))
                         pro.SetValue(objT, row[pro.Name]);
                 }

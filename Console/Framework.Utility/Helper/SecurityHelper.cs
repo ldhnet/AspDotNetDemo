@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace Framework.Utility.Helper
 {
@@ -162,8 +157,8 @@ namespace Framework.Utility.Helper
             }
             try
             {
-                var encoding = new ASCIIEncoding(); 
-                using (var desCryptoServiceProvider = TripleDES.Create()) 
+                var encoding = new ASCIIEncoding();
+                using (var desCryptoServiceProvider = TripleDES.Create())
                 {
                     byte[] inputArr = Encoding.UTF8.GetBytes(input);
                     desCryptoServiceProvider.Key = encoding.GetBytes(key);

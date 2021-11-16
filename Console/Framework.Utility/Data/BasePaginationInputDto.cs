@@ -1,10 +1,6 @@
 ﻿using Framework.Utility.Extensions;
 using Framework.Utility.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 
 namespace Framework.Utility.Data
 {
@@ -46,7 +42,7 @@ namespace Framework.Utility.Data
         /// <summary>
         /// 创建日期查询结束日期 ""/null/0代表不查询日期
         /// </summary>
-        public long? endCreateDate=>ConvertToDateRang(dateRange).Item2;
+        public long? endCreateDate => ConvertToDateRang(dateRange).Item2;
         /// <summary>
         /// 数据状态 null表示显示所有状态
         /// </summary>
@@ -77,7 +73,7 @@ namespace Framework.Utility.Data
         protected Tuple<long?, long?> ConvertToDateRang(IEnumerable<string> dateRange)
         {
             //参数不传值
-            if(dateRange==null)
+            if (dateRange == null)
                 return new Tuple<long?, long?>(null, null);
 
             var dateArray = dateRange as string[] ?? dateRange.ToArray();

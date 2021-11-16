@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
@@ -39,7 +36,7 @@ namespace ConsoleApp
             string[] card = list.ToArray();
             for (int i = 0; i < card.Length; i++)
             {
-                if(i%17 == 0) Console.WriteLine("*********玩家A**********");
+                if (i % 17 == 0) Console.WriteLine("*********玩家A**********");
 
                 Console.WriteLine(card[i]);
             }

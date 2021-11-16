@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using WebMVC.Attributes;
 
 namespace WebMVC.Middleware
 {
@@ -17,12 +13,13 @@ namespace WebMVC.Middleware
         public async Task Invoke(HttpContext context)
         {
             //这个例子只是修改一下response的header ResponseHeader
-            context.Response.OnStarting(state => {
+            context.Response.OnStarting(state =>
+            {
                 var httpContext = (HttpContext)state;
-                httpContext.Response.Headers.Add("lang", "zh-CH"); 
+                httpContext.Response.Headers.Add("lang", "zh-CH");
                 return Task.FromResult(0);
             }, context);
             await next(context);
-        } 
+        }
     }
 }

@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualBasic.FileIO; 
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.VisualBasic.FileIO;
 using System.Diagnostics;
-using System.IO;
 using System.Security.Cryptography;
-using System.Text; 
+using System.Text;
 
 namespace Framework.Utility.Helper
 {

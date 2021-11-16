@@ -4,11 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApi.Code;
 using WebApi.Extension;
 using WebApi.Handler;
 using WebApi.Middleware;
@@ -42,13 +37,13 @@ namespace WebApi
             services.AddHttpContextAccessor();
 
             services.AddSingleton<INLogHelper, NLogHelper>();
-   
+
             services.AddAuthentication(options =>
             {
                 options.AddScheme<AuthenticateHandler>(AuthenticateHandler.SchemeName, "default scheme");
                 options.DefaultAuthenticateScheme = AuthenticateHandler.SchemeName;
                 options.DefaultChallengeScheme = AuthenticateHandler.SchemeName;
-            }); 
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +67,10 @@ namespace WebApi
             app.UseMiddleware<AdminSafeListMiddleware>("127.0.0.1;192.168.1.5;::1");
 
             app.UseMiddleware(typeof(OtherMiddleware));
-             
+
             app.UseAuthentication();
             app.UseAuthorization();
-             
+
             app.UseMiddleware(typeof(AuthorizeMiddleware));
 
             app.UseCalculateExecutionTime();//计算接口执行时间 中间件

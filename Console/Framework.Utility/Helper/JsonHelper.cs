@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Framework.Utility.Extensions;
+﻿using Framework.Utility.Extensions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq; 
+using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
 
 namespace Framework.Utility.Helper
 {
@@ -59,7 +54,7 @@ namespace Framework.Utility.Helper
             json = JsonDateTimeFormat(json);
             return JsonConvert.DeserializeObject<T>(json);
         }
-         
+
     }
     #endregion
 
