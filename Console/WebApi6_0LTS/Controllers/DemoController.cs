@@ -29,8 +29,7 @@ namespace WebApi6_0.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.OK)]
-        //[AuthorizeFilter]
+        [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.Locked)]
         [AllowAnonymous]
         public BaseResponse<Employee> Get()
         {

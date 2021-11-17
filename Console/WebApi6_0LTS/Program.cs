@@ -1,10 +1,15 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper.Configuration;
 using DH.Models.DbModels;
+using DH.Models.MapperConfig;
+using Framework.Auth;
 using Framework.Core.Data;
 using Framework.Core.Dependency;
 using Framework.Utility.Config;
+using Framework.Utility.Mapping;
 using System.Reflection;
+using WebApi6_0.AutofacConfig;
 using WebApi6_0.Filter;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,44 +35,6 @@ builder.Services.AddCors(options =>
         .AllowCredentials());
 });
 
-
-#region  Autofac
-
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-
-// Register services directly with Autofac here. Don't
-// call builder.Populate(), that happens in AutofacServiceProviderFactory.
-
-//builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
-
-builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
-{
-    Type baseType = typeof(IDependency);
-    var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
-            .GetReferencedAssemblies()//获取所有引用程序集
-            .Select(Assembly.Load)
-            .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
-            .ToArray();
-    containerBuilder.RegisterAssemblyTypes(assemblies)
-        .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
-        .AsSelf()   //自身服务，用于没有接口的类
-        .AsImplementedInterfaces()  //接口服务
-        .PropertiesAutowired()  //属性注入
-        .InstancePerLifetimeScope();    //保证生命周期基于请求  
-
-    containerBuilder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>));
-    containerBuilder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();
-});
-
-
-#endregion Autofac
-
-builder.Services.AddControllers(options => {
-    options.Filters.Add<TokenCheckFilter>();
-}); 
-
-builder.Services.AddEndpointsApiExplorer(); 
-
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "WebApi6_0_测试api", Version = "v1" });
@@ -76,6 +43,25 @@ builder.Services.AddSwaggerGen(c =>
     var filePath = Path.Combine(System.AppContext.BaseDirectory, typeof(Program).Assembly.GetName().Name + ".xml");
     c.IncludeXmlComments(filePath);
 });
+ 
+builder.Services.AddControllers(options => {
+    options.Filters.Add<TokenCheckFilter>();
+}); 
+
+builder.Services.AddEndpointsApiExplorer();
+ 
+builder.Services.AddAutoMapper();
+  
+#region  Autofac
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+// Register services directly with Autofac here. Don't
+// call builder.Populate(), that happens in AutofacServiceProviderFactory.
+
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
+  
+#endregion Autofac
 
 var app = builder.Build();
 
@@ -92,6 +78,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 //解决跨域
 app.UseCors("CorsPolicy");
+ 
+app.UseMapperAutoInject();  
 
 app.MapControllers();
 

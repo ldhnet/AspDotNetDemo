@@ -13,7 +13,7 @@ namespace Framework.Auth
         public OperatorInfo? GetUserByToken(string token)
         {
             var strSql = new StringBuilder();
-            strSql.Append(@"SELECT Id,
+            strSql.Append(@"SELECT Id
                                   ,[Name]
                                   ,[BankCard]
                                   ,[EmployeeName]

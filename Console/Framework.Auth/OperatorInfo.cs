@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Framework.Utility.Mapping;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Framework.Auth
 {
@@ -34,5 +35,19 @@ namespace Framework.Auth
     public class RoleInfo
     {
         public long RoleId { get; set; }
+    }
+    public class Foo
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public decimal Money { get; set; }
+        public string CreateBy { get; set; }
+    }
+    [AutoInject(sourceType:typeof(Foo),targetType:typeof(FooDto))]
+    public class FooDto
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public decimal Money { get; set; }
     }
 }

@@ -75,7 +75,6 @@ C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.GeneratedMSBuildE
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.AssemblyInfoInputs.cache
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.AssemblyInfo.cs
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.csproj.CoreCompileInputs.cache
-C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPartsAssemblyInfo.cs
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPartsAssemblyInfo.cache
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\staticwebassets.build.json
 C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\staticwebassets.development.json
@@ -94,3 +93,4 @@ C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\runtimes\unix\lib\netcoreap
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Auth.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.Auth.pdb
+C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPartsAssemblyInfo.cs

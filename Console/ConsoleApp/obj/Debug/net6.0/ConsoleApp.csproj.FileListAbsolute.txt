@@ -209,3 +209,5 @@ C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\runtimes\win-x64\native\sni.d
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\GutReposite\Console\ConsoleApp\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll

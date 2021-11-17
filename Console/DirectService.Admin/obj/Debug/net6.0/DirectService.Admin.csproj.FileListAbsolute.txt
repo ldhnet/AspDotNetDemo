@@ -21,3 +21,5 @@ C:\GutReposite\Console\DirectService.Admin\obj\Debug\net6.0\DirectService.Admin.
 C:\GutReposite\Console\DirectService.Admin\obj\Debug\net6.0\DirectService.Admin.dll
 C:\GutReposite\Console\DirectService.Admin\obj\Debug\net6.0\ref\DirectService.Admin.dll
 C:\GutReposite\Console\DirectService.Admin\obj\Debug\net6.0\DirectService.Admin.pdb
+C:\GutReposite\Console\DirectService.Admin\bin\Debug\net6.0\Framework.Auth.dll
+C:\GutReposite\Console\DirectService.Admin\bin\Debug\net6.0\Framework.Auth.pdb

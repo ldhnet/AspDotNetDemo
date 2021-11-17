@@ -1,6 +1,7 @@
 ﻿using Framework.Core.Extensions;
 using Framework.Utility;
 using Framework.Utility.Extensions;
+using Framework.Utility.Mapping;
 using Framework.Utility.Reflection;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -17,8 +18,7 @@ namespace Framework.Core.Data
     public class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class// EntityBase<TKey>
     {
         private readonly DbSet<TEntity> _dbSet;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ClaimsPrincipal _principal;
+        private readonly IUnitOfWork _unitOfWork; 
 
         public Repository(IUnitOfWork unitOfWork)
         {
@@ -31,8 +31,7 @@ namespace Framework.Core.Data
         public Repository(IUnitOfWork unitOfWork, IPrincipal principal)
         {
             _unitOfWork = unitOfWork;
-            _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
-            _principal = principal as ClaimsPrincipal;
+            _dbSet = ((DbContext)unitOfWork).Set<TEntity>(); 
         }
 
         /// <summary>
@@ -606,9 +605,9 @@ namespace Framework.Core.Data
         {
             var createByProp = typeof(TEntity).GetProperty("CreateBy");
             var createTimeProp = typeof(TEntity).GetProperty("CreateTime");
-            var createBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == createByProp?.Name)?.GetValue(entity)?.ToString();
-            createByProp?.SetValue(entity, string.IsNullOrEmpty(createBy) ? _principal?.Identity?.Name : createBy);
-            createTimeProp?.SetValue(entity, DateTime.Now);//DateTime.UtcNow.ToJsTimestamp()
+            //var createBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == createByProp?.Name)?.GetValue(entity)?.ToString();
+            //createByProp?.SetValue(entity, string.IsNullOrEmpty(createBy) ? _principal?.Identity?.Name : createBy);
+            createTimeProp?.SetValue(entity, DateTime.Now);
         }
         /// <summary>
         /// 赋值ModifyBy和ModifyTime
@@ -618,8 +617,8 @@ namespace Framework.Core.Data
         {
             var modifyByProp = typeof(TEntity).GetProperty("ModifyBy");
             var modifyTimeProp = typeof(TEntity).GetProperty("ModifyTime");
-            var modifyBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == modifyByProp?.Name)?.GetValue(entity)?.ToString();
-            modifyByProp?.SetValue(entity, string.IsNullOrEmpty(modifyBy) ? _principal?.Identity?.Name : modifyBy);
+            //var modifyBy = entity.GetType().GetProperties().FirstOrDefault(c => c.Name == modifyByProp?.Name)?.GetValue(entity)?.ToString();
+            //modifyByProp?.SetValue(entity, string.IsNullOrEmpty(modifyBy) ? _principal?.Identity?.Name : modifyBy);
             modifyTimeProp?.SetValue(entity, DateTime.Now);//DateTime.UtcNow.ToJsTimestamp()
         }
         #endregion

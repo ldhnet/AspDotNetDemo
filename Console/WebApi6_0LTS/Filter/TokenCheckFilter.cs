@@ -1,7 +1,6 @@
 ﻿using Framework.Utility;
 using Framework.Utility.Extensions;
 using Framework.Utility.Helper;
-using Framework.Utility.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
@@ -74,7 +73,7 @@ namespace WebApi6_0.Filter
             var index = strTicket.IndexOf("&");
             string userName = strTicket.Substring(0, index);
             string password = strTicket.Substring(index + 1);
-            //dosomeing
+            //dosomething
             if (userName == "admin")
             {
                 return true;
