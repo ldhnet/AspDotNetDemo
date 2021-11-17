@@ -1,7 +1,7 @@
 ﻿using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl;
+using DirectService.Admin.Service;
 using DirectService.Test.Contracts;
-using DirectService.Test.Impl;
+using DirectService.Test.Service;
 using Framework.Utility.Attributes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +29,6 @@ namespace WebMVC.Controllers
             _testFace = testFace;
             _testFaceA = testFaceList.FirstOrDefault(c => c.GetType() == typeof(TestInterface));
             _testFaceB = testFaceList.FirstOrDefault(c => c.GetType() == typeof(TestInterface2));
-
         }
 
         [SkipLoginValidate]

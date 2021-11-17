@@ -1,5 +1,6 @@
 using Autofac;
-using Autofac.Extensions.DependencyInjection;   
+using Autofac.Extensions.DependencyInjection;
+using Framework.Utility;
 using Framework.Utility.Config;
 using Framework.Utility.Mapping; 
 using WebApi6_0.AutofacConfig;
@@ -17,6 +18,7 @@ builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
 // Add services to the container.
+
 //解决跨域
 builder.Services.AddCors(options =>
 {
@@ -36,7 +38,9 @@ builder.Services.AddSwaggerGen(c =>
     var filePath = Path.Combine(System.AppContext.BaseDirectory, typeof(Program).Assembly.GetName().Name + ".xml");
     c.IncludeXmlComments(filePath);
 });
- 
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 builder.Services.AddControllers(options => {
     options.Filters.Add<TokenCheckFilter>();
 }); 
@@ -72,7 +76,9 @@ app.UseAuthorization();
 //解决跨域
 app.UseCors("CorsPolicy");
  
-app.UseMapperAutoInject();  
+app.UseMapperAutoInject();
+
+app.UseShardResource();
 
 app.MapControllers();
 

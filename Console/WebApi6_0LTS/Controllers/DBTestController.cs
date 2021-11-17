@@ -5,10 +5,12 @@ using DirectService.Admin.Contracts;
 using DirectService.Test;
 using Framework.Auth;
 using Framework.Core.Data;
+using Framework.Utility;
 using Framework.Utility.Config;
 using Framework.Utility.Extensions;
 using Framework.Utility.Helper;
 using Framework.Utility.Mapping;
+using Framework.Utility.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
@@ -41,12 +43,28 @@ namespace WebApi6_0.Controllers
         {
 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
-
-
+             
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
+
+            var cce = ShardResource.Hello;
+
+            string key = new AesHelper().Key;
+             
+            AesHelper aes = new AesHelper();
+            string source = "admin";
+
+            NLogHelper.Error(source);
+
+            var aaaaaaaaa = HashHelper.GetMd5(source);
+            var aaaaaaaaa2 = HashHelper.GetSha1(source);
+              
+            var aaass = aes.Encrypt(source);
+
+            var bbbss = aes.Decrypt(aaass);
+
 
             var model2 = new Foo()
             {

@@ -1,10 +1,9 @@
 ﻿using DH.Models.DbModels;
-using DirectService.Admin.Contracts;
-using Framework.Core;
+using DirectService.Admin.Contracts; 
 using Framework.Core.Data;
 using Framework.Utility;
 
-namespace DirectService.Admin.Impl
+namespace DirectService.Admin.Service
 {
     public class UserService : IUserService
     {

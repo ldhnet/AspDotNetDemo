@@ -1,6 +1,6 @@
 ﻿using DirectService.Test.Contracts;
 
-namespace DirectService.Test.Impl
+namespace DirectService.Test.Service
 {
     public class TestInterface2 : ITestInterface
     {

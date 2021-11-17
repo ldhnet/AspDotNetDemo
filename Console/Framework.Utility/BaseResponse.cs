@@ -35,7 +35,7 @@ namespace Framework.Utility
         public BaseResponse(successCode resultType, object data) : this(resultType, null, data)
         {
             this.success = resultType;
-            this.msg = success.Description();
+            this.msg = success.ToDescription();
             this.data = data;
         }
 
@@ -45,7 +45,7 @@ namespace Framework.Utility
         public BaseResponse(successCode resultType, string message, object data) : base(resultType, message, data)
         {
             this.success = resultType;
-            this.msg = message ?? success.Description(); 
+            this.msg = message ?? success.ToDescription(); 
             this.data = data;
         }
 

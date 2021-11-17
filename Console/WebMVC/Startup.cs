@@ -1,6 +1,6 @@
 using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
-using DirectService.Admin.Impl;
+using DirectService.Admin.Service;
 using Framework.Core.Data;
 using Framework.Utility.Config;
 using Hangfire;

@@ -8,7 +8,7 @@ namespace Framework.Utility.Extensions
         /// <summary>
         /// 获取枚举的描述信息
         /// </summary>
-        public static string Description(this Enum em)
+        public static string ToDescription(this Enum em)
         {
             Type type = em.GetType();
             FieldInfo fd = type.GetField(em.ToString());

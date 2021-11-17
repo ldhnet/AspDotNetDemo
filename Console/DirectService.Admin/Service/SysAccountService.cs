@@ -4,7 +4,7 @@ using Framework.Core.Data;
 using Framework.Utility;
 using Microsoft.Data.SqlClient;
 
-namespace DirectService.Admin.Impl
+namespace DirectService.Admin.Service
 {
     public class SysAccountService : ISysAccountContract
     {

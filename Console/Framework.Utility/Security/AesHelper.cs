@@ -1,5 +1,7 @@
 ﻿using Framework.Utility.Extensions;
 using System.Security.Cryptography;
+using System.Text;
+
 namespace Framework.Utility.Security
 {
     /// <summary>
@@ -12,8 +14,7 @@ namespace Framework.Utility.Security
         /// <summary>
         /// 初始化一个<see cref="AesHelper"/>类型的新实例
         /// </summary>
-        public AesHelper(bool needIV = false)
-            : this(GetRandomKey(), needIV)
+        public AesHelper(bool needIV = false): this(GetRandomKey(), needIV)
         { }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Framework.Utility.Security
 
             byte[] encodeBytes = Convert.FromBase64String(source);
             byte[] decodeBytes = Decrypt(encodeBytes, key, needIV);
-            return decodeBytes.ToString();
+            return Encoding.UTF8.GetString(decodeBytes); 
         }
 
         /// <summary>

@@ -1,17 +1,19 @@
 ﻿using Framework.Utility.Config;
 using LangResources;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 
 namespace Framework.Utility
 {
-    public class ShardResource
-    {
+    public static class ShardResource
+    { 
         private static IStringLocalizer<LangResource> _localizer;
-        static ShardResource()
-        {
-            _localizer = GlobalConfig.ServiceProvider.GetService<IStringLocalizer<LangResource>>();
+        public static void UseShardResource(this IApplicationBuilder applicationBuilder)
+        {  
+            _localizer = applicationBuilder.ApplicationServices.GetRequiredService<IStringLocalizer<LangResource>>();
         }
+
         public static string Hello => _localizer.GetString(nameof(Hello));
         public static string Title => _localizer.GetString(nameof(Title));
         public static string CheckNotNull => _localizer.GetString(nameof(CheckNotNull));
