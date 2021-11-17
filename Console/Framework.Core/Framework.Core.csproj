@@ -6,6 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8600;8604;8602;8603</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8600;8604;8602;8603</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Dependency\**" />
     <EmbeddedResource Remove="Dependency\**" />

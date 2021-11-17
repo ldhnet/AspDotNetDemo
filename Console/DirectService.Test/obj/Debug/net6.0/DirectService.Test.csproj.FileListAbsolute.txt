@@ -21,5 +21,3 @@ C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\DH.Models.dll
 C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\Framework.Core.dll
 C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\DH.Models.pdb
 C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\Framework.Core.pdb
-C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\Framework.Auth.dll
-C:\GutReposite\Console\DirectService.Test\bin\Debug\net6.0\Framework.Auth.pdb

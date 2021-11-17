@@ -19,5 +19,3 @@ C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.csproj.CopyComplete
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.dll
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\ref\DH.Models.dll
 C:\GutReposite\Console\DH.Models\obj\Debug\net6.0\DH.Models.pdb
-C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\Framework.Auth.dll
-C:\GutReposite\Console\DH.Models\bin\Debug\net6.0\Framework.Auth.pdb

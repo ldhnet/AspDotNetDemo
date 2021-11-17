@@ -820,21 +820,6 @@
           }
         }
       },
-      "Framework.Auth/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Framework.Utility": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Framework.Auth.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Framework.Auth.dll": {}
-        }
-      },
       "Framework.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2549,11 +2534,6 @@
         "version.txt"
       ]
     },
-    "Framework.Auth/1.0.0": {
-      "type": "project",
-      "path": "../Framework.Auth/Framework.Auth.csproj",
-      "msbuildProject": "../Framework.Auth/Framework.Auth.csproj"
-    },
     "Framework.Core/1.0.0": {
       "type": "project",
       "path": "../Framework.Core/Framework.Core.csproj",
@@ -2572,7 +2552,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Framework.Auth >= 1.0.0",
       "Framework.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
@@ -2610,9 +2589,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\GutReposite\\Console\\Framework.Auth\\Framework.Auth.csproj": {
-              "projectPath": "C:\\GutReposite\\Console\\Framework.Auth\\Framework.Auth.csproj"
-            },
             "C:\\GutReposite\\Console\\Framework.Core\\Framework.Core.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\Framework.Core\\Framework.Core.csproj"
             }

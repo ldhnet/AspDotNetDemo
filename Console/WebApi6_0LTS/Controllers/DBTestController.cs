@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DH.Models.DbModels;
+using DirectService.Admin;
 using DirectService.Admin.Contracts;
 using DirectService.Test;
 using Framework.Auth;
@@ -59,7 +60,7 @@ namespace WebApi6_0.Controllers
             var aaa2o = model2.MapTo<FooDto>();
 
 
-            var emp = new DataRepository().GetUserByToken(ApiToken) ?? new OperatorInfo();
+            var emp = new DataRepository().GetUserByToken(ApiToken) ?? new Employee();
 
             //var dto = Mapper.Map<Employee>(emp);
 

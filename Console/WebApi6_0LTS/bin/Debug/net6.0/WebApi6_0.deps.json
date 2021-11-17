@@ -11,7 +11,6 @@
           "Autofac.Extensions.DependencyInjection": "7.1.0",
           "DirectService.Admin": "1.0.0",
           "DirectService.Test": "1.0.0",
-          "Framework.Auth": "1.0.0",
           "Framework.Utility": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -655,7 +654,6 @@
       },
       "DH.Models/1.0.0": {
         "dependencies": {
-          "Framework.Auth": "1.0.0",
           "Framework.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
@@ -682,16 +680,6 @@
         },
         "runtime": {
           "DirectService.Test.dll": {}
-        }
-      },
-      "Framework.Auth/1.0.0": {
-        "dependencies": {
-          "Framework.Utility": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0"
-        },
-        "runtime": {
-          "Framework.Auth.dll": {}
         }
       },
       "Framework.Core/1.0.0": {
@@ -1232,11 +1220,6 @@
       "sha512": ""
     },
     "DirectService.Test/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Framework.Auth/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

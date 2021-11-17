@@ -657,7 +657,6 @@
       },
       "DH.Models/1.0.0": {
         "dependencies": {
-          "Framework.Auth": "1.0.0",
           "Framework.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
@@ -665,16 +664,6 @@
         },
         "runtime": {
           "DH.Models.dll": {}
-        }
-      },
-      "Framework.Auth/1.0.0": {
-        "dependencies": {
-          "Framework.Utility": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0"
-        },
-        "runtime": {
-          "Framework.Auth.dll": {}
         }
       },
       "Framework.Core/1.0.0": {
@@ -1149,11 +1138,6 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "DH.Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Framework.Auth/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

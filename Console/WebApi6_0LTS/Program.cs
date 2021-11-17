@@ -1,14 +1,7 @@
 using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using AutoMapper.Configuration;
-using DH.Models.DbModels;
-using DH.Models.MapperConfig;
-using Framework.Auth;
-using Framework.Core.Data;
-using Framework.Core.Dependency;
+using Autofac.Extensions.DependencyInjection;   
 using Framework.Utility.Config;
-using Framework.Utility.Mapping;
-using System.Reflection;
+using Framework.Utility.Mapping; 
 using WebApi6_0.AutofacConfig;
 using WebApi6_0.Filter;
 

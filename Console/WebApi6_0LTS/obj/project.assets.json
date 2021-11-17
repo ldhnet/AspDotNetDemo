@@ -920,7 +920,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Framework.Auth": "1.0.0",
           "Framework.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
@@ -960,21 +959,6 @@
         },
         "runtime": {
           "bin/placeholder/DirectService.Test.dll": {}
-        }
-      },
-      "Framework.Auth/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Framework.Utility": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Framework.Auth.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Framework.Auth.dll": {}
         }
       },
       "Framework.Core/1.0.0": {
@@ -2867,11 +2851,6 @@
       "path": "../DirectService.Test/DirectService.Test.csproj",
       "msbuildProject": "../DirectService.Test/DirectService.Test.csproj"
     },
-    "Framework.Auth/1.0.0": {
-      "type": "project",
-      "path": "../Framework.Auth/Framework.Auth.csproj",
-      "msbuildProject": "../Framework.Auth/Framework.Auth.csproj"
-    },
     "Framework.Core/1.0.0": {
       "type": "project",
       "path": "../Framework.Core/Framework.Core.csproj",
@@ -2893,7 +2872,6 @@
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "DirectService.Admin >= 1.0.0",
       "DirectService.Test >= 1.0.0",
-      "Framework.Auth >= 1.0.0",
       "Framework.Utility >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2934,9 +2912,6 @@
             },
             "C:\\GutReposite\\Console\\DirectService.Test\\DirectService.Test.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\DirectService.Test\\DirectService.Test.csproj"
-            },
-            "C:\\GutReposite\\Console\\Framework.Auth\\Framework.Auth.csproj": {
-              "projectPath": "C:\\GutReposite\\Console\\Framework.Auth\\Framework.Auth.csproj"
             },
             "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj"

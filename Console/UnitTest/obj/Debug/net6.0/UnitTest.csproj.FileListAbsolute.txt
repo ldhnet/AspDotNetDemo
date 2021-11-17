@@ -278,5 +278,3 @@ C:\GutReposite\Console\UnitTest\obj\Debug\net6.0\UnitTest.csproj.CopyComplete
 C:\GutReposite\Console\UnitTest\obj\Debug\net6.0\UnitTest.dll
 C:\GutReposite\Console\UnitTest\obj\Debug\net6.0\ref\UnitTest.dll
 C:\GutReposite\Console\UnitTest\obj\Debug\net6.0\UnitTest.genruntimeconfig.cache
-C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\Framework.Auth.dll
-C:\GutReposite\Console\UnitTest\bin\Debug\net6.0\Framework.Auth.pdb

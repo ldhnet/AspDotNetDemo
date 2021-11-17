@@ -1,4 +1,5 @@
-﻿using Framework.Utility.Config;
+﻿using DH.Models.DbModels;
+using Framework.Utility.Config;
 using Framework.Utility.Helper;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Framework.Auth
 {
     public class DataRepository
     {
-        public OperatorInfo? GetUserByToken(string token)
+        public Employee? GetUserByToken(string token)
         {
             var strSql = new StringBuilder();
             strSql.Append(@"SELECT Id
@@ -25,7 +26,7 @@ namespace Framework.Auth
                             FROM    Employee 
                             WHERE   WebToken = '" + token + "' or ApiToken = '" + token + "'");
 
-            return new SqlHelper(GlobalConfig.SystemConfig.DBConnectionString).GetEntites<OperatorInfo>(strSql.ToString()).FirstOrDefault();
+            return new SqlHelper(GlobalConfig.SystemConfig.DBConnectionString).GetEntites<Employee>(strSql.ToString()).FirstOrDefault();
 
         }
     }

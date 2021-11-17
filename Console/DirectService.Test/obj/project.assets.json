@@ -824,7 +824,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Framework.Auth": "1.0.0",
           "Framework.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
@@ -835,21 +834,6 @@
         },
         "runtime": {
           "bin/placeholder/DH.Models.dll": {}
-        }
-      },
-      "Framework.Auth/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Framework.Utility": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Framework.Auth.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Framework.Auth.dll": {}
         }
       },
       "Framework.Core/1.0.0": {
@@ -2570,11 +2554,6 @@
       "type": "project",
       "path": "../DH.Models/DH.Models.csproj",
       "msbuildProject": "../DH.Models/DH.Models.csproj"
-    },
-    "Framework.Auth/1.0.0": {
-      "type": "project",
-      "path": "../Framework.Auth/Framework.Auth.csproj",
-      "msbuildProject": "../Framework.Auth/Framework.Auth.csproj"
     },
     "Framework.Core/1.0.0": {
       "type": "project",
