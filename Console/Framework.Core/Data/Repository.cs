@@ -339,7 +339,7 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="predicate">数据查询谓语表达式</param>
         /// <returns>符合条件的数据集</returns>
-        public virtual IQueryable<TEntity> QueryAsNoTracking(Expression<Func<TEntity, bool>> predicate)
+        public IQueryable<TEntity> QueryAsNoTracking(Expression<Func<TEntity, bool>> predicate)
         {
             IQueryable<TEntity> query = _dbSet.AsQueryable().AsNoTracking();
             if (predicate == null)
@@ -354,7 +354,7 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
         /// <returns>符合条件的数据集</returns>
-        public virtual IQueryable<TEntity> QueryAsNoTracking(params Expression<Func<TEntity, object>>[] includePropertySelectors)
+        public IQueryable<TEntity> QueryAsNoTracking(params Expression<Func<TEntity, object>>[] includePropertySelectors)
         {
             return Query(includePropertySelectors).AsNoTracking();
         }
@@ -364,7 +364,7 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="predicate">数据过滤表达式</param>
         /// <returns>符合条件的数据集</returns>
-        public virtual IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> predicate)
+        public IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> predicate)
         {
             IQueryable<TEntity> query = _dbSet.AsQueryable();
             if (predicate == null)
@@ -378,7 +378,7 @@ namespace Framework.Core.Data
         /// </summary>
         /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
         /// <returns>符合条件的数据集</returns>
-        public virtual IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors)
+        public IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors)
         {
             IQueryable<TEntity> query = _dbSet.AsQueryable();
             if (includePropertySelectors == null || includePropertySelectors.Length == 0)

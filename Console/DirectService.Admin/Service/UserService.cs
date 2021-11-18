@@ -46,8 +46,19 @@ namespace DirectService.Admin.Service
         public IQueryable<Employee> GetAll()
         {
             //var aa= _userService.GetInclude(c => c.EmployeeLogins).Where(c => true);
-              
-            var aa = _userService.GetIncludes(new string[] { "EmployeeLogins", "EmployeeDetail" }).Where(c => true);
+
+            var aa3 = _userService.GetByKey(1);
+
+            Expression<Func<Employee,object>> expr1 = c => c.EmployeeLogins;
+
+            Expression<Func<Employee, object>> expr2 = c => c.EmployeeDetail;
+
+            var expr = new Expression<Func<Employee, object>>[] { c => c.EmployeeLogins, c => c.EmployeeDetail };
+
+
+            var aa2 = _userService.QueryAsNoTracking(expr);
+
+            var aa = _userService.GetIncludes(new string[] { "EmployeeLogins", "EmployeeDetail" });
             return aa;
         }
          

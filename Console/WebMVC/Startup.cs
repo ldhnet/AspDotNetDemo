@@ -2,6 +2,7 @@ using DH.Models.DbModels;
 using DirectService.Admin.Contracts;
 using DirectService.Admin.Service;
 using Framework.Core.Data;
+using Framework.Utility;
 using Framework.Utility.Config;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -242,7 +243,7 @@ namespace WebMVC
             app.UseAuthentication();
             app.UseAuthorization();
 
-
+            app.UseShardResource();
             app.UseMiddlewares();
 
             app.UseEndpoints(endpoints =>

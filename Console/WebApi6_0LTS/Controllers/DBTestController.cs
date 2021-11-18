@@ -52,8 +52,8 @@ namespace WebApi6_0.Controllers
 
             var aaa8 = _userService.Find("1001");
 
-            var aaa9 = aaa8.EmployeeDetail;
-            var aaa10 = aaa8.EmployeeLogins;
+            //var aaa9 = aaa8.EmployeeDetail;
+            //var aaa10 = aaa8.EmployeeLogins;
 
 
             var aaa77 = _userService.GetAllList().ToList();
