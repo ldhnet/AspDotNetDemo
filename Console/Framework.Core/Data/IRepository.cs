@@ -165,7 +165,7 @@ namespace Framework.Core.Data
         /// <returns>符合条件的数据集</returns>
         IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors);
 
-
+          
         /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>

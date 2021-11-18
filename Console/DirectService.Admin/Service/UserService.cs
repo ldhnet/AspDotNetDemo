@@ -2,6 +2,7 @@
 using DirectService.Admin.Contracts; 
 using Framework.Core.Data;
 using Framework.Utility;
+using System.Linq.Expressions;
 
 namespace DirectService.Admin.Service
 {
@@ -37,13 +38,18 @@ namespace DirectService.Admin.Service
             token = token.Trim();
             return _userService.EntitiesAsNoTracking.FirstOrDefault(c => c.ApiToken == token);
         }
-        
 
+        public IQueryable<Employee> GetAllList()
+        {
+            return _userService.Entities;
+        }
         public IQueryable<Employee> GetAll()
         {
-            return _userService.EntitiesAsNoTracking;
+            //var aa= _userService.GetInclude(c => c.EmployeeLogins).Where(c => true);
+              
+            var aa = _userService.GetIncludes(new string[] { "EmployeeLogins", "EmployeeDetail" }).Where(c => true);
+            return aa;
         }
-
-
+         
     }
 }

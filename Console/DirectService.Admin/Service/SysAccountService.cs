@@ -52,18 +52,7 @@ namespace DirectService.Admin.Service
 
 
         public BaseResponse BeginTransactionTest()
-        {
-
-            SysAccount model = new SysAccount
-            {
-                UserId = Guid.NewGuid().ToString(),
-                AccountName = "admin",
-                AccountNo = "1001",
-                CreateBy = "admin",
-                CreateTime = DateTime.Now
-            };
-
-
+        { 
             Employee model2 = new Employee
             {
                 Name = "admin1" + new Random().Next(1),
@@ -72,18 +61,32 @@ namespace DirectService.Admin.Service
                 Department = 1,
                 Phone = "15225074031",
                 EmployeeSerialNumber = "1001",
+                WebToken = "a5f3d50ab2084821953d4d45925a042a",
+                ApiToken = "a5f3d50ab2084821953d4d45925a042a",
+                ExpirationDateUtc = DateTime.Now.AddDays(30)
             };
+
+            EmployeeDetail model = new EmployeeDetail
+            { 
+                EnglishName = "lee", 
+                CreateTime = DateTime.Now
+            };
+            EmployeeLogin login = new EmployeeLogin
+            { 
+                CreateTime = DateTime.Now
+            };
+            model2.EmployeeDetail = model;
+            model2.EmployeeLogins.Add(login);
+
+            var rest55 = _userRepository.Insert(model2);
+
 
             //1.开启事务
             _sysAccountRepository.UnitOfWork.BeginTransaction();
-
-
-            var aaa33 = _sysAccountRepository.Insert(model);
+             
 
             var aaa55 = _userRepository.Insert(model2);
-
-            _sysAccountRepository.UnitOfWork.Rollback();
-
+             
 
             SysAccount model5 = new SysAccount
             {

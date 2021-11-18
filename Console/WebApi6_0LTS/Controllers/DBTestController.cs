@@ -49,6 +49,23 @@ namespace WebApi6_0.Controllers
 
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
 
+
+            var aaa8 = _userService.Find("1001");
+
+            var aaa9 = aaa8.EmployeeDetail;
+            var aaa10 = aaa8.EmployeeLogins;
+
+
+            var aaa77 = _userService.GetAllList().ToList();
+
+
+            var aaa775 = aaa77.FirstOrDefault().EmployeeDetail;
+
+            var aaa776 = aaa77.FirstOrDefault().EmployeeLogins;
+
+            var aaa6 = _userService.GetAll().ToList();
+
+
             var cce = ShardResource.Hello;
 
             string key = new AesHelper().Key;
@@ -82,14 +99,11 @@ namespace WebApi6_0.Controllers
 
             //var dto = Mapper.Map<Employee>(emp);
 
-           //var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
+           var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
  
              
             var aaa2 = _SysAccountContract.GetSysAccount("admin1");
-             
-            var aaa6 = _userService.GetAll().ToList();
-
-             
+              
             var aaa = _SysAccountContract.GetSysAccountInfo("admin");
             //return $"{aaa?.AccountName}{aaa?.AccountNo}";
 

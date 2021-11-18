@@ -55,7 +55,7 @@ namespace Framework.Utility.Mapping
                 assemblys = Assembly.GetEntryAssembly()?
                     .GetReferencedAssemblies()
                     .Select(Assembly.Load)
-                    .Where(c => c.FullName.Contains("Framework.Auth", StringComparison.OrdinalIgnoreCase))
+                    .Where(c => c.FullName.Contains("DirectService.", StringComparison.OrdinalIgnoreCase))
                     .ToArray();
             } 
             factory.AddAssemblys(assemblys);

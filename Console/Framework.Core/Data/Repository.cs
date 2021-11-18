@@ -392,7 +392,7 @@ namespace Framework.Core.Data
             }
             return query;
         }
-
+     
         /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>

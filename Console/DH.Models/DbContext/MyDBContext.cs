@@ -11,6 +11,7 @@ namespace DH.Models.DbModels
 
         }
         public DbSet<Employee> Employee { get; set; }
+        public DbSet<EmployeeDetail> EmployeeDetail { get; set; }
         public DbSet<EmployeeLogin> EmployeeLogin { get; set; }
         public DbSet<SysAccount> SysAccount { get; set; }
         public DbSet<SysAccountTrans> SysAccountTrans { get; set; }
@@ -22,14 +23,50 @@ namespace DH.Models.DbModels
             {
 
             }
+            optionsBuilder.UseLazyLoadingProxies();//启用懒加载
             optionsBuilder.UseSqlServer(_connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Employee>().ToTable("Employee");
-            modelBuilder.Entity<EmployeeLogin>().ToTable("EmployeeLogin");
+        { 
+            modelBuilder.Entity<Employee>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PRIMARY");
 
+                entity.ToTable("Employee");
+                  
+                entity.Property(e => e.Name).IsRequired().HasColumnType("varchar(50)"); 
+                entity.Property(e => e.BankCard).IsRequired().HasColumnType("varchar(50)"); 
+                entity.Property(e => e.EmployeeName).HasColumnType("varchar(50)"); 
+                entity.Property(e => e.EmployeeSerialNumber).HasColumnType("varchar(50)"); 
+                entity.Property(e => e.Department).HasColumnType("int"); 
+                entity.Property(e => e.Phone).HasColumnType("varchar(50)");
+                entity.Property(e => e.WebToken).HasColumnType("varchar(50)");
+                entity.Property(e => e.ApiToken).HasColumnType("varchar(50)"); 
+                entity.Property(e => e.ExpirationDateUtc).HasColumnType("datetime"); 
+            });
+            modelBuilder.Entity<EmployeeDetail>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+                entity.ToTable("EmployeeDetail");
+
+                entity.Property(e => e.EmployeeId).IsRequired().HasColumnType("int");
+                entity.Property(e => e.EnglishName).HasColumnType("varchar(50)");
+                entity.Property(e => e.CreateTime).HasColumnType("datetime");
+
+                entity.HasOne(ud => ud.Employee).WithOne(u => u.EmployeeDetail).HasForeignKey<EmployeeDetail>(ud => ud.EmployeeId).IsRequired();
+                 
+            });
+
+            modelBuilder.Entity<EmployeeLogin>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PRIMARY"); 
+                entity.ToTable("EmployeeLogin"); 
+                entity.Property(e => e.EmployeeId).IsRequired().HasColumnType("int"); 
+                entity.Property(e => e.CreateTime).HasColumnType("datetime");                 
+                entity.HasOne(ul => ul.Employee).WithMany(u => u.EmployeeLogins).HasForeignKey(ul => ul.EmployeeId).IsRequired();
+            }); 
 
             modelBuilder.Entity<SysAccount>(entity =>
             {
