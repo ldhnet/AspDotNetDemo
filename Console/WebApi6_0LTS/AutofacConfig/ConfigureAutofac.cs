@@ -1,7 +1,7 @@
-﻿using Autofac;
-using DH.Models.Context;
+﻿using Autofac; 
 using Framework.Core.Data;
 using Framework.Core.Dependency;
+using Framework.EF.Context;
 using System.Reflection;
 
 namespace WebApi6_0.AutofacConfig

@@ -24,14 +24,12 @@ C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.IdentityModel.Pro
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\MySqlConnector.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\NLog.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\NPOI.OOXML.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\NPOI.OpenXml4Net.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\NPOI.OpenXmlFormats.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\NPOI.dll
-C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\ICSharpCode.SharpZipLib.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -95,3 +93,5 @@ C:\GutReposite\Console\WebApi6_0LTS\obj\Debug\net6.0\WebApi6_0.MvcApplicationPar
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Castle.Core.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.EF.dll
+C:\GutReposite\Console\WebApi6_0LTS\bin\Debug\net6.0\Framework.EF.pdb

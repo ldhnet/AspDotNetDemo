@@ -23,6 +23,7 @@
     <ProjectReference Include="..\DH.Models\DH.Models.csproj" />
     <ProjectReference Include="..\DirectService.Admin\DirectService.Admin.csproj" />
     <ProjectReference Include="..\DirectService.Test\DirectService.Test.csproj" />
+    <ProjectReference Include="..\Framework.EF\Framework.EF.csproj" />
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
     <ProjectReference Include="..\LangResources\LangResources.csproj" />
   </ItemGroup>

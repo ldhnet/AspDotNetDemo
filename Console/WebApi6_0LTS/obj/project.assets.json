@@ -543,15 +543,6 @@
           }
         }
       },
-      "MySqlConnector/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/MySqlConnector.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {}
-        }
-      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -638,20 +629,6 @@
           "lib/netstandard2.1/NPOI.OpenXml4Net.dll": {},
           "lib/netstandard2.1/NPOI.OpenXmlFormats.dll": {},
           "lib/netstandard2.1/NPOI.dll": {}
-        }
-      },
-      "Pomelo.EntityFrameworkCore.MySql/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "[6.0.0, 7.0.0)",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "MySqlConnector": "2.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
       "Portable.BouncyCastle/1.8.6": {
@@ -2269,11 +2246,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Framework.Core": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0",
-          "Microsoft.EntityFrameworkCore.Proxies": "6.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
-          "Pomelo.EntityFrameworkCore.MySql": "6.0.0"
+          "Framework.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DH.Models.dll": {}
@@ -2323,6 +2296,22 @@
         },
         "runtime": {
           "bin/placeholder/Framework.Core.dll": {}
+        }
+      },
+      "Framework.EF/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DH.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.Proxies": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Framework.EF.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Framework.EF.dll": {}
         }
       },
       "Framework.Utility/1.0.0": {
@@ -3311,35 +3300,6 @@
         "version.txt"
       ]
     },
-    "MySqlConnector/2.0.0": {
-      "sha512": "EY0KXqQas+QvdZQU0NPkqBSfJitWAl8IUCg0v/Qn0P7f/KApJTFJFm8czYWoDPyewUjPHrAnE/cSYzzSFGc8Ng==",
-      "type": "package",
-      "path": "mysqlconnector/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net45/MySqlConnector.dll",
-        "lib/net45/MySqlConnector.xml",
-        "lib/net461/MySqlConnector.dll",
-        "lib/net461/MySqlConnector.xml",
-        "lib/net471/MySqlConnector.dll",
-        "lib/net471/MySqlConnector.xml",
-        "lib/net5.0/MySqlConnector.dll",
-        "lib/net5.0/MySqlConnector.xml",
-        "lib/net6.0/MySqlConnector.dll",
-        "lib/net6.0/MySqlConnector.xml",
-        "lib/netcoreapp3.1/MySqlConnector.dll",
-        "lib/netcoreapp3.1/MySqlConnector.xml",
-        "lib/netstandard2.0/MySqlConnector.dll",
-        "lib/netstandard2.0/MySqlConnector.xml",
-        "lib/netstandard2.1/MySqlConnector.dll",
-        "lib/netstandard2.1/MySqlConnector.xml",
-        "logo.png",
-        "mysqlconnector.2.0.0.nupkg.sha512",
-        "mysqlconnector.nuspec"
-      ]
-    },
     "NETStandard.Library/1.6.1": {
       "sha512": "WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "type": "package",
@@ -3445,20 +3405,6 @@
         "logo/60_60.jpg",
         "npoi.2.5.4.nupkg.sha512",
         "npoi.nuspec"
-      ]
-    },
-    "Pomelo.EntityFrameworkCore.MySql/6.0.0": {
-      "sha512": "iWloXFjpN6BllZA9oPqZTW9mNtFV5Q6DFv0WwFyh1IuOJ71btS3ifTwpLmaFXSlXzuEU9o7Rul0dU0WiwkOq0Q==",
-      "type": "package",
-      "path": "pomelo.entityframeworkcore.mysql/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll",
-        "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.xml",
-        "pomelo.entityframeworkcore.mysql.6.0.0.nupkg.sha512",
-        "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.8.6": {
@@ -7828,6 +7774,11 @@
       "path": "../Framework.Core/Framework.Core.csproj",
       "msbuildProject": "../Framework.Core/Framework.Core.csproj"
     },
+    "Framework.EF/1.0.0": {
+      "type": "project",
+      "path": "../Framework.EF/Framework.EF.csproj",
+      "msbuildProject": "../Framework.EF/Framework.EF.csproj"
+    },
     "Framework.Utility/1.0.0": {
       "type": "project",
       "path": "../Framework.Utility/Framework.Utility.csproj",
@@ -7844,6 +7795,7 @@
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "DirectService.Admin >= 1.0.0",
       "DirectService.Test >= 1.0.0",
+      "Framework.EF >= 1.0.0",
       "Framework.Utility >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -7884,6 +7836,9 @@
             },
             "C:\\GutReposite\\Console\\DirectService.Test\\DirectService.Test.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\DirectService.Test\\DirectService.Test.csproj"
+            },
+            "C:\\GutReposite\\Console\\Framework.EF\\Framework.EF.csproj": {
+              "projectPath": "C:\\GutReposite\\Console\\Framework.EF\\Framework.EF.csproj"
             },
             "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj": {
               "projectPath": "C:\\GutReposite\\Console\\Framework.Utility\\Framework.Utility.csproj"

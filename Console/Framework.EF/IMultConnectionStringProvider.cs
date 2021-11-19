@@ -1,4 +1,4 @@
-﻿namespace DH.Models
+﻿namespace Framework.EF
 {
     public interface IMultConnectionStringProvider
     {

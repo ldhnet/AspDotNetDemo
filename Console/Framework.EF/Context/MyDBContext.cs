@@ -2,7 +2,7 @@
 using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
 
-namespace DH.Models.Context
+namespace Framework.EF.Context
 {
     public partial class MyDBContext : DbContext
     {

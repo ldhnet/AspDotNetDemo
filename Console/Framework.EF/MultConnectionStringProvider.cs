@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace DH.Models
+namespace Framework.EF
 {
     public class MultConnectionStringProvider : IMultConnectionStringProvider
     {
