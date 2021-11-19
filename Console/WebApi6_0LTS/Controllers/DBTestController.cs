@@ -1,14 +1,11 @@
-﻿using AutoMapper;
-using DH.Models.DbModels;
-using DirectService.Admin;
-using DirectService.Admin.Contracts;
-using DirectService.Admin.Dto;
-using DirectService.Test;
+﻿using DH.Contracts;
+using DH.Models.Dtos;
+using DH.Models.Entities; 
+using DirectService.Admin.Contracts;  
 using Framework.Auth;
 using Framework.Core.Data;
 using Framework.Utility;
-using Framework.Utility.Config;
-using Framework.Utility.Extensions;
+using Framework.Utility.Config; 
 using Framework.Utility.Helper;
 using Framework.Utility.Mapping;
 using Framework.Utility.Security;
@@ -50,6 +47,25 @@ namespace WebApi6_0.Controllers
 
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
 
+            var model2 = new Foo()
+            {
+                Id = 1,
+                Name = "test",
+                Money = 15.0m,
+                CreateBy = "ldh"
+            };
+            //var aaadto= Mapper.Map<FooDto>(model2);
+
+
+
+            var aaa2o = model2.MapTo<FooDto>();
+
+            aaa2o.Name = "max";
+
+
+            var aaa2o3 = aaa2o.MapTo<Foo>();
+
+
 
             var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
 
@@ -87,16 +103,7 @@ namespace WebApi6_0.Controllers
             var bbbss = aes.Decrypt(aaass);
 
 
-            var model2 = new Foo()
-            {
-                Id = 1,
-                Name = "test",
-                Money = 15.0m,
-                CreateBy ="ldh"
-            };
-            //var aaadto= Mapper.Map<FooDto>(model2);
-
-            var aaa2o = model2.MapTo<FooDto>();
+         
 
 
             var emp = new DataRepository().GetUserByToken(ApiToken) ?? new Employee();

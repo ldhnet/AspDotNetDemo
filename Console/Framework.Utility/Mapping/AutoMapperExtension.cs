@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.Configuration;
+using Framework.Utility.Extensions;
+using Framework.Utility.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -55,12 +57,13 @@ namespace Framework.Utility.Mapping
                 assemblys = Assembly.GetEntryAssembly()?
                     .GetReferencedAssemblies()
                     .Select(Assembly.Load)
-                    .Where(c => c.FullName.Contains("DirectService.", StringComparison.OrdinalIgnoreCase))
+                    .Where(c => c.FullName.Contains("DH.Models", StringComparison.OrdinalIgnoreCase))
                     .ToArray();
             } 
             factory.AddAssemblys(assemblys);
 
             applicationBuilder.UseStateAutoMapper();
-        }
+        } 
+      
     }
 }

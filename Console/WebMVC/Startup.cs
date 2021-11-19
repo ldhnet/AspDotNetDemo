@@ -1,4 +1,5 @@
-using DH.Models.DbModels;
+using DH.Models.Context;
+using DH.Models.Entities;
 using DirectService.Admin.Contracts;
 using DirectService.Admin.Service;
 using Framework.Core.Data;

@@ -1,6 +1,6 @@
-﻿using DH.Models.DbModels;
-using DirectService.Admin.Contracts;
-using DirectService.Admin.Dto;
+﻿using DH.Models.Dtos;
+using DH.Models.Entities;
+using DirectService.Admin.Contracts; 
 using Framework.Core.Data;
 using Framework.Utility;
 using Framework.Utility.Mapping;

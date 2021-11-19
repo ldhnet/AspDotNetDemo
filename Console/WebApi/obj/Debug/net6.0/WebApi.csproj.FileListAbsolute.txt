@@ -204,4 +204,3 @@ C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.dll
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
-C:\GutReposite\Console\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache

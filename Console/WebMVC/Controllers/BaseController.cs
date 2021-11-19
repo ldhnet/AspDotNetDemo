@@ -1,4 +1,4 @@
-﻿using DH.Models.DbModels;
+﻿using DH.Models.Entities;
 using DirectService.Admin.Contracts;
 using Framework.Utility.Attributes;
 using Framework.Utility.Config;

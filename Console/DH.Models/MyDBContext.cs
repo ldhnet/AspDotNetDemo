@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using System.Data;
 using System.Reflection;
 
-namespace DH.Models.DbModels
+namespace DH.Models.Context
 {
     public partial class MyDBContext : IUnitOfWork
     {

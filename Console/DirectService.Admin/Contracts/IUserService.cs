@@ -1,5 +1,5 @@
-﻿using DH.Models.DbModels;
-using DirectService.Admin.Dto;
+﻿using DH.Models.Dtos;
+using DH.Models.Entities; 
 using Framework.Core.Dependency;
 using Framework.Utility;
 

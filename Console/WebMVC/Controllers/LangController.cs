@@ -1,4 +1,4 @@
-﻿using DH.Models.DbModels;
+﻿using DH.Models.Entities;
 using Framework.Utility;
 using Microsoft.AspNetCore.Mvc;
 

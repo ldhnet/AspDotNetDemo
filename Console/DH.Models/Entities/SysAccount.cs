@@ -1,4 +1,4 @@
-﻿namespace DH.Models.DbModels
+﻿namespace DH.Models.Entities
 {
     public partial class SysAccount
     {

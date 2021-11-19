@@ -1,4 +1,4 @@
-﻿using DH.Models.DbModels;
+﻿using DH.Models.Entities;
 using Framework.Utility.Config;
 using Framework.Utility.Helper;
 using System;

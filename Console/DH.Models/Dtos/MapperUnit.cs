@@ -1,12 +1,8 @@
 ﻿using Framework.Utility.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DirectService.Admin
+namespace DH.Contracts
 {
+    [MapperInit(sourceType: typeof(FooDto), targetType: typeof(Foo))]
     public class Foo
     {
         public long Id { get; set; }
@@ -20,5 +16,6 @@ namespace DirectService.Admin
         public long Id { get; set; }
         public string Name { get; set; }
         public decimal Money { get; set; }
+        public string CreateBy { get; set; }
     }
 }

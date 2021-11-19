@@ -1,4 +1,4 @@
-﻿using DH.Models.DbModels;
+﻿using DH.Models.Entities;
 using Framework.Core.Data;
 using Framework.Utility.Mapping;
 using System;
@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DirectService.Admin.Dto
+namespace DH.Models.Dtos
 {
     [MapperInit(sourceType: typeof(Employee), targetType: typeof(EmployeeDto))]
+    //[MapFrom(typeof(Employee))]
     public class EmployeeDto: IAddDto, IEditDto<int>
     {
         public int Id { get; set; }

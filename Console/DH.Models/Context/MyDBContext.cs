@@ -1,7 +1,8 @@
-﻿using Framework.Utility.Config;
+﻿using DH.Models.Entities;
+using Framework.Utility.Config;
 using Microsoft.EntityFrameworkCore;
 
-namespace DH.Models.DbModels
+namespace DH.Models.Context
 {
     public partial class MyDBContext : DbContext
     {

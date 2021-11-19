@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using DH.Models.DbModels;
+using DH.Models.Context;
 using Framework.Core.Data;
 using Framework.Core.Dependency;
 using System.Reflection;
