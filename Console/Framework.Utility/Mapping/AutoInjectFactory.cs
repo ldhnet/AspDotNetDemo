@@ -16,8 +16,8 @@ namespace Framework.Utility.Mapping
             foreach (var assembly in assemblys)
             {
                 var atributes = assembly.GetTypes()
-                    .Where(_type => _type.GetCustomAttribute<AutoInjectAttribute>() != null)
-                    .Select(_type => _type.GetCustomAttribute<AutoInjectAttribute>());
+                    .Where(_type => _type.GetCustomAttribute<MapperInitAttribute>() != null)
+                    .Select(_type => _type.GetCustomAttribute<MapperInitAttribute>());
 
                 foreach (var atribute in atributes)
                 {

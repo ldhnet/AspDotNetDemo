@@ -80,7 +80,12 @@
       "ProjectGuid": "d044a96c-858d-4462-8bb4-a4feec314ace",
       "DisplayName": "DirectService.Test",
       "ColorIndex": 14
+    },
+    "f0a03362-e959-499d-a6d5-7e6b0f231744": {
+      "ProjectGuid": "f0a03362-e959-499d-a6d5-7e6b0f231744",
+      "DisplayName": "Framework.Auth",
+      "ColorIndex": 15
     }
   },
-  "NextColorIndex": 15
+  "NextColorIndex": 0
 }

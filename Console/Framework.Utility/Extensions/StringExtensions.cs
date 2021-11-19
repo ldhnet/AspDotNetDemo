@@ -244,6 +244,18 @@ namespace Framework.Utility.Extensions
             }
             return encoding.GetBytes(value);
         }
+        /// <summary>
+        /// 在指定的输入字符串中匹配并替换符合指定正则表达式的子串
+        /// </summary>
+        public static string ReplaceRegex(this string value, string pattern, string replacement)
+        {
+            if (value == null)
+            {
+                return null;
+            }
+
+            return Regex.Replace(value, pattern, replacement);
+        }
 
         /// <summary>
         /// 将<see cref="byte"/>[]数组转换为字符串，默认编码为<see cref="Encoding.UTF8"/>

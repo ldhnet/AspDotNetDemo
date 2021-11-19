@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Framework.Utility.Mapping
 {
-    public sealed class AutoInjectAttribute : Attribute
+    public sealed class MapperInitAttribute : Attribute
     {
         public Type SourceType { get; }
         public Type TargetType { get; }
 
-        public AutoInjectAttribute(Type sourceType, Type targetType)
+        public MapperInitAttribute(Type sourceType, Type targetType)
         {
             SourceType = sourceType;
             TargetType = targetType;

@@ -1,4 +1,5 @@
 ﻿using DH.Models.DbModels;
+using DirectService.Admin.Dto;
 using Framework.Core.Dependency;
 using Framework.Utility;
 
@@ -8,6 +9,8 @@ namespace DirectService.Admin.Contracts
     {
         BaseResponse CreateInfo(Employee model);
         Employee Find(string employeeSerialNumber);
+        BaseResponse UpdateEmployee(params EmployeeDto[] dtos);
+        BaseResponse UpdateEmployee(Employee Employee);
         BaseResponse<Employee> FindEmployee(string employeeSerialNumber);
         Employee? GetUserByToken(string token);
 

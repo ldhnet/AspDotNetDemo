@@ -2,6 +2,7 @@
 using DH.Models.DbModels;
 using DirectService.Admin;
 using DirectService.Admin.Contracts;
+using DirectService.Admin.Dto;
 using DirectService.Test;
 using Framework.Auth;
 using Framework.Core.Data;
@@ -50,11 +51,14 @@ namespace WebApi6_0.Controllers
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
 
 
+            var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
+
+            var aaa9 = _userService.UpdateEmployee(new Employee());
+             
             var aaa8 = _userService.Find("1001");
 
             //var aaa9 = aaa8.EmployeeDetail;
-            //var aaa10 = aaa8.EmployeeLogins;
-
+            //var aaa10 = aaa8.EmployeeLogins; 
 
             var aaa77 = _userService.GetAllList().ToList();
 

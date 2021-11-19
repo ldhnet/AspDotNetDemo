@@ -14,7 +14,7 @@ namespace DirectService.Admin
         public decimal Money { get; set; }
         public string CreateBy { get; set; }
     }
-    [AutoInject(sourceType: typeof(Foo), targetType: typeof(FooDto))]
+    [MapperInit(sourceType: typeof(Foo), targetType: typeof(FooDto))]
     public class FooDto
     {
         public long Id { get; set; }

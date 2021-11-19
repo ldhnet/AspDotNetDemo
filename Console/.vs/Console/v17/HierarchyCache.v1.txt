@@ -1,196 +1,555 @@
 ﻿++解决方案“Console”‎(13 个项目，共 13 个)
 i:{00000000-0000-0000-0000-000000000000}:Console.sln
-++LangResources
-i:{00000000-0000-0000-0000-000000000000}:LangResources
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\langresources\bin\debug\net6.0\langresources.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\langresources\bin\debug\net6.0\langresources.dll
+++WebApi6_0
+i:{00000000-0000-0000-0000-000000000000}:WebApi6_0
+++Connected Services 
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4634
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4633
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4635
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4789
+++Properties
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\properties\
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\properties\
 ++依赖项
-i:{ee027640-fb32-4919-96ec-643be376591c}:>2470
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>2665
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:>2764
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:>3278
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:>3188
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:>2962
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>2963
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4446
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>2961
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4436
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>3189
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4627
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4784
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>3956
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>2667
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>3955
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:>2898
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>3280
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:>2964
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:>3281
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:>2666
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>2668
+i:{ee027640-fb32-4919-96ec-643be376591c}:>1413
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>3077
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4632
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4788
 ++包
-i:{ee027640-fb32-4919-96ec-643be376591c}:包
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:包
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:包
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:包
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:包
 i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:包
 i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:包
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:包
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:包
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:包
 i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:包
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:包
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:包
+i:{ee027640-fb32-4919-96ec-643be376591c}:包
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:包
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:包
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:包
-++Microsoft.Extensions.Localization.Abstractions (6.0.0)
-i:{ee027640-fb32-4919-96ec-643be376591c}:>4813
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4819
+++Autofac.Extensions.DependencyInjection (7.1.0)
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4999
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4976
+++Swashbuckle.AspNetCore (6.2.3)
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>5000
 ++分析器
-i:{ee027640-fb32-4919-96ec-643be376591c}:分析器
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:分析器
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:分析器
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:分析器
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:分析器
 i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:分析器
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:分析器
 i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:分析器
 i:{d044a96c-858d-4462-8bb4-a4feec314ace}:分析器
 i:{c43f4935-5735-493e-a870-2d945c55b31b}:分析器
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:分析器
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:分析器
 i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:分析器
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:分析器
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:分析器
+i:{ee027640-fb32-4919-96ec-643be376591c}:分析器
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:分析器
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:分析器
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:分析器
 ++框架
-i:{ee027640-fb32-4919-96ec-643be376591c}:框架
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:框架
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:框架
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:框架
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:框架
 i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:框架
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:框架
 i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:框架
 i:{d044a96c-858d-4462-8bb4-a4feec314ace}:框架
 i:{c43f4935-5735-493e-a870-2d945c55b31b}:框架
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:框架
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:框架
 i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:框架
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:框架
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:框架
+i:{ee027640-fb32-4919-96ec-643be376591c}:框架
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:框架
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:框架
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:框架
-++Microsoft.NETCore.App
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\microsoft.netcore.app
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\microsoft.netcore.app
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\microsoft.netcore.app
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\microsoft.netcore.app
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\microsoft.netcore.app
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\microsoft.netcore.app
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\microsoft.netcore.app
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\microsoft.netcore.app
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\microsoft.netcore.app
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\microsoft.netcore.app
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\microsoft.netcore.app
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\microsoft.netcore.app
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\microsoft.netcore.app
-++Resources
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\
-++LangResource.en-US.resx
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\langresource.en-us.resx
-++LangResource.zh-CN.resx
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\langresource.zh-cn.resx
-++Resources.cs
-++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-++Microsoft.CodeAnalysis.NetAnalyzers
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-++System.Text.Json.SourceGeneration
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-++Framework.Utility
-i:{00000000-0000-0000-0000-000000000000}:Framework.Utility
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
-++AutoMapper (8.0.0)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4818
-++Hashids.net (1.4.1)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4821
-++Microsoft.Extensions.Caching.Memory (6.0.0)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4822
-++Microsoft.Extensions.DependencyInjection (6.0.0)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4817
-++Newtonsoft.Json (13.0.1)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4812
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4947
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4991
-++NLog (4.7.12)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4820
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4993
-++NPOI (2.5.4)
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4815
 ++项目
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:项目
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:项目
 i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:项目
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:项目
 i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:项目
 i:{d044a96c-858d-4462-8bb4-a4feec314ace}:项目
 i:{c43f4935-5735-493e-a870-2d945c55b31b}:项目
 i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:项目
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:项目
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:项目
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:项目
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:项目
+++AutofacConfig
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\autofacconfig\
+++Controllers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\
+++DBTestController.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\dbtestcontroller.cs
+++DemoController.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\democontroller.cs
+++WeatherForecastController.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\weatherforecastcontroller.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\weatherforecastcontroller.cs
+++Filter
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\filter\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\
+++AuthorizeFilterAttribute.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\authorizefilterattribute.cs
+++Models
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\models\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\
+++InputDto
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\models\inputdto\
+++DemoDto.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\models\inputdto\demodto.cs
+++webroot
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\webroot\
+++appsettings.json
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\appsettings.json
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\appsettings.json
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\appsettings.json
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\appsettings.json
+++Dockerfile
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\dockerfile
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\dockerfile
+++Program.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\program.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\program.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\program.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\program.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\program.cs
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\program.cs
+++WeatherForecast.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\weatherforecast.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\weatherforecast.cs
+++未发现任何服务依赖项
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4637
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4638
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4636
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4790
+++launchSettings.json
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\properties\launchsettings.json
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\launchsettings.json
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\launchsettings.json
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\properties\launchsettings.json
+++Microsoft.AspNetCore.Analyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.8\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.8\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\microsoft.aspnetcore.app
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\microsoft.aspnetcore.app
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\microsoft.aspnetcore.app
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\microsoft.netcore.app
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\microsoft.netcore.app
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\microsoft.netcore.app
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\microsoft.netcore.app
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\microsoft.netcore.app
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\microsoft.netcore.app
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\microsoft.netcore.app
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\microsoft.netcore.app
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\microsoft.netcore.app
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\microsoft.netcore.app
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\microsoft.netcore.app
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\microsoft.netcore.app
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\microsoft.netcore.app
+++DirectService.Admin
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\directservice.admin\bin\debug\net6.0\directservice.admin.dll
+i:{c5ebb715-ef69-436b-bf42-d71915b6d0a7}:DirectService.Admin
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\directservice.admin\bin\debug\net6.0\directservice.admin.dll
+++DirectService.Test
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\directservice.test\bin\debug\net6.0\directservice.test.dll
+i:{c5ebb715-ef69-436b-bf42-d71915b6d0a7}:DirectService.Test
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\directservice.test\bin\debug\net6.0\directservice.test.dll
+++ConfigureAutofac.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\autofacconfig\configureautofac.cs
+++appsettings.Development.json
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\appsettings.development.json
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\appsettings.development.json
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\appsettings.development.json
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\appsettings.development.json
+++ConsoleDBTest
+i:{00000000-0000-0000-0000-000000000000}:ConsoleDBTest
+++Context
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\context\
+++AdoInsertTest.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\adoinserttest.cs
+++DefaultDbContext.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\defaultdbcontext.cs
+++Employee.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employee.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\employee.cs
+++EmployeeExtend.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employeeextend.cs
+++EmployeeLogin.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employeelogin.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\employeelogin.cs
+++ExtensionHelper.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\extensionhelper.cs
+++sdmapHelper.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\sdmaphelper.cs
+++CreateDatabaseIfNotExistsWithSeed.cs
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\context\createdatabaseifnotexistswithseed.cs
+++EntityFrameworkCore.DataEncryption (3.0.0)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4839
+++Microsoft.EntityFrameworkCore (5.0.8)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4825
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4829
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.8)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4828
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4831
+++Microsoft.EntityFrameworkCore.Tools (5.0.8)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4836
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4842
+++System.Configuration.ConfigurationManager (5.0.0)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4830
+++System.Data.SqlClient (4.8.2)
+i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4833
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>5692
+++WebApi
+i:{00000000-0000-0000-0000-000000000000}:WebApi
 ++Attributes
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\
 i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\attributes\
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\attributes\
-++ColumnExportFormatAttribute.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\columnexportformatattribute.cs
-++MiddlewareRegisterAttribute.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\middlewareregisterattribute.cs
-++MiddlewareRegisterInfo.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\middlewareregisterinfo.cs
-++SkipLoginValidateAttribute.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\skiploginvalidateattribute.cs
+++Code
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\
+++Extension
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\extension\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\
+++Handler
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\
+++AuthenticateHandler.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\authenticatehandler.cs
+++CustomAuthenticationHandler.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\customauthenticationhandler.cs
+++Middleware
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\
+++NLog
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\
+++OAuth
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\
+++XmlConfig
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\xmlconfig\
+++Startup.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\startup.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\startup.cs
+++PublishProfiles
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\publishprofiles\
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\publishprofiles\
+++SkipValidateAttribute.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\attributes\skipvalidateattribute.cs
+++ApiDbContext .cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\apidbcontext .cs
+++ApiHealthCheck.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\apihealthcheck.cs
+++BaseController.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\basecontroller.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\basecontroller.cs
+++HealthController.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\healthcontroller.cs
+++NLogTestController.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\nlogtestcontroller.cs
+++ValuesController.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\valuescontroller.cs
+++CalculateExecutionTimeMiddlewareExtensions.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\extension\calculateexecutiontimemiddlewareextensions.cs
+++AdminSafeListMiddleware.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\adminsafelistmiddleware.cs
+++AuthorizeMiddleware.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\authorizemiddleware.cs
+++CalculateExecutionTimeMiddleware.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\calculateexecutiontimemiddleware.cs
+++ExceptionMiddleWare.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\exceptionmiddleware.cs
+++OtherMiddleware.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\othermiddleware.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\othermiddleware.cs
+++ResultModel.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\resultmodel.cs
+++INLogHelper.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\inloghelper.cs
+++LogFormat.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\logformat.cs
+++LogMessage.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\logmessage.cs
+++NLogHelper.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\nloghelper.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\nloghelper.cs
+++MappingAccessTokenAnalyzer.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\mappingaccesstokenanalyzer.cs
+++OAuthDbContext.cs
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\oauthdbcontext.cs
+++nlog.config
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\xmlconfig\nlog.config
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\nlog.config
+++FolderProfile.pubxml
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\publishprofiles\folderprofile.pubxml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\publishprofiles\folderprofile.pubxml
+++Microsoft.AspNetCore (2.2.0)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4843
+++Microsoft.AspNetCore.Diagnostics.HealthChecks (2.2.0)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4844
+++Microsoft.AspNetCore.Http (2.2.2)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4840
+++Microsoft.EntityFrameworkCore.InMemory (5.0.8)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4841
+++Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore (5.0.8)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4845
+++Newtonsoft.Json (13.0.1)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4837
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4910
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4977
+++NLog.Web.AspNetCore (4.14.0)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4838
+++Swashbuckle.AspNetCore (5.6.3)
+i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4835
+++Framework.Core
+i:{00000000-0000-0000-0000-000000000000}:Framework.Core
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\framework.core\bin\debug\net6.0\framework.core.dll
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\framework.core\bin\debug\net6.0\framework.core.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\framework.core\framework.core.csproj
+++Data
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\
+++IEntityDto.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\ientitydto.cs
+++IRepository.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\irepository.cs
+++IUnitOfWork.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\iunitofwork.cs
+++Repository.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\repository.cs
+++Extensions
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\extensions\
+++DbContextExtensions.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\dbcontextextensions.cs
+++QueryableExtensions.cs
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\queryableextensions.cs
+++Microsoft.EntityFrameworkCore (6.0.0)
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:>4963
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4855
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:>4821
+++Framework.Utility
+i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
+i:{00000000-0000-0000-0000-000000000000}:Framework.Utility
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\framework.utility\bin\debug\net6.0\framework.utility.dll
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\framework.utility\framework.utility.csproj
+++DH.Models
+i:{00000000-0000-0000-0000-000000000000}:DH.Models
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\dh.models\bin\debug\net6.0\dh.models.dll
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\dh.models\dh.models.csproj
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\dh.models\bin\debug\net6.0\dh.models.dll
+++DbContext
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbcontext\
+++DbModels
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\
+++SysAccount.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\sysaccount.cs
+++SysAccountTrans.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\sysaccounttrans.cs
+++Enum
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\enum\
+++IMultConnectionStringProvider.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\imultconnectionstringprovider.cs
+++MultConnectionStringProvider.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\multconnectionstringprovider.cs
+++MyDBContext.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\mydbcontext.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbcontext\mydbcontext.cs
+++SystemSource.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\enum\systemsource.cs
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.0)
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4856
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:>4824
+++Pomelo.EntityFrameworkCore.MySql (6.0.0)
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4857
+++ApplicationService
+i:{00000000-0000-0000-0000-000000000000}:ApplicationService
+++Contracts
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\contracts\
+++ISysAccountContract.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\isysaccountcontract.cs
+++ISysAccountTransContract.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\isysaccounttranscontract.cs
+++IUserService.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\iuserservice.cs
+++Impl
+++SysAccountService.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\service\sysaccountservice.cs
+++SysAccountTransService.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\service\sysaccounttransservice.cs
+++UserService.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\service\userservice.cs
+++ITestInterface.cs
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\contracts\itestinterface.cs
+++TestInterface.cs
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\service\testinterface.cs
+++TestInterface2.cs
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\service\testinterface2.cs
+++ConsoleApp
+i:{00000000-0000-0000-0000-000000000000}:ConsoleApp
+++ActionHelper.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\actionhelper.cs
+++CodeDbContext.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\codedbcontext.cs
+++DouDiZhuHelper.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\doudizhuhelper.cs
+++IdWorker.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\idworker.cs
+++ShuffleCopyHelper.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\shufflecopyhelper.cs
+++VirtualMethodTest.cs
+i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\virtualmethodtest.cs
+++UnitTest
+i:{00000000-0000-0000-0000-000000000000}:UnitTest
+++AssertExtensions.cs
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\assertextensions.cs
+++UnitTest1.cs
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\unittest1.cs
+++coverlet.collector (3.0.2)
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4924
+++Microsoft.NET.Test.Sdk (16.9.4)
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4921
+++Shouldly (4.0.3)
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4920
+++xunit (2.4.1)
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4922
+++xunit.runner.visualstudio (2.4.3)
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4923
+++xunit.analyzers
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\users\57442\.nuget\packages\xunit.analyzers\0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll
+++WebMVC
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\webmvc\bin\debug\net6.0\webmvc.dll
+i:{00000000-0000-0000-0000-000000000000}:WebMVC
+++LangResources
+i:{00000000-0000-0000-0000-000000000000}:LangResources
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\langresources\bin\debug\net6.0\langresources.dll
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\langresources\bin\debug\net6.0\langresources.dll
+++Resources
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\
+++LangResource.cs
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\langresource.cs
+++LangResource.en-US.resx
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\langresource.en-us.resx
+++LangResource.zh-CN.resx
+i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\resources\langresource.zh-cn.resx
+++Microsoft.Extensions.Localization.Abstractions (6.0.0)
+i:{ee027640-fb32-4919-96ec-643be376591c}:>4909
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4925
 ++Config
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\config\
-++GlobalConfig.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\config\globalconfig.cs
-++SystemConfig.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\config\systemconfig.cs
-++Data
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\
-++BaseInputDto.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\baseinputdto.cs
-++BaseOutputDto.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\baseoutputdto.cs
-++BasePaginationInputDto.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\basepaginationinputdto.cs
-++FrameConstant.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\frameconstant.cs
 ++Dependency
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\dependency\
-++Extensions
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\extensions\
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\
 ++Helper
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\
@@ -204,24 +563,32 @@ i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utilit
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\baseresponse.cs
 ++Check.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\check.cs
-++LangResource.cs
-i:{ee027640-fb32-4919-96ec-643be376591c}:c:\gutreposite\console\langresources\langresource.cs
-++Microsoft.Extensions.Logging.Generators
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\users\57442\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++ShardResource.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\shardresource.cs
+++ColumnExportFormatAttribute.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\columnexportformatattribute.cs
+++MiddlewareRegisterAttribute.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\middlewareregisterattribute.cs
+++MiddlewareRegisterInfo.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\middlewareregisterinfo.cs
+++SkipLoginValidateAttribute.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\attributes\skiploginvalidateattribute.cs
+++GlobalConfig.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\config\globalconfig.cs
+++SystemConfig.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\config\systemconfig.cs
+++BaseInputDto.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\baseinputdto.cs
+++BaseOutputDto.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\baseoutputdto.cs
+++BasePaginationInputDto.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\basepaginationinputdto.cs
+++FrameConstant.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\data\frameconstant.cs
 ++IDependency.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\dependency\idependency.cs
 ++AutoMapperExtension.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\extensions\automapperextension.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\mapping\automapperextension.cs
 ++CollectionPropertySorter.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\extensions\collectionpropertysorter.cs
 ++ConvertExtension.cs
@@ -268,9 +635,6 @@ i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utilit
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\jsonhelper.cs
 ++MemoryCacheHelper.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\memorycachehelper.cs
-++NLogHelper.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\nloghelper.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\nloghelper.cs
 ++RetryPolicyHelper.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\retrypolicyhelper.cs
 ++SecurityHelper.cs
@@ -293,397 +657,28 @@ i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utilit
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\security\hashhelper.cs
 ++RsaHelper.cs
 i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\security\rsahelper.cs
-++Framework.Core
-i:{00000000-0000-0000-0000-000000000000}:Framework.Core
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\framework.core\bin\debug\net6.0\framework.core.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\framework.core\bin\debug\net6.0\framework.core.dll
-++IEntityDto.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\ientitydto.cs
-++IRepository.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\irepository.cs
-++IUnitOfWork.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\iunitofwork.cs
-++Repository.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\data\repository.cs
-++DbContextExtensions.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\dbcontextextensions.cs
-++QueryableExtensions.cs
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\gutreposite\console\framework.core\extensions\queryableextensions.cs
-++Microsoft.EntityFrameworkCore (6.0.0)
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:>4848
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:>4847
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4880
-++Microsoft.EntityFrameworkCore.Analyzers
-i:{81cf7cdb-054c-4215-b9a0-3ba661109bd7}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.8\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.8\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\users\57442\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-++ApplicationService
-i:{00000000-0000-0000-0000-000000000000}:ApplicationService
-++DirectService.Admin
-i:{c5ebb715-ef69-436b-bf42-d71915b6d0a7}:DirectService.Admin
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\directservice.admin\bin\debug\net6.0\directservice.admin.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\directservice.admin\bin\debug\net6.0\directservice.admin.dll
-++Contracts
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\contracts\
-++Impl
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\impl\
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\impl\
-++SysAccountService.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\impl\sysaccountservice.cs
-++SysAccountTransService.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\impl\sysaccounttransservice.cs
-++UserService.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\impl\userservice.cs
-++ISysAccountContract.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\isysaccountcontract.cs
-++ISysAccountTransContract.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\isysaccounttranscontract.cs
-++IUserService.cs
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\contracts\iuserservice.cs
-++DH.Models
-i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\dh.models\bin\debug\net6.0\dh.models.dll
-i:{00000000-0000-0000-0000-000000000000}:DH.Models
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\dh.models\bin\debug\net6.0\dh.models.dll
-++DirectService.Test
-i:{c5ebb715-ef69-436b-bf42-d71915b6d0a7}:DirectService.Test
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\directservice.test\bin\debug\net6.0\directservice.test.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\directservice.test\bin\debug\net6.0\directservice.test.dll
-++ITestInterface.cs
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\contracts\itestinterface.cs
-++TestInterface.cs
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\impl\testinterface.cs
-++TestInterface2.cs
-i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\impl\testinterface2.cs
-++ConsoleApp
-i:{00000000-0000-0000-0000-000000000000}:ConsoleApp
-++ActionHelper.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\actionhelper.cs
-++CodeDbContext.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\codedbcontext.cs
-++DouDiZhuHelper.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\doudizhuhelper.cs
-++IdWorker.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\idworker.cs
-++Program.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\program.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\program.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\program.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\program.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\program.cs
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\program.cs
-++ShuffleCopyHelper.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\shufflecopyhelper.cs
-++VirtualMethodTest.cs
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:c:\gutreposite\console\consoleapp\virtualmethodtest.cs
-++Microsoft.EntityFrameworkCore.SqlServer (6.0.0)
-i:{c43f4935-5735-493e-a870-2d945c55b31b}:>4850
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4881
-++ConsoleDBTest
-i:{00000000-0000-0000-0000-000000000000}:ConsoleDBTest
-++Context
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\context\
-++AdoInsertTest.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\adoinserttest.cs
-++DefaultDbContext.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\defaultdbcontext.cs
-++Employee.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employee.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\employee.cs
-++EmployeeExtend.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employeeextend.cs
-++EmployeeLogin.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\employeelogin.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\employeelogin.cs
-++ExtensionHelper.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\extensionhelper.cs
-++sdmapHelper.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\sdmaphelper.cs
-++CreateDatabaseIfNotExistsWithSeed.cs
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:c:\gutreposite\console\consoledbtest\context\createdatabaseifnotexistswithseed.cs
-++EntityFrameworkCore.DataEncryption (3.0.0)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4862
-++Microsoft.EntityFrameworkCore (5.0.8)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4857
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4944
-++Microsoft.EntityFrameworkCore.SqlServer (5.0.8)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4858
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4945
-++Microsoft.EntityFrameworkCore.Tools (5.0.8)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4861
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4951
-++System.Configuration.ConfigurationManager (5.0.0)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4859
-++System.Data.SqlClient (4.8.2)
-i:{51ceb7dd-bdfc-4232-bba1-80dcb818b68d}:>4860
-++WebApi
-i:{00000000-0000-0000-0000-000000000000}:WebApi
-++Connected Services 
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4628
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4629
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4630
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4785
-++Properties
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\properties\
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\properties\
-++Code
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\
-++Controllers
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\
-++Extension
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\extension\
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\
-++Handler
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\
-++Middleware
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\
-++NLog
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\
-++OAuth
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\
-++XmlConfig
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\xmlconfig\
-++appsettings.json
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\appsettings.json
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\appsettings.json
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\appsettings.json
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\appsettings.json
-++Startup.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\startup.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\startup.cs
-++WeatherForecast.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\weatherforecast.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\weatherforecast.cs
-++未发现任何服务依赖项
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4632
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4631
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4633
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4786
-++PublishProfiles
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\publishprofiles\
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\publishprofiles\
-++launchSettings.json
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\launchsettings.json
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\properties\launchsettings.json
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\launchsettings.json
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\properties\launchsettings.json
-++SkipValidateAttribute.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\attributes\skipvalidateattribute.cs
-++ApiDbContext .cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\apidbcontext .cs
-++ApiHealthCheck.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\code\apihealthcheck.cs
-++BaseController.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\basecontroller.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\basecontroller.cs
-++HealthController.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\healthcontroller.cs
-++NLogTestController.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\nlogtestcontroller.cs
-++ValuesController.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\valuescontroller.cs
-++WeatherForecastController.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\controllers\weatherforecastcontroller.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\weatherforecastcontroller.cs
-++CalculateExecutionTimeMiddlewareExtensions.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\extension\calculateexecutiontimemiddlewareextensions.cs
-++AuthenticateHandler.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\authenticatehandler.cs
-++CustomAuthenticationHandler.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\handler\customauthenticationhandler.cs
-++AdminSafeListMiddleware.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\adminsafelistmiddleware.cs
-++AuthorizeMiddleware.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\authorizemiddleware.cs
-++CalculateExecutionTimeMiddleware.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\calculateexecutiontimemiddleware.cs
-++ExceptionMiddleWare.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\exceptionmiddleware.cs
-++OtherMiddleware.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\othermiddleware.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\othermiddleware.cs
-++ResultModel.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\middleware\resultmodel.cs
-++INLogHelper.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\inloghelper.cs
-++LogFormat.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\logformat.cs
-++LogMessage.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\nlog\logmessage.cs
-++MappingAccessTokenAnalyzer.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\mappingaccesstokenanalyzer.cs
-++OAuthDbContext.cs
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\oauth\oauthdbcontext.cs
-++nlog.config
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\xmlconfig\nlog.config
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\nlog.config
-++appsettings.Development.json
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\appsettings.development.json
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\appsettings.development.json
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\appsettings.development.json
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\appsettings.development.json
-++FolderProfile.pubxml
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\properties\publishprofiles\folderprofile.pubxml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\properties\publishprofiles\folderprofile.pubxml
-++Microsoft.AspNetCore (2.2.0)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4952
-++Microsoft.AspNetCore.Diagnostics.HealthChecks (2.2.0)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4953
-++Microsoft.AspNetCore.Http (2.2.2)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4949
-++Microsoft.EntityFrameworkCore.InMemory (5.0.8)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4950
-++Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore (5.0.8)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4955
-++NLog.Web.AspNetCore (4.14.0)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4948
-++Swashbuckle.AspNetCore (5.6.3)
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:>4946
-++Microsoft.AspNetCore.Analyzers
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-++Microsoft.AspNetCore.App.Analyzers
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-++Microsoft.AspNetCore.App.CodeFixes
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-++Microsoft.AspNetCore.Components.Analyzers
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-++Microsoft.AspNetCore.Mvc.Analyzers
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-++Microsoft.NET.Sdk.Razor.SourceGenerators
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-++Microsoft.AspNetCore.App
-i:{67f270b6-5a0e-4df4-b5d1-5481e6cc3830}:c:\gutreposite\console\webapi\microsoft.aspnetcore.app
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\microsoft.aspnetcore.app
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\microsoft.aspnetcore.app
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\microsoft.aspnetcore.app
-++UnitTest
-i:{00000000-0000-0000-0000-000000000000}:UnitTest
-++AssertExtensions.cs
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\assertextensions.cs
-++UnitTest1.cs
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\unittest1.cs
-++coverlet.collector (3.0.2)
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4893
-++Microsoft.NET.Test.Sdk (16.9.4)
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4890
-++Shouldly (4.0.3)
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4889
-++xunit (2.4.1)
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4891
-++xunit.runner.visualstudio (2.4.3)
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:>4892
-++xunit.analyzers
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\users\57442\.nuget\packages\xunit.analyzers\0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll
-++WebMVC
-i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\webmvc\bin\debug\net6.0\webmvc.dll
-i:{00000000-0000-0000-0000-000000000000}:WebMVC
-++WebApi6_0
-i:{00000000-0000-0000-0000-000000000000}:WebApi6_0
-++AutofacConfig
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\autofacconfig\
-++webroot
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\webroot\
-++Dockerfile
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\dockerfile
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\dockerfile
-++ConfigureAutofac.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\autofacconfig\configureautofac.cs
-++DBTestController.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\dbtestcontroller.cs
-++DemoController.cs
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\controllers\democontroller.cs
-++Autofac.Extensions.DependencyInjection (7.1.0)
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4922
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4990
-++Swashbuckle.AspNetCore (6.2.3)
-i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:>4923
-++DbContext
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbcontext\
-++DbModels
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\
-++Enum
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\enum\
-++IMultConnectionStringProvider.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\imultconnectionstringprovider.cs
-++MultConnectionStringProvider.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\multconnectionstringprovider.cs
-++MyDBContext.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\mydbcontext.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbcontext\mydbcontext.cs
-++SysAccount.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\sysaccount.cs
-++SysAccountTrans.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\sysaccounttrans.cs
-++SystemSource.cs
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\enum\systemsource.cs
-++Pomelo.EntityFrameworkCore.MySql (6.0.0)
-i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>4884
+++AutoMapper (8.0.0)
+++Hashids.net (1.4.1)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4929
+++Microsoft.Extensions.Caching.Memory (6.0.0)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4930
+++Microsoft.Extensions.DependencyInjection (6.0.0)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4915
+++NLog (4.7.12)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4928
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4979
+++NPOI (2.5.4)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>4913
 ++wwwroot
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\wwwroot\
 ++Common
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\common\
-++AccountController.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\accountcontroller.cs
-++ExcelOptController.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\exceloptcontroller.cs
-++HomeController.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\homecontroller.cs
-++LangController.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\langcontroller.cs
-++TestController.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\testcontroller.cs
 ++DownLoad
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\download\
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\download\
 ++Dto
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\dto\
-++AjaxRequestExtensions.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\ajaxrequestextensions.cs
-++CoreHttpContext.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\corehttpcontext.cs
-++MiddlewareRegisterExtensions.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\middlewareregisterextensions.cs
-++Filter
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\
-++AuthorizeFilterAttribute.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\authorizefilterattribute.cs
 ++ClientIpCheckActionFilter.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\clientipcheckactionfilter.cs
 ++GlobalExceptionFilter.cs
@@ -696,80 +691,8 @@ i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\my
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\filter\myfilter.cs
 ++HangFire
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\hangfire\
-++Class.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\class.cs
-++CookiesHelper.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\cookieshelper.cs
-++ExcelBuilder.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\excelbuilder.cs
-++ExcelHelper.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\excelhelper.cs
-++MemoryCacheProvider.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\memorycacheprovider.cs
-++ProviderManage.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\providermanage.cs
-++SessionHelper.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\sessionhelper.cs
-++SessionTestClass.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\sessiontestclass.cs
-++Models
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\
-++Report
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\report\
-++ReportModel.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\report\reportmodel.cs
-++AClass.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\aclass.cs
-++BClass.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\bclass.cs
-++CClass.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\cclass.cs
-++Content.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\content.cs
-++ErrorViewModel.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\errorviewmodel.cs
-++GlobalConstant.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\globalconstant.cs
-++GlobalContext.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\globalcontext.cs
-++LoginModel.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\loginmodel.cs
-++TData.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\tdata.cs
-++UserCacheModel.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\usercachemodel.cs
-++UserViewModel.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\userviewmodel.cs
-++WebConstant.cs
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\webconstant.cs
 ++Views
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\
-++Account
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\account\
-++ExcelOpt
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\excelopt\
-++Home
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\
-++Lang
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\lang\
-++Index.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\lang\index.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\account\index.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\excelopt\index.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\index.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\test\index.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\index.cshtml
-++Shared
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\
-++Test
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\test\
-++_ViewImports.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\_viewimports.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\_viewimports.cshtml
-++_ViewStart.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\_viewstart.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\_viewstart.cshtml
 ++css
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\css\
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\lib\bootstrap\dist\css\
@@ -800,14 +723,45 @@ i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\common\ha
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\common\hashidmodelbinder.cs
 ++HashStrJsonConverter.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\common\hashstrjsonconverter.cs
+++AccountController.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\accountcontroller.cs
+++ExcelOptController.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\exceloptcontroller.cs
+++HomeController.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\homecontroller.cs
+++LangController.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\langcontroller.cs
+++TestController.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\controllers\testcontroller.cs
 ++人员信息报表_20210907102919.xlsx
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\download\人员信息报表_20210907102919.xlsx
 ++EmployeeDto.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\dto\employeedto.cs
+++AjaxRequestExtensions.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\ajaxrequestextensions.cs
+++CoreHttpContext.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\corehttpcontext.cs
+++MiddlewareRegisterExtensions.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\extension\middlewareregisterextensions.cs
 ++HangFireJob.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\hangfire\hangfirejob.cs
 ++HangFireJobService.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\hangfire\hangfirejobservice.cs
+++Class.cs
+++CookiesHelper.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\cookieshelper.cs
+++ExcelBuilder.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\excelbuilder.cs
+++ExcelHelper.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\excelhelper.cs
+++MemoryCacheProvider.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\memorycacheprovider.cs
+++ProviderManage.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\providermanage.cs
+++SessionHelper.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\sessionhelper.cs
+++SessionTestClass.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\helper\sessiontestclass.cs
 ++OneMiddleware.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\onemiddleware.cs
 ++ResponseHeaderMiddleware.cs
@@ -816,20 +770,51 @@ i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middlewar
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\threemiddleware.cs
 ++TwoMiddleware.cs
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\middleware\twomiddleware.cs
-++Error.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\error.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\error.cshtml
-++NoPermission.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\nopermission.cshtml
-++Privacy.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\privacy.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\privacy.cshtml
-++_Layout.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\_layout.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\_layout.cshtml
-++_ValidationScriptsPartial.cshtml
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\_validationscriptspartial.cshtml
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\_validationscriptspartial.cshtml
+++Report
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\report\
+++AClass.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\aclass.cs
+++BClass.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\bclass.cs
+++CClass.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\cclass.cs
+++Content.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\content.cs
+++ErrorViewModel.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\errorviewmodel.cs
+++GlobalConstant.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\globalconstant.cs
+++GlobalContext.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\globalcontext.cs
+++LoginModel.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\loginmodel.cs
+++TData.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\tdata.cs
+++UserCacheModel.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\usercachemodel.cs
+++UserViewModel.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\userviewmodel.cs
+++WebConstant.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\webconstant.cs
+++Account
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\account\
+++ExcelOpt
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\excelopt\
+++Home
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\
+++Lang
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\lang\
+++Shared
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\
+++Test
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\test\
+++_ViewImports.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\_viewimports.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\_viewstart.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\_viewstart.cshtml
 ++appsettings.Qa.json
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\appsettings.qa.json
 ++site.css
@@ -859,9 +844,32 @@ i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\p
 ++人员信息报表.xlsx
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\temp\人员信息报表.xlsx
 ++EPPlus (5.8.2)
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4992
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4978
 ++Hangfire (1.7.24)
-i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4989
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:>4975
+++ReportModel.cs
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\models\report\reportmodel.cs
+++Index.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\account\index.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\excelopt\index.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\index.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\lang\index.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\test\index.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\index.cshtml
+++Error.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\error.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\error.cshtml
+++NoPermission.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\nopermission.cshtml
+++Privacy.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\home\privacy.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\privacy.cshtml
+++_Layout.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\_layout.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\_layout.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\views\shared\_validationscriptspartial.cshtml
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\shared\_validationscriptspartial.cshtml
 ++dist
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\lib\bootstrap\dist\
 i:{7783c6f3-f39e-4436-9042-ef044199d571}:c:\gutreposite\console\webmvc\wwwroot\lib\jquery\dist\
@@ -974,7 +982,7 @@ i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\
 ++.dockerignore
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\.dockerignore
 ++Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.14.0)
-i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4971
+i:{0e04b73b-9362-4956-8e13-c435b77a2331}:>4887
 ++Error.cshtml.cs
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\pages\error.cshtml.cs
 ++Index.cshtml.cs
@@ -1031,5 +1039,59 @@ i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\wwwroo
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
 ++bootstrap.esm.min.js.map
 i:{0e04b73b-9362-4956-8e13-c435b77a2331}:c:\gutreposite\console\webmvc6_0\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-++ShardResource.cs
-i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\shardresource.cs
+++SqlHelper.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\helper\sqlhelper.cs
+++ServiceBase.cs
+++UserRepository.cs
+++解决方案“Console”‎(14 个项目，共 14 个)
+++Framework.Auth
+++Class1.cs
+++OperatorInfo.cs
+++Operator.cs
+++新文件夹
+++data
+++State
+++Microsoft.AspNetCore.Http.Abstractions (2.2.0)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>7470
+++DataRepository.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\datarepository.cs
+++Repository
+++RepositoryFactory.cs
+++Database
+++MySqlDatabase.cs
+++SqlServerDatabase.cs
+++SqlServerDbContext.cs
+++TokenCheckFilter.cs
+i:{b9c2a9be-0d92-4191-854d-cf98f1acc835}:c:\gutreposite\console\webapi6_0lts\filter\tokencheckfilter.cs
+++AutoMapper (10.0.0)
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:>7012
+++AutoMap
+++MapperProfile
+++MapperConfig
+++MapperProfile.cs
+++Mapping
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\mapping\
+++IMapper.cs
+++IMapTuple.cs
+++MapFromAttribute.cs
+++MapperExtensions.cs
+++MapToAttribute.cs
+++MultipleDependencyAttribute.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\dependency\multipledependencyattribute.cs
+++AutoMapperHelper.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\mapping\automapperhelper.cs
+++AutoInjectAttribute.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\mapping\autoinjectattribute.cs
+++AutoInjectFactory.cs
+i:{d67668d7-f890-4f21-b262-5cc0e2286e41}:c:\gutreposite\console\framework.utility\mapping\autoinjectfactory.cs
+++MapperUnit.cs
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\mapperunit.cs
+++AppUnitTestBase.cs
+i:{247d1383-da3a-4566-b6e1-9451af5b6d3a}:c:\gutreposite\console\unittest\appunittestbase.cs
+++Service
+i:{464ea8c6-7f3d-4e86-83d7-bf10f9b7bda0}:c:\gutreposite\console\directservice.admin\service\
+i:{d044a96c-858d-4462-8bb4-a4feec314ace}:c:\gutreposite\console\directservice.test\service\
+++EmployeeDetail.cs
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:c:\gutreposite\console\dh.models\dbmodels\employeedetail.cs
+++Microsoft.EntityFrameworkCore.Proxies (6.0.0)
+i:{263f896f-8046-41f6-9ba9-96fa71b267a8}:>16203

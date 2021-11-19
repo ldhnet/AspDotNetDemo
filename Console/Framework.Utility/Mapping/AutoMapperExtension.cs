@@ -21,7 +21,7 @@ namespace Framework.Utility.Mapping
 
                 foreach (var (sourceType, targetType) in factory.ConvertList)
                 {
-                    mapperConfigurationExpression.CreateMap(sourceType, targetType);
+                    mapperConfigurationExpression.CreateMap(sourceType, targetType); 
                 }
 
                 var instance = new MapperConfiguration(mapperConfigurationExpression);

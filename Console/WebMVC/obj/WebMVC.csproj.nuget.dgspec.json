@@ -344,6 +344,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Microsoft.Extensions.DependencyModel": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.Extensions.Localization.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"

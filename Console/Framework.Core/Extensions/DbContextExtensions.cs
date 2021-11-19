@@ -1,4 +1,5 @@
-﻿using Framework.Utility.Extensions;
+﻿using Framework.Core.Data;
+using Framework.Utility.Extensions;
 using Framework.Utility.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -46,6 +47,24 @@ namespace Framework.Core.Extensions
                 }
             }
         }
+        /// <summary>
+        /// 以DTO为载体更新实体
+        /// </summary>
+        /// <param name="dbContext"></param>
+        /// <param name="entity"></param>
+        /// <param name="dto"></param>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TEditDto"></typeparam>
+        public static void UpdateEntity<TEntity, TEditDto, TKey>(this DbContext dbContext, TEntity entity, TEditDto dto)
+            where TEntity : class where TEditDto :IEditDto<TKey>
+        {
+            dbContext.CheckNotNull("dbContext");
+            entity.CheckNotNull("entity");
+
+            dbContext.Entry(entity).CurrentValues.SetValues(dto);
+        }
+
         /// <summary>
         /// 清除数据上下文的更改
         /// </summary>

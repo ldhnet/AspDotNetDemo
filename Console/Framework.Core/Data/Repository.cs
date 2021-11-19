@@ -248,8 +248,8 @@ namespace Framework.Core.Data
         /// <param name="updateFunc">由DTO到实体的转换委托</param>
         /// <returns>业务操作结果</returns>
         public BaseResponse Update<TEditDto>(ICollection<TEditDto> dtos,
-            Action<TEditDto> checkAction = null,
-            Func<TEditDto, TEntity, TEntity> updateFunc = null)
+            Action<TEditDto>? checkAction = null,
+            Func<TEditDto, TEntity, TEntity>? updateFunc = null)
             where TEditDto : IEditDto<TKey>
         {
             Check.NotNull(dtos, nameof(dtos));
@@ -290,7 +290,15 @@ namespace Framework.Core.Data
                 : new BaseResponse(successCode.NoChanged);
         }
 
-
+        /// <summary>
+        /// 以DTO为载体更新实体
+        /// </summary>
+        /// <returns></returns>
+        public int UpdateEntity<TEditDto>(TEntity entity, TEditDto dto) where TEditDto : IEditDto<TKey>
+        {
+            ((DbContext)_unitOfWork).UpdateEntity<TEntity, TEditDto, TKey>(entity, dto);
+            return SaveChanges();
+        }
         #region Query
 
         ///<summary>
