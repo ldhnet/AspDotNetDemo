@@ -13,7 +13,7 @@ namespace WebMVC6_0.Pages
 
         public void OnGet()
         {
-
+            _logger.LogInformation("11111");
         }
     }
 }

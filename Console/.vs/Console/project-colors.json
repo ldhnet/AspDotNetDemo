@@ -85,7 +85,17 @@
       "ProjectGuid": "f0a03362-e959-499d-a6d5-7e6b0f231744",
       "DisplayName": "Framework.Auth",
       "ColorIndex": 15
+    },
+    "920cb5f3-97c0-43f5-b02f-77a1990418ed": {
+      "ProjectGuid": "920cb5f3-97c0-43f5-b02f-77a1990418ed",
+      "DisplayName": "DH.Contracts",
+      "ColorIndex": 0
+    },
+    "a5165dd7-2779-4fcc-9634-32b43864b057": {
+      "ProjectGuid": "a5165dd7-2779-4fcc-9634-32b43864b057",
+      "DisplayName": "Framework.EF",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 0
+  "NextColorIndex": 2
 }
