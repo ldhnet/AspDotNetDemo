@@ -21,6 +21,20 @@ namespace DirectService.Admin.Service
             var ret = _userRepository.Insert(model);
             return ret > 0 ? new BaseResponse(successCode.Success) : new BaseResponse(successCode.NoChanged);
         }
+        public BaseResponse CreateInfo(params EmployeeDto[] dtos)
+        {
+            var result = _userRepository.Insert(dtos,
+                 dto =>
+                 {
+                
+                 },
+                 (dto, entity) =>
+                 {
+                     entity.BankCard = DateTime.Now.ToString(); 
+                     return entity;
+                 });
+            return result;
+        }
 
         public Employee Find(string employeeSerialNumber)
         { 

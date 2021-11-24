@@ -16,4 +16,3 @@ C:\GutReposite\Console\LangResources\obj\Debug\net6.0\zh-CN\LangResources.resour
 C:\GutReposite\Console\LangResources\obj\Debug\net6.0\LangResources.dll
 C:\GutReposite\Console\LangResources\obj\Debug\net6.0\ref\LangResources.dll
 C:\GutReposite\Console\LangResources\obj\Debug\net6.0\LangResources.pdb
-C:\GutReposite\Console\LangResources\obj\Debug\net6.0\LangResources.csproj.AssemblyReference.cache

@@ -32,6 +32,7 @@ namespace WebApi6_0.Controllers
         } 
 
         /// <summary>
+        /// 
         /// 测试
         /// </summary>
         /// <returns></returns>
@@ -66,6 +67,45 @@ namespace WebApi6_0.Controllers
             var aaa2o3 = aaa2o.MapTo<Foo>();
 
 
+
+        
+            var dtoem1 = new EmployeeDetail()
+            {
+                EnglishName = "lilee",
+                CreateTime = DateTime.Now
+            };
+
+            var logine = new EmployeeLogin()
+            {
+
+                CreateTime = DateTime.Now
+            };
+
+            var dtoem2 = new List<EmployeeLogin>()
+            {
+                logine 
+            };
+
+
+            var dtoem = new EmployeeDto()
+            {
+                Name = "test",
+                BankCard = "test",
+                EmployeeName = "test",
+                EmployeeSerialNumber = "test",
+
+                Department = 1,
+                Phone = "test",
+                WebToken = "test",
+
+                ApiToken = "test",
+
+                ExpirationDateUtc = DateTime.Now,
+                EmployeeDetail=dtoem1,
+                EmployeeLogins=dtoem2,
+            };
+
+            var aaa11111 = _userService.CreateInfo(dtoem);
 
             var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
 
