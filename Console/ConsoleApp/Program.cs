@@ -37,36 +37,11 @@ namespace ConsoleApp
 
             var dt3 = dataArr3.OrderBy(c => guid3);
             var sdt3 = string.Join(",", dt3);
-
-            List<int>  dataArr4 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid4 = Guid.NewGuid();
-
-            var dt4 = dataArr4.OrderBy(c => guid4);
-            var sdt4 = string.Join(",", dt4);
-
-            List<int>  dataArr5 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid5 = Guid.NewGuid();
-            var dt5 = dataArr5.OrderBy(c => guid5);
-            var sdt5 = string.Join(",", dt5);
-
-            List<int>  dataArr6 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid6 = Guid.NewGuid();
-            var dt6 = dataArr6.OrderBy(c => guid6);
-            var sdt6 = string.Join(",", dt6);
-
-            List<int>  dataArr7 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid7 = Guid.NewGuid();
-            var dt7 = dataArr7.OrderBy(c => guid7);
-            var sdt7 = string.Join(",", dt7);
-
+             
             Console.WriteLine(sdt1);
             Console.WriteLine(sdt11);
             Console.WriteLine(sdt2);
-            Console.WriteLine(sdt3);
-            Console.WriteLine(sdt4);
-            Console.WriteLine(sdt5);
-            Console.WriteLine(sdt6);
-            Console.WriteLine(sdt7);
+            Console.WriteLine(sdt3); 
 
             //for (int i = 1; i < 5; i++)
             //{
