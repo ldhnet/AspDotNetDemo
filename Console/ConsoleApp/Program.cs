@@ -15,6 +15,12 @@ namespace ConsoleApp
         {
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
+            var d1 = DateTime.Now.AddDays(-1).Date;
+
+            var d2 = DateTime.Now.Date;
+
+
+            var isbig = d1 > d2;
 
             List<int> dataArr1 =new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             List<int> dataArr11 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
