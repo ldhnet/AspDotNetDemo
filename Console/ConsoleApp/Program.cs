@@ -45,9 +45,7 @@ namespace ConsoleApp
             var sdt3 = string.Join(",", dt3);
              
             Console.WriteLine(sdt1);
-            Console.WriteLine(sdt11);
-            Console.WriteLine(sdt2);
-            Console.WriteLine(sdt3); 
+            Console.WriteLine(sdt11); 
 
             //for (int i = 1; i < 5; i++)
             //{
