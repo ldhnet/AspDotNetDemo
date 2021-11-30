@@ -47,14 +47,14 @@ namespace ConsoleApp
             Console.WriteLine(sdt1);
             Console.WriteLine(sdt11);
 
-            //for (int i = 1; i < 5; i++)
-            //{
-            //    diDic.Add(i, new List<int>() { i + 1 });
-            //    if (i == 2)
-            //    {
-            //        diDic[i].Add(i + 2);
-            //    }
-            //}
+            for (int i = 1; i < 5; i++)
+            {
+                diDic.Add(i, new List<int>() { i + 1 });
+                if (i == 2)
+                {
+                    diDic[i].Add(i + 2);
+                }
+            }
 
             //foreach (int denpendencyType in diDic.Keys)
             //{
