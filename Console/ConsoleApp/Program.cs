@@ -43,9 +43,9 @@ namespace ConsoleApp
 
             var dt3 = dataArr3.OrderBy(c => guid3);
             var sdt3 = string.Join(",", dt3);
-             
-            //Console.WriteLine(sdt1);
-            //Console.WriteLine(sdt11); 
+
+            Console.WriteLine(sdt1);
+            Console.WriteLine(sdt11);
 
             //for (int i = 1; i < 5; i++)
             //{
@@ -62,23 +62,23 @@ namespace ConsoleApp
             //    {
             //        var aa = injectType;
             //    }
-             
 
-        //var idList = new List<long>();
-        //IdWorker idworker = new IdWorker(1);
-        //for (int i = 0; i < 1000; i++)
-        //{
-        //    idList.Add(idworker.nextId());
-        //}
 
-        //foreach (var item in idList.OrderBy(c => c))
-        //{
-        //    Console.WriteLine(item);
-        //}
+            //var idList = new List<long>();
+            //IdWorker idworker = new IdWorker(1);
+            //for (int i = 0; i < 1000; i++)
+            //{
+            //    idList.Add(idworker.nextId());
+            //}
 
-        //var _fcR = fc(5,2);
+            //foreach (var item in idList.OrderBy(c => c))
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-        int[] dataArr = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //var _fcR = fc(5,2);
+
+            int[] dataArr = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
         //ShuffleCopyHelper shuffle=new ShuffleCopyHelper();
 
