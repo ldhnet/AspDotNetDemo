@@ -44,8 +44,8 @@ namespace ConsoleApp
             var dt3 = dataArr3.OrderBy(c => guid3);
             var sdt3 = string.Join(",", dt3);
              
-            Console.WriteLine(sdt1);
-            Console.WriteLine(sdt11); 
+            //Console.WriteLine(sdt1);
+            //Console.WriteLine(sdt11); 
 
             //for (int i = 1; i < 5; i++)
             //{
