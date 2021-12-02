@@ -128,8 +128,8 @@ namespace Framework.Core.Data
             return count > 0
                 ? new BaseResponse(successCode.Success,
                     names.Count > 0
-                        ? $"{0} created successfully {names.ExpandAndToString()}"
-                        : $"{0} items created successfully {dtos.Count}")
+                        ? $"{names.ExpandAndToString()} created successfully"
+                        : $"{dtos.Count} items created successfully")
                 : new BaseResponse(successCode.NoChanged);
         }
 
