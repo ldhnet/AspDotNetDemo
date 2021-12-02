@@ -23,4 +23,3 @@ C:\GutReposite\Console\WebMVC6_0\obj\Debug\net6.0\WebMVC6_0.dll
 C:\GutReposite\Console\WebMVC6_0\obj\Debug\net6.0\ref\WebMVC6_0.dll
 C:\GutReposite\Console\WebMVC6_0\obj\Debug\net6.0\WebMVC6_0.pdb
 C:\GutReposite\Console\WebMVC6_0\obj\Debug\net6.0\WebMVC6_0.genruntimeconfig.cache
-C:\GutReposite\Console\WebMVC6_0\obj\Debug\net6.0\WebMVC6_0.csproj.AssemblyReference.cache
