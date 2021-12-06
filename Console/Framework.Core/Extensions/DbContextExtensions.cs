@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Data.Common;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
@@ -143,6 +144,35 @@ namespace Framework.Core.Extensions
                 strSql = strSql.Remove(strSql.Length - 1, 1);
             }
             return strSql.ToString();
+        }
+        public static IQueryable<T> AppendSort<T>(IQueryable<T> tempData, string sort, bool isAsc)
+        {
+            string[] sortArr = sort.Split(',');
+            MethodCallExpression resultExpression = null;
+            for (int index = 0; index < sortArr.Length; index++)
+            {
+                string[] oneSortArr = sortArr[index].Trim().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                string sortField = oneSortArr[0];
+                bool sortAsc = isAsc;
+                if (oneSortArr.Length == 2)
+                {
+                    sortAsc = string.Equals(oneSortArr[1], "asc", StringComparison.OrdinalIgnoreCase) ? true : false;
+                }
+                var parameter = Expression.Parameter(typeof(T), "t");
+                var property = ReflectionHelper.GetProperties(typeof(T)).Where(p => p.Name.ToLower() == sortField.ToLower()).FirstOrDefault();
+                var propertyAccess = Expression.MakeMemberAccess(parameter, property);
+                var orderByExpression = Expression.Lambda(propertyAccess, parameter);
+                if (index == 0)
+                {
+                    resultExpression = Expression.Call(typeof(Queryable), sortAsc ? "OrderBy" : "OrderByDescending", new Type[] { typeof(T), property.PropertyType }, tempData.Expression, Expression.Quote(orderByExpression));
+                }
+                else
+                {
+                    resultExpression = Expression.Call(typeof(Queryable), sortAsc ? "ThenBy" : "ThenByDescending", new Type[] { typeof(T), property.PropertyType }, tempData.Expression, Expression.Quote(orderByExpression));
+                }
+                tempData = tempData.Provider.CreateQuery<T>(resultExpression);
+            }
+            return tempData;
         }
 
         public static void SetEntityDefaultValue(DbContext dbcontext)

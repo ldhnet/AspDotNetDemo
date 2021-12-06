@@ -1,6 +1,7 @@
 ﻿using DH.Contracts;
 using DH.Models.Dtos;
-using DH.Models.Entities; 
+using DH.Models.Entities;
+using DH.Models.param;
 using DirectService.Admin.Contracts;  
 using Framework.Auth;
 using Framework.Core.Data;
@@ -38,7 +39,7 @@ namespace WebApi6_0.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public string Get()
+        public async Task<string> Get()
         {
 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
@@ -57,8 +58,30 @@ namespace WebApi6_0.Controllers
             };
             //var aaadto= Mapper.Map<FooDto>(model2);
 
+            var aaa666333 = _userService.CheckExistsById("test");
+
+            Pagination page = new Pagination();
+            EmployeeParam param = new EmployeeParam();
+            param.EmployeeName = "test";
 
 
+            var aaa8 = await _userService.GetPageList(param,page);
+
+            Pagination page2 = new Pagination() {
+                PageSize = 3
+            };
+            var aaa99 = await _userService.GetPageList(param, page2);
+
+
+            var aaa11111 = await _userService.GetPageList(page);
+
+
+            var aaa22222 = await _userService.GetPageList(page2);
+
+
+            var aaa666 = _userService.CheckExists("1001");
+            var aaa6667 = _userService.CheckExists("test");
+            var aaa66687 = _userService.CheckExists("test111");
             var aaa2o = model2.MapTo<FooDto>();
 
             aaa2o.Name = "max";
@@ -105,13 +128,13 @@ namespace WebApi6_0.Controllers
                 EmployeeLogins=dtoem2,
             };
 
-            var aaa11111 = _userService.CreateInfo(dtoem);
+            var aaa111222 = _userService.CreateInfo(dtoem);
 
             var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
 
             var aaa9 = _userService.UpdateEmployee(new Employee());
              
-            var aaa8 = _userService.Find("1001");
+            var aaa8666666 = _userService.Find("1001");
 
             //var aaa9 = aaa8.EmployeeDetail;
             //var aaa10 = aaa8.EmployeeLogins; 
@@ -160,5 +183,6 @@ namespace WebApi6_0.Controllers
 
             return $"{aaa?.AccountName}{aaa?.AccountNo},{aaa2.data.AccountName}{aaa2.data.AccountNo}";
         }
+         
     }
 }
