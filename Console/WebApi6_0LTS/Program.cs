@@ -4,6 +4,7 @@ using Framework.Utility;
 using Framework.Utility.Config;
 using Framework.Utility.Mapping; 
 using WebApi6_0.AutofacConfig;
+using WebApi6_0.Middleware;
 using WebApi6_0.Filter;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,8 +43,13 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllers(options => {
-    options.Filters.Add<TokenCheckFilter>();
-}); 
+    options.Filters.Add<TokenCheckFilter>(); 
+});
+
+var aa = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+
+//序列化保持原有大小写（默认首字母小写）
+  
 
 builder.Services.AddEndpointsApiExplorer();
  
@@ -75,7 +81,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 //解决跨域
 app.UseCors("CorsPolicy");
- 
+
+app.UseCalculateExecutionTime();
+
 app.UseMapperAutoInject();
 
 app.UseShardResource();

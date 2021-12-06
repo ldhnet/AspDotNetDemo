@@ -14,7 +14,7 @@ namespace Framework.Utility
         /// <summary>
         /// 操作结果，ResultType为1代表成功，0代表失败，其他的验证返回结果，可根据需要设置
         /// </summary>
-        public int ResultType { get; set; }
+        public int ReturnCode { get; set; }
 
         /// <summary>
         /// 提示信息或异常信息
