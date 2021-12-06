@@ -1,0 +1,12 @@
+C:\GutReposite\Console\Framework.Mapper\bin\Debug\net6.0\Framework.Mapper.deps.json
+C:\GutReposite\Console\Framework.Mapper\bin\Debug\net6.0\Framework.Mapper.dll
+C:\GutReposite\Console\Framework.Mapper\bin\Debug\net6.0\ref\Framework.Mapper.dll
+C:\GutReposite\Console\Framework.Mapper\bin\Debug\net6.0\Framework.Mapper.pdb
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.csproj.AssemblyReference.cache
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.AssemblyInfoInputs.cache
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.AssemblyInfo.cs
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.csproj.CoreCompileInputs.cache
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.dll
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\ref\Framework.Mapper.dll
+C:\GutReposite\Console\Framework.Mapper\obj\Debug\net6.0\Framework.Mapper.pdb
