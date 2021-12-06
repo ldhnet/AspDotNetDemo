@@ -29,8 +29,28 @@ namespace WebApi6_0.Controllers
             _SysAccountContract = sysAccountContract;
             _userService = userService;
             _unitOfWork = unitOfWork; 
-        } 
+        }
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("GetInfoAsync")]
+        public async Task<IActionResult> GetInfoAsync()
+        {
+            TResponse<EmployeeDto> res = new TResponse<EmployeeDto>();
+            res.ReturnCode = 1;
+            res.Message = "测试";
 
+            var info = await _userService.FindAsync();
+
+            var dto = info.MapTo<EmployeeDto>();
+
+            res.Data = dto;
+            res.Total = 1;
+            return Ok(res);
+
+            //return NotFound(res);
+
+            //return BadRequest(res);
+        }
         /// <summary>
         /// 
         /// 测试
@@ -38,7 +58,7 @@ namespace WebApi6_0.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public TResponse Get()
+        public IActionResult Get()
         {
 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
@@ -117,7 +137,7 @@ namespace WebApi6_0.Controllers
             res2.Data = empList2;
             res2.Total = 2;
 
-            return res;
+            return Ok(res2);
             //return res2;
 
            // var dtoem = new EmployeeDto()

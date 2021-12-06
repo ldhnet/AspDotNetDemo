@@ -1,5 +1,9 @@
-﻿namespace DH.Models.Entities
+﻿using DH.Models.Dtos;
+using Framework.Utility.Mapping;
+
+namespace DH.Models.Entities
 {
+    [MapperInit(sourceType: typeof(EmployeeLoginDto), targetType: typeof(EmployeeLogin))]
     public class EmployeeLogin
     {
         public int Id { get; set; }

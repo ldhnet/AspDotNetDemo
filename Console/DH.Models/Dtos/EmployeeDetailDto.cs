@@ -1,4 +1,4 @@
-﻿using DH.Models.Dtos;
+﻿using DH.Models.Entities;
 using Framework.Utility.Mapping;
 using System;
 using System.Collections.Generic;
@@ -6,18 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DH.Models.Entities
+namespace DH.Models.Dtos
 {
-    [MapperInit(sourceType: typeof(EmployeeDetailDto), targetType: typeof(EmployeeDetail))]
-    public class EmployeeDetail
+    [MapperInit(sourceType: typeof(EmployeeDetail), targetType: typeof(EmployeeDetailDto))]
+    public class EmployeeDetailDto
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }
         public string EnglishName { get; set; }
         public DateTime CreateTime { get; set; }
-        /// <summary>
-        /// 获取或设置 所属用户信息
-        /// </summary>
-        public virtual Employee Employee { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using Framework.Utility.Mapping;
 using WebApi6_0.AutofacConfig;
 using WebApi6_0.Middleware;
 using WebApi6_0.Filter;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -44,6 +45,11 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 
 builder.Services.AddControllers(options => {
     options.Filters.Add<TokenCheckFilter>(); 
+}).AddNewtonsoftJson(options=>
+{
+    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
 });
 
 var aa = new Newtonsoft.Json.Serialization.DefaultContractResolver();

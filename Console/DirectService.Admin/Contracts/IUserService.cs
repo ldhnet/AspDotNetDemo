@@ -10,6 +10,8 @@ namespace DirectService.Admin.Contracts
         BaseResponse CreateInfo(Employee model);
 
         BaseResponse CreateInfo(params EmployeeDto[] dtos);
+
+        Task<Employee> FindAsync();
         Employee Find(string employeeSerialNumber);
         BaseResponse UpdateEmployee(params EmployeeDto[] dtos);
         BaseResponse UpdateEmployee(Employee Employee);
