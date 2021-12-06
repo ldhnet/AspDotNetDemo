@@ -34,8 +34,7 @@ namespace DirectService.Admin.Service
                      return entity;
                  });
             return result;
-        }
-
+        } 
         public Employee Find(string employeeSerialNumber)
         { 
             employeeSerialNumber = employeeSerialNumber.Trim();
