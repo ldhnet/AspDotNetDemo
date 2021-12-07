@@ -25,4 +25,8 @@
     <Folder Include="OAuth\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

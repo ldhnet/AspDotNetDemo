@@ -84,6 +84,10 @@ namespace DirectService.Admin.Service
                  });
             return result;
         }
+        public async Task<Employee> FindAsync()
+        { 
+            return await _userRepository.GetByKeyAsync(1);
+        }
 
         public Employee Find(string employeeSerialNumber)
         { 

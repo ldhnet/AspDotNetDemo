@@ -25,8 +25,8 @@ namespace DH.Models.Dtos
         public string ApiToken { get; set; }
         public DateTime? ExpirationDateUtc { get; set; }
 
-        public virtual EmployeeDetail EmployeeDetail { get; set; }
+        public EmployeeDetailDto EmployeeDetail { get; set; }
 
-        public virtual ICollection<EmployeeLogin> EmployeeLogins { get; set; } = new List<EmployeeLogin>();
+        public List<EmployeeLoginDto> EmployeeLogins { get; set; } = new List<EmployeeLoginDto>();
     }
 }
