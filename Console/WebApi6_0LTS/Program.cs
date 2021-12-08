@@ -48,8 +48,8 @@ builder.Services.AddControllers(options => {
 }).AddNewtonsoftJson(options=>
 {
     options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;//忽略循环引用
+    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//返回默认格式
 });
 
 var aa = new Newtonsoft.Json.Serialization.DefaultContractResolver();
