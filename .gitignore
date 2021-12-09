@@ -3,6 +3,13 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+<<<<<<< HEAD
+/Console/WebApi6_0LTS/obj/Debug/net6.0
+<<<<<<< HEAD
+=======
+/Console/WebMVC6_0/obj/Debug/net6.0
+>>>>>>> dev
+=======
 # User-specific files
 *.rsuser
 *.suo
@@ -348,3 +355,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+>>>>>>> dev

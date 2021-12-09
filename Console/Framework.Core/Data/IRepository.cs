@@ -125,6 +125,13 @@ namespace Framework.Core.Data
         /// <returns>是否存在</returns>
         bool CheckExists(Expression<Func<TEntity, bool>> predicate, TKey id = default(TKey), string keyName = "Id");
 
+        ///<summary>
+        ///检查实体是否存在
+        ///</summary>
+        ///<param name="predicate">查询条件谓语表达式</param> 
+        ///<returns>是否存在</returns>
+        bool CheckExists(Expression<Func<TEntity, bool>> predicate);
+
         /// <summary>
         /// 查找指定主键的实体
         /// </summary>
@@ -179,6 +186,10 @@ namespace Framework.Core.Data
         /// <param name="paths">要贪婪加载的导航属性名称数组</param>
         /// <returns>查询数据集</returns>
         IQueryable<TEntity> GetIncludes(params string[] paths);
+
+        Task<IEnumerable<TEntity>> FindList<TEntity>(Pagination pagination) where TEntity : class, new();
+
+        Task<IEnumerable<TEntity>> FindList<TEntity>(Expression<Func<TEntity, bool>> condition, Pagination pagination) where TEntity : class, new();
 
         #endregion Query
 

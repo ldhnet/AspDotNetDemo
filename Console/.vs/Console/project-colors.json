@@ -95,7 +95,12 @@
       "ProjectGuid": "a5165dd7-2779-4fcc-9634-32b43864b057",
       "DisplayName": "Framework.EF",
       "ColorIndex": 1
+    },
+    "b62a309b-09ea-4d35-9e51-3cfc0750cfab": {
+      "ProjectGuid": "b62a309b-09ea-4d35-9e51-3cfc0750cfab",
+      "DisplayName": "Framework.Mapper",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

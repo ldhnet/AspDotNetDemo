@@ -1,8 +1,10 @@
 ﻿using DH.Models.Dtos;
 using DH.Models.Entities;
+using DH.Models.param;
 using DirectService.Admin.Contracts; 
 using Framework.Core.Data;
 using Framework.Utility;
+using Framework.Utility.Extensions;
 using Framework.Utility.Mapping;
 using System.Linq.Expressions;
 
@@ -15,7 +17,54 @@ namespace DirectService.Admin.Service
         {
             this._userRepository = userService;
         }
+        private Expression<Func<Employee, bool>> ListFilter(EmployeeParam param)
+        {
+            var expression = LinqExtensions.True<Employee>();
+            if (param != null)
+            {
+                if (!string.IsNullOrEmpty(param.Name))
+                {
+                    expression = expression.And(t => t.Name.Contains(param.Name));
+                }
+                
+                if (!string.IsNullOrEmpty(param.EmployeeName))
+                {
+                    expression = expression.And(t => t.EmployeeName.Contains(param.EmployeeName));
+                }
+                if (param.Department > -1)
+                {
+                    expression = expression.And(t => t.Department == param.Department);
+                } 
+            }
+            return expression;
+        }
+        public async Task<List<Employee>> GetPageList(Pagination pagination)
+        { 
+            var list = await _userRepository.FindList<Employee>(pagination);
+            return list.ToList();
+        }
 
+        public async Task<List<Employee>> GetPageList(EmployeeParam param, Pagination pagination)
+        {
+            var expression = ListFilter(param);
+            var list = await _userRepository.FindList(expression, pagination);
+            return list.ToList();
+        }
+
+        public bool CheckExistsById(string name)
+        {
+            var a1= _userRepository.GetFirst(c => c.EmployeeName == name);
+
+            var a2 = _userRepository.GetByKey(1);
+
+            var ret = _userRepository.CheckExists(c => c.EmployeeName == name, a1.Id);
+            return ret;
+        }
+        public bool CheckExists(string name)
+        {
+            var ret = _userRepository.CheckExists(c=>c.EmployeeName == name);
+            return ret;
+        }
         public BaseResponse CreateInfo(Employee model)
         {
             var ret = _userRepository.Insert(model);

@@ -312,14 +312,24 @@ namespace Framework.Core.Data
         {
             Check.NotNull(predicate, nameof(predicate));
             TKey? defaultId = default(TKey);
-            var entity = _dbSet.Where(predicate).SingleOrDefault();
+            var entity = _dbSet.Where(predicate).FirstOrDefault();//SingleOrDefault()
             bool exists = (!(typeof(TKey).IsValueType) && id.Equals(null)) || id.Equals(defaultId)
                 ? entity != null
                 : entity != null && !ReflectionHelper.GetObjectPropertyValue<TEntity>(entity, keyName).Equals(id.ToString());
             return exists;
         }
-
-
+        ///<summary>
+        ///检查实体是否存在
+        ///</summary>
+        ///<param name="predicate">查询条件谓语表达式</param> 
+        ///<returns>是否存在</returns>
+        public bool CheckExists(Expression<Func<TEntity, bool>> predicate)
+        {
+            Check.NotNull(predicate, nameof(predicate)); 
+            var count = _dbSet.Where(predicate).Count();
+            return count>0;
+        }
+         
         /// <summary>
         /// 查找指定主键的实体
         /// </summary>
@@ -427,6 +437,21 @@ namespace Framework.Core.Data
             }
             return source;
         }
+
+        public async Task<IEnumerable<TEntity>> FindList<TEntity>(Pagination pagination) where TEntity : class, new()
+        { 
+            var data = await FindPageList<TEntity>(pagination.Sort, pagination.SortType.ToLower() == "asc" ? true : false, pagination.PageSize, pagination.PageIndex);
+            pagination.TotalCount = data.total;
+            return data.list;
+        }
+
+        public async Task<IEnumerable<TEntity>> FindList<TEntity>(Expression<Func<TEntity, bool>> condition, Pagination pagination) where TEntity : class, new()
+        {
+            var data = await FindPageList<TEntity>(condition, pagination.Sort, pagination.SortType.ToLower() == "asc" ? true : false, pagination.PageSize, pagination.PageIndex);
+            pagination.TotalCount = data.total;
+            return data.list;
+        }
+         
         #endregion Query 
 
         #region Async
@@ -557,6 +582,7 @@ namespace Framework.Core.Data
             CheckEntityKey(key, "key");
             return await _dbSet.FindAsync(key);
         }
+         
         #endregion Async 
 
         #region 私有方法
@@ -565,14 +591,41 @@ namespace Framework.Core.Data
         {
             return _unitOfWork.SaveChanges();
         }
-
-
         private async Task<int> SaveChangesAsync()
         {
             return await _unitOfWork.SaveChangesAsync();
         }
 
+        private async Task<(int total, IEnumerable<T> list)> FindPageList<T>(Expression<Func<T, bool>> condition, string sort, bool isAsc, int pageSize, int pageIndex) where T : class, new()
+        {
+            var tempData = ((IQueryable<T>)_dbSet).Where(condition);
+            return await TupleFindPageList<T>(tempData, sort, isAsc, pageSize, pageIndex);
+        }
 
+        private async Task<(int total, IEnumerable<T> list)> FindPageList<T>(string sort, bool isAsc, int pageSize, int pageIndex) where T : class, new()
+        {
+            var tempData = (IQueryable<T>)_dbSet;
+            return await TupleFindPageList(tempData, sort, isAsc, pageSize, pageIndex);
+        }
+
+        private async Task<(int total, IEnumerable<T> list)> TupleFindPageList<T>(IQueryable<T>? tempData, string sort, bool isAsc, int pageSize, int pageIndex)
+        {
+            var total = 0;
+            if (tempData == null) return (total, new List<T>()); 
+            tempData = DbContextExtensions.AppendSort<T>(tempData, sort, isAsc);
+            total = tempData.Count();
+            if (total > 0)
+            {
+                tempData = tempData.Skip<T>(pageSize * (pageIndex - 1)).Take<T>(pageSize).AsQueryable();
+                var list = await tempData.ToListAsync();
+                return (total, list);
+            }
+            else
+            {
+                return (total, new List<T>());
+            }
+        }
+         
         private static void CheckEntityKey(object key, string keyName)
         {
             key.CheckNotNull("key");
