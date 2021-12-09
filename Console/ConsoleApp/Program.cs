@@ -8,11 +8,21 @@ namespace ConsoleApp
 
     class Program
     {
+
+
+
+
         public static Func<int, int, int> fc = (int x, int y) => x * y;
          
 
         static void Main(string[] args)
         {
+            decimal m1 = 200.01m;
+
+            string str_m1 = m1.ConvertToChinese();
+
+
+
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
             var d1 = DateTime.Now.AddDays(-1).Date;
