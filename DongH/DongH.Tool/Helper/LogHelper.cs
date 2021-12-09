@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
+using DongH.Tool.Extensions;
 using NLog;
-using WebNLog.Extensions;
 
-namespace WebNLog.Helper
+namespace DongH.Tool.Helper
 {
     public class LogHelper
     {

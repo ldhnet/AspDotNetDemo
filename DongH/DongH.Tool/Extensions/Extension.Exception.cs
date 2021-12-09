@@ -1,4 +1,4 @@
-﻿namespace WebNLog.Extensions
+﻿namespace DongH.Tool.Extensions
 {
     public static partial class Extension
     {

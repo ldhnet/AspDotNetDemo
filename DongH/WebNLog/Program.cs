@@ -1,5 +1,4 @@
-using NLog.Web;
-using WebNLog.Helper;
+using NLog.Web; 
 
 var builder = WebApplication.CreateBuilder(args);
 
