@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vp0zTqnunfd07qRSE51LrsLGuIjifkAPW8r7p06C6jQgcXPa65dgztazkeF+BD0Y6R02A+OKGLV5DpkiuWkckA==",
+  "dgSpecHash": "M7JEplAbBwqMjvOXXANiUUfE87UBLQpXwtccCk6xqrMAlEq/fwxw1zUYjrscf7IPOMxdDp2QZiG93tO/oc3lBw==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\NLog\\NLogDemo\\NLogDemo.csproj",
   "expectedPackageFiles": [
@@ -122,8 +122,7 @@
     "C:\\Users\\57442\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
