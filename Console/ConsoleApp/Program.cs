@@ -21,7 +21,9 @@ namespace ConsoleApp
 
             string str_m1 = m1.ConvertToChinese();
 
+            decimal m12 = 100.01m;
 
+            string str_m12 = m12.ConvertToChinese();
 
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
