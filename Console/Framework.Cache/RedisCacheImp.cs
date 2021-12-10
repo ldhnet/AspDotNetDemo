@@ -144,6 +144,37 @@ namespace Framework.Cache
             }
             return dict;
         }
+
+
+
+        /// <summary>
+        /// 获取redis 锁
+        /// </summary>
+        /// <param name="kay">表示的是redis数据库中该锁的名称</param>
+        /// <param name="token">用来标识谁拥有该锁并用来释放锁</param>
+        ///  static RedisValue token = Environment.MachineName;
+        ///  static RedisKey kay = "lock";
+        /// <param>TimeSpan表示该锁的有效时间</param>
+        /// <returns></returns>
+        public bool LockTake(string kay,string token)
+        { 
+            return cache.LockTake(kay, token, TimeSpan.FromSeconds(5)); 
+        }
+        /// <summary>
+        /// 释放redis 锁
+        /// </summary>
+        /// <param name="kay">表示的是redis数据库中该锁的名称</param>
+        /// <param name="token">用来标识谁拥有该锁并用来释放锁</param>
+        /// <param>TimeSpan表示该锁的有效时间</param>
+        /// <returns></returns>
+        public bool LockRelease(string kay, string token)
+        { 
+            return cache.LockRelease(kay, token);
+
+        }
+     
+
+
         #endregion
 
         public void Dispose()
@@ -154,5 +185,6 @@ namespace Framework.Cache
             }
             GC.SuppressFinalize(this);
         }
+         
     }
 }

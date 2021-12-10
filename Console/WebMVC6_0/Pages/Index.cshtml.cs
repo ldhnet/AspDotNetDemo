@@ -35,20 +35,21 @@ namespace WebMVC6_0.Pages
 
                 var qqq = CacheFactory.Cache.GetCache<string>("KeyTest");
 
-    //            using (RedisClient client = new RedisClient("127.0.0.1", 6379))
-				//{
-				//	//删除当前数据库中的所有Key
-				//	client.FlushDb();
-				//	//删除所有数据库中的key 
-				//	client.FlushAll();
-				//	Console.WriteLine("存入数据");
-				//	client.Set<string>("name", "vincent");
-				//	Console.WriteLine("输出数据");
-				//	Console.WriteLine(client.Get<string>("name"));
+                //            using (RedisClient client = new RedisClient("127.0.0.1", 6379))
+                //{
+              
+                //	//删除当前数据库中的所有Key
+                //	client.FlushDb();
+                //	//删除所有数据库中的key 
+                //	client.FlushAll();
+                //	Console.WriteLine("存入数据");
+                //	client.Set<string>("name", "vincent");
+                //	Console.WriteLine("输出数据");
+                //	Console.WriteLine(client.Get<string>("name"));
 
-				//}
+                //}
 
-			}
+            }
 			catch (Exception ex)
 			{
 				_logger.LogInformation(ex.Message);
@@ -56,5 +57,9 @@ namespace WebMVC6_0.Pages
 
 			_logger.LogInformation("11111");
         }
+        //public IDisposable Acquire(string key)
+        //{
+        //    return client.AcquireLock(key);
+        //}
     }
 }
