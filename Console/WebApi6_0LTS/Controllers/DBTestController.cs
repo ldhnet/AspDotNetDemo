@@ -59,13 +59,9 @@ namespace WebApi6_0.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-<<<<<<< HEAD
-        public async Task<string> Get()
-=======
-        public IActionResult Get()
->>>>>>> dev
-        {
-
+  
+        public async Task<IActionResult> Get() 
+        { 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
              
             _logger.LogInformation("1111111");
@@ -167,86 +163,78 @@ namespace WebApi6_0.Controllers
             return Ok(res2);
             //return res2;
 
-           // var dtoem = new EmployeeDto()
-           // {
-           //     Name = "test",
-           //     BankCard = "test",
-           //     EmployeeName = "test",
-           //     EmployeeSerialNumber = "test",
+            // var dtoem = new EmployeeDto()
+            // {
+            //     Name = "test",
+            //     BankCard = "test",
+            //     EmployeeName = "test",
+            //     EmployeeSerialNumber = "test",
 
-           //     Department = 1,
-           //     Phone = "test",
-           //     WebToken = "test",
+            //     Department = 1,
+            //     Phone = "test",
+            //     WebToken = "test",
 
-           //     ApiToken = "test",
+            //     ApiToken = "test",
 
-           //     ExpirationDateUtc = DateTime.Now,
-           //     EmployeeDetail=dtoem1,
-           //     EmployeeLogins=dtoem2,
-           // };
+            //     ExpirationDateUtc = DateTime.Now,
+            //     EmployeeDetail=dtoem1,
+            //     EmployeeLogins=dtoem2,
+            // };
 
-<<<<<<< HEAD
-            var aaa111222 = _userService.CreateInfo(dtoem);
-=======
-           // var aaa11111 = _userService.CreateInfo(dtoem);
->>>>>>> dev
+            //var aaa111222 = _userService.CreateInfo(dtoem);
 
-           // var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
+            // var aaa10 = _userService.UpdateEmployee(new EmployeeDto());
 
-           // var aaa9 = _userService.UpdateEmployee(new Employee());
-             
-<<<<<<< HEAD
-            var aaa8666666 = _userService.Find("1001");
-=======
-           // var aaa8 = _userService.Find("1001");
->>>>>>> dev
+            // var aaa9 = _userService.UpdateEmployee(new Employee());
 
-           // //var aaa9 = aaa8.EmployeeDetail;
-           // //var aaa10 = aaa8.EmployeeLogins; 
+            //var aaa8666666 = _userService.Find("1001");
 
-           // var aaa77 = _userService.GetAllList().ToList();
+            // //var aaa9 = aaa8.EmployeeDetail;
+            // //var aaa10 = aaa8.EmployeeLogins; 
+
+            // var aaa77 = _userService.GetAllList().ToList();
 
 
-           // var aaa775 = aaa77.FirstOrDefault().EmployeeDetail;
+            // var aaa775 = aaa77.FirstOrDefault().EmployeeDetail;
 
-           // var aaa776 = aaa77.FirstOrDefault().EmployeeLogins;
+            // var aaa776 = aaa77.FirstOrDefault().EmployeeLogins;
 
-           // var aaa6 = _userService.GetAll().ToList();
-
-
-           // var cce = ShardResource.Hello;
-
-           // string key = new AesHelper().Key;
-             
-           // AesHelper aes = new AesHelper();
-           // string source = "admin";
-
-           // NLogHelper.Error(source);
-
-           // var aaaaaaaaa = HashHelper.GetMd5(source);
-           // var aaaaaaaaa2 = HashHelper.GetSha1(source);
-              
-           // var aaass = aes.Encrypt(source);
-
-           // var bbbss = aes.Decrypt(aaass);
+            // var aaa6 = _userService.GetAll().ToList();
 
 
-         
+            // var cce = ShardResource.Hello;
+
+            // string key = new AesHelper().Key;
+
+            // AesHelper aes = new AesHelper();
+            // string source = "admin";
+
+            // NLogHelper.Error(source);
+
+            // var aaaaaaaaa = HashHelper.GetMd5(source);
+            // var aaaaaaaaa2 = HashHelper.GetSha1(source);
+
+            // var aaass = aes.Encrypt(source);
+
+            // var bbbss = aes.Decrypt(aaass);
 
 
-           // var emp = new DataRepository().GetUserByToken(ApiToken) ?? new Employee();
 
-           // //var dto = Mapper.Map<Employee>(emp);
 
-           //var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
- 
-             
-           // var aaa2 = _SysAccountContract.GetSysAccount("admin1");
-              
-           // var aaa = _SysAccountContract.GetSysAccountInfo("admin");
-           // //return $"{aaa?.AccountName}{aaa?.AccountNo}";
 
-           // return $"{aaa?.AccountName}{aaa?.AccountNo},{aaa2.data.AccountName}{aaa2.data.AccountNo}";
+            // var emp = new DataRepository().GetUserByToken(ApiToken) ?? new Employee();
+
+            // //var dto = Mapper.Map<Employee>(emp);
+
+            //var BeginTransactionTest = _SysAccountContract.BeginTransactionTest();
+
+
+            // var aaa2 = _SysAccountContract.GetSysAccount("admin1");
+
+            // var aaa = _SysAccountContract.GetSysAccountInfo("admin");
+            // //return $"{aaa?.AccountName}{aaa?.AccountNo}";
+
+            // return $"{aaa?.AccountName}{aaa?.AccountNo},{aaa2.data.AccountName}{aaa2.data.AccountNo}";
         }
          
     }
