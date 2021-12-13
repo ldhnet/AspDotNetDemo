@@ -9,7 +9,7 @@ namespace Framework.Cache
 {
     public class MemoryCacheImp : ICache
     {
-        private IMemoryCache cache = GlobalConfig.ServiceProvider.GetService<IMemoryCache>();
+        private IMemoryCache cache = GlobalConfig.ServiceProvider!.GetService<IMemoryCache>()!;
 
         public bool SetCache<T>(string key, T value, DateTime? expireTime = null)
         {
