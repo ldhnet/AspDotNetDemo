@@ -93,7 +93,7 @@ namespace Framework.Cache
 
         public T GetHashFieldCache<T>(string key, string fieldKey)
         {
-            var dict = GetHashFieldCache<T>(key, new Dictionary<string, T> { { fieldKey, default(T) } });
+            var dict = GetHashFieldCache<T>(key, new Dictionary<string, T> { { fieldKey, default(T)! } });
             return dict[fieldKey];
         }
 
@@ -102,7 +102,7 @@ namespace Framework.Cache
             foreach (string fieldKey in dict.Keys)
             {
                 string fieldValue = cache.HashGet(key, fieldKey);
-                dict[fieldKey] = JsonConvert.DeserializeObject<T>(fieldValue);
+                dict[fieldKey] = JsonConvert.DeserializeObject<T>(fieldValue)!;
             }
             return dict;
         }
@@ -113,7 +113,7 @@ namespace Framework.Cache
             var hashFields = cache.HashGetAll(key);
             foreach (HashEntry field in hashFields)
             {
-                dict[field.Name] = JsonConvert.DeserializeObject<T>(field.Value);
+                dict[field.Name] = JsonConvert.DeserializeObject<T>(field.Value)!;
             }
             return dict;
         }
@@ -124,7 +124,7 @@ namespace Framework.Cache
             var hashFields = cache.HashGetAll(key);
             foreach (HashEntry field in hashFields)
             {
-                list.Add(JsonConvert.DeserializeObject<T>(field.Value));
+                list.Add(JsonConvert.DeserializeObject<T>(field.Value)!);
             }
             return list;
         }
