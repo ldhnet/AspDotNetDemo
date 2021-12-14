@@ -4,6 +4,7 @@ using DH.Models.param;
 using DirectService.Admin.Contracts; 
 using Framework.Core.Data;
 using Framework.Utility;
+using Framework.Utility.Attributes;
 using Framework.Utility.Extensions;
 using Framework.Utility.Mapping;
 using System.Linq.Expressions;
@@ -67,6 +68,10 @@ namespace DirectService.Admin.Service
         }
         public BaseResponse CreateInfo(Employee model)
         {
+            if (!model.ValidateModel())
+            { 
+                
+            }
             var ret = _userRepository.Insert(model);
             return ret > 0 ? new BaseResponse(successCode.Success) : new BaseResponse(successCode.NoChanged);
         }
@@ -113,7 +118,7 @@ namespace DirectService.Admin.Service
 
         public BaseResponse UpdateEmployee(Employee Employee)
         { 
-            Employee emp = _userRepository.Entities.FirstOrDefault();
+            Employee emp = _userRepository.Entities.FirstOrDefault()!;
             emp.Name = "admin666";
             emp.ExpirationDateUtc = DateTime.Now;
 

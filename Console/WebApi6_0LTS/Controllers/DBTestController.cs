@@ -6,6 +6,7 @@ using DirectService.Admin.Contracts;
 using Framework.Auth;
 using Framework.Core.Data;
 using Framework.Utility;
+using Framework.Utility.Attributes;
 using Framework.Utility.Config; 
 using Framework.Utility.Helper;
 using Framework.Utility.Mapping;
@@ -67,14 +68,31 @@ namespace WebApi6_0.Controllers
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
+            var cce = ShardResource.Hello;
+
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
+
+            var sysModel = new SysAccount()
+            {
+                UserId = "test",
+                AccountNo = "test",
+                AccountName = "ldh", 
+                CreateTime =DateTime.Now
+            };
+
+            if (!sysModel.ValidateModel())
+            { 
+               
+            }
+
+            var sysIfro = _SysAccountContract.CreateInfo(sysModel);
 
 
             var entity = _userService.Find(keyword);
 
             //throw new Exception("测试");
 
-            //Check.NotNull(entity, nameof(entity));
+            Check.NotNull(entity, nameof(entity));
 
             var model2 = new Foo()
             {
@@ -94,7 +112,8 @@ namespace WebApi6_0.Controllers
 
             var aaa8 = await _userService.GetPageList(param,page);
 
-             
+            
+
 
             Pagination page2 = new Pagination() {
                 PageSize = 3
@@ -211,7 +230,7 @@ namespace WebApi6_0.Controllers
             // var aaa6 = _userService.GetAll().ToList();
 
 
-            // var cce = ShardResource.Hello;
+            // 
 
             // string key = new AesHelper().Key;
 
