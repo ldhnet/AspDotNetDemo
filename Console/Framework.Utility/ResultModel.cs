@@ -1,6 +1,5 @@
-﻿using Framework.Utility;
-
-namespace WebApi.Middleware
+﻿ 
+namespace Framework.Utility
 {
     /// <summary>
     /// 响应实体类

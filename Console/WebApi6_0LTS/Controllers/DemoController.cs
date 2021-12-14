@@ -49,8 +49,9 @@ namespace WebApi6_0.Controllers
         /// Post测试Demo
         /// </summary>
         /// <returns></returns>  
-        [HttpPost] 
-        public BaseResponse<dynamic> Post([FromBody]DemoDto demoDto)
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult Post([FromBody]DemoDto demoDto)
         { 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222"); 
@@ -63,7 +64,7 @@ namespace WebApi6_0.Controllers
                 deomList = new List<DemoDto>() { demoDto, demoDto },
                 message = "测试"
             }; 
-            return new BaseResponse<dynamic>(successCode.Success, string.Empty, data);
+            return Ok(new BaseResponse<dynamic>(successCode.Success, string.Empty, data));
         }
     }
 }

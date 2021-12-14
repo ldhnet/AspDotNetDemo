@@ -89,6 +89,7 @@ app.UseAuthorization();
 app.UseCors("CorsPolicy");
 
 app.UseCalculateExecutionTime();
+app.UseMiddleware(typeof(ExceptionMiddleWare));
 
 app.UseMapperAutoInject();
 

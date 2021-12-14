@@ -6,6 +6,7 @@ using DirectService.Admin.Contracts;
 using Framework.Auth;
 using Framework.Core.Data;
 using Framework.Utility;
+using Framework.Utility.Attributes;
 using Framework.Utility.Config; 
 using Framework.Utility.Helper;
 using Framework.Utility.Mapping;
@@ -60,14 +61,38 @@ namespace WebApi6_0.Controllers
         [HttpGet]
         [AllowAnonymous]
   
-        public async Task<IActionResult> Get() 
+        public async Task<IActionResult> Get(string keyword) 
         { 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
              
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
+            var cce = ShardResource.Hello;
+
             string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
+
+            var sysModel = new SysAccount()
+            {
+                UserId = "test",
+                AccountNo = "test",
+                AccountName = "ldh", 
+                CreateTime =DateTime.Now
+            };
+
+            if (!sysModel.ValidateModel())
+            { 
+               
+            }
+
+            var sysIfro = _SysAccountContract.CreateInfo(sysModel);
+
+
+            var entity = _userService.Find(keyword);
+
+            //throw new Exception("测试");
+
+            Check.NotNull(entity, nameof(entity));
 
             var model2 = new Foo()
             {
@@ -87,6 +112,9 @@ namespace WebApi6_0.Controllers
 
             var aaa8 = await _userService.GetPageList(param,page);
 
+            
+
+
             Pagination page2 = new Pagination() {
                 PageSize = 3
             };
@@ -102,12 +130,12 @@ namespace WebApi6_0.Controllers
             var aaa666 = _userService.CheckExists("1001");
             var aaa6667 = _userService.CheckExists("test");
             var aaa66687 = _userService.CheckExists("test111");
-            var aaa2o = model2.MapTo<FooDto>();
+            //var aaa2o = model2.MapTo<FooDto>();
 
-            aaa2o.Name = "max";
+            //aaa2o.Name = "max";
 
 
-            var aaa2o3 = aaa2o.MapTo<Foo>();
+            //var aaa2o3 = aaa2o.MapTo<Foo>();
 
 
             var dtoem1 = new EmployeeDetail()
@@ -202,7 +230,7 @@ namespace WebApi6_0.Controllers
             // var aaa6 = _userService.GetAll().ToList();
 
 
-            // var cce = ShardResource.Hello;
+            // 
 
             // string key = new AesHelper().Key;
 

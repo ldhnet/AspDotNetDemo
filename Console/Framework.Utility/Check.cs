@@ -25,7 +25,7 @@ namespace Framework.Utility
             {
                 throw new ArgumentNullException(nameof(message));
             }
-            TException exception = (TException)Activator.CreateInstance(typeof(TException), message);
+            TException exception = (TException)Activator.CreateInstance(typeof(TException), message)!;
             throw exception;
         }
 
@@ -69,7 +69,7 @@ namespace Framework.Utility
         /// <exception cref="ArgumentNullException"></exception>
         public static void NotNull<T>(T value, string paramName)
         {
-            Required<ArgumentNullException>(value != null, string.Format(ShardResource.ParameterCheck_NotNull, paramName));
+            Required<ArgumentException>(value != null, string.Format(ShardResource.ParameterCheck_NotNull, paramName));
         }
 
         /// <summary>
