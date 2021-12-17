@@ -31,7 +31,7 @@ namespace WebApi6_0.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.Locked)]
         [AllowAnonymous]
-        public BaseResponse<Employee> Get()
+        public IActionResult Get()
         {
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
             _logger.LogInformation("1111111");
@@ -42,7 +42,8 @@ namespace WebApi6_0.Controllers
             _logger.LogError(aaa);
 
             var result = _UserInterface.Find("admin"); 
-            return new BaseResponse<Employee>(successCode.Success,"",result);
+
+            return Ok(result);
         }
 
         /// <summary>

@@ -44,7 +44,10 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllers(options => {
+
     options.Filters.Add<TokenCheckFilter>(); 
+    options.Filters.Add<ApiResultFilterAttribute>();
+
 }).AddNewtonsoftJson(options=>
 {
     options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";

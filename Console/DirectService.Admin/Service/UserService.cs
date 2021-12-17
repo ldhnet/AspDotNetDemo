@@ -95,8 +95,8 @@ namespace DirectService.Admin.Service
         }
 
         public Employee Find(string employeeSerialNumber)
-        { 
-            employeeSerialNumber = employeeSerialNumber.Trim();
+        {  
+            Check.NotNullOrEmpty(employeeSerialNumber,nameof(employeeSerialNumber));
             return _userRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.EmployeeSerialNumber == employeeSerialNumber)!;
         }
         public BaseResponse UpdateEmployee(params EmployeeDto[] dtos)
