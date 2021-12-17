@@ -29,18 +29,10 @@ namespace WebApi6_0.Middleware
         }
 
         public async Task Invoke(HttpContext context)
-        {
-            using var memStream = new MemoryStream();
-            var OriginalBody = context.Response.Body;
-
+        { 
             try
-            {
-                WriteRequestLog(context);
-                context.Response.Body = memStream;
-
-                //抛给下一个中间件
+            { 
                 await _next(context);
-
             }
             catch (Exception ex)
             {
@@ -48,11 +40,7 @@ namespace WebApi6_0.Middleware
             }
             finally
             {
-                await WriteExceptionAsync(context, null);
-
-                WriteResponseLog(context, memStream);
-                await memStream.CopyToAsync(OriginalBody);
-                context.Response.Body = OriginalBody;
+                await WriteExceptionAsync(context, null); 
             }
         }
 
@@ -64,69 +52,13 @@ namespace WebApi6_0.Middleware
                 var response = context.Response;
                 var message = exception.InnerException == null ? exception.Message : exception.InnerException.Message;
                 response.ContentType = "application/json";
-                await response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error(message, 400)));//.ConfigureAwait(false)
+                await response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error(message, 400))).ConfigureAwait(false);//.ConfigureAwait(false)
             }
             else
             {
                 var code = context.Response.StatusCode;
-                logger.LogInformation("Response.StatusCode=" + code);
-                switch (code)
-                {
-                    case 200:
-                        return;
-                    case 204:
-                        return;
-                    case 401:
-                        context.Response.ContentType = "application/json";
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("token已过期,请重新登录.", code)));
-                        break;
-                    case 403:
-                        context.Response.ContentType = "application/json";
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未授权.", code)));
-                        break;
-                    default:
-                        context.Response.ContentType = "application/json";
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未知错误", code)));
-                        break;
-                }
+                logger.LogInformation("Response.StatusCode=" + code); 
             }
-        }
-
-        private void WriteRequestLog(HttpContext context)
-        {
-            context.Request.EnableBuffering();
-            var request = context.Request;
-            request.EnableBuffering();
-            var postJson = "";
-            var stream = context.Request.Body;
-            long? length = context.Request.ContentLength;
-            if (length != null && length > 0)
-            {
-                StreamReader streamReader = new StreamReader(stream, Encoding.UTF8);
-                postJson = streamReader.ReadToEndAsync().Result;
-            }
-            context.Request.Body.Position = 0;
-            string from = context.Request.HasFormContentType ? JsonConvert.SerializeObject(context.Request.Form) : string.Empty;
-
-            //JsonConvert.SerializeObject(context.Request.Headers) -> Host
-            logger.LogInformation(@$"Rquest detail
-                    Headers:{context.Request.Headers.Host}
-                    Querys:{JsonConvert.SerializeObject(context.Request.Query)}
-                    Forms:{from}
-                    Body:{postJson}");
-
-        }
-
-        private void WriteResponseLog(HttpContext context, MemoryStream memStream)
-        {
-            memStream.Position = 0;
-            StreamReader streamReader = new StreamReader(memStream, Encoding.UTF8);
-            string respJson = streamReader.ReadToEndAsync().Result;
-            logger.LogInformation(@$"response
-                    status code:{context.Response.StatusCode}
-                    body:{respJson}");
-            memStream.Position = 0;
-        }
-
+        } 
     }
 }

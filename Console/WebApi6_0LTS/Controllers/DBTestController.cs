@@ -7,13 +7,10 @@ using Framework.Auth;
 using Framework.Core.Data;
 using Framework.Utility;
 using Framework.Utility.Attributes;
-using Framework.Utility.Config; 
-using Framework.Utility.Helper;
-using Framework.Utility.Mapping;
-using Framework.Utility.Security;
+using Framework.Utility.Config;  
+using Framework.Utility.Mapping; 
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Text;
+using Microsoft.AspNetCore.Mvc; 
 
 namespace WebApi6_0.Controllers
 {
@@ -85,7 +82,7 @@ namespace WebApi6_0.Controllers
                
             }
 
-            var sysIfro = _SysAccountContract.CreateInfo(sysModel);
+            //var sysIfro = _SysAccountContract.CreateInfo(sysModel);
 
 
             var entity = _userService.Find(keyword);
