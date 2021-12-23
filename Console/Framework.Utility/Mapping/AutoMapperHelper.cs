@@ -15,31 +15,6 @@ namespace Framework.Utility.Mapping
         {
             ServiceProvider = applicationBuilder.ApplicationServices;
         }
-        /// <summary>
-        /// 将对象映射为指定类型
-        /// </summary>
-        /// <typeparam name="TTarget">要映射的目标类型</typeparam>
-        /// <param name="source">源对象</param>
-        /// <returns>目标类型的对象</returns>
-        public static TTarget Map<TTarget>(object source)
-        {
-            var mapper = ServiceProvider.GetRequiredService<IMapper>();
-
-            return mapper.Map<TTarget>(source);
-        }
-        /// <summary>
-        /// 将对象映射为指定类型
-        /// </summary>
-        /// <typeparam name="TTarget">要映射的目标类型</typeparam>
-        /// <param name="source">源对象</param>
-        /// <returns>目标类型的对象</returns>
-        public static TTarget Map<TSource, TTarget>(TSource source)
-        {
-            var mapper = ServiceProvider.GetRequiredService<IMapper>();
-
-            return mapper.Map<TSource, TTarget>(source);
-        }
-
         //扩展
         /// <summary>
         /// 使用源类型的对象更新目标类型的对象
@@ -79,7 +54,5 @@ namespace Framework.Utility.Mapping
 
             return mapper.Map<TTarget>(source);
         } 
-
-    
     }
 }

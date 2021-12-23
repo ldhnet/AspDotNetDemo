@@ -4,8 +4,7 @@ using Framework.Utility.Extensions;
 using Framework.Utility.Mapping;
 using Framework.Utility.Reflection;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using System.Security.Claims;
+using System.Linq.Expressions; 
 using System.Security.Principal;
 
 namespace Framework.Core.Data

@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DH.Models.Entities
-{
-    [MapperInit(sourceType: typeof(EmployeeDetailDto), targetType: typeof(EmployeeDetail))]
+{ 
     public class EmployeeDetail
     {
         public int Id { get; set; }

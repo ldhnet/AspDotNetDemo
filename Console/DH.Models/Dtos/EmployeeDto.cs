@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DH.Models.Dtos
-{
-    [MapperInit(sourceType: typeof(Employee), targetType: typeof(EmployeeDto))]
-    //[MapFrom(typeof(Employee))]
+{ 
     public class EmployeeDto: IAddDto, IEditDto<int>
     {
         public int Id { get; set; }

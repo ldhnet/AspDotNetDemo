@@ -1,10 +1,10 @@
-﻿using DH.Contracts;
-using DH.Models.Dtos;
+﻿ using DH.Models.Dtos;
 using DH.Models.Entities;
 using DH.Models.param;
 using DirectService.Admin.Contracts;  
 using Framework.Auth;
 using Framework.Core.Data;
+using Framework.Mapper;
 using Framework.Utility;
 using Framework.Utility.Attributes;
 using Framework.Utility.Config;  
@@ -39,9 +39,7 @@ namespace WebApi6_0.Controllers
             res.Message = "测试";
 
             var info = await _userService.FindAsync();
-
-            var dto = info.MapTo<EmployeeDto>();
-
+            var dto = info.MapTo<EmployeeDto>(); 
             res.Data = dto;
             res.Total = 1;
             return Ok(res);
@@ -61,13 +59,40 @@ namespace WebApi6_0.Controllers
         public async Task<IActionResult> Get(string keyword) 
         { 
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString);
+
+            var model2 = new Foo()
+            {
+                Id = 1,
+                Name = "test",
+                Money = 15.0m,
+                CreateBy = "ldh"
+            };
+
+            var aaa2o = model2.MapTo<FooDto>();
+
+            var aaa2222 = aaa2o.MapTo<Foo>();
+
+            var model3 = new Person()
+            {
+                ID = 1,
+                Name = "test", 
+                CreateTime = DateTime.Now
+            };
+             
+            var aaaaaa=  model3.MapTo(new PersonDto());
+
+            var aaaaaa5555 = model3.MapTo<Person, PersonDto>();
+
+            var mode333 = model3.MapTo<PersonDto>();
+
+            var mode3335 = mode333.MapTo<Person>();
              
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
 
             var cce = ShardResource.Hello;
 
-            string ApiToken = "a5f3d50ab2084821953d4d45925a042a";
+            //string? ApiToken = "a5f3d50ab2084821953d4d45925a042a";
 
             var sysModel = new SysAccount()
             {
@@ -91,13 +116,8 @@ namespace WebApi6_0.Controllers
 
             Check.NotNull(entity, nameof(entity));
 
-            var model2 = new Foo()
-            {
-                Id = 1,
-                Name = "test",
-                Money = 15.0m,
-                CreateBy = "ldh"
-            };
+         
+
             //var aaadto= Mapper.Map<FooDto>(model2);
 
             var aaa666333 = _userService.CheckExistsById("test");

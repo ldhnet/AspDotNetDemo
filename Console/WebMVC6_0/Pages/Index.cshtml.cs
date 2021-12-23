@@ -14,52 +14,44 @@ namespace WebMVC6_0.Pages
         }
 
         public void OnGet()
-        {
-            var kay = "KeyTest";
-
-            var CacheValue = "CacheValue";
-
-            CacheFactory.Cache.SetCache(kay, CacheValue);
-
+        { 
             try
 			{
-                var cacheList = CacheFactory.Cache.GetCache<string>(kay);
-                if (cacheList == null)
-                { 
-                    CacheFactory.Cache.SetCache(kay, CacheValue); 
+                var list = director("C:/RegionalRoot/Applications/Mockup");
+                ViewData["list"] = list; 
+            }
+			catch
+			{ 
+                ViewData["list"] = new List<string>();
+            } 
+        }
+         
+        private List<string> director(string dirs)
+        {
+            List<string> list = new List<string>();
+            //绑定到指定的文件夹目录
+            DirectoryInfo dir = new DirectoryInfo(dirs);
+            //检索表示当前目录的文件和子目录
+            FileSystemInfo[] fsinfos = dir.GetFileSystemInfos();
+            //遍历检索的文件和子目录
+            foreach (FileSystemInfo fsinfo in fsinfos)
+            {
+                //判断是否为空文件夹　　
+                if (fsinfo is DirectoryInfo)
+                {  
+                    //递归调用
+                    list.Add(fsinfo.FullName.Substring(36) + "/index.html");
                 }
                 else
                 {
-                    var aa= cacheList;
+                    Console.WriteLine(fsinfo.FullName);
+                    //将得到的文件全路径放入到集合中
+                    //list.Add(fsinfo.FullName);
                 }
-
-                var qqq = CacheFactory.Cache.GetCache<string>("KeyTest");
-
-                //            using (RedisClient client = new RedisClient("127.0.0.1", 6379))
-                //{
-              
-                //	//删除当前数据库中的所有Key
-                //	client.FlushDb();
-                //	//删除所有数据库中的key 
-                //	client.FlushAll();
-                //	Console.WriteLine("存入数据");
-                //	client.Set<string>("name", "vincent");
-                //	Console.WriteLine("输出数据");
-                //	Console.WriteLine(client.Get<string>("name"));
-
-                //}
-
             }
-			catch (Exception ex)
-			{
-				_logger.LogInformation(ex.Message);
-			}
-
-			_logger.LogInformation("11111");
+            return list;
         }
-        //public IDisposable Acquire(string key)
-        //{
-        //    return client.AcquireLock(key);
-        //}
+
+
     }
 }
