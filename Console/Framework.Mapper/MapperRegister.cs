@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.Core.Dependency;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,10 +11,9 @@ namespace Framework.Mapper
     public static class MapperRegister
     { 
         public static Type[] MapType()
-        {
-
+        { 
             var allIem = Assembly
-               .GetEntryAssembly()
+               .GetEntryAssembly()!
                .GetReferencedAssemblies()
                .Select(Assembly.Load)
                .SelectMany(y => y.DefinedTypes)

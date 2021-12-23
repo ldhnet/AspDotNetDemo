@@ -1,10 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Demo展示"; 
+    var list = ViewData["list"] as List<string>;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="panel panel-primary">
+        @* <div class="panel-heading">常用Demo</div>*@
+        <div class="panel-body">
+            <p><h3>Exam相关Demo展示</h3></p> 
+        </div>
+        <ul class="list-group">
+            @{
+                if (list!.Count < 1)
+                {
+                   <li class="list-group-item"> 没有相关Demo </li>  
+                }
+                foreach (var _item in list!)
+                { 
+                   <li class="list-group-item"> <a href=@Url.Content("https://folocal-iweb.ebz-chn-dev.mkaws.com/Mockup/" + @_item)>@_item</a></li> 
+                }
+            }     
+        </ul>
+    </div>
 </div>

@@ -6,7 +6,9 @@ using Framework.Utility.Mapping;
 using WebApi6_0.AutofacConfig;
 using WebApi6_0.Middleware;
 using WebApi6_0.Filter;
-using Newtonsoft.Json;
+using Newtonsoft.Json; 
+using AutoMapper;
+using Framework.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -58,12 +60,11 @@ builder.Services.AddControllers(options => {
 var aa = new Newtonsoft.Json.Serialization.DefaultContractResolver();
 
 //序列化保持原有大小写（默认首字母小写）
-  
 
 builder.Services.AddEndpointsApiExplorer();
  
-builder.Services.AddAutoMapper();
-  
+builder.Services.AddAutoMapper(MapperRegister.MapType());
+
 #region  Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -94,7 +95,7 @@ app.UseCors("CorsPolicy");
 app.UseCalculateExecutionTime();
 app.UseMiddleware(typeof(ExceptionMiddleWare));
 
-app.UseMapperAutoInject();
+app.UseStateAutoMapper();
 
 app.UseShardResource();
 

@@ -27,6 +27,7 @@
     <ProjectReference Include="..\DirectService.Admin\DirectService.Admin.csproj" />
     <ProjectReference Include="..\DirectService.Test\DirectService.Test.csproj" />
     <ProjectReference Include="..\Framework.EF\Framework.EF.csproj" />
+    <ProjectReference Include="..\Framework.Mapper\Framework.Mapper.csproj" />
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
   </ItemGroup>
 
