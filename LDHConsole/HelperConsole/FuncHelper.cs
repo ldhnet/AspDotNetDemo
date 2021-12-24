@@ -140,6 +140,11 @@ namespace HelperConsole
             string result = Test<int>(fc1, 1);//调用委托
             string result2 = Test<string>(fc2, "1");//调用委托
 
+
+            Func<int> fc3 = () => 2;
+
+            int result3 = Test2(fc3);//调用委托
+
             Console.WriteLine(result);
             Console.WriteLine(result2);
             Console.ReadKey();
@@ -149,6 +154,9 @@ namespace HelperConsole
         {
             return fc(inputParam);
         }
-
+        static int Test2(Func<int> fc)
+        {
+            return fc();
+        }
     }
 }
