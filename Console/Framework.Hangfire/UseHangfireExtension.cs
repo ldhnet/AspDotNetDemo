@@ -17,7 +17,7 @@ namespace Framework.Hangfire
         { 
             services.AddHangfire(r => r.UseSqlServerStorage(JobServer.GetSqlServerStorageOptions(configuration)));
             BackgroundJobServerOptions optionsAction = JobServer.GetBackgroundJobServerOptions(configuration)!;
-            services.AddHangfireServer(o=> o= optionsAction );
+            services.AddHangfireServer(o=> o = optionsAction );
         }
 
         public static void UseHangfire(this IApplicationBuilder app)
