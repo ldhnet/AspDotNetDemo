@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2Sib8HGQ0pfYJ58v5jywLMg6DHMWYLUdEpKbghXXOJBvfv/cMs/6HOK9v0LmF8ciTqhOSZwjsADQ3i6oDe48yA==",
+  "dgSpecHash": "YTGn5PIUNeqoSpGJH5FrRSrx4pTobKL/2QusypY7onuhtPCq7EuS5G4dbjAY1Gukdi5OBj9eKBlmBdFV7e43+A==",
   "success": true,
   "projectFilePath": "C:\\GutReposite\\LDHConsole\\TsWeb\\TsWeb.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,8 @@
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\5.0.0\\microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
     "C:\\Users\\57442\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\57442\\.nuget\\packages\\microsoft.typescript.msbuild\\4.3.2\\microsoft.typescript.msbuild.4.3.2.nupkg.sha512"
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.typescript.msbuild\\4.3.2\\microsoft.typescript.msbuild.4.3.2.nupkg.sha512",
+    "C:\\Users\\57442\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }

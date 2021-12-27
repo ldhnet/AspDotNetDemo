@@ -1,6 +1,7 @@
 ﻿using Hangfire.Dashboard;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace Framework.Hangfire
             _roles = roles;
         }
 
-        public bool Authorize(DashboardContext context)
+        public bool Authorize([NotNull] DashboardContext context)
         { 
             string[] roles = new[] {"","" };
             return _roles.Intersect(roles).Any();

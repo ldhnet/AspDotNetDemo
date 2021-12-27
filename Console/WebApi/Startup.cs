@@ -72,7 +72,6 @@ namespace WebApi
             app.UseAuthorization();
 
             app.UseMiddleware(typeof(AuthorizeMiddleware));
-
             app.UseCalculateExecutionTime();//计算接口执行时间 中间件
 
             app.UseEndpoints(endpoints =>

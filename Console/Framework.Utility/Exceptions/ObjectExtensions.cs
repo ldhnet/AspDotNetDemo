@@ -147,7 +147,7 @@ namespace Framework.Utility.Exceptions
                     expando.Add(property.Name, val);
                 }
             }
-            return (ExpandoObject)expando;
+            return (ExpandoObject)expando!;
         }
 
         private static readonly ConcurrentDictionary<Type, ConcurrentDictionary<PropertyInfo, ValidationAttribute[]>> ValidationDict

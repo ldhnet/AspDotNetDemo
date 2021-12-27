@@ -9,6 +9,8 @@ using WebApi6_0.Filter;
 using Newtonsoft.Json; 
 using AutoMapper;
 using Framework.Mapper;
+using Framework.Hangfire;
+using WebApi6_0.HangFire; 
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -46,24 +48,18 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllers(options => {
-
     options.Filters.Add<TokenCheckFilter>(); 
     options.Filters.Add<ApiResultFilterAttribute>();
-
 }).AddNewtonsoftJson(options=>
 {
     options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;//忽略循环引用
-    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//返回默认格式
+    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//序列化保持原有大小写（默认首字母小写）
 });
-
-var aa = new Newtonsoft.Json.Serialization.DefaultContractResolver();
-
-//序列化保持原有大小写（默认首字母小写）
-
-builder.Services.AddEndpointsApiExplorer();
- 
 builder.Services.AddAutoMapper(MapperRegister.MapType());
+builder.Services.AddHangfire(builder.Configuration);
+
+builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
 
 #region  Autofac
 
@@ -73,8 +69,10 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 // call builder.Populate(), that happens in AutofacServiceProviderFactory.
 
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new ConfigureAutofac()));
-  
+
 #endregion Autofac
+
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
@@ -93,11 +91,14 @@ app.UseAuthorization();
 app.UseCors("CorsPolicy");
 
 app.UseCalculateExecutionTime();
+
 app.UseMiddleware(typeof(ExceptionMiddleWare));
 
 app.UseStateAutoMapper();
 
 app.UseShardResource();
+
+app.UseHangfire();
 
 app.MapControllers();
 
