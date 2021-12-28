@@ -2,28 +2,32 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Framework.Utility;
 using Framework.Utility.Config;
-using Framework.Utility.Mapping; 
-using WebApi6_0.AutofacConfig;
+using Framework.Utility.Mapping;  
 using WebApi6_0.Middleware;
 using WebApi6_0.Filter;
 using Newtonsoft.Json; 
 using AutoMapper;
 using Framework.Mapper;
 using Framework.Hangfire;
-using WebApi6_0.HangFire; 
+using WebApi6_0.HangFire;
+using WebApi6_0.AppConfig;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
 //builder.WebHost.UseWebRoot("webroot");
 
-builder.WebHost.UseUrls("https://*:9080", "http://*:9081");
+//builder.WebHost.UseUrls("https://*:9080", "http://*:9081");
 
 // Wait 30 seconds for graceful shutdown.
 builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
+//var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
+
 // Add services to the container.
+
 
 //解决跨域
 builder.Services.AddCors(options =>
@@ -60,7 +64,7 @@ builder.Services.AddAutoMapper(MapperRegister.MapType());
 builder.Services.AddHangfire(builder.Configuration);
 
 builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
-
+ 
 #region  Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -84,7 +88,32 @@ if (app.Environment.IsDevelopment())
     //app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi6_0 v1"); c.RoutePrefix = string.Empty; });
 }
 
+RequestDelegate handler = async context =>
+{
+    var exceptionHandlerPathFeature =
+    context.Features.Get<IExceptionHandlerPathFeature>();
+
+    var resp = new BaseResponse(successCode.Error, exceptionHandlerPathFeature?.Error.Message!);
+    var exception = exceptionHandlerPathFeature?.Error;
+
+    while (exception?.InnerException != null)
+    {
+        resp.msg = exception.InnerException.Message;
+        exception = exception.InnerException;
+    }
+    context.Response.ContentType = "application/json";
+    context.Response.StatusCode = 200;
+    await context.Response.WriteAsync(JsonConvert.SerializeObject(resp)).ConfigureAwait(false);
+};
+
+app.UseExceptionHandler(new ExceptionHandlerOptions
+{
+    ExceptionHandler = handler
+});
+
 app.UseHttpsRedirection();
+
+GlobalConfig.ServiceProvider = app.Services;
 
 app.UseAuthorization();
 //解决跨域
@@ -99,7 +128,11 @@ app.UseStateAutoMapper();
 app.UseShardResource();
 
 app.UseHangfire();
-
+ 
 app.MapControllers();
 
+//app.Lifetime.ApplicationStarted.Register(ApplicationConfig.OnAppStarted);
+//app.Lifetime.ApplicationStopped.Register(ApplicationConfig.OnAppStopped);
+
 app.Run();
+

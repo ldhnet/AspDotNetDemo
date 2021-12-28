@@ -4,7 +4,7 @@ using Framework.Core.Dependency;
 using Framework.EF.Context;
 using System.Reflection;
 
-namespace WebApi6_0.AutofacConfig
+namespace WebApi6_0.AppConfig
 {
     public class ConfigureAutofac : Autofac.Module
     {
