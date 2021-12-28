@@ -1,4 +1,5 @@
-﻿using Framework.Utility.Helper;
+﻿using ConsoleApp.Rule;
+using Framework.Utility.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +22,37 @@ namespace ConsoleApp
 
             string str_m1 = m1.ConvertToChinese();
 
-            RedisHelper.并发测试();
+            //RedisHelper.并发测试();
 
-            for (int i=0;i<10;i++)
-            { 
-            }
+
 
             //RedisHelper.并发测试_未使用锁();
             //RedisHelper.并发测试_Redis锁();
+
+
+
+            AbstractAuditor director = new Director()
+            {
+                Name = "小张"
+            };
+            AbstractAuditor manager = new Manager()
+            {
+                Name = "小刘"
+            };
+            AbstractAuditor ceo = new CEO()
+            {
+                Name = "小李"
+
+            };
+            ApplyContext apply = new ApplyContext()
+            {
+                Hour = 18,
+                AuditResult=false,
+            };
+            director.SetNextAuditor(manager);
+            manager.SetNextAuditor(ceo);
+            director.Audit(apply);
+
 
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
