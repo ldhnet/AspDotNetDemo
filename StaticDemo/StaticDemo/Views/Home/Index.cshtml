@@ -1,0 +1,30 @@
+﻿@using StaticDemo.Controllers
+@{
+    ViewData["Title"] = "Demo展示";
+    var list = ViewData["list"] as List<ResultFileInfo>;
+    var filelist = ViewData["filelist"] as List<string>;
+}
+
+<div class="text-center">
+    <div class="panel panel-primary">
+        <div class="panel-body"> 
+            <p><h3>Exam相关Demo展示</h3></p>
+        </div>
+        <ul class="list-group">
+            @{
+                foreach (var _item in filelist)
+                {
+                    <li class="list-group-item">
+                        <a class="glyphicon glyphicon-folder-open" href=@Url.Action("index","Home",new { pathName = @_item })> @_item</a>
+                    </li>
+                }
+                foreach (var _item in list)
+                {
+                    <li class="list-group-item"> 
+                        <a href=@Url.Content("https://127.0.0.1/" + @_item.PathUrl) target="_blank">@_item.DisplayName</a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
