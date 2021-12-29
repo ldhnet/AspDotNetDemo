@@ -133,6 +133,6 @@ app.MapControllers();
 
 //app.Lifetime.ApplicationStarted.Register(ApplicationConfig.OnAppStarted);
 //app.Lifetime.ApplicationStopped.Register(ApplicationConfig.OnAppStopped);
-
+ 
 app.Run();
 
