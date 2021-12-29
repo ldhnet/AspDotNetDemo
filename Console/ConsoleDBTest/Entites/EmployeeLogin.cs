@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleDBTest
+namespace ConsoleDBTest.Entites
 {
     public class EmployeeLogin
     {

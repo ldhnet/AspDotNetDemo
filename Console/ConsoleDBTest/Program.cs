@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleDBTest.Entites;
+using ConsoleDBTest.Helper;
+using System;
 using System.Linq;
 
 namespace ConsoleDBTest
@@ -12,6 +14,12 @@ namespace ConsoleDBTest
             //adoInsertTest.GetData();
 
             //int retsult= adoInsertTest.Add();
+
+            SqlHelper sqlHelper = new SqlHelper();
+            EmployeeExtend employee1 = sqlHelper.Find<EmployeeExtend>(1);
+             
+            EmployeeExtend employee2 = sqlHelper.Find<EmployeeExtend>(2);
+
 
 
             DefaultDbContext context = new DefaultDbContext();

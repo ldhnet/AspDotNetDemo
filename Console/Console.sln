@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Cache", "Framewor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mapper", "Framework.Mapper\Framework.Mapper.csproj", "{05E1818F-3355-4EFC-BA45-9786EF5CCDD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Hangfire", "Framework.Hangfire\Framework.Hangfire.csproj", "{7C8A79C2-9386-4657-88DB-6F72EB45A526}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Hangfire", "Framework.Hangfire\Framework.Hangfire.csproj", "{7C8A79C2-9386-4657-88DB-6F72EB45A526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Log4Net", "Framework.Log4Net\Framework.Log4Net.csproj", "{05C7449A-F379-4F80-922E-55CC60248956}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,10 @@ Global
 		{7C8A79C2-9386-4657-88DB-6F72EB45A526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C8A79C2-9386-4657-88DB-6F72EB45A526}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C8A79C2-9386-4657-88DB-6F72EB45A526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C7449A-F379-4F80-922E-55CC60248956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C7449A-F379-4F80-922E-55CC60248956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C7449A-F379-4F80-922E-55CC60248956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C7449A-F379-4F80-922E-55CC60248956}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
