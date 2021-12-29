@@ -14,6 +14,7 @@ using WebApi6_0.AppConfig;
 using Microsoft.AspNetCore.Diagnostics;
 using Framework.Utility.Email;
 using Framework.Log4Net;
+using Framework.NLog;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -69,7 +70,8 @@ builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
 
 builder.Services.AddSingleton<IEmailSender, DefaultEmailSender>();
 
-builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>();
+builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>(); //log4net 
+//builder.Services.AddSingleton<ILoggerProvider, NLogLoggerProvider>();//NLog
 
 #region  Autofac
 

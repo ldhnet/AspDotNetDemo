@@ -266,6 +266,8 @@ namespace Framework.Core.Data
         /// <param name="key">实体主键</param>
         /// <returns>符合主键的实体，不存在时返回null</returns>
         Task<TEntity> GetByKeyAsync(TKey key);
+
+        Task<TEntity> GetFirstOrDefaultAsync();
         #endregion Async
 
 

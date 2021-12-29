@@ -78,10 +78,10 @@ namespace Framework.Log4Net
             var stackTrace = new System.Diagnostics.StackTrace(2);
             for (int i = 0; i < stackTrace.FrameCount; i++)
             {
-                var frame = stackTrace.GetFrame(i);
+                var frame = stackTrace.GetFrame(i)!;
                 var type = frame.GetMethod()?.DeclaringType;
 
-                if (string.Equals(type?.Name, "Startup", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(type?.Name, "Program", StringComparison.OrdinalIgnoreCase))//Startup
                 {
                     return type?.Assembly!;
                 }

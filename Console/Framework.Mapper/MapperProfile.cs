@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DH.Models.Dtos;
+using DH.Models.Entities;
 using Framework.Core.Dependency;
 
 namespace Framework.Mapper
@@ -12,6 +14,17 @@ namespace Framework.Mapper
 
             CreateMap<Foo, FooDto>().ReverseMap();
             CreateMap<TestMap, TestMapDto>().ReverseMap();
+
+            //CreateMap<Employee, EmployeeDto>()
+            //    .ForMember(d => d.EmployeeDetail, s => s.Ignore())
+            //    .ForMember(d => d.EmployeeLogins, s => s.Ignore());
+            //CreateMap<EmployeeDto, Employee>()
+            //        .ForMember(d => d.EmployeeDetail, s => s.Ignore())
+            //        .ForMember(d => d.EmployeeLogins, s => s.Ignore());
+
+            CreateMap<EmployeeDetail, EmployeeDetailDto>().ReverseMap();
+
+            CreateMap<EmployeeLogin, EmployeeLoginDto>().ReverseMap();
         }
     }
 }

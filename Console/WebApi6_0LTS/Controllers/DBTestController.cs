@@ -1,12 +1,14 @@
 ﻿using DH.Models.Dtos;
 using DH.Models.Entities;
 using DH.Models.param;
-using DirectService.Admin.Contracts;   
+using DirectService.Admin.Contracts;
+using DirectService.Admin.Service;
 using Framework.Core.Data;
 using Framework.Mapper;
 using Framework.Utility;
 using Framework.Utility.Attributes;
-using Framework.Utility.Config;  
+using Framework.Utility.Config;
+using Framework.Utility.Exceptions;
 using Framework.Utility.Mapping; 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
@@ -16,31 +18,38 @@ namespace WebApi6_0.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class DBTestController : ControllerBase
-    {
-        private readonly ILogger<DBTestController> _logger;
-        private readonly ISysAccountContract _SysAccountContract;
-        private readonly IUserService _userService;
-        private readonly IUnitOfWork _unitOfWork; 
-        public DBTestController(ILogger<DBTestController> logger, IUserService userService, IUnitOfWork unitOfWork, ISysAccountContract sysAccountContract)
+    {   
+        private readonly IServiceProvider _provider;
+        public DBTestController(IServiceProvider provider)
         {
-            _logger = logger;
-            _SysAccountContract = sysAccountContract;
-            _userService = userService;
-            _unitOfWork = unitOfWork; 
-        }
+            _provider= provider;  
+        }        
+        private ILogger _logger => _provider.GetLogger(nameof(DBTestController));
+        private IUserService _userService => _provider.GetRequiredService<IUserService>();
+        private IUnitOfWork _unitOfWork => _provider.GetRequiredService<IUnitOfWork>();
+        private ISysAccountContract _SysAccountContract => _provider.GetRequiredService<ISysAccountContract>();
+
         [HttpGet]
         [AllowAnonymous]
         [Route("GetInfoAsync")]
         public async Task<IActionResult> GetInfoAsync()
         {
+            _logger.LogInformation("1111111");
+            _logger.LogWarning("2222222222"); 
+            _logger.LogError("3333333");
+
+             
             TResponse<EmployeeDto> res = new TResponse<EmployeeDto>();
             res.ReturnCode = 1;
             res.Message = "测试";
 
-            var info = await _userService.FindAsync();
+            var list = _userService.GetAllList();
+
+            var info =  _userService.Find("1001");
             var dto = info.MapTo<EmployeeDto>(); 
             res.Data = dto;
-            res.Total = 1;
+            res.Total = 1;  
+
             return Ok(res);
 
             //return NotFound(res);

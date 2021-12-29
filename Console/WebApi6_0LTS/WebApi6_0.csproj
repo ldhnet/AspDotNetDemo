@@ -30,6 +30,7 @@
     <ProjectReference Include="..\Framework.Hangfire\Framework.Hangfire.csproj" />
     <ProjectReference Include="..\Framework.Log4Net\Framework.Log4Net.csproj" />
     <ProjectReference Include="..\Framework.Mapper\Framework.Mapper.csproj" />
+    <ProjectReference Include="..\Framework.NLog\Framework.NLog.csproj" />
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
   </ItemGroup>
 
