@@ -581,7 +581,12 @@ namespace Framework.Core.Data
             CheckEntityKey(key, "key");
             return await _dbSet.FindAsync(key);
         }
-         
+ 
+        public async Task<TEntity> GetFirstOrDefaultAsync()
+        { 
+            return await _dbSet.FirstOrDefaultAsync();
+        }
+
         #endregion Async 
 
         #region 私有方法

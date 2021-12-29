@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 
-namespace ConsoleDBTest
+namespace ConsoleDBTest.Helper
 {
     public static class ExtensionHelper
     {

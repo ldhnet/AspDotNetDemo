@@ -47,17 +47,17 @@ namespace WebApi6_0.Middleware
         private async Task WriteExceptionAsync(HttpContext context, Exception exception)
         {
             if (exception != null)
-            {
-                logger.LogError("全局异常捕获：", exception.Message);
+            { 
                 var response = context.Response;
                 var message = exception.InnerException == null ? exception.Message : exception.InnerException.Message;
+                logger.LogError($"全局异常捕获：{exception.Message}");
                 response.ContentType = "application/json";
-                await response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error(message, 400))).ConfigureAwait(false);//.ConfigureAwait(false)
+                await response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error(message, 500))).ConfigureAwait(false);//.ConfigureAwait(false)
             }
             else
             {
                 var code = context.Response.StatusCode;
-                logger.LogInformation("Response.StatusCode=" + code); 
+                //logger.LogInformation("Response.StatusCode=" + code); 
             }
         } 
     }

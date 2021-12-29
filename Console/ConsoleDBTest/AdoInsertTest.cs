@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleDBTest.Entites;
+using ConsoleDBTest.Helper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;

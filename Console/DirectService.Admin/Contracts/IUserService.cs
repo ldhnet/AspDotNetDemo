@@ -17,6 +17,7 @@ namespace DirectService.Admin.Contracts
 
         Task<Employee> FindAsync();
         Employee Find(string employeeSerialNumber);
+        Task<Employee> GetFirstOrDefaultAsync();
         BaseResponse UpdateEmployee(params EmployeeDto[] dtos);
         BaseResponse UpdateEmployee(Employee Employee);
         BaseResponse<Employee> FindEmployee(string employeeSerialNumber);

@@ -7,6 +7,7 @@ using Framework.Utility;
 using Framework.Utility.Attributes;
 using Framework.Utility.Extensions;
 using Framework.Utility.Mapping;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace DirectService.Admin.Service
@@ -55,9 +56,7 @@ namespace DirectService.Admin.Service
         public bool CheckExistsById(string name)
         {
             var a1= _userRepository.GetFirst(c => c.EmployeeName == name);
-
-            var a2 = _userRepository.GetByKey(1);
-
+              
             var ret = _userRepository.CheckExists(c => c.EmployeeName == name, a1.Id);
             return ret;
         }
@@ -140,10 +139,13 @@ namespace DirectService.Admin.Service
             token = token.Trim();
             return _userRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.ApiToken == token);
         }
-
+        public async Task<Employee> GetFirstOrDefaultAsync()
+        {
+            return await _userRepository.GetFirstOrDefaultAsync();
+        }
         public IQueryable<Employee> GetAllList()
         {
-            return _userRepository.Entities;
+            return _userRepository.Entities.Include(m => m.EmployeeDetail).Include(m=>m.EmployeeLogins);
         }
         public IQueryable<Employee> GetAll()
         {
