@@ -22,15 +22,15 @@ namespace ConsoleApp
 
             string str_m1 = m1.ConvertToChinese();
 
-            //RedisHelper.并发测试();
+            for (int i = 0; i < 10000; i++)
+            {
+                TestStatic.GetStaticString();
+            }
 
-
-
+            //RedisHelper.并发测试();  
             //RedisHelper.并发测试_未使用锁();
             //RedisHelper.并发测试_Redis锁();
-
-
-
+             
             AbstractAuditor director = new Director()
             {
                 Name = "小张"
@@ -42,7 +42,6 @@ namespace ConsoleApp
             AbstractAuditor ceo = new CEO()
             {
                 Name = "小李"
-
             };
             ApplyContext apply = new ApplyContext()
             {

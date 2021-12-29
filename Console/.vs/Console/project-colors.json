@@ -100,7 +100,22 @@
       "ProjectGuid": "b62a309b-09ea-4d35-9e51-3cfc0750cfab",
       "DisplayName": "Framework.Mapper",
       "ColorIndex": 2
+    },
+    "7c8a79c2-9386-4657-88db-6f72eb45a526": {
+      "ProjectGuid": "7c8a79c2-9386-4657-88db-6f72eb45a526",
+      "DisplayName": "Framework.Hangfire",
+      "ColorIndex": 3
+    },
+    "6cbb4c6a-884d-4165-b38e-02b4c173468a": {
+      "ProjectGuid": "6cbb4c6a-884d-4165-b38e-02b4c173468a",
+      "DisplayName": "Framework.Cache",
+      "ColorIndex": 4
+    },
+    "05e1818f-3355-4efc-ba45-9786ef5ccdd0": {
+      "ProjectGuid": "05e1818f-3355-4efc-ba45-9786ef5ccdd0",
+      "DisplayName": "Framework.Mapper",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 6
 }
