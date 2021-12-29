@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Framework.Utility.Email;
 using Framework.Log4Net;
 using Framework.NLog;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -31,7 +32,12 @@ GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get
 
 // Add services to the container.
 
+builder.Services.Configure<MailSenderOptions>(options =>
+{
+     builder.Configuration.GetSection("MailSenderOptions").Get<MailSenderOptions>(); 
+});
 
+builder.Services.AddHealthChecks().AddCheck("self", () => HealthCheckResult.Healthy());
 //½â¾ö¿çÓò
 builder.Services.AddCors(options =>
 {

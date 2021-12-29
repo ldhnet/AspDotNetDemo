@@ -29,6 +29,8 @@ namespace WebApi6_0.Controllers
         private IUnitOfWork _unitOfWork => _provider.GetRequiredService<IUnitOfWork>();
         private ISysAccountContract _SysAccountContract => _provider.GetRequiredService<ISysAccountContract>();
 
+        private IConfiguration _configuration => _provider.GetRequiredService<IConfiguration>();
+
         [HttpGet]
         [AllowAnonymous]
         [Route("GetInfoAsync")]
@@ -38,7 +40,9 @@ namespace WebApi6_0.Controllers
             _logger.LogWarning("2222222222"); 
             _logger.LogError("3333333");
 
+           var aaa=  _configuration.GetSection("DisplayName");
              
+
             TResponse<EmployeeDto> res = new TResponse<EmployeeDto>();
             res.ReturnCode = 1;
             res.Message = "测试";
