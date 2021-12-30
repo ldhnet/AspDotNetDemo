@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using Framework.Utility.Config;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -19,8 +22,8 @@ namespace Framework.Utility.Helper
         /// 构造函数
         /// </summary>
         public SqlHelper()
-        {
-            conncetionString= GetConnectionString();
+        { 
+            conncetionString = GetConnectionString();
         }
 
         /// <summary>
@@ -36,8 +39,10 @@ namespace Framework.Utility.Helper
         }
 
         private static string GetConnectionString()
-        {
-            return "Server=localhost;Database=Test;User Id=sa;Password=2021@ldh;"; 
+        { 
+            string examConnectionString = GlobalConfig.Configuration.GetSection("SystemConfig:ExamConnectionString").Value;
+            Check.NotNullOrEmpty(examConnectionString, nameof(examConnectionString));
+            return examConnectionString; 
         }
 
         private SqlConnection connection;

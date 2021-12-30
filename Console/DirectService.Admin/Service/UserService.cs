@@ -94,7 +94,10 @@ namespace DirectService.Admin.Service
         }
 
         public Employee Find(string employeeSerialNumber)
-        {  
+        {
+            DataRepository dataRepository = new DataRepository();
+            var data= dataRepository.GetUserByToken("a5f3d50ab2084821953d4d45925a042a");
+
             Check.NotNullOrEmpty(employeeSerialNumber,nameof(employeeSerialNumber));
             return _userRepository.EntitiesAsNoTracking.FirstOrDefault(c => c.EmployeeSerialNumber == employeeSerialNumber)!;
         }

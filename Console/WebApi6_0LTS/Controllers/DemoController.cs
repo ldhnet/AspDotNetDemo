@@ -39,14 +39,18 @@ namespace WebApi6_0.Controllers
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
+             
 
             var aaa = _TestInterface.TestFun();
 
             _logger.LogError(aaa);
 
-            var result = _UserInterface.Find("admin"); 
+            var result = _UserInterface.Find("adminaaa");
 
-            return Ok(result);
+            CheckParameter.NotNullOrEmpty(aaa,"adminaaa");
+            CheckParameter.Required(result,c => c != null, "dto 不能为空");
+
+            return Ok(aaa);
         }
 
         /// <summary>
