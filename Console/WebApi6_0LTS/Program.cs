@@ -27,15 +27,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSenderOptions").Get<MailSenderOptions>();
 
 //var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
 
 // Add services to the container.
 
-builder.Services.Configure<MailSenderOptions>(options =>
+builder.Services.Configure<SystemConfig>(options =>
 {
-     builder.Configuration.GetSection("MailSenderOptions").Get<MailSenderOptions>(); 
+    builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
 });
+
 
 builder.Services.AddHealthChecks().AddCheck("self", () => HealthCheckResult.Healthy());
 //½â¾ö¿çÓò
