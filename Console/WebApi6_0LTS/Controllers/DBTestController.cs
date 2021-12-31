@@ -36,9 +36,9 @@ namespace WebApi6_0.Controllers
         [Route("GetInfoAsync")]
         public async Task<IActionResult> GetInfoAsync()
         {
-            _logger.LogInformation("1111111");
-            _logger.LogWarning("2222222222"); 
-            _logger.LogError("3333333");
+            //_logger.LogInformation("1111111");
+            //_logger.LogWarning("2222222222"); 
+            //_logger.LogError("3333333");
 
            var aaa=  _configuration.GetSection("DisplayName");
              
