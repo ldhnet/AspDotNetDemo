@@ -311,7 +311,7 @@ namespace Framework.Utility.Helper
         /// <param name="sql"></param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public IList<TElement> GetEntites<TElement>(string sql, params SqlParameter[] values)
+        public IList<TElement> GetEntites<TElement>(string sql, params SqlParameter[] values) where TElement : class
         {
             DataSet ds = new DataSet();
             SqlCommand cmd = new SqlCommand(sql, Connection);
