@@ -8,14 +8,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hangfire.Redis;
 
 namespace Framework.Hangfire
 {
     public static  class UseHangfireExtension
     {
         public static void AddHangfire(this IServiceCollection services,ConfigurationManager configuration)
-        { 
-            services.AddHangfire(r => r.UseSqlServerStorage(JobServer.GetSqlServerStorageOptions(configuration)));
+        {
+            //services.AddHangfire(r => r.UseSqlServerStorage(JobServer.GetSqlServerStorageOptions(configuration))); //持久化到数据库
+
+            var prefix = new HangfirePrefix("app_Name");
+       
+            var connstring = JobServer.GetSqlServerStorageOptions(configuration);
+            services.AddHangfire(_configuration =>
+            {
+                //_configuration.UseRedisStorage(connstring);
+                //持久化到Redis
+                _configuration.UseRedisStorage(JobServer.GetSqlServerStorageOptions(configuration), new RedisStorageOptions()
+                {
+                    Db = 0,
+                    Prefix = prefix.GetHangfirePrefix()
+                });
+            });
             BackgroundJobServerOptions optionsAction = JobServer.GetBackgroundJobServerOptions(configuration)!;
             services.AddHangfireServer(o=> o = optionsAction );
         }
@@ -55,7 +70,7 @@ namespace Framework.Hangfire
         public static BackgroundJobServerOptions GetBackgroundJobServerOptions(IConfiguration configuration)
         {
             BackgroundJobServerOptions serverOptions = new BackgroundJobServerOptions() {
-                Queues = new[] { "back", "front", "default" },//队列名称，只能为小写
+                Queues = new[] { "TestLee", "default" },//队列名称，只能为小写
                 //WorkerCount = Environment.ProcessorCount * 1, 
                 ServerName = "conference hangfire1",//服务器名称
             };

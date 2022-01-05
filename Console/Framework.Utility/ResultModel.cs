@@ -13,7 +13,7 @@ namespace Framework.Utility
         /// <returns></returns>
         public static TResponse Ok(object data)
         {
-            return new TResponse<object> { Data = data, Message = null, HttpCode = 200,  ReturnCode = 1 };
+            return new TResponse<object> { Data = data, Message = null, Code = 1 };
         }
         /// <summary>
         /// 失败
@@ -23,7 +23,7 @@ namespace Framework.Utility
         /// <returns></returns>
         public static TResponse Error(string str, int code)
         {
-            return new TResponse<object> { Data = null, Message = str, HttpCode = code, ReturnCode = 0 };
+            return new TResponse<object> { Data = null, Message = str,  Code = code };
         }
     }
 

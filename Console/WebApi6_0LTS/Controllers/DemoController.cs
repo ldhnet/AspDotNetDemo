@@ -3,6 +3,7 @@ using DirectService.Admin.Contracts;
 using DirectService.Test.Contracts;
 using Framework.Utility;
 using Framework.Utility.Config;
+using Framework.Utility.Email;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -18,11 +19,13 @@ namespace WebApi6_0.Controllers
         private readonly ILogger<DemoController> _logger;
         private readonly ITestInterface _TestInterface;
         private readonly IUserService _UserInterface;
-        public DemoController(ILogger<DemoController> logger, ITestInterface testIfc, IUserService userIfc)
+        private readonly IEmailSender _EmailInterface;
+        public DemoController(ILogger<DemoController> logger, ITestInterface testIfc, IUserService userIfc, IEmailSender emailface)
         {
             _logger = logger;
             _TestInterface = testIfc;
             _UserInterface = userIfc;
+            _EmailInterface = emailface;            
         }
         /// <summary>
         /// 测试Demo
@@ -36,14 +39,18 @@ namespace WebApi6_0.Controllers
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
+             
 
             var aaa = _TestInterface.TestFun();
 
             _logger.LogError(aaa);
 
-            var result = _UserInterface.Find("admin"); 
+            var result = _UserInterface.Find("adminaaa");
 
-            return Ok(result);
+            CheckParameter.NotNullOrEmpty(aaa,"adminaaa");
+            CheckParameter.Required(result,c => c != null, "dto 不能为空");
+
+            return Ok(aaa);
         }
 
         /// <summary>
@@ -52,13 +59,23 @@ namespace WebApi6_0.Controllers
         /// <returns></returns>  
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Post([FromBody]DemoDto demoDto)
+        public async Task<IActionResult> Post([FromBody]DemoDto demoDto)
         { 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222"); 
 
             _logger.LogError("3333333");
 
+
+            string url = $"baidu.com";
+            string body =
+                $"亲爱的用户 <strong>{demoDto.Name}</strong>[{demoDto.Name}]，您好！<br>"
+                + $"欢迎注册，激活邮箱请 <a href=\"{url}\" target=\"_blank\"><strong>点击这里</strong></a><br>"
+                + $"如果上面的链接无法点击，您可以复制以下地址，并粘贴到浏览器的地址栏中打开。<br>"
+                + $"{url}<br>"
+                + $"祝您使用愉快！";
+            await _EmailInterface.SendEmailAsync("2283259182@qq.com", "测试邮件", body);
+              
             var data = new
             {
                 demoInfo = demoDto,

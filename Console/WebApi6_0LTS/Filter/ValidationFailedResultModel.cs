@@ -9,13 +9,12 @@ namespace WebApi6_0.Filter
     public class ValidationFailedResultModel : TResponse<object>
     {
         public ValidationFailedResultModel(ModelStateDictionary modelState)
-        {
-            HttpCode = StatusCodes.Status422UnprocessableEntity;
+        { 
             Message = "参数不合法";
             Data = modelState.Keys
                         .SelectMany(key => modelState[key]!.Errors.Select(x => new ValidationError(key, x.ErrorMessage)))
                         .ToList();
-            ReturnCode = (int)ReturnStatus.Fail;
+            Code = (int)ReturnStatus.Fail;
         }
     }
      

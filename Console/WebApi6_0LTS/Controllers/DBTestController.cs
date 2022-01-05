@@ -36,15 +36,15 @@ namespace WebApi6_0.Controllers
         [Route("GetInfoAsync")]
         public async Task<IActionResult> GetInfoAsync()
         {
-            _logger.LogInformation("1111111");
-            _logger.LogWarning("2222222222"); 
-            _logger.LogError("3333333");
+            //_logger.LogInformation("1111111");
+            //_logger.LogWarning("2222222222"); 
+            //_logger.LogError("3333333");
 
            var aaa=  _configuration.GetSection("DisplayName");
              
 
             TResponse<EmployeeDto> res = new TResponse<EmployeeDto>();
-            res.ReturnCode = 1;
+            res.Code = 1;
             res.Message = "测试";
 
             var list = _userService.GetAllList();
@@ -207,12 +207,12 @@ namespace WebApi6_0.Controllers
             empList2.Add(emp222);
 
             TResponse res = new TResponse();
-            res.ReturnCode = 1;
+            res.Code = 1;
             res.Message = "测试";
            
 
             TResponse<List<Employee>> res2 = new TResponse<List<Employee>>();
-            res2.ReturnCode = 0;
+            res2.Code = 0;
             res2.Message = "123456";
             res2.Data = empList2;
             res2.Total = 2;

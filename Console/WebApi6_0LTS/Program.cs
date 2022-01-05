@@ -25,12 +25,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Wait 30 seconds for graceful shutdown.
 builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
-
-GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
-GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSenderOptions").Get<MailSenderOptions>();
-
-//var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
-
+  
 // Add services to the container.
 
 builder.Services.Configure<SystemConfig>(options =>
@@ -94,6 +89,15 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 
 builder.Services.AddEndpointsApiExplorer();
 
+
+
+//var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
+
+GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
+GlobalConfig.Services = builder.Services;
+GlobalConfig.Configuration = builder.Configuration;
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -128,9 +132,7 @@ app.UseExceptionHandler(new ExceptionHandlerOptions
 });
 
 app.UseHttpsRedirection();
-
-GlobalConfig.ServiceProvider = app.Services;
-
+ 
 app.UseAuthorization();
 //½â¾ö¿çÓò
 app.UseCors("CorsPolicy");
@@ -149,6 +151,7 @@ app.MapControllers();
 
 //app.Lifetime.ApplicationStarted.Register(ApplicationConfig.OnAppStarted);
 //app.Lifetime.ApplicationStopped.Register(ApplicationConfig.OnAppStopped);
- 
+
+GlobalConfig.ServiceProvider = app.Services;
 app.Run();
 

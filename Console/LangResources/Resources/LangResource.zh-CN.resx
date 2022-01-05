@@ -223,7 +223,7 @@
     <value>参数“{0}”的值必须大于“{1}”。</value>
   </data>
   <data name="ParameterCheck_NotGreaterThanOrEqual" xml:space="preserve">
-    <value>参数“{0}”的值必须小于或等于“{1}”。</value>
+    <value>参数“{0}”的值必须大于或等于“{1}”。</value>
   </data>
   <data name="ParameterCheck_NotLessThan" xml:space="preserve">
     <value>参数“{0}”的值必须小于“{1}”。</value>

@@ -12,13 +12,9 @@ namespace Framework.Utility
     public class TResponse
     {
         /// <summary>
-        /// Http 状态码
+        /// 操作结果，Code，0代表失败，其他的验证返回结果，可根据需要设置
         /// </summary>
-        public int HttpCode { get; set; }
-        /// <summary>
-        /// 操作结果，ResultType为1代表成功，0代表失败，其他的验证返回结果，可根据需要设置
-        /// </summary>
-        public int ReturnCode { get; set; }
+        public int Code { get; set; }
 
         /// <summary>
         /// 提示信息或异常信息
