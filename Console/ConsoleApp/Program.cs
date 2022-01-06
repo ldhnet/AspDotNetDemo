@@ -20,7 +20,17 @@ namespace ConsoleApp
         {
             decimal m1 = 200.01m;
 
-            string str_m1 = m1.ConvertToChinese();
+
+
+            var mrStartDate = Convert.ToDateTime("2021-10-30");
+       
+                DateTime endTime, startTime;
+                //吃到书面及以上警告，自下月起不给月付              
+                endTime = new DateTime(mrStartDate.AddMonths(13).Year, mrStartDate.AddMonths(13).Month, 1).AddDays(-1);
+                startTime = new DateTime(mrStartDate.AddMonths(1).Year, mrStartDate.AddMonths(1).Month, 1);
+
+
+                string str_m1 = m1.ConvertToChinese();
 
             for (int i = 0; i < 10000; i++)
             {
