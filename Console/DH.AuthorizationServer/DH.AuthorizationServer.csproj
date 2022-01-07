@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>273fd39a-ab62-4ab1-b722-14b741c7c4c1</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
+  </ItemGroup>
+
+</Project>

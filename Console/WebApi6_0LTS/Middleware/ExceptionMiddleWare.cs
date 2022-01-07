@@ -58,6 +58,33 @@ namespace WebApi6_0.Middleware
             {
                 var code = context.Response.StatusCode;
                 //logger.LogInformation("Response.StatusCode=" + code); 
+                //switch (code)
+                //{
+                //    case 200:
+                //        return;
+                //    case 204:
+                //        return;
+                //    case 400:
+                //        context.Response.ContentType = "application/json";
+                //        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未知错误.", code))).ConfigureAwait(false);
+                //        break;
+                //    case 401:
+                //        context.Response.ContentType = "application/json";
+                //        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未授权或token已过期,请重新登录.", code))).ConfigureAwait(false);
+                //        break;
+                //    case 403:
+                //        context.Response.ContentType = "application/json";
+                //        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未授权.", code))).ConfigureAwait(false);
+                //        break;
+                //    case 404:
+                //        context.Response.ContentType = "application/json";
+                //        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("页面不存在.", code))).ConfigureAwait(false);
+                //        break;
+                //    default:
+                //        context.Response.ContentType = "application/json";
+                //        await context.Response.WriteAsync(JsonConvert.SerializeObject(ResultModel.Error("未知错误.", code))).ConfigureAwait(false);
+                //        break;
+                //} 
             }
         } 
     }

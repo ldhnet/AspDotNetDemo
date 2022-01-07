@@ -31,8 +31,8 @@ namespace WebApi6_0.Filter
     }
     public enum ReturnStatus
     {
-        Success = 1,
         Fail = 0,
+        Success = 1,        
         ConfirmIsContinue = 2,
         Error = 3
     }

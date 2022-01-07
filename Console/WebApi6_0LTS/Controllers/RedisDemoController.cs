@@ -4,6 +4,7 @@ using DirectService.Test.Contracts;
 using Framework.Utility;
 using Framework.Utility.Config;
 using Framework.Utility.Email;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -14,6 +15,7 @@ namespace WebApi6_0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class RedisDemoController : ControllerBase
     {
         private readonly ILogger<DemoController> _logger; 
@@ -30,8 +32,8 @@ namespace WebApi6_0.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.Locked)]
-        [AllowAnonymous]
+        //[AllowAnonymous]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get()
         {
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
@@ -40,13 +42,14 @@ namespace WebApi6_0.Controllers
                
             var result = _UserInterface.Find("adminaaa")!;
 
+            var aaaa= HttpContext.User;
 
             var list = _UserInterface.GetAllList();
 
-            CheckParameter.NotNull(result, "adminaaa");
-            CheckParameter.Required(result,c => c != null, "dto 不能为空");
+            CheckParameter.NotNull(list, "adminaaa");
+            //CheckParameter.Required(result,c => c != null, "dto 不能为空");
 
-            return Ok(result);
+            return Ok(list);
         }
 
         /// <summary>

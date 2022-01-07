@@ -16,6 +16,11 @@ using Framework.Utility.Email;
 using Framework.Log4Net;
 using Framework.NLog;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Framework.Utility.JWT;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using WebApi6_0.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -27,13 +32,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
   
 // Add services to the container.
-
-builder.Services.Configure<SystemConfig>(options =>
-{
-    builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
-});
-
-
+ 
 builder.Services.AddHealthChecks().AddCheck("self", () => HealthCheckResult.Healthy());
 //解决跨域
 builder.Services.AddCors(options =>
@@ -58,7 +57,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 builder.Services.AddControllers(options => {
-    options.Filters.Add<TokenCheckFilter>(); 
+    //options.Filters.Add<TokenCheckFilter>(); 
     options.Filters.Add<ApiResultFilterAttribute>();
 }).AddNewtonsoftJson(options=>
 {
@@ -89,9 +88,19 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 
 builder.Services.AddEndpointsApiExplorer();
 
+JWTTokenOptions tokenOptions=new JWTTokenOptions();
+builder.Configuration.Bind("JWTTokenOptions", tokenOptions);
 
+//配置鉴权流程
+builder.Services.AddAuthenticationExtension(tokenOptions);
 
 //var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
+
+builder.Services.Configure<SystemConfig>(options =>
+{
+    builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+});
+
 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
@@ -108,6 +117,7 @@ if (app.Environment.IsDevelopment())
     //app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi6_0 v1"); c.RoutePrefix = string.Empty; });
 }
 
+#region 异常处理
 RequestDelegate handler = async context =>
 {
     var exceptionHandlerPathFeature =
@@ -131,9 +141,12 @@ app.UseExceptionHandler(new ExceptionHandlerOptions
     ExceptionHandler = handler
 });
 
+#endregion
+
 app.UseHttpsRedirection();
  
-app.UseAuthorization();
+app.UseAuthorization();//鉴权
+app.UseAuthentication();//授权
 //解决跨域
 app.UseCors("CorsPolicy");
 

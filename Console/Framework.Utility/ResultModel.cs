@@ -23,7 +23,7 @@ namespace Framework.Utility
         /// <returns></returns>
         public static TResponse Error(string str, int code)
         {
-            return new TResponse<object> { Data = null, Message = str,  Code = code };
+            return new TResponse { Success=0, Message = str,  Code = code };
         }
     }
 
