@@ -10,17 +10,19 @@ namespace Framework.Utility
     /// 数据传输对象
     /// </summary>
     public class TResponse
-    {
+    { 
         /// <summary>
-        /// 操作结果，Code，0代表失败，其他的验证返回结果，可根据需要设置
+        /// 操作结果，Code，0代表失败，1代表成功
         /// </summary>
-        public int Code { get; set; }
-
+        public int Success { get; set; }
         /// <summary>
         /// 提示信息或异常信息
         /// </summary>
-        public string Message { get; set; } 
-
+        public string Message { get; set; }
+        /// <summary>
+        /// 其他的验证返回结果，可根据需要设置
+        /// </summary>
+        public int Code { get; set; }
     }
     public class TResponse<T> : TResponse
     {

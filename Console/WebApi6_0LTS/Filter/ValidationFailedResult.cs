@@ -8,8 +8,7 @@ namespace WebApi6_0.Filter
     public class ValidationFailedResult: ObjectResult
     {
 
-        public ValidationFailedResult(ModelStateDictionary modelState)
-              : base(new ValidationFailedResultModel(modelState))
+        public ValidationFailedResult(ModelStateDictionary modelState): base(new ValidationFailedResultModel(modelState))
         {
             StatusCode = StatusCodes.Status422UnprocessableEntity;
         }

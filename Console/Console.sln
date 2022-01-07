@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Mapper", "Framewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Hangfire", "Framework.Hangfire\Framework.Hangfire.csproj", "{7C8A79C2-9386-4657-88DB-6F72EB45A526}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Log4Net", "Framework.Log4Net\Framework.Log4Net.csproj", "{05C7449A-F379-4F80-922E-55CC60248956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Log4Net", "Framework.Log4Net\Framework.Log4Net.csproj", "{05C7449A-F379-4F80-922E-55CC60248956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.NLog", "Framework.NLog\Framework.NLog.csproj", "{B47CA71A-B85D-46D3-B58B-35E4DB5A5AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.NLog", "Framework.NLog\Framework.NLog.csproj", "{B47CA71A-B85D-46D3-B58B-35E4DB5A5AA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DH.AuthorizationServer", "DH.AuthorizationServer\DH.AuthorizationServer.csproj", "{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,10 @@ Global
 		{B47CA71A-B85D-46D3-B58B-35E4DB5A5AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B47CA71A-B85D-46D3-B58B-35E4DB5A5AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B47CA71A-B85D-46D3-B58B-35E4DB5A5AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

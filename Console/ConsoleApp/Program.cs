@@ -19,9 +19,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             decimal m1 = 200.01m;
-
-
-
+             
             var mrStartDate = Convert.ToDateTime("2021-10-30");
        
                 DateTime endTime, startTime;
