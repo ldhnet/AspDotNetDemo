@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DH.Models\DH.Models.csproj" />
+    <ProjectReference Include="..\Framework.Cache\Framework.Cache.csproj" />
     <ProjectReference Include="..\Framework.Core\Framework.Core.csproj" />
   </ItemGroup>
 

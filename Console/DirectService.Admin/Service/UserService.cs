@@ -1,7 +1,8 @@
 ﻿using DH.Models.Dtos;
 using DH.Models.Entities;
 using DH.Models.param;
-using DirectService.Admin.Contracts; 
+using DirectService.Admin.Contracts;
+using Framework.Cache;
 using Framework.Core.Data;
 using Framework.Utility;
 using Framework.Utility.Attributes;
@@ -146,9 +147,17 @@ namespace DirectService.Admin.Service
         {
             return await _userRepository.GetFirstOrDefaultAsync();
         }
-        public IQueryable<Employee> GetAllList()
+        public List<Employee> GetAllList()
         {
-            return _userRepository.Entities.Include(m => m.EmployeeDetail).Include(m=>m.EmployeeLogins);
+            var list = CacheFactory.Cache.GetCache<List<Employee>>("employeeList");
+            if (list != null)
+                return list;
+            else
+            {
+                var data =  _userRepository.Entities.Include(m => m.EmployeeDetail).Include(m => m.EmployeeLogins).ToList();
+                CacheFactory.Cache.SetCache("employeeList",data);
+                return data;
+            }            
         }
         public IQueryable<Employee> GetAll()
         {
