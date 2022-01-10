@@ -31,9 +31,9 @@ namespace WebApi6_0.AppConfig
             var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
                     .GetReferencedAssemblies()//获取所有引用程序集
                     .Select(Assembly.Load)
-                    .Where(c => c.FullName.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
+                    .Where(c => c.FullName!.Contains("DirectService", StringComparison.OrdinalIgnoreCase))
                     .ToArray();
-            builder.RegisterAssemblyTypes(assemblies)
+            builder.RegisterAssemblyTypes(assemblies!)
                 .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
                 .AsSelf()   //自身服务，用于没有接口的类
                 .AsImplementedInterfaces()  //接口服务
