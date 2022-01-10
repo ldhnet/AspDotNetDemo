@@ -1,8 +1,11 @@
-﻿using ConsoleApp.Rule;
+﻿using ConsoleApp.Observer;
+using ConsoleApp.ObserverDelegate;
+using ConsoleApp.Rule;
+using ConsoleApp.Test202201;
 using Framework.Utility.Helper;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq; 
 
 namespace ConsoleApp
 {
@@ -19,7 +22,40 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             decimal m1 = 200.01m;
+
+            //Subject subject = new BankAccount(2000);
+            //subject.AddObserver(new Emailer("abcdwxc@163.com"));
+            //subject.AddObserver(new Mobile(13901234567)); 
+            //subject.WithDraw();
+
+            ObserverDelegate.Subject subject = new ObserverDelegate.Subject(2000);
+            ObserverDelegate.Emailer emailer = new ObserverDelegate.Emailer("abcdwxc@163.com");
+
+            ObserverDelegate.Mobile mobile = new ObserverDelegate.Mobile("15222222222");
+            subject.NotifyEvent += new NotifyEventHandler(mobile.Update);
+
+            subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
+
+            subject.WithDraw();
+
              
+
+            //subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
+            //subject.NotifyEvent += new NotifyEventHandler(mobile.Update);
+
+
+            IMath math =new MathExtension2();
+            MathProxy proxy = new MathProxy(math);
+
+            double addresult = proxy.Add(2, 3);
+
+            double subresult = proxy.Sub(6, 4);
+
+            double mulresult = proxy.Mul(2, 3);
+
+            double devresult = proxy.Dev(2, 3);
+
+
             var mrStartDate = Convert.ToDateTime("2021-10-30");
        
                 DateTime endTime, startTime;
