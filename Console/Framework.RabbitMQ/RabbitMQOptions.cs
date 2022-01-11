@@ -1,0 +1,18 @@
+﻿using _ExchangeType = RabbitMQ.Client.ExchangeType;
+
+namespace Framework.RabbitMQ
+{
+    public class RabbitMQOptions
+    {
+        public string UserName { get; set; }
+
+        public string Password { get; set; }
+
+        public string HostName { get; set; }
+        public int Port { get; set; }
+
+        public string ExchangeType { get; set; } = _ExchangeType.Topic;
+
+        public string ExchangeName { get; set; }
+    }
+}

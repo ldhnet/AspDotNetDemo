@@ -10,8 +10,7 @@ namespace Lib
         {
             services.AddOptions();
             services.Configure(providerAction);
-
-            services.TryAddSingleton<IRabbitMQManager, RabbitMQManager>();            
+            services.TryAddSingleton<IRabbitMQManager, RabbitMQManager>();           
 
             return services;
         }
