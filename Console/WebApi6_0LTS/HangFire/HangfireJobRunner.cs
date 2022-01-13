@@ -11,7 +11,11 @@ namespace WebApi6_0.HangFire
 
             RecurringJob.AddOrUpdate("HangFireTestId", () => Console.WriteLine($"{DateTime.Now}点钟执行 hangfire Recurring!"), Cron.Minutely, TimeZoneInfo.Local);
 
-            RecurringJob.AddOrUpdate<TestHangfireJob>(m => m.TestJob(), Cron.Minutely, TimeZoneInfo.Local); 
+            RecurringJob.AddOrUpdate<TestHangfireJob>(m => m.TestJob(), Cron.Minutely, TimeZoneInfo.Local);
+
+            RecurringJob.AddOrUpdate<TestHangfireJob>("HangFireTestId2", m => m.TestJob(), Cron.Monthly(1,2), TimeZoneInfo.Local);
+
+            RecurringJob.RemoveIfExists("HangFireTestId");
         }
     }
     public class TestHangfireJob

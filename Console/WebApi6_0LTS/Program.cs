@@ -67,6 +67,7 @@ builder.Services.AddControllers(options => {
     options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//序列化保持原有大小写（默认首字母小写）
 });
 builder.Services.AddAutoMapper(MapperRegister.MapType());
+
 builder.Services.AddHangfire(builder.Configuration);
 
 builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();

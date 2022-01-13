@@ -22,7 +22,7 @@ namespace Framework.Hangfire
        
             var connstring = JobServer.GetSqlServerStorageOptions(configuration);
             services.AddHangfire(_configuration =>
-            {
+            { 
                 //_configuration.UseRedisStorage(connstring);
                 //持久化到Redis
                 _configuration.UseRedisStorage(JobServer.GetSqlServerStorageOptions(configuration), new RedisStorageOptions()
