@@ -23,6 +23,12 @@ namespace ConsoleApp
         {
             decimal m1 = 200.01m;
 
+            int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+            int days2 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(1).Month);
+
+            int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
+
             //Subject subject = new BankAccount(2000);
             //subject.AddObserver(new Emailer("abcdwxc@163.com"));
             //subject.AddObserver(new Mobile(13901234567)); 

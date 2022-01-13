@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApi6_0.Extensions;
+using Framework.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -66,6 +67,7 @@ builder.Services.AddControllers(options => {
     options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//序列化保持原有大小写（默认首字母小写）
 });
 builder.Services.AddAutoMapper(MapperRegister.MapType());
+
 builder.Services.AddHangfire(builder.Configuration);
 
 builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
@@ -74,7 +76,7 @@ builder.Services.AddSingleton<IEmailSender, DefaultEmailSender>();
 
 builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>(); //log4net 
 //builder.Services.AddSingleton<ILoggerProvider, NLogLoggerProvider>();//NLog
-
+ 
 #region  Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -88,11 +90,18 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 
 builder.Services.AddEndpointsApiExplorer();
 
+
+
 JWTTokenOptions tokenOptions=new JWTTokenOptions();
 builder.Configuration.Bind("JWTTokenOptions", tokenOptions);
-
 //配置鉴权流程
 builder.Services.AddAuthenticationExtension(tokenOptions);
+
+
+//RabbitMQOptions mqOptions = new RabbitMQOptions();
+//builder.Configuration.Bind("RabbitMQOptions", mqOptions);
+
+//builder.Services.AddRabbitMQ(option => option = mqOptions);//RabbitMQ
 
 //var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
 
@@ -158,8 +167,8 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
-app.UseHangfire();
- 
+app.UseRabbitMQ();//RabbitMQ
+
 app.MapControllers();
 
 //app.Lifetime.ApplicationStarted.Register(ApplicationConfig.OnAppStarted);
