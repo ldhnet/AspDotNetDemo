@@ -167,6 +167,8 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
+app.UseHangfire();
+
 app.UseRabbitMQ();//RabbitMQ
 
 app.MapControllers();
