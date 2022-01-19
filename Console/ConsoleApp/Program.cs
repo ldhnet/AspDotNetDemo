@@ -96,7 +96,7 @@ namespace ConsoleApp
             //subject.AddObserver(new Emailer("abcdwxc@163.com"));
             //subject.AddObserver(new Mobile(13901234567)); 
             //subject.WithDraw();
-            //test11111
+            //test111112222
             ObserverDelegate.Subject subject = new ObserverDelegate.Subject(2000);
             ObserverDelegate.Emailer emailer = new ObserverDelegate.Emailer("abcdwxc@163.com");
 
