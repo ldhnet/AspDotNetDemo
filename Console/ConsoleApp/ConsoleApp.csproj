@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DH.Models\DH.Models.csproj" />
     <ProjectReference Include="..\Framework.Utility\Framework.Utility.csproj" />
   </ItemGroup>
 
