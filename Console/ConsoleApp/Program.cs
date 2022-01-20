@@ -1,4 +1,6 @@
-﻿using ConsoleApp.Observer;
+﻿using ConsoleApp.Gof.builder;
+using ConsoleApp.Gof.strategy;
+using ConsoleApp.Observer;
 using ConsoleApp.ObserverDelegate;
 using ConsoleApp.Rule;
 using ConsoleApp.Test202201;
@@ -26,7 +28,18 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            //concurrentDicrionary.DicrionaryTest();
             decimal m1 = 200.01m;
+
+            //建造者模式
+            var person = BuilderHelper.CreatePersonBuilder
+                            .SetAge(20)
+                            .SetName("jjj")
+                            .SetGender(1)
+                            .Build();
+            //策略设计模式
+             StrategyClass.StrategyMain();
+
 
             int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
@@ -34,64 +47,8 @@ namespace ConsoleApp
 
             int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
 
-            List<object> objList=new List<object>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                objList.Add(new ClassInfo()
-                {
-                    UserId = i +1,
-                    UserName =$"姓名{i}",
-                    Age = i+ 20,
-                    UserType =i +1,
-                    Description=$"objList描述{i}"
-                });
-            }
-
-
-            List<object> objList2 = new List<object>();
-            for (int i = 0; i < 10; i++)
-            {
-                objList2.Add(new ClassInfo()
-                {
-                    UserId = i + 1,
-                    UserName = $"姓名{i}",
-                    Age = i + 20,
-                    UserType = i + 1,
-                    Description = $"objList2描述{i}"
-                });
-            }
-
-
-            List<ExcelDataResource> dataResources = new List<ExcelDataResource>() {
-                new ExcelDataResource(){
-                    SheetName ="页签一",
-                    TitleIndex = 3,
-                    SheetDataResource = objList
-                },
-                 new ExcelDataResource(){
-                    SheetName ="页签二",
-                    TitleIndex = 1,
-                    SheetDataResource = objList2
-                }
-            };
-
-            var dataTableList =new List<DataTable>();
-
-            using (FileStream file = new FileStream("C:\\demo\\StudentInfo.xls", FileMode.Open))
-            {
-               dataTableList= ExcelHelper.ExcelStreamToDataTable(file);
-            }
-
-            var dataTableJson=JsonHelper.ToJson(dataTableList);
-
-            IWorkbook workbook= ExcelHelper.DataToHSSFWorkbook(dataResources);
-
-            using (FileStream file =new FileStream("C:\\demo\\StudentInfo.xls", FileMode.Create))
-            {
-                workbook.Write(file);
-            }
-
+            ExcelTest.exportExcelTest();
+            ExcelTest.importExcelTest();
             //Subject subject = new BankAccount(2000);
             //subject.AddObserver(new Emailer("abcdwxc@163.com"));
             //subject.AddObserver(new Mobile(13901234567)); 
