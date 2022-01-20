@@ -1,10 +1,13 @@
 ﻿using DH.Models.ExportModel;
 using Framework.Utility.Excel;
 using Framework.Utility.Helper;
+using Framework.Utility.IO;
 using NPOI.SS.UserModel;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +17,7 @@ namespace ConsoleApp.Test202201
 {
     public  class ExcelTest
     {
+        public const string Template = "~/Template";
         public static void importExcelTest()
         {
             var dataTableList = new List<DataTable>();
@@ -27,35 +31,64 @@ namespace ConsoleApp.Test202201
         }
         public static void exportExcelTest()
         {
+            List<ExcelClassInfo> objList_1 = new List<ExcelClassInfo>(); 
 
             List<object> objList = new List<object>();
 
             for (int i = 0; i < 10; i++)
             {
-                objList.Add(new ClassInfo()
+                var ttModel = new ClassInfo()
                 {
                     UserId = i + 1,
                     UserName = $"姓名{i}",
                     Age = i + 20,
                     UserType = i + 1,
                     CreateTime = DateTime.Now,
+
+                    MoneyCount = i + 10.217890m,
+
+                    PointCount = i + 180.212567000f,
+
                     Description = $"objList描述{i}"
-                });
+                };
+                var ttModel222 = new ExcelClassInfo()
+                {
+                    UserId = i + 1,
+                    UserName = $"姓名{i}",
+                    Age = i + 20,
+                    UserType = i + 1,
+                    CreateTime = DateTime.Now,
+
+                    MoneyCount = i + 10.217890m,
+
+                    PointCount = i + 180.212567000f,
+
+                    Description = $"objList描述{i}"
+                };
+                objList.Add(ttModel);
+                 
+                objList_1.Add(ttModel222);
             }
 
 
             List<object> objList2 = new List<object>();
             for (int i = 0; i < 10; i++)
             {
-                objList2.Add(new ClassInfo()
+                var ttmodel2 = new ClassInfo()
                 {
                     UserId = i + 1,
                     UserName = $"姓名{i}",
                     Age = i + 20,
                     UserType = i + 1,
                     CreateTime = DateTime.Now,
+
+                    MoneyCount = i + 20.21256m,
+
+                    PointCount = i + 280.6621256f,
+
                     Description = $"objList2描述{i}"
-                });
+                };
+                objList2.Add(ttmodel2); 
             }
 
 
@@ -70,16 +103,23 @@ namespace ConsoleApp.Test202201
                     TitleIndex = 1,
                     SheetDataResource = objList2
                 }
-            };
-             
+            }; 
 
-            IWorkbook workbook = ExcelHelper.DataToHSSFWorkbook(dataResources);
+            //IWorkbook workbook = ExcelComplexHelper.DataToHSSFWorkbook(dataResources);
 
-            using (FileStream file = new FileStream("C:\\demo\\StudentInfo.xls", FileMode.Create))
-            {
-                workbook.Write(file);
-            }
+            //using (FileStream file = new FileStream($"C:\\demo\\StudentInfo-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xls", FileMode.Create))
+            //{
+            //    workbook.Write(file);
+            //}
+
+            ExcelPackageHelper helper = new ExcelPackageHelper();
+            var aaa = helper.GererateReport(objList_1);
 
         }
+
+
+     
+
+       
     }
 }

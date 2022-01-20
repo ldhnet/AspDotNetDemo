@@ -28,6 +28,12 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+
+
+            var bbb22 = DateTime.Now.Date >= DateTime.Now.Date;
+
+            var bbb11 = DateTime.Now.AddDays(-1).Date <= DateTime.Now.Date;
+
             //concurrentDicrionary.DicrionaryTest();
             decimal m1 = 200.01m;
 
@@ -38,7 +44,7 @@ namespace ConsoleApp
                             .SetGender(1)
                             .Build();
             //策略设计模式
-             StrategyClass.StrategyMain();
+             //StrategyClass.StrategyMain();
 
 
             int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
