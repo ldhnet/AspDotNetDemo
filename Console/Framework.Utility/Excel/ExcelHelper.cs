@@ -45,13 +45,13 @@ namespace Framework.Utility.Excel
                 IRow titleRow=sheet.CreateRow(titleIndex);
 
                 ICellStyle style=_Workbook.CreateCellStyle();
-                style.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Aqua.Index;// 是设置前景色不是背景色
+                style.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Aqua.Index;
                 style.FillPattern = FillPattern.SolidForeground;
                 //style.FillBackgroundColor= NPOI.HSSF.Util.HSSFColor.Red.Index; 
                 style.Alignment = HorizontalAlignment.CenterSelection;
                 style.VerticalAlignment = VerticalAlignment.Center;
                 titleRow.Height = 100 * 4;
-
+                //表头
                 for (int i = 0; i < propList.Count(); i++)
                 {
                     TitleAttribute propertyAttribute = propList[i].GetCustomAttribute<TitleAttribute>();
@@ -59,7 +59,7 @@ namespace Framework.Utility.Excel
                     cell.SetCellValue(propertyAttribute.Title);
                     cell.CellStyle = style;
                 }
-
+                //数据
                 for (int i = 0; i < sheetResource.SheetDataResource.Count; i++)
                 {
                     IRow row = sheet.CreateRow(i + 1 + titleIndex);
@@ -137,7 +137,11 @@ namespace Framework.Utility.Excel
             } 
             return dataTables;
         }
-
+        /// <summary>
+        /// stream 转化为DataTable
+        /// </summary>
+        /// <param name="hssfWorkbook"></param>
+        /// <returns></returns>
         public static List<DataTable> ExcelStreamToDataTable(Stream stream)
         {
             IWorkbook hssfWorkbook = WorkbookFactory.Create(stream);
