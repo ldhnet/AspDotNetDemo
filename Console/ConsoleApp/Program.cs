@@ -1,4 +1,6 @@
-﻿using ConsoleApp.Observer;
+﻿using ConsoleApp.Gof.builder;
+using ConsoleApp.Gof.strategy;
+using ConsoleApp.Observer;
 using ConsoleApp.ObserverDelegate;
 using ConsoleApp.Rule;
 using ConsoleApp.Test202201;
@@ -26,7 +28,18 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            //concurrentDicrionary.DicrionaryTest();
             decimal m1 = 200.01m;
+
+            //建造者模式
+            var person = BuilderHelper.CreatePersonBuilder
+                            .SetAge(20)
+                            .SetName("jjj")
+                            .SetGender(1)
+                            .Build();
+            //策略设计模式
+             StrategyClass.StrategyMain();
+
 
             int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
