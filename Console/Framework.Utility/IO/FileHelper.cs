@@ -8,6 +8,28 @@ namespace Framework.Utility.IO
     /// </summary>
     public class FileHelper
     {
+
+        /// <summary>
+        /// 创建文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="fileName"></param>
+        /// <param name="deleteOriginal"></param>
+        /// <returns></returns>
+        public static FileInfo GenerateFileInfo(string path, string fileName, bool deleteOriginal = true)
+        {
+            var DirPath = path.StartsWith("/") ? path.Substring(1) : path;
+            if (!Directory.Exists(DirPath))
+            {
+                Directory.CreateDirectory(DirPath);
+            }
+            var fullPath = Path.Combine(path,fileName);
+            if (File.Exists(fullPath) && deleteOriginal)
+                File.Delete(fullPath);
+
+            return new FileInfo(fullPath); 
+        }
+       
         /// <summary>
         /// 创建文件，如果文件不存在
         /// </summary>

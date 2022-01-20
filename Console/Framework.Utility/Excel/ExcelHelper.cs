@@ -34,7 +34,7 @@ namespace Framework.Utility.Excel
                 ISheet sheet= _Workbook.CreateSheet(sheetResource.SheetName);
                 object obj = sheetResource.SheetDataResource[0];
                 Type type = obj.GetType();
-                List<PropertyInfo> propList=type.GetProperties().Where(c=>c.IsDefined(typeof(TitleAttribute),true)).ToList();
+                List<PropertyInfo> propList=type.GetProperties().Where(c=>c.IsDefined(typeof(ExportColumnAttribute),true)).ToList();
 
                 int titleIndex = 0;
                 if (sheetResource.TitleIndex >= 0)
@@ -47,14 +47,14 @@ namespace Framework.Utility.Excel
                 ICellStyle style=_Workbook.CreateCellStyle();
                 style.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.Aqua.Index;
                 style.FillPattern = FillPattern.SolidForeground;
-                //style.FillBackgroundColor= NPOI.HSSF.Util.HSSFColor.Red.Index; 
+
                 style.Alignment = HorizontalAlignment.CenterSelection;
                 style.VerticalAlignment = VerticalAlignment.Center;
                 titleRow.Height = 100 * 4;
                 //表头
                 for (int i = 0; i < propList.Count(); i++)
                 {
-                    TitleAttribute propertyAttribute = propList[i].GetCustomAttribute<TitleAttribute>();
+                    ExportColumnAttribute propertyAttribute = propList[i].GetCustomAttribute<ExportColumnAttribute>();
                     ICell cell=titleRow.CreateCell(i);
                     cell.SetCellValue(propertyAttribute.Title);
                     cell.CellStyle = style;
@@ -67,6 +67,7 @@ namespace Framework.Utility.Excel
                     for (int j = 0; j < propList.Count; j++)
                     {
                         ICell cell = row.CreateCell(j);
+                        
                         cell.SetCellValue(propList[j].GetValue(objInstance).ToString());
                     }
                 }

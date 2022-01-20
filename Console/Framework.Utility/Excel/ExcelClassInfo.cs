@@ -1,13 +1,12 @@
-﻿using Framework.Utility.Excel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DH.Models.ExportModel
+namespace Framework.Utility.Excel
 {
-    public class ClassInfo  
+    public class ExcelClassInfo
     {
         [ExportColumn(Title = "用户ID", Format = ExcelCellFormat.IntegerFormat, Comments = "用户的唯一ID")]
         public int UserId { get; set; }
