@@ -18,7 +18,7 @@ namespace Framework.Utility.Excel
         public int UserType { get; set; }
         [ExportColumn(Title = "创建时间", Format = ExcelCellFormat.ShortTimeFormat)]
         public DateTime? CreateTime { get; set; }
-        [ExportColumn(Title = "账户余额", Format = ExcelCellFormat.DecimalFormat)]
+        //[ExportColumn(Title = "账户余额", Format = ExcelCellFormat.DecimalFormat)]
         public decimal MoneyCount { get; set; }
 
         //[ExportColumn(Title = "账户积分", Format = ExcelCellFormat.FloatFormat)]

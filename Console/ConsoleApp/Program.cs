@@ -1,4 +1,4 @@
-﻿using ConsoleApp.Gof.builder;
+﻿ 
 using ConsoleApp.Gof.strategy;
 using ConsoleApp.Observer;
 using ConsoleApp.ObserverDelegate;
@@ -12,8 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq; 
-
+using System.Linq;
+using global::ConsoleApp.Gof.builder;
 namespace ConsoleApp
 {
 
@@ -28,7 +28,7 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-
+            DateTime expireDateTime = DateTime.MaxValue;
 
             var bbb22 = DateTime.Now.Date >= DateTime.Now.Date;
 
