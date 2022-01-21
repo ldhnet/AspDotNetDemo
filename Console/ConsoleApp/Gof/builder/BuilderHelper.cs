@@ -13,4 +13,12 @@ namespace ConsoleApp.Gof.builder
             get { return new PersonBuilder(); }
         }
     }
+
+    public class SystemTime
+    {
+        public static DateTime CurrentTime
+        {
+            get { return DateTime.UtcNow.AddHours(8); }
+        }
+    }
 }

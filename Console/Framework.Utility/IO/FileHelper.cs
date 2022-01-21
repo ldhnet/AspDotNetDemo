@@ -8,28 +8,26 @@ namespace Framework.Utility.IO
     /// </summary>
     public class FileHelper
     {
-
         /// <summary>
-        /// 创建文件
+        /// stream 写入文件
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="fileName"></param>
-        /// <param name="deleteOriginal"></param>
-        /// <returns></returns>
-        public static FileInfo GenerateFileInfo(string path, string fileName, bool deleteOriginal = true)
+        /// <param name="stream"></param>
+        /// <param name="_path"></param>
+        public static void StreamToFile(Stream stream, string _path)
         {
-            var DirPath = path.StartsWith("/") ? path.Substring(1) : path;
-            if (!Directory.Exists(DirPath))
+            byte[] bytes = new byte[stream.Length];
+            stream.Read(bytes, 0, bytes.Length);
+            stream.Seek(0, SeekOrigin.Begin);
+            using (FileStream fs = new FileStream(_path, FileMode.Create))
             {
-                Directory.CreateDirectory(DirPath);
+                BinaryWriter bw = new BinaryWriter(fs);
+                bw.Write(bytes);
+                bw.Close();
+                fs.Close();
+                bw.Dispose();
             }
-            var fullPath = Path.Combine(path,fileName);
-            if (File.Exists(fullPath) && deleteOriginal)
-                File.Delete(fullPath);
-
-            return new FileInfo(fullPath); 
         }
-       
+
         /// <summary>
         /// 创建文件，如果文件不存在
         /// </summary>

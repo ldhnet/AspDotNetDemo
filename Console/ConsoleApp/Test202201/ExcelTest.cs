@@ -1,4 +1,6 @@
-﻿using DH.Models.ExportModel;
+﻿
+using ConsoleApp.Gof.builder;
+using DH.Models.ExportModel;
 using Framework.Utility.Excel;
 using Framework.Utility.Helper;
 using Framework.Utility.IO;
@@ -11,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp.Test202201
@@ -24,14 +27,14 @@ namespace ConsoleApp.Test202201
 
             using (FileStream file = new FileStream("C:\\demo\\StudentInfo.xls", FileMode.Open))
             {
-                dataTableList = ExcelHelper.ExcelStreamToDataTable(file);
+                dataTableList = ExcelHelper_Bk.ExcelStreamToDataTable(file);
             }
 
             var dataTableJson = JsonHelper.ToJson(dataTableList);
         }
         public static void exportExcelTest()
-        {
-            List<ExcelClassInfo> objList_1 = new List<ExcelClassInfo>(); 
+        { 
+            List<object> objList_1 = new List<object>(); 
 
             List<object> objList = new List<object>();
 
@@ -111,15 +114,22 @@ namespace ConsoleApp.Test202201
             //{
             //    workbook.Write(file);
             //}
-
-            ExcelPackageHelper helper = new ExcelPackageHelper();
-            var aaa = helper.GererateReport(objList_1);
+             
+            var fileName = $"报表_{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xls"; 
+            var templateFile = @"C:\\demo\\报表模板.xls";
+            IWorkbook aaaworkbook = ExcelHelper.DataToHSSFWorkbook(objList_1, templateFile);
+             
+            using (FileStream file = new FileStream($"C:\\demo\\{fileName}.xls", FileMode.Create))
+            {
+                aaaworkbook.Write(file);
+            }
 
         }
 
 
-     
 
-       
+
+   
+
     }
 }
