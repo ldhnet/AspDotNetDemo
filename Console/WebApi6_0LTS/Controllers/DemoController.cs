@@ -36,6 +36,22 @@ namespace WebApi6_0.Controllers
         [AllowAnonymous]
         public IActionResult Get()
         {
+ 
+            var file = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+
+            var file2 = Directory.GetFiles(Directory.GetCurrentDirectory());
+
+            var file3 = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory() , "wwwroot"));
+
+            var file4 = Directory.GetFiles(GlobalConfig.RootDirectory);
+
+            var file5 = Directory.GetFiles(GlobalConfig.wwwwroot);
+
+
+
+
+            
+
             _logger.LogInformation(GlobalConfig.SystemConfig.DBConnectionString); 
             _logger.LogInformation("1111111");
             _logger.LogWarning("2222222222");
