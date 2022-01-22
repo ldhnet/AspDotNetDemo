@@ -1,4 +1,5 @@
 ﻿using DH.Models.Entities;
+using DirectService.Admin;
 using DirectService.Admin.Contracts;
 using DirectService.Test.Contracts;
 using Framework.Utility;
@@ -20,12 +21,20 @@ namespace WebApi6_0.Controllers
         private readonly ITestInterface _TestInterface;
         private readonly IUserService _UserInterface;
         private readonly IEmailSender _EmailInterface;
-        public DemoController(ILogger<DemoController> logger, ITestInterface testIfc, IUserService userIfc, IEmailSender emailface)
+        private readonly DataRepository _dataRepository;
+        
+        public DemoController(ILogger<DemoController> logger, 
+            ITestInterface testIfc, 
+            IUserService userIfc,
+            IEmailSender emailface,
+            DataRepository dataRepository
+            )
         {
             _logger = logger;
             _TestInterface = testIfc;
             _UserInterface = userIfc;
-            _EmailInterface = emailface;            
+            _EmailInterface = emailface;
+            _dataRepository = dataRepository; 
         }
         /// <summary>
         /// 测试Demo
@@ -36,7 +45,19 @@ namespace WebApi6_0.Controllers
         [AllowAnonymous]
         public IActionResult Get()
         {
- 
+
+            var str1111 = _dataRepository.GetUserBy_Test("呃呃呃呃呃");
+
+            var dt1 = _dataRepository.DateTimeNow;
+            var dt2 = _dataRepository.DateTimeUtc;
+
+
+            Thread.Sleep(3000);
+
+            var dt11 = _dataRepository.DateTimeNow;
+            var dt22 = _dataRepository.DateTimeUtc;
+
+
             var file = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
             var file2 = Directory.GetFiles(Directory.GetCurrentDirectory());
