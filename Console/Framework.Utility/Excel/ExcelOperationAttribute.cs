@@ -78,11 +78,6 @@ namespace Framework.Utility.Excel
     public class ImportedColumnAttribute : Attribute
     {
         /// <summary>
-        /// 列，如A,B...AJ
-        /// </summary>
-        public string Column { get; set; }
-
-        /// <summary>
         /// 列名
         /// </summary>
         public string Caption { get; set; }
@@ -95,18 +90,11 @@ namespace Framework.Utility.Excel
         /// <summary>
         /// 是否必填
         /// </summary>
-        public bool Required { get; set; }
-         
-
-        /// <summary>
-        /// 消息/批注
-        /// </summary>
-        public string Message { get; set; }
+        public bool Required { get; set; } =false;
 
         /// <summary>
         /// 格式
         /// </summary>
-        public string Format { get; set; }
-            
+        public ExcelCellFormat Format { get; set; } = ExcelCellFormat.StringFormat;
     }
 }

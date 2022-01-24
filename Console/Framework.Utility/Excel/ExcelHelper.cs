@@ -102,15 +102,22 @@ namespace Framework.Utility.Excel
                 for (int i = 0; i < propList.Count(); i++)
                 {
                     ExportColumnAttribute propertyAttribute = propList[i].GetCustomAttribute<ExportColumnAttribute>();
-
                     ICell cell=titleRow.CreateCell(i);
                       
                     #region 设置描述
-                    if (ColumnAttributes != null && ColumnAttributes.Any(c=>c.DataColumn.ColumnName == propList[i].Name && c.Comments.Length > 0))
+                    //if (ColumnAttributes != null && ColumnAttributes.Any(c=>c.DataColumn.ColumnName == propList[i].Name && c.Comments.Length > 0))
+                    //{
+                    //    var comments = ColumnAttributes.FirstOrDefault(c => c.DataColumn.ColumnName == propList[i].Name).Comments;
+                    //    var comment1 = patr.CreateCellComment(new HSSFClientAnchor(0, 0, 0, 0, 1, 0, i + 2, 5));
+                    //    comment1.String = new HSSFRichTextString(comments);
+                    //    comment1.Author = "Admin";
+                    //    cell.CellComment = comment1;
+                    //}
+
+                    if (!string.IsNullOrEmpty(propertyAttribute.Comments))
                     {
-                        var comments = ColumnAttributes.FirstOrDefault(c => c.DataColumn.ColumnName == propList[i].Name).Comments;
                         var comment1 = patr.CreateCellComment(new HSSFClientAnchor(0, 0, 0, 0, 1, 0, i + 2, 5));
-                        comment1.String = new HSSFRichTextString(comments);
+                        comment1.String = new HSSFRichTextString(propertyAttribute.Comments);
                         comment1.Author = "Admin";
                         cell.CellComment = comment1;
                     }
@@ -118,7 +125,6 @@ namespace Framework.Utility.Excel
 
                     cell.SetCellValue(propertyAttribute.Title);         
                     SetHeaderCellStyle(_Workbook, cell); 
-
                     sheet.SetColumnWidth(i, 18 * 256);//设置列宽
                 }
                 //数据
@@ -132,6 +138,7 @@ namespace Framework.Utility.Excel
                          
                         var value = propList[j].GetValue(objInstance).ToString();
                         var format = ExcelCellFormat.StringFormat;
+
                         if (ColumnAttributes.FirstOrDefault(item => item.DataColumn.ColumnName == propList[j].Name) == null)
                         {
                             cell.SetCellValue(value);
@@ -141,6 +148,7 @@ namespace Framework.Utility.Excel
                         {
                             format = ColumnAttributes.FirstOrDefault(item => item.DataColumn.ColumnName == propList[j].Name).CellFormat;
                         } 
+
                         #region 格式化数据
                         DateTime dateTimeResult;
                         switch (format)
@@ -297,7 +305,7 @@ namespace Framework.Utility.Excel
         }
         #endregion
 
-        #region 导出报表
+        #region 导入报表
         /// <summary>
         /// Excel 转化为DataTable
         /// </summary>
@@ -420,19 +428,10 @@ namespace Framework.Utility.Excel
             style.WrapText = false;//换行
             cell.CellStyle = style; 
         }
-   
+    
         /// <summary>
         /// 设置 Excel 内容样式
         /// </summary>
-        /// <param name="workbook"></param>
-        /// <param name="cell"></param>
-        private static ICellStyle GetContentCellStyle(HSSFWorkbook workbook, ICell cell)
-        {
-            var style = workbook.CreateCellStyle();
-            SetCellStyle(style);
-            return style;
-        }
- 
         private static void SetCellStyle(ICellStyle style)
         {
             style.VerticalAlignment = VerticalAlignment.Center;//垂直对齐

@@ -23,6 +23,13 @@ namespace ConsoleApp.Test202201
         public const string Template = "~/Template";
         public static void importExcelTest()
         {
+            IWorkbook workbook =  UpdateImportTemplate.UpdateBatchImportTemplate("");
+
+            using (FileStream file = new FileStream($"C:\\demo\\StudentInfo-{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.xls", FileMode.Create))
+            {
+                workbook.Write(file);
+            }
+             
             var dataTableList = new List<DataTable>();
 
             using (FileStream file = new FileStream("C:\\demo\\StudentInfo.xls", FileMode.Open))

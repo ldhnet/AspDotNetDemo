@@ -1,4 +1,5 @@
 ﻿using DH.Models.Entities;
+using Framework.Core.Dependency;
 using Framework.Utility.Config;
 using Framework.Utility.Helper;
 using System;
@@ -9,8 +10,16 @@ using System.Threading.Tasks;
 
 namespace DirectService.Admin
 {
-    public class DataRepository
+    public class DataRepository : IDependency
     {
+        public DateTime DateTimeNow { get { return DateTime.Now; } }
+
+        public DateTime DateTimeUtc { get { return DateTime.UtcNow; } }
+
+        public string GetUserBy_Test(string keyword)
+        {
+            return $"调用成功_{keyword}";
+        }
         public Employee? GetUserByToken(string token)
         {
             var strSql = new StringBuilder();

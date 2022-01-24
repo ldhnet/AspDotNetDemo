@@ -26,11 +26,28 @@ using Framework.RabbitMQ;
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
 //builder.WebHost.UseWebRoot("webroot");
+ 
+//var configuration = new ConfigurationBuilder()
+//                      .AddJsonFile("appsettings.json").Build();
+ 
+builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
+ 
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{ 
+    var env = hostingContext.HostingEnvironment; 
+    config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
+    config.AddEnvironmentVariables();
+});
+
+//var dddd = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+//var ddd2 = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
 
 //builder.WebHost.UseUrls("https://*:9080", "http://*:9081");
-
+  
 // Wait 30 seconds for graceful shutdown.
-builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(30));
+builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(60));
   
 // Add services to the container.
  
@@ -112,7 +129,11 @@ builder.Services.Configure<SystemConfig>(options =>
 
 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
-GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
+
+//GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
+
+builder.Configuration.Bind("MailSender", GlobalConfig.MailSenderOptions);
+ 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
 
@@ -167,9 +188,9 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
-app.UseHangfire();
+//app.UseHangfire();
 
-app.UseRabbitMQ();//RabbitMQ
+//app.UseRabbitMQ();//RabbitMQ
 
 app.MapControllers();
 

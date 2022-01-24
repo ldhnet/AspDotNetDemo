@@ -9,25 +9,25 @@
     }
   },
   "profiles": {
-    "WebApi6_0LTS": {
+    "WebApi6_0LTS": { //本地调试项目启动 使用配置
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development" //"Staging"
       },
       "applicationUrl": "https://localhost:7169;http://localhost:5169",
       "dotnetRunMessages": true
     },
-    "IIS Express": {
+    "IIS Express": { //IIS 部署时候启动  使用配置
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Staging"
       }
     },
-    "Docker": {
+    "Docker": { //Docker 部署时候启动  使用配置
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",

@@ -21,5 +21,7 @@ namespace Framework.Utility.Config
         public static SystemConfig SystemConfig { get; set; } = new SystemConfig();
         public static MailSenderOptions MailSenderOptions { get; set; } = new MailSenderOptions();
       
+        public static string wwwwroot { get { return Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"); } }
+        public static string RootDirectory { get { return Directory.GetCurrentDirectory(); } }
     }
 }
