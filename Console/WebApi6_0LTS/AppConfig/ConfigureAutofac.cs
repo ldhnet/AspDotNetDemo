@@ -27,6 +27,9 @@ namespace WebApi6_0.AppConfig
 
         protected override void Load(ContainerBuilder builder)
         {
+            var assemblyList = AppDomain.CurrentDomain.GetAssemblies();
+            //var assemblyList2 = AppDomain.CurrentDomain!.AssemblyLoad();
+
             Type baseType = typeof(IDependency);
             var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
                     .GetReferencedAssemblies()//获取所有引用程序集
@@ -38,9 +41,9 @@ namespace WebApi6_0.AppConfig
                 .AsSelf()   //自身服务，用于没有接口的类
                 .AsImplementedInterfaces()  //接口服务
                 .PropertiesAutowired()  //属性注入
-                .InstancePerLifetimeScope();    //保证生命周期基于请求  
+                .InstancePerLifetimeScope(); //保证生命周期基于请求  
 
-            builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>));
+            builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
             builder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();
         }
 

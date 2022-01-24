@@ -9,7 +9,7 @@ namespace Framework.Core.Data
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
     /// <typeparam name="TKey">主键类型</typeparam>
-    public interface IRepository<TEntity, TKey> : IDependency where TEntity : class//EntityBase<TKey>
+    public interface IRepository<TEntity, TKey>  where TEntity : class//EntityBase<TKey> //: IDependency
     {
         #region 属性
 
