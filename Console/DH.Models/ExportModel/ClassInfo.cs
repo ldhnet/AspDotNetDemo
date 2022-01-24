@@ -28,4 +28,6 @@ namespace DH.Models.ExportModel
         [ExportColumn(Title = "用户描述")]
         public string Description { get; set; }
     }
+
+    
 }
