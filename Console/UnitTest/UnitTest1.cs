@@ -1,26 +1,30 @@
+using DirectService.Admin.Contracts;
+using DirectService.Admin.Service;
 using Framework.Utility;
 using Framework.Utility.Extensions;
 using Framework.Utility.Helper;
 using Framework.Utility.Security;
 using Shouldly;
 using System;
+using WebApi6_0.Controllers;
 using Xunit;
 
 namespace UnitTest
 {
     public class UnitTest1
-    {
+    { 
         [Fact]
         public void AesHelperTest()
         {
+            //DemoController demoController = new DemoController();
+
+            //demoController.Get(); 
             string key = new AesHelper().Key;
             Convert.FromBase64String(key).Length.ShouldBe(32);
 
             AesHelper aes = new AesHelper();
             string source = "admin";
-
-       
-
+             
             source.CheckNotNull("source");
 
             var aaa=  aes.Encrypt(source);
