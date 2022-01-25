@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.NLog", "Framework
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DH.AuthorizationServer", "DH.AuthorizationServer\DH.AuthorizationServer.csproj", "{06729DA3-8BD6-4379-93C5-2CEA83DCCE3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.RabbitMQ", "Framework.RabbitMQ\Framework.RabbitMQ.csproj", "{7EAECE4A-E109-4918-A6D2-D0AA2F229971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.RabbitMQ", "Framework.RabbitMQ\Framework.RabbitMQ.csproj", "{7EAECE4A-E109-4918-A6D2-D0AA2F229971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService", "WorkerService\WorkerService.csproj", "{B92AA7AD-0EB6-43BF-8109-CCFA13257C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{7EAECE4A-E109-4918-A6D2-D0AA2F229971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EAECE4A-E109-4918-A6D2-D0AA2F229971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EAECE4A-E109-4918-A6D2-D0AA2F229971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92AA7AD-0EB6-43BF-8109-CCFA13257C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92AA7AD-0EB6-43BF-8109-CCFA13257C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92AA7AD-0EB6-43BF-8109-CCFA13257C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92AA7AD-0EB6-43BF-8109-CCFA13257C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
