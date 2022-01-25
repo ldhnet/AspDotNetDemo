@@ -1,0 +1,11 @@
+﻿win10创建、管理服务：
+需.NetCoreRunTime详见：
+https://docs.microsoft.com/zh-cn/dotnet/core/install/windows?tabs=net50
+cmd（管理员权限打开）
+创建服务：sc.exe create ServiceName binPath=C:\WorkerS\TestWorkerService.exe
+查询服务：sc.exe query ServiceName
+启动服务：sc.exe start ServiceName
+停止服务：sc.exe stop ServiceName
+删除服务：sc.exe delete ServiceName
+添加服务描述：sc.exe description ServiceName "描述"
+改变服务的启动方式 手动/自动/禁用：sc.exe config ServiceName start= demand/auto/disabled 

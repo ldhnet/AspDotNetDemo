@@ -1,10 +1,32 @@
+using Framework.RabbitMQ;
+using NLog.Web;
 using WorkerService;
 using WorkerService.Extensions;
 
-IHost host = HostExtension.CreateHostBuilder(args).Build();
+IHost host = Host.CreateDefaultBuilder(args)
+    .UseWindowsService() //使用windows服务
+    .ConfigureServices((hostContext, services) =>
+                    {
+                        GlobalHostConfig.Services = services;
+                        GlobalHostConfig.Configuration = hostContext.Configuration;
 
-GlobalHostConfig.ServiceProvider=host.Services;
+                        //hostContext.Configuration.Bind("RabbitMQOptions", GlobalHostConfig.RabbitMQOptions);
+                        //services.AddRabbitMQ(option => option = GlobalHostConfig.RabbitMQOptions);//RabbitMQ
 
-host.Services.UseRabbitMQProvider();
+                        services.AddHostedService<Worker>(); //添加Worker
+                    })
+    .ConfigureLogging(logging =>
+                    {
+                        logging.ClearProviders();
+                        logging.SetMinimumLevel(LogLevel.Information);
+                        logging.AddConsole();
+                    })
+    .UseNLog() 
+    .Build();
+
+GlobalHostConfig.ServiceProvider = host.Services;
+
+//host.Services.UseRabbitMQProvider();
 
 await host.RunAsync();
+
