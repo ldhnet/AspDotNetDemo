@@ -15,7 +15,7 @@ namespace CSharpBuilder
         {
             this.databaseurl.Text = ".";
             this.username.Text = "sa";
-            this.userpwd.Text = "2021@ldh";
+            this.userpwd.Text = "";
         }
          
         private void button2_Click(object sender, EventArgs e)
