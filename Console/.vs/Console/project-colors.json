@@ -115,12 +115,7 @@
       "ProjectGuid": "05e1818f-3355-4efc-ba45-9786ef5ccdd0",
       "DisplayName": "Framework.Mapper",
       "ColorIndex": 5
-    },
-    "7eaece4a-e109-4918-a6d2-d0aa2f229971": {
-      "ProjectGuid": "7eaece4a-e109-4918-a6d2-d0aa2f229971",
-      "DisplayName": "Framework.RabbitMQ",
-      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 6
 }

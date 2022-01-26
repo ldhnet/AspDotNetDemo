@@ -20,7 +20,9 @@ namespace WorkerService
         //public static IWebHostEnvironment HostingEnvironment { get; set; }
          
         public static RabbitMQOptions RabbitMQOptions { get; set; } = new RabbitMQOptions();
-      
+
+        public static List<KeyValuePair<string, string>> ConfigurationKeyValueList { get; set; } = new List<KeyValuePair<string, string>>();
+
         public static string wwwwroot { get { return Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"); } }
         public static string RootDirectory { get { return Directory.GetCurrentDirectory(); } }
     }
