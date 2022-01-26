@@ -114,7 +114,7 @@ namespace WebMVC.Controllers
             //获取当前程序集版本号
             ViewBag.Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-            ViewBag.UserCacheModel = JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebConstant.SessionKey.UserCacheModel));
+            ViewBag.UserCacheModel = JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebMVCConstant.SessionKey.UserCacheModel));
 
             if (controllerName == "Home" || controllerName == "CusError") return;
         }
@@ -129,7 +129,7 @@ namespace WebMVC.Controllers
             get
             {
                 if (_currentUser != null) return _currentUser;
-                _currentUser = SessionHelper.GetSession<UserCacheModel>(WebConstant.SessionKey.UserCacheModel) ?? JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebConstant.SessionKey.UserCacheModel));
+                _currentUser = SessionHelper.GetSession<UserCacheModel>(WebMVCConstant.SessionKey.UserCacheModel) ?? JsonHelper.FromJson<UserCacheModel>(HttpContext.Session.GetString(WebMVCConstant.SessionKey.UserCacheModel));
 
                 //var teet= HttpContext.User.Identity.Name.ToUpper();
 
@@ -172,7 +172,7 @@ namespace WebMVC.Controllers
 
             //SessionHelper.SetSession(WebConstant.SessionKey.UserCacheModel, currentUser);
 
-            HttpContext.Session.SetObjectAsJson(WebConstant.SessionKey.UserCacheModel, currentUser);
+            HttpContext.Session.SetObjectAsJson(WebMVCConstant.SessionKey.UserCacheModel, currentUser);
 
             return currentUser;
         }

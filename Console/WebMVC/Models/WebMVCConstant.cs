@@ -1,6 +1,6 @@
 ﻿namespace WebMVC.Models
 {
-    public class WebConstant
+    public class WebMVCConstant
     {
         /// <summary>
         /// 会话键值
