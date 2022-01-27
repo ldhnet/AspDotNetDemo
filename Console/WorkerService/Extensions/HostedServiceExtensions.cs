@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorkerService.ContainerFactory;
 
 namespace WorkerService.Extensions
 { 
@@ -12,23 +13,11 @@ namespace WorkerService.Extensions
     {
         public static void AddHostedServiceCollection(this IServiceCollection services)
         { 
-            //services.AddRabbitMQ(option => option = GlobalContext.RabbitMQOptions);//RabbitMQ
-
+            SetHostedServiceType serviceType =new SetHostedServiceType();
             var serviceName= GlobalHostConfig.ConfigurationKeyValueList.FirstOrDefault(c =>c.Key == WebConstant.WorkerServiceName)!.Value;
-
-            NLogHelper.Info($"serviceName ======{serviceName}");
-             
-            if (!string.IsNullOrEmpty(serviceName))
-            {
-                if (serviceName == WebConstant.WorkerServiceKey.HangfireService)
-                {
-                    services.AddHostedService<WorkerTwo>(); //添加WorkerTwo
-                }
-                if (serviceName == WebConstant.WorkerServiceKey.RabbitMQService)
-                {
-                    services.AddHostedService<Worker>(); //添加Worker
-                }
-            }
+            serviceType.SetHostedService(serviceName);
+            NLogHelper.Info($"serviceName ======{serviceName}"); 
         }
+
     }
 }
