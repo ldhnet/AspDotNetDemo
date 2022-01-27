@@ -13,6 +13,7 @@ namespace WorkerService.Extensions
         public static void UseRabbitMQProvider(this IServiceProvider app)
         { 
             IRabbitMQManager mqManager = app.GetService<IRabbitMQManager>()!;
+            if (mqManager is null) return;
             mqManager.Consume<string>("testQ", "testQ", x =>
             {
                 Console.WriteLine($"recive : {x}");

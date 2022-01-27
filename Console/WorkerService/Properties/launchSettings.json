@@ -2,7 +2,7 @@
   "profiles": {
     "WorkerService": {
       "commandName": "Project",
-      //"commandLineArgs": "--ServiceName  HangfireService",
+      "commandLineArgs": "--ServiceName  RabbitMQService",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       },

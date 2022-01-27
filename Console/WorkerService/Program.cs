@@ -11,8 +11,7 @@ IHost host = Host.CreateDefaultBuilder(args)
                         GlobalHostConfig.Services = services;
                         GlobalHostConfig.Configuration = hostContext.Configuration;
                         GlobalHostConfig.ConfigurationKeyValueList = hostContext.Configuration.AsEnumerable().ToList();
-                        services.AddHostedServiceCollection();
-
+                        services.AddHostedServiceCollection(); 
                     })
     .ConfigureLogging(logging =>
                     {
@@ -23,6 +22,9 @@ IHost host = Host.CreateDefaultBuilder(args)
     .UseNLog() 
     .Build();
 
-GlobalHostConfig.ServiceProvider = host.Services; 
+GlobalHostConfig.ServiceProvider = host.Services;
+
+host.Services.UseRabbitMQProvider();
+
 await host.RunAsync();
 
