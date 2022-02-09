@@ -175,8 +175,8 @@ app.UseExceptionHandler(new ExceptionHandlerOptions
 
 app.UseHttpsRedirection();
  
-app.UseAuthorization();//鉴权
-app.UseAuthentication();//授权
+//app.UseAuthorization();//鉴权
+//app.UseAuthentication();//授权
 //解决跨域
 app.UseCors("CorsPolicy");
 
