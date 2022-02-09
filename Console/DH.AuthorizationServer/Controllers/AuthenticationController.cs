@@ -1,6 +1,7 @@
 ﻿using DH.AuthorizationServer.Utility;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace DH.AuthorizationServer.Controllers
 {
@@ -17,12 +18,24 @@ namespace DH.AuthorizationServer.Controllers
         {
             return View();
         }
+        private void ThreadMethod()
+        { 
+            Process processes = Process.GetCurrentProcess();
+            _logger.LogInformation($"进程ID={processes.Id}     线程ID={Thread.CurrentThread.ManagedThreadId.ToString()}");
+            Thread.Sleep(60 * 60 * 60);
+        }
         [Route("Login")]
         [HttpPost]
         public string Login(string name,string password)
         {
-            { 
+            {
                 //do 数据库校验
+                for (int i = 0; i < 1000; i++)
+                {
+                    Thread th = new Thread(new ThreadStart(ThreadMethod)); //创建线程                     
+                    th.Start(); //启动线程  
+                }
+
             }
             if ("admin".Equals(name) && "123456".Equals(password))
             {

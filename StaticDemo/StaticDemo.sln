@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticDemo", "StaticDemo\StaticDemo.csproj", "{F9BF400E-26A0-4A1A-B26C-CB4996E5C3F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpModule", "HttpModule\HttpModule.csproj", "{9B3E594B-5E65-4C4E-8D10-0F0DEEFB1730}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9BF400E-26A0-4A1A-B26C-CB4996E5C3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9BF400E-26A0-4A1A-B26C-CB4996E5C3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9BF400E-26A0-4A1A-B26C-CB4996E5C3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3E594B-5E65-4C4E-8D10-0F0DEEFB1730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3E594B-5E65-4C4E-8D10-0F0DEEFB1730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3E594B-5E65-4C4E-8D10-0F0DEEFB1730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3E594B-5E65-4C4E-8D10-0F0DEEFB1730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

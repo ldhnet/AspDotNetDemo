@@ -9,8 +9,12 @@ namespace StaticDemo.Controllers
 {
     public class HomeController : Controller
     {
-        private const string watchPath = "C:/Windows/";
+        private const string watchPath = "C:/vue/";
         private const string endPath = "index.html";
+        public ActionResult Login()
+        { 
+            return View();
+        }
         public ActionResult Index(string pathName = "")
         {
             try
