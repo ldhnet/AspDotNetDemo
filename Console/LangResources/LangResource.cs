@@ -6,9 +6,9 @@
         public static string Title { get; } = "Title";
 
         public static string AnyRadixConvert_CharacterIsNotValid = "AnyRadixConvert_CharacterIsNotValid";
-        public static string AnyRadixConvert_Overflow { get; } = "AnyRadixConvert_Overflow";
-        public static string Caching_CacheNotInitialized { get; } = "Caching_CacheNotInitialized";
-        public static string CheckNotNull { get; } = "CheckNotNull";
+        public static string AnyRadixConvert_Overflow { get { return nameof(AnyRadixConvert_Overflow); } }
+        public static string Caching_CacheNotInitialized { get { return nameof(Caching_CacheNotInitialized); } }
+        public static string CheckNotNull { get { return nameof(CheckNotNull); } }
         public static string ConfigFile_ItemKeyDefineRepeated { get; } = "ConfigFile_ItemKeyDefineRepeated";
         public static string ConfigFile_NameToTypeIsNull { get; } = "ConfigFile_NameToTypeIsNull";
         public static string Context_BuildServicesFirst { get; } = "Context_BuildServicesFirst";

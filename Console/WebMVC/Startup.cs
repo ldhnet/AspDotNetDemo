@@ -6,6 +6,7 @@ using Framework.EF.Context;
 using Framework.Utility;
 using Framework.Utility.Config;
 using Hangfire;
+using LangResources;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,7 +43,14 @@ namespace WebMVC
             services.AddHttpContextAccessor();
             services.AddOptions();
 
+
+            var aaa= LangResource.AnyRadixConvert_Overflow;
+
+            var bbb = LangResource.CheckNotNull;
+            var ccc = LangResource.Caching_CacheNotInitialized;
+
             // services.AddLocalization();
+
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 

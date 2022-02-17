@@ -28,15 +28,14 @@ namespace DH.AuthorizationServer.Controllers
         [HttpPost]
         public string Login(string name,string password)
         {
-            {
-                //do 数据库校验
-                for (int i = 0; i < 1000; i++)
-                {
-                    Thread th = new Thread(new ThreadStart(ThreadMethod)); //创建线程                     
-                    th.Start(); //启动线程  
-                }
-
-            }
+            //{
+            //    //do 数据库校验
+            //    for (int i = 0; i < 1000; i++)
+            //    {
+            //        Thread th = new Thread(new ThreadStart(ThreadMethod)); //创建线程                     
+            //        th.Start(); //启动线程  
+            //    }
+            //}
             if ("admin".Equals(name) && "123456".Equals(password))
             {
                 string token = this._iJWTService.GetToken(name, password);
