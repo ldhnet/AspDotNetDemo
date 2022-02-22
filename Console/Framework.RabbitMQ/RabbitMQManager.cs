@@ -65,7 +65,9 @@ namespace Framework.RabbitMQ
 
             channel.BasicConsume(queue: queueName,
                                  autoAck: false,
-                                 consumer: consumer);            
+                                 consumer: consumer);
+
+            //channel.Dispose();
         }
 
         public void Publish<T>(T message, string queueName, string routeKey)
