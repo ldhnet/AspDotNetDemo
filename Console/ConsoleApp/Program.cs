@@ -28,6 +28,15 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            var aaa = (int)Math.Pow(2, 22);
+            //list 压缩
+            //Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
+            var list1 = Enumerable.Range(0, (int)Math.Pow(2, 22)).ToList();
+            list1.Add(1);
+            list1.Capacity = list1.Count;
+
+            var dicrionary = new Dictionary<int, string>();
+
             DateTime expireDateTime = DateTime.MaxValue;
 
             var bbb22 = DateTime.Now.Date >= DateTime.Now.Date;
