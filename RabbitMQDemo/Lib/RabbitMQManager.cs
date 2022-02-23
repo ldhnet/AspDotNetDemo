@@ -23,7 +23,7 @@ namespace Lib
                 UserName = _options.UserName,
                 Password = _options.Password
             };
-
+            factory.AutomaticRecoveryEnabled = true;   //设置端口后 自动恢复连接属性即可
             //创建连接
             _connection = factory.CreateConnection();           
         }

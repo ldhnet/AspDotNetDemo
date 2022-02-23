@@ -31,10 +31,23 @@ namespace ConsoleApp
             var aaa = (int)Math.Pow(2, 22);
             //list 压缩
             //Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
-            var list1 = Enumerable.Range(0, (int)Math.Pow(2, 22)).ToList();
+            var list1 = Enumerable.Range(0, (int)Math.Pow(2, 2)).ToList();
             list1.Add(1);
             list1.Capacity = list1.Count;
+            var ppp = list1.FirstOrDefault();
+            var ppp2 = list1.LastOrDefault();
 
+
+            var listQQ=new List<MathProxy>();
+            var ttt = listQQ.FirstOrDefault();
+            if (ttt is null)
+            {
+                Console.WriteLine("ttt is null");
+            }
+            if (ttt is not null)
+            {
+                Console.WriteLine("ttt is null");
+            }
             var dicrionary = new Dictionary<int, string>();
 
             DateTime expireDateTime = DateTime.MaxValue;
@@ -116,28 +129,7 @@ namespace ConsoleApp
             //RedisHelper.并发测试();  
             //RedisHelper.并发测试_未使用锁();
             //RedisHelper.并发测试_Redis锁();
-             
-            AbstractAuditor director = new Director()
-            {
-                Name = "小张"
-            };
-            AbstractAuditor manager = new Manager()
-            {
-                Name = "小刘"
-            };
-            AbstractAuditor ceo = new CEO()
-            {
-                Name = "小李"
-            };
-            ApplyContext apply = new ApplyContext()
-            {
-                Hour = 18,
-                AuditResult=false,
-            };
-            director.SetNextAuditor(manager);
-            manager.SetNextAuditor(ceo);
-            director.Audit(apply);
-
+               
 
             Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
 
