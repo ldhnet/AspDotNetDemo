@@ -15,5 +15,12 @@ namespace ConsoleApp.Rule
             this._NextAuditor = abstractAuditor;    
         }
         public abstract void Audit(ApplyContext applyContext);
+
+        public  void AuditNext(ApplyContext applyContext) {
+            if (_NextAuditor != null)
+            {
+                _NextAuditor.Audit(applyContext);
+            }
+        }
     }
 }
