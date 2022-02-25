@@ -14,9 +14,6 @@ namespace ConsoleApp.Rule
         }
         public static void TestGof()
         {
-
-
-
             AbstractAuditor director = new Director()
             {
                 Name = "小张"
@@ -36,6 +33,7 @@ namespace ConsoleApp.Rule
             };
             director.SetNextAuditor(manager);
             manager.SetNextAuditor(ceo);
+
             director.Audit(apply);
         }
     }
