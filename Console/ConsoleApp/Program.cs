@@ -28,6 +28,12 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+
+            var dt11111 = new DateTime(2022,2,28);
+           var dddt= dt11111.AddDays(1).AddSeconds(-1);
+
+
+
             var aaa = (int)Math.Pow(2, 22);
             //list 压缩
             //Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
