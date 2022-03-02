@@ -28,6 +28,10 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            double a = 99.999933;
+            var adouble = Math.Floor(a * 100) / 100;
+
+
 
             var dt11111 = new DateTime(2022,2,28);
            var dddt= dt11111.AddDays(1).AddSeconds(-1);

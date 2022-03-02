@@ -121,5 +121,65 @@ namespace WebApi6_0.Controllers
             }; 
             return Ok(new BaseResponse<dynamic>(successCode.Success, string.Empty, data));
         }
+        /// <summary>
+        /// 单文件上传
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<bool> Upload(IFormFile file)
+        {
+            var fileFolder = Path.Combine("D://D//Demo202203//MaryKay//MaryKay.SFA", "UploadFiles");
+
+            if (!Directory.Exists(fileFolder))
+                Directory.CreateDirectory(fileFolder);
+
+            //var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(file.FileName);
+            //var filePath = Path.Combine(fileFolder, fileName);
+
+            //var listData = new List<TestUser>();
+
+            //using (var stream = new FileStream(filePath, FileMode.Create))
+            //{
+            //    await file.CopyToAsync(stream);
+
+            //    var dt = ExcelHelper.ExcelStreamToDataTable(stream).FirstOrDefault();
+
+            //    listData = dt.ConvertDataTableToList<TestUser>();
+            //}
+
+            return true;
+        }
+        /// <summary>
+        /// 多文件上传
+        /// </summary>
+        /// <param name="files"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> UploadFilesAsync(List<IFormFile> files)
+        {
+            long size = files.Sum(f => f.Length);
+            var fileFolder = Path.Combine("D://D//Demo202203//MaryKay//MaryKay.SFA", "UploadFiles");
+
+            if (!Directory.Exists(fileFolder))
+                Directory.CreateDirectory(fileFolder);
+
+            foreach (var file in files)
+            {
+                if (file.Length > 0)
+                {
+                    var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") +
+                                   Path.GetExtension(file.FileName);
+                    var filePath = Path.Combine(fileFolder, fileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }
+            }
+
+            return Ok(new { count = files.Count, size });
+        }
     }
 }
