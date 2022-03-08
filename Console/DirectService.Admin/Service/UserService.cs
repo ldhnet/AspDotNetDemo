@@ -41,6 +41,13 @@ namespace DirectService.Admin.Service
             }
             return expression;
         }
+        public async Task<Page<Employee>> GetPageList2(Pagination pagination)
+        {
+            var page = await _userRepository.EntitiesAsNoTracking.OrderBy(c=>c.Id).ToPagedListAsync(1,5);
+            return page;
+        }
+
+
         public async Task<List<Employee>> GetPageList(Pagination pagination)
         { 
             var list = await _userRepository.FindList<Employee>(pagination);
