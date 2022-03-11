@@ -54,6 +54,10 @@ namespace ConsoleApp
            var dddt= dt11111.AddDays(1).AddSeconds(-1);
 
 
+            var mainfunc = new Algorithm.MainFunction();
+            mainfunc.RedPackageHelper();
+
+
 
             var aaa = (int)Math.Pow(2, 22);
             //list 压缩
