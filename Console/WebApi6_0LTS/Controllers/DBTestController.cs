@@ -40,9 +40,10 @@ namespace WebApi6_0.Controllers
             //_logger.LogWarning("2222222222"); 
             //_logger.LogError("3333333");
 
-           var aaa=  _configuration.GetSection("DisplayName");
-             
-
+            await Task.Run(() => {
+                var aaa = _configuration.GetSection("DisplayName");
+            });
+   
             TResponse<EmployeeDto> res = new TResponse<EmployeeDto>();
             res.Code = 1;
             res.Message = "测试";

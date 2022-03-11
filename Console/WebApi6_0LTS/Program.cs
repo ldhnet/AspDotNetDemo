@@ -22,8 +22,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApi6_0.Extensions;
 using Framework.RabbitMQ;
+using ZipDeploy;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // Look for static files in webroot
 //builder.WebHost.UseWebRoot("webroot");
  
@@ -52,11 +54,11 @@ builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(
 // Add services to the container.
  
 builder.Services.AddHealthChecks().AddCheck("self", () => HealthCheckResult.Healthy());
+
 //解决跨域
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("CorsPolicy",
-        builder => builder
+    options.AddPolicy("CorsPolicy", builder => builder
         .SetIsOriginAllowed((host) => true)
         .AllowAnyMethod()
         .AllowAnyHeader()
@@ -107,79 +109,74 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 
 builder.Services.AddEndpointsApiExplorer();
 
-
-
 JWTTokenOptions tokenOptions=new JWTTokenOptions();
 builder.Configuration.Bind("JWTTokenOptions", tokenOptions);
 //配置鉴权流程
 builder.Services.AddAuthenticationExtension(tokenOptions);
 
-
 //RabbitMQOptions mqOptions = new RabbitMQOptions();
 //builder.Configuration.Bind("RabbitMQOptions", mqOptions);
-
 //builder.Services.AddRabbitMQ(option => option = mqOptions);//RabbitMQ
-
-//var url = builder.Configuration[WebHostDefaults.ServerUrlsKey];
-
+ 
 builder.Services.Configure<SystemConfig>(options =>
 {
     builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 });
 
 
-GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
-//GlobalConfig.MailSenderOptions = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
-
+GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
 builder.Configuration.Bind("MailSender", GlobalConfig.MailSenderOptions);
  
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
 
+builder.Services.AddZipDeploy();//发布压缩组件
+
 var app = builder.Build();
 
+
+app.UseSwagger();
+app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+{ 
     //app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi6_0 v1"); c.RoutePrefix = string.Empty; });
 }
 
 #region 异常处理
-RequestDelegate handler = async context =>
-{
-    var exceptionHandlerPathFeature =
-    context.Features.Get<IExceptionHandlerPathFeature>();
+//RequestDelegate handler = async context =>
+//{
+//    var exceptionHandlerPathFeature =
+//    context.Features.Get<IExceptionHandlerPathFeature>();
 
-    var resp = new BaseResponse(successCode.Error, exceptionHandlerPathFeature?.Error.Message!);
-    var exception = exceptionHandlerPathFeature?.Error;
+//    var resp = new BaseResponse(successCode.Error, exceptionHandlerPathFeature?.Error.Message!);
+//    var exception = exceptionHandlerPathFeature?.Error;
 
-    while (exception?.InnerException != null)
-    {
-        resp.msg = exception.InnerException.Message;
-        exception = exception.InnerException;
-    }
-    context.Response.ContentType = "application/json";
-    context.Response.StatusCode = 200;
-    await context.Response.WriteAsync(JsonConvert.SerializeObject(resp)).ConfigureAwait(false);
-};
+//    while (exception?.InnerException != null)
+//    {
+//        resp.msg = exception.InnerException.Message;
+//        exception = exception.InnerException;
+//    }
+//    context.Response.ContentType = "application/json";
+//    context.Response.StatusCode = 200;
+//    await context.Response.WriteAsync(JsonConvert.SerializeObject(resp)).ConfigureAwait(false);
+//};
 
-app.UseExceptionHandler(new ExceptionHandlerOptions
-{
-    ExceptionHandler = handler
-});
+//app.UseExceptionHandler(new ExceptionHandlerOptions
+//{
+//    ExceptionHandler = handler
+//});
 
 #endregion
 
 app.UseHttpsRedirection();
- 
-//app.UseAuthorization();//鉴权
-//app.UseAuthentication();//授权
-//解决跨域
-app.UseCors("CorsPolicy");
 
+app.UseCors("CorsPolicy");//解决跨域
+
+app.UseAuthorization();//鉴权
+app.UseAuthentication();//授权
+ 
 app.UseCalculateExecutionTime();
 
 app.UseMiddleware(typeof(ExceptionMiddleWare));
@@ -188,15 +185,10 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
-app.UseHangfire();
-
+//app.UseHangfire(); 
 //app.UseRabbitMQ();//RabbitMQ
 
-app.MapControllers();
-
-//app.Lifetime.ApplicationStarted.Register(ApplicationConfig.OnAppStarted);
-//app.Lifetime.ApplicationStopped.Register(ApplicationConfig.OnAppStopped);
-
+app.MapControllers(); 
 GlobalConfig.ServiceProvider = app.Services;
 app.Run();
 

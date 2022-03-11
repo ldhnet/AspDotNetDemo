@@ -1,13 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:37493",
-      "sslPort": 44355
-    }
-  },
+ 
   "profiles": {
     "WebApi6_0LTS": { //本地调试项目启动 使用配置
       "commandName": "Project",
@@ -16,23 +8,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development" //"Staging"
       },
-      "applicationUrl": "https://localhost:7169;http://localhost:5169",
+      "applicationUrl": "http://localhost:5169",
       "dotnetRunMessages": true
-    },
-    "IIS Express": { //IIS 部署时候启动  使用配置
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Staging"
-      }
-    },
-    "Docker": { //Docker 部署时候启动  使用配置
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-      "publishAllPorts": true,
-      "useSSL": true
-    }
+    } 
   }
 }
