@@ -129,6 +129,7 @@ namespace WebApi6_0.Controllers
         [HttpPost]
         public async Task<bool> Upload(IFormFile file)
         {
+            await Task.Run(() => { });
             var fileFolder = Path.Combine("D://D//Demo202203//MaryKay//MaryKay.SFA", "UploadFiles");
 
             if (!Directory.Exists(fileFolder))

@@ -22,6 +22,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApi6_0.Extensions;
 using Framework.RabbitMQ;
+using ZipDeploy;
 
 var builder = WebApplication.CreateBuilder(args);
 // Look for static files in webroot
@@ -127,6 +128,7 @@ builder.Services.Configure<SystemConfig>(options =>
     builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 });
 
+builder.Services.AddZipDeploy();//发布压缩组件
 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 
@@ -136,6 +138,7 @@ builder.Configuration.Bind("MailSender", GlobalConfig.MailSenderOptions);
  
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
+
 
 var app = builder.Build();
 
@@ -188,7 +191,7 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
-app.UseHangfire();
+//app.UseHangfire();
 
 //app.UseRabbitMQ();//RabbitMQ
 
