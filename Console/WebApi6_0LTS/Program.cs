@@ -1,42 +1,39 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using Framework.Hangfire;
+using Framework.Log4Net;
+using Framework.Mapper;
 using Framework.Utility;
 using Framework.Utility.Config;
-using Framework.Utility.Mapping;  
-using WebApi6_0.Middleware;
-using WebApi6_0.Filter;
-using Newtonsoft.Json; 
-using AutoMapper;
-using Framework.Mapper;
-using Framework.Hangfire;
-using WebApi6_0.HangFire;
-using WebApi6_0.AppConfig;
-using Microsoft.AspNetCore.Diagnostics;
 using Framework.Utility.Email;
-using Framework.Log4Net;
-using Framework.NLog;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Framework.Utility.JWT;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Framework.Utility.Mapping;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Newtonsoft.Json;
+using WebApi6_0.AppConfig;
 using WebApi6_0.Extensions;
-using Framework.RabbitMQ;
-using ZipDeploy;
+using WebApi6_0.Filter;
+using WebApi6_0.HangFire;
+using WebApi6_0.Middleware;
+
+//using ZipDeploy;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Look for static files in webroot
-//builder.WebHost.UseWebRoot("webroot");
- 
+
+//builder.WebHost.UseWebRoot("wwwroot");
+
 //var configuration = new ConfigurationBuilder()
 //                      .AddJsonFile("appsettings.json").Build();
- 
-builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
- 
+
+var currentDir = Directory.GetCurrentDirectory();
+builder.Host.UseContentRoot(currentDir);
+
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
-{ 
-    var env = hostingContext.HostingEnvironment; 
+{
+    var env = hostingContext.HostingEnvironment;
     config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
@@ -47,13 +44,30 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 //var ddd2 = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
 
 //builder.WebHost.UseUrls("https://*:9080", "http://*:9081");
-  
+
 // Wait 30 seconds for graceful shutdown.
 builder.Host.ConfigureHostOptions(o => o.ShutdownTimeout = TimeSpan.FromSeconds(60));
-  
+
 // Add services to the container.
- 
+
 builder.Services.AddHealthChecks().AddCheck("self", () => HealthCheckResult.Healthy());
+
+builder.Services.AddControllersWithViews(options =>
+{
+    //options.Filters.Add<TokenCheckFilter>();
+    options.Filters.Add<ApiResultFilterAttribute>();
+}).AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;//忽略循环引用
+    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//序列化保持原有大小写（默认首字母小写）
+});
+
+builder.Services.AddDistributedMemoryCache();
+// 注册Session服务
+builder.Services.AddSession(opt => { 
+    opt.IdleTimeout= TimeSpan.FromSeconds(60);//60秒
+});
 
 //解决跨域
 builder.Services.AddCors(options =>
@@ -76,15 +90,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-builder.Services.AddControllers(options => {
-    //options.Filters.Add<TokenCheckFilter>(); 
-    options.Filters.Add<ApiResultFilterAttribute>();
-}).AddNewtonsoftJson(options=>
-{
-    options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;//忽略循环引用
-    options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();//序列化保持原有大小写（默认首字母小写）
-});
+
 builder.Services.AddAutoMapper(MapperRegister.MapType());
 
 builder.Services.AddHangfire(builder.Configuration);
@@ -93,10 +99,10 @@ builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
 
 builder.Services.AddSingleton<IEmailSender, DefaultEmailSender>();
 
-builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>(); //log4net 
-//builder.Services.AddSingleton<ILoggerProvider, NLogLoggerProvider>();//NLog
- 
-#region  Autofac
+builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>(); //log4net
+                                                                         //builder.Services.AddSingleton<ILoggerProvider, NLogLoggerProvider>();//NLog
+
+#region Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
@@ -109,7 +115,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterMod
 
 builder.Services.AddEndpointsApiExplorer();
 
-JWTTokenOptions tokenOptions=new JWTTokenOptions();
+JWTTokenOptions tokenOptions = new JWTTokenOptions();
 builder.Configuration.Bind("JWTTokenOptions", tokenOptions);
 //配置鉴权流程
 builder.Services.AddAuthenticationExtension(tokenOptions);
@@ -117,34 +123,48 @@ builder.Services.AddAuthenticationExtension(tokenOptions);
 //RabbitMQOptions mqOptions = new RabbitMQOptions();
 //builder.Configuration.Bind("RabbitMQOptions", mqOptions);
 //builder.Services.AddRabbitMQ(option => option = mqOptions);//RabbitMQ
- 
+
 builder.Services.Configure<SystemConfig>(options =>
 {
     builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 });
 
-
-
-GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>(); 
+GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 builder.Configuration.Bind("MailSender", GlobalConfig.MailSenderOptions);
- 
+
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
 
-builder.Services.AddZipDeploy();//发布压缩组件
+//builder.Services.AddZipDeploy();//发布压缩组件
 
 var app = builder.Build();
+//启用静态文件
+app.UseStaticFiles();
 
+////这一步很关键
+//DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+//defaultFilesOptions.DefaultFileNames.Clear();
+////设置首页，我希望用户打开`localhost`访问到的是`wwwroot`下的Index.html文件
+//defaultFilesOptions.DefaultFileNames.Add("swg-login.html");
+//app.UseDefaultFiles(defaultFilesOptions);
+
+// 使用中间件，放到Swagger中间件之前
+app.UseSession();
+app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");//解决跨域
+
+app.UseSwaggerAuthorized();
 
 app.UseSwagger();
 app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{ 
+{
     //app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi6_0 v1"); c.RoutePrefix = string.Empty; });
 }
 
 #region 异常处理
+
 //RequestDelegate handler = async context =>
 //{
 //    var exceptionHandlerPathFeature =
@@ -168,15 +188,11 @@ if (app.Environment.IsDevelopment())
 //    ExceptionHandler = handler
 //});
 
-#endregion
-
-app.UseHttpsRedirection();
-
-app.UseCors("CorsPolicy");//解决跨域
+#endregion 异常处理
 
 app.UseAuthorization();//鉴权
 app.UseAuthentication();//授权
- 
+
 app.UseCalculateExecutionTime();
 
 app.UseMiddleware(typeof(ExceptionMiddleWare));
@@ -185,10 +201,9 @@ app.UseStateAutoMapper();
 
 app.UseShardResource();
 
-//app.UseHangfire(); 
+//app.UseHangfire();
 //app.UseRabbitMQ();//RabbitMQ
 
-app.MapControllers(); 
+app.MapControllers();
 GlobalConfig.ServiceProvider = app.Services;
 app.Run();
-

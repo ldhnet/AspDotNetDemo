@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\swg-login2.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
