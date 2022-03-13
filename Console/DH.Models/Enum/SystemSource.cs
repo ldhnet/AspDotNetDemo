@@ -5,6 +5,7 @@
     /// </summary>
     public enum SystemSource
     {
-
+        sqlserver,
+        mysql,
     }
 }
