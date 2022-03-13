@@ -111,5 +111,15 @@ namespace Framework.Utility.Extensions
             var date = new DateTime(timeTicks);
             return date.ToLocalTimeStr(offset, dateTimeFormat);
         }
+
+
+        public static DateTime FirstDay(this DateTime currentProcessMonth)
+        {
+            return new DateTime(currentProcessMonth.Year, currentProcessMonth.Month, 1);
+        }
+        public static DateTime LastDay(this DateTime currentProcessMonth)
+        {
+            return currentProcessMonth.AddDays(1 - currentProcessMonth.Day).AddMonths(1).AddDays(-1).Date;//currentProcessMonth月最后一天 
+        }
     }
 }

@@ -14,6 +14,8 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using global::ConsoleApp.Gof.builder;
+using Framework.Utility.Extensions;
+
 namespace ConsoleApp
 {
 
@@ -28,6 +30,35 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            double a = 99.999933;
+            var adouble = Math.Floor(a * 100) / 100;
+
+            DateTime targetDate = new DateTime();
+            DateTime.TryParseExact("202109",
+                "yyyyMM",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out targetDate);
+
+            DateTime CitationDate = DateTime.Now.AddYears(-1).AddMonths(2);
+            DateTime endTime, startTime;
+            //吃到书面及以上警告，自下月起不给月付              
+            endTime = new DateTime(CitationDate.AddMonths(13).Year,CitationDate.AddMonths(13).Month, 1).AddDays(-1);
+            startTime = new DateTime(CitationDate.AddMonths(1).Year,CitationDate.AddMonths(1).Month, 1);
+
+
+            DateTime endTime5= CitationDate.AddYears(1).LastDay();
+            DateTime startTime5 = CitationDate.AddMonths(1).FirstDay();
+
+
+            var dt11111 = new DateTime(2022,2,28);
+           var dddt= dt11111.AddDays(1).AddSeconds(-1);
+
+
+            var mainfunc = new Algorithm.MainFunction();
+            mainfunc.RedPackageHelper();
+
+
+
             var aaa = (int)Math.Pow(2, 22);
             //list 压缩
             //Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
@@ -113,10 +144,9 @@ namespace ConsoleApp
 
             var mrStartDate = Convert.ToDateTime("2021-10-30");
        
-                DateTime endTime, startTime;
-                //吃到书面及以上警告，自下月起不给月付              
-                endTime = new DateTime(mrStartDate.AddMonths(13).Year, mrStartDate.AddMonths(13).Month, 1).AddDays(-1);
-                startTime = new DateTime(mrStartDate.AddMonths(1).Year, mrStartDate.AddMonths(1).Month, 1);
+                         
+            DateTime endTime22 = new DateTime(mrStartDate.AddMonths(13).Year, mrStartDate.AddMonths(13).Month, 1).AddDays(-1);
+            DateTime startTime22 = new DateTime(mrStartDate.AddMonths(1).Year, mrStartDate.AddMonths(1).Month, 1);
 
 
                 string str_m1 = m1.ConvertToChinese();

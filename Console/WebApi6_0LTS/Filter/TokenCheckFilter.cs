@@ -22,8 +22,7 @@ namespace WebApi6_0.Filter
         /// <summary>
         /// 重写基类的验证方式，加入自定义的Ticket验证
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="next"></param>
+        /// <param name="context"></param> 
         public override async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
             //解密Ticket

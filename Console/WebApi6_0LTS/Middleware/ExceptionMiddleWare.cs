@@ -21,6 +21,7 @@ namespace WebApi6_0.Middleware
         /// <summary>
         /// 构造函数
         /// </summary>
+        /// <param name="_logger"></param>
         /// <param name="next"></param>
         public ExceptionMiddleWare(ILogger<ExceptionMiddleWare> _logger, RequestDelegate next)
         {
