@@ -21,6 +21,8 @@ using WebApi6_0.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://localhost:5000");
+
 // Look for static files in webroot
 
 //builder.WebHost.UseWebRoot("wwwroot");

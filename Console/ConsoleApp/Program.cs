@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using global::ConsoleApp.Gof.builder;
 using Framework.Utility.Extensions;
+using ConsoleApp.Test202203;
 
 namespace ConsoleApp
 {
@@ -30,6 +31,10 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+
+            MyAesHelper.AseTest();
+
+
             double a = 99.999933;
             var adouble = Math.Floor(a * 100) / 100;
 

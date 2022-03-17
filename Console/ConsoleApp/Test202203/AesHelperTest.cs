@@ -1,13 +1,16 @@
 ﻿using Framework.Utility.Extensions;
+using System;
+using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Framework.Utility.Security
+namespace ConsoleApp.Test202203
 {
     /// <summary>
     /// AES加密解密辅助类
     /// </summary>
-    public class AesHelper
+    public class AesHelperTest
     {
 
         /// <summary>
@@ -31,17 +34,17 @@ namespace Framework.Utility.Security
 
 
         /// <summary>
-        /// 初始化一个<see cref="AesHelper"/>类型的新实例
+        /// 初始化一个<see cref="AesHelperTest"/>类型的新实例
         /// </summary>
-        public AesHelper(bool needIV = false): this(GetRandomKey(), needIV)
+        public AesHelperTest(bool needIV = false): this(GetRandomKey(), needIV)
         { }
 
         /// <summary>
-        /// 初始化一个<see cref="AesHelper"/>类型的新实例
+        /// 初始化一个<see cref="AesHelperTest"/>类型的新实例
         /// </summary>
         /// <param name="key">加密密钥</param>
         /// <param name="needIV">是否需要向量</param>
-        public AesHelper(string key, bool needIV = false)
+        public AesHelperTest(string key, bool needIV = false)
         {
             Key = key;
             _needIV = needIV;
@@ -108,7 +111,7 @@ namespace Framework.Utility.Security
         /// </summary>
         public static byte[] Encrypt(byte[] decodeBytes, string key, bool needIV = false)
         {
-            decodeBytes.CheckNotNull("decodeBytes");
+            if(string.IsNullOrWhiteSpace("decodeBytes")) throw new Exception("decodeBytes 不能为空");
             using (Aes aes = Aes.Create())
             {
                 if (aes == null)
@@ -139,7 +142,7 @@ namespace Framework.Utility.Security
         /// </summary>
         public static byte[] Decrypt(byte[] encodeBytes, string key, bool needIV = false)
         {
-            encodeBytes.CheckNotNull("encodeBytes");
+            if (string.IsNullOrWhiteSpace("encodeBytes")) throw new Exception("encodeBytes 不能为空");
             using (Aes aes = Aes.Create())
             {
                 if (aes == null)
@@ -173,7 +176,7 @@ namespace Framework.Utility.Security
         /// </summary>
         public static string Encrypt(string source, string key, bool needIV = false)
         {
-            source.CheckNotNull("source");
+            if (string.IsNullOrWhiteSpace("source")) throw new Exception("source 不能为空");
 
             byte[] decodeBytes = source.ToBytes();
             byte[] encodeBytes = Encrypt(decodeBytes, key, needIV);
@@ -185,7 +188,7 @@ namespace Framework.Utility.Security
         /// </summary>
         public static string Decrypt(string source, string key, bool needIV = false)
         {
-            source.CheckNotNull("source");
+            if (string.IsNullOrWhiteSpace("source")) throw new Exception("source 不能为空");
 
             byte[] encodeBytes = Convert.FromBase64String(source);
             byte[] decodeBytes = Decrypt(encodeBytes, key, needIV);
@@ -197,8 +200,8 @@ namespace Framework.Utility.Security
         /// </summary>
         public static void EncryptFile(string sourceFile, string targetFile, string key, bool needIV = false)
         {
-            sourceFile.CheckFileExists("sourceFile");
-            targetFile.CheckNotNullOrEmpty("targetFile");
+            //sourceFile.CheckFileExists("sourceFile");
+            //targetFile.CheckNotNullOrEmpty("targetFile");
 
             using (FileStream ifs = new FileStream(sourceFile, FileMode.Open, FileAccess.Read),
                     ofs = new FileStream(targetFile, FileMode.Create, FileAccess.Write))
@@ -216,8 +219,8 @@ namespace Framework.Utility.Security
         /// </summary>
         public static void DecryptFile(string sourceFile, string targetFile, string key, bool needIV = false)
         {
-            sourceFile.CheckFileExists("sourceFile");
-            targetFile.CheckNotNullOrEmpty("targetFile");
+            //sourceFile.CheckFileExists("sourceFile");
+            //targetFile.CheckNotNullOrEmpty("targetFile");
 
             using (FileStream ifs = new FileStream(sourceFile, FileMode.Open, FileAccess.Read),
                     ofs = new FileStream(targetFile, FileMode.Create, FileAccess.Write))
@@ -234,13 +237,21 @@ namespace Framework.Utility.Security
         /// 获取随机密钥
         /// </summary>
         public static string GetRandomKey()
-        {
-            using (AesCryptoServiceProvider provider = new AesCryptoServiceProvider())
+        { 
+            using (Aes provider = Aes.Create())
             {
                 provider.GenerateKey();
                 Console.WriteLine(provider.Key.Length);
                 return Convert.ToBase64String(provider.Key);
             }
+
+            //已过时
+            //using (AesCryptoServiceProvider provider = new AesCryptoServiceProvider())
+            //{
+            //    provider.GenerateKey();
+            //    Console.WriteLine(provider.Key.Length);
+            //    return Convert.ToBase64String(provider.Key);
+            //}
         }
 
         /// <summary>
@@ -248,7 +259,7 @@ namespace Framework.Utility.Security
         /// </summary>
         private static byte[] CheckKey(string key)
         {
-            key.CheckNotNull("key");
+            if (string.IsNullOrWhiteSpace("key")) throw new Exception("key 不能为空");
             byte[] bytes, keyBytes = new byte[32];
             try
             {
