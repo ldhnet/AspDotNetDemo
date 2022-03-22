@@ -105,11 +105,11 @@ namespace ConsoleApp
              //StrategyClass.StrategyMain();
 
 
-            int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            //int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
-            int days2 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(1).Month);
+            //int days2 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(1).Month);
 
-            int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
+            //int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
 
             //ExcelTest.exportExcelTest();
             //ExcelTest.importExcelTest();
