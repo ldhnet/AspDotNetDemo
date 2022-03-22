@@ -140,11 +140,11 @@ namespace ConsoleApp
 
             double addresult = proxy.Add(2, 3);
 
-            double subresult = proxy.Sub(6, 4);
+            //double subresult = proxy.Sub(6, 4);
 
-            double mulresult = proxy.Mul(2, 3);
+            //double mulresult = proxy.Mul(2, 3);
 
-            double devresult = proxy.Dev(2, 3);
+            //double devresult = proxy.Dev(2, 3);
 
 
             var mrStartDate = Convert.ToDateTime("2021-10-30");
