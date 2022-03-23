@@ -10,6 +10,7 @@ using Framework.Utility.Email;
 using Framework.Utility.JWT;
 using Framework.Utility.Mapping;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.FeatureManagement;
 using Newtonsoft.Json;
 using WebApi6_0.AppConfig;
 using WebApi6_0.Extensions;
@@ -95,14 +96,15 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 
 builder.Services.AddAutoMapper(MapperRegister.MapType());
 
-builder.Services.AddHangfire(builder.Configuration);
+//builder.Services.AddHangfire(builder.Configuration);
 
-builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
+//builder.Services.AddSingleton<IHangfireJobRunner, HangfireJobRunner>();
 
 builder.Services.AddSingleton<IEmailSender, DefaultEmailSender>();
 
 builder.Services.AddSingleton<ILoggerProvider, Log4NetLoggerProvider>(); //log4net
                                                                          //builder.Services.AddSingleton<ILoggerProvider, NLogLoggerProvider>();//NLog
+builder.Services.AddFeatureManagement();
 
 #region Autofac
 
@@ -198,6 +200,8 @@ app.UseAuthentication();//ÊÚÈ¨
 app.UseCalculateExecutionTime();
 
 app.UseMiddleware(typeof(ExceptionMiddleWare));
+
+app.UseMiddleware(typeof(DebugMiddleware));
 
 app.UseStateAutoMapper();
 

@@ -30,7 +30,23 @@ namespace WebApi6_0.Controllers
         private ISysAccountContract _SysAccountContract => _provider.GetRequiredService<ISysAccountContract>();
 
         private IConfiguration _configuration => _provider.GetRequiredService<IConfiguration>();
+        /// <summary>
+        /// 
+        /// 测试
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("GetTest")]
 
+        public async Task<IActionResult> GetTest()
+        {
+            TResponse res = new TResponse();
+            res.Code = 1;
+            res.Message = "测试";
+
+            return Ok(res);
+        }
         [HttpGet]
         [AllowAnonymous]
         [Route("GetInfoAsync")]
