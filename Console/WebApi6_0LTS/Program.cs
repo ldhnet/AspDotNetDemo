@@ -9,6 +9,7 @@ using Framework.Utility.Config;
 using Framework.Utility.Email;
 using Framework.Utility.JWT;
 using Framework.Utility.Mapping;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.FeatureManagement;
 using Newtonsoft.Json;
@@ -67,10 +68,45 @@ builder.Services.AddControllersWithViews(options =>
 });
 
 builder.Services.AddDistributedMemoryCache();
+
+
+//builder.Services.Configure<CookiePolicyOptions>(options =>
+//{
+//    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+//    options.CheckConsentNeeded = context => false; //这里要改为false，默认是true，true的时候session无效
+//    options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
+//});
+
+//分布式环境下设置相同的程序识别者
+builder.Services.AddDataProtection(configure =>
+{
+    configure.ApplicationDiscriminator = "commonweb1";
+}).SetApplicationName("commonweb1");
+
+//.AddKeyManagementOptions(options =>
+//{
+//  //配置自定义XmlRepository
+//  options.XmlRepository = new XmlRepository();
+//});
+
+
+#region 使用Redis保存Session
+// 这里取连接字符串
+builder.Services.AddDistributedRedisCache(option =>
+{
+    //redis 连接字符串
+    option.Configuration = "127.0.0.1:6379";
+    //redis 实例名
+    option.InstanceName = "Test_Session";
+});
+
 // 注册Session服务
 builder.Services.AddSession(opt => { 
     opt.IdleTimeout= TimeSpan.FromSeconds(60);//60秒
+    opt.Cookie.HttpOnly = true;//设置httponly
 });
+
+#endregion
 
 //解决跨域
 builder.Services.AddCors(options =>
@@ -193,6 +229,8 @@ if (app.Environment.IsDevelopment())
 //});
 
 #endregion 异常处理
+
+//app.UseCookiePolicy();
 
 app.UseAuthorization();//鉴权
 app.UseAuthentication();//授权
