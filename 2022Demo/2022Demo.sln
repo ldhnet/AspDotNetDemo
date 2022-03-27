@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web6", "web6\web6.csproj", "{EB889224-90B0-4900-A13E-A662438EC846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web6demo", "Web6demo\Web6demo.csproj", "{957373D6-3A1B-46C2-AB26-981302CDF434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lee.Utility", "Lee.Utility\Lee.Utility.csproj", "{1496F3D8-1BBE-4EEE-B3EF-97E4A00A9B04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB889224-90B0-4900-A13E-A662438EC846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB889224-90B0-4900-A13E-A662438EC846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB889224-90B0-4900-A13E-A662438EC846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB889224-90B0-4900-A13E-A662438EC846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957373D6-3A1B-46C2-AB26-981302CDF434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957373D6-3A1B-46C2-AB26-981302CDF434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957373D6-3A1B-46C2-AB26-981302CDF434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957373D6-3A1B-46C2-AB26-981302CDF434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1496F3D8-1BBE-4EEE-B3EF-97E4A00A9B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1496F3D8-1BBE-4EEE-B3EF-97E4A00A9B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1496F3D8-1BBE-4EEE-B3EF-97E4A00A9B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1496F3D8-1BBE-4EEE-B3EF-97E4A00A9B04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35D80D89-AB88-48F9-BBEC-C668FC73FCD5}
+	EndGlobalSection
+EndGlobal
