@@ -15,6 +15,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
 });
 
+//
 builder.Services.AddDataProtection(configure =>
 {
     configure.ApplicationDiscriminator = "commonwebmvc";
