@@ -22,6 +22,8 @@ namespace Lee.Utility.Helper
         public void StoreElement(XElement element, string friendlyName)
         {
             //本文忽略实现存储功能，因为我们只需要读取已存在的Key即可
+
+            //Key
         }
     }
 }
