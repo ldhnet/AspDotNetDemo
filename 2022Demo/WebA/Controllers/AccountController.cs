@@ -11,6 +11,11 @@ namespace WebA.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ILogger<AccountController> _logger; 
+        public AccountController(ILogger<AccountController> logger)
+        {
+            _logger = logger; 
+        } 
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -41,7 +46,7 @@ namespace WebA.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (!ModelState.IsValid) return View(model);
-
+            var aaa = HttpContext.User.Identity.IsAuthenticated;
             try
             {
                 if (model.Account.Equals("admin", StringComparison.OrdinalIgnoreCase) && model.Password.Equals("123456", StringComparison.OrdinalIgnoreCase))
@@ -50,6 +55,7 @@ namespace WebA.Controllers
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, "1213131", ClaimValueTypes.UInteger32));
                     claims.Add(new Claim(ClaimTypes.Name, "WEBAs", ClaimValueTypes.String));
                     claims.Add(new Claim(ClaimTypes.Role, "Normal", ClaimValueTypes.String));
+                    claims.Add(new Claim(ClaimTypes.Authentication, "true", ClaimValueTypes.Boolean));
                     var userIdentity = new ClaimsIdentity(CookieAuthInfo.AuthenticationType);
                     userIdentity.AddClaims(claims);
                     var userPrincipal = new ClaimsPrincipal(userIdentity);

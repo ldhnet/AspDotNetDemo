@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;8625;8618;8600;8603;8604</NoWarn>
+    <NoWarn>1701;1702;8625;8618;8600;8603;8604;8602</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;8625</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Account\Login.cshtml~RFd212241.TMP" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />

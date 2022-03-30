@@ -19,6 +19,7 @@ namespace WebA.Controllers
 
         public IActionResult Index()
         {
+            var aaa = HttpContext.User.Identity.IsAuthenticated;
 
             string val = HttpContext.Session.GetString("test_username");
             //session为空写入一条测试数据
