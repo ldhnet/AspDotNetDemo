@@ -1,13 +1,16 @@
 @{
-    ViewData["Title"] = "Login";
+    Layout = null;
 }
 @model LoginViewModel
 <html>
 <head>
     <title>登录</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web6.styles.css" asp-append-version="true" />
 </head>
 <body class="gray-bg">
-    <div class="container animated fadeInDown" style="width:300px">
+    <div class="container" style="width:300px">
         <form class="form-horizontal" asp-controller="Account" asp-action="Login" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
             <h2 class="form-signin-heading">WebA</h2>
             <div class="form-group">
@@ -30,5 +33,9 @@
             <button type="submit" class="btn btn-primary">登  录</button>
         </form>
     </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

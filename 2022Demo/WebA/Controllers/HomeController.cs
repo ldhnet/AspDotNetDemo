@@ -18,7 +18,11 @@ namespace WebA.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
+            var userName = User.Identity.Name;
+
+            var bbb = User.Identity.AuthenticationType;
+
             var aaa = HttpContext.User.Identity.IsAuthenticated;
 
             string val = HttpContext.Session.GetString("test_username");

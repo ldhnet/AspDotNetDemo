@@ -15,13 +15,7 @@ namespace WebA.Controllers
         public AccountController(ILogger<AccountController> logger)
         {
             _logger = logger; 
-        } 
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        }  
         /// <summary>
         /// 登录页
         /// </summary>
@@ -53,7 +47,7 @@ namespace WebA.Controllers
                 {
                     List<Claim> claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, "1213131", ClaimValueTypes.UInteger32));
-                    claims.Add(new Claim(ClaimTypes.Name, "WEBAs", ClaimValueTypes.String));
+                    claims.Add(new Claim(ClaimTypes.Name, model.Account, ClaimValueTypes.String));
                     claims.Add(new Claim(ClaimTypes.Role, "Normal", ClaimValueTypes.String));
                     claims.Add(new Claim(ClaimTypes.Authentication, "true", ClaimValueTypes.Boolean));
                     var userIdentity = new ClaimsIdentity(CookieAuthInfo.AuthenticationType);
@@ -67,19 +61,17 @@ namespace WebA.Controllers
                            IsPersistent = true,
                            AllowRefresh = false
                        });
-
-                    if (string.IsNullOrEmpty(returnUrl))
+                        
+                    if (string.IsNullOrEmpty(returnUrl) || returnUrl.EndsWith("Login"))
                     {
                         returnUrl = "/Home";
                     }
-
                     return Redirect(returnUrl);
-
                 }
 
                 return View(model);
             }
-            catch (Exception ex)
+            catch
             {
                 return View(model);
             }
