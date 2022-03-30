@@ -26,7 +26,7 @@ builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
 //部署同一服务器
 builder.Services.AddDataProtection(configure => {
     configure.ApplicationDiscriminator = "commonwebmvc";
-}).SetApplicationName("commonweb1")
+}).SetApplicationName("commonweb")
     //windows、Linux、macOS 下可以使用此种方式 保存到文件系统
     .PersistKeysToFileSystem(new System.IO.DirectoryInfo("C:\\share_keys"));
 
@@ -61,14 +61,14 @@ builder.Services.AddDataProtection(configure => {
 //});
 
 
-//// 这里取连接字符串
-//builder.Services.AddDistributedRedisCache(option =>
-//{
-//    //redis 连接字符串
-//    option.Configuration = "127.0.0.1:6379";
-//    //redis 实例名
-//    option.InstanceName = "Test_Session";
-//});
+// 这里取连接字符串
+builder.Services.AddDistributedRedisCache(option =>
+{
+    //redis 连接字符串
+    option.Configuration = "127.0.0.1:6379";
+    //redis 实例名
+    option.InstanceName = "demo_Session";
+});
 
 //添加session 设置过期时长分钟 
 //var sessionOutTime = con.ConnectionConfig.ConnectionRedis.SessionTimeOut;

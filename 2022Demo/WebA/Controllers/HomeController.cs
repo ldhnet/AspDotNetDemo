@@ -7,6 +7,7 @@ using WebA.Models;
 
 namespace WebA.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -36,8 +37,7 @@ namespace WebA.Controllers
             ViewBag.val = val;
 
             return View();
-        }
-        [Authorize]
+        } 
         public IActionResult Privacy()
         {
             //添加

@@ -6,8 +6,8 @@ using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebA.Models; 
-namespace WebA.Controllers
+using WebB.Models; 
+namespace WebB.Controllers
 {
     public class AccountController : Controller
     {

@@ -1,10 +1,18 @@
 using Lee.Utility.Helper;
+using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
+                .AddCookie(CookieAuthInfo.CookieInstance, options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                    options.AccessDeniedPath = new PathString("/Account/Denied");
+                    options.LogoutPath = new PathString("/Account/Logout");
+                });
 
 
 
@@ -15,17 +23,12 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
 });
 
-//
-builder.Services.AddDataProtection(configure =>
-{
+//部署同一服务器
+builder.Services.AddDataProtection(configure => {
     configure.ApplicationDiscriminator = "commonwebmvc";
-}).SetApplicationName("commonweb2")
-
-.AddKeyManagementOptions(options =>
-{
-    //配置自定义XmlRepository
-    options.XmlRepository = new XmlRepository();
-});
+}).SetApplicationName("commonweb")
+    //windows、Linux、macOS 下可以使用此种方式 保存到文件系统
+    .PersistKeysToFileSystem(new System.IO.DirectoryInfo("C:\\share_keys"));
 
 //services.AddSession();
 #region 使用Redis保存Session
@@ -65,6 +68,8 @@ builder.Services.AddSession(options =>
 });
 #endregion
 
+builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -83,6 +88,7 @@ app.UseRouting();
 app.UseCookiePolicy();
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
