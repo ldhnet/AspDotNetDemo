@@ -16,12 +16,12 @@ builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
                 });
 
 
-//builder.Services.Configure<CookiePolicyOptions>(options =>
-//{
-//    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-//    options.CheckConsentNeeded = context => false; //这里要改为false，默认是true，true的时候session无效
-//    options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
-//});
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+    options.CheckConsentNeeded = context => false; //这里要改为false，默认是true，true的时候session无效
+    options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
+});
 
 //部署同一服务器
 builder.Services.AddDataProtection(configure => {
@@ -98,7 +98,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//app.UseCookiePolicy();
+app.UseCookiePolicy();
 app.UseSession();
 
 app.UseAuthentication();
