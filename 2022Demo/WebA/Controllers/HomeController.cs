@@ -1,10 +1,11 @@
 ﻿using Lee.Utility.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Diagnostics; 
 using WebA.Models;
 
-namespace web6.Controllers
+namespace WebA.Controllers
 {
     public class HomeController : Controller
     {
@@ -31,7 +32,7 @@ namespace web6.Controllers
 
             return View();
         }
-
+        [Authorize]
         public IActionResult Privacy()
         {
             //添加

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "web6": {
+    "WabA": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
@@ -8,12 +8,6 @@
       },
       "applicationUrl": "http://localhost:5180",
       "dotnetRunMessages": true
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true
     }
   }
 }
