@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Diagnostics; 
-using web6.Models;
+using WebA.Models;
 
 namespace web6.Controllers
 {

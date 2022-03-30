@@ -1,4 +1,4 @@
-namespace web6.Models
+namespace WebA.Models
 {
     public class ErrorViewModel
     {

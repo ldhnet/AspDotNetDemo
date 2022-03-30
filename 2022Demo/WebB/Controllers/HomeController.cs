@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Diagnostics;
-using Web6demo.Models;
+using WebB.Models;
 
-namespace Web6demo.Controllers
+namespace WebB.Controllers
 {
     public class HomeController : Controller
     {

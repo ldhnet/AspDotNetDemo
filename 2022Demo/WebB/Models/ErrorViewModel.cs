@@ -1,4 +1,4 @@
-namespace Web6demo.Models
+namespace WebB.Models
 {
     public class ErrorViewModel
     {
