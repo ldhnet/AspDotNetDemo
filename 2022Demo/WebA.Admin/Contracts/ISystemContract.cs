@@ -8,6 +8,7 @@ namespace WebA.Admin.Contracts
 {
     public interface ISystemContract
     {
-        public DateTime GetSystemDate();
+        public DateTime GetCurrentMonth();
+        public int GetCurrentID();
     }
 }

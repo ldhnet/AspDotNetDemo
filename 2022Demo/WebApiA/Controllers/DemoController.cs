@@ -1,5 +1,5 @@
-﻿using Lee.Utility.ViewModels;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebA.Admin;
 
 namespace WebApiA.Controllers
 {
@@ -17,11 +17,11 @@ namespace WebApiA.Controllers
         [HttpGet(Name = "Demo")]
         public IActionResult Get()
         {
-            var CurrentProcessingMonth = _context.CurrentProcessingMonth;
+            var CurrentMonth = _context.CurrentMonth;
 
-            var SubsidiaryID = _context.SubsidiaryID;
-
-            return Ok(new { CurrentProcessingMonth,SubsidiaryID });
+            var CurrentID = _context.CurrentID;
+             
+            return Ok(new { CurrentMonth, CurrentID });
         }
     }
 }
