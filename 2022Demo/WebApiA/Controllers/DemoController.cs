@@ -14,6 +14,10 @@ namespace WebApiA.Controllers
             _logger = logger;
             _context= context;
         }
+        /// <summary>
+        /// 测试demo
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(Name = "Demo")]
         public IActionResult Get()
         {

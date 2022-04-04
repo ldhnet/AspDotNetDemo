@@ -1,6 +1,6 @@
 ﻿using Lee.Utility.Config;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Lee.Utility.ViewModels; 
+using Microsoft.AspNetCore.Mvc; 
 using WebA.Admin.Contracts;
 
 namespace WebApiA.Controllers
@@ -19,7 +19,10 @@ namespace WebApiA.Controllers
         } 
         private ISystemContract _systemContract => _provider.GetRequiredService<ISystemContract>();
         private ISystemContract _systemContract2 => GlobalConfig.ServiceProvider.GetRequiredService<ISystemContract>();
-
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(Name = "a")]
         public IActionResult Get()
         {
@@ -32,6 +35,24 @@ namespace WebApiA.Controllers
 
             return Ok(new { CurrentMonth, CurrentID });
         }
- 
+        /// <summary>
+        /// swagger登录
+        /// </summary>
+        /// <param name="loginRequest"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("swgLogin")]
+        public dynamic SwgLogin([FromBody] SwaggerLoginRequest loginRequest)
+        {
+            _logger.LogInformation("api/Login/swgLogin");
+            // 这里可以查询数据库等各种校验
+            if (loginRequest?.name == "admin" && loginRequest?.pwd == "admin")
+            {
+                HttpContext.Session.SetString("swagger-code", "success");
+
+                return new { result = true };
+            }
+            return new { result = false };
+        }
     }
 }
