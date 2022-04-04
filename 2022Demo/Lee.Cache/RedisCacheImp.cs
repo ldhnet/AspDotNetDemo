@@ -11,6 +11,7 @@ namespace Lee.Cache
         private IDatabase cache;
         private ConnectionMultiplexer connection;
 
+        static RedisValue Token = Environment.MachineName;
         public RedisCacheImp()
         {
             connection = ConnectionMultiplexer.Connect("127.0.0.1:6379");//GlobalConfig.SystemConfig.RedisConnectionString
@@ -145,6 +146,7 @@ namespace Lee.Cache
             return dict;
         }
 
+        #endregion
 
 
         /// <summary>
@@ -156,9 +158,11 @@ namespace Lee.Cache
         ///  static RedisKey kay = "lock";
         /// <param>TimeSpan表示该锁的有效时间</param>
         /// <returns></returns>
-        public bool LockTake(string kay,string token)
-        { 
-            return cache.LockTake(kay, token, TimeSpan.FromSeconds(5)); 
+        public bool LockTake(string kay, string token = "")
+        {
+            if (string.IsNullOrEmpty(token))
+                token = Token;
+            return cache.LockTake(kay, token, TimeSpan.FromSeconds(5));
         }
         /// <summary>
         /// 释放redis 锁
@@ -167,15 +171,14 @@ namespace Lee.Cache
         /// <param name="token">用来标识谁拥有该锁并用来释放锁</param>
         /// <param>TimeSpan表示该锁的有效时间</param>
         /// <returns></returns>
-        public bool LockRelease(string kay, string token)
-        { 
+        public bool LockRelease(string kay, string token = "")
+        {
+            if (string.IsNullOrEmpty(token))
+                token = Token;
             return cache.LockRelease(kay, token);
 
         }
-     
 
-
-        #endregion
 
         public void Dispose()
         {

@@ -114,6 +114,16 @@ namespace Lee.Cache
             }
             return dict;
         }
+
+        public bool LockTake(string kay, string token = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool LockRelease(string kay, string token = "")
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

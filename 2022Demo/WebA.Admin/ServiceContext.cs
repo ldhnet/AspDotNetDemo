@@ -11,7 +11,7 @@ namespace WebA.Admin
 {
     public class ServiceContext
     {
-        private ISystemContract _systemContract;
+        private readonly ISystemContract _systemContract;
         public ServiceContext(ISystemContract systemContract)
         {
             _systemContract = systemContract;

@@ -1,3 +1,4 @@
+using Lee.Utility.Config;
 using WebA.Admin;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISystemContract, SystemService>();
 builder.Services.AddSingleton<ServiceContext>();
 
+GlobalConfig.Services = builder.Services;
+GlobalConfig.Configuration = builder.Configuration;
 
 var app = builder.Build();
 
@@ -29,5 +32,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+GlobalConfig.ServiceProvider = app.Services;
 
 app.Run();

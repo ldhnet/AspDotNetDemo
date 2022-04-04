@@ -22,5 +22,8 @@ namespace Lee.Cache
         bool RemoveHashFieldCache(string key, string fieldKey);
         Dictionary<string, bool> RemoveHashFieldCache(string key, Dictionary<string, bool> dict);
         #endregion
+
+        bool LockTake(string kay, string token = "");
+        bool LockRelease(string kay, string token = "");
     }
 }
