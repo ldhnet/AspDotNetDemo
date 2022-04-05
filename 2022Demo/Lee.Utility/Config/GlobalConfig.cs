@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Lee.Utility.Config
 {
@@ -16,7 +17,7 @@ namespace Lee.Utility.Config
 
         public static IConfiguration Configuration { get; set; }
 
-        //public static IWebHostEnvironment HostingEnvironment { get; set; }
+        public static IHostEnvironment HostEnvironment { get; set; }
 
         public static SystemConfig SystemConfig { get; set; } = new SystemConfig();
         public static MailSenderOptions MailSenderOptions { get; set; } = new MailSenderOptions();

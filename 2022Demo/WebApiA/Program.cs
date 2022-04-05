@@ -1,5 +1,3 @@
-using Lee.Utility.Config;
-using Microsoft.AspNetCore.DataProtection;
 using WebA.Admin;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
@@ -18,6 +16,14 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddDataProtection();
 
 #region 使用Redis保存Session
+// 使用SqlServer保存Session
+//builder.Services.AddSqlServerCache(o =>
+//{
+//    o.ConnectionString = "Server=.;Database=test;Trusted_Connection=True;";
+//    o.SchemaName = "dbo";
+//    o.TableName = "Sessions";
+//});
+
 
 // 使用Redis保存Session
 builder.Services.AddDistributedRedisCache(option =>
@@ -62,6 +68,7 @@ builder.Services.AddSingleton<ServiceContext>();
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
+GlobalConfig.HostEnvironment = builder.Environment;
 
 var app = builder.Build();
 //app.UseMiddleware(typeof(SwaggerAuthMiddleware));
