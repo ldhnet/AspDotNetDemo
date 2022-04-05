@@ -16,6 +16,7 @@ using System.Linq;
 using global::ConsoleApp.Gof.builder;
 using Framework.Utility.Extensions;
 using ConsoleApp.Test202203;
+using ConsoleApp.Gof.Observer;
 
 namespace ConsoleApp
 {
@@ -31,6 +32,9 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            Customers.CustomerTest();
+
+            Console.WriteLine(11111);
 
             MyAesHelper.AseTest();
 
