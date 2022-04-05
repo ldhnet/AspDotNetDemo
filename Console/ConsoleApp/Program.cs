@@ -17,6 +17,7 @@ using global::ConsoleApp.Gof.builder;
 using Framework.Utility.Extensions;
 using ConsoleApp.Test202203;
 using ConsoleApp.Gof.Observer;
+using ConsoleApp.Gof.Mediator;
 
 namespace ConsoleApp
 {
@@ -32,7 +33,9 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            Customers.CustomerTest();
+            //Customers.CustomerTest();
+
+            MediatorTest.TestMain();
 
             Console.WriteLine(11111);
 
