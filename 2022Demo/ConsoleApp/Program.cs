@@ -19,7 +19,14 @@ using System.Diagnostics;
 
 //ThreadTestA.GetIncrement();
 
-AtomicityForLockTest.AtomicityForLock();
+//AtomicityForLockTest.AtomicityForLock();
+
+//AtomicityForCASTest.AtomicityForInterLock();
+
+//AtomicityForCASTest.AtomicityForMyCalc();
+
+
+SpinklockTest.Spinklock();
 
 
 Console.WriteLine("Hello, World!");
