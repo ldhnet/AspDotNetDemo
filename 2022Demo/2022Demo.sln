@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebA.Admin", "WebA.Admin\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lee.Cache", "Lee.Cache\Lee.Cache.csproj", "{6F39F32F-611C-4E6F-A500-AAA4D13B9089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogConsole", "SerilogConsole\SerilogConsole.csproj", "{BC181FE2-847A-4D51-9BF1-3EC801106E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogConsole", "SerilogConsole\SerilogConsole.csproj", "{BC181FE2-847A-4D51-9BF1-3EC801106E61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

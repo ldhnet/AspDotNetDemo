@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleApp;
 using ConsoleApp._0331.LockUt;
+using ConsoleApp.多线程;
 using System.Diagnostics;
 
 //LockTest lockTest = new LockTest();
@@ -14,7 +15,11 @@ using System.Diagnostics;
 //RedisLockTest redisTest = new RedisLockTest();
 
 //redisTest.qiangdan();
- 
+
+
+//ThreadTestA.GetIncrement();
+
+AtomicityForLockTest.AtomicityForLock();
 
 
 Console.WriteLine("Hello, World!");
