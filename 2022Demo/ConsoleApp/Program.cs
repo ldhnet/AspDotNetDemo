@@ -1,7 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ConsoleApp;
+﻿using ConsoleApp;
 using ConsoleApp._0331.LockUt;
 using ConsoleApp.多线程;
+using ConsoleApp.多线程锁;
 using System.Diagnostics;
 
 //LockTest lockTest = new LockTest();
