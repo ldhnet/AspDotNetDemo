@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp.多线程
+namespace ConsoleApp.多线程锁
 {
     public class SpinklockTest
     {

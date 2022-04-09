@@ -26,7 +26,7 @@ using System.Diagnostics;
 //AtomicityForCASTest.AtomicityForMyCalc();
 
 
-SpinklockTest.Spinklock();
+//SpinklockTest.Spinklock();
 
 
 Console.WriteLine("Hello, World!");
