@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebA.Admin;
+using WebApiA.Attributes;
 
 namespace WebApiA.Controllers
 {
@@ -26,6 +27,16 @@ namespace WebApiA.Controllers
             var CurrentID = _context.CurrentID;
              
             return Ok(new { CurrentMonth, CurrentID });
+        }
+        /// <summary>
+        /// 测试demo
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost(Name = "PostTest")]
+        [PreventDoublePost]
+        public IActionResult PostTest(int Id)
+        {  
+            return Ok(new { Id });
         }
     }
 }

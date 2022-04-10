@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 namespace WebA.Attributes
 {
     /// <summary>
-    /// 仅仅适用于web项目
+    /// 仅仅适用于mvcweb
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class PreventDoublePostAttribute : ActionFilterAttribute
