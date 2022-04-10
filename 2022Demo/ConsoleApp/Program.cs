@@ -28,5 +28,8 @@ using System.Diagnostics;
 
 //SpinklockTest.Spinklock();
 
+//TaskDemoA.TaskMain();
+
+TaskDemoB.TaskMain();
 
 Console.WriteLine("Hello, World!");
