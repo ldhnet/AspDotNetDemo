@@ -1,0 +1,29 @@
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@model EditViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    //var requestToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
+}
+
+<div class="text-center">
+ <div class="container" style="width:300px">
+        <form class="form-horizontal" asp-controller="Home" asp-action="Edit" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
+            <h2 class="form-signin-heading">WebA</h2>
+            <div class="form-group">
+                <label for="name">名称</label>
+                <input type="text" asp-for="FieldName" class="form-control" placeholder="名称" autofocus>
+                <span asp-validation-for="FieldName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="name">标题</label>
+                <input type="text" asp-for="HeaderName" class="form-control" placeholder="标题">
+                <span asp-validation-for="HeaderName" class="text-danger"></span>
+            </div>
+
+        
+            <button type="submit" class="btn btn-primary btn-md">提交</button>
+        </form>
+    </div>
+</div>
+   

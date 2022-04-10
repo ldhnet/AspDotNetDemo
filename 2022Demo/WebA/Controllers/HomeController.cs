@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
-using System.Diagnostics; 
+using System.Diagnostics;
+using WebA.Attributes;
 using WebA.Models;
 
 namespace WebA.Controllers
@@ -86,6 +87,27 @@ namespace WebA.Controllers
 
             return View();
         }
+        [HttpGet]
+        public IActionResult PostTestA()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult PostTestB()
+        {
+            return View();
+        }
+        [HttpPost]
+        [PreventDoublePost]
+        public async Task<IActionResult> Edit(EditViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                //PreventDoublePost Attribute makes ModelState invalid
+            }
+            return Redirect("/Home/PostTestB");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
