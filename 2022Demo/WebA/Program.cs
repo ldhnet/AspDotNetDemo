@@ -1,11 +1,31 @@
 using Lee.Utility.Helper;
 using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection;
+using StackExchange.Redis;
+using WebA.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+#region config
 
+if (builder.Environment.IsEnvironment("Development"))
+{
+    builder.Configuration.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+}
+else if (builder.Environment.IsEnvironment("Qa"))
+{
+    builder.Configuration.AddJsonFile("appsettings.Qa.json", optional: true, reloadOnChange: true);
+}
+else
+{
+    builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+}
+#endregion
+
+Console.WriteLine(builder.Configuration.GetValue<string>("EnvironmentName"));
+
+Console.WriteLine(builder.Configuration.GetValue<string>("SystemConfig:Demo"));
 
 builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
                 .AddCookie(CookieAuthInfo.CookieInstance, options =>
@@ -30,6 +50,7 @@ builder.Services.AddDataProtection(configure => {
     //windows、Linux、macOS 下可以使用此种方式 保存到文件系统
     .PersistKeysToFileSystem(new System.IO.DirectoryInfo("C:\\share_keys"));
 
+  
 ////部署不同服务器
 //builder.Services.AddDataProtection(configure =>
 //{
@@ -79,6 +100,7 @@ builder.Services.AddSession(options =>
 });
 #endregion
 
+//builder.Services.AddCustomAuthentication(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 

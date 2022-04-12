@@ -53,6 +53,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 
+//builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "WebApiA_²âÊÔapi", Version = "v1" });
@@ -61,6 +63,7 @@ builder.Services.AddSwaggerGen(c =>
     var filePath = Path.Combine(System.AppContext.BaseDirectory, typeof(Program).Assembly.GetName().Name + ".xml");
     c.IncludeXmlComments(filePath);
 });
+ 
 
 
 builder.Services.AddSingleton<ISystemContract, SystemService>();
@@ -73,6 +76,7 @@ GlobalConfig.HostEnvironment = builder.Environment;
 var app = builder.Build();
 //app.UseMiddleware(typeof(SwaggerAuthMiddleware));
 app.UseStaticFiles();
+ 
 app.UseHttpsRedirection();
 
 app.UseCookiePolicy();
