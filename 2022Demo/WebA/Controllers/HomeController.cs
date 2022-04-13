@@ -1,4 +1,5 @@
-﻿using Lee.Utility.Helper;
+﻿using Lee.Models.Entities;
+using Lee.Utility.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
@@ -25,6 +26,31 @@ namespace WebA.Controllers
 
         public IActionResult Index()
         {
+            Random rd=new Random();
+            Employee emp = new Employee();
+            emp.Name = "张三" + rd.Next(99);
+            emp.EmployeeName = "张三" + rd.Next(99);
+            emp.EmployeeSerialNumber = rd.Next(1000, 9999).ToString();
+            emp.Department = rd.Next(5);
+            emp.BankCard ="1000000" + rd.Next(1000,9999);
+            emp.Phone= "1522507" + rd.Next(10000, 99999);
+            emp.ExpirationDateUtc = DateTime.Now.AddYears(1);
+            emp.CreateTime = DateTime.Now;
+
+            emp.EmployeeDetail = new EmployeeDetail()
+            {
+                EnglishName = "zhangsan" + rd.Next(99),
+                CreateTime= DateTime.Now,
+            };
+
+            emp.EmployeeLogins.Add(new EmployeeLogin
+            {
+
+                CreateTime = DateTime.Now
+            });
+
+            //var aaa2255 = _employeeContract.SaveEntity(emp);
+
             var aaa22 = _employeeContract.GetEmployees();
 
             var userName = User.Identity.Name;

@@ -1,4 +1,6 @@
+using Lee.EF.Context;
 using Lee.Repository.Data;
+using Lee.Utility.Config;
 using Lee.Utility.Helper;
 using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection;
@@ -24,6 +26,7 @@ else
 {
     builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 }
+GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 #endregion
 
 Console.WriteLine(builder.Configuration.GetValue<string>("EnvironmentName"));
@@ -48,6 +51,8 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
 });
 
+#region DataProtection
+
 //部署同一服务器
 builder.Services.AddDataProtection(configure => {
     configure.ApplicationDiscriminator = "commonwebmvc";
@@ -55,7 +60,7 @@ builder.Services.AddDataProtection(configure => {
     //windows、Linux、macOS 下可以使用此种方式 保存到文件系统
     .PersistKeysToFileSystem(new System.IO.DirectoryInfo("C:\\share_keys"));
 
-  
+
 ////部署不同服务器
 //builder.Services.AddDataProtection(configure =>
 //{
@@ -66,8 +71,8 @@ builder.Services.AddDataProtection(configure => {
 //    //配置自定义XmlRepository
 //    options.XmlRepository = new XmlRepository();
 //});
+#endregion
 
-//builder.Services.AddSession();
 #region 使用Redis保存Session
 
 
@@ -106,10 +111,16 @@ builder.Services.AddSession(options =>
 #endregion
 
 //builder.Services.AddCustomAuthentication(builder.Configuration);
+ 
+builder.Services.AddTransient<MyDBContext>();
 
 builder.Services.AddSingleton(typeof(IRepository<,>), typeof(Repository<,>));
 
 builder.Services.AddSingleton<IEmployeeContract,EmployeeService>();
+
+GlobalConfig.Services = builder.Services;
+GlobalConfig.Configuration = builder.Configuration;
+GlobalConfig.HostEnvironment = builder.Environment;
 
 var app = builder.Build();
 
@@ -137,4 +148,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+GlobalConfig.ServiceProvider = app.Services;
 app.Run();

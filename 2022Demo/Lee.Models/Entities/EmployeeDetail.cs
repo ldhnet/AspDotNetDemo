@@ -10,7 +10,7 @@ namespace Lee.Models.Entities
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }
-        public string EnglishName { get; set; }
+        public string? EnglishName { get; set; }
         public DateTime CreateTime { get; set; }
         /// <summary>
         /// 获取或设置 所属用户信息

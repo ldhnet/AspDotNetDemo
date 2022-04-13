@@ -11,5 +11,9 @@ namespace WebA.Admin.Contracts
     {
         Task<Employee> FindAsync(); 
         List<Employee> GetEmployees();
+
+        bool SaveEntity(Employee employee);
+
+        bool UpdateEntity(Employee employee);
     }
 }
