@@ -1,7 +1,10 @@
+using Lee.Repository.Data;
 using Lee.Utility.Helper;
 using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection;
 using StackExchange.Redis;
+using WebA.Admin.Contracts;
+using WebA.Admin.Service;
 using WebA.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,6 +38,8 @@ builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
                     options.LogoutPath = new PathString("/Account/Logout"); 
                 });
 
+
+builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
@@ -102,8 +107,9 @@ builder.Services.AddSession(options =>
 
 //builder.Services.AddCustomAuthentication(builder.Configuration);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton(typeof(IRepository<,>), typeof(Repository<,>));
 
+builder.Services.AddSingleton<IEmployeeContract,EmployeeService>();
 
 var app = builder.Build();
 

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Diagnostics;
+using WebA.Admin.Contracts;
 using WebA.Attributes;
 using WebA.Models;
 
@@ -12,15 +13,20 @@ namespace WebA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private DistributedRedisCache _Cache;
-        public HomeController(ILogger<HomeController> logger, IDistributedCache cache)
+        private readonly DistributedRedisCache _Cache;
+        private readonly IEmployeeContract _employeeContract;
+        
+        public HomeController(ILogger<HomeController> logger, IDistributedCache cache, IEmployeeContract employeeContract)
         {
             _logger = logger;
             _Cache = new DistributedRedisCache(cache);
+            _employeeContract = employeeContract;
         }
 
         public IActionResult Index()
-        { 
+        {
+            var aaa22 = _employeeContract.GetEmployees();
+
             var userName = User.Identity.Name;
 
             var bbb = User.Identity.AuthenticationType;
