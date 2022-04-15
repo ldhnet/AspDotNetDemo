@@ -70,5 +70,36 @@ namespace ConsoleApp.多线程
 
             Console.WriteLine($"************任务结束**************耗时：{watch.ElapsedMilliseconds}ms,{Thread.CurrentThread.ManagedThreadId},{DateTime.Now}");
         }
+
+        /// <summary>
+        /// 取消异步线程执行
+        /// </summary>
+        public static void CancelTask()
+        {
+            Console.WriteLine($"******Start,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+            CancellationTokenSource source = new CancellationTokenSource();
+            //注册任务取消的事件
+            source.Token.Register(() =>
+            {
+                Console.WriteLine($"线程Id:{Thread.CurrentThread.ManagedThreadId},任务被取消后执行xx操做！");
+            });
+
+            int index = 0;
+            //开启一个task执行任务
+            Task task1 = new Task(() =>
+            {
+                while (!source.IsCancellationRequested)
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine($"第{++index}次执行,线程Id:{Thread.CurrentThread.ManagedThreadId}，线程运行中...");
+                }
+            });
+            task1.Start();
+            //延时取消，效果等同于Thread.Sleep(5000);source.Cancel();
+            source.CancelAfter(5000);
+
+            Console.WriteLine($"******End,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+            Console.ReadKey();
+        }
     }
 }

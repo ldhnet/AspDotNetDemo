@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp.多线程
+namespace WebA.Models
 {
-    public class TaskDemoC
+    public class TaskDemo
     {
         /// <summary>
         /// 一个比较耗时的方法,循环100W次
         /// </summary>
         /// <param name="name"></param>
-        public  void DoSomething(string name)
+        private void DoSomething(string name)
         {
             int iResult = 0;
             for (int i = 0; i < 10000000; i++)
@@ -28,17 +28,17 @@ namespace ConsoleApp.多线程
         /// 停顿10秒
         /// </summary>
         /// <param name="name"></param>
-        public void DoSleepSomeTime(string name)
+        private void DoSleepSomeTime(string name)
         {
             Thread.Sleep(1000 * 10);
             Console.WriteLine($"{name},线程Id:{Thread.CurrentThread.ManagedThreadId},{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff")}" + Environment.NewLine);
              
         }
-        public  void SayHello()
+        private void SayHello()
         {
             Console.WriteLine($"Hello World");
         }
-        public static void DoCallback()
+        private static void DoCallback()
         { 
             Console.WriteLine($"计算结束");
         }
@@ -55,8 +55,7 @@ namespace ConsoleApp.多线程
                 DoSleepSomeTime($"第{i}个测试");
             }
             Console.WriteLine($"**************计算结束,线程Id:{Thread.CurrentThread.ManagedThreadId},{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff")}*****************");
-
-
+             
             //asyncResult = action.BeginInvoke("begin", callback, null);
         }
 
@@ -76,19 +75,17 @@ namespace ConsoleApp.多线程
             };
 
             Action say = SayHello;
-            say();
-            say.Invoke();
+            say(); 
 
             Action<string> action = DoSleepSomeTime;
             Console.WriteLine($"**************计算开始，线程Id:{Thread.CurrentThread.ManagedThreadId},{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff")}*****************");
 
             for (int i = 1; i <= 5; i++)
-            {
-               action.Invoke($"第{i}个测试"); 
+            { 
+                action.Invoke($"第{i}个测试"); 
             } 
             Console.WriteLine($"**************计算结束,线程Id:{Thread.CurrentThread.ManagedThreadId},{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ffff")}*****************");
-       
-              
+        
             //asyncResult = action.BeginInvoke("begin", callback, null);
         }
 

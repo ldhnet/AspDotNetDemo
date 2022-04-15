@@ -30,6 +30,12 @@ using System.Diagnostics;
 
 //TaskDemoA.TaskMain();
 
-TaskDemoB.TaskMain();
+///TaskDemoB.TaskMain();
+
+//TaskDemoC taskDemoC = new TaskDemoC();
+//taskDemoC.GetStringAsync();
+
+
+TaskDemo.CancelTask();
 
 Console.WriteLine("Hello, World!");

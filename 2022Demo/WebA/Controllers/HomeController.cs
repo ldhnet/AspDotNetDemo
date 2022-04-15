@@ -44,7 +44,16 @@ namespace WebA.Controllers
             return View();
         } 
         public IActionResult Privacy()
-        { 
+        {
+            Console.WriteLine($"**************当前线程Id:{Thread.CurrentThread.ManagedThreadId}*****************");
+            TaskDemo taskDemo=new TaskDemo();
+            //taskDemo.GetString();
+
+            Task.Run(() =>
+            {
+                taskDemo.GetStringAsync();
+            });
+             
             return View();
         }
         [HttpGet]
