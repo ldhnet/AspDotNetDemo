@@ -35,7 +35,11 @@ using System.Diagnostics;
 //TaskDemoC taskDemoC = new TaskDemoC();
 //taskDemoC.GetStringAsync();
 
+TaskDemo taskDemo=new TaskDemo();
+await taskDemo.GetTaskRun();
 
-TaskDemo.CancelTask();
+//taskDemo.CancelTask();
+
+
 
 Console.WriteLine("Hello, World!");

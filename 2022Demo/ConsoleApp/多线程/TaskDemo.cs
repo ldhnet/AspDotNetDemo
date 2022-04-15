@@ -74,7 +74,7 @@ namespace ConsoleApp.多线程
         /// <summary>
         /// 取消异步线程执行
         /// </summary>
-        public static void CancelTask()
+        public void CancelTask()
         {
             Console.WriteLine($"******Start,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
             CancellationTokenSource source = new CancellationTokenSource();
@@ -100,6 +100,48 @@ namespace ConsoleApp.多线程
 
             Console.WriteLine($"******End,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 取消async/await 异步操作  取消失败了
+        /// </summary>
+        /// <returns></returns> 
+        public async Task GetTaskRun()
+        {
+
+            Console.WriteLine($"******Start,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+
+            int index = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                await Task.Run(() =>
+                {
+                    Task.Delay(1000 * 10);
+                    Console.WriteLine($"第{++index}次执行,线程Id:{Thread.CurrentThread.ManagedThreadId}，线程运行中...");
+                }); 
+            }
+            //不会阻塞主线程
+            await Task.Run(() =>
+            {
+                Task.Delay(1000 * 10);
+                Console.WriteLine($"******Task.Run 测试-1， 线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+            });
+
+            //会阻塞主线程
+            Task.Run(() =>
+            {
+                Console.WriteLine($"******Task.Run 测试-2， 线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+            }).GetAwaiter().GetResult();
+
+            //会阻塞主线程
+            //await Task.Run(async () =>
+            //{
+            //    await Task.Delay(1000 * 10);
+            //    Console.WriteLine($"******Task.Run 测试-3， 线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
+            //});
+
+            Console.WriteLine($"******End,线程Id:{Thread.CurrentThread.ManagedThreadId}**********");
         }
     }
 }
