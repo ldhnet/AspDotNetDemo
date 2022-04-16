@@ -40,6 +40,4 @@ await taskDemo.GetTaskRun();
 
 //taskDemo.CancelTask();
 
-
-
 Console.WriteLine("Hello, World!");

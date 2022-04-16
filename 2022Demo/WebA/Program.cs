@@ -29,21 +29,12 @@ else
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 #endregion
 
+builder.WebHost.UseUrls("http://localhost:5180");
+
 Console.WriteLine(builder.Configuration.GetValue<string>("EnvironmentName"));
 
 Console.WriteLine(builder.Configuration.GetValue<string>("SystemConfig:Demo"));
-
-builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
-                .AddCookie(CookieAuthInfo.CookieInstance, options =>
-                {
-                    options.LoginPath = new PathString("/Account/Login");
-                    options.AccessDeniedPath = new PathString("/Account/Denied");
-                    options.LogoutPath = new PathString("/Account/Logout"); 
-                });
-
-
-builder.Services.AddControllersWithViews();
-
+ 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -111,7 +102,17 @@ builder.Services.AddSession(options =>
 #endregion
 
 //builder.Services.AddCustomAuthentication(builder.Configuration);
- 
+
+builder.Services.AddAuthentication(CookieAuthInfo.CookieInstance)
+                .AddCookie(CookieAuthInfo.CookieInstance, options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                    options.AccessDeniedPath = new PathString("/Account/Denied");
+                    options.LogoutPath = new PathString("/Account/Logout");
+                });
+
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddTransient<MyDBContext>();
 
 builder.Services.AddSingleton(typeof(IRepository<,>), typeof(Repository<,>));
