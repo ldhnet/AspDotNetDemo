@@ -1,5 +1,6 @@
 ﻿using ConsoleApp;
 using ConsoleApp._0331.LockUt;
+using ConsoleApp.Cache;
 using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
@@ -35,9 +36,12 @@ using System.Diagnostics;
 //TaskDemoC taskDemoC = new TaskDemoC();
 //taskDemoC.GetStringAsync();
 
-TaskDemo taskDemo=new TaskDemo();
-await taskDemo.GetTaskRun();
+//TaskDemo taskDemo=new TaskDemo();
+//await taskDemo.GetTaskRun();
 
 //taskDemo.CancelTask();
+
+//MemoryCacheA.MemoryCacheTest();
+MemoryCacheB.MemoryCacheTest();
 
 Console.WriteLine("Hello, World!");
