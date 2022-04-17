@@ -5,6 +5,14 @@ using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
 
+
+//MemoryCacheA.MemoryCacheTest();
+MemoryCacheB.MemoryCacheTest();
+
+Console.WriteLine("Hello, World!");
+
+
+
 //LockTest lockTest = new LockTest();
 
 //lockTest.qiangdan();
@@ -41,7 +49,3 @@ using System.Diagnostics;
 
 //taskDemo.CancelTask();
 
-//MemoryCacheA.MemoryCacheTest();
-MemoryCacheB.MemoryCacheTest();
-
-Console.WriteLine("Hello, World!");

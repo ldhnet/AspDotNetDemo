@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lee.Models", "Lee.Models\Le
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lee.Repository", "Lee.Repository\Lee.Repository.csproj", "{9B9CD5F0-A5CC-4A82-AC5C-CAAF233B9492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest", "NUnitTest\NUnitTest.csproj", "{CEB70377-B339-40A1-8A4E-44CB75E7AE3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTest", "NUnitTest\NUnitTest.csproj", "{CEB70377-B339-40A1-8A4E-44CB75E7AE3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiB", "WebApiB\WebApiB.csproj", "{EA5EEC53-8C07-4F86-B265-865107F47F37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{CEB70377-B339-40A1-8A4E-44CB75E7AE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB70377-B339-40A1-8A4E-44CB75E7AE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB70377-B339-40A1-8A4E-44CB75E7AE3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5EEC53-8C07-4F86-B265-865107F47F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5EEC53-8C07-4F86-B265-865107F47F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5EEC53-8C07-4F86-B265-865107F47F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5EEC53-8C07-4F86-B265-865107F47F37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
