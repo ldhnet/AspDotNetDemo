@@ -26,5 +26,12 @@ namespace NUnitTest
            var aaa=  _employeeContract.GetEmployees();
             Assert.Pass();
         }
+
+        [Test]
+        public void Test2()
+        {
+            var aaa = _employeeContract.FindAsync(1);
+            Assert.Pass();
+        }
     }
 }
