@@ -45,10 +45,7 @@ namespace ConsoleApp.多线程
             Action<string> action = DoSomething;
 
             action.Invoke("第一个测试");
-
-
-
-
+             
             //asyncResult = action.BeginInvoke("begin", callback, null);
         }
 
