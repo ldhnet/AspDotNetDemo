@@ -44,8 +44,8 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
     config.AddEnvironmentVariables();
 });
 
-//var dddd = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
-//var ddd2 = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
+var dddd = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+var ddd2 = builder.Configuration.GetSection("MailSender").Get<MailSenderOptions>();
 
 //builder.WebHost.UseUrls("https://*:9080", "http://*:9081");
 
