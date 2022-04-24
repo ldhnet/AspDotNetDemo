@@ -18,6 +18,7 @@ using Framework.Utility.Extensions;
 using ConsoleApp.Test202203;
 using ConsoleApp.Gof.Observer;
 using ConsoleApp.Gof.Mediator;
+using ConsoleApp.Gof.链式编程;
 
 namespace ConsoleApp
 {
@@ -34,6 +35,14 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             //Customers.CustomerTest();
+
+
+            // UserInforMation.Builder().SetNameAndAge("张三", 30).OutputAge().OutputName();
+            UserInforMation.Builder()
+                .SetName("张三")
+                .SetAge(30)
+                .OutputAge()
+                .OutputName();
 
             MediatorTest.TestMain();
 
