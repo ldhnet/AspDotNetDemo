@@ -36,6 +36,8 @@ namespace ConsoleApp
         {
             //Customers.CustomerTest();
 
+            EnumClass.EnumTest();
+
 
             // UserInforMation.Builder().SetNameAndAge("张三", 30).OutputAge().OutputName();
             UserInforMation.Builder()
