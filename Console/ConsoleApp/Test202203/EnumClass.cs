@@ -19,7 +19,16 @@ namespace ConsoleApp.Test202203
             {
                 // 是运动员
             }
-
+            // 2.判断某个人的职业中是否有Athletes
+            if ((status & Jod.Athletes) == Jod.Athletes)
+            {
+                // 是运动员
+            }
+            // 2.判断某个人的职业中是否有Athletes
+            if ((status & Jod.Athletes) == Jod.Athletes)
+            {
+                // 是运动员
+            }
         }
 
     }
