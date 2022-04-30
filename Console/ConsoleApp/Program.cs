@@ -91,7 +91,7 @@ namespace ConsoleApp
             var ppp = list1.FirstOrDefault();
             var ppp2 = list1.LastOrDefault();
 
-
+/*
             var listQQ=new List<MathProxy>();
             var ttt = listQQ.FirstOrDefault();
             if (ttt is null)
@@ -108,7 +108,7 @@ namespace ConsoleApp
 
             var bbb22 = DateTime.Now.Date >= DateTime.Now.Date;
 
-            var bbb11 = DateTime.Now.AddDays(-1).Date <= DateTime.Now.Date;
+            var bbb11 = DateTime.Now.AddDays(-1).Date <= DateTime.Now.Date;*/
 
             //concurrentDicrionary.DicrionaryTest();
             decimal m1 = 200.01m;
