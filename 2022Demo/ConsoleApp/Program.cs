@@ -49,3 +49,19 @@ Console.WriteLine("Hello, World!");
 
 //taskDemo.CancelTask();
 
+
+
+int y = 10;
+
+//Func<int, int> sum = x =>
+//{
+//    return x + y;
+//};
+
+//面向对象改造
+FuncClass funcClass = new FuncClass() { y = y };
+
+Func<int, int> sum = funcClass.Run;
+
+Console.WriteLine(sum(11));
+
