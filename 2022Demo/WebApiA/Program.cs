@@ -1,6 +1,12 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using WebA.Admin;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
+using WebApiA.Attributes;
 using WebApiA.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -66,8 +72,29 @@ builder.Services.AddSwaggerGen(c =>
  
 
 
-builder.Services.AddSingleton<ISystemContract, SystemService>();
-builder.Services.AddSingleton<ServiceContext>();
+//builder.Services.AddSingleton<ISystemContract, SystemService>();
+//builder.Services.AddSingleton<ServiceContext>();
+ 
+
+#region Autofac
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+// Register services directly with Autofac here. Don't
+// call builder.Populate(), that happens in AutofacServiceProviderFactory.
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
+    builder.RegisterType<SystemService>().As<ISystemContract>().InstancePerLifetimeScope();
+    builder.RegisterType<ServiceContext>().InstancePerLifetimeScope();
+
+    var controllerBaseType = typeof(ControllerBase);
+    builder.RegisterAssemblyTypes(typeof(Program).Assembly)
+    .Where(t => controllerBaseType.IsAssignableFrom(t) && t != controllerBaseType)
+    .PropertiesAutowired( new CustomPropertySelector());//支持属性注入
+});
+
+//支持容器的实例让IOC容器创建--autofac来创建
+builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator,ServiceBasedControllerActivator>());
+
+#endregion Autofac
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;

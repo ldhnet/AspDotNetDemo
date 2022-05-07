@@ -11,6 +11,9 @@ namespace WebApiA.Controllers
         private readonly ILogger<AccountController> _logger;
 
         private readonly IServiceProvider _provider;
+
+        public ISystemContract systemContract { get; set; }
+
         public AccountController(ILogger<AccountController> logger, IServiceProvider provider)
         {
             _logger = logger;
@@ -28,11 +31,13 @@ namespace WebApiA.Controllers
             var CurrentMonth = _systemContract.GetCurrentMonth();
             var CurrentID = _systemContract.GetCurrentID();
 
+            var aaaaaaa= systemContract.GetCurrentMonth();
+
 
             var CurrentMonth2 = _systemContract2.GetCurrentMonth();
             var CurrentID2 = _systemContract2.GetCurrentID();
 
-            return Ok(new { CurrentMonth, CurrentID });
+            return Ok(new { CurrentMonth, CurrentID, aaaaaaa });
         }
         /// <summary>
         /// swagger登录
