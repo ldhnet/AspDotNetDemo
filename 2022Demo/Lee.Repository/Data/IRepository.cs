@@ -11,7 +11,11 @@ namespace Lee.Repository.Data
     public interface IRepository<TEntity, TKey>  where TEntity : class
     {
         #region 属性
-         
+        /// <summary>
+        /// 获取 当前单元操作对象
+        /// </summary>
+        IUnitOfWork UnitOfWork { get; }
+
         /// <summary>
         /// 获取 当前实体类型的查询数据集
         /// </summary>

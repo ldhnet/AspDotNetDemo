@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lee.EF\Lee.EF.csproj" />
     <ProjectReference Include="..\Lee.Repository\Lee.Repository.csproj" />
     <ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
     <ProjectReference Include="..\WebA.Admin\WebA.Admin.csproj" />

@@ -1,8 +1,14 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Lee.EF.Context;
+using Lee.Repository;
+using Lee.Repository.Data;
+using Lee.Utility.Dependency;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System.Reflection;
 using WebA.Admin;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
@@ -11,7 +17,7 @@ using WebApiA.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://localhost:5015");
+builder.WebHost.UseUrls("http://localhost:9010");
 // Add services to the container.
 builder.WebHost.UseWebRoot("wwwroot");
 //var currentDir = Directory.GetCurrentDirectory();
@@ -69,12 +75,14 @@ builder.Services.AddSwaggerGen(c =>
     var filePath = Path.Combine(System.AppContext.BaseDirectory, typeof(Program).Assembly.GetName().Name + ".xml");
     c.IncludeXmlComments(filePath);
 });
- 
 
 
-//builder.Services.AddSingleton<ISystemContract, SystemService>();
+builder.Services.AddDbContext<MyDBContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=DH;Integrated Security=true;"));
+
+
+//builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 //builder.Services.AddSingleton<ServiceContext>();
- 
+
 
 #region Autofac
 
@@ -82,13 +90,26 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 // Register services directly with Autofac here. Don't
 // call builder.Populate(), that happens in AutofacServiceProviderFactory.
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
-    builder.RegisterType<SystemService>().As<ISystemContract>().InstancePerLifetimeScope();
-    builder.RegisterType<ServiceContext>().InstancePerLifetimeScope();
+    builder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();     
+    builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
+    Type baseType = typeof(IDependency);
+    var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
+            .GetReferencedAssemblies()//获取所有引用程序集
+            .Select(Assembly.Load)
+            .Where(c => c.FullName!.Contains("WebA.", StringComparison.OrdinalIgnoreCase))
+            .ToArray();
+ 
+    builder.RegisterAssemblyTypes(assemblies!)
+        .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
+        .AsSelf()   //自身服务，用于没有接口的类
+        .AsImplementedInterfaces()  //接口服务
+        .PropertiesAutowired()  //属性注入
+        .InstancePerLifetimeScope(); //保证生命周期基于请求 
 
     var controllerBaseType = typeof(ControllerBase);
     builder.RegisterAssemblyTypes(typeof(Program).Assembly)
     .Where(t => controllerBaseType.IsAssignableFrom(t) && t != controllerBaseType)
-    .PropertiesAutowired( new CustomPropertySelector());//支持属性注入
+    .PropertiesAutowired(new CustomPropertySelector());//支持属性注入
 });
 
 //支持容器的实例让IOC容器创建--autofac来创建

@@ -1,4 +1,5 @@
 ﻿using Lee.Cache;
+using Lee.Utility.Dependency;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using WebA.Admin.Service;
 
 namespace WebA.Admin
 {
-    public class ServiceContext
+    public class ServiceContext: IDependency
     {
         private readonly ISystemContract _systemContract;
         public ServiceContext(ISystemContract systemContract)

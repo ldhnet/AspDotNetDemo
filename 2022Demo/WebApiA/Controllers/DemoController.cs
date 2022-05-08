@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebA.Admin;
+using WebA.Admin.Contracts;
 using WebApiA.Attributes;
 
 namespace WebApiA.Controllers
@@ -10,10 +11,14 @@ namespace WebApiA.Controllers
     {
         private readonly ILogger<DemoController> _logger;
         private ServiceContext _context;
-        public DemoController(ILogger<DemoController> logger, ServiceContext context)
+
+        private IEmployeeContract _employeeContract;
+
+        public DemoController(ILogger<DemoController> logger, ServiceContext context, IEmployeeContract employeeContract)
         {
             _logger = logger;
             _context= context;
+            _employeeContract = employeeContract;
         }
         /// <summary>
         /// 测试demo
@@ -25,8 +30,11 @@ namespace WebApiA.Controllers
             var CurrentMonth = _context.CurrentMonth;
 
             var CurrentID = _context.CurrentID;
-             
-            return Ok(new { CurrentMonth, CurrentID });
+
+            var list =  _employeeContract.GetEmployees();
+
+
+            return Ok(new { CurrentMonth, CurrentID, list });
         }
         /// <summary>
         /// 测试demo

@@ -13,6 +13,7 @@ namespace WebA.Admin.Service
     public class EmployeeService: IEmployeeContract
     {
         private IRepository<Employee, int> _employeeRepository;
+
         public EmployeeService(IRepository<Employee, int> employeeService)
         {
             this._employeeRepository = employeeService;

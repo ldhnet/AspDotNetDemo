@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebA.Admin.Contracts
 {
-    public interface ISystemContract
+    public interface ISystemContract 
     {
         public DateTime GetCurrentMonth();
         public int GetCurrentID();

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lee.Models\Lee.Models.csproj" />
+    <ProjectReference Include="..\Lee.Repository\Lee.Repository.csproj" />
     <ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
   </ItemGroup>
 

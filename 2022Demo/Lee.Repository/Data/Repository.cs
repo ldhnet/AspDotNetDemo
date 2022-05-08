@@ -1,9 +1,9 @@
-﻿using Lee.EF.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata; 
 using System.Data;
 using System.Linq.Expressions;
+using System.Security.Principal;
 
 namespace Lee.Repository.Data
 {
@@ -14,13 +14,42 @@ namespace Lee.Repository.Data
     /// <typeparam name="TKey">主键类型</typeparam>
     public class Repository<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class
     {
-        private readonly DbSet<TEntity> _dbSet;  
-        private readonly MyDBContext _dbContext;
-        public Repository(MyDBContext dbContext)
+        private readonly DbSet<TEntity> _dbSet;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public Repository(IUnitOfWork unitOfWork)
         {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            _unitOfWork = unitOfWork;
+            _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
         }
+        /// <summary>
+        /// 初始化一个<see cref="Repository{TEntity, TKey}"/>类型的新实例
+        /// </summary>
+        public Repository(IUnitOfWork unitOfWork, IPrincipal principal)
+        {
+            _unitOfWork = unitOfWork;
+            _dbSet = ((DbContext)unitOfWork).Set<TEntity>();
+        }
+
+        /// <summary>
+        /// 获取 当前单元操作对象
+        /// </summary>
+        public IUnitOfWork UnitOfWork
+        {
+            get
+            {
+                return _unitOfWork;
+            }
+        }
+
+
+        //private readonly DbSet<TEntity> _dbSet;  
+        //private readonly MyDBContext _dbContext;
+        //public Repository(MyDBContext dbContext)
+        //{
+        //    _dbContext = dbContext;
+        //    _dbSet = _dbContext.Set<TEntity>();
+        //}
         #region 属性
 
         /// <summary>
@@ -37,27 +66,27 @@ namespace Lee.Repository.Data
         public bool Insert(TEntity entity)
         {
             _dbSet.Add(entity);
-            return _dbContext.SaveChanges() > 0;
+            return _unitOfWork.SaveChanges() > 0;
         }
 
         public async Task<bool> InsertAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
-            return await _dbContext.SaveChangesAsync() > 0;
+            return await SaveChangesAsync() > 0;
         }
 
 
         public bool Update(TEntity entity)
         {
             _dbSet.Update(entity);
-            return _dbContext.SaveChanges() > 0;
+            return _unitOfWork.SaveChanges() > 0;
         }
      
 
         public bool Delete(TEntity entity)
         { 
             _dbSet.Remove(entity);
-            return _dbContext.SaveChanges() > 0;
+            return _unitOfWork.SaveChanges() > 0;
         }
  
 
@@ -112,10 +141,18 @@ namespace Lee.Repository.Data
         }
 
         #region 私有方法
+        private int SaveChanges()
+        {
+            return _unitOfWork.SaveChanges();
+        }
+        private async Task<int> SaveChangesAsync()
+        {
+            return await _unitOfWork.SaveChangesAsync();
+        }
         private bool IsEntityValid(TEntity entity)
         {
             //判断entity是否是_dbContext的Model
-            IEntityType entityType = _dbContext.Model.FindEntityType(typeof(TEntity));
+            IEntityType entityType = ((DbContext)_unitOfWork).Model.FindEntityType(typeof(TEntity));
             if (entityType == null)
             {
                 return false;
@@ -153,7 +190,7 @@ namespace Lee.Repository.Data
 
         private bool IsEntityTracked(TEntity entity)
         {
-            EntityEntry<TEntity> trackedEntity = _dbContext.ChangeTracker.Entries<TEntity>().FirstOrDefault(o => o.Entity == entity);
+            EntityEntry<TEntity> trackedEntity = ((DbContext)_unitOfWork).ChangeTracker.Entries<TEntity>().FirstOrDefault(o => o.Entity == entity);
             if (trackedEntity == null)
             {
                 return false;
