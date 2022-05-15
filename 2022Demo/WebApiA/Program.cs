@@ -8,10 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Reflection;
-using WebA.Admin;
-using WebA.Admin.Contracts;
-using WebA.Admin.Service;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System.Reflection; 
 using WebApiA.Attributes;
 using WebApiA.Middleware;
 
@@ -37,14 +35,14 @@ builder.Services.AddDataProtection();
 //});
 
 
-// 使用Redis保存Session
-builder.Services.AddDistributedRedisCache(option =>
-{
-    //redis 连接字符串
-    option.Configuration = "127.0.0.1:6379";
-    //redis 实例名
-    option.InstanceName = "ApiA";
-});
+//// 使用Redis保存Session
+//builder.Services.AddDistributedRedisCache(option =>
+//{
+//    //redis 连接字符串
+//    option.Configuration = "127.0.0.1:6379";
+//    //redis 实例名
+//    option.InstanceName = "ApiA";
+//});
 
 // 注册Session服务
 builder.Services.AddSession(options =>
@@ -77,9 +75,14 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-builder.Services.AddDbContext<MyDBContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=DH;Integrated Security=true;"));
+//builder.Services.AddDbContext<MyDBContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=DH;Integrated Security=true;"));
+ 
+builder.Services.AddDbContextPool<MyDBContext>(options =>
+{
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
-
+    options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
+}, 64);
 //builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 //builder.Services.AddSingleton<ServiceContext>();
 
