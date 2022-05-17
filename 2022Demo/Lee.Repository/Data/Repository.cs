@@ -42,14 +42,6 @@ namespace Lee.Repository.Data
             }
         }
 
-
-        //private readonly DbSet<TEntity> _dbSet;  
-        //private readonly MyDBContext _dbContext;
-        //public Repository(MyDBContext dbContext)
-        //{
-        //    _dbContext = dbContext;
-        //    _dbSet = _dbContext.Set<TEntity>();
-        //}
         #region 属性
 
         /// <summary>
@@ -63,10 +55,11 @@ namespace Lee.Repository.Data
         public IQueryable<TEntity> EntitiesAsNoTracking { get { return _dbSet.AsNoTracking(); } }
 
         #endregion
+
         public bool Insert(TEntity entity)
         {
             _dbSet.Add(entity);
-            return _unitOfWork.SaveChanges() > 0;
+            return SaveChanges() > 0;
         }
 
         public async Task<bool> InsertAsync(TEntity entity)
@@ -79,42 +72,21 @@ namespace Lee.Repository.Data
         public bool Update(TEntity entity)
         {
             _dbSet.Update(entity);
-            return _unitOfWork.SaveChanges() > 0;
+            return SaveChanges() > 0;
         }
      
 
         public bool Delete(TEntity entity)
         { 
             _dbSet.Remove(entity);
-            return _unitOfWork.SaveChanges() > 0;
-        }
- 
+            return SaveChanges() > 0;
+        } 
 
         public async Task<TEntity> GetByIdAsync(TKey id)
         { 
             return await _dbSet.FindAsync(id);
         }
-
-        /// <summary>
-        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源，并可Include导航属性
-        /// </summary>
-        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
-        /// <returns>符合条件的数据集</returns>
-        public IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors)
-        {
-            IQueryable<TEntity> query = _dbSet.AsQueryable();
-            if (includePropertySelectors == null || includePropertySelectors.Length == 0)
-            {
-                return query;
-            }
-
-            foreach (Expression<Func<TEntity, object>> selector in includePropertySelectors)
-            {
-                query = query.Include(selector);
-            }
-            return query;
-        }
-
+ 
         /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>

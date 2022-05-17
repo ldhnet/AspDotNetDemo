@@ -35,12 +35,7 @@ namespace Lee.Repository.Data
         bool Delete(TEntity t); 
 
         Task<TEntity> GetByIdAsync(TKey id);
-        /// <summary>
-        /// 获取<typeparamref name="TEntity"/>跟踪数据更改（Tracking）的查询数据源，并可Include导航属性
-        /// </summary>
-        /// <param name="includePropertySelectors">要Include操作的属性表达式</param>
-        /// <returns>符合条件的数据集</returns>
-        IQueryable<TEntity> Query(params Expression<Func<TEntity, object>>[] includePropertySelectors);
+
         /// <summary>
         /// 获取贪婪加载导航属性的查询数据集
         /// </summary>

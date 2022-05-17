@@ -2,8 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Lee.OSharp
 {
     /// <summary>
@@ -26,13 +24,13 @@ namespace Lee.OSharp
         /// </summary>
         void EnableTransaction();
 
-        /// <summary>
-        /// 获取指定数据上下文类型的实例
-        /// </summary>
-        /// <typeparam name="TEntity">实体类型</typeparam>
-        /// <typeparam name="TKey">实体主键类型</typeparam>
-        /// <returns><typeparamref name="TEntity"/>所属上下文类的实例</returns>
-        IDbContext GetEntityDbContext<TEntity, TKey>() where TEntity : IEntity<TKey>;
+        ///// <summary>
+        ///// 获取指定数据上下文类型的实例
+        ///// </summary>
+        ///// <typeparam name="TEntity">实体类型</typeparam>
+        ///// <typeparam name="TKey">实体主键类型</typeparam>
+        ///// <returns><typeparamref name="TEntity"/>所属上下文类的实例</returns>
+        //IDbContext GetEntityDbContext<TEntity, TKey>() where TEntity : IEntity<TKey>;
 
         /// <summary>
         /// 获取指定数据实体的上下文实例

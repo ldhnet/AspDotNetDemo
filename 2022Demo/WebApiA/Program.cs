@@ -82,7 +82,8 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
     var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
-}, 64);
+     
+}, 200);
 //builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 //builder.Services.AddSingleton<ServiceContext>();
 
