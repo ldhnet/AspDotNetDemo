@@ -20,7 +20,7 @@ namespace ConsoleApp
             try
             {
                 int maxCount = 4000;
-                string connectionString = "Server=localhost;Database=Test;User Id=sa;Password=2021@ldh;";
+                string connectionString = "Server=localhost;Database=DH;User Id=sa;Password=2021@ldh;Max Pool Size=300; Pooling=true";//;Pooling=false
                 for (int i = 1; i < maxCount; i++)
                 {
                     var db = new SqlConnection(connectionString);
