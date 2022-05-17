@@ -5,11 +5,28 @@ using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
 
+//SqlConnectionTest sqlConnectionTest =new SqlConnectionTest();
+//sqlConnectionTest.tes
 
-//MemoryCacheA.MemoryCacheTest();
-MemoryCacheB.MemoryCacheTest();
+SqlConnectionTest.TestSQLServerConnectionCount();
 
 Console.WriteLine("Hello, World!");
+//RemoteService remoteService = new RemoteService();
+//remoteService.startService();
+
+//Console.WriteLine("Hello, World!");
+
+//ScheduleTask scheduleTask = new ScheduleTask();
+//scheduleTask.ScheduleTaskMain();
+
+
+
+
+
+//MemoryCacheA.MemoryCacheTest();
+//MemoryCacheB.MemoryCacheTest();
+
+//Console.WriteLine("Hello, World!");
 
 
 
@@ -51,17 +68,17 @@ Console.WriteLine("Hello, World!");
 
 
 
-int y = 10;
+//int y = 10;
 
-//Func<int, int> sum = x =>
-//{
-//    return x + y;
-//};
+////Func<int, int> sum = x =>
+////{
+////    return x + y;
+////};
 
-//面向对象改造
-FuncClass funcClass = new FuncClass() { y = y };
+////面向对象改造
+//FuncClass funcClass = new FuncClass() { y = y };
 
-Func<int, int> sum = funcClass.Run;
+//Func<int, int> sum = funcClass.Run;
 
-Console.WriteLine(sum(11));
+//Console.WriteLine(sum(11));
 
