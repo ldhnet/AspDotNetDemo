@@ -14,8 +14,7 @@ namespace Framework.Utility
         /// <typeparam name="TException">异常类型</typeparam>
         /// <param name="assertion">要验证的断言。</param>
         /// <param name="message">异常消息。</param>
-        public static void Required<TException>(bool assertion, string message)
-            where TException : Exception
+        public static void Required<TException>(bool assertion, string message)  where TException : Exception
         {
             if (assertion)
             {
