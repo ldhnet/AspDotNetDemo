@@ -25,10 +25,6 @@ namespace ConsoleApp
 
     class Program
     {
-
-
-
-
         public static Func<int, int, int> fc = (int x, int y) => x * y;
 
 
@@ -69,27 +65,27 @@ namespace ConsoleApp
             startTime = new DateTime(CitationDate.AddMonths(1).Year,CitationDate.AddMonths(1).Month, 1);
 
 
-            DateTime endTime5= CitationDate.AddYears(1).LastDay();
-            DateTime startTime5 = CitationDate.AddMonths(1).FirstDay();
+           // DateTime endTime5= CitationDate.AddYears(1).LastDay();
+           // DateTime startTime5 = CitationDate.AddMonths(1).FirstDay();
 
 
-            var dt11111 = new DateTime(2022,2,28);
-           var dddt= dt11111.AddDays(1).AddSeconds(-1);
+           // var dt11111 = new DateTime(2022,2,28);
+           //var dddt= dt11111.AddDays(1).AddSeconds(-1);
 
 
-            var mainfunc = new Algorithm.MainFunction();
-            mainfunc.RedPackageHelper();
+           // var mainfunc = new Algorithm.MainFunction();
+           // mainfunc.RedPackageHelper();
 
 
 
-            var aaa = (int)Math.Pow(2, 22);
-            //list 压缩
-            //Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
-            var list1 = Enumerable.Range(0, (int)Math.Pow(2, 2)).ToList();
-            list1.Add(1);
-            list1.Capacity = list1.Count;
-            var ppp = list1.FirstOrDefault();
-            var ppp2 = list1.LastOrDefault();
+            //var aaa = (int)Math.Pow(2, 22);
+            ////list 压缩
+            ////Capacity 属性中的扩容机制，你只需要将Capacity设置与Count平齐，_items数组多余的虚占空间就给清掉了。
+            //var list1 = Enumerable.Range(0, (int)Math.Pow(2, 2)).ToList();
+            //list1.Add(1);
+            //list1.Capacity = list1.Count;
+            //var ppp = list1.FirstOrDefault();
+            //var ppp2 = list1.LastOrDefault();
 
 /*
             var listQQ=new List<MathProxy>();
@@ -110,122 +106,122 @@ namespace ConsoleApp
 
             var bbb11 = DateTime.Now.AddDays(-1).Date <= DateTime.Now.Date;*/
 
-            //concurrentDicrionary.DicrionaryTest();
-            decimal m1 = 200.01m;
+            ////concurrentDicrionary.DicrionaryTest();
+            //decimal m1 = 200.01m;
 
-            //建造者模式
-            var person = BuilderHelper.CreatePersonBuilder
-                            .SetAge(20)
-                            .SetName("jjj")
-                            .SetGender(1)
-                            .Build();
-            //策略设计模式
-            //StrategyClass.StrategyMain();
+            ////建造者模式
+            //var person = BuilderHelper.CreatePersonBuilder
+            //                .SetAge(20)
+            //                .SetName("jjj")
+            //                .SetGender(1)
+            //                .Build();
+            ////策略设计模式
+            ////StrategyClass.StrategyMain();
 
 
-            int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            //int days = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
-            int days2 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(1).Month);
+            //int days2 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(1).Month);
 
-            int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
+            //int days3 = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.AddMonths(2).Month);
 
-            //ExcelTest.exportExcelTest();
-            //ExcelTest.importExcelTest();
+            ////ExcelTest.exportExcelTest();
+            ////ExcelTest.importExcelTest();
 
-            //Subject subject = new BankAccount(2000);
-            //subject.AddObserver(new Emailer("abcdwxc@163.com"));
-            //subject.AddObserver(new Mobile(13901234567)); 
-            //subject.WithDraw();
-            //test11111222266666
-            ObserverDelegate.Subject subject = new ObserverDelegate.Subject(2000);
-            ObserverDelegate.Emailer emailer = new ObserverDelegate.Emailer("abcdwxc@163.com");
+            ////Subject subject = new BankAccount(2000);
+            ////subject.AddObserver(new Emailer("abcdwxc@163.com"));
+            ////subject.AddObserver(new Mobile(13901234567)); 
+            ////subject.WithDraw();
+            ////test11111222266666
+            //ObserverDelegate.Subject subject = new ObserverDelegate.Subject(2000);
+            //ObserverDelegate.Emailer emailer = new ObserverDelegate.Emailer("abcdwxc@163.com");
 
-            ObserverDelegate.Mobile mobile = new ObserverDelegate.Mobile("15222222222");
-            subject.NotifyEvent += new NotifyEventHandler(mobile.Update);
-
-            subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
-
-            subject.WithDraw();
-
-             
-
-            //subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
+            //ObserverDelegate.Mobile mobile = new ObserverDelegate.Mobile("15222222222");
             //subject.NotifyEvent += new NotifyEventHandler(mobile.Update);
 
+            //subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
 
-            IMath math =new MathExtension2();
-            MathProxy proxy = new MathProxy(math);
+            //subject.WithDraw();
 
-            double addresult = proxy.Add(2, 3);
-
-            //double subresult = proxy.Sub(6, 4);
-
-            //double mulresult = proxy.Mul(2, 3);
-
-            //double devresult = proxy.Dev(2, 3);
-
-
-            var mrStartDate = Convert.ToDateTime("2021-10-30");
-       
-                         
-            DateTime endTime22 = new DateTime(mrStartDate.AddMonths(13).Year, mrStartDate.AddMonths(13).Month, 1).AddDays(-1);
-            DateTime startTime22 = new DateTime(mrStartDate.AddMonths(1).Year, mrStartDate.AddMonths(1).Month, 1);
-
-
-                string str_m1 = m1.ConvertToChinese();
-
-            for (int i = 0; i < 10000; i++)
-            {
-                TestStatic.GetStaticString();
-            }
-
-            //RedisHelper.并发测试();  
-            //RedisHelper.并发测试_未使用锁();
-            //RedisHelper.并发测试_Redis锁();
-               
-
-            Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
-
-            var d1 = DateTime.Now.AddDays(-1).Date;
-
-            var d2 = DateTime.Now.Date;
-
-
-            var isbig = d1 > d2;
-
-            List<int> dataArr1 =new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            List<int> dataArr11 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
              
 
-            var dt1 = dataArr1.OrderBy(c => Guid.NewGuid());
+            ////subject.NotifyEvent += new NotifyEventHandler(emailer.Update);
+            ////subject.NotifyEvent += new NotifyEventHandler(mobile.Update);
 
-            var dt11 = dataArr11.OrderBy(c => Guid.NewGuid());
 
-            var sdt1 = string.Join(",", dt1);
-            var sdt11 = string.Join(",", dt11);
+            //IMath math =new MathExtension2();
+            //MathProxy proxy = new MathProxy(math);
 
-            List<int> dataArr2 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid2 = Guid.NewGuid();
-            var dt2 = dataArr2.OrderBy(c => guid2);
-            var sdt2 = string.Join(",", dt2);
+            //double addresult = proxy.Add(2, 3);
 
-            List<int>  dataArr3 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var guid3 = Guid.NewGuid();
+            ////double subresult = proxy.Sub(6, 4);
 
-            var dt3 = dataArr3.OrderBy(c => guid3);
-            var sdt3 = string.Join(",", dt3);
+            ////double mulresult = proxy.Mul(2, 3);
 
-            Console.WriteLine(sdt1);
-            Console.WriteLine(sdt11);
+            ////double devresult = proxy.Dev(2, 3);
 
-            for (int i = 1; i < 5; i++)
-            {
-                diDic.Add(i, new List<int>() { i + 1 });
-                if (i == 2)
-                {
-                    diDic[i].Add(i + 2);
-                }
-            }
+
+            //var mrStartDate = Convert.ToDateTime("2021-10-30");
+       
+                         
+            //DateTime endTime22 = new DateTime(mrStartDate.AddMonths(13).Year, mrStartDate.AddMonths(13).Month, 1).AddDays(-1);
+            //DateTime startTime22 = new DateTime(mrStartDate.AddMonths(1).Year, mrStartDate.AddMonths(1).Month, 1);
+
+
+            //    string str_m1 = m1.ConvertToChinese();
+
+            //for (int i = 0; i < 10000; i++)
+            //{
+            //    TestStatic.GetStaticString();
+            //}
+
+            ////RedisHelper.并发测试();  
+            ////RedisHelper.并发测试_未使用锁();
+            ////RedisHelper.并发测试_Redis锁();
+               
+
+            //Dictionary<int, List<int>> diDic = new Dictionary<int, List<int>>();
+
+            //var d1 = DateTime.Now.AddDays(-1).Date;
+
+            //var d2 = DateTime.Now.Date;
+
+
+            //var isbig = d1 > d2;
+
+            //List<int> dataArr1 =new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //List<int> dataArr11 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+             
+
+            //var dt1 = dataArr1.OrderBy(c => Guid.NewGuid());
+
+            //var dt11 = dataArr11.OrderBy(c => Guid.NewGuid());
+
+            //var sdt1 = string.Join(",", dt1);
+            //var sdt11 = string.Join(",", dt11);
+
+            //List<int> dataArr2 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //var guid2 = Guid.NewGuid();
+            //var dt2 = dataArr2.OrderBy(c => guid2);
+            //var sdt2 = string.Join(",", dt2);
+
+            //List<int>  dataArr3 = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //var guid3 = Guid.NewGuid();
+
+            //var dt3 = dataArr3.OrderBy(c => guid3);
+            //var sdt3 = string.Join(",", dt3);
+
+            //Console.WriteLine(sdt1);
+            //Console.WriteLine(sdt11);
+
+            //for (int i = 1; i < 5; i++)
+            //{
+            //    diDic.Add(i, new List<int>() { i + 1 });
+            //    if (i == 2)
+            //    {
+            //        diDic[i].Add(i + 2);
+            //    }
+            //}
 
             //foreach (int denpendencyType in diDic.Keys)
             //{

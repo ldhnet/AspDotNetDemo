@@ -73,5 +73,17 @@ namespace UnitTest
             file.ShouldFileMd5Be(deFile);
             enFile.ShouldFileMd5NotBe(deFile);
         }
+
+        [Fact]
+        public void Encrypt_Decrypt_File_Test2()
+        {
+            string file = @"OSharp.Tests.dll", enFile = "OSharp.Tests_en.dll", deFile = "OSharp.Tests_de.dll";
+            AesHelper aes = new AesHelper();
+            aes.EncryptFile(file, enFile);
+            aes.DecryptFile(enFile, deFile);
+
+            file.ShouldFileMd5Be(deFile);
+            enFile.ShouldFileMd5NotBe(deFile);
+        }
     }
 }
