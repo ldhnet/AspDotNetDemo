@@ -1,10 +1,12 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Framework.Core.Data
+namespace Framework.Repository
 {
-    /// <summary>
-    /// 业务单元操作接口
-    /// </summary>
     public interface IUnitOfWork
     {
         #region 属性
@@ -13,15 +15,16 @@ namespace Framework.Core.Data
         /// 获取 是否开启事务提交
         /// </summary>
         bool TransactionEnabled { get; }
+
+        #endregion
+
+        #region 方法
+
         /// <summary>
         /// 显式开启数据上下文事务
         /// </summary>
         void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
 
-        #endregion
-
-        #region 方法
-         
         /// <summary>
         /// 提交当前上下文的事务更改
         /// </summary>
@@ -32,23 +35,41 @@ namespace Framework.Core.Data
         /// </summary>
         void Rollback();
 
+
         /// <summary>
         /// 提交当前单元操作的更改。
         /// </summary>
         /// <returns>操作影响的行数</returns>
         int SaveChanges();
+        #endregion
 
+        #region Async
+        /// <summary>
+        /// 异步显式开启数据上下文事务
+        /// </summary>
+        /// <param name="isolationLevel"></param>
+        Task BeginTransactionAsync(IsolationLevel isolationLevel = IsolationLevel.Unspecified, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// 异步提交事务的更改
+        /// </summary>
+        /// <returns></returns>
+        Task<int> CommitAsync();
 
+        /// <summary>
+        /// 显式异步回滚事务，仅在显式开启事务后有用
+        /// </summary>
+        Task RollbackAsync(CancellationToken cancellationToken); 
 
         /// <summary>
         /// 异步提交当前单元操作的更改。
         /// </summary>
-        /// <returns>操作影响的行数</returns>
-        Task<int> SaveChangesAsync();
+        /// <returns>操作影响的行数</returns> 
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
+        #endregion
 
-
+        #region sql
         /// <summary>
         /// 对数据库执行给定的 DDL/DML 命令。 
         /// 与接受 SQL 的任何 API 一样，对任何用户输入进行参数化以便避免 SQL 注入攻击是十分重要的。 您可以在 SQL 查询字符串中包含参数占位符，然后将参数值作为附加参数提供。 
