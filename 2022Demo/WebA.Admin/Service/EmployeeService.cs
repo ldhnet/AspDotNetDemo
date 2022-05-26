@@ -7,20 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 using WebA.Admin.Contracts;
 using System.Linq.Expressions;
+using Lee.Repository.Repository;
 
 namespace WebA.Admin.Service
 {
     public class EmployeeService: IEmployeeContract
     {
-        private IRepository<Employee, int> _employeeRepository;
+        private IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IRepository<Employee, int> employeeService)
+        public EmployeeService(IEmployeeRepository employeeRepository)
         {
-            this._employeeRepository = employeeService;
+            this._employeeRepository = employeeRepository;
         }
         public async Task<Employee> FindAsync()
         {
-            return await _employeeRepository.GetByIdAsync(1);
+            return await _employeeRepository.GetByKeyAsync(1);
         }
 
         public List<Employee> GetEmployees()
@@ -42,12 +43,14 @@ namespace WebA.Admin.Service
         }
 
         public bool SaveEntity(Employee employee)
-        { 
-            return _employeeRepository.Insert(employee);
+        {
+            int result = _employeeRepository.Insert(employee);
+            return result > 0;
         }
         public bool UpdateEntity(Employee employee)
         {
-            return _employeeRepository.Update(employee);
+            int result = _employeeRepository.Update(employee);
+            return result > 0;
         }
     }
 }

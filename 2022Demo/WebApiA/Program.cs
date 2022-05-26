@@ -3,6 +3,7 @@ using Autofac.Extensions.DependencyInjection;
 using Lee.EF.Context;
 using Lee.Repository;
 using Lee.Repository.Data;
+using Lee.Repository.Repository;
 using Lee.Utility.Dependency;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -79,7 +80,7 @@ builder.Services.AddSwaggerGen(c =>
  
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
      
@@ -87,15 +88,18 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
 //builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 //builder.Services.AddSingleton<ServiceContext>();
 
-
+builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 #region Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 // Register services directly with Autofac here. Don't
 // call builder.Populate(), that happens in AutofacServiceProviderFactory.
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
-    builder.RegisterType<MyDBContext>().As<IUnitOfWork>().InstancePerLifetimeScope();     
+    builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();     
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
+    builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+    //builder.RegisterType<EmployeeRepository>().As<IEmployeeRepository>().InstancePerLifetimeScope();
+
     Type baseType = typeof(IDependency);
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集

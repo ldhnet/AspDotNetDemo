@@ -11,5 +11,9 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Lee.EF\Lee.EF.csproj" />
+	  <ProjectReference Include="..\Lee.Models\Lee.Models.csproj" />
+	</ItemGroup>
 
 </Project>
