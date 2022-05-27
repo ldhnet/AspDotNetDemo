@@ -22,9 +22,8 @@ builder.WebHost.UseUrls("http://localhost:9010");
 builder.WebHost.UseWebRoot("wwwroot");
 //var currentDir = Directory.GetCurrentDirectory();
 builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
-
-
-builder.Services.AddDistributedMemoryCache();
+ 
+builder.Services.AddMemoryCache();
 builder.Services.AddDataProtection();
 
 #region Ê¹ÓÃRedis±£´æSession
@@ -56,7 +55,6 @@ builder.Services.AddSession(options =>
 
 #endregion
 
-
 #region ¿çÓò
 builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder => builder.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
 #endregion
@@ -64,6 +62,7 @@ builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder 
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
+
 
 //builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
@@ -81,7 +80,7 @@ builder.Services.AddSwaggerGen(c =>
  
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
      

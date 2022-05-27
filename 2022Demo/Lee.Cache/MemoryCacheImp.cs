@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Caching.Memory; 
-using Lee.Utility.Config;
-using Lee.Utility.Config;
+using Lee.Utility.Config; 
 
 namespace Lee.Cache
 {

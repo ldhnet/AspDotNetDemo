@@ -15,7 +15,7 @@
                     {
                         if (cache == null)
                         {
-                            switch ("Redis")//GlobalContext.SystemConfig.CacheProvider
+                            switch ("Memory")//GlobalContext.SystemConfig.CacheProvider
                             {
                                 case "Redis": cache = new RedisCacheImp(); break;
 
