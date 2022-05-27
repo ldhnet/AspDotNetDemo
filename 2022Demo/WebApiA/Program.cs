@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System.Reflection; 
-using WebApiA.Attributes;
+using WebA.Constant;
+using WebApiA.Attributes; 
 using WebApiA.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -88,6 +89,8 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
 //builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 //builder.Services.AddSingleton<ServiceContext>();
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 #region Autofac
 
@@ -98,13 +101,40 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
     builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();     
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
     builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
-    //builder.RegisterType<EmployeeRepository>().As<IEmployeeRepository>().InstancePerLifetimeScope();
+    //builder.RegisterModule(new ContextModule());
+
+    //builder.Register<MyAdminContext>(context => 
+    //                        new MyAdminContext()
+    //                        {
+    //                            CurrentID = 1,
+    //                            CurrentMonth = DateTime.Now
+    //                        }).AsSelf().InstancePerLifetimeScope();
+
+    builder.Register<MyAdminContext>(context =>
+    {
+        var httpContextAccessor = context.Resolve<IHttpContextAccessor>();
+        var httpContext = httpContextAccessor.HttpContext;
+
+        var aaaaa = httpContext.Request.Headers.Keys;
+
+        var bbbb = httpContext.Request.Headers["Host"];
+
+        MyAdminContext _context = new MyAdminContext();
+        _context.CurrentID = 1;
+        _context.CurrentMonth = DateTime.Now;
+        return _context;
+    }).AsSelf().InstancePerLifetimeScope();
+
+    builder.RegisterType<ServiceContext>().AsSelf().InstancePerLifetimeScope();
 
     Type baseType = typeof(IDependency);
+
+    var ccc = baseType.IsAssignableFrom(baseType);
+
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集
             .Select(Assembly.Load)
-            .Where(c => c.FullName!.Contains("WebA.", StringComparison.OrdinalIgnoreCase))
+            .Where(c => c.FullName!.Contains("WebA.Admin", StringComparison.OrdinalIgnoreCase))
             .ToArray();
  
     builder.RegisterAssemblyTypes(assemblies!)
@@ -114,6 +144,9 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
         .PropertiesAutowired()  //属性注入
         .InstancePerLifetimeScope(); //保证生命周期基于请求 
 
+
+
+    //支持属性注入
     var controllerBaseType = typeof(ControllerBase);
     builder.RegisterAssemblyTypes(typeof(Program).Assembly)
     .Where(t => controllerBaseType.IsAssignableFrom(t) && t != controllerBaseType)
@@ -123,7 +156,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
 //支持容器的实例让IOC容器创建--autofac来创建
 builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator,ServiceBasedControllerActivator>());
 
+
+
+//builder.Services.AddSingleton<MyAdminContext>();
+//builder.Services.AddSingleton<ServiceContext>();
 #endregion Autofac
+
+
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;

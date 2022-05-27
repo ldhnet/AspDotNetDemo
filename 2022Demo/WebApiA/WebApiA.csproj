@@ -21,6 +21,11 @@
 		<ProjectReference Include="..\Lee.EF\Lee.EF.csproj" />
 		<ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
 		<ProjectReference Include="..\WebA.Admin\WebA.Admin.csproj" />
+		<ProjectReference Include="..\WebA.Constant\WebA.Constant.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Config\" />
 	</ItemGroup>
 
 </Project>
