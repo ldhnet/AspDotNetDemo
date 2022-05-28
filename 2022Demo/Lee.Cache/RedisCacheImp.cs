@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 using Newtonsoft.Json;
 using StackExchange.Redis; 
 
 namespace Lee.Cache
 {
-    public class RedisCacheImp : ICache
+    public class RedisCacheImp : ICache, IRedisCache
     {
         private IDatabase cache;
         private ConnectionMultiplexer connection;

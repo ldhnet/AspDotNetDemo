@@ -18,7 +18,7 @@
                             switch ("Memory")//GlobalContext.SystemConfig.CacheProvider
                             {
                                 case "Redis": cache = new RedisCacheImp(); break;
-
+                                case "Distributed": cache = new DistributedCacheImp(); break;
                                 default:
                                 case "Memory": cache = new MemoryCacheImp(); break;
                             }

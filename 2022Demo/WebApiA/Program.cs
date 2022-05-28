@@ -1,7 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Lee.EF.Context;
-using Lee.Hangfire;
 using Lee.Repository;
 using Lee.Repository.Data;
 using Lee.Repository.Repository;
@@ -9,9 +8,12 @@ using Lee.Utility.Dependency;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using System.Reflection; 
+using System.Reflection;
+using WebA.Admin.Contracts;
+using WebA.Admin.Service;
 using WebA.Constant;
 using WebApiA.Attributes; 
 using WebApiA.Middleware;
@@ -27,9 +29,13 @@ builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddDistributedMemoryCache();
 builder.Services.AddMemoryCache();
+
+builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddDataProtection();
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 #region 使用Redis保存Session
 // 使用SqlServer保存Session
@@ -83,25 +89,30 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
      
 }, 200);
 
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+//builder.Services.AddSingleton<MyDBContext>();
+//builder.Services.AddSingleton<MyAdminContext>();
+//builder.Services.AddSingleton<ServiceContext>();
+
+//builder.Services.AddSingleton(typeof(IRepository<,>),typeof(Repository<,>));
+
+//builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
+//builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
+
+//builder.Services.AddSingleton<ISystemContract, SystemService>();
+
+
+
 #region Autofac
 
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); 
-builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+{
     builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();     
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
     builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
-    //builder.RegisterModule(new ContextModule());
-
-    //builder.Register<MyAdminContext>(context => 
-    //                        new MyAdminContext()
-    //                        {
-    //                            CurrentID = 1,
-    //                            CurrentMonth = DateTime.Now
-    //                        }).AsSelf().InstancePerLifetimeScope();
 
     builder.Register<MyAdminContext>(context =>
     {
@@ -126,14 +137,14 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
             .Select(Assembly.Load)
             .Where(c => c.FullName!.Contains("WebA.Admin", StringComparison.OrdinalIgnoreCase))
             .ToArray();
- 
+
     builder.RegisterAssemblyTypes(assemblies!)
         .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
         .AsSelf()   //自身服务，用于没有接口的类
         .AsImplementedInterfaces()  //接口服务
         .PropertiesAutowired()  //属性注入
         .InstancePerLifetimeScope(); //保证生命周期基于请求 
-     
+
     //支持属性注入
     var controllerBaseType = typeof(ControllerBase);
     builder.RegisterAssemblyTypes(typeof(Program).Assembly)
@@ -142,8 +153,8 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
 });
 
 //支持容器的实例让IOC容器创建--autofac来创建
-builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator,ServiceBasedControllerActivator>());
- 
+builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
+
 #endregion Autofac
 
 
@@ -152,8 +163,9 @@ builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator,Servic
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
 GlobalConfig.HostEnvironment = builder.Environment;
-
+ 
 var app = builder.Build();
+
 //app.UseMiddleware(typeof(SwaggerAuthMiddleware));
 app.UseStaticFiles();
  
@@ -177,7 +189,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 //app.UseHangfire();
+  
+GlobalConfig.ServiceProvider = app.Services;
  
 app.Run();
-
-GlobalConfig.ServiceProvider = app.Services;

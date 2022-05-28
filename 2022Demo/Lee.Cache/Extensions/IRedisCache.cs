@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lee.Cache
 {
-    public interface ICache
+    public interface IRedisCache
     {
-        bool SetCache<T>(string key, T value, DateTime? expireTime = null);
-        T GetCache<T>(string key);
-        bool RemoveCache(string key);
 
         #region Hash
         int SetHashFieldCache<T>(string key, string fieldKey, T fieldValue);
