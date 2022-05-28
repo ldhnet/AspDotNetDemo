@@ -1,6 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Lee.EF.Context;
+using Lee.Hangfire;
 using Lee.Repository;
 using Lee.Repository.Data;
 using Lee.Repository.Repository;
@@ -22,7 +23,11 @@ builder.WebHost.UseUrls("http://localhost:9010");
 builder.WebHost.UseWebRoot("wwwroot");
 //var currentDir = Directory.GetCurrentDirectory();
 builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
- 
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddMemoryCache();
 builder.Services.AddDataProtection();
 
@@ -59,11 +64,6 @@ builder.Services.AddSession(options =>
 builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder => builder.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
 #endregion
 
-builder.Services.AddControllers();
-
-builder.Services.AddEndpointsApiExplorer();
-
-
 //builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
 builder.Services.AddSwaggerGen(c =>
@@ -75,27 +75,21 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(filePath);
 });
 
-
-//builder.Services.AddDbContext<MyDBContext>(options => options.UseSqlServer("Data Source=.;Initial Catalog=DH;Integrated Security=true;"));
- 
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
      
 }, 200);
-//builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
-//builder.Services.AddSingleton<ServiceContext>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
+
 #region Autofac
 
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-// Register services directly with Autofac here. Don't
-// call builder.Populate(), that happens in AutofacServiceProviderFactory.
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); 
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
     builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();     
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
@@ -127,9 +121,6 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
     builder.RegisterType<ServiceContext>().AsSelf().InstancePerLifetimeScope();
 
     Type baseType = typeof(IDependency);
-
-    var ccc = baseType.IsAssignableFrom(baseType);
-
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集
             .Select(Assembly.Load)
@@ -137,14 +128,12 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
             .ToArray();
  
     builder.RegisterAssemblyTypes(assemblies!)
-        .Where(type => baseType.IsAssignableFrom(baseType) && !type.IsAbstract)
+        .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
         .AsSelf()   //自身服务，用于没有接口的类
         .AsImplementedInterfaces()  //接口服务
         .PropertiesAutowired()  //属性注入
         .InstancePerLifetimeScope(); //保证生命周期基于请求 
-
-
-
+     
     //支持属性注入
     var controllerBaseType = typeof(ControllerBase);
     builder.RegisterAssemblyTypes(typeof(Program).Assembly)
@@ -154,14 +143,11 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => {
 
 //支持容器的实例让IOC容器创建--autofac来创建
 builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator,ServiceBasedControllerActivator>());
-
-
-
-//builder.Services.AddSingleton<MyAdminContext>();
-//builder.Services.AddSingleton<ServiceContext>();
+ 
 #endregion Autofac
 
 
+//builder.Services.AddHangfire(builder.Configuration);
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
@@ -189,6 +175,9 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
  
 app.MapControllers();
-GlobalConfig.ServiceProvider = app.Services;
 
+//app.UseHangfire();
+ 
 app.Run();
+
+GlobalConfig.ServiceProvider = app.Services;

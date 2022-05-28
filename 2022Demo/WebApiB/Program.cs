@@ -1,3 +1,5 @@
+using Lee.Hangfire;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,27 +10,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHangfire(builder.Configuration);
+
 var app = builder.Build();
 
-//DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-//defaultFilesOptions.DefaultFileNames.Clear();
-//defaultFilesOptions.DefaultFileNames.Add("/swagger/index.html");
-//app.UseDefaultFiles(defaultFilesOptions);
-
 app.UseDefaultFiles();
-
 app.UseStaticFiles();
-
 app.UseSwagger();
 app.UseSwaggerUI();
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-  
-}
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseHangfire();
+
 
 app.Run();

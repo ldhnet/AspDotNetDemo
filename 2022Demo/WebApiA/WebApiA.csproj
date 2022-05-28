@@ -19,6 +19,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Lee.Cache\Lee.Cache.csproj" />
 		<ProjectReference Include="..\Lee.EF\Lee.EF.csproj" />
+		<ProjectReference Include="..\Lee.Hangfire\Lee.Hangfire.csproj" />
 		<ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
 		<ProjectReference Include="..\WebA.Admin\WebA.Admin.csproj" />
 		<ProjectReference Include="..\WebA.Constant\WebA.Constant.csproj" />
