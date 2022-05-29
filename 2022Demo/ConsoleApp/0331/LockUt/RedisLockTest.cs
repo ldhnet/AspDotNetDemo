@@ -67,7 +67,7 @@ namespace ConsoleApp._0331.LockUt
                 {
                     break;
                 }
-                if (CacheFactory.Cache.LockTake(shangpingKey))
+                if (true)//CacheFactory.Cache.LockTake(shangpingKey)
                 {
                     //用户b拿到锁
                     Console.WriteLine($"用户{ b }拿到锁...");
@@ -99,7 +99,7 @@ namespace ConsoleApp._0331.LockUt
                     finally
                     {
                         Console.WriteLine($"用户{b}释放锁...");
-                        CacheFactory.Cache.LockRelease(shangpingKey); //释放锁
+                        //CacheFactory.Cache.LockRelease(shangpingKey); //释放锁
                     }
                 }
                 //else

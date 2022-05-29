@@ -83,7 +83,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
      
@@ -103,8 +103,6 @@ builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
 //builder.Services.AddSingleton<ISystemContract, SystemService>();
 
-
-
 #region Autofac
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -113,6 +111,17 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
     builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();     
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
     builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+     
+    //builder.RegisterType<ServiceContext>().AsSelf().InstancePerLifetimeScope();
+
+    Type baseType = typeof(IDependency);      
+    var assemblieTypes = Assembly.GetEntryAssembly().GetReferencedAssemblies()
+    .Select(Assembly.Load)
+    .SelectMany(c => c.GetExportedTypes())
+    .Where(t => baseType.IsAssignableFrom(t))
+    .ToArray();     
+    builder.RegisterTypes(assemblieTypes).AsSelf().InstancePerLifetimeScope(); //保证生命周期基于请求 
+
 
     builder.Register<MyAdminContext>(context =>
     {
@@ -129,17 +138,14 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
         return _context;
     }).AsSelf().InstancePerLifetimeScope();
 
-    builder.RegisterType<ServiceContext>().AsSelf().InstancePerLifetimeScope();
 
-    Type baseType = typeof(IDependency);
     var assemblies = Assembly.GetEntryAssembly()?//获取默认程序集
             .GetReferencedAssemblies()//获取所有引用程序集
             .Select(Assembly.Load)
             .Where(c => c.FullName!.Contains("WebA.Admin", StringComparison.OrdinalIgnoreCase))
             .ToArray();
-
     builder.RegisterAssemblyTypes(assemblies!)
-        .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
+        .Where(type => !type.IsAbstract)
         .AsSelf()   //自身服务，用于没有接口的类
         .AsImplementedInterfaces()  //接口服务
         .PropertiesAutowired()  //属性注入

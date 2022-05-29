@@ -18,7 +18,11 @@ namespace Lee.Cache
             try
             {
                 bool isAbsoluteExpiration = false;
-                var expiration = expireTime.Value - DateTime.Now;
+                if (expireTime == null)
+                { 
+                    expireTime = DateTime.MaxValue;
+                }
+                var expiration = expireTime - DateTime.Now;
                 var options = this.BuildDistributedCacheEntryOptions(expiration, isAbsoluteExpiration);
                 var setValue = JsonSerializer.SerializeToUtf8Bytes(value);
                 cache.Set(key, setValue, options);

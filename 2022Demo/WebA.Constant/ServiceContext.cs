@@ -1,9 +1,10 @@
 ﻿
+using Lee.Utility.Dependency;
 using WebA.Admin.Contracts;
 
 namespace WebA.Constant
 {
-    public class ServiceContext//: IDependency
+    public class ServiceContext: IDependency
     {
         private readonly ISystemContract _systemContract;
         public ServiceContext() {  }

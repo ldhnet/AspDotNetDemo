@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lee.Utility.Dependency;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using WebA.Admin.Service;
 
 namespace WebA.Constant
 {
-    public class MyAdminContext//: IDependency
+    public class MyAdminContext : IDependency
     {
         //public MyAdminContext(int _currentID,DateTime _currentMonth)
         //{
