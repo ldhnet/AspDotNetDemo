@@ -1,6 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Lee.EF.Context;
+using Lee.Hangfire;
 using Lee.Repository;
 using Lee.Repository.Data;
 using Lee.Repository.Repository;
@@ -163,8 +164,7 @@ builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator, Servi
 
 #endregion Autofac
 
-
-//builder.Services.AddHangfire(builder.Configuration);
+builder.Services.AddHangfire(builder.Configuration);
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;
@@ -194,7 +194,7 @@ app.UseAuthorization();
  
 app.MapControllers();
 
-//app.UseHangfire();
+app.UseHangfire();
   
 GlobalConfig.ServiceProvider = app.Services;
  

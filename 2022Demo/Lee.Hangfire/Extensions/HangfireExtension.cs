@@ -17,8 +17,8 @@ namespace Lee.Hangfire
                 //持久化到Redis
                 _configuration.UseRedisStorage(JobServer.GetRedisStorageOptions(configuration), new RedisStorageOptions()
                 {
-                    Db = 2,
-                    Prefix = "DH_"
+                    Db = 3,
+                    Prefix = "DH3_"
                 });
             });
             BackgroundJobServerOptions optionsAction = JobServer.GetBackgroundJobServerOptions(configuration)!;
