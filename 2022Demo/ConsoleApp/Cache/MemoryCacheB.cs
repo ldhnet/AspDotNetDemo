@@ -13,7 +13,7 @@ namespace ConsoleApp.Cache
 
         public static void MemoryCacheTest()
         {
-            IMemoryCache cache = new Microsoft.Extensions.Caching.Memory.MemoryCache(new MemoryCacheOptions());
+            IMemoryCache cache = new MemoryCache(new MemoryCacheOptions());
             object result;
             string key = "KeyName";
             // 创建/更新
@@ -35,7 +35,7 @@ namespace ConsoleApp.Cache
             // 创建执行回调函数的缓存项
             var cacheEntryOptions = new MemoryCacheEntryOptions()
            // 获取或设置在内存压力触发的清理过程中保留缓存中的缓存项的优先级。默认值为 Normal。
-           .SetPriority(Microsoft.Extensions.Caching.Memory.CacheItemPriority.Normal)
+           .SetPriority(CacheItemPriority.Normal)
            // 设置实际的过期时间
            .SetAbsoluteExpiration(expirationTime)
            // 获取导致缓存项过期的 IChangeToken 实例。

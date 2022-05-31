@@ -5,12 +5,16 @@ using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
 
+MemoryCacheB.MemoryCacheTest();
+
+
+Console.WriteLine("Hello, World!");
+
 //SqlConnectionTest sqlConnectionTest =new SqlConnectionTest();
 //sqlConnectionTest.tes
 
-SqlConnectionTest.TestSQLServerConnectionCount();
+//SqlConnectionTest.TestSQLServerConnectionCount();
 
-Console.WriteLine("Hello, World!");
 
 //RemoteService remoteService = new RemoteService();
 //remoteService.startService();
