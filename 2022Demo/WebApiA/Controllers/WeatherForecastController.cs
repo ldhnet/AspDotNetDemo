@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApiA.Filter;
 
 namespace WebApiA.Controllers
 {
@@ -19,6 +20,7 @@ namespace WebApiA.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        [ServiceFilter(typeof(MyFilter))]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

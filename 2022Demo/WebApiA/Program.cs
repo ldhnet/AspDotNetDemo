@@ -16,7 +16,8 @@ using System.Reflection;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
 using WebA.Constant;
-using WebApiA.Attributes; 
+using WebApiA.Attributes;
+using WebApiA.Filter;
 using WebApiA.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -103,6 +104,9 @@ builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 //builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
 
 //builder.Services.AddSingleton<ISystemContract, SystemService>();
+
+builder.Services.AddScoped<MyFilter>();
+
 
 #region Autofac
 
