@@ -1,15 +1,17 @@
 ﻿using ConsoleApp;
 using ConsoleApp._0331.LockUt;
+using ConsoleApp._0605;
 using ConsoleApp.Cache;
 using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
 
-MemoryCacheB.MemoryCacheTest();
-
-
+yieldTest.testMain();
+ 
 Console.WriteLine("Hello, World!");
 
+//MemoryCacheB.MemoryCacheTest();
+ 
 //SqlConnectionTest sqlConnectionTest =new SqlConnectionTest();
 //sqlConnectionTest.tes
 
