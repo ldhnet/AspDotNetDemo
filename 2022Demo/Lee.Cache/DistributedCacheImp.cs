@@ -11,6 +11,9 @@ namespace Lee.Cache
 {
     public class DistributedCacheImp :ICache
     { 
+        /// <summary>
+        /// 分布式内存缓存
+        /// </summary>
         private IDistributedCache cache = GlobalConfig.ServiceProvider!.GetService<IDistributedCache>()!;
 
         public bool SetCache<T>(string key, T value, DateTime? expireTime = null)
