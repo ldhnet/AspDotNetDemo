@@ -194,7 +194,9 @@ if (app.Environment.IsDevelopment())
 {
  
 }
- 
+
+//app.UseMiddleware(typeof(VisitRecordMiddleware));
+
 app.UseAuthorization();
  
 app.MapControllers();
