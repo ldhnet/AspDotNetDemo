@@ -85,7 +85,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=***;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
      
@@ -101,7 +101,7 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
 
 builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
-//builder.Services.AddSingleton<IEmployeeContract, EmployeeService>();
+builder.Services.AddSingleton<IVisitRecordRepository, VisitRecordRepository>();
 
 //builder.Services.AddSingleton<ISystemContract, SystemService>();
 
@@ -149,6 +149,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
             .Select(Assembly.Load)
             .Where(c => c.FullName!.Contains("WebA.Admin", StringComparison.OrdinalIgnoreCase))
             .ToArray();
+
     builder.RegisterAssemblyTypes(assemblies!)
         .Where(type => !type.IsAbstract)
         .AsSelf()   //自身服务，用于没有接口的类
