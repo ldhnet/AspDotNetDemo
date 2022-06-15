@@ -9,7 +9,7 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace Lee.EF.Context
 {
-    public partial class MyDBContext : DbContext
+    public  class MyDBContext : DbContext
     {
         private  string _connectionString = GlobalConfig.SystemConfig.DBConnectionString;
         public MyDBContext() { }
