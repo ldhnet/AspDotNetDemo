@@ -6,19 +6,21 @@ using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
 using ConsoleApp._0616;
+using ConsoleApp.Adapter;
 
+AdapterTests.TestMain();
 
-ClosureTests.TestMain();
 
 Console.WriteLine("Hello, World!");
 
+//ClosureTests.TestMain();
 
 //yieldTest.testMain();
- 
+
 
 
 //MemoryCacheB.MemoryCacheTest();
- 
+
 //SqlConnectionTest sqlConnectionTest =new SqlConnectionTest();
 //sqlConnectionTest.tes
 
