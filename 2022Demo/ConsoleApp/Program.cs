@@ -5,10 +5,17 @@ using ConsoleApp.Cache;
 using ConsoleApp.多线程;
 using ConsoleApp.多线程锁;
 using System.Diagnostics;
+using ConsoleApp._0616;
 
-yieldTest.testMain();
- 
+
+ClosureTests.TestMain();
+
 Console.WriteLine("Hello, World!");
+
+
+//yieldTest.testMain();
+ 
+
 
 //MemoryCacheB.MemoryCacheTest();
  
