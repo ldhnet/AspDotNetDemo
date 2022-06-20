@@ -13,7 +13,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Lee.EF\Lee.EF.csproj" />
-	  <ProjectReference Include="..\Lee.Models\Lee.Models.csproj" />
 	</ItemGroup>
 
 </Project>
