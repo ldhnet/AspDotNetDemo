@@ -29,8 +29,8 @@ namespace Lee.Hangfire
         /// <returns></returns> 
         public async Task Execute()
         {
-            _logger.LogInformation("_logger HangfireJobDemo test false start......");
-            await Task.Run(() => Console.WriteLine($"HangfireJobDemo test false"));
+            //_logger.LogInformation("_logger HangfireJobDemo test false start......");
+            await Task.Run(() => Console.WriteLine($"HangfireJob_Test {DateTime.Now}"));
         }
     }
 }

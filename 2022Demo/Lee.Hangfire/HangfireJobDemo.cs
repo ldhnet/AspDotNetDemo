@@ -21,7 +21,7 @@ namespace Lee.Hangfire
         public override string JobName { get; set; } = "测试111";
         public override string CronExpression { get; set; } = "*/1 * * * * ?";
         public override string Queue { get; set; } = "default";
-        public override bool Enable { get; set; } = true;
+        public override bool Enable { get; set; } = false;
 
         /// <summary>
         /// 每分钟执行测试
@@ -29,8 +29,8 @@ namespace Lee.Hangfire
         /// <returns></returns> 
         public async Task Execute()
         {
-            _logger.LogInformation("_logger HangfireJobDemo test start......");
-            await Task.Run(() => Console.WriteLine($"HangfireJobDemo test  {new Random().Next(100,999)} {DateTime.Now}"));
+            //_logger.LogInformation("_logger HangfireJobDemo test start......");
+            await Task.Run(() => Console.WriteLine($"HangfireJob_Demo {DateTime.Now}"));// {new Random().Next(100,999)} 
         }
     }
 }

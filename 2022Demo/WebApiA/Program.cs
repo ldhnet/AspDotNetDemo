@@ -6,6 +6,7 @@ using Lee.Repository;
 using Lee.Repository.Data;
 using Lee.Repository.Repository;
 using Lee.Utility.Dependency;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.EntityFrameworkCore;
@@ -71,6 +72,10 @@ builder.Services.AddSession(options =>
 #region 跨域
 builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder => builder.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
 #endregion
+
+builder.Services.Configure<FormOptions>(options => {
+    options.ValueLengthLimit = 209715200;//200MB   //.netcore 限制了每个 POST 数据值的长度为 4M  提升到200M
+});
 
 //builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
