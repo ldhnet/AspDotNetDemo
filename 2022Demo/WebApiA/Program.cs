@@ -90,9 +90,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContextPool<MyDBContext>(options =>
 {
-    var connection = "server=rm-2zeetsz84h2ex0760ho.mysql.rds.aliyuncs.com;userid=root;pwd=Dsb0004699;port=3306;database=ldhdb;sslmode=none;Convert Zero Datetime=True";
+    var connection = "server=localhost;userid=root;pwd=2021@ldh;port=3306;database=dh;sslmode=none;Convert Zero Datetime=True";
 
-    options.UseMySql(connection, ServerVersion.Create(8, 0, 18, ServerType.MySql));
+    options.UseMySql(connection, ServerVersion.Create(8, 0, 29, ServerType.MySql));
      
 }, 200);
 
