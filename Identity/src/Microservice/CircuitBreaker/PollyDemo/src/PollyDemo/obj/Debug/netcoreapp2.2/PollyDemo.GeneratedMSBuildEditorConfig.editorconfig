@@ -1,3 +1,0 @@
-is_global = true
-build_property.RootNamespace = PollyDemo
-build_property.ProjectDir = C:\Free\AspNetCoreSample-master\src\Microservice\CircuitBreaker\PollyDemo\src\PollyDemo\
