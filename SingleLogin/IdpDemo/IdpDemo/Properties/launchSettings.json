@@ -1,0 +1,17 @@
+﻿{ 
+  "profiles": {
+    "IdpDemo": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5900",
+      "environmentVariables": {
+        // "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Production"
+        //"ASPNETCORE_ENVIRONMENT": "Qa"
+
+
+      }
+    } 
+  }
+}

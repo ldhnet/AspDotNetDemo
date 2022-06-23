@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@*
+<a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Logout">登出</a>*@
+
+<h2>Access Token：</h2>
+<p>@ViewData["accessToken"]</p>
+<a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="RevokeToken">撤销token</a>
+<h2>Id Token：</h2>
+<p>@ViewData["idToken"]</p>
+
+<h2>Refresh Token：</h2>
+<p>@ViewData["refreshToken"]</p>
+<a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="RevokeRefreshToken">撤销Refresh Token</a>
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
