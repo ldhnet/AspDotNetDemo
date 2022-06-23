@@ -10,6 +10,8 @@ namespace Lib
 
         public string HostName { get; set; }
 
+        public int Port { get; set; }
+
         public string ExchangeType { get; set; } = _ExchangeType.Topic;
 
         public string ExchangeName { get; set; }

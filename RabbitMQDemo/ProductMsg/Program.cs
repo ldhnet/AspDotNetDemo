@@ -8,10 +8,12 @@ namespace ProductMsg
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"ProductMsg client start....");
             var services = new ServiceCollection();            
             services.AddRabbitMQ(x =>
             {
                 x.HostName = "localhost";
+                x.Port = 5672;
                 x.UserName = "guest";
                 x.Password = "guest";
                 x.ExchangeName = "TestExchange";
