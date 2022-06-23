@@ -6,13 +6,12 @@ using IdentityServer4.Models;
 using System.Collections.Generic;
 using IdentityModel;
 using IdentityServer4;
+using IdpDemo.Models;
 
 namespace IdpDemo
 {
     public static class Config
     {
-        //上面是原来的代码
-
         //下面是需要新加上方法，否则访问提示invalid_scope
         public static IEnumerable<ApiScope> ApiScopes => new ApiScope[] { 
                 new ApiScope("api1"),
@@ -23,16 +22,10 @@ namespace IdpDemo
             return new ApiResource[]
             {
                 new ApiResource("api1", "My API #1"),
-        
-                //new ApiResource("api1", "My API #1")
-                //{
-                //    ApiSecrets = { new Secret("api1 secret".Sha256()) }
-                //},
                 new ApiResource("api2", "Express API")
             };
         }
-
-
+         
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new IdentityResource[]
@@ -52,18 +45,18 @@ namespace IdpDemo
                 // mvc client, authorization code
                 new Client
                 {
-                    ClientId = "CodeClient",
-                    ClientName = "ASP.NET Core MVC Client", 
+                    ClientId = GlobalContext.IdpClients_mvc.ClientId,//"CodeClient",
+                    ClientName = GlobalContext.IdpClients_mvc.ClientName,//"ASP.NET Core MVC Client", 
                     AllowedGrantTypes = GrantTypes.Code,      
-                    ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) }, 
-                    RedirectUris = { "http://localhost:5902/signin-oidc" }, 
-                    FrontChannelLogoutUri = "http://localhost:5902/signout-oidc",
-                    PostLogoutRedirectUris = { "http://localhost:5902/signout-callback-oidc" },
+                    ClientSecrets = { new Secret(GlobalContext.IdpClients_mvc.ClientSecrets.Sha256()) }, //"49C1A7E1-0C79-4A89-A3D6-A37998FB86B0"
+                    RedirectUris = { $"{GlobalContext.IdpClients_mvc.RedirectUri}/signin-oidc" }, 
+                    FrontChannelLogoutUri = $"{GlobalContext.IdpClients_mvc.RedirectUri}/signout-oidc",
+                    PostLogoutRedirectUris = { $"{GlobalContext.IdpClients_mvc.RedirectUri}/signout-callback-oidc" },
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RequireConsent = false,
                     AllowOfflineAccess = true, // offline_access 允许离线访问  刷新token //如果要获取refresh_tokens ,必须把AllowOfflineAccess设置为true 同事添加 scopes OfflineAccess
-                    AccessTokenLifetime = 60, // 60 seconds
-                    LogoUri = Path.Combine(TestUsers._Environment.ContentRootPath,"head.jpg"),
+                    AccessTokenLifetime = 60 * 3, //  180 秒
+                    LogoUri = Path.Combine(GlobalContext._Environment.ContentRootPath,"head.jpg"),
                     AllowedScopes =
                     {
                         "api1", 
@@ -77,18 +70,17 @@ namespace IdpDemo
                 },
                 new Client
                 {
-                    ClientId = "CodeClient_2",
-                    ClientName = "ASP.NET Core MVC Client",
+                    ClientId = GlobalContext.IdpClients_mvc_test.ClientId,//"CodeClient",
+                    ClientName = GlobalContext.IdpClients_mvc_test.ClientName,//"ASP.NET Core MVC Client", 
                     AllowedGrantTypes = GrantTypes.Code,
-                    ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
-                    RedirectUris = { "http://localhost:5903/signin-oidc" },
-                    FrontChannelLogoutUri = "http://localhost:5903/signout-oidc",
-                    PostLogoutRedirectUris = { "http://localhost:5903/signout-callback-oidc" },
+                    ClientSecrets = { new Secret(GlobalContext.IdpClients_mvc_test.ClientSecrets.Sha256()) }, //"49C1A7E1-0C79-4A89-A3D6-A37998FB86B0"
+                    RedirectUris = { $"{GlobalContext.IdpClients_mvc_test.RedirectUri}/signin-oidc" },
+                    FrontChannelLogoutUri = $"{GlobalContext.IdpClients_mvc_test.RedirectUri}/signout-oidc",
+                    PostLogoutRedirectUris = { $"{GlobalContext.IdpClients_mvc_test.RedirectUri}/signout-callback-oidc" },
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RequireConsent = false,
                     AllowOfflineAccess = true, // offline_access 允许离线访问  刷新token //如果要获取refresh_tokens ,必须把AllowOfflineAccess设置为true 同事添加 scopes OfflineAccess
-                    AccessTokenLifetime = 60, // 60 seconds
-                    LogoUri = Path.Combine(TestUsers._Environment.ContentRootPath,"head.jpg"),
+                    AccessTokenLifetime = 60 * 3, // 180 秒 
                     AllowedScopes =
                     {
                         "api1",

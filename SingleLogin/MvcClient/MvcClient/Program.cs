@@ -2,6 +2,7 @@ using IdentityModel;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using MvcClient.Config;
 using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,22 @@ builder.WebHost.UseUrls("http://localhost:5902");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+GlobalContext._Configuration = builder.Configuration;
+
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    var env = hostingContext.HostingEnvironment;
+
+    GlobalContext._Environment = hostingContext.HostingEnvironment;
+
+    config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    config.AddEnvironmentVariables();
+});
+
+GlobalContext.IdpClients = builder.Configuration.GetSection("IdpClients").Get<IdpClients>();
+ 
 
 builder.Services.AddAuthorization(); 
 
@@ -27,9 +44,9 @@ builder.Services.AddAuthentication(options =>
 }).AddOpenIdConnect("oidc", options =>
 {
     options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.Authority = "http://localhost:5900";
-    options.ClientId = "CodeClient";
-    options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
+    options.Authority = GlobalContext.IdpClients.Authority;
+    options.ClientId = GlobalContext.IdpClients.ClientId;
+    options.ClientSecret = GlobalContext.IdpClients.ClientSecrets;
     options.ResponseType = OpenIdConnectResponseType.Code;
     options.SaveTokens = true;
     options.RequireHttpsMetadata = false;

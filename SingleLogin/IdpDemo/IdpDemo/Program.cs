@@ -2,6 +2,8 @@
 global using System;
 global using MyEnv = System.Environment;
 using IdpDemo;
+using IdpDemo.Models;
+using IdpDemo.Services;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
@@ -10,21 +12,25 @@ builder.WebHost.UseUrls("http://localhost:5900");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-TestUsers._Configuration = builder.Configuration;
+GlobalContext._Configuration = builder.Configuration;
 
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
     var env = hostingContext.HostingEnvironment;
 
-    TestUsers._Environment = hostingContext.HostingEnvironment;
-     
-
+    GlobalContext._Environment = hostingContext.HostingEnvironment;
+       
     config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
-
+           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true); 
     config.AddEnvironmentVariables();
 });
- 
+
+GlobalContext.IdpClients_mvc = builder.Configuration.GetSection("IdpClients_mvc").Get<IdpClients_mvc>();
+GlobalContext.IdpClients_mvc_test = builder.Configuration.GetSection("IdpClients_mvc_test").Get<IdpClients_mvc_test>();
+
+
+builder.Services.AddSingleton<IUserInterface, UserService>();
+
 var idpBuilder = builder.Services.AddIdentityServer(options =>
 {
     options.Events.RaiseErrorEvents = true;
@@ -37,7 +43,7 @@ var idpBuilder = builder.Services.AddIdentityServer(options =>
     //ÊÚÈ¨È·ÈÏÒ³Ãæ Ä¬ÈÏ/consent
     //options.UserInteraction.ConsentUrl = "";
 
-}).AddTestUsers(TestUsers.Users); 
+});//.AddTestUsers(TestUsers.Users); 
 idpBuilder.AddInMemoryIdentityResources(Config.GetIdentityResources());
 idpBuilder.AddInMemoryApiResources(Config.GetApis());
 idpBuilder.AddInMemoryClients(Config.GetClients());
@@ -45,19 +51,14 @@ idpBuilder.AddInMemoryApiScopes(Config.ApiScopes);  //Õâ¸öApiScopesÐèÒªÐÂ¼ÓÉÏ£¬·
   
 //idpBuilder.AddDeveloperSigningCredential();//false, "tempkey.rsa"
 
-//builder.Services.AddCors(options => options.AddPolicy("cors", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
-
-
-if (TestUsers._Environment.IsDevelopment())
+if (GlobalContext._Environment.IsDevelopment())
 {
     idpBuilder.AddDeveloperSigningCredential(true, "tempkey.rsa");
 }
 else
 {
-    var signingCredential = new TestUsers().CreateSigningCredential();
+    var signingCredential = new SigningCredentialConfig().CreateSigningCredential();
     idpBuilder.AddSigningCredential(signingCredential);
-
-    //idpBuilder.AddSigningCredential(new System.Security.Cryptography.X509Certificates.X509Certificate2(Path.Combine(Environment.ContentRootPath,Configuration["Certificates:CertPath"]),Configuration["Certificates:Password"]));
 }
 
 
@@ -71,13 +72,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.UseRouting();
-
-//app.UseCors("cors"); 
+ 
 app.UseIdentityServer();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Demo}/{action=Index}");
 
 app.Run();

@@ -15,7 +15,7 @@ namespace IdpDemo.Controllers
 
         public IActionResult Index()
         {
-            var aaaaa = System.Environment.CurrentManagedThreadId;
+            var aaaaa = Environment.CurrentManagedThreadId;
             var aaa= MyEnv.Version;
             var bbb = MyEnv.GetEnvironmentVariable(Environment.MachineName);
             var bbbw = MyEnv.GetEnvironmentVariables()["ASPNETCORE_ENVIRONMENT"];
@@ -27,11 +27,6 @@ namespace IdpDemo.Controllers
         {
             return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+          
     }
 }
