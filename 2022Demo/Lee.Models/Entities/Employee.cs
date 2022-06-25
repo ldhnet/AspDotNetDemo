@@ -7,6 +7,11 @@
         public string EmployeeName { get; set; }
         public string EmployeeSerialNumber { get; set; }
         public int? Department { get; set; }
+        /// <summary>
+        /// 调整状态
+        /// </summary>
+        public EmployeeStatus EmployeeStatus { get; set; }
+
         public string Phone { get; set; }
         public string? BankCard { get; set; }
         public string? WebToken { get; set; }
@@ -21,4 +26,5 @@
         public virtual ICollection<EmployeeLogin> EmployeeLogins { get; set; } = new List<EmployeeLogin>();
          
     }
+ 
 }

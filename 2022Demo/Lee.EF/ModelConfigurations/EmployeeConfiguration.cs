@@ -22,10 +22,15 @@ namespace Lee.EF.ModelConfigurations
             entity.Property(e => e.EmployeeName).HasColumnType("varchar(50)");
             entity.Property(e => e.EmployeeSerialNumber).HasColumnType("varchar(50)");
             entity.Property(e => e.Department).HasColumnType("int");
+            entity.Property(e => e.EmployeeStatus).HasColumnType("int"); 
             entity.Property(e => e.Phone).HasColumnType("varchar(50)");
             entity.Property(e => e.WebToken).HasColumnType("varchar(50)");
             entity.Property(e => e.ApiToken).HasColumnType("varchar(50)");
-            entity.Property(e => e.ExpirationDateUtc).HasColumnType("datetime");
+            entity.Property(e => e.ExpirationDateUtc).HasColumnType("datetime"); 
+
+            //.HasConversion(
+            //                    d => d.ToDateTime(TimeOnly.MinValue),
+            //                    d => DateOnly.FromDateTime(d))
         }
     } 
 }

@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc; 
+﻿using Lee.Models;
+using Lee.Models.Entities;
+using Lee.Utility.Extensions;
+using Microsoft.AspNetCore.Mvc; 
 using WebA.Admin.Contracts;
 using WebA.Constant;
 using WebApiA.Attributes;
 
 namespace WebApiA.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [ApiController] 
+    [Route("api/[controller]")]  
     public class DemoController : ControllerBase
     {
         private readonly ILogger<DemoController> _logger;
@@ -28,7 +31,8 @@ namespace WebApiA.Controllers
         /// 测试demo
         /// </summary>
         /// <returns></returns>
-        [HttpGet(Name = "Demo")]
+        [HttpGet]
+        [Route("Get")]
         public IActionResult Get()
         {
             var CurrentMonth = _context.CurrentMonth;
@@ -50,14 +54,45 @@ namespace WebApiA.Controllers
 
 
         /// <summary>
-        /// 测试demo
+        /// 测试禁止重复提交demo
         /// </summary>
         /// <returns></returns>
-        [HttpPost(Name = "PostTest")]
-        [PreventDoublePost]
+        [HttpPost]
+        [Route("PostTest")]
+        [PreventDoublePost] 
         public IActionResult PostTest(int Id)
         {  
             return Ok(new { Id });
         }
+
+
+        /// <summary>
+        /// 测试新增人员信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("AddEmployee")]
+        public IActionResult AddEmployee(string name)
+        {
+            var aaa = EmployeeStatus.PendingStatus.ToDescription();
+             
+            var ccc = typeof(EmployeeStatus).ToEnumForDictionary();
+              
+            Employee emp= new  Employee();
+            emp.Name = name; 
+            emp.EmployeeName = name;
+            emp.EmployeeSerialNumber = "12345";
+            emp.Department = 1;
+            emp.EmployeeStatus = EmployeeStatus.PendingStatus;
+            emp.Phone = "15225074031";
+            emp.BankCard = "12345";
+            emp.WebToken = "12345";
+            emp.ApiToken = "12345";
+            emp.ExpirationDateUtc = DateTime.Now;
+            emp.CreateTime = DateTime.Now;
+            var result =  _employeeContract.SaveEntity(emp);
+            return Ok(result);
+        }
+
     }
 }
