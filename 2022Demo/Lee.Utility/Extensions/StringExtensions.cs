@@ -313,7 +313,7 @@ namespace Lee.Utility.Extensions
         /// <returns></returns>
         public static string FuzzyProcessing(this string str, int startIndex = 2, int rightReservedLength = 2, char paddingChar = '*')
         {
-            if (string.IsNullOrEmpty(str) || str.Length < 4)
+            if (string.IsNullOrEmpty(str) || str.Length <= 4)
                 return str;
 
             var replacement = str.Substring(startIndex, str.Length - startIndex - rightReservedLength);

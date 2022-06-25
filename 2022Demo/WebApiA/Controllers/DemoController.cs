@@ -47,6 +47,12 @@ namespace WebApiA.Controllers
              
             var list =  _employeeContract.GetEmployees();
 
+            foreach (var item in list)
+            {
+                var aa = item.EmployeeStatus.ToDescription();
+                Console.WriteLine(aa);
+            }
+
 
             return Ok(new { CurrentMonth1, CurrentID1, CurrentMonth, CurrentID, list });
         }
@@ -85,7 +91,7 @@ namespace WebApiA.Controllers
             emp.Department = 1;
             emp.EmployeeStatus = EmployeeStatus.PendingStatus;
             emp.Phone = "15225074031";
-            emp.BankCard = "12345";
+            emp.BankCard = "15225074031";
             emp.WebToken = "12345";
             emp.ApiToken = "12345";
             emp.ExpirationDateUtc = DateTime.Now;
