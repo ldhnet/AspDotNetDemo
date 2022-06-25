@@ -29,7 +29,6 @@ namespace Lee.Utility.Extensions
                 {
                     return ((DescriptionAttribute)attr).Description;
                 }
-
             }
             return string.Empty;
         }

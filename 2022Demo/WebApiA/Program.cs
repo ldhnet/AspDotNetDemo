@@ -21,6 +21,9 @@ using WebApiA.Attributes;
 using WebApiA.Filter;
 using WebApiA.Middleware;
 
+//kestrel限制请求体最大为：28M；
+//formbody最大为：128M
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseUrls("http://localhost:9010");
@@ -28,6 +31,22 @@ builder.WebHost.UseUrls("http://localhost:9010");
 builder.WebHost.UseWebRoot("wwwroot");
 //var currentDir = Directory.GetCurrentDirectory();
 builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
+
+//解除kestrel限制
+builder.WebHost.ConfigureKestrel(options =>
+{
+    //options.Limits.MaxRequestBodySize = 30000000L;//默认约28M
+    //options.Limits.MaxRequestBodySize = 2 * 2L << 30;//指定最大2G
+    options.Limits.MaxRequestBodySize = null;//去掉限制 仅用于演示
+});
+
+//解除 formbody限制
+builder.Services.Configure<FormOptions>(x =>
+{
+    //x.MultipartBodyLengthLimit = 134217728;//默认128MB
+    x.MultipartBodyLengthLimit = 5 * 2L << 30;//这里手动设置为5GB,这么大的数值仅用于演示
+}); 
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

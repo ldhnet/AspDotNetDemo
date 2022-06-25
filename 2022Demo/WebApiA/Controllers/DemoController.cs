@@ -1,7 +1,9 @@
 ﻿using Lee.Models;
 using Lee.Models.Entities;
 using Lee.Utility.Extensions;
-using Microsoft.AspNetCore.Mvc; 
+using Lee.Utility.Security;
+using Microsoft.AspNetCore.Mvc;
+using System.Text;
 using WebA.Admin.Contracts;
 using WebA.Constant;
 using WebApiA.Attributes;
@@ -13,18 +15,11 @@ namespace WebApiA.Controllers
     public class DemoController : ControllerBase
     {
         private readonly ILogger<DemoController> _logger;
-        private readonly ServiceContext _context;
-        private readonly MyAdminContext _myContext;
         private readonly IEmployeeContract _employeeContract;
 
-        public DemoController(ILogger<DemoController> logger, 
-            ServiceContext context,
-            MyAdminContext myContext,
-            IEmployeeContract employeeContract)
+        public DemoController(ILogger<DemoController> logger, IEmployeeContract employeeContract)
         {
-            _logger = logger;
-            _context= context;
-            _myContext= myContext;
+            _logger = logger; 
             _employeeContract = employeeContract;
         }
         /// <summary>
@@ -34,30 +29,17 @@ namespace WebApiA.Controllers
         [HttpGet]
         [Route("Get")]
         public IActionResult Get()
-        {
-            var CurrentMonth = _context.CurrentMonth;
-
-            var CurrentID = _context.CurrentID;
-
-
-            var CurrentMonth1 = _myContext.CurrentMonth;
-
-            var CurrentID1 = _myContext.CurrentID;
-
-             
-            var list =  _employeeContract.GetEmployees();
-
+        { 
+            var list = _employeeContract.GetEmployees();
             foreach (var item in list)
             {
                 var aa = item.EmployeeStatus.ToDescription();
                 Console.WriteLine(aa);
+                _logger.LogInformation(aa);
             }
-
-
-            return Ok(new { CurrentMonth1, CurrentID1, CurrentMonth, CurrentID, list });
+             
+            return Ok(new { list });
         }
-
-
 
         /// <summary>
         /// 测试禁止重复提交demo
@@ -71,7 +53,6 @@ namespace WebApiA.Controllers
             return Ok(new { Id });
         }
 
-
         /// <summary>
         /// 测试新增人员信息
         /// </summary>
@@ -80,8 +61,7 @@ namespace WebApiA.Controllers
         [Route("AddEmployee")]
         public IActionResult AddEmployee(string name)
         {
-            var aaa = EmployeeStatus.PendingStatus.ToDescription();
-             
+            var aaa = EmployeeStatus.PendingStatus.ToDescription();             
             var ccc = typeof(EmployeeStatus).ToEnumForDictionary();
               
             Employee emp= new  Employee();
@@ -98,6 +78,22 @@ namespace WebApiA.Controllers
             emp.CreateTime = DateTime.Now;
             var result =  _employeeContract.SaveEntity(emp);
             return Ok(result);
+        }
+
+
+        private void AesTest()
+        {
+            var a = "123";
+            var aaaa = SecurityHelper.Encrypt(a);
+            var bbbb = SecurityHelper.Decrypt(aaaa);
+
+            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ldh.docx");
+            var filepath2 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ldh2.docx");
+            var filepath3 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ldh3.docx");
+
+            filepath.CheckFileExists("ldhdd");
+            SecurityHelper.EncryptFile(filepath, filepath2);
+            SecurityHelper.DecryptFile(filepath2, filepath3); 
         }
 
     }
