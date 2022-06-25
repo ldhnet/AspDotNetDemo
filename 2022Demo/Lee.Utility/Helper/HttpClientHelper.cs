@@ -25,9 +25,9 @@ namespace Lee.Utility.Helper
             #region 同步部门
 
             long timestamp = 0;
-            var no = 1;//SynchronizationNoRepository.FindExists(p => p.Key == "organizationlist");
-            if (no != null)
-                timestamp = no;
+            //var no = 1;//SynchronizationNoRepository.FindExists(p => p.Key == "organizationlist");
+            //if (no != null)
+            //    timestamp = no;
 
             var url = string.Format(WEBAPI, ORG_CONTROLLER, timestamp, "");
             var res = GetDataFromApi(url);
@@ -70,15 +70,15 @@ namespace Lee.Utility.Helper
 
                     });
 
-                    if (no != null)
-                    {
-                        //no.Value = query.Max(p => p.Timestamp);
-                        //SynchronizationNoRepository.Update(no);
-                    }
-                    else
-                    {
-                        //SynchronizationNoRepository.Insert(new Sys_SynchronizationNo { Key = "organizationlist", Value = query.Max(p => p.Timestamp), CreateBy = "system" });
-                    }
+                    //if (no != null)
+                    //{
+                    //    no.Value = query.Max(p => p.Timestamp);
+                    //    SynchronizationNoRepository.Update(no);
+                    //}
+                    //else
+                    //{
+                    //    SynchronizationNoRepository.Insert(new Sys_SynchronizationNo { Key = "organizationlist", Value = query.Max(p => p.Timestamp), CreateBy = "system" });
+                    //}
 
                     //UnitOfWork.SaveChanges();
                 }

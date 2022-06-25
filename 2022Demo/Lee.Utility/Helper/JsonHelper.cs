@@ -68,7 +68,7 @@ namespace Lee.Utility.Helper
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return reader.Value.ParseToLong();
+           return Convert.ToInt64(reader.Value); 
         }
 
         public override bool CanConvert(Type objectType)
@@ -102,7 +102,7 @@ namespace Lee.Utility.Helper
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return reader.Value.ParseToString().ParseToDateTime();
+            return Convert.ToDateTime(reader.Value.ToString());
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

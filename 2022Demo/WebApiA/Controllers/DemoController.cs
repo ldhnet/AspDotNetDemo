@@ -67,7 +67,7 @@ namespace WebApiA.Controllers
             Employee emp= new  Employee();
             emp.Name = name; 
             emp.EmployeeName = name;
-            emp.EmployeeSerialNumber = "12345";
+            emp.EmployeeSerialNumber = "56789";
             emp.Department = 1;
             emp.EmployeeStatus = EmployeeStatus.PendingStatus;
             emp.Phone = "15225074031";

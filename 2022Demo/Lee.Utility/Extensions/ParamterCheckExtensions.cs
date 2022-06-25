@@ -26,7 +26,7 @@ namespace Lee.Utility.Extensions
                 return;
             }
             TException exception = (TException)Activator.CreateInstance(typeof(TException), message);
-            throw exception;
+            throw exception!;
         }
 
         /// <summary>
