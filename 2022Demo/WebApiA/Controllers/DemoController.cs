@@ -16,11 +16,12 @@ namespace WebApiA.Controllers
     {
         private readonly ILogger<DemoController> _logger;
         private readonly IEmployeeContract _employeeContract;
-
-        public DemoController(ILogger<DemoController> logger, IEmployeeContract employeeContract)
+        private readonly ITestContract _testContract;
+        public DemoController(ILogger<DemoController> logger, IEmployeeContract employeeContract, ITestContract testContract)
         {
             _logger = logger; 
             _employeeContract = employeeContract;
+            _testContract = testContract;
         }
         /// <summary>
         /// 测试demo
@@ -29,7 +30,7 @@ namespace WebApiA.Controllers
         [HttpGet]
         [Route("Get")]
         public IActionResult Get()
-        { 
+        {
             var list = _employeeContract.GetEmployees();
             foreach (var item in list)
             {
@@ -60,14 +61,12 @@ namespace WebApiA.Controllers
         [HttpPost]
         [Route("AddEmployee")]
         public IActionResult AddEmployee(string name)
-        {
-            var aaa = EmployeeStatus.PendingStatus.ToDescription();             
-            var ccc = typeof(EmployeeStatus).ToEnumForDictionary();
+        {  
               
             Employee emp= new  Employee();
             emp.Name = name; 
             emp.EmployeeName = name;
-            emp.EmployeeSerialNumber = "56789";
+            emp.EmployeeSerialNumber = "123456";
             emp.Department = 1;
             emp.EmployeeStatus = EmployeeStatus.PendingStatus;
             emp.Phone = "15225074031";
@@ -81,6 +80,40 @@ namespace WebApiA.Controllers
         }
 
 
+        /// <summary>
+        /// 测试新增test
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("AddTest")]
+        public IActionResult AddTest(string name)
+        {
+            Biz_Test tt = new Biz_Test();
+            tt.Name = name; 
+            tt.Phone = "15225074031";
+
+            tt.TestStatus = EmployeeStatus.PendingStatus;
+
+            tt.BirthDate = DateTime.Now;
+            tt.LeaveDate = DateTime.Now.Date;
+            tt.CreateTime = DateTime.Now;
+
+            var result = _testContract.SaveEntity(tt);
+
+            var list = _testContract.GetList();
+
+            var aaa = tt.TestStatus.HasFlag(EmployeeStatus.WaitStatus);
+
+            return Ok(list);
+        }
+
+
+
+        private void enumTest()
+        {
+            var aaa = EmployeeStatus.PendingStatus.ToDescription();
+            var ccc = typeof(EmployeeStatus).ToEnumForDictionary();
+        }
         private void AesTest()
         {
             var a = "123";

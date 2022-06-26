@@ -30,4 +30,11 @@ namespace Lee.Models
         [Description("正常")]
         Normal = 3
     }
+
+    [Flags]
+    public enum Roles
+    {
+        Admin = 1,
+        Member = 2
+    }
 }

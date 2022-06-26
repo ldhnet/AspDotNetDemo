@@ -113,7 +113,7 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
 
     options.UseMySql(connection, ServerVersion.Create(8, 0, 29, ServerType.MySql));
      
-}, 200);
+}, 60);
 
 //builder.Services.AddSingleton<MyDBContext>();
 //builder.Services.AddSingleton<MyAdminContext>();
@@ -123,9 +123,12 @@ builder.Services.AddDbContextPool<MyDBContext>(options =>
 
 //builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
-builder.Services.AddSingleton<IVisitRecordRepository, VisitRecordRepository>();
+builder.Services.AddSingleton<ITestRepository, TestRepository>();
+
+builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+
+builder.Services.AddTransient<IVisitRecordRepository, VisitRecordRepository>();
 
 //builder.Services.AddSingleton<ISystemContract, SystemService>();
 
@@ -219,7 +222,7 @@ if (app.Environment.IsDevelopment())
  
 }
 
-//app.UseMiddleware(typeof(VisitRecordMiddleware));
+app.UseMiddleware(typeof(VisitRecordMiddleware));
 
 app.UseAuthorization();
  
