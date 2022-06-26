@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiB", "WebApiB\WebApiB.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebA.Constant", "WebA.Constant\WebA.Constant.csproj", "{38ADED99-2A13-4B3A-9E48-EEFCD84D811A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lee.Hangfire", "Lee.Hangfire\Lee.Hangfire.csproj", "{B94C29B2-D9EC-4457-809B-671B8CF1C603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lee.Hangfire", "Lee.Hangfire\Lee.Hangfire.csproj", "{B94C29B2-D9EC-4457-809B-671B8CF1C603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebA.Business", "WebA.Business\WebA.Business.csproj", "{4F73925F-5951-4793-8113-74E8AF0C110D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{B94C29B2-D9EC-4457-809B-671B8CF1C603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B94C29B2-D9EC-4457-809B-671B8CF1C603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B94C29B2-D9EC-4457-809B-671B8CF1C603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F73925F-5951-4793-8113-74E8AF0C110D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F73925F-5951-4793-8113-74E8AF0C110D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F73925F-5951-4793-8113-74E8AF0C110D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F73925F-5951-4793-8113-74E8AF0C110D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{9B9CD5F0-A5CC-4A82-AC5C-CAAF233B9492} = {B783873A-41E0-4939-A6DE-C4DFDDF3A2EC}
 		{38ADED99-2A13-4B3A-9E48-EEFCD84D811A} = {53E257D6-7120-421F-83DF-97C5273F8114}
 		{B94C29B2-D9EC-4457-809B-671B8CF1C603} = {F8AE3381-E567-466B-8EE7-A846A24F6A19}
+		{4F73925F-5951-4793-8113-74E8AF0C110D} = {53E257D6-7120-421F-83DF-97C5273F8114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35D80D89-AB88-48F9-BBEC-C668FC73FCD5}

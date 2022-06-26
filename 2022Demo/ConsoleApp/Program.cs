@@ -7,11 +7,16 @@ using ConsoleApp.多线程锁;
 using System.Diagnostics;
 using ConsoleApp._0616;
 using ConsoleApp.Adapter;
+using WebA.Business;
 
-AdapterTests.TestMain();
+Test test=new Test();
+
+test.责任链工厂Start();
 
 
 Console.WriteLine("Hello, World!");
+
+//AdapterTests.TestMain();
 
 //ClosureTests.TestMain();
 

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lee.Cache\Lee.Cache.csproj" />
+    <ProjectReference Include="..\WebA.Business\WebA.Business.csproj" />
   </ItemGroup>
 
 </Project>
