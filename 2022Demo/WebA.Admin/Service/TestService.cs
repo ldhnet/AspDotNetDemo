@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WebA.Admin.Contracts;
 using System.Linq.Expressions;
 using Lee.Repository.Repository;
+using Lee.Repository;
 
 namespace WebA.Admin.Service
 {
@@ -36,8 +37,7 @@ namespace WebA.Admin.Service
 
             //var ad = _employeeRepository.GetIncludes(new string[] { "EmployeeLogins", "EmployeeDetail" });
 
-
-            var aa = _testRepository.Entities.ToList();
+            var aa = _testRepository.Entities.ToPagedList(1,10);
              
             return _testRepository.EntitiesAsNoTracking.ToList();
         }
