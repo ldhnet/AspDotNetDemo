@@ -17,6 +17,7 @@ using System.Reflection;
 using WebA.Admin.Contracts;
 using WebA.Admin.Service;
 using WebA.Constant;
+using WebA.RpcDemo;
 using WebApiA.Attributes;
 using WebApiA.Filter;
 using WebApiA.Middleware;
@@ -58,6 +59,8 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddDataProtection();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddHttpClient<IGitHubClient, GitHubClient>();
 
 #region 使用Redis保存Session
 // 使用SqlServer保存Session
@@ -222,7 +225,7 @@ if (app.Environment.IsDevelopment())
  
 }
 
-app.UseMiddleware(typeof(VisitRecordMiddleware));
+//app.UseMiddleware(typeof(VisitRecordMiddleware));
 
 app.UseAuthorization();
  

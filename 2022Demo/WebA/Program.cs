@@ -4,7 +4,8 @@ using Lee.Utility.Config;
 using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection; 
 using WebA.Admin.Contracts;
-using WebA.Admin.Service; 
+using WebA.Admin.Service;
+using WebA.RpcDemo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.CheckConsentNeeded = context => false; //这里要改为false，默认是true，true的时候session无效
     options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
 });
+
 
 #region DataProtection
 
@@ -111,6 +113,8 @@ builder.Services.AddTransient<MyDBContext>();
 builder.Services.AddSingleton(typeof(IRepository<,>), typeof(Repository<,>));
 
 builder.Services.AddSingleton<IEmployeeContract,EmployeeService>();
+
+
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;

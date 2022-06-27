@@ -23,6 +23,7 @@
 		<ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
 		<ProjectReference Include="..\WebA.Admin\WebA.Admin.csproj" />
 		<ProjectReference Include="..\WebA.Constant\WebA.Constant.csproj" />
+		<ProjectReference Include="..\WebA.RpcDemo\WebA.RpcDemo.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
