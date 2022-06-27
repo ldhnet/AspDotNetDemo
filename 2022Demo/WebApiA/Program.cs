@@ -44,8 +44,10 @@ builder.WebHost.ConfigureKestrel(options =>
 //解除 formbody限制
 builder.Services.Configure<FormOptions>(x =>
 {
-    //x.MultipartBodyLengthLimit = 134217728;//默认128MB
+    //x.MultipartBodyLengthLimit = 134217728;//文件上传 默认128MB  
     x.MultipartBodyLengthLimit = 5 * 2L << 30;//这里手动设置为5GB,这么大的数值仅用于演示
+
+    x.ValueLengthLimit = 209715200;//200MB   //.netcore 限制了每个 POST 数据值的长度为 4M  提升到200M
 }); 
 
 
