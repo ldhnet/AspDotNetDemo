@@ -56,7 +56,7 @@ namespace WebA.Controllers
                     await HttpContext.SignInAsync(CookieAuthInfo.CookieInstance, userPrincipal,
                        new AuthenticationProperties
                        {
-                           ExpiresUtc = DateTime.UtcNow.AddHours(12),
+                           ExpiresUtc = DateTime.UtcNow.AddHours(4),
                            IsPersistent = true,
                            AllowRefresh = false
                        });

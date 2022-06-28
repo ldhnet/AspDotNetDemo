@@ -4,25 +4,22 @@ using Lee.Utility.Config;
 using Lee.Utility.ViewModels;
 using Microsoft.AspNetCore.DataProtection; 
 using WebA.Admin.Contracts;
-using WebA.Admin.Service; 
+using WebA.Admin.Service;
+using WebA.RpcDemo;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 #region config
 
-if (builder.Environment.IsEnvironment("Development"))
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
-    builder.Configuration.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
-}
-else if (builder.Environment.IsEnvironment("Qa"))
-{
-    builder.Configuration.AddJsonFile("appsettings.Qa.json", optional: true, reloadOnChange: true);
-}
-else
-{
-    builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-}
+    var env = hostingContext.HostingEnvironment; 
+    config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    config.AddEnvironmentVariables();
+});
+ 
 GlobalConfig.SystemConfig = builder.Configuration.GetSection("SystemConfig").Get<SystemConfig>();
 #endregion
 
@@ -38,6 +35,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.CheckConsentNeeded = context => false; //这里要改为false，默认是true，true的时候session无效
     options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
 });
+
 
 #region DataProtection
 
@@ -115,6 +113,8 @@ builder.Services.AddTransient<MyDBContext>();
 builder.Services.AddSingleton(typeof(IRepository<,>), typeof(Repository<,>));
 
 builder.Services.AddSingleton<IEmployeeContract,EmployeeService>();
+
+
 
 GlobalConfig.Services = builder.Services;
 GlobalConfig.Configuration = builder.Configuration;

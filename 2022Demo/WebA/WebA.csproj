@@ -31,6 +31,7 @@
     <ProjectReference Include="..\Lee.Repository\Lee.Repository.csproj" />
     <ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
     <ProjectReference Include="..\WebA.Admin\WebA.Admin.csproj" />
+    <ProjectReference Include="..\WebA.RpcDemo\WebA.RpcDemo.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
