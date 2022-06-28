@@ -28,7 +28,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseUrls("http://localhost:9010");
 // Add services to the container.
-builder.WebHost.UseWebRoot("wwwroot");
+
+//builder.WebHost.UseWebRoot("wwwroot");
+
 //var currentDir = Directory.GetCurrentDirectory();
 builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
 
@@ -89,7 +91,7 @@ builder.Services.AddSession(options =>
 #endregion
 
 #region ¿çÓò
-builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder => builder.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
+builder.Services.AddCors(options => options.AddPolicy("AllowSameDomain",builder => builder.WithOrigins().AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()));
 #endregion
 
 builder.Services.Configure<FormOptions>(options => {
@@ -221,6 +223,8 @@ if (app.Environment.IsDevelopment())
 {
  
 }
+
+app.UseCors("AllowSameDomain");
 
 app.UseMiddleware(typeof(VisitRecordMiddleware));
 
