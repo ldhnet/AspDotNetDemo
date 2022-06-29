@@ -8,21 +8,24 @@ namespace WebA.Controllers
     {
         private readonly ILogger<DBTestController> _logger;
         private readonly IEmployeeContract _employeeContract;
+
         public DBTestController(ILogger<DBTestController> logger, IEmployeeContract employeeContract)
         {
             _logger = logger;
             _employeeContract = employeeContract;
         }
+
         public IActionResult Index()
         {
-
             return View();
         }
+
         public List<Employee> GetEmployeeList()
         {
             _logger.LogInformation("GetEmployeeList");
             return _employeeContract.GetEmployees();
         }
+
         public void SaveEmployee()
         {
             Random rd = new Random();
@@ -44,11 +47,10 @@ namespace WebA.Controllers
 
             emp.EmployeeLogins.Add(new EmployeeLogin
             {
-
                 CreateTime = DateTime.Now
             });
 
-            var aaa2255 = _employeeContract.SaveEntity(emp); 
+            var aaa2255 = _employeeContract.SaveEntity(emp);
         }
     }
 }

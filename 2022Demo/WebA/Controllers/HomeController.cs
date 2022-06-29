@@ -1,8 +1,7 @@
-﻿using Lee.Utility.Helper;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
-using System.Diagnostics; 
+using System.Diagnostics;
 using WebA.Attributes;
 using WebA.Models;
 
@@ -11,16 +10,15 @@ namespace WebA.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger; 
-        
+        private readonly ILogger<HomeController> _logger;
+
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger; 
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-         
             var userName = User.Identity.Name;
 
             var authenticationType = User.Identity.AuthenticationType;
@@ -42,30 +40,34 @@ namespace WebA.Controllers
             ViewBag.IsAuthenticated = authenticate;
 
             return View();
-        } 
+        }
+
         public IActionResult Privacy()
         {
             Console.WriteLine($"**************当前线程Id:{Thread.CurrentThread.ManagedThreadId}*****************");
-            TaskDemo taskDemo=new TaskDemo();
+            TaskDemo taskDemo = new TaskDemo();
             //taskDemo.GetString();
 
             Task.Run(() =>
             {
                 taskDemo.GetStringAsync();
             });
-             
+
             return View();
         }
+
         [HttpGet]
         public IActionResult PostTestA()
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult PostTestB()
         {
             return View();
         }
+
         [HttpPost]
         [PreventDoublePost]
         public async Task<IActionResult> Edit(EditViewModel model)
@@ -74,9 +76,13 @@ namespace WebA.Controllers
             {
                 //PreventDoublePost Attribute makes ModelState invalid
             }
+            await Task.Run(() =>
+            {
+                Console.WriteLine("test");
+            });
             return Redirect("/Home/PostTestB");
         }
-         
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

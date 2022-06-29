@@ -9,20 +9,22 @@ namespace WebA.Controllers
     {
         private readonly ILogger<RedisTestController> _logger;
         private readonly DistributedRedisCache _Cache;
+
         public RedisTestController(ILogger<RedisTestController> logger, IDistributedCache cache)
         {
             _logger = logger;
             _Cache = new DistributedRedisCache(cache);
         }
+
         public IActionResult Index()
         {
             _logger.LogInformation("index");
 
-            var ldh =  CacheFactory.Cache.GetCache<string>("ldh");
+            var ldh = CacheFactory.Cache.GetCache<string>("ldh");
             if (string.IsNullOrEmpty(ldh))
             {
                 CacheFactory.Cache.SetCache("ldh", 123456789, DateTime.Now.AddSeconds(30));
-                ldh= "123456789";
+                ldh = "123456789";
             }
 
             var ldh2 = CacheFactory.Cache.GetCache<string>("ldh2");
@@ -31,7 +33,7 @@ namespace WebA.Controllers
                 CacheFactory.Cache.SetCache("ldh2", "11111111111");
                 ldh2 = "11111111111";
             }
-          
+
             ViewBag.ldh = ldh;
             ViewBag.ldh2 = ldh2;
 
@@ -78,9 +80,8 @@ namespace WebA.Controllers
             //getVaue = _Cache.Get<string>(key, out isExisted);//再次从Redis获取键值"Key01"，可以看到getVaue的值为"This is a demo key again !"
 
             //_Cache.Remove(key);//从Redis中删除键值"Key01"
-             
+
             return View();
         }
-
     }
 }
