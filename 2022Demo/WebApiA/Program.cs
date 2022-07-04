@@ -32,6 +32,13 @@ builder.WebHost.UseUrls("http://localhost:9010");
 //var currentDir = Directory.GetCurrentDirectory();
 builder.Host.UseContentRoot(Directory.GetCurrentDirectory());
 
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    var env = hostingContext.HostingEnvironment;
+    config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    config.AddEnvironmentVariables();
+});
 //½â³ýkestrelÏÞÖÆ
 builder.WebHost.ConfigureKestrel(options =>
 {

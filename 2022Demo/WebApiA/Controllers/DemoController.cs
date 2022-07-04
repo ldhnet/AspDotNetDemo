@@ -38,8 +38,12 @@ namespace WebApiA.Controllers
                 Console.WriteLine(aa);
                 _logger.LogInformation(aa);
             }
-             
-            return Ok(new { list });
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/flowdata.json");
+
+
+
+            return Ok(new {msg="",code=200, data = list });
         }
 
         /// <summary>
