@@ -1,0 +1,13 @@
+{ 
+  "profiles": {
+    "DongHui.Oauth": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:53000",
+      "dotnetRunMessages": true
+    } 
+  }
+}

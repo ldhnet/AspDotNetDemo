@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">第三方的登录测试</h1> 
+    <table class="table table-hover"> 
+      <thead>
+        <tr>
+          <th>名称</th> 
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gitee</td> 
+          <th><a asp-controller="oauth" asp-action="gitee">Gitee授权登录</a> </th>
+        </tr>
+        <tr>
+          <td>Github</td> 
+          <th><a asp-controller="oauth" asp-action="github==">Github授权登录</a> </th>
+        </tr>
+        <tr>
+          <td>百度</td> 
+          <th><a asp-controller="oauth" asp-action="baidu==">百度授权登录</a> </th>
+        </tr>
+        <tr>
+          <td>QQ</td> 
+          <th><a asp-controller="oauth" asp-action="qq==">QQ授权登录</a> </th>
+        </tr>
+        <tr>
+          <td>微信</td> 
+          <th><a asp-controller="oauth" asp-action="wechat==">微信授权登录</a> </th>
+        </tr>
+      </tbody>
+    </table>
+ 
+</div>

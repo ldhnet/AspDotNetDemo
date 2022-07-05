@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "授权成功";
+}
+
+<style type="text/css">
+    .code {
+        background: #f5f5f5; 
+        display: block; 
+        text-align:left; 
+        padding: 10px; 
+        border-radius: 8px;
+        line-height: 180%; 
+        white-space: pre;
+        overflow: auto;
+    }
+    img.img-thumbnail {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+    }
+</style>
+
+<div class="text-center mt-5">
+    <h1 class="display-5">恭喜，@(ViewBag.OAuthUser.Name)授权成功！</h1>
+    <img class="img-thumbnail mt-4" style="border-radius: 100%" width="150" height="150" src="@(ViewBag.OAuthUser.Avatar)" />
+    <h4 class="mt-2">@(ViewBag.OAuthUser.Name)</h4>
+    <hr />
+    <h6>详细信息：</h6>
+    <code class="code mt-2">@(ViewBag.UserDetail)</code>
+</div>
+<div class="text-center mt-5">
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Logout">退出登录</a>
+</div>
