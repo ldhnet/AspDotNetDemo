@@ -11,6 +11,7 @@ using Framework.Utility.JWT;
 using Framework.Utility.Mapping;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.FeatureManagement;
 using Newtonsoft.Json;
 using WebApi6_0.AppConfig;
@@ -179,7 +180,11 @@ GlobalConfig.Configuration = builder.Configuration;
 
 var app = builder.Build();
 //启用静态文件
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(builder.Environment.ContentRootPath, "wwwroot")),
+    RequestPath = "/wwwroot"
+});
 
 ////这一步很关键
 //DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
@@ -201,6 +206,11 @@ app.UseSwaggerUI();
 if (app.Environment.IsDevelopment())
 {
     //app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi6_0 v1"); c.RoutePrefix = string.Empty; });
+}
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
 }
 
 #region 异常处理
