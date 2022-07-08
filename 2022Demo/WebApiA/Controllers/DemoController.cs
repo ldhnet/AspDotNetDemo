@@ -3,6 +3,7 @@ using Lee.Models.Entities;
 using Lee.Utility.Extensions;
 using Lee.Utility.Security;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Concurrent;
 using System.Text;
 using WebA.Admin.Contracts;
 using WebA.Constant;
@@ -38,6 +39,9 @@ namespace WebApiA.Controllers
                 Console.WriteLine(aa);
                 _logger.LogInformation(aa);
             }
+            var aaw =new ConcurrentDictionary<int, string>();
+
+          
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/flowdata.json");
 

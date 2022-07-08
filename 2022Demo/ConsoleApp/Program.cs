@@ -9,12 +9,19 @@ using ConsoleApp._0616;
 using ConsoleApp.Adapter;
 using WebA.Business;
 
-Test test=new Test();
 
-test.责任链工厂Start();
 
+ChannelTest test=new ChannelTest();
+test.testMain();
 
 Console.WriteLine("Hello, World!");
+
+//Test test=new Test();
+
+//test.责任链工厂Start();
+
+
+//Console.WriteLine("Hello, World!");
 
 //AdapterTests.TestMain();
 
