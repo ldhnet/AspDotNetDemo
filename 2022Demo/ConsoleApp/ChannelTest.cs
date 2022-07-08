@@ -43,6 +43,8 @@ namespace ConsoleApp
      
             });
 
+            var aaaa = channel;
+
             Console.WriteLine($"WriteAsync ==========================结束============================");
 
             Task.Run(async () =>

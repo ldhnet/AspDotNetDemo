@@ -9,12 +9,19 @@ using ConsoleApp._0616;
 using ConsoleApp.Adapter;
 using WebA.Business;
 
+var test3 = new yield_3_test();
+test3.Init();
 
+var test2=new yield_2_Test();
 
-ChannelTest test=new ChannelTest();
-test.testMain();
+test2.testMain();
 
 Console.WriteLine("Hello, World!");
+
+//ChannelTest test=new ChannelTest();
+//test.testMain();
+
+//Console.WriteLine("Hello, World!");
 
 //Test test=new Test();
 
