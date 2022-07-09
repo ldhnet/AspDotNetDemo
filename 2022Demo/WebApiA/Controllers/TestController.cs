@@ -9,22 +9,36 @@ using WebApiA.Attributes;
 namespace WebApiA.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TestController : ControllerBase
     {
         private readonly IGitHubClient _gitHubClient;
+        //private readonly ITestContract _testContract;, ITestContract testContract
         public TestController(IGitHubClient gitHubClient)
         {
             _gitHubClient = gitHubClient;
+            //_testContract = testContract;
         }
+        ///// <summary>
+        ///// 测试demo
+        ///// </summary>
+        ///// <returns></returns> 
+        //[HttpGet]
+        //public async Task<IActionResult> GetDemo()
+        //{
+        //    //var list = _testContract.GetList();
+
+        //    return Ok(1);
+        //}
+
         /// <summary>
         /// 测试demo
         /// </summary>
-        /// <returns></returns>
-        [HttpGet("Demo")]
+        /// <returns></returns> 
+        [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var aaa = await _gitHubClient.GetData();
+            //var aaa = await _gitHubClient.GetData();
 
             var CurrentID = CacheFactory.Cache.GetCache<string>("CurrentID");
 
@@ -36,9 +50,7 @@ namespace WebApiA.Controllers
 
             return Ok(new { CurrentID });
         }
-
-
-
+         
         /// <summary>
         /// 测试demo
         /// </summary>

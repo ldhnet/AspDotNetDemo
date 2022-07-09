@@ -151,6 +151,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
     builder.RegisterType<MyDBContext>().AsSelf().InstancePerLifetimeScope();
     builder.RegisterGeneric(typeof(Repository<,>)).As(typeof(IRepository<,>)).InstancePerLifetimeScope();
     builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+     
 
     Type baseType = typeof(IDependency);
     var assemblieTypes = Assembly.GetEntryAssembly().GetReferencedAssemblies()
