@@ -8,15 +8,20 @@ using System.Diagnostics;
 using ConsoleApp._0616;
 using ConsoleApp.Adapter;
 using WebA.Business;
+using ConsoleApp._0701;
 
-var test3 = new yield_3_test();
-test3.Init();
-
-var test2=new yield_2_Test();
-
-test2.testMain();
+PadLeftTest.testMain();
 
 Console.WriteLine("Hello, World!");
+
+//var test3 = new yield_3_test();
+//test3.Init();
+
+//var test2=new yield_2_Test();
+
+//test2.testMain();
+
+//Console.WriteLine("Hello, World!");
 
 //ChannelTest test=new ChannelTest();
 //test.testMain();
