@@ -16,6 +16,7 @@ using System.Reflection;
 using WebA.Constant;
 using WebA.RpcDemo;
 using WebApiA.Attributes;
+using WebApiA.Code;
 using WebApiA.Filter;
 using WebApiA.Middleware;
 
@@ -142,6 +143,10 @@ builder.Services.AddTransient<IVisitRecordRepository, VisitRecordRepository>();
 //builder.Services.AddSingleton<ISystemContract, SystemService>();
 
 builder.Services.AddScoped<MyFilter>();
+
+builder.Services.AddSingleton<ITokenManager, TokenManager>();
+
+builder.Services.AddHostedService<RefreshTokenService>();
 
 #region Autofac
 

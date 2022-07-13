@@ -5,37 +5,52 @@ using WebA.Admin.Contracts;
 using WebA.Constant;
 using WebA.RpcDemo;
 using WebApiA.Attributes;
+using WebApiA.Code;
 
 namespace WebApiA.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+
+    [Route("api/[Controller]/[Action]")]
     public class TestController : ControllerBase
     {
         private readonly IGitHubClient _gitHubClient;
-        //private readonly ITestContract _testContract;, ITestContract testContract
-        public TestController(IGitHubClient gitHubClient)
+        private readonly ITestContract _testContract;
+        private readonly ITokenManager _tokenManager;
+        
+        public TestController(IGitHubClient gitHubClient, ITestContract testContract, ITokenManager tokenManager)
         {
             _gitHubClient = gitHubClient;
-            //_testContract = testContract;
+            _testContract = testContract;
+            _tokenManager = tokenManager;
         }
-        ///// <summary>
-        ///// 测试demo
-        ///// </summary>
-        ///// <returns></returns> 
-        //[HttpGet]
-        //public async Task<IActionResult> GetDemo()
-        //{
-        //    //var list = _testContract.GetList();
-
-        //    return Ok(1);
-        //}
-
         /// <summary>
         /// 测试demo
         /// </summary>
         /// <returns></returns> 
         [HttpGet]
+        public async Task<IActionResult> GetDemo()
+        {
+            var list = _testContract.GetList();
+
+            return Ok(list);
+        }
+        /// <summary>
+        /// 测试demo
+        /// </summary>
+        /// <returns></returns> 
+        [HttpGet]
+        public async Task<IActionResult> GetToken()
+        {
+            var token = _tokenManager.Token;
+            Console.WriteLine($"TestController 主线程Id === {Thread.CurrentThread.ManagedThreadId}");
+            return Ok(token);
+        }
+        /// <summary>
+        /// 测试demo
+        /// </summary>
+        /// <returns></returns> 
+        [HttpGet] 
         public async Task<IActionResult> Get()
         {
             //var aaa = await _gitHubClient.GetData();
@@ -56,7 +71,7 @@ namespace WebApiA.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("PostTest")]
-        [PreventDoublePost]
+        [PreventDoublePost] 
         public IActionResult PostTest(int Id)
         {  
             return Ok(new { Id });
