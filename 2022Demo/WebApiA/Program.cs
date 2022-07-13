@@ -60,7 +60,23 @@ builder.Services.Configure<FormOptions>(x =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddMemoryCache();
+builder.Services.AddMemoryCache().AddSimpleCaptcha(builder =>
+{
+    builder.UseMemoryStore();
+    builder.AddConfiguration(options =>
+    {
+        //设置验证码长度
+        options.CodeLength = 4;
+        //设置图片大小
+        options.ImageWidth = 200; //100
+        options.ImageHeight = 72; //36
+        //置区分大小写
+        options.IgnoreCase = true;
+        //设置验证码有效期
+        options.ExpiryTime = TimeSpan.FromMinutes(1); 
+
+    });
+});
 
 builder.Services.AddDistributedMemoryCache();
 
