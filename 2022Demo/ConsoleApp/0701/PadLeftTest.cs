@@ -10,6 +10,7 @@ namespace ConsoleApp._0701
     {
         public static void testMain()
         {
+            //PadRight 与 PadLeft 相反
             {
                 //PadLeft(Int32)
                 //返回一个新字符串，该字符串通过在此实例中的字符左侧填充
