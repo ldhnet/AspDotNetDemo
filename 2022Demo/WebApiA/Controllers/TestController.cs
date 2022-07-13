@@ -1,4 +1,5 @@
 ﻿using Lee.Cache;
+using Lee.Utility.Helper;
 using Microsoft.AspNetCore.Mvc;
 using WebA.Admin;
 using WebA.Admin.Contracts;
@@ -44,6 +45,14 @@ namespace WebApiA.Controllers
         {
             var token = _tokenManager.Token;
             Console.WriteLine($"TestController 主线程Id === {Thread.CurrentThread.ManagedThreadId}");
+
+
+            var dt=DateTime.Now;
+
+            var tsp=  TimeStampHelper.GetTimeStamp(dt);
+             
+            var dtnow = TimeStampHelper.GetDateTime(tsp.ToString());
+              
             return Ok(token);
         }
         /// <summary>
