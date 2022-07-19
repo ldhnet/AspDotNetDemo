@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lee.Cache\Lee.Cache.csproj" />
     <ProjectReference Include="..\Lee.Hangfire\Lee.Hangfire.csproj" />
+    <ProjectReference Include="..\Lee.Utility\Lee.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

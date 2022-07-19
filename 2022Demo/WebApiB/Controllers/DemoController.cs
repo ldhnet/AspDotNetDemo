@@ -1,4 +1,8 @@
+using Lee.Cache;
+using Lee.Utility.Config;
+using Lee.Utility.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using WebApiB.Code;
 
 namespace WebApiB.Controllers
 {
@@ -19,5 +23,27 @@ namespace WebApiB.Controllers
         {
              return Ok("hello");
         }
+        [HttpGet]
+        [Route("Demo/getTest")]
+        public IActionResult Test(string email, string body)
+        {
+ 
+            var mailInfo = new Sys_MailInfo
+            {
+                To = email,
+                Subject = "XXXXXX通知(系统邮件)",
+                Body = body, 
+            };
+            mailInfo.AddMailToQueue();
+
+
+
+            var queue = CacheFactory.Cache.GetCache<Queue<Sys_MailInfo>>("MailQueue");
+
+
+            return Ok(queue);
+        }
+
+  
     }
 }
