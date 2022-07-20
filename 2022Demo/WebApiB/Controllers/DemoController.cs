@@ -39,6 +39,20 @@ namespace WebApiB.Controllers
             return Ok(1);
         }
 
-  
+        [HttpGet]
+        [Route("Demo/getChannelTest")]
+        public IActionResult ChannelTest(string email, string body)
+        {
+
+            var mailInfo = new Sys_MailInfo
+            {
+                To = email,
+                Subject = "XXXXXX通知(系统邮件)",
+                Body = body,
+            };
+            mailInfo.AddMailToChannel();
+
+            return Ok(1);
+        }
     }
 }

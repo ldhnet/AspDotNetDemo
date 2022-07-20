@@ -18,7 +18,9 @@ namespace WebApiB.Code
 
             while (await timer.WaitForNextTickAsync(stoppingToken))
             {
-                sendEmailManager.SendMailUsingQueue();
+                //sendEmailManager.SendMailUsingQueue();
+
+                sendEmailManager.SendMailUsingChannel();
             }
         }
  

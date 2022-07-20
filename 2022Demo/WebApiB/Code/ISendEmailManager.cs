@@ -3,5 +3,6 @@
     public interface ISendEmailManager
     {
         void SendMailUsingQueue();
+        void SendMailUsingChannel();
     }
 }

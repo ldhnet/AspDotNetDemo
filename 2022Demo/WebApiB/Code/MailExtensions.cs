@@ -64,5 +64,17 @@ namespace WebApiB.Code
             }
         }
 
+
+
+        public static void AddMailToChannel(this Sys_MailInfo sys_MailInfo)
+        {
+            Task.Run(async () =>
+            {
+                Console.WriteLine($"WriteAsync ==={DateTime.Now}，当前线程== {Thread.CurrentThread.ManagedThreadId} ========== {Task.CurrentId}");
+                await Task.Delay(TimeSpan.FromMilliseconds(200));
+                await SendEmailConfig.channel.Writer.WriteAsync(sys_MailInfo);// 生产者写入消息
+                SendEmailConfig.channel.Writer.Complete(); //生产者也可以明确告知消费者不会发送任何消息了
+            });
+        }
     }
 }
