@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<SendEmailConfig>();
 builder.Services.AddSingleton<ISendEmailManager,SendEmailManager>();
 
-builder.Services.AddHostedService<SendEmailService>();
+builder.Services.AddHostedService<SendEmailHost>();
 
 
 

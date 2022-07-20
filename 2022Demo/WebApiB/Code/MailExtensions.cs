@@ -48,12 +48,14 @@ namespace WebApiB.Code
                     } 
 #endif
                     if (mailInfo.To.IsNullOrEmpty() || !mailInfo.To.IsEmail()) return;
- 
-                    var queue = CacheFactory.Cache.GetCache<Queue<Sys_MailInfo>>("MailQueue");
 
-                    queue.Enqueue(mailInfo);
+          
+                    SendEmailConfig.MailQueue.Enqueue(mailInfo);
+                     
 
-                   // Logger.LogInformation($"Mail Send to: {mailInfo.To}, Subject: {mailInfo.Subject}, Mail Queue Count: {queue.Count}");
+                    Console.WriteLine($"AddMailToQueue==={Thread.CurrentThread.Name}=={Thread.CurrentThread.ManagedThreadId}====={DateTime.Now}=={SendEmailConfig.MailQueue.Count}");
+                     
+                      
                 }
             }
             catch (Exception ex)

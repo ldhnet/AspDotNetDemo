@@ -2,11 +2,11 @@
 
 namespace WebApiB.Code
 {
-    public class SendEmailService : BackgroundService, IDisposable
+    public class SendEmailHost : BackgroundService, IDisposable
     {
         private readonly ISendEmailManager sendEmailManager;
 
-        public SendEmailService(ISendEmailManager _sendEmailManager)
+        public SendEmailHost(ISendEmailManager _sendEmailManager)
         {
             this.sendEmailManager = _sendEmailManager;
         }

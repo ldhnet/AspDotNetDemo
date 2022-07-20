@@ -35,13 +35,8 @@ namespace WebApiB.Controllers
                 Body = body, 
             };
             mailInfo.AddMailToQueue();
-
-
-
-            var queue = CacheFactory.Cache.GetCache<Queue<Sys_MailInfo>>("MailQueue");
-
-
-            return Ok(queue);
+             
+            return Ok(1);
         }
 
   

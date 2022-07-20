@@ -8,6 +8,7 @@ namespace WebApiB.Code
     {
         public void SendMailUsingQueue()
         {
+            Console.WriteLine($"SendEmailConfig.MailQueue.Count==={Thread.CurrentThread.Name}=={Thread.CurrentThread.ManagedThreadId}====={DateTime.Now}=={SendEmailConfig.MailQueue.Count}");
             if (SendEmailConfig.MailQueue.Count > 0)
             {
                 ScanQueue();
