@@ -11,7 +11,7 @@ namespace WebApiB.Controllers
     {
         
         private readonly ILogger<DemoController> _logger;
-
+        private static int _count;
         public DemoController(ILogger<DemoController> logger)
         {
             _logger = logger;
@@ -53,6 +53,15 @@ namespace WebApiB.Controllers
             mailInfo.AddMailToChannel();
 
             return Ok(1);
+        }
+
+        [HttpGet]
+        [Route("Demo/getCount")]
+        public IActionResult getCount()
+        { 
+            _count++;
+
+            return Ok($"被访问了{_count}次");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Lee.Cache
         static RedisValue Token = Environment.MachineName;
         public RedisCacheImp()
         {
-            connection = ConnectionMultiplexer.Connect("127.0.0.1:6379");//GlobalConfig.SystemConfig.RedisConnectionString
+            connection = ConnectionMultiplexer.Connect("110.42.176.117:6379");//GlobalConfig.SystemConfig.RedisConnectionString
             cache = connection.GetDatabase();
         }
 
