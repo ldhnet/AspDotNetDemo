@@ -5,7 +5,7 @@ using WebApiB.Code;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://*:5099");
+builder.WebHost.UseUrls("http://*:5099");//切记要用* 而不要用localhost 否则docker 无法运行 会链接被重置错误
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
     var env = hostingContext.HostingEnvironment;
