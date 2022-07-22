@@ -5,7 +5,7 @@ using WebApiB.Code;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("http://localhost:5099");
+builder.WebHost.UseUrls("http://*:5099");
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
     var env = hostingContext.HostingEnvironment;
